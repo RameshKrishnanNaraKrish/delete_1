@@ -5,6 +5,11 @@ on:
     - cron: '0 9 * * *'
   workflow_dispatch:
 
+
+env:
+  YESTERDAY: \"$(date -d "1 day ago" '+%Y-%m-%d')\"
+
+
 jobs:
   msf_emailgen:
     runs-on: ubuntu-latest
@@ -20,7 +25,7 @@ jobs:
             git clone https://github.com/rapid7/metasploit-framework.git metasploit-framework &&
             cd metasploit-framework &&
             ls -la &&
-            yesterday=$(date -d "1 day ago" '+%Y-%m-%d') &&
+            yesterday=${{ env.YESTERDAY }} &&
             git log --stat -c --after='${yesterday} 00:00' --before='${yesterday} 23:59' > ../${yesterday}_updates.txt &&
             cd .. &&
             cat ${yesterday}_updates.txt
@@ -28,4 +33,6 @@ jobs:
         - name: Save updates.txt to Updates folder
           run: |
             mkdir -p updates &&
-            mv ${yesterday}_updates.txt updates/
+            yesterday=${{ env.YESTERDAY }} &&
+            mv ${yesterday}_updates.txt updates/ &&
+            ls -la
