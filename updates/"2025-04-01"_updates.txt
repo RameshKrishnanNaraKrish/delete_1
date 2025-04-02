@@ -1,0 +1,99 @@
+commit 2122993285710e79d92c8b5b3fd3a4cb9d9b2000
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Apr 1 18:18:04 2025 +0200
+
+    Update Gemfile to bring in metasploit-model new gem
+    
+    - Also rebase to master
+
+ Gemfile      |  1 -
+ Gemfile.lock | 15 ++++-----------
+ 2 files changed, 4 insertions(+), 12 deletions(-)
+
+commit 7f8a7629222447065d1d4c730a2e5a29e95fb867
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Feb 6 13:22:36 2025 +0100
+
+    Update `ms_icpr` and `creds` to reflect the changes in the Pkcs12 data model
+    
+    - a separate field is now used for metadata (`private_metadata`) when
+      creating a new Pkcs12
+    - the `creds` command now support adding an encrypted Pkcs12 with a password
+
+ .github/workflows/command_shell_acceptance.yml     |  1 +
+ .../workflows/shared_meterpreter_acceptance.yml    |  1 +
+ Gemfile                                            |  2 +
+ Gemfile.lock                                       | 44 ++++++++++++++--------
+ db/schema.rb                                       |  3 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  8 +---
+ lib/msf/ui/console/command_dispatcher/creds.rb     | 39 +++++++++----------
+ .../ui/console/command_dispatcher/creds_spec.rb    | 43 +++++++++++++++++++--
+ 8 files changed, 96 insertions(+), 45 deletions(-)
+
+commit 6802e83d241754e33eb185eba8e1bf63405c2103
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Mon Dec 16 15:49:18 2024 +0100
+
+    Update Gemfile to use https
+
+ Gemfile      | 2 +-
+ Gemfile.lock | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 844b433099e338106c93aed5a391a086d018ec9c
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Mon Dec 16 15:06:35 2024 +0100
+
+    Point Gemfile to the metasploit-credentials feature branch on cdelafuente-r7 repo
+
+ Gemfile      |  2 ++
+ Gemfile.lock | 27 +++++++++++++++++----------
+ 2 files changed, 19 insertions(+), 10 deletions(-)
+
+commit 865626fbd235813d1517a69a96b56886743851bc
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Mon Dec 16 12:18:40 2024 +0100
+
+    Update Pkcs12-related code to report CA and ADCS Template to the database
+    
+    - Update the `creds` command to add Pkcs12 private credentials with
+      metadata.
+    - Update `ms_icpr` module to store metadata.
+
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   8 +-
+ lib/msf/ui/console/command_dispatcher/creds.rb     |  34 +++---
+ .../ui/console/command_dispatcher/creds_spec.rb    | 124 ++++++++++++++++-----
+ 3 files changed, 125 insertions(+), 41 deletions(-)
+
+commit 0f4c73b9789166d0983db7a3816893adbda3d044
+Merge: aef5b5b3ac 29084094b7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 1 11:47:46 2025 +0200
+
+    Land #19979, Add guidelines for expedited module creation
+    
+    Land #19979, Add guidelines for expedited module creation
+
+ CONTRIBUTING.md | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit aef5b5b3acbaba33e09be11ff9d2c99aa7b3f3e2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 1 01:49:54 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ccb0c1a320982a1c064994e0eec47109e573d5a5
+Merge: a4297329d7 9a60caf36d
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Mar 31 18:42:31 2025 -0700
+
+    Merge pull request #19993 from h00die-gr3y/cmd-enc-base64
+    
+    BUGFIX: cmd encoder base64
+
+ modules/encoders/cmd/base64.rb | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
