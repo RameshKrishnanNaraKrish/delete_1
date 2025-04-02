@@ -26,12 +26,10 @@ jobs:
           run: |
             git clone https://github.com/rapid7/metasploit-framework.git metasploit-framework &&
             cd metasploit-framework &&
-            ls -la &&
             yesterday=${{ env.YESTERDAY }} &&
             echo ${yesterday}
             git log --stat -c --after='${yesterday} 00:00' --before='${yesterday} 23:59' > ../${yesterday}_updates.txt &&
             cd .. &&
-            ls -la &&
             cat ${yesterday}_updates.txt
 
         - name: Save updates.txt to Updates folder
@@ -43,6 +41,7 @@ jobs:
 
         - name:  Commit & push changes
           run: |
+            yesterday=${{ env.YESTERDAY }} &&
             git config --global user.name "github-actions[bot]" &&
             git config --global user.email "github-actions[bot]@users.noreply.github.com" &&
             git add updates/${yesterday}_updates.txt &&
