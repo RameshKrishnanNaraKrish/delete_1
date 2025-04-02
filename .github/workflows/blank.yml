@@ -26,13 +26,20 @@ jobs:
             cd metasploit-framework &&
             ls -la &&
             yesterday=${{ env.YESTERDAY }} &&
+            echo ${yesterday}
             git log --stat -c --after='${yesterday} 00:00' --before='${yesterday} 23:59' > ../${yesterday}_updates.txt &&
             cd .. &&
+            ls -la &&
             cat ${yesterday}_updates.txt
 
-        - name: Save updates.txt to Updates folder
+        - name: Save updates.txt to Updates folder and commit to repository
           run: |
             mkdir -p updates &&
             yesterday=${{ env.YESTERDAY }} &&
             mv ${yesterday}_updates.txt updates/ &&
-            ls -la
+            ls -la updates &&
+            git config --global user.name "github-actions[bot]" &&
+            git config --global user.email "github-actions[bot]@users.noreply.github.com" &&
+            git add updates/${yesterday}_updates.txt &&
+            git commit -m "Add updates for ${yesterday}" &&
+            git push
