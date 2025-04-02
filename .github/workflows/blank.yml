@@ -12,6 +12,8 @@ env:
 
 jobs:
   msf_emailgen:
+    permissions: 
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
@@ -32,14 +34,14 @@ jobs:
             ls -la &&
             cat ${yesterday}_updates.txt
 
-        - name: Save updates.txt to Updates folder and commit to repository
+        - name: Save updates.txt to Updates folder
           run: |
             mkdir -p updates &&
             yesterday=${{ env.YESTERDAY }} &&
             mv ${yesterday}_updates.txt updates/ &&
-            ls -la updates &&
-            git config --global user.name "github-actions[bot]" &&
-            git config --global user.email "github-actions[bot]@users.noreply.github.com" &&
-            git add updates/${yesterday}_updates.txt &&
-            git commit -m "Add updates for ${yesterday}" &&
-            git push
+            ls -la updates
+
+        - name: Commit & push changes
+          uses: action-js/push@main
+          with:
+            github_token: ${{ secrets.PAT }}
