@@ -19,7 +19,7 @@ jobs:
           run: |
             git clone https://github.com/rapid7/metasploit-framework.git metasploit-framework &&
             cd metasploit-framework &&
-            yesterday=\$(date -d '1 day ago' '+%Y-%m-%d') &&
+            yesterday=$(bash -c "date -d '1 day ago' '+%Y-%m-%d'") &&
             git log --stat -c --after=\"\$yesterday 00:00\" --before=\"\$yesterday 23:59\" > ../\${yesterday}_updates.txt &&
             cd .. &&
             cat ${yesterday}_updates.txt
