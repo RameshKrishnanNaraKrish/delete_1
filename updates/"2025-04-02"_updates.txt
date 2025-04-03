@@ -1,0 +1,179 @@
+commit b132e3bbbee4c9ef4bd9aecb20cc3245f584cc94
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 2 21:27:31 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 62 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+
+commit d16eeab32ca8ca183261c5690bf9631dea16558b
+Merge: 6bee281ffc b85faf9440
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 2 14:20:52 2025 -0700
+
+    Merge pull request #19995 from chutton-r7/cve-2025-24813
+    
+    Module for CVE-2025-24813
+
+ .../http/tomcat_partial_put_deserialization.md     | 150 +++++++++++++++++
+ .../http/tomcat_partial_put_deserialization.rb     | 178 +++++++++++++++++++++
+ 2 files changed, 328 insertions(+)
+
+commit b85faf94401c3037f8fc96dc5da7b523d3638633
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 14:10:46 2025 -0700
+
+    Update documentation
+
+ .../exploit/multi/http/tomcat_partial_put_deserialization.md        | 6 +++---
+ modules/exploits/multi/http/tomcat_partial_put_deserialization.rb   | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 3fa7fe68a14578fcd5a3e86e8ac34f02ef4e63ae
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 13:57:56 2025 -0700
+
+    Consolidated Platform check
+
+ .../multi/http/tomcat_partial_put_deserialization.rb         | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+
+commit c32a34112f4b04f8ff2c534ffa0b678a3f9ff01a
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 13:52:04 2025 -0700
+
+    Updated register_file_for_clean to account for windows
+
+ modules/exploits/multi/http/tomcat_partial_put_deserialization.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 6816589378484f399b9413377d28ea1f4d30fc21
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 13:37:39 2025 -0700
+
+    Added FileDropper for cleanup
+
+ .../http/tomcat_partial_put_deserialization.md     | 27 ++++++++++++++++------
+ .../http/tomcat_partial_put_deserialization.rb     |  6 +++--
+ 2 files changed, 24 insertions(+), 9 deletions(-)
+
+commit fefb9548275071290af68d9bfde71268c7966b9c
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 13:02:26 2025 -0700
+
+    Correct Tomcat version listed in Scenarios section
+
+ .../modules/exploit/multi/http/tomcat_partial_put_deserialization.md    | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4058173a1cde0214af1805ca4a828c51efd00021
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 12:57:20 2025 -0700
+
+    Correct spelling
+
+ .../modules/exploit/multi/http/tomcat_partial_put_deserialization.md  | 2 +-
+ modules/exploits/multi/http/tomcat_partial_put_deserialization.rb     | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8cd044955081b95784c0f07f77c9d5d5f8be17f7
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 12:50:26 2025 -0700
+
+    Responded to comments
+
+ modules/exploits/multi/http/tomcat_partial_put_deserialization.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 1e58d419f617469d427f543e46888e3bb6f75aa3
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 2 12:03:21 2025 -0700
+
+    Updated docs, added Setup steps
+
+ .../http/tomcat_partial_put_deserialization.md     | 105 +++++++++++++++++++--
+ 1 file changed, 98 insertions(+), 7 deletions(-)
+
+commit 6bee281ffcfa4c93855885329410b9bc078135ee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 2 16:32:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eac7a183f542bfdf7556ae82a727bf5583433545
+Merge: 1fc95162e0 d1124c44f5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 2 17:25:41 2025 +0100
+
+    Merge pull request #19998 from sjanusz-r7/fix-rinda-error
+    
+    Fix Rinda msfcrawler error
+
+ Gemfile.lock                            | 7 +++++++
+ metasploit-framework.gemspec            | 1 +
+ modules/auxiliary/crawler/msfcrawler.rb | 6 ++++--
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+
+commit 1fc95162e04fcf2f92b5ecb22cb61b30ab742915
+Merge: 0f4c73b978 41f25a9fd7
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 2 09:07:25 2025 -0700
+
+    Merge pull request #19736 from cdelafuente-r7/enh/pkcs12/add_metadata
+    
+    Report CA, ADCS Template and Password along with Pkcs12 in the database
+
+ .github/workflows/command_shell_acceptance.yml     |   1 +
+ .../workflows/shared_meterpreter_acceptance.yml    |   1 +
+ Gemfile.lock                                       |   6 +-
+ db/schema.rb                                       |   3 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   2 +-
+ lib/msf/ui/console/command_dispatcher/creds.rb     |  35 +++--
+ .../ui/console/command_dispatcher/creds_spec.rb    | 159 +++++++++++++++++----
+ 7 files changed, 163 insertions(+), 44 deletions(-)
+
+commit d1124c44f5e561b80f9c04b1afdec4fc7072d318
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Apr 2 15:48:42 2025 +0100
+
+    Fix Rinda msfcrawler error
+
+ Gemfile.lock                            | 7 +++++++
+ metasploit-framework.gemspec            | 1 +
+ modules/auxiliary/crawler/msfcrawler.rb | 6 ++++--
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+
+commit 41f25a9fd7de0a49940d205f827e377a5985babe
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Apr 2 14:55:33 2025 +0200
+
+    Update Gemfile and Gemfile.lock to bring new gems in
+    
+    - metasploit-credential 6.0.14
+    - metasploit_data_models 6.0.9
+
+ Gemfile      |  3 ---
+ Gemfile.lock | 54 ++++++++++++++++++++----------------------------------
+ 2 files changed, 20 insertions(+), 37 deletions(-)
+
+commit 917aaeb027c3c5d148d2e1f5f9e3399281ffa1d4
+Author: chutton-r7 <calum_hutton@rapid7.com>
+Date:   Wed Apr 2 10:22:01 2025 +0100
+
+    Add module docs
+
+ .../http/tomcat_partial_put_deserialization.md     | 46 ++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 63a86109f6eb56348c5c8e64d6f441445fb85d38
+Author: chutton-r7 <calum_hutton@rapid7.com>
+Date:   Wed Apr 2 10:04:33 2025 +0100
+
+    Better error handling, set default Python Meterpreter (seems most reliable). Fix switch
+
+ .../multi/http/tomcat_partial_put_deserialization.rb  | 19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
