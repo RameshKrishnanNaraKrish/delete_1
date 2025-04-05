@@ -1,0 +1,21 @@
+commit 04d817365763f651e10710cb3a639e10c32753c0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 4 15:01:08 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit d52de7f264ab42dbb51e897ffbfe9fd46c309ce7
+Merge: 8be5ce1cb5 791cc0cd82
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Apr 4 09:53:11 2025 -0500
+
+    Merge pull request #20000 from remmons-r7/cve-2025-2825
+    
+    Auxiliary module for CVE-2025-2825 - CrushFTP AWS4-HMAC Authentication Bypass
+
+ .../gather/crushftp_authbypass_cve_2025_2825.md    |  67 +++++++++++
+ .../gather/crushftp_authbypass_cve_2025_2825.rb    | 130 +++++++++++++++++++++
+ 2 files changed, 197 insertions(+)
