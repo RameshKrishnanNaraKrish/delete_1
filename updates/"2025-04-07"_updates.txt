@@ -1,0 +1,79 @@
+commit 40ba981c982aac9222d1ee7a3aa7cc8a1efbcdfd
+Author: h00die-gr3y <h00die.gr3y@gmail.com>
+Date:   Mon Apr 7 14:29:51 2025 +0000
+
+    update based on reviewer suggestions
+
+ .../http/pandora_fms_auth_rce_cve_2024_12971.rb    | 39 +++++++++++++---------
+ 1 file changed, 23 insertions(+), 16 deletions(-)
+
+commit 2c64d15a406e32e5672ac50346f1498e5fc04c27
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 7 14:00:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 2e3dc5b5371927557423397eef379d52344a7fae
+Merge: 04d8173657 39e4093310
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 7 15:53:36 2025 +0200
+
+    Land #20007, Appsmith Remote Code Execution Module
+    
+    Add Appsmith RCE module (CVE-2024-55964)
+
+ .../linux/http/appsmith_rce_cve_2024_55964.md      | 105 ++++++++++++
+ .../linux/http/appsmith_rce_cve_2024_55964.rb      | 182 +++++++++++++++++++++
+ 2 files changed, 287 insertions(+)
+
+commit 39e4093310d5bb7fb3fe180a82a48a49b7968d2f
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Mon Apr 7 21:03:58 2025 +0900
+
+    Rubocop formatting after applied suggestions
+
+ modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 7aabe06f662e8f2c72e14ae0d3312ff93d5a30f0
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Mon Apr 7 20:59:57 2025 +0900
+
+    Apply suggestions from code review
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ec6f4022cd5c7797d2fc51f9366ce23f704da8ab
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Mon Apr 7 20:28:57 2025 +0900
+
+    Make the Ruby code error-safe
+
+ modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f42083db034fb01a5ad90a9b8268fd0d1d4a4b07
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Mon Apr 7 20:23:31 2025 +0900
+
+    Increased the size of email to avoid duplicate
+
+ modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 35c1ccccdb5b9f5d7384d2bb9d6a69591d413709
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Mon Apr 7 20:06:55 2025 +0900
+
+    Update modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/appsmith_rce_cve_2024_55964.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
