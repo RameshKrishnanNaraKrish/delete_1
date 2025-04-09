@@ -1,0 +1,95 @@
+commit 3d374abb660b5df649d7c94daa297cb05b6a8de1
+Merge: c02925d659 bb510bf256
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 8 22:12:32 2025 +0100
+
+    Merge pull request #20013 from sjanusz-r7/test-if-aux-modules-get-executed
+    
+    Fix check_simple arg & searching by port integer
+
+ lib/msf/base/simple/auxiliary.rb        | 2 +-
+ lib/msf/base/simple/evasion.rb          | 2 +-
+ lib/msf/base/simple/exploit.rb          | 2 +-
+ lib/msf/core/modules/metadata/search.rb | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+commit bb510bf25628962a1de850964572b03756db41de
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Apr 8 15:27:52 2025 +0100
+
+    Fix check_simple arg & searching by port integer
+
+ lib/msf/base/simple/auxiliary.rb        | 2 +-
+ lib/msf/base/simple/evasion.rb          | 2 +-
+ lib/msf/base/simple/exploit.rb          | 2 +-
+ lib/msf/core/modules/metadata/search.rb | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+commit c02925d659bba83625935278bdcaba9c700627bc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 8 14:06:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit 4da78bd55088af952f5e297d85deaac1afd0b7c4
+Merge: b2c50f2cde 03f5291bcc
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Apr 8 08:59:18 2025 -0500
+
+    Merge pull request #19994 from sfewer-r7/CVE-2021-35587
+    
+    Adds exploit module for CVE-2021-35587, an unauthenticated deserialization vulnerability affecting Oracle Access Manager (OAM).
+
+ data/exploits/CVE-2021-35587/gadget.java           | 136 +++++++++++
+ data/exploits/CVE-2021-35587/gadget_12.2.1.3.0.bin | Bin 0 -> 1062 bytes
+ data/exploits/CVE-2021-35587/gadget_12.2.1.4.0.bin | Bin 0 -> 1018 bytes
+ .../oracle_access_manager_rce_cve_2021_35587.md    | 249 ++++++++++++++++++++
+ .../oracle_access_manager_rce_cve_2021_35587.rb    | 254 +++++++++++++++++++++
+ 5 files changed, 639 insertions(+)
+
+commit 03f5291bcc6025f19c52896e1f0b38ff407fdc73
+Author: Stephen Fewer <122022313+sfewer-r7@users.noreply.github.com>
+Date:   Tue Apr 8 09:41:47 2025 +0100
+
+    Improve the documentation, fix typo in console commands, add comment to wait for DB container to complete setup (Thanks Brendan).
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../exploit/multi/http/oracle_access_manager_rce_cve_2021_35587.md  | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 16e374750f91006af97d1419f4a3c36cfddb2481
+Author: Stephen Fewer <122022313+sfewer-r7@users.noreply.github.com>
+Date:   Tue Apr 8 09:40:21 2025 +0100
+
+    Improve the documentation, add steps to create /opt/oracle/user_projects (thanks Brendan).
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../exploit/multi/http/oracle_access_manager_rce_cve_2021_35587.md    | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit b2c50f2cde5d2f7e80903f659f1a4b2676a7c430
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 8 05:57:06 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit fe9a0ad25bddc06e79dd3c2bd8d339ead2b6e953
+Merge: 2c64d15a40 40ba981c98
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 8 07:50:28 2025 +0200
+
+    Land #20008, PandoraFMS Auth RCE module
+    
+    Pandora FMS authenticated RCE [CVE-2024-12971]
+
+ .../http/pandora_fms_auth_rce_cve_2024_12971.md    | 185 +++++++++++
+ .../http/pandora_fms_auth_rce_cve_2024_12971.rb    | 370 +++++++++++++++++++++
+ 2 files changed, 555 insertions(+)
