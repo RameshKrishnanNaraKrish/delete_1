@@ -1,0 +1,59 @@
+commit fc7688cc56d7f4cc1508fef73b9feb3dca473a07
+Merge: 6eba4313ad 23e0ab5efd
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 9 17:57:57 2025 +0100
+
+    Merge pull request #20003 from zeroSteiner/feat/cmd/ldap-uris
+    
+    Add support for RHOSTS using LDAP URIs
+
+ .../Metasploit-Guide-LDAP.md                       |  7 ++
+ .../Metasploit-Guide-Setting-Module-Options.md     |  2 +
+ lib/msf/core/rhosts_walker.rb                      | 45 +++++++++-
+ spec/lib/msf/core/rhosts_walker_spec.rb            | 98 +++++++++++++++++++++-
+ 4 files changed, 149 insertions(+), 3 deletions(-)
+
+commit 6eba4313ad598e17fd1252981ee9d1091e998b3d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 9 11:24:47 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 22 ++++++++++++++++++----
+ 1 file changed, 18 insertions(+), 4 deletions(-)
+
+commit 87293f58cc81512ac8c726329fe0b857fb5d90d2
+Merge: bfe35979f1 e3e396b190
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 9 12:18:17 2025 +0100
+
+    Merge pull request #20006 from cgranleese-r7/add-missing-notes-to-modules
+    
+    Fixes modules that were causing Rubocop to fail
+
+ modules/exploits/unix/webapp/phpbb_highlight.rb  | 6 ++++++
+ modules/exploits/windows/smb/ms10_061_spoolss.rb | 5 +++++
+ 2 files changed, 11 insertions(+)
+
+commit bfe35979f12ed008c0c660e7e461fd1cbe6791e6
+Merge: 3d374abb66 81aa4be06d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 9 12:14:44 2025 +0100
+
+    Merge pull request #20001 from cgranleese-r7/add-gem-verify-shared-pipeline
+    
+    Adds a shared pipeline for gems verify workflow
+
+ .github/workflows/shared_gem_verify.yml       | 69 ++++++++++++++++++++
+ .github/workflows/shared_gem_verify_rails.yml | 90 +++++++++++++++++++++++++++
+ 2 files changed, 159 insertions(+)
+
+commit 81aa4be06d1389f6ce2d1f3fb57ffe6af4abb112
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Thu Mar 27 11:14:49 2025 +0000
+
+    Adds a shared pipeline for MSF gems verify workflow
+
+ .github/workflows/shared_gem_verify.yml       | 69 ++++++++++++++++++++
+ .github/workflows/shared_gem_verify_rails.yml | 90 +++++++++++++++++++++++++++
+ 2 files changed, 159 insertions(+)
