@@ -1,0 +1,42 @@
+commit 4cec129e1c4f423ef7a41b831e783d76ce3bb9f7
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Apr 10 10:53:05 2025 -0700
+
+    Responded to comments
+
+ .../modules/exploit/multi/http/pgadmin_query_tool_authenticated.md  | 2 +-
+ lib/msf/core/exploit/pgadmin.rb                                     | 6 +++---
+ modules/exploits/multi/http/pgadmin_query_tool_authenticated.rb     | 4 +++-
+ 3 files changed, 7 insertions(+), 5 deletions(-)
+
+commit ddb29d61813cf2cd973ca2b35f82723c8b8fd67b
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Apr 10 07:18:42 2025 -0700
+
+    Removed unnecessary method
+
+ .../multi/http/pgadmin_query_tool_authenticated.md   |  1 -
+ .../multi/http/pgadmin_query_tool_authenticated.rb   | 20 --------------------
+ 2 files changed, 21 deletions(-)
+
+commit 9d1f3614abbc1d9f3c4967f426725f4310e82f28
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Apr 10 06:30:02 2025 -0700
+
+    rm overlooked file
+
+ test.py | 35 -----------------------------------
+ 1 file changed, 35 deletions(-)
+
+commit 290a35b0f6cd4b6dc6efaf6b54ebf5b198f3fb98
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Apr 8 18:19:08 2025 -0700
+
+    pgAdmin Query Tool  Authenticated RCE (CVE-2025-2945)
+
+ .../multi/http/pgadmin_query_tool_authenticated.md |  79 +++++++++
+ lib/msf/core/exploit/pgadmin.rb                    |  74 +++++++++
+ lib/msf_autoload.rb                                |   3 +-
+ .../multi/http/pgadmin_query_tool_authenticated.rb | 182 +++++++++++++++++++++
+ test.py                                            |  35 ++++
+ 5 files changed, 372 insertions(+), 1 deletion(-)
