@@ -1,0 +1,189 @@
+commit 636fdf49feea3442d89650c93caf3335d68fda42
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 11 19:47:29 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3166d07240dd34a75f577ec5cef8d05ca8f51dc1
+Merge: 10e8cbb48c c3c62e5fdd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Apr 11 14:40:48 2025 -0500
+
+    Merge pull request #19982 from jvoisin/find_apps
+    
+    Improve a bit modules/post/linux/gather/enum_protections.rb
+
+ modules/post/linux/gather/enum_protections.rb | 272 ++++++++++++++++++++------
+ 1 file changed, 212 insertions(+), 60 deletions(-)
+
+commit 10e8cbb48c61726764b2c6246b29a6fdc456bc8b
+Merge: 3f161e07df 47b5f86994
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 11 15:48:25 2025 +0100
+
+    Merge pull request #19953 from dwelch-r7/rails-7.1-upgrade
+    
+    Rails 7.1 upgrade
+
+ Gemfile.lock                                       | 74 ++++++++++++++--------
+ config/application.rb                              | 15 +----
+ db/schema.rb                                       |  2 +-
+ lib/metasploit/framework/common_engine.rb          |  4 --
+ .../framework/rails_version_constraint.rb          |  2 +-
+ lib/msf/core/db_manager/connection.rb              |  8 ++-
+ lib/msf/core/db_manager/migration.rb               |  5 --
+ lib/msf/core/thread_manager.rb                     | 10 ---
+ metasploit-framework.gemspec                       |  2 +-
+ spec/allure_config.rb                              |  2 +
+ .../ui/console/command_dispatcher/db/klist_spec.rb | 48 +++++++-------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  | 20 +++---
+ .../admin/kerberos/inspect_ticket_spec.rb          | 56 ++++++++--------
+ .../auxiliary/admin/kerberos/keytab_spec.rb        | 34 +++++-----
+ .../examples/credential/core/to_credential.rb      | 15 +++--
+ .../shared/examples/msf/db_manager/migration.rb    |  2 +-
+ 16 files changed, 150 insertions(+), 149 deletions(-)
+
+commit 3f161e07dfae9235c9618695cf3b93c1d8a0c091
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 11 14:13:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 154 +++++++++++++++++++++---------------------
+ 1 file changed, 77 insertions(+), 77 deletions(-)
+
+commit 4acef2ba41147342fa854344ca4748e854bd8668
+Merge: 340b79a1d9 6b220ba603
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Apr 11 16:06:56 2025 +0200
+
+    Land #19997, PIPE_FETCH option for fetch payloads
+    
+    Add PIPE_FETCH option to fetch payloads to make payloads shorter
+
+ .../How-to-use-fetch-payloads.md                   | 43 +++++++++-
+ lib/msf/core/payload/adapter/fetch.rb              | 92 +++++++++++++++++++---
+ lib/msf/core/payload/adapter/fetch/http.rb         | 13 ++-
+ lib/msf/core/payload/adapter/fetch/https.rb        | 13 ++-
+ .../core/payload/adapter/fetch/linux_options.rb    |  5 +-
+ lib/msf/core/payload/adapter/fetch/server/http.rb  | 40 +++++-----
+ lib/msf/core/payload/adapter/fetch/server/https.rb |  4 +-
+ .../core/payload/adapter/fetch/windows_options.rb  |  1 +
+ modules/payloads/adapters/cmd/windows/smb/x64.rb   |  2 +-
+ 9 files changed, 166 insertions(+), 47 deletions(-)
+
+commit 340b79a1d95ffda047896895a275dbff855c9f09
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Fri Apr 11 07:59:10 2025 -0500
+
+    Bump version of framework to 6.4.58
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 053f0e854c64340007001730b6019edd0149eb3e
+Merge: 9ef0f7bd6f c79f7db38b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 11 13:43:22 2025 +0100
+
+    Merge pull request #20024 from cgranleese-r7/add-support-for-network-capture-decryption
+    
+    Add support for network capture decryption
+
+ Gemfile.lock                               |  4 ++--
+ lib/msf/core/exploit/remote/http_client.rb | 12 +++++++++++-
+ lib/msf/core/exploit/remote/tcp.rb         | 10 ++++++++++
+ lib/rex/proto/http/client.rb               | 10 +++++++++-
+ 4 files changed, 32 insertions(+), 4 deletions(-)
+
+commit 9ef0f7bd6fdc22ae995b050b80736e102453a5fa
+Merge: e6ab820cd3 bef322e3f0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 11 13:39:16 2025 +0100
+
+    Merge pull request #20019 from adfoster-r7/improve-support-for-finding-available-http-login-scanners
+    
+    Improve support for finding available HTTP login scanners
+
+ lib/metasploit/framework/login_scanner.rb          |  22 +++-
+ .../framework/login_scanner/ivanti_login.rb        |   4 +-
+ lib/metasploit/framework/login_scanner/ldap.rb     |   1 +
+ lib/metasploit/framework/login_scanner/nessus.rb   |   2 +-
+ .../framework/login_scanner/sonicwall.rb           |   5 +-
+ lib/metasploit/framework/login_scanner/teamcity.rb |   8 +-
+ .../lib/metasploit/framework/login_scanner_spec.rb | 140 +++++++++++----------
+ 7 files changed, 105 insertions(+), 77 deletions(-)
+
+commit c3c62e5fdde89441dacf1f91f0578fbecca7f87b
+Author: jvoisin <julien.voisin@dustri.org>
+Date:   Sun Mar 23 20:35:29 2025 +0100
+
+    Improve a bit modules/post/linux/gather/enum_protections.rb
+    
+    - Use proper names instead of executable names
+    - Add a file-based detection method, with the list taken from https://github.com/hackerschoice/hackshell/issues/6
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/post/linux/gather/enum_protections.rb | 272 ++++++++++++++++++++------
+ 1 file changed, 212 insertions(+), 60 deletions(-)
+
+commit c79f7db38b29d40b630233def1c410c49fb34521
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Apr 11 11:39:03 2025 +0100
+
+    Adds enhanced support for network capture decryption
+
+ Gemfile.lock                               |  4 ++--
+ lib/msf/core/exploit/remote/http_client.rb | 12 +++++++++++-
+ lib/msf/core/exploit/remote/tcp.rb         | 10 ++++++++++
+ lib/rex/proto/http/client.rb               | 10 +++++++++-
+ 4 files changed, 32 insertions(+), 4 deletions(-)
+
+commit e6ab820cd30d9db4ae12962fffde9899099fa613
+Merge: 2116ceaddd 07b731b82e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 11 13:28:57 2025 +0100
+
+    Merge pull request #20015 from adfoster-r7/skip-loading-external-modules-with-unsupported-runtimes
+    
+    Skip loading external modules with unsupported runtimes
+
+ lib/msf/core/module_manager/cache.rb               |  18 +-
+ lib/msf/core/modules/loader/base.rb                |   4 +-
+ lib/msf/core/modules/loader/directory.rb           |   9 +-
+ lib/msf/core/modules/loader/executable.rb          |  37 +++-
+ spec/lib/msf/core/modules/loader/directory_spec.rb | 220 ++++++++++-----------
+ .../lib/msf/core/modules/loader/executable_spec.rb | 168 ++++++++++++++++
+ .../shared/examples/msf/module_manager/cache.rb    |  11 +-
+ .../shared/examples/msf/module_manager/loading.rb  |   6 +-
+ 8 files changed, 341 insertions(+), 132 deletions(-)
+
+commit 2116ceaddd66cba7e58bb4774bb089f863ea7743
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 11 08:40:48 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 0b4e133001ca1fdca8260a02b7b4a01c7253675a
+Merge: fc7688cc56 4cec129e1c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Apr 11 10:34:02 2025 +0200
+
+    Land #20018, pgAdmin Authenticated RCE (CVE-2025-2945)
+    
+    pgAdmin Query Tool Authenticated RCE (CVE-2025-2945)
+
+ .../multi/http/pgadmin_query_tool_authenticated.md |  78 ++++++++++
+ lib/msf/core/exploit/pgadmin.rb                    |  74 ++++++++++
+ lib/msf_autoload.rb                                |   3 +-
+ .../multi/http/pgadmin_query_tool_authenticated.rb | 164 +++++++++++++++++++++
+ 4 files changed, 318 insertions(+), 1 deletion(-)
