@@ -1,0 +1,61 @@
+commit 4c485cef325ac10a8f5c00b6fee392600d8b253d
+Merge: 41361db566 03d0f00892
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 13 00:31:38 2025 +0100
+
+    Merge pull request #20005 from fabpiaf/patch-1
+    
+    Fix 19840 LoadError cannot load such file -- sqlite3/sqlite3_native
+
+ Dockerfile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 41361db5660740eaa2b3ec8a22aa9c0d7121adbc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 12 15:21:07 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 169 ++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 137 insertions(+), 32 deletions(-)
+
+commit aab01d5ed0f68ce45370bcefca5881fa8f69ad25
+Merge: 636fdf49fe 8e5cfc0625
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 12 16:14:39 2025 +0100
+
+    Merge pull request #20031 from bcoles/rubocop-modules-exploits-freebsd
+    
+    modules/exploits/freebsd: Add Notes and resolve RuboCop violations
+
+ modules/exploits/freebsd/ftp/proftp_telnet_iac.rb  | 156 +++++++++++----------
+ .../freebsd/http/citrix_dir_traversal_rce.rb       | 147 ++++++++++---------
+ .../exploits/freebsd/http/watchguard_cmd_exec.rb   | 108 +++++++-------
+ .../freebsd/local/intel_sysret_priv_esc.rb         |  55 ++++----
+ modules/exploits/freebsd/local/mmap.rb             |  79 ++++++-----
+ .../exploits/freebsd/local/rtld_execl_priv_esc.rb  |  75 +++++-----
+ .../freebsd/local/watchguard_fix_corrupt_mail.rb   |  64 +++++----
+ .../freebsd/misc/citrix_netscaler_soap_bof.rb      | 140 +++++++++---------
+ modules/exploits/freebsd/samba/trans2open.rb       |  91 ++++++------
+ modules/exploits/freebsd/tacacs/xtacacsd_report.rb |  66 +++++----
+ .../freebsd/telnet/telnet_encrypt_keyid.rb         |  95 +++++++------
+ 11 files changed, 574 insertions(+), 502 deletions(-)
+
+commit 8e5cfc0625dfc055b2c0aa72d1ba0f200f5d6688
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 13 00:38:37 2025 +1000
+
+    modules/exploits/freebsd: Add Notes and resolve RuboCop violations
+
+ modules/exploits/freebsd/ftp/proftp_telnet_iac.rb  | 156 +++++++++++----------
+ .../freebsd/http/citrix_dir_traversal_rce.rb       | 147 ++++++++++---------
+ .../exploits/freebsd/http/watchguard_cmd_exec.rb   | 108 +++++++-------
+ .../freebsd/local/intel_sysret_priv_esc.rb         |  55 ++++----
+ modules/exploits/freebsd/local/mmap.rb             |  79 ++++++-----
+ .../exploits/freebsd/local/rtld_execl_priv_esc.rb  |  75 +++++-----
+ .../freebsd/local/watchguard_fix_corrupt_mail.rb   |  64 +++++----
+ .../freebsd/misc/citrix_netscaler_soap_bof.rb      | 140 +++++++++---------
+ modules/exploits/freebsd/samba/trans2open.rb       |  91 ++++++------
+ modules/exploits/freebsd/tacacs/xtacacsd_report.rb |  66 +++++----
+ .../freebsd/telnet/telnet_encrypt_keyid.rb         |  95 +++++++------
+ 11 files changed, 574 insertions(+), 502 deletions(-)
