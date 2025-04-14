@@ -1,0 +1,232 @@
+commit 9e3b34095cb833f6e61f1d1617652a701f14d234
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Apr 13 17:46:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 105 +++++++++++++++++++++---------------------
+ 1 file changed, 53 insertions(+), 52 deletions(-)
+
+commit 4f047910cb29f32d074dd240b4811ca8c89884c6
+Merge: 3b8fd648bb 06d1971f23
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 13 18:31:33 2025 +0100
+
+    Merge pull request #20036 from bcoles/exploit-windows-local-unquoted-service-path
+    
+    exploit/windows/local/unquoted_service_path: Check if write_file fails
+
+ modules/exploits/windows/local/unquoted_service_path.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 3b8fd648bb57d8a46b00e1feaddbd3df08ae3550
+Merge: ec5b21ff7e d85ccb2da1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 13 18:29:46 2025 +0100
+
+    Merge pull request #20035 from bcoles/rubocop-modules-encoders
+    
+    modules/encoders: Resolve RuboCop violations
+
+ modules/encoders/cmd/base64.rb                   |   3 +-
+ modules/encoders/cmd/brace.rb                    |   8 +-
+ modules/encoders/cmd/echo.rb                     |  47 ++---
+ modules/encoders/cmd/generic_sh.rb               |  72 +++----
+ modules/encoders/cmd/ifs.rb                      |   8 +-
+ modules/encoders/cmd/perl.rb                     |  53 +++--
+ modules/encoders/cmd/powershell_base64.rb        |  27 +--
+ modules/encoders/cmd/printf_php_mq.rb            |  38 ++--
+ modules/encoders/generic/eicar.rb                |  21 +-
+ modules/encoders/generic/none.rb                 |  14 +-
+ modules/encoders/mipsbe/byte_xori.rb             | 156 +++++++--------
+ modules/encoders/mipsbe/longxor.rb               | 238 +++++++++++-----------
+ modules/encoders/mipsle/byte_xori.rb             | 156 +++++++--------
+ modules/encoders/mipsle/longxor.rb               | 239 +++++++++++------------
+ modules/encoders/php/base64.rb                   |   6 +-
+ modules/encoders/php/hex.rb                      |   3 +-
+ modules/encoders/ppc/longxor.rb                  |  27 ++-
+ modules/encoders/ppc/longxor_tag.rb              |  23 ++-
+ modules/encoders/ruby/base64.rb                  |  14 +-
+ modules/encoders/sparc/longxor_tag.rb            |  51 ++---
+ modules/encoders/x64/xor.rb                      |  43 ++--
+ modules/encoders/x64/xor_context.rb              |  62 +++---
+ modules/encoders/x64/xor_dynamic.rb              |  56 +++---
+ modules/encoders/x64/zutto_dekiru.rb             | 185 +++++++++---------
+ modules/encoders/x86/add_sub.rb                  | 151 +++++++-------
+ modules/encoders/x86/alpha_mixed.rb              |  43 ++--
+ modules/encoders/x86/alpha_upper.rb              |  43 ++--
+ modules/encoders/x86/avoid_underscore_tolower.rb | 102 +++++-----
+ modules/encoders/x86/avoid_utf8_tolower.rb       |  98 +++++-----
+ modules/encoders/x86/bloxor.rb                   |  17 +-
+ modules/encoders/x86/bmp_polyglot.rb             | 133 ++++++-------
+ modules/encoders/x86/call4_dword_xor.rb          |  32 ++-
+ modules/encoders/x86/context_cpuid.rb            | 103 +++++-----
+ modules/encoders/x86/context_stat.rb             | 100 +++++-----
+ modules/encoders/x86/context_time.rb             | 101 +++++-----
+ modules/encoders/x86/countdown.rb                |  26 +--
+ modules/encoders/x86/fnstenv_mov.rb              |  25 ++-
+ modules/encoders/x86/jmp_call_additive.rb        |  47 +++--
+ modules/encoders/x86/nonalpha.rb                 |  31 ++-
+ modules/encoders/x86/nonupper.rb                 |  31 ++-
+ modules/encoders/x86/opt_sub.rb                  |  81 ++++----
+ modules/encoders/x86/service.rb                  | 226 ++++++++++-----------
+ modules/encoders/x86/shikata_ga_nai.rb           | 159 ++++++++-------
+ modules/encoders/x86/single_static_bit.rb        |  71 ++++---
+ modules/encoders/x86/unicode_mixed.rb            |   7 +-
+ modules/encoders/x86/unicode_upper.rb            |   7 +-
+ modules/encoders/x86/xor_dynamic.rb              |  50 ++---
+ 47 files changed, 1605 insertions(+), 1629 deletions(-)
+
+commit d85ccb2da1610a3d762353995beb04da0a6c0a05
+Author: bcoles <bcoles@github>
+Date:   Mon Apr 14 00:10:31 2025 +1000
+
+    modules/encoders: Resolve RuboCop violations
+
+ modules/encoders/cmd/base64.rb                   |   3 +-
+ modules/encoders/cmd/brace.rb                    |   8 +-
+ modules/encoders/cmd/echo.rb                     |  47 ++---
+ modules/encoders/cmd/generic_sh.rb               |  72 +++----
+ modules/encoders/cmd/ifs.rb                      |   8 +-
+ modules/encoders/cmd/perl.rb                     |  53 +++--
+ modules/encoders/cmd/powershell_base64.rb        |  27 +--
+ modules/encoders/cmd/printf_php_mq.rb            |  38 ++--
+ modules/encoders/generic/eicar.rb                |  21 +-
+ modules/encoders/generic/none.rb                 |  14 +-
+ modules/encoders/mipsbe/byte_xori.rb             | 156 +++++++--------
+ modules/encoders/mipsbe/longxor.rb               | 238 +++++++++++-----------
+ modules/encoders/mipsle/byte_xori.rb             | 156 +++++++--------
+ modules/encoders/mipsle/longxor.rb               | 239 +++++++++++------------
+ modules/encoders/php/base64.rb                   |   6 +-
+ modules/encoders/php/hex.rb                      |   3 +-
+ modules/encoders/ppc/longxor.rb                  |  27 ++-
+ modules/encoders/ppc/longxor_tag.rb              |  23 ++-
+ modules/encoders/ruby/base64.rb                  |  14 +-
+ modules/encoders/sparc/longxor_tag.rb            |  51 ++---
+ modules/encoders/x64/xor.rb                      |  43 ++--
+ modules/encoders/x64/xor_context.rb              |  62 +++---
+ modules/encoders/x64/xor_dynamic.rb              |  56 +++---
+ modules/encoders/x64/zutto_dekiru.rb             | 185 +++++++++---------
+ modules/encoders/x86/add_sub.rb                  | 151 +++++++-------
+ modules/encoders/x86/alpha_mixed.rb              |  43 ++--
+ modules/encoders/x86/alpha_upper.rb              |  43 ++--
+ modules/encoders/x86/avoid_underscore_tolower.rb | 102 +++++-----
+ modules/encoders/x86/avoid_utf8_tolower.rb       |  98 +++++-----
+ modules/encoders/x86/bloxor.rb                   |  17 +-
+ modules/encoders/x86/bmp_polyglot.rb             | 133 ++++++-------
+ modules/encoders/x86/call4_dword_xor.rb          |  32 ++-
+ modules/encoders/x86/context_cpuid.rb            | 103 +++++-----
+ modules/encoders/x86/context_stat.rb             | 100 +++++-----
+ modules/encoders/x86/context_time.rb             | 101 +++++-----
+ modules/encoders/x86/countdown.rb                |  26 +--
+ modules/encoders/x86/fnstenv_mov.rb              |  25 ++-
+ modules/encoders/x86/jmp_call_additive.rb        |  47 +++--
+ modules/encoders/x86/nonalpha.rb                 |  31 ++-
+ modules/encoders/x86/nonupper.rb                 |  31 ++-
+ modules/encoders/x86/opt_sub.rb                  |  81 ++++----
+ modules/encoders/x86/service.rb                  | 226 ++++++++++-----------
+ modules/encoders/x86/shikata_ga_nai.rb           | 159 ++++++++-------
+ modules/encoders/x86/single_static_bit.rb        |  71 ++++---
+ modules/encoders/x86/unicode_mixed.rb            |   7 +-
+ modules/encoders/x86/unicode_upper.rb            |   7 +-
+ modules/encoders/x86/xor_dynamic.rb              |  50 ++---
+ 47 files changed, 1605 insertions(+), 1629 deletions(-)
+
+commit ec5b21ff7ea2ffdeac44a066ad4c3af349f336db
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Apr 13 13:52:07 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+commit 9a84d9a0769edb307fece1586e814c469e4813c4
+Merge: e9805fc0a1 75ce408a0b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 13 14:44:03 2025 +0100
+
+    Merge pull request #20034 from bcoles/rubocop-modules-evasion
+    
+    modules/evasion: Resolve RuboCop violations
+
+ .../windows/applocker_evasion_install_util.rb      | 33 ++++++-------
+ .../evasion/windows/applocker_evasion_msbuild.rb   | 32 +++++++------
+ .../windows/applocker_evasion_presentationhost.rb  | 30 ++++++------
+ .../windows/applocker_evasion_regasm_regsvcs.rb    | 38 ++++++++-------
+ .../windows/applocker_evasion_workflow_compiler.rb | 34 +++++++------
+ modules/evasion/windows/windows_defender_exe.rb    | 41 ++++++++--------
+ modules/evasion/windows/windows_defender_js_hta.rb | 55 ++++++++++++----------
+ 7 files changed, 140 insertions(+), 123 deletions(-)
+
+commit e9805fc0a14617830c1ffb8557888c8b1ae7da7d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Apr 13 11:05:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 1624 ++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 1614 insertions(+), 10 deletions(-)
+
+commit 5e4ba8ad3e3a3033cceda47c1333f291e8b09c43
+Merge: 4c485cef32 509153920e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 13 11:57:54 2025 +0100
+
+    Merge pull request #20032 from bcoles/rubocop-modules-nops
+    
+    modules/nops: Resolve RuboCop violations
+
+ modules/nops/aarch64/simple.rb  |  22 +--
+ modules/nops/armle/simple.rb    |  25 ++--
+ modules/nops/mipsbe/better.rb   |  51 ++++---
+ modules/nops/php/generic.rb     |  14 +-
+ modules/nops/ppc/simple.rb      |  24 ++--
+ modules/nops/sparc/random.rb    |  85 ++++++------
+ modules/nops/tty/generic.rb     |  14 +-
+ modules/nops/x64/simple.rb      | 287 ++++++++++++++++++++--------------------
+ modules/nops/x86/opty2.rb       |  12 +-
+ modules/nops/x86/single_byte.rb | 176 ++++++++++++------------
+ 10 files changed, 353 insertions(+), 357 deletions(-)
+
+commit 06d1971f232df453b1f2048fa60c920634695dcf
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 13 16:34:03 2025 +1000
+
+    exploit/windows/local/unquoted_service_path: Check if write_file fails
+
+ modules/exploits/windows/local/unquoted_service_path.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 75ce408a0bc3ac9cfd6b97a706de05a9399f3966
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 13 11:47:01 2025 +1000
+
+    modules/evasion: Resolve RuboCop violations
+
+ .../windows/applocker_evasion_install_util.rb      | 33 ++++++-------
+ .../evasion/windows/applocker_evasion_msbuild.rb   | 32 +++++++------
+ .../windows/applocker_evasion_presentationhost.rb  | 30 ++++++------
+ .../windows/applocker_evasion_regasm_regsvcs.rb    | 38 ++++++++-------
+ .../windows/applocker_evasion_workflow_compiler.rb | 34 +++++++------
+ modules/evasion/windows/windows_defender_exe.rb    | 41 ++++++++--------
+ modules/evasion/windows/windows_defender_js_hta.rb | 55 ++++++++++++----------
+ 7 files changed, 140 insertions(+), 123 deletions(-)
+
+commit 509153920e34d3b13e121e69ba81981677bd9c2a
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 13 11:27:49 2025 +1000
+
+    modules/nops: Resolve RuboCop violations
+
+ modules/nops/aarch64/simple.rb  |  22 +--
+ modules/nops/armle/simple.rb    |  25 ++--
+ modules/nops/mipsbe/better.rb   |  51 ++++---
+ modules/nops/php/generic.rb     |  14 +-
+ modules/nops/ppc/simple.rb      |  24 ++--
+ modules/nops/sparc/random.rb    |  85 ++++++------
+ modules/nops/tty/generic.rb     |  14 +-
+ modules/nops/x64/simple.rb      | 287 ++++++++++++++++++++--------------------
+ modules/nops/x86/opty2.rb       |  12 +-
+ modules/nops/x86/single_byte.rb | 176 ++++++++++++------------
+ 10 files changed, 353 insertions(+), 357 deletions(-)
