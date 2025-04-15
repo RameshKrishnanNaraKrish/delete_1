@@ -1,0 +1,44 @@
+commit 681c991c8b1c7c48aa20f4b91bc93a3a6715ddbe
+Merge: a8d86b3b19 3948d9c9b5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 14 13:52:44 2025 +0100
+
+    Merge pull request #20039 from cgranleese-r7/fixes-failing-workflow-errors
+    
+    Fixes an issue were a step was using both `uses` and `run` in the same step
+
+ .github/workflows/command_shell_acceptance.yml      | 1 -
+ .github/workflows/shared_meterpreter_acceptance.yml | 1 -
+ 2 files changed, 2 deletions(-)
+
+commit 3948d9c9b5f051baf6fe2200cdad2efc22a6ede6
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Apr 14 12:24:24 2025 +0100
+
+    Fixes an issue were a step was using both uses and run in the same step
+
+ .github/workflows/command_shell_acceptance.yml      | 1 -
+ .github/workflows/shared_meterpreter_acceptance.yml | 1 -
+ 2 files changed, 2 deletions(-)
+
+commit a8d86b3b19f0370d2001e35cee60372396518fa7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 14 06:32:59 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 140b93e8024d11adacf85511f364f564e302251e
+Merge: 9e3b34095c c7fdcc8e91
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 14 08:24:44 2025 +0200
+
+    Land #20022, Langflow RCE module
+    
+    Add Langflow unauth RCE module (CVE-2025-3248)
+
+ .../http/langflow_unauth_rce_cve_2025_3248.md      | 87 +++++++++++++++++++
+ .../http/langflow_unauth_rce_cve_2025_3248.rb      | 98 ++++++++++++++++++++++
+ 2 files changed, 185 insertions(+)
