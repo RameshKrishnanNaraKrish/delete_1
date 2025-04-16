@@ -1,0 +1,20 @@
+commit 39a8b1a8799f06a4bdbe207126caaef8c73edc20
+Merge: 681c991c8b 3975d09726
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 15 13:59:34 2025 +0200
+
+    Land #20040, adding ELF template for x64
+    
+    Add elf_x64_template.s template source
+
+ data/templates/src/elf/exe/elf_x64_template.s | 42 +++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+commit 3975d097263afd5878353b04614a2f848519d119
+Author: bcoles <bcoles@github>
+Date:   Tue Apr 15 21:08:36 2025 +1000
+
+    Add elf_x64_template.s template source
+
+ data/templates/src/elf/exe/elf_x64_template.s | 42 +++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
