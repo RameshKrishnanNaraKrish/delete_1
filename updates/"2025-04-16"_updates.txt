@@ -1,0 +1,110 @@
+commit 74d828c73de41288699272959553c5ddd35db555
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 16 13:31:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 7d70005884913bb5b1bcf66b3167546c06003f1d
+Merge: 18a6973558 5945e0db0e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 16 15:22:50 2025 +0200
+
+    Land #20041, BentoML RCE Module
+    
+    Add BentoML RCE module (CVE-2025-27520)
+
+ .../linux/http/bentoml_rce_cve_2025_27520.md       | 131 +++++++++++++++++++++
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       | 123 +++++++++++++++++++
+ 2 files changed, 254 insertions(+)
+
+commit 5945e0db0eb419d11cdb6b109a45ad08b5678cfe
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 22:05:04 2025 +0900
+
+    Update modules/exploits/linux/http/bentoml_rce_cve_2025_27520.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/bentoml_rce_cve_2025_27520.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit edcc30699add2658bcfc382237d4e38424c593c8
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 21:47:31 2025 +0900
+
+    Make user be able to specify a particular endpoint
+
+ .../linux/http/bentoml_rce_cve_2025_27520.md       | 79 ++++++++++++++--------
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       |  6 +-
+ 2 files changed, 53 insertions(+), 32 deletions(-)
+
+commit 4463bb2ced2035ebab74f0b3e90aea6fb5a52dc3
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 21:25:36 2025 +0900
+
+    Support a pure-python payload
+
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
+
+commit 18a6973558f37c3d33ca3a9c09d6226ed0edab44
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 16 12:10:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2d75b0191f49a6b4ce490fae585f5c86bed6d1d7
+Merge: 39a8b1a879 5b38fdb23c
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Apr 16 12:59:01 2025 +0100
+
+    Merge pull request #20043 from adfoster-r7/update-att-open-proxy-error-handling
+    
+    Update att open proxy error handling
+
+ modules/auxiliary/scanner/wproxy/att_open_proxy.py | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+commit 6d936a72b1d800980e8f40088d6112153dca4a72
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 20:54:22 2025 +0900
+
+    Delete ARTIFACTS_ON_DISK
+
+ modules/exploits/linux/http/bentoml_rce_cve_2025_27520.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8dc4beba7fd63a57b6082736d908e995f47ab2d5
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 20:48:34 2025 +0900
+
+    Update documentation/modules/exploit/linux/http/bentoml_rce_cve_2025_27520.md
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ .../modules/exploit/linux/http/bentoml_rce_cve_2025_27520.md     | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+commit 5b38fdb23ce50151ea1dbe98bd18727969b91476
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 16 11:15:08 2025 +0100
+
+    Update att open proxy error handling
+
+ modules/auxiliary/scanner/wproxy/att_open_proxy.py | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+
+commit a33a8d91fef138dd33287fb20a4d45bdd8515a6b
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Wed Apr 16 12:52:15 2025 +0900
+
+    Update the document
+
+ documentation/modules/exploit/linux/http/bentoml_rce_cve_2025_27520.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
