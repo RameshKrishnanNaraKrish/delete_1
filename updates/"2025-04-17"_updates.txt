@@ -1,0 +1,80 @@
+commit 66d82b52dcd3209f42d5fb15b3aeaa6ef620e58e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 17 18:32:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 22 ++++++++++++++++++----
+ 1 file changed, 18 insertions(+), 4 deletions(-)
+
+commit 98702a6326069706c7c937da76ed57a90ba02a3e
+Merge: 47230175f4 faea5f7933
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Apr 17 13:24:46 2025 -0500
+
+    Merge pull request #20044 from jheysel-r7/cve_2025_21293
+    
+    Updated service_permissions with action to exploit CVE-2025-21293
+
+ .../exploit/windows/local/service_permissions.md   | 83 ++++++++++++++++++++++
+ .../exploits/windows/local/service_permissions.rb  | 47 +++++++-----
+ 2 files changed, 113 insertions(+), 17 deletions(-)
+
+commit faea5f7933cc5677670074c99e61c9abeb48e5b9
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Apr 17 09:43:13 2025 -0700
+
+    Responded to comments
+
+ modules/exploits/windows/local/service_permissions.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4f3f9acb51b78ed2ab3e1aef2977e4423ac1b3d9
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 01:46:06 2025 +1000
+
+    modules/exploits/mainframe: Resolve RuboCop violations
+
+ modules/exploits/mainframe/ftp/ftp_jcl_creds.rb | 96 ++++++++++++-------------
+ 1 file changed, 45 insertions(+), 51 deletions(-)
+
+commit 47230175f41c4f4e68d7c457b4fd85a9c4dd5f15
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Apr 17 10:40:04 2025 -0500
+
+    Bump version of framework to 6.4.59
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 18 +++++++++++-------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 13 insertions(+), 9 deletions(-)
+
+commit fb548c0fb601c68a087398b9905b7d031683b2b7
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 01:31:15 2025 +1000
+
+    modules/exploits/bsdi: Resolve RuboCop violations
+
+ .../exploits/bsdi/softcart/mercantec_softcart.rb   | 83 ++++++++++++----------
+ 1 file changed, 45 insertions(+), 38 deletions(-)
+
+commit dbb618ed567c85dc45f9334d91c5080cc478cce1
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 01:17:56 2025 +1000
+
+    modules/exploits/aix: Resolve RuboCop violations
+
+ modules/exploits/aix/local/xorg_x11_server.rb    |  92 +++++-----
+ modules/exploits/aix/rpc_cmsd_opcode21.rb        |  70 ++++----
+ modules/exploits/aix/rpc_ttdbserverd_realpath.rb | 219 ++++++++++++-----------
+ 3 files changed, 193 insertions(+), 188 deletions(-)
+
+commit 3ead0fdf42ad31697d489e68665ecbf8b2d67b1d
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Apr 16 17:59:53 2025 -0700
+
+    Add check for is_uac_enabled?
+
+ documentation/modules/exploit/windows/local/service_permissions.md | 2 +-
+ modules/exploits/windows/local/service_permissions.rb              | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
