@@ -1,0 +1,376 @@
+commit 809d87a96bfe51a2ca2a676386af81956da8a0eb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 18 17:03:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 32 ++++++++++++++++++++++++++------
+ 1 file changed, 26 insertions(+), 6 deletions(-)
+
+commit 5c9119b64488611ec6d9b1fb3953ba388270783d
+Merge: ba23e4dbde 332bac8b54
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 17:48:14 2025 +0100
+
+    Merge pull request #20059 from bcoles/rubocop-modules-payloads-stages
+    
+    modules/payloads/stages: Resolve RuboCop violations
+
+ modules/payloads/stages/android/meterpreter.rb     |  28 +-
+ modules/payloads/stages/android/shell.rb           |  29 +-
+ modules/payloads/stages/bsd/x86/shell.rb           |  32 +-
+ modules/payloads/stages/bsdi/x86/shell.rb          |  34 +-
+ modules/payloads/stages/java/meterpreter.rb        |  28 +-
+ modules/payloads/stages/java/shell.rb              |  31 +-
+ .../payloads/stages/linux/aarch64/meterpreter.rb   | 152 ++--
+ modules/payloads/stages/linux/aarch64/shell.rb     |  86 +-
+ modules/payloads/stages/linux/armle/meterpreter.rb |  22 +-
+ modules/payloads/stages/linux/armle/shell.rb       |  66 +-
+ .../payloads/stages/linux/mipsbe/meterpreter.rb    |  20 +-
+ modules/payloads/stages/linux/mipsbe/shell.rb      |  36 +-
+ .../payloads/stages/linux/mipsle/meterpreter.rb    |  22 +-
+ modules/payloads/stages/linux/mipsle/shell.rb      |  37 +-
+ modules/payloads/stages/linux/x64/meterpreter.rb   |  22 +-
+ modules/payloads/stages/linux/x64/shell.rb         |  61 +-
+ modules/payloads/stages/linux/x86/meterpreter.rb   |  20 +-
+ modules/payloads/stages/linux/x86/shell.rb         |  31 +-
+ modules/payloads/stages/multi/meterpreter.rb       |  39 +-
+ modules/payloads/stages/netware/shell.rb           | 900 +++++++++++----------
+ modules/payloads/stages/osx/aarch64/meterpreter.rb |   6 +-
+ modules/payloads/stages/osx/armle/execute.rb       | 274 +++----
+ modules/payloads/stages/osx/armle/shell.rb         | 106 +--
+ modules/payloads/stages/osx/ppc/shell.rb           |  46 +-
+ modules/payloads/stages/osx/x64/dupandexecve.rb    |  36 +-
+ modules/payloads/stages/osx/x64/meterpreter.rb     |  44 +-
+ modules/payloads/stages/osx/x86/bundleinject.rb    |   3 -
+ modules/payloads/stages/osx/x86/isight.rb          |  55 +-
+ modules/payloads/stages/osx/x86/vforkshell.rb      |  50 +-
+ modules/payloads/stages/php/meterpreter.rb         |  33 +-
+ modules/payloads/stages/python/meterpreter.rb      |  25 +-
+ modules/payloads/stages/windows/dllinject.rb       |   3 -
+ modules/payloads/stages/windows/encrypted_shell.rb |  34 +-
+ modules/payloads/stages/windows/meterpreter.rb     |  21 +-
+ .../payloads/stages/windows/patchupdllinject.rb    |   3 -
+ .../payloads/stages/windows/patchupmeterpreter.rb  |  22 +-
+ modules/payloads/stages/windows/shell.rb           |  68 +-
+ modules/payloads/stages/windows/upexec.rb          |  99 +--
+ modules/payloads/stages/windows/vncinject.rb       |  21 +-
+ .../payloads/stages/windows/x64/encrypted_shell.rb |  34 +-
+ modules/payloads/stages/windows/x64/meterpreter.rb |  20 +-
+ modules/payloads/stages/windows/x64/shell.rb       |  77 +-
+ modules/payloads/stages/windows/x64/vncinject.rb   |  19 +-
+ 43 files changed, 1415 insertions(+), 1380 deletions(-)
+
+commit ba23e4dbde30902a6abcc178602767fd89e8bd6c
+Merge: 51d525eec4 f131d91776
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 17:46:33 2025 +0100
+
+    Merge pull request #20055 from bcoles/rubocop-modules-exploits-netware
+    
+    modules/exploits/netware: Resolve RuboCop violations
+
+ modules/exploits/netware/smb/lsass_cifs.rb        | 75 ++++++++++++-----------
+ modules/exploits/netware/sunrpc/pkernel_callit.rb | 55 +++++++++--------
+ 2 files changed, 68 insertions(+), 62 deletions(-)
+
+commit 51d525eec4db986adb1a6fdf595fd33e2c6616cd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 18 16:33:49 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 62 +++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 51 insertions(+), 11 deletions(-)
+
+commit f131d91776922c71f67d1776f0fe0ed2b3e5720a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 17:30:59 2025 +0100
+
+    Update modules/exploits/netware/smb/lsass_cifs.rb
+
+ modules/exploits/netware/smb/lsass_cifs.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit b07b6b98ae1dcc6a92944adab9c2f9f3285f8508
+Merge: 5f6c6f8b4a f4f6f012b5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 17:25:28 2025 +0100
+
+    Merge pull request #20058 from bcoles/rubocop-modules-exploits-apple_ios
+    
+    modules/exploits/apple_ios: Resolve RuboCop violations
+
+ .../exploits/apple_ios/browser/safari_libtiff.rb   | 121 ++++++------
+ .../apple_ios/browser/webkit_createthis.rb         | 218 ++++++++++++---------
+ .../exploits/apple_ios/browser/webkit_trident.rb   |  81 ++++----
+ .../exploits/apple_ios/email/mobilemail_libtiff.rb | 116 +++++------
+ 4 files changed, 292 insertions(+), 244 deletions(-)
+
+commit 332bac8b5485eb78e92372d04a10442236034a67
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 02:07:24 2025 +1000
+
+    modules/payloads/stages: Resolve RuboCop violations
+
+ modules/payloads/stages/android/meterpreter.rb     |  28 +-
+ modules/payloads/stages/android/shell.rb           |  29 +-
+ modules/payloads/stages/bsd/x86/shell.rb           |  32 +-
+ modules/payloads/stages/bsdi/x86/shell.rb          |  34 +-
+ modules/payloads/stages/java/meterpreter.rb        |  28 +-
+ modules/payloads/stages/java/shell.rb              |  31 +-
+ .../payloads/stages/linux/aarch64/meterpreter.rb   | 152 ++--
+ modules/payloads/stages/linux/aarch64/shell.rb     |  86 +-
+ modules/payloads/stages/linux/armle/meterpreter.rb |  22 +-
+ modules/payloads/stages/linux/armle/shell.rb       |  66 +-
+ .../payloads/stages/linux/mipsbe/meterpreter.rb    |  20 +-
+ modules/payloads/stages/linux/mipsbe/shell.rb      |  36 +-
+ .../payloads/stages/linux/mipsle/meterpreter.rb    |  22 +-
+ modules/payloads/stages/linux/mipsle/shell.rb      |  37 +-
+ modules/payloads/stages/linux/x64/meterpreter.rb   |  22 +-
+ modules/payloads/stages/linux/x64/shell.rb         |  61 +-
+ modules/payloads/stages/linux/x86/meterpreter.rb   |  20 +-
+ modules/payloads/stages/linux/x86/shell.rb         |  31 +-
+ modules/payloads/stages/multi/meterpreter.rb       |  39 +-
+ modules/payloads/stages/netware/shell.rb           | 900 +++++++++++----------
+ modules/payloads/stages/osx/aarch64/meterpreter.rb |   6 +-
+ modules/payloads/stages/osx/armle/execute.rb       | 274 +++----
+ modules/payloads/stages/osx/armle/shell.rb         | 106 +--
+ modules/payloads/stages/osx/ppc/shell.rb           |  46 +-
+ modules/payloads/stages/osx/x64/dupandexecve.rb    |  36 +-
+ modules/payloads/stages/osx/x64/meterpreter.rb     |  44 +-
+ modules/payloads/stages/osx/x86/bundleinject.rb    |   3 -
+ modules/payloads/stages/osx/x86/isight.rb          |  55 +-
+ modules/payloads/stages/osx/x86/vforkshell.rb      |  50 +-
+ modules/payloads/stages/php/meterpreter.rb         |  33 +-
+ modules/payloads/stages/python/meterpreter.rb      |  25 +-
+ modules/payloads/stages/windows/dllinject.rb       |   3 -
+ modules/payloads/stages/windows/encrypted_shell.rb |  34 +-
+ modules/payloads/stages/windows/meterpreter.rb     |  21 +-
+ .../payloads/stages/windows/patchupdllinject.rb    |   3 -
+ .../payloads/stages/windows/patchupmeterpreter.rb  |  22 +-
+ modules/payloads/stages/windows/shell.rb           |  68 +-
+ modules/payloads/stages/windows/upexec.rb          |  99 +--
+ modules/payloads/stages/windows/vncinject.rb       |  21 +-
+ .../payloads/stages/windows/x64/encrypted_shell.rb |  34 +-
+ modules/payloads/stages/windows/x64/meterpreter.rb |  20 +-
+ modules/payloads/stages/windows/x64/shell.rb       |  77 +-
+ modules/payloads/stages/windows/x64/vncinject.rb   |  19 +-
+ 43 files changed, 1415 insertions(+), 1380 deletions(-)
+
+commit 86e8c45baa9400f59d37c64e8a17471424312a22
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 01:51:17 2025 +1000
+
+    modules/exploits/netware: Resolve RuboCop violations
+
+ modules/exploits/netware/smb/lsass_cifs.rb        | 76 ++++++++++++-----------
+ modules/exploits/netware/sunrpc/pkernel_callit.rb | 55 ++++++++--------
+ 2 files changed, 69 insertions(+), 62 deletions(-)
+
+commit 5f6c6f8b4a64ea329e198f1502d94360d114310f
+Merge: 11fd0326fc 0e74591eee
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 16:50:13 2025 +0100
+
+    Merge pull request #20057 from bcoles/rubocop-modules-examples
+    
+    modules: examples: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/udp/example.rb    | 33 ++++++++----
+ modules/exploits/example_webapp.rb          | 16 +++---
+ modules/exploits/windows/browser/example.rb | 80 +++++++++++++++--------------
+ 3 files changed, 73 insertions(+), 56 deletions(-)
+
+commit f4f6f012b518b9ab03d987dec63fd36d7c8ae29b
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 01:43:58 2025 +1000
+
+    modules/exploits/apple_ios: Resolve RuboCop violations
+
+ .../exploits/apple_ios/browser/safari_libtiff.rb   | 121 ++++++------
+ .../apple_ios/browser/webkit_createthis.rb         | 218 ++++++++++++---------
+ .../exploits/apple_ios/browser/webkit_trident.rb   |  81 ++++----
+ .../exploits/apple_ios/email/mobilemail_libtiff.rb | 116 +++++------
+ 4 files changed, 292 insertions(+), 244 deletions(-)
+
+commit 11fd0326fcdb1f2e416c744290cc4eed16e1fbb7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 18 12:10:25 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 48 +++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 39 insertions(+), 9 deletions(-)
+
+commit 0ff7e4c724baac228d2f2c51a5bae08c8bfa56b2
+Merge: 9fcc234963 d9d8c7ed36
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 12:59:39 2025 +0100
+
+    Merge pull request #20056 from bcoles/rubocop-modules-exploits-irix
+    
+    modules/exploits/irix: Resolve RuboCop violations
+
+ modules/exploits/irix/lpd/tagprinter_exec.rb | 69 +++++++++++++++-------------
+ 1 file changed, 37 insertions(+), 32 deletions(-)
+
+commit 9fcc234963e5954f41c5d92f4eafd1b9d5e84fa8
+Merge: 1c8e4b1ac5 db1c5f4750
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 12:53:04 2025 +0100
+
+    Merge pull request #20054 from bcoles/rubocop-modules-exploits-firefox
+    
+    modules/exploits/firefox: Resolve RuboCop violations
+
+ modules/exploits/firefox/local/exec_shellcode.rb | 63 +++++++++++++-----------
+ 1 file changed, 35 insertions(+), 28 deletions(-)
+
+commit 1c8e4b1ac59559715b964376c176216ae86a68c7
+Merge: e09d23715b 389d84cbf0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 12:52:29 2025 +0100
+
+    Merge pull request #20053 from bcoles/rubocop-modules-exploits-bsd
+    
+    modules/exploits/bsd: Resolve RuboCop violations
+
+ modules/exploits/bsd/finger/morris_fingerd_bof.rb | 97 +++++++++++++----------
+ 1 file changed, 54 insertions(+), 43 deletions(-)
+
+commit 0e74591eee634a955dd3fc106be0aa41dec9073c
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 14:13:26 2025 +1000
+
+    modules: examples: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/udp/example.rb    | 33 ++++++++----
+ modules/exploits/example_webapp.rb          | 16 +++---
+ modules/exploits/windows/browser/example.rb | 80 +++++++++++++++--------------
+ 3 files changed, 73 insertions(+), 56 deletions(-)
+
+commit d9d8c7ed36614ddd684781a5e27ff2770711e790
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 13:36:02 2025 +1000
+
+    modules/exploits/irix: Resolve RuboCop violations
+
+ modules/exploits/irix/lpd/tagprinter_exec.rb | 69 +++++++++++++++-------------
+ 1 file changed, 37 insertions(+), 32 deletions(-)
+
+commit db1c5f4750cb616beb825af319cbe687a113c305
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 13:01:04 2025 +1000
+
+    modules/exploits/firefox: Resolve RuboCop violations
+
+ modules/exploits/firefox/local/exec_shellcode.rb | 63 +++++++++++++-----------
+ 1 file changed, 35 insertions(+), 28 deletions(-)
+
+commit 389d84cbf0d7c58727846466d9a9f6a468f32c61
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 12:44:40 2025 +1000
+
+    modules/exploits/bsd: Resolve RuboCop violations
+
+ modules/exploits/bsd/finger/morris_fingerd_bof.rb | 97 +++++++++++++----------
+ 1 file changed, 54 insertions(+), 43 deletions(-)
+
+commit e09d23715b200354a047a8630882ad329dbfdeff
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 18 02:01:15 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 100 +++++++++++++++++++++---------------------
+ 1 file changed, 51 insertions(+), 49 deletions(-)
+
+commit fffcd29122e7288e1a75d8a6d97907d468e0d706
+Merge: a167528c82 703ff27e81
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 02:52:44 2025 +0100
+
+    Merge pull request #20052 from bcoles/exploit-dialup-multi-login-manyargs
+    
+    Move exploit/dialup/multi/login/manyargs to exploit/solaris/dialup/
+
+ modules/exploits/{dialup/multi/login => solaris/dialup}/manyargs.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 703ff27e8134e466651e6b7f5bb64557e59323dd
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 11:36:34 2025 +1000
+
+    Move exploit/dialup/multi/login/manyargs to exploit/solaris/dialup/
+
+ modules/exploits/{dialup/multi/login => solaris/dialup}/manyargs.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit a167528c820944d72596dc81980a177183ef450b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 18 01:28:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 99 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 79 insertions(+), 20 deletions(-)
+
+commit cd8f32aa13dbc27eb64279f138b80816ca0270e2
+Merge: c231b419c7 f41e077108
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 02:17:33 2025 +0100
+
+    Merge pull request #20051 from bcoles/rubocop-modules-exploits-dialup
+    
+    modules/exploits/dialup: Resolve RuboCop violations
+
+ modules/exploits/dialup/multi/login/manyargs.rb | 208 ++++++++++++------------
+ 1 file changed, 104 insertions(+), 104 deletions(-)
+
+commit c231b419c772fbb7c6ed292bbb989e2ccaf283e1
+Merge: 7f983bdca0 4f3f9acb51
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 02:15:41 2025 +0100
+
+    Merge pull request #20049 from bcoles/rubocop-modules-exploits-mainframe
+    
+    modules/exploits/mainframe: Resolve RuboCop violations
+
+ modules/exploits/mainframe/ftp/ftp_jcl_creds.rb | 96 ++++++++++++-------------
+ 1 file changed, 45 insertions(+), 51 deletions(-)
+
+commit 7f983bdca0ed0bca007b400f4306ba8c13e23759
+Merge: 195f2f7418 fb548c0fb6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 02:12:35 2025 +0100
+
+    Merge pull request #20048 from bcoles/rubocop-modules-exploits-bsdi
+    
+    modules/exploits/bsdi: Resolve RuboCop violations
+
+ .../exploits/bsdi/softcart/mercantec_softcart.rb   | 83 ++++++++++++----------
+ 1 file changed, 45 insertions(+), 38 deletions(-)
+
+commit 195f2f74188e7454858a25e8b2c0f5fcaa45e51b
+Merge: 66d82b52dc dbb618ed56
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 18 02:11:47 2025 +0100
+
+    Merge pull request #20047 from bcoles/rubocop-modules-exploits-aix
+    
+    modules/exploits/aix: Resolve RuboCop violations
+
+ modules/exploits/aix/local/xorg_x11_server.rb    |  92 +++++-----
+ modules/exploits/aix/rpc_cmsd_opcode21.rb        |  70 ++++----
+ modules/exploits/aix/rpc_ttdbserverd_realpath.rb | 219 ++++++++++++-----------
+ 3 files changed, 193 insertions(+), 188 deletions(-)
+
+commit f41e077108faf5a01e1a6c390c0ec2d7dea2cea2
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 18 10:49:46 2025 +1000
+
+    modules/exploits/dialup: Resolve RuboCop violations
+
+ modules/exploits/dialup/multi/login/manyargs.rb | 208 ++++++++++++------------
+ 1 file changed, 104 insertions(+), 104 deletions(-)
