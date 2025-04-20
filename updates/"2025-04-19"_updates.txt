@@ -1,0 +1,898 @@
+commit 41fbf46e8c124dcf74848a2fc8d1cb15589ec14a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 19 20:48:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 660 +++++++++++++++++++++---------------------
+ 1 file changed, 330 insertions(+), 330 deletions(-)
+
+commit dd68516b6c770e56c47b2664a1b77a4878be9454
+Merge: 0c311028e1 03f4c46010
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 19 21:40:15 2025 +0100
+
+    Merge pull request #20066 from bcoles/rubocop-modules-payloads-singles
+    
+    modules/payloads/singles: Resolve RuboCop violations
+
+ modules/payloads/singles/aix/ppc/shell_bind_tcp.rb | 163 +++++++++--------
+ .../payloads/singles/aix/ppc/shell_find_port.rb    | 145 ++++++++-------
+ modules/payloads/singles/aix/ppc/shell_interact.rb |  56 +++---
+ .../payloads/singles/aix/ppc/shell_reverse_tcp.rb  | 139 ++++++++-------
+ .../singles/android/meterpreter_reverse_http.rb    |  31 ++--
+ .../singles/android/meterpreter_reverse_https.rb   |  31 ++--
+ .../singles/android/meterpreter_reverse_tcp.rb     |  29 +--
+ .../apple_ios/aarch64/meterpreter_reverse_http.rb  |  18 +-
+ .../apple_ios/aarch64/meterpreter_reverse_https.rb |  18 +-
+ .../apple_ios/aarch64/meterpreter_reverse_tcp.rb   |  18 +-
+ .../singles/apple_ios/aarch64/shell_reverse_tcp.rb | 120 ++++++-------
+ .../apple_ios/armle/meterpreter_reverse_http.rb    |  18 +-
+ .../apple_ios/armle/meterpreter_reverse_https.rb   |  18 +-
+ .../apple_ios/armle/meterpreter_reverse_tcp.rb     |  18 +-
+ .../payloads/singles/bsd/sparc/shell_bind_tcp.rb   |  47 ++---
+ .../singles/bsd/sparc/shell_reverse_tcp.rb         |  50 +++---
+ .../payloads/singles/bsd/vax/shell_reverse_tcp.rb  | 108 ++++++------
+ modules/payloads/singles/bsd/x64/exec.rb           |  47 ++---
+ .../singles/bsd/x64/shell_bind_ipv6_tcp.rb         | 128 +++++++-------
+ modules/payloads/singles/bsd/x64/shell_bind_tcp.rb |  41 ++---
+ .../singles/bsd/x64/shell_bind_tcp_small.rb        | 126 ++++++-------
+ .../singles/bsd/x64/shell_reverse_ipv6_tcp.rb      | 138 +++++++--------
+ .../payloads/singles/bsd/x64/shell_reverse_tcp.rb  |  47 ++---
+ .../singles/bsd/x64/shell_reverse_tcp_small.rb     | 114 ++++++------
+ modules/payloads/singles/bsd/x86/exec.rb           |  32 ++--
+ .../payloads/singles/bsd/x86/metsvc_bind_tcp.rb    |  30 ++--
+ .../payloads/singles/bsd/x86/metsvc_reverse_tcp.rb |  30 ++--
+ modules/payloads/singles/bsd/x86/shell_bind_tcp.rb | 110 ++++++------
+ .../singles/bsd/x86/shell_bind_tcp_ipv6.rb         |  46 ++---
+ .../payloads/singles/bsd/x86/shell_find_port.rb    | 100 +++++------
+ modules/payloads/singles/bsd/x86/shell_find_tag.rb |  44 ++---
+ .../payloads/singles/bsd/x86/shell_reverse_tcp.rb  |  98 +++++------
+ .../singles/bsd/x86/shell_reverse_tcp_ipv6.rb      |  52 +++---
+ .../payloads/singles/bsdi/x86/shell_bind_tcp.rb    |  46 ++---
+ .../payloads/singles/bsdi/x86/shell_find_port.rb   |  44 ++---
+ .../payloads/singles/bsdi/x86/shell_reverse_tcp.rb |  46 ++---
+ .../singles/cmd/mainframe/apf_privesc_jcl.rb       |  67 +++----
+ .../singles/cmd/mainframe/bind_shell_jcl.rb        |  66 +++----
+ .../payloads/singles/cmd/mainframe/generic_jcl.rb  |  58 +++---
+ .../singles/cmd/mainframe/reverse_shell_jcl.rb     |  66 +++----
+ modules/payloads/singles/cmd/unix/bind_awk.rb      |  38 ++--
+ .../singles/cmd/unix/bind_busybox_telnetd.rb       |  38 ++--
+ modules/payloads/singles/cmd/unix/bind_inetd.rb    |  72 ++++----
+ modules/payloads/singles/cmd/unix/bind_jjs.rb      |  51 +++---
+ modules/payloads/singles/cmd/unix/bind_lua.rb      |  44 +++--
+ modules/payloads/singles/cmd/unix/bind_netcat.rb   |  49 +++---
+ .../singles/cmd/unix/bind_netcat_gaping.rb         |  38 ++--
+ .../singles/cmd/unix/bind_netcat_gaping_ipv6.rb    |  38 ++--
+ modules/payloads/singles/cmd/unix/bind_nodejs.rb   |  31 ++--
+ modules/payloads/singles/cmd/unix/bind_perl.rb     |  38 ++--
+ .../payloads/singles/cmd/unix/bind_perl_ipv6.rb    |  39 ++---
+ modules/payloads/singles/cmd/unix/bind_r.rb        |  41 ++---
+ modules/payloads/singles/cmd/unix/bind_ruby.rb     |  31 ++--
+ .../payloads/singles/cmd/unix/bind_ruby_ipv6.rb    |  31 ++--
+ .../payloads/singles/cmd/unix/bind_socat_udp.rb    |  39 ++---
+ modules/payloads/singles/cmd/unix/bind_stub.rb     |  34 ++--
+ modules/payloads/singles/cmd/unix/bind_zsh.rb      |  51 +++---
+ modules/payloads/singles/cmd/unix/generic.rb       |  39 +++--
+ modules/payloads/singles/cmd/unix/interact.rb      |  34 ++--
+ modules/payloads/singles/cmd/unix/pingback_bind.rb |  38 ++--
+ .../payloads/singles/cmd/unix/pingback_reverse.rb  |  38 ++--
+ modules/payloads/singles/cmd/unix/reverse.rb       |  48 ++---
+ modules/payloads/singles/cmd/unix/reverse_awk.rb   |  37 ++--
+ modules/payloads/singles/cmd/unix/reverse_bash.rb  |  56 +++---
+ .../singles/cmd/unix/reverse_bash_telnet_ssl.rb    |  48 ++---
+ .../payloads/singles/cmd/unix/reverse_bash_udp.rb  |  52 +++---
+ modules/payloads/singles/cmd/unix/reverse_jjs.rb   |  55 +++---
+ modules/payloads/singles/cmd/unix/reverse_ksh.rb   |  37 ++--
+ modules/payloads/singles/cmd/unix/reverse_lua.rb   |  44 +++--
+ .../payloads/singles/cmd/unix/reverse_ncat_ssl.rb  |  38 ++--
+ .../payloads/singles/cmd/unix/reverse_netcat.rb    |  49 +++---
+ .../singles/cmd/unix/reverse_netcat_gaping.rb      |  38 ++--
+ .../payloads/singles/cmd/unix/reverse_nodejs.rb    |  31 ++--
+ .../payloads/singles/cmd/unix/reverse_openssl.rb   |  46 ++---
+ modules/payloads/singles/cmd/unix/reverse_perl.rb  |  45 +++--
+ .../payloads/singles/cmd/unix/reverse_perl_ssl.rb  |  44 +++--
+ .../payloads/singles/cmd/unix/reverse_python.rb    |  37 ++--
+ .../singles/cmd/unix/reverse_python_ssl.rb         |  42 ++---
+ modules/payloads/singles/cmd/unix/reverse_r.rb     |  40 ++---
+ modules/payloads/singles/cmd/unix/reverse_ruby.rb  |  34 ++--
+ .../payloads/singles/cmd/unix/reverse_ruby_ssl.rb  |  34 ++--
+ .../payloads/singles/cmd/unix/reverse_socat_udp.rb |  39 ++---
+ modules/payloads/singles/cmd/unix/reverse_ssh.rb   |  40 +++--
+ .../singles/cmd/unix/reverse_ssl_double_telnet.rb  |  52 +++---
+ modules/payloads/singles/cmd/unix/reverse_stub.rb  |  32 ++--
+ modules/payloads/singles/cmd/unix/reverse_zsh.rb   |  44 ++---
+ modules/payloads/singles/cmd/windows/adduser.rb    |  96 +++++-----
+ modules/payloads/singles/cmd/windows/bind_lua.rb   |  44 +++--
+ modules/payloads/singles/cmd/windows/bind_perl.rb  |  39 ++---
+ .../payloads/singles/cmd/windows/bind_perl_ipv6.rb |  39 ++---
+ modules/payloads/singles/cmd/windows/bind_ruby.rb  |  31 ++--
+ .../singles/cmd/windows/download_eval_vbs.rb       |  69 ++++----
+ .../singles/cmd/windows/download_exec_vbs.rb       |  77 ++++----
+ modules/payloads/singles/cmd/windows/generic.rb    |  39 +++--
+ .../singles/cmd/windows/jjs_reverse_tcp.rb         |   4 +-
+ .../singles/cmd/windows/powershell_bind_tcp.rb     |  32 ++--
+ .../payloads/singles/cmd/windows/reverse_lua.rb    |  44 +++--
+ .../payloads/singles/cmd/windows/reverse_perl.rb   |  45 +++--
+ .../singles/cmd/windows/reverse_powershell.rb      |  58 +++---
+ .../payloads/singles/cmd/windows/reverse_ruby.rb   |  31 ++--
+ modules/payloads/singles/firefox/exec.rb           |  38 ++--
+ modules/payloads/singles/firefox/shell_bind_tcp.rb |  31 ++--
+ .../payloads/singles/firefox/shell_reverse_tcp.rb  |  33 ++--
+ modules/payloads/singles/generic/custom.rb         |  33 ++--
+ modules/payloads/singles/generic/debug_trap.rb     |  26 +--
+ modules/payloads/singles/generic/shell_bind_tcp.rb |  20 ++-
+ .../payloads/singles/generic/shell_reverse_tcp.rb  |  20 ++-
+ modules/payloads/singles/generic/tight_loop.rb     |  24 +--
+ .../payloads/singles/java/jsp_shell_bind_tcp.rb    |  31 ++--
+ .../payloads/singles/java/jsp_shell_reverse_tcp.rb |  34 ++--
+ modules/payloads/singles/java/shell_reverse_tcp.rb |  53 +++---
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  18 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  18 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  18 +-
+ .../singles/linux/aarch64/shell_reverse_tcp.rb     | 120 ++++++-------
+ .../linux/armbe/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  18 +-
+ .../payloads/singles/linux/armbe/shell_bind_tcp.rb | 159 ++++++++---------
+ modules/payloads/singles/linux/armle/adduser.rb    |  56 +++---
+ modules/payloads/singles/linux/armle/exec.rb       |  32 ++--
+ .../linux/armle/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  18 +-
+ .../payloads/singles/linux/armle/shell_bind_tcp.rb | 194 +++++++++++----------
+ .../singles/linux/armle/shell_reverse_tcp.rb       | 194 +++++++++++----------
+ .../linux/mips64/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsbe/exec.rb      |  72 ++++----
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsbe/reboot.rb    |  57 +++---
+ .../singles/linux/mipsbe/shell_bind_tcp.rb         | 167 +++++++++---------
+ .../singles/linux/mipsbe/shell_reverse_tcp.rb      |  50 +++---
+ modules/payloads/singles/linux/mipsle/exec.rb      |  52 +++---
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsle/reboot.rb    |  39 ++---
+ .../singles/linux/mipsle/shell_bind_tcp.rb         | 156 ++++++++---------
+ .../singles/linux/mipsle/shell_reverse_tcp.rb      |  47 +++--
+ .../singles/linux/ppc/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/ppc/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/ppc/meterpreter_reverse_tcp.rb   |  18 +-
+ .../payloads/singles/linux/ppc/shell_bind_tcp.rb   | 144 +++++++--------
+ .../payloads/singles/linux/ppc/shell_find_port.rb  | 118 ++++++-------
+ .../singles/linux/ppc/shell_reverse_tcp.rb         | 126 ++++++-------
+ .../payloads/singles/linux/ppc64/shell_bind_tcp.rb | 144 +++++++--------
+ .../singles/linux/ppc64/shell_find_port.rb         | 118 ++++++-------
+ .../singles/linux/ppc64/shell_reverse_tcp.rb       | 126 ++++++-------
+ .../linux/ppc64le/meterpreter_reverse_http.rb      |  18 +-
+ .../linux/ppc64le/meterpreter_reverse_https.rb     |  18 +-
+ .../linux/ppc64le/meterpreter_reverse_tcp.rb       |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_http.rb    |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_https.rb   |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_tcp.rb     |  18 +-
+ modules/payloads/singles/linux/x64/exec.rb         |  48 ++---
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  18 +-
+ .../singles/linux/x64/pingback_bind_tcp.rb         |  51 +++---
+ .../singles/linux/x64/pingback_reverse_tcp.rb      |  59 ++++---
+ .../singles/linux/x64/shell_bind_ipv6_tcp.rb       |  51 +++---
+ .../payloads/singles/linux/x64/shell_bind_tcp.rb   | 122 ++++++-------
+ .../linux/x64/shell_bind_tcp_random_port.rb        |  32 ++--
+ .../payloads/singles/linux/x64/shell_find_port.rb  |  40 ++---
+ .../singles/linux/x64/shell_reverse_ipv6_tcp.rb    |  81 ++++-----
+ .../singles/linux/x64/shell_reverse_tcp.rb         | 110 ++++++------
+ modules/payloads/singles/linux/x86/adduser.rb      |  49 +++---
+ modules/payloads/singles/linux/x86/chmod.rb        |  39 +++--
+ modules/payloads/singles/linux/x86/exec.rb         |  57 +++---
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  18 +-
+ .../payloads/singles/linux/x86/metsvc_bind_tcp.rb  |  30 ++--
+ .../singles/linux/x86/metsvc_reverse_tcp.rb        |  30 ++--
+ modules/payloads/singles/linux/x86/read_file.rb    |  32 ++--
+ .../singles/linux/x86/shell_bind_ipv6_tcp.rb       |  42 ++---
+ .../payloads/singles/linux/x86/shell_bind_tcp.rb   | 118 ++++++-------
+ .../linux/x86/shell_bind_tcp_random_port.rb        |  86 ++++-----
+ .../payloads/singles/linux/x86/shell_find_port.rb  |  98 +++++------
+ .../payloads/singles/linux/x86/shell_find_tag.rb   |  44 ++---
+ .../singles/linux/x86/shell_reverse_tcp.rb         | 104 +++++------
+ .../singles/linux/x86/shell_reverse_tcp_ipv6.rb    |  48 ++---
+ .../linux/zarch/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  18 +-
+ .../singles/mainframe/shell_reverse_tcp.rb         |  84 ++++-----
+ modules/payloads/singles/nodejs/shell_bind_tcp.rb  |  29 +--
+ .../payloads/singles/nodejs/shell_reverse_tcp.rb   |  29 +--
+ .../singles/nodejs/shell_reverse_tcp_ssl.rb        |  31 ++--
+ .../payloads/singles/osx/armle/shell_bind_tcp.rb   | 158 ++++++++---------
+ .../singles/osx/armle/shell_reverse_tcp.rb         | 134 +++++++-------
+ modules/payloads/singles/osx/armle/vibrate.rb      |  27 +--
+ modules/payloads/singles/osx/ppc/shell_bind_tcp.rb |  64 +++----
+ .../payloads/singles/osx/ppc/shell_reverse_tcp.rb  |  60 +++----
+ modules/payloads/singles/osx/x64/exec.rb           |  47 ++---
+ .../singles/osx/x64/meterpreter_reverse_http.rb    |  18 +-
+ .../singles/osx/x64/meterpreter_reverse_https.rb   |  18 +-
+ .../singles/osx/x64/meterpreter_reverse_tcp.rb     |  18 +-
+ modules/payloads/singles/osx/x64/say.rb            |  28 +--
+ modules/payloads/singles/osx/x64/shell_bind_tcp.rb |  35 ++--
+ modules/payloads/singles/osx/x64/shell_find_tag.rb |  44 ++---
+ .../payloads/singles/osx/x64/shell_reverse_tcp.rb  |   3 +-
+ modules/payloads/singles/osx/x86/exec.rb           |  32 ++--
+ modules/payloads/singles/osx/x86/shell_bind_tcp.rb | 112 ++++++------
+ .../payloads/singles/osx/x86/shell_find_port.rb    | 102 +++++------
+ .../payloads/singles/osx/x86/shell_reverse_tcp.rb  | 100 +++++------
+ .../singles/osx/x86/vforkshell_bind_tcp.rb         |  72 ++++----
+ .../singles/osx/x86/vforkshell_reverse_tcp.rb      |  70 ++++----
+ modules/payloads/singles/php/bind_perl.rb          |  39 ++---
+ modules/payloads/singles/php/bind_perl_ipv6.rb     |  39 ++---
+ modules/payloads/singles/php/bind_php.rb           |  37 ++--
+ modules/payloads/singles/php/bind_php_ipv6.rb      |  39 ++---
+ modules/payloads/singles/php/download_exec.rb      |  36 ++--
+ modules/payloads/singles/php/exec.rb               |  32 ++--
+ .../singles/php/meterpreter_reverse_tcp.rb         |  37 ++--
+ modules/payloads/singles/php/reverse_perl.rb       |  39 ++---
+ modules/payloads/singles/php/reverse_php.rb        |  47 +++--
+ modules/payloads/singles/php/shell_findsock.rb     |  99 ++++++-----
+ .../singles/python/meterpreter_bind_tcp.rb         |  29 +--
+ .../singles/python/meterpreter_reverse_http.rb     |  35 ++--
+ .../singles/python/meterpreter_reverse_https.rb    |  35 ++--
+ .../singles/python/meterpreter_reverse_tcp.rb      |  29 +--
+ .../payloads/singles/python/pingback_bind_tcp.rb   |  32 ++--
+ .../singles/python/pingback_reverse_tcp.rb         |  29 +--
+ modules/payloads/singles/python/shell_bind_tcp.rb  |  36 ++--
+ .../payloads/singles/python/shell_reverse_tcp.rb   |  33 ++--
+ .../singles/python/shell_reverse_tcp_ssl.rb        |  33 ++--
+ .../payloads/singles/python/shell_reverse_udp.rb   |  34 ++--
+ modules/payloads/singles/r/shell_bind_tcp.rb       |  35 ++--
+ modules/payloads/singles/r/shell_reverse_tcp.rb    |  38 ++--
+ modules/payloads/singles/ruby/shell_bind_tcp.rb    |  35 ++--
+ .../payloads/singles/ruby/shell_bind_tcp_ipv6.rb   |  35 ++--
+ modules/payloads/singles/ruby/shell_reverse_tcp.rb |  38 ++--
+ .../payloads/singles/ruby/shell_reverse_tcp_ssl.rb |  32 ++--
+ .../singles/solaris/sparc/shell_bind_tcp.rb        |  49 +++---
+ .../singles/solaris/sparc/shell_find_port.rb       |  43 ++---
+ .../singles/solaris/sparc/shell_reverse_tcp.rb     |  46 ++---
+ .../payloads/singles/solaris/x86/shell_bind_tcp.rb | 133 +++++++-------
+ .../singles/solaris/x86/shell_find_port.rb         | 126 ++++++-------
+ .../singles/solaris/x86/shell_reverse_tcp.rb       | 124 ++++++-------
+ modules/payloads/singles/tty/unix/interact.rb      |  30 ++--
+ modules/payloads/singles/windows/adduser.rb        |  86 ++++-----
+ .../payloads/singles/windows/dns_txt_query_exec.rb |  83 ++++-----
+ modules/payloads/singles/windows/download_exec.rb  | 105 +++++------
+ .../singles/windows/encrypted_shell_reverse_tcp.rb |  35 ++--
+ modules/payloads/singles/windows/exec.rb           |   3 -
+ .../payloads/singles/windows/format_all_drives.rb  | 100 +++++------
+ modules/payloads/singles/windows/loadlibrary.rb    |   3 -
+ .../singles/windows/meterpreter_bind_named_pipe.rb |  44 +++--
+ .../singles/windows/meterpreter_bind_tcp.rb        |  43 +++--
+ .../singles/windows/meterpreter_reverse_http.rb    |  46 ++---
+ .../singles/windows/meterpreter_reverse_https.rb   |  46 ++---
+ .../windows/meterpreter_reverse_ipv6_tcp.rb        |  45 +++--
+ .../singles/windows/meterpreter_reverse_tcp.rb     |  43 +++--
+ .../payloads/singles/windows/metsvc_bind_tcp.rb    |  30 ++--
+ .../payloads/singles/windows/metsvc_reverse_tcp.rb |  30 ++--
+ .../payloads/singles/windows/pingback_bind_tcp.rb  |  77 ++++----
+ .../singles/windows/pingback_reverse_tcp.rb        |  56 +++---
+ .../singles/windows/powershell_bind_tcp.rb         |  30 ++--
+ modules/payloads/singles/windows/shell_bind_tcp.rb |  78 ++++-----
+ .../singles/windows/shell_bind_tcp_xpfw.rb         | 109 ++++++------
+ .../singles/windows/shell_hidden_bind_tcp.rb       | 106 +++++------
+ .../payloads/singles/windows/shell_reverse_tcp.rb  |  80 ++++-----
+ modules/payloads/singles/windows/speak_pwned.rb    |  74 ++++----
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |  36 ++--
+ modules/payloads/singles/windows/x64/exec.rb       |  68 ++++----
+ .../payloads/singles/windows/x64/loadlibrary.rb    |  73 ++++----
+ modules/payloads/singles/windows/x64/messagebox.rb |  42 ++---
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |  44 +++--
+ .../singles/windows/x64/meterpreter_bind_tcp.rb    |  44 +++--
+ .../windows/x64/meterpreter_reverse_http.rb        |  46 ++---
+ .../windows/x64/meterpreter_reverse_https.rb       |  46 ++---
+ .../windows/x64/meterpreter_reverse_ipv6_tcp.rb    |  46 +++--
+ .../singles/windows/x64/meterpreter_reverse_tcp.rb |  43 +++--
+ .../singles/windows/x64/pingback_reverse_tcp.rb    |  83 ++++-----
+ .../singles/windows/x64/powershell_reverse_tcp.rb  |   1 -
+ .../payloads/singles/windows/x64/shell_bind_tcp.rb | 100 +++++------
+ .../singles/windows/x64/shell_reverse_tcp.rb       |  96 +++++-----
+ 282 files changed, 7318 insertions(+), 7348 deletions(-)
+
+commit 0c311028e1b8354504d8f5a0a6ea60deb320cb51
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 19 17:01:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 03f4c4601091a9c438885a8f1b8ff86f87c3018b
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 20 02:57:34 2025 +1000
+
+    modules/payloads/singles: Resolve RuboCop violations
+
+ modules/payloads/singles/aix/ppc/shell_bind_tcp.rb | 163 +++++++++--------
+ .../payloads/singles/aix/ppc/shell_find_port.rb    | 145 ++++++++-------
+ modules/payloads/singles/aix/ppc/shell_interact.rb |  56 +++---
+ .../payloads/singles/aix/ppc/shell_reverse_tcp.rb  | 139 ++++++++-------
+ .../singles/android/meterpreter_reverse_http.rb    |  31 ++--
+ .../singles/android/meterpreter_reverse_https.rb   |  31 ++--
+ .../singles/android/meterpreter_reverse_tcp.rb     |  29 +--
+ .../apple_ios/aarch64/meterpreter_reverse_http.rb  |  18 +-
+ .../apple_ios/aarch64/meterpreter_reverse_https.rb |  18 +-
+ .../apple_ios/aarch64/meterpreter_reverse_tcp.rb   |  18 +-
+ .../singles/apple_ios/aarch64/shell_reverse_tcp.rb | 120 ++++++-------
+ .../apple_ios/armle/meterpreter_reverse_http.rb    |  18 +-
+ .../apple_ios/armle/meterpreter_reverse_https.rb   |  18 +-
+ .../apple_ios/armle/meterpreter_reverse_tcp.rb     |  18 +-
+ .../payloads/singles/bsd/sparc/shell_bind_tcp.rb   |  47 ++---
+ .../singles/bsd/sparc/shell_reverse_tcp.rb         |  50 +++---
+ .../payloads/singles/bsd/vax/shell_reverse_tcp.rb  | 108 ++++++------
+ modules/payloads/singles/bsd/x64/exec.rb           |  47 ++---
+ .../singles/bsd/x64/shell_bind_ipv6_tcp.rb         | 128 +++++++-------
+ modules/payloads/singles/bsd/x64/shell_bind_tcp.rb |  41 ++---
+ .../singles/bsd/x64/shell_bind_tcp_small.rb        | 126 ++++++-------
+ .../singles/bsd/x64/shell_reverse_ipv6_tcp.rb      | 138 +++++++--------
+ .../payloads/singles/bsd/x64/shell_reverse_tcp.rb  |  47 ++---
+ .../singles/bsd/x64/shell_reverse_tcp_small.rb     | 114 ++++++------
+ modules/payloads/singles/bsd/x86/exec.rb           |  32 ++--
+ .../payloads/singles/bsd/x86/metsvc_bind_tcp.rb    |  30 ++--
+ .../payloads/singles/bsd/x86/metsvc_reverse_tcp.rb |  30 ++--
+ modules/payloads/singles/bsd/x86/shell_bind_tcp.rb | 110 ++++++------
+ .../singles/bsd/x86/shell_bind_tcp_ipv6.rb         |  46 ++---
+ .../payloads/singles/bsd/x86/shell_find_port.rb    | 100 +++++------
+ modules/payloads/singles/bsd/x86/shell_find_tag.rb |  44 ++---
+ .../payloads/singles/bsd/x86/shell_reverse_tcp.rb  |  98 +++++------
+ .../singles/bsd/x86/shell_reverse_tcp_ipv6.rb      |  52 +++---
+ .../payloads/singles/bsdi/x86/shell_bind_tcp.rb    |  46 ++---
+ .../payloads/singles/bsdi/x86/shell_find_port.rb   |  44 ++---
+ .../payloads/singles/bsdi/x86/shell_reverse_tcp.rb |  46 ++---
+ .../singles/cmd/mainframe/apf_privesc_jcl.rb       |  67 +++----
+ .../singles/cmd/mainframe/bind_shell_jcl.rb        |  66 +++----
+ .../payloads/singles/cmd/mainframe/generic_jcl.rb  |  58 +++---
+ .../singles/cmd/mainframe/reverse_shell_jcl.rb     |  66 +++----
+ modules/payloads/singles/cmd/unix/bind_awk.rb      |  38 ++--
+ .../singles/cmd/unix/bind_busybox_telnetd.rb       |  38 ++--
+ modules/payloads/singles/cmd/unix/bind_inetd.rb    |  72 ++++----
+ modules/payloads/singles/cmd/unix/bind_jjs.rb      |  51 +++---
+ modules/payloads/singles/cmd/unix/bind_lua.rb      |  44 +++--
+ modules/payloads/singles/cmd/unix/bind_netcat.rb   |  49 +++---
+ .../singles/cmd/unix/bind_netcat_gaping.rb         |  38 ++--
+ .../singles/cmd/unix/bind_netcat_gaping_ipv6.rb    |  38 ++--
+ modules/payloads/singles/cmd/unix/bind_nodejs.rb   |  31 ++--
+ modules/payloads/singles/cmd/unix/bind_perl.rb     |  38 ++--
+ .../payloads/singles/cmd/unix/bind_perl_ipv6.rb    |  39 ++---
+ modules/payloads/singles/cmd/unix/bind_r.rb        |  41 ++---
+ modules/payloads/singles/cmd/unix/bind_ruby.rb     |  31 ++--
+ .../payloads/singles/cmd/unix/bind_ruby_ipv6.rb    |  31 ++--
+ .../payloads/singles/cmd/unix/bind_socat_udp.rb    |  39 ++---
+ modules/payloads/singles/cmd/unix/bind_stub.rb     |  34 ++--
+ modules/payloads/singles/cmd/unix/bind_zsh.rb      |  51 +++---
+ modules/payloads/singles/cmd/unix/generic.rb       |  39 +++--
+ modules/payloads/singles/cmd/unix/interact.rb      |  34 ++--
+ modules/payloads/singles/cmd/unix/pingback_bind.rb |  38 ++--
+ .../payloads/singles/cmd/unix/pingback_reverse.rb  |  38 ++--
+ modules/payloads/singles/cmd/unix/reverse.rb       |  48 ++---
+ modules/payloads/singles/cmd/unix/reverse_awk.rb   |  37 ++--
+ modules/payloads/singles/cmd/unix/reverse_bash.rb  |  56 +++---
+ .../singles/cmd/unix/reverse_bash_telnet_ssl.rb    |  48 ++---
+ .../payloads/singles/cmd/unix/reverse_bash_udp.rb  |  52 +++---
+ modules/payloads/singles/cmd/unix/reverse_jjs.rb   |  55 +++---
+ modules/payloads/singles/cmd/unix/reverse_ksh.rb   |  37 ++--
+ modules/payloads/singles/cmd/unix/reverse_lua.rb   |  44 +++--
+ .../payloads/singles/cmd/unix/reverse_ncat_ssl.rb  |  38 ++--
+ .../payloads/singles/cmd/unix/reverse_netcat.rb    |  49 +++---
+ .../singles/cmd/unix/reverse_netcat_gaping.rb      |  38 ++--
+ .../payloads/singles/cmd/unix/reverse_nodejs.rb    |  31 ++--
+ .../payloads/singles/cmd/unix/reverse_openssl.rb   |  46 ++---
+ modules/payloads/singles/cmd/unix/reverse_perl.rb  |  45 +++--
+ .../payloads/singles/cmd/unix/reverse_perl_ssl.rb  |  44 +++--
+ .../payloads/singles/cmd/unix/reverse_python.rb    |  37 ++--
+ .../singles/cmd/unix/reverse_python_ssl.rb         |  42 ++---
+ modules/payloads/singles/cmd/unix/reverse_r.rb     |  40 ++---
+ modules/payloads/singles/cmd/unix/reverse_ruby.rb  |  34 ++--
+ .../payloads/singles/cmd/unix/reverse_ruby_ssl.rb  |  34 ++--
+ .../payloads/singles/cmd/unix/reverse_socat_udp.rb |  39 ++---
+ modules/payloads/singles/cmd/unix/reverse_ssh.rb   |  40 +++--
+ .../singles/cmd/unix/reverse_ssl_double_telnet.rb  |  52 +++---
+ modules/payloads/singles/cmd/unix/reverse_stub.rb  |  32 ++--
+ modules/payloads/singles/cmd/unix/reverse_zsh.rb   |  44 ++---
+ modules/payloads/singles/cmd/windows/adduser.rb    |  96 +++++-----
+ modules/payloads/singles/cmd/windows/bind_lua.rb   |  44 +++--
+ modules/payloads/singles/cmd/windows/bind_perl.rb  |  39 ++---
+ .../payloads/singles/cmd/windows/bind_perl_ipv6.rb |  39 ++---
+ modules/payloads/singles/cmd/windows/bind_ruby.rb  |  31 ++--
+ .../singles/cmd/windows/download_eval_vbs.rb       |  69 ++++----
+ .../singles/cmd/windows/download_exec_vbs.rb       |  77 ++++----
+ modules/payloads/singles/cmd/windows/generic.rb    |  39 +++--
+ .../singles/cmd/windows/jjs_reverse_tcp.rb         |   4 +-
+ .../singles/cmd/windows/powershell_bind_tcp.rb     |  32 ++--
+ .../payloads/singles/cmd/windows/reverse_lua.rb    |  44 +++--
+ .../payloads/singles/cmd/windows/reverse_perl.rb   |  45 +++--
+ .../singles/cmd/windows/reverse_powershell.rb      |  58 +++---
+ .../payloads/singles/cmd/windows/reverse_ruby.rb   |  31 ++--
+ modules/payloads/singles/firefox/exec.rb           |  38 ++--
+ modules/payloads/singles/firefox/shell_bind_tcp.rb |  31 ++--
+ .../payloads/singles/firefox/shell_reverse_tcp.rb  |  33 ++--
+ modules/payloads/singles/generic/custom.rb         |  33 ++--
+ modules/payloads/singles/generic/debug_trap.rb     |  26 +--
+ modules/payloads/singles/generic/shell_bind_tcp.rb |  20 ++-
+ .../payloads/singles/generic/shell_reverse_tcp.rb  |  20 ++-
+ modules/payloads/singles/generic/tight_loop.rb     |  24 +--
+ .../payloads/singles/java/jsp_shell_bind_tcp.rb    |  31 ++--
+ .../payloads/singles/java/jsp_shell_reverse_tcp.rb |  34 ++--
+ modules/payloads/singles/java/shell_reverse_tcp.rb |  53 +++---
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  18 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  18 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  18 +-
+ .../singles/linux/aarch64/shell_reverse_tcp.rb     | 120 ++++++-------
+ .../linux/armbe/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  18 +-
+ .../payloads/singles/linux/armbe/shell_bind_tcp.rb | 159 ++++++++---------
+ modules/payloads/singles/linux/armle/adduser.rb    |  56 +++---
+ modules/payloads/singles/linux/armle/exec.rb       |  32 ++--
+ .../linux/armle/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  18 +-
+ .../payloads/singles/linux/armle/shell_bind_tcp.rb | 194 +++++++++++----------
+ .../singles/linux/armle/shell_reverse_tcp.rb       | 194 +++++++++++----------
+ .../linux/mips64/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsbe/exec.rb      |  72 ++++----
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsbe/reboot.rb    |  57 +++---
+ .../singles/linux/mipsbe/shell_bind_tcp.rb         | 167 +++++++++---------
+ .../singles/linux/mipsbe/shell_reverse_tcp.rb      |  50 +++---
+ modules/payloads/singles/linux/mipsle/exec.rb      |  52 +++---
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  18 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  18 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  18 +-
+ modules/payloads/singles/linux/mipsle/reboot.rb    |  39 ++---
+ .../singles/linux/mipsle/shell_bind_tcp.rb         | 156 ++++++++---------
+ .../singles/linux/mipsle/shell_reverse_tcp.rb      |  47 +++--
+ .../singles/linux/ppc/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/ppc/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/ppc/meterpreter_reverse_tcp.rb   |  18 +-
+ .../payloads/singles/linux/ppc/shell_bind_tcp.rb   | 144 +++++++--------
+ .../payloads/singles/linux/ppc/shell_find_port.rb  | 118 ++++++-------
+ .../singles/linux/ppc/shell_reverse_tcp.rb         | 126 ++++++-------
+ .../payloads/singles/linux/ppc64/shell_bind_tcp.rb | 144 +++++++--------
+ .../singles/linux/ppc64/shell_find_port.rb         | 118 ++++++-------
+ .../singles/linux/ppc64/shell_reverse_tcp.rb       | 126 ++++++-------
+ .../linux/ppc64le/meterpreter_reverse_http.rb      |  18 +-
+ .../linux/ppc64le/meterpreter_reverse_https.rb     |  18 +-
+ .../linux/ppc64le/meterpreter_reverse_tcp.rb       |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_http.rb    |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_https.rb   |  18 +-
+ .../linux/ppce500v2/meterpreter_reverse_tcp.rb     |  18 +-
+ modules/payloads/singles/linux/x64/exec.rb         |  48 ++---
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  18 +-
+ .../singles/linux/x64/pingback_bind_tcp.rb         |  51 +++---
+ .../singles/linux/x64/pingback_reverse_tcp.rb      |  59 ++++---
+ .../singles/linux/x64/shell_bind_ipv6_tcp.rb       |  51 +++---
+ .../payloads/singles/linux/x64/shell_bind_tcp.rb   | 122 ++++++-------
+ .../linux/x64/shell_bind_tcp_random_port.rb        |  32 ++--
+ .../payloads/singles/linux/x64/shell_find_port.rb  |  40 ++---
+ .../singles/linux/x64/shell_reverse_ipv6_tcp.rb    |  81 ++++-----
+ .../singles/linux/x64/shell_reverse_tcp.rb         | 110 ++++++------
+ modules/payloads/singles/linux/x86/adduser.rb      |  49 +++---
+ modules/payloads/singles/linux/x86/chmod.rb        |  39 +++--
+ modules/payloads/singles/linux/x86/exec.rb         |  57 +++---
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  18 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  18 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  18 +-
+ .../payloads/singles/linux/x86/metsvc_bind_tcp.rb  |  30 ++--
+ .../singles/linux/x86/metsvc_reverse_tcp.rb        |  30 ++--
+ modules/payloads/singles/linux/x86/read_file.rb    |  32 ++--
+ .../singles/linux/x86/shell_bind_ipv6_tcp.rb       |  42 ++---
+ .../payloads/singles/linux/x86/shell_bind_tcp.rb   | 118 ++++++-------
+ .../linux/x86/shell_bind_tcp_random_port.rb        |  86 ++++-----
+ .../payloads/singles/linux/x86/shell_find_port.rb  |  98 +++++------
+ .../payloads/singles/linux/x86/shell_find_tag.rb   |  44 ++---
+ .../singles/linux/x86/shell_reverse_tcp.rb         | 104 +++++------
+ .../singles/linux/x86/shell_reverse_tcp_ipv6.rb    |  48 ++---
+ .../linux/zarch/meterpreter_reverse_http.rb        |  18 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  18 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  18 +-
+ .../singles/mainframe/shell_reverse_tcp.rb         |  84 ++++-----
+ modules/payloads/singles/nodejs/shell_bind_tcp.rb  |  29 +--
+ .../payloads/singles/nodejs/shell_reverse_tcp.rb   |  29 +--
+ .../singles/nodejs/shell_reverse_tcp_ssl.rb        |  31 ++--
+ .../payloads/singles/osx/armle/shell_bind_tcp.rb   | 158 ++++++++---------
+ .../singles/osx/armle/shell_reverse_tcp.rb         | 134 +++++++-------
+ modules/payloads/singles/osx/armle/vibrate.rb      |  27 +--
+ modules/payloads/singles/osx/ppc/shell_bind_tcp.rb |  64 +++----
+ .../payloads/singles/osx/ppc/shell_reverse_tcp.rb  |  60 +++----
+ modules/payloads/singles/osx/x64/exec.rb           |  47 ++---
+ .../singles/osx/x64/meterpreter_reverse_http.rb    |  18 +-
+ .../singles/osx/x64/meterpreter_reverse_https.rb   |  18 +-
+ .../singles/osx/x64/meterpreter_reverse_tcp.rb     |  18 +-
+ modules/payloads/singles/osx/x64/say.rb            |  28 +--
+ modules/payloads/singles/osx/x64/shell_bind_tcp.rb |  35 ++--
+ modules/payloads/singles/osx/x64/shell_find_tag.rb |  44 ++---
+ .../payloads/singles/osx/x64/shell_reverse_tcp.rb  |   3 +-
+ modules/payloads/singles/osx/x86/exec.rb           |  32 ++--
+ modules/payloads/singles/osx/x86/shell_bind_tcp.rb | 112 ++++++------
+ .../payloads/singles/osx/x86/shell_find_port.rb    | 102 +++++------
+ .../payloads/singles/osx/x86/shell_reverse_tcp.rb  | 100 +++++------
+ .../singles/osx/x86/vforkshell_bind_tcp.rb         |  72 ++++----
+ .../singles/osx/x86/vforkshell_reverse_tcp.rb      |  70 ++++----
+ modules/payloads/singles/php/bind_perl.rb          |  39 ++---
+ modules/payloads/singles/php/bind_perl_ipv6.rb     |  39 ++---
+ modules/payloads/singles/php/bind_php.rb           |  37 ++--
+ modules/payloads/singles/php/bind_php_ipv6.rb      |  39 ++---
+ modules/payloads/singles/php/download_exec.rb      |  36 ++--
+ modules/payloads/singles/php/exec.rb               |  32 ++--
+ .../singles/php/meterpreter_reverse_tcp.rb         |  37 ++--
+ modules/payloads/singles/php/reverse_perl.rb       |  39 ++---
+ modules/payloads/singles/php/reverse_php.rb        |  47 +++--
+ modules/payloads/singles/php/shell_findsock.rb     |  99 ++++++-----
+ .../singles/python/meterpreter_bind_tcp.rb         |  29 +--
+ .../singles/python/meterpreter_reverse_http.rb     |  35 ++--
+ .../singles/python/meterpreter_reverse_https.rb    |  35 ++--
+ .../singles/python/meterpreter_reverse_tcp.rb      |  29 +--
+ .../payloads/singles/python/pingback_bind_tcp.rb   |  32 ++--
+ .../singles/python/pingback_reverse_tcp.rb         |  29 +--
+ modules/payloads/singles/python/shell_bind_tcp.rb  |  36 ++--
+ .../payloads/singles/python/shell_reverse_tcp.rb   |  33 ++--
+ .../singles/python/shell_reverse_tcp_ssl.rb        |  33 ++--
+ .../payloads/singles/python/shell_reverse_udp.rb   |  34 ++--
+ modules/payloads/singles/r/shell_bind_tcp.rb       |  35 ++--
+ modules/payloads/singles/r/shell_reverse_tcp.rb    |  38 ++--
+ modules/payloads/singles/ruby/shell_bind_tcp.rb    |  35 ++--
+ .../payloads/singles/ruby/shell_bind_tcp_ipv6.rb   |  35 ++--
+ modules/payloads/singles/ruby/shell_reverse_tcp.rb |  38 ++--
+ .../payloads/singles/ruby/shell_reverse_tcp_ssl.rb |  32 ++--
+ .../singles/solaris/sparc/shell_bind_tcp.rb        |  49 +++---
+ .../singles/solaris/sparc/shell_find_port.rb       |  43 ++---
+ .../singles/solaris/sparc/shell_reverse_tcp.rb     |  46 ++---
+ .../payloads/singles/solaris/x86/shell_bind_tcp.rb | 133 +++++++-------
+ .../singles/solaris/x86/shell_find_port.rb         | 126 ++++++-------
+ .../singles/solaris/x86/shell_reverse_tcp.rb       | 124 ++++++-------
+ modules/payloads/singles/tty/unix/interact.rb      |  30 ++--
+ modules/payloads/singles/windows/adduser.rb        |  86 ++++-----
+ .../payloads/singles/windows/dns_txt_query_exec.rb |  83 ++++-----
+ modules/payloads/singles/windows/download_exec.rb  | 105 +++++------
+ .../singles/windows/encrypted_shell_reverse_tcp.rb |  35 ++--
+ modules/payloads/singles/windows/exec.rb           |   3 -
+ .../payloads/singles/windows/format_all_drives.rb  | 100 +++++------
+ modules/payloads/singles/windows/loadlibrary.rb    |   3 -
+ .../singles/windows/meterpreter_bind_named_pipe.rb |  44 +++--
+ .../singles/windows/meterpreter_bind_tcp.rb        |  43 +++--
+ .../singles/windows/meterpreter_reverse_http.rb    |  46 ++---
+ .../singles/windows/meterpreter_reverse_https.rb   |  46 ++---
+ .../windows/meterpreter_reverse_ipv6_tcp.rb        |  45 +++--
+ .../singles/windows/meterpreter_reverse_tcp.rb     |  43 +++--
+ .../payloads/singles/windows/metsvc_bind_tcp.rb    |  30 ++--
+ .../payloads/singles/windows/metsvc_reverse_tcp.rb |  30 ++--
+ .../payloads/singles/windows/pingback_bind_tcp.rb  |  77 ++++----
+ .../singles/windows/pingback_reverse_tcp.rb        |  56 +++---
+ .../singles/windows/powershell_bind_tcp.rb         |  30 ++--
+ modules/payloads/singles/windows/shell_bind_tcp.rb |  78 ++++-----
+ .../singles/windows/shell_bind_tcp_xpfw.rb         | 109 ++++++------
+ .../singles/windows/shell_hidden_bind_tcp.rb       | 106 +++++------
+ .../payloads/singles/windows/shell_reverse_tcp.rb  |  80 ++++-----
+ modules/payloads/singles/windows/speak_pwned.rb    |  74 ++++----
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |  36 ++--
+ modules/payloads/singles/windows/x64/exec.rb       |  68 ++++----
+ .../payloads/singles/windows/x64/loadlibrary.rb    |  73 ++++----
+ modules/payloads/singles/windows/x64/messagebox.rb |  42 ++---
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |  44 +++--
+ .../singles/windows/x64/meterpreter_bind_tcp.rb    |  44 +++--
+ .../windows/x64/meterpreter_reverse_http.rb        |  46 ++---
+ .../windows/x64/meterpreter_reverse_https.rb       |  46 ++---
+ .../windows/x64/meterpreter_reverse_ipv6_tcp.rb    |  46 +++--
+ .../singles/windows/x64/meterpreter_reverse_tcp.rb |  43 +++--
+ .../singles/windows/x64/pingback_reverse_tcp.rb    |  83 ++++-----
+ .../singles/windows/x64/powershell_reverse_tcp.rb  |   1 -
+ .../payloads/singles/windows/x64/shell_bind_tcp.rb | 100 +++++------
+ .../singles/windows/x64/shell_reverse_tcp.rb       |  96 +++++-----
+ 282 files changed, 7318 insertions(+), 7348 deletions(-)
+
+commit 6fb76f9b51e8af03a1ddf6ccc3229f5a9a9fd883
+Merge: 17b27f0905 6f160d28b4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 19 17:53:49 2025 +0100
+
+    Merge pull request #20064 from bcoles/payloads-php-reverse_php_ssl
+    
+    payloads: cmd/unix/reverse_php_ssl: Resolve RuboCop violations
+
+ .../payloads/singles/cmd/unix/reverse_php_ssl.rb   | 44 +++++++++++-----------
+ 1 file changed, 21 insertions(+), 23 deletions(-)
+
+commit 17b27f09052a082afb8536a5a9b2ab229a0cd213
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 19 16:51:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 686 +++++++++++++++++++++---------------------
+ 1 file changed, 343 insertions(+), 343 deletions(-)
+
+commit 54e2f63c50826edb05d767760f36c85fa64680e2
+Merge: d505b968d8 5f5e2782e5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 19 17:43:44 2025 +0100
+
+    Merge pull request #20063 from bcoles/payloads-ruby-pingback
+    
+    payloads: Ruby pingback: Resolve RuboCop violations
+
+ modules/payloads/singles/ruby/pingback_bind_tcp.rb | 43 +++++++++++-----------
+ .../payloads/singles/ruby/pingback_reverse_tcp.rb  | 35 +++++++++---------
+ 2 files changed, 39 insertions(+), 39 deletions(-)
+
+commit d505b968d8b829bdbb7b65ff73fb00bc1dd9cf07
+Merge: db5a82ed2d 991ffe4c5b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 19 17:43:29 2025 +0100
+
+    Merge pull request #20062 from bcoles/rubocop-modules-payloads-stagers
+    
+    modules/payloads/stagers: Resolve RuboCop violations
+
+ modules/payloads/stagers/android/reverse_http.rb   |  26 +-
+ modules/payloads/stagers/android/reverse_https.rb  |  26 +-
+ modules/payloads/stagers/android/reverse_tcp.rb    |  26 +-
+ modules/payloads/stagers/bsd/x86/bind_ipv6_tcp.rb  |  42 +--
+ modules/payloads/stagers/bsd/x86/bind_tcp.rb       |  40 +--
+ modules/payloads/stagers/bsd/x86/find_tag.rb       |  38 +--
+ .../payloads/stagers/bsd/x86/reverse_ipv6_tcp.rb   |  53 ++-
+ modules/payloads/stagers/bsd/x86/reverse_tcp.rb    |  40 +--
+ modules/payloads/stagers/bsdi/x86/bind_tcp.rb      |  42 +--
+ modules/payloads/stagers/bsdi/x86/reverse_tcp.rb   |  42 +--
+ modules/payloads/stagers/java/bind_tcp.rb          |  28 +-
+ modules/payloads/stagers/java/reverse_http.rb      |  28 +-
+ modules/payloads/stagers/java/reverse_https.rb     |  26 +-
+ modules/payloads/stagers/java/reverse_tcp.rb       |  28 +-
+ .../payloads/stagers/linux/aarch64/reverse_tcp.rb  | 156 +++++----
+ modules/payloads/stagers/linux/armle/bind_tcp.rb   | 155 +++++----
+ .../payloads/stagers/linux/armle/reverse_tcp.rb    | 181 +++++-----
+ .../payloads/stagers/linux/mipsbe/reverse_tcp.rb   | 185 +++++-----
+ .../payloads/stagers/linux/mipsle/reverse_tcp.rb   | 171 +++++-----
+ modules/payloads/stagers/linux/x64/bind_tcp.rb     | 120 +++----
+ modules/payloads/stagers/linux/x64/reverse_tcp.rb  |  24 +-
+ .../payloads/stagers/linux/x86/bind_ipv6_tcp.rb    |  26 +-
+ .../stagers/linux/x86/bind_ipv6_tcp_uuid.rb        |  26 +-
+ .../payloads/stagers/linux/x86/bind_nonx_tcp.rb    |  42 +--
+ modules/payloads/stagers/linux/x86/bind_tcp.rb     |  26 +-
+ .../payloads/stagers/linux/x86/bind_tcp_uuid.rb    |  26 +-
+ modules/payloads/stagers/linux/x86/find_tag.rb     |  38 +--
+ .../payloads/stagers/linux/x86/reverse_ipv6_tcp.rb |  45 +--
+ .../payloads/stagers/linux/x86/reverse_nonx_tcp.rb |  44 +--
+ modules/payloads/stagers/linux/x86/reverse_tcp.rb  |  23 +-
+ .../payloads/stagers/linux/x86/reverse_tcp_uuid.rb |  24 +-
+ modules/payloads/stagers/multi/reverse_http.rb     |  25 +-
+ modules/payloads/stagers/multi/reverse_https.rb    |  28 +-
+ modules/payloads/stagers/netware/reverse_tcp.rb    | 379 +++++++++++----------
+ modules/payloads/stagers/osx/armle/bind_tcp.rb     | 227 ++++++------
+ modules/payloads/stagers/osx/armle/reverse_tcp.rb  | 179 +++++-----
+ modules/payloads/stagers/osx/ppc/bind_tcp.rb       |  52 +--
+ modules/payloads/stagers/osx/ppc/find_tag.rb       |  46 +--
+ modules/payloads/stagers/osx/ppc/reverse_tcp.rb    |  48 +--
+ modules/payloads/stagers/osx/x64/bind_tcp.rb       | 162 ++++-----
+ modules/payloads/stagers/osx/x64/reverse_tcp.rb    |  29 +-
+ modules/payloads/stagers/osx/x86/bind_tcp.rb       |  76 ++---
+ modules/payloads/stagers/osx/x86/reverse_tcp.rb    |  80 ++---
+ modules/payloads/stagers/php/bind_tcp.rb           |  24 +-
+ modules/payloads/stagers/php/bind_tcp_ipv6.rb      |  26 +-
+ modules/payloads/stagers/php/bind_tcp_ipv6_uuid.rb |  26 +-
+ modules/payloads/stagers/php/bind_tcp_uuid.rb      |  26 +-
+ modules/payloads/stagers/php/reverse_tcp.rb        |  24 +-
+ modules/payloads/stagers/php/reverse_tcp_uuid.rb   |  26 +-
+ modules/payloads/stagers/python/bind_tcp.rb        |  25 +-
+ modules/payloads/stagers/python/bind_tcp_uuid.rb   |  25 +-
+ modules/payloads/stagers/python/reverse_http.rb    |  24 +-
+ modules/payloads/stagers/python/reverse_https.rb   |  26 +-
+ modules/payloads/stagers/python/reverse_tcp.rb     |  25 +-
+ modules/payloads/stagers/python/reverse_tcp_ssl.rb |  24 +-
+ .../payloads/stagers/python/reverse_tcp_uuid.rb    |  25 +-
+ .../stagers/windows/bind_hidden_ipknock_tcp.rb     | 104 +++---
+ .../payloads/stagers/windows/bind_hidden_tcp.rb    |  92 +++--
+ modules/payloads/stagers/windows/bind_ipv6_tcp.rb  |  28 +-
+ .../payloads/stagers/windows/bind_ipv6_tcp_uuid.rb |  29 +-
+ .../payloads/stagers/windows/bind_named_pipe.rb    |  26 +-
+ modules/payloads/stagers/windows/bind_nonx_tcp.rb  |  62 ++--
+ modules/payloads/stagers/windows/bind_tcp.rb       |  26 +-
+ modules/payloads/stagers/windows/bind_tcp_rc4.rb   |  29 +-
+ modules/payloads/stagers/windows/bind_tcp_uuid.rb  |  26 +-
+ .../stagers/windows/encrypted_reverse_tcp.rb       |  37 +-
+ modules/payloads/stagers/windows/findtag_ord.rb    |  50 +--
+ modules/payloads/stagers/windows/reverse_http.rb   |  23 +-
+ .../stagers/windows/reverse_http_proxy_pstore.rb   | 124 +++----
+ modules/payloads/stagers/windows/reverse_https.rb  |  23 +-
+ .../payloads/stagers/windows/reverse_ipv6_tcp.rb   |  85 +++--
+ .../payloads/stagers/windows/reverse_named_pipe.rb |  28 +-
+ .../payloads/stagers/windows/reverse_nonx_tcp.rb   |  63 ++--
+ .../payloads/stagers/windows/reverse_ord_tcp.rb    |  52 +--
+ modules/payloads/stagers/windows/reverse_tcp.rb    |  26 +-
+ .../stagers/windows/reverse_tcp_allports.rb        |  66 ++--
+ .../payloads/stagers/windows/reverse_tcp_dns.rb    |  30 +-
+ .../payloads/stagers/windows/reverse_tcp_rc4.rb    |  29 +-
+ .../stagers/windows/reverse_tcp_rc4_dns.rb         |  30 +-
+ .../payloads/stagers/windows/reverse_tcp_uuid.rb   |  26 +-
+ modules/payloads/stagers/windows/reverse_udp.rb    |  28 +-
+ .../payloads/stagers/windows/reverse_winhttp.rb    |  25 +-
+ .../payloads/stagers/windows/reverse_winhttps.rb   |  25 +-
+ .../payloads/stagers/windows/x64/bind_ipv6_tcp.rb  |  29 +-
+ .../stagers/windows/x64/bind_ipv6_tcp_uuid.rb      |  30 +-
+ .../stagers/windows/x64/bind_named_pipe.rb         |  26 +-
+ modules/payloads/stagers/windows/x64/bind_tcp.rb   |  26 +-
+ .../payloads/stagers/windows/x64/bind_tcp_rc4.rb   |  29 +-
+ .../payloads/stagers/windows/x64/bind_tcp_uuid.rb  |  26 +-
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |  37 +-
+ .../payloads/stagers/windows/x64/reverse_http.rb   |  25 +-
+ .../payloads/stagers/windows/x64/reverse_https.rb  |  25 +-
+ .../stagers/windows/x64/reverse_named_pipe.rb      |  27 +-
+ .../payloads/stagers/windows/x64/reverse_tcp.rb    |  26 +-
+ .../stagers/windows/x64/reverse_tcp_rc4.rb         |  29 +-
+ .../stagers/windows/x64/reverse_tcp_uuid.rb        |  26 +-
+ .../stagers/windows/x64/reverse_winhttp.rb         |  27 +-
+ .../stagers/windows/x64/reverse_winhttps.rb        |  27 +-
+ 98 files changed, 2587 insertions(+), 2474 deletions(-)
+
+commit db5a82ed2df8d20f6619ba9a547bc6208afe751e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 19 16:40:22 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+
+commit 5b9423c5fff53a42747e1d23f054a4966fe8d096
+Merge: 809d87a96b c3824e2b72
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 19 17:31:57 2025 +0100
+
+    Merge pull request #20065 from bcoles/rubocop-modules-exploits-hpux
+    
+    modules/exploits/hpux: Resolve RuboCop violations
+
+ modules/exploits/hpux/lpd/cleanup_exec.rb | 117 +++++++++++++++---------------
+ 1 file changed, 59 insertions(+), 58 deletions(-)
+
+commit c3824e2b720dc83902738926a4ed43b469abc303
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 23:00:07 2025 +1000
+
+    modules/exploits/hpux: Resolve RuboCop violations
+
+ modules/exploits/hpux/lpd/cleanup_exec.rb | 117 +++++++++++++++---------------
+ 1 file changed, 59 insertions(+), 58 deletions(-)
+
+commit 6f160d28b448720dcf4f8b885880b8ea0c961ce8
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 20:39:52 2025 +1000
+
+    payloads: cmd/unix/reverse_php_ssl: Resolve RuboCop violations
+
+ .../payloads/singles/cmd/unix/reverse_php_ssl.rb   | 44 +++++++++++-----------
+ 1 file changed, 21 insertions(+), 23 deletions(-)
+
+commit 5f5e2782e5d3692cacdedd64d6bc9c23c08768ae
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 19:02:28 2025 +1000
+
+    payloads: Ruby pingback: Resolve RuboCop violations
+
+ modules/payloads/singles/ruby/pingback_bind_tcp.rb | 43 +++++++++++-----------
+ .../payloads/singles/ruby/pingback_reverse_tcp.rb  | 35 +++++++++---------
+ 2 files changed, 39 insertions(+), 39 deletions(-)
+
+commit 991ffe4c5b6bc4e17b88bdef20bfddc77a5791da
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 19 11:11:01 2025 +1000
+
+    modules/payloads/stagers: Resolve RuboCop violations
+
+ modules/payloads/stagers/android/reverse_http.rb   |  26 +-
+ modules/payloads/stagers/android/reverse_https.rb  |  26 +-
+ modules/payloads/stagers/android/reverse_tcp.rb    |  26 +-
+ modules/payloads/stagers/bsd/x86/bind_ipv6_tcp.rb  |  42 +--
+ modules/payloads/stagers/bsd/x86/bind_tcp.rb       |  40 +--
+ modules/payloads/stagers/bsd/x86/find_tag.rb       |  38 +--
+ .../payloads/stagers/bsd/x86/reverse_ipv6_tcp.rb   |  53 ++-
+ modules/payloads/stagers/bsd/x86/reverse_tcp.rb    |  40 +--
+ modules/payloads/stagers/bsdi/x86/bind_tcp.rb      |  42 +--
+ modules/payloads/stagers/bsdi/x86/reverse_tcp.rb   |  42 +--
+ modules/payloads/stagers/java/bind_tcp.rb          |  28 +-
+ modules/payloads/stagers/java/reverse_http.rb      |  28 +-
+ modules/payloads/stagers/java/reverse_https.rb     |  26 +-
+ modules/payloads/stagers/java/reverse_tcp.rb       |  28 +-
+ .../payloads/stagers/linux/aarch64/reverse_tcp.rb  | 156 +++++----
+ modules/payloads/stagers/linux/armle/bind_tcp.rb   | 155 +++++----
+ .../payloads/stagers/linux/armle/reverse_tcp.rb    | 181 +++++-----
+ .../payloads/stagers/linux/mipsbe/reverse_tcp.rb   | 185 +++++-----
+ .../payloads/stagers/linux/mipsle/reverse_tcp.rb   | 171 +++++-----
+ modules/payloads/stagers/linux/x64/bind_tcp.rb     | 120 +++----
+ modules/payloads/stagers/linux/x64/reverse_tcp.rb  |  24 +-
+ .../payloads/stagers/linux/x86/bind_ipv6_tcp.rb    |  26 +-
+ .../stagers/linux/x86/bind_ipv6_tcp_uuid.rb        |  26 +-
+ .../payloads/stagers/linux/x86/bind_nonx_tcp.rb    |  42 +--
+ modules/payloads/stagers/linux/x86/bind_tcp.rb     |  26 +-
+ .../payloads/stagers/linux/x86/bind_tcp_uuid.rb    |  26 +-
+ modules/payloads/stagers/linux/x86/find_tag.rb     |  38 +--
+ .../payloads/stagers/linux/x86/reverse_ipv6_tcp.rb |  45 +--
+ .../payloads/stagers/linux/x86/reverse_nonx_tcp.rb |  44 +--
+ modules/payloads/stagers/linux/x86/reverse_tcp.rb  |  23 +-
+ .../payloads/stagers/linux/x86/reverse_tcp_uuid.rb |  24 +-
+ modules/payloads/stagers/multi/reverse_http.rb     |  25 +-
+ modules/payloads/stagers/multi/reverse_https.rb    |  28 +-
+ modules/payloads/stagers/netware/reverse_tcp.rb    | 379 +++++++++++----------
+ modules/payloads/stagers/osx/armle/bind_tcp.rb     | 227 ++++++------
+ modules/payloads/stagers/osx/armle/reverse_tcp.rb  | 179 +++++-----
+ modules/payloads/stagers/osx/ppc/bind_tcp.rb       |  52 +--
+ modules/payloads/stagers/osx/ppc/find_tag.rb       |  46 +--
+ modules/payloads/stagers/osx/ppc/reverse_tcp.rb    |  48 +--
+ modules/payloads/stagers/osx/x64/bind_tcp.rb       | 162 ++++-----
+ modules/payloads/stagers/osx/x64/reverse_tcp.rb    |  29 +-
+ modules/payloads/stagers/osx/x86/bind_tcp.rb       |  76 ++---
+ modules/payloads/stagers/osx/x86/reverse_tcp.rb    |  80 ++---
+ modules/payloads/stagers/php/bind_tcp.rb           |  24 +-
+ modules/payloads/stagers/php/bind_tcp_ipv6.rb      |  26 +-
+ modules/payloads/stagers/php/bind_tcp_ipv6_uuid.rb |  26 +-
+ modules/payloads/stagers/php/bind_tcp_uuid.rb      |  26 +-
+ modules/payloads/stagers/php/reverse_tcp.rb        |  24 +-
+ modules/payloads/stagers/php/reverse_tcp_uuid.rb   |  26 +-
+ modules/payloads/stagers/python/bind_tcp.rb        |  25 +-
+ modules/payloads/stagers/python/bind_tcp_uuid.rb   |  25 +-
+ modules/payloads/stagers/python/reverse_http.rb    |  24 +-
+ modules/payloads/stagers/python/reverse_https.rb   |  26 +-
+ modules/payloads/stagers/python/reverse_tcp.rb     |  25 +-
+ modules/payloads/stagers/python/reverse_tcp_ssl.rb |  24 +-
+ .../payloads/stagers/python/reverse_tcp_uuid.rb    |  25 +-
+ .../stagers/windows/bind_hidden_ipknock_tcp.rb     | 104 +++---
+ .../payloads/stagers/windows/bind_hidden_tcp.rb    |  92 +++--
+ modules/payloads/stagers/windows/bind_ipv6_tcp.rb  |  28 +-
+ .../payloads/stagers/windows/bind_ipv6_tcp_uuid.rb |  29 +-
+ .../payloads/stagers/windows/bind_named_pipe.rb    |  26 +-
+ modules/payloads/stagers/windows/bind_nonx_tcp.rb  |  62 ++--
+ modules/payloads/stagers/windows/bind_tcp.rb       |  26 +-
+ modules/payloads/stagers/windows/bind_tcp_rc4.rb   |  29 +-
+ modules/payloads/stagers/windows/bind_tcp_uuid.rb  |  26 +-
+ .../stagers/windows/encrypted_reverse_tcp.rb       |  37 +-
+ modules/payloads/stagers/windows/findtag_ord.rb    |  50 +--
+ modules/payloads/stagers/windows/reverse_http.rb   |  23 +-
+ .../stagers/windows/reverse_http_proxy_pstore.rb   | 124 +++----
+ modules/payloads/stagers/windows/reverse_https.rb  |  23 +-
+ .../payloads/stagers/windows/reverse_ipv6_tcp.rb   |  85 +++--
+ .../payloads/stagers/windows/reverse_named_pipe.rb |  28 +-
+ .../payloads/stagers/windows/reverse_nonx_tcp.rb   |  63 ++--
+ .../payloads/stagers/windows/reverse_ord_tcp.rb    |  52 +--
+ modules/payloads/stagers/windows/reverse_tcp.rb    |  26 +-
+ .../stagers/windows/reverse_tcp_allports.rb        |  66 ++--
+ .../payloads/stagers/windows/reverse_tcp_dns.rb    |  30 +-
+ .../payloads/stagers/windows/reverse_tcp_rc4.rb    |  29 +-
+ .../stagers/windows/reverse_tcp_rc4_dns.rb         |  30 +-
+ .../payloads/stagers/windows/reverse_tcp_uuid.rb   |  26 +-
+ modules/payloads/stagers/windows/reverse_udp.rb    |  28 +-
+ .../payloads/stagers/windows/reverse_winhttp.rb    |  25 +-
+ .../payloads/stagers/windows/reverse_winhttps.rb   |  25 +-
+ .../payloads/stagers/windows/x64/bind_ipv6_tcp.rb  |  29 +-
+ .../stagers/windows/x64/bind_ipv6_tcp_uuid.rb      |  30 +-
+ .../stagers/windows/x64/bind_named_pipe.rb         |  26 +-
+ modules/payloads/stagers/windows/x64/bind_tcp.rb   |  26 +-
+ .../payloads/stagers/windows/x64/bind_tcp_rc4.rb   |  29 +-
+ .../payloads/stagers/windows/x64/bind_tcp_uuid.rb  |  26 +-
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |  37 +-
+ .../payloads/stagers/windows/x64/reverse_http.rb   |  25 +-
+ .../payloads/stagers/windows/x64/reverse_https.rb  |  25 +-
+ .../stagers/windows/x64/reverse_named_pipe.rb      |  27 +-
+ .../payloads/stagers/windows/x64/reverse_tcp.rb    |  26 +-
+ .../stagers/windows/x64/reverse_tcp_rc4.rb         |  29 +-
+ .../stagers/windows/x64/reverse_tcp_uuid.rb        |  26 +-
+ .../stagers/windows/x64/reverse_winhttp.rb         |  27 +-
+ .../stagers/windows/x64/reverse_winhttps.rb        |  27 +-
+ 98 files changed, 2587 insertions(+), 2474 deletions(-)
