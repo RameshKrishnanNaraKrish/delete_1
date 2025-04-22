@@ -1,0 +1,22 @@
+commit 62cbb794b88951fba82bd87cfe2d617fa228d727
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 21 14:14:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bdac31037ac926918e5bde26a550ddfc7a02aa80
+Merge: 41fbf46e8c f8a67b83e6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 21 16:03:35 2025 +0200
+
+    Land #20028, pgAdmin modules refactor
+    
+    Refactor pgAdmin modules to use new lib
+
+ lib/msf/core/exploit/pgadmin.rb                    | 47 +++++++++++++---
+ .../multi/http/pgadmin_session_deserialization.rb  | 41 +-------------
+ .../windows/http/pgadmin_binary_path_api.rb        | 65 +---------------------
+ 3 files changed, 42 insertions(+), 111 deletions(-)
