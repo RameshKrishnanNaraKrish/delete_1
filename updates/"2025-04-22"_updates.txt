@@ -1,0 +1,140 @@
+commit b74860a17ee4b6da8fc7945e4088478406667c73
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 22 19:40:20 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit f5aafdcfdfd153695d91890cf7ed0fab9d3df1bd
+Merge: 29e995cd2f dc8531e37f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Apr 22 12:32:08 2025 -0700
+
+    Merge pull request #20046 from Takahiro-Yoko/bentoml_runner_server_rce_cve_2025_32375
+    
+    Add BentoML's runner server unauth RCE module (CVE-2025-32375)
+
+ .../bentoml_runner_server_rce_cve_2025_32375.md    | 165 +++++++++++++++++++++
+ .../bentoml_runner_server_rce_cve_2025_32375.rb    | 110 ++++++++++++++
+ 2 files changed, 275 insertions(+)
+
+commit 29e995cd2fd1fd0c44de14c9f08c7a90483cc32b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 22 18:20:13 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eba2b6c1bfa8cdaa2223c0e07f660c3ee2116f9c
+Merge: a9dc062e07 226853f535
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Apr 22 11:11:54 2025 -0700
+
+    Merge pull request #19760 from cdelafuente-r7/feat/pkcs12/certs_command/pkinit
+    
+    Add certs command & use pkinit if kerberos tickets are not available in cache
+
+ lib/metasploit/framework/ldap/client.rb            |  35 +-
+ lib/metasploit/framework/login_scanner/ldap.rb     |   4 +-
+ lib/msf/core/db_manager/cred.rb                    |   6 +-
+ .../remote/kerberos/service_authenticator/base.rb  |  12 +
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   7 +-
+ lib/msf/core/exploit/remote/pkcs12/storage.rb      | 151 ++++++++
+ .../core/exploit/remote/pkcs12/stored_pkcs12.rb    |  47 +++
+ lib/msf/ui/console/command_dispatcher/db.rb        |   2 +
+ lib/msf/ui/console/command_dispatcher/db/certs.rb  | 230 +++++++++++
+ modules/auxiliary/scanner/ldap/ldap_login.rb       |  24 +-
+ .../msf/core/exploit/remote/pkcs12/storage_spec.rb | 296 ++++++++++++++
+ .../exploit/remote/pkcs12/stored_pkcs12_spec.rb    | 137 +++++++
+ .../ui/console/command_dispatcher/db/certs_spec.rb | 425 +++++++++++++++++++++
+ 13 files changed, 1352 insertions(+), 24 deletions(-)
+
+commit 226853f5351f91b2e59022609e797bea26e9f6c1
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Apr 22 19:08:45 2025 +0200
+
+    Fix EKU lookup in certificate
+
+ lib/msf/core/exploit/remote/pkcs12/storage.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dc8531e37f249e6e6a9be7356d4742aecb21d4b3
+Author: Takah1ro <tkhr.y0k0yama@gmail.com>
+Date:   Tue Apr 22 21:57:05 2025 +0900
+
+    Fix after applied suggestions (escape ')
+
+ modules/exploits/linux/http/bentoml_runner_server_rce_cve_2025_32375.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f579235b95160c9e61d82022a497b5c816292d29
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Tue Apr 22 21:53:05 2025 +0900
+
+    Apply suggestions from code review
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ .../linux/http/bentoml_runner_server_rce_cve_2025_32375.rb     | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit a9dc062e0750771f0c5b5994aacf3730e94116f9
+Merge: a179669075 d4001ef558
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 22 12:44:55 2025 +0100
+
+    Merge pull request #20069 from sjanusz-r7/allow-overwriting-reported-module-name
+    
+    Allow overwriting reported module name for report_vuln
+
+ lib/msf/core/auxiliary/report.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d4001ef5587f486cdc7a6019d3fe2f2cd2d94bdd
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Apr 22 10:53:22 2025 +0100
+
+    Allow overwriting reported module name for a vulnerability
+
+ lib/msf/core/auxiliary/report.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a179669075ae2f991699e1f2afa27783a7d3925b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 22 10:17:22 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 38 +++++++++++++++++++++++++++++---------
+ 1 file changed, 29 insertions(+), 9 deletions(-)
+
+commit 37136b85506c28adbb9193d2afd9a310ec13dca6
+Merge: 62cbb794b8 1da0ebff66
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 22 11:09:25 2025 +0100
+
+    Merge pull request #20068 from bcoles/exploits-solaris-sadmind
+    
+    exploit/solaris/sunrpc/sadmind_*: Cleanup and add documentation
+
+ .../solaris/sunrpc/sadmind_adm_build_path.md       |  67 +++++++++++
+ .../modules/exploit/solaris/sunrpc/sadmind_exec.md |  72 +++++++++++
+ .../solaris/sunrpc/sadmind_adm_build_path.rb       | 120 +++++++++---------
+ modules/exploits/solaris/sunrpc/sadmind_exec.rb    | 134 ++++++++++++---------
+ 4 files changed, 278 insertions(+), 115 deletions(-)
+
+commit 1da0ebff66491963a3a144fa8af114b5b32c635c
+Author: bcoles <bcoles@github>
+Date:   Tue Apr 22 13:33:25 2025 +1000
+
+    exploit/solaris/sunrpc/sadmind_*: Cleanup and add documentation
+
+ .../solaris/sunrpc/sadmind_adm_build_path.md       |  67 +++++++++++
+ .../modules/exploit/solaris/sunrpc/sadmind_exec.md |  72 +++++++++++
+ .../solaris/sunrpc/sadmind_adm_build_path.rb       | 120 +++++++++---------
+ modules/exploits/solaris/sunrpc/sadmind_exec.rb    | 134 ++++++++++++---------
+ 4 files changed, 278 insertions(+), 115 deletions(-)
