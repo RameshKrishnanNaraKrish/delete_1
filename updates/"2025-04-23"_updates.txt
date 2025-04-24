@@ -1,0 +1,73 @@
+commit 19c71896b83393e67f54c3a1a86f90112e31d575
+Merge: 3368d8bfed 5b62007802
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 23 21:09:04 2025 +0100
+
+    Merge pull request #20067 from adfoster-r7/fix-defer-module-payload-regression
+    
+    Fix defer module payload regression
+
+ lib/msf/core/payload_set.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3368d8bfedb87a2dc8dba6b7cb3fb8e45bc7b075
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 23 17:49:54 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f1acf0fead2172a7822a877f05dacebd1cfadfc5
+Merge: 346ef4ab01 9ade55bd35
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Apr 23 12:41:35 2025 -0500
+
+    Merge pull request #20076 from Zeecka/patch-1
+    
+    Fix typo in bypassuac_fodhelper.rb
+
+ modules/exploits/windows/local/bypassuac_fodhelper.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 346ef4ab01eaf837cb11fd529f99e22fbd6661fd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 23 16:52:32 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1bfb43a4676c2e5531289e759641fdc6edbab810
+Merge: b74860a17e da8e9e1b03
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 23 17:43:53 2025 +0100
+
+    Merge pull request #20077 from adfoster-r7/update-haraka-module-to-work-with-newer-python-versions
+    
+    Update haraka module to work with newer python versions
+
+ .../modules/external/python/metasploit/version.py  | 349 +++++++++++++++++++++
+ modules/exploits/linux/smtp/haraka.py              |   4 +-
+ 2 files changed, 351 insertions(+), 2 deletions(-)
+
+commit da8e9e1b0351f2882d73c839104011c9c2283d3f
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 23 17:11:37 2025 +0100
+
+    Update haraka module to work with newer python versions
+
+ .../modules/external/python/metasploit/version.py  | 349 +++++++++++++++++++++
+ modules/exploits/linux/smtp/haraka.py              |   4 +-
+ 2 files changed, 351 insertions(+), 2 deletions(-)
+
+commit 9ade55bd3594a4c1b4e55deda9e6c31ddbce348b
+Author: Zeecka <24873615+Zeecka@users.noreply.github.com>
+Date:   Wed Apr 23 17:49:11 2025 +0200
+
+    Fix typo in bypassuac_fodhelper.rb
+
+ modules/exploits/windows/local/bypassuac_fodhelper.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
