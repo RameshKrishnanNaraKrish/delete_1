@@ -1,0 +1,188 @@
+commit f84cae4cc88a8b50b0238bfc305bdf5799d3091c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 26 17:20:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 292 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 229 insertions(+), 63 deletions(-)
+
+commit d4988c4eb252d1854acce9012c6fa5bf14b71ce3
+Merge: decb528470 0ef9f305f3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 18:08:17 2025 +0100
+
+    Merge pull request #20073 from bcoles/rubocop-modules-exploits-solaris
+    
+    modules/exploits/solaris: Resolve RuboCop violations
+
+ modules/exploits/solaris/dtspcd/heap_noir.rb       | 165 ++--
+ .../local/extremeparr_dtappgather_priv_esc.rb      | 102 +--
+ .../local/libnspr_nspr_log_file_priv_esc.rb        |  92 ++-
+ .../solaris/local/rsh_stack_clash_priv_esc.rb      | 891 +++++++++++----------
+ .../solaris/local/xscreensaver_log_priv_esc.rb     |  92 +--
+ modules/exploits/solaris/lpd/sendmail_exec.rb      | 168 ++--
+ .../exploits/solaris/samba/lsa_transnames_heap.rb  | 188 ++---
+ modules/exploits/solaris/samba/trans2open.rb       | 237 +++---
+ modules/exploits/solaris/sunrpc/ypupdated_exec.rb  |  88 +-
+ modules/exploits/solaris/telnet/fuser.rb           |  78 +-
+ modules/exploits/solaris/telnet/ttyprompt.rb       | 107 +--
+ 11 files changed, 1125 insertions(+), 1083 deletions(-)
+
+commit decb5284701253c3bcf5a4e184c5e075e132c338
+Merge: c5ad0c3cf9 f607f4b5b2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 18:05:20 2025 +0100
+
+    Merge pull request #20090 from bcoles/rubocop-modules-post-apple_ios
+    
+    modules/post/apple_ios: Resolve RuboCop violations
+
+ modules/post/apple_ios/gather/ios_image_gather.rb | 5 +++++
+ modules/post/apple_ios/gather/ios_text_gather.rb  | 7 ++++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+commit c5ad0c3cf91ed44a07b2cbadfeea91caaa0a028f
+Merge: 7a7a3abd3f dc63ea9668
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 18:04:43 2025 +0100
+
+    Merge pull request #20089 from bcoles/rubocop-modules-post-networking
+    
+    modules/post/networking: Resolve RuboCop violations
+
+ modules/post/networking/gather/enum_brocade.rb | 7 ++++++-
+ modules/post/networking/gather/enum_juniper.rb | 7 ++++++-
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+commit 7a7a3abd3fca9069690751af28ee8799a8149dda
+Merge: 3daecae78c bf12f3ee8d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 18:04:12 2025 +0100
+
+    Merge pull request #20088 from bcoles/rubocop-modules-post-bsd
+    
+    modules/post/bsd: Resolve RuboCop violations
+
+ modules/post/bsd/gather/hashdump.rb | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit 3daecae78cacbe977771f1347a3e512667648e17
+Merge: 6358035a59 2d94c28c53
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 18:03:42 2025 +0100
+
+    Merge pull request #20087 from bcoles/rubocop-modules-post-android
+    
+    modules/post/android: Resolve RuboCop violations
+
+ modules/post/android/capture/screen.rb          |  7 ++-
+ modules/post/android/gather/hashdump.rb         | 51 +++++++++++----------
+ modules/post/android/gather/sub_info.rb         | 32 ++++++-------
+ modules/post/android/gather/wireless_ap.rb      | 32 ++++++-------
+ modules/post/android/manage/remove_lock.rb      | 61 +++++++++++++------------
+ modules/post/android/manage/remove_lock_root.rb | 32 ++++++-------
+ 6 files changed, 112 insertions(+), 103 deletions(-)
+
+commit f607f4b5b264bb4a9e12243ff4cf588511f07ca1
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 27 02:31:19 2025 +1000
+
+    modules/post/apple_ios: Resolve RuboCop violations
+
+ modules/post/apple_ios/gather/ios_image_gather.rb | 5 +++++
+ modules/post/apple_ios/gather/ios_text_gather.rb  | 7 ++++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+commit dc63ea9668f13c8bbd801b1c952be4aa2f668fc9
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 27 02:13:25 2025 +1000
+
+    modules/post/networking: Resolve RuboCop violations
+
+ modules/post/networking/gather/enum_brocade.rb | 7 ++++++-
+ modules/post/networking/gather/enum_juniper.rb | 7 ++++++-
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+commit bf12f3ee8d7240bd33eec9262c5ef56e40be2dbe
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 27 02:09:41 2025 +1000
+
+    modules/post/bsd: Resolve RuboCop violations
+
+ modules/post/bsd/gather/hashdump.rb | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit 2d94c28c532eb75be7bbe2ea2372bc0726e31f56
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 27 01:56:49 2025 +1000
+
+    modules/post/android: Resolve RuboCop violations
+
+ modules/post/android/capture/screen.rb          |  7 ++-
+ modules/post/android/gather/hashdump.rb         | 51 +++++++++++----------
+ modules/post/android/gather/sub_info.rb         | 32 ++++++-------
+ modules/post/android/gather/wireless_ap.rb      | 32 ++++++-------
+ modules/post/android/manage/remove_lock.rb      | 61 +++++++++++++------------
+ modules/post/android/manage/remove_lock_root.rb | 32 ++++++-------
+ 6 files changed, 112 insertions(+), 103 deletions(-)
+
+commit 6358035a59a945844f5e2fcbf5d342d6fc275d19
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 26 15:07:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 138 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 109 insertions(+), 29 deletions(-)
+
+commit dd30b6fe9f54abd1cdfb703ad1a66a8bd2bc4964
+Merge: eff44ccd89 4ce7b89bf1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 15:59:20 2025 +0100
+
+    Merge pull request #20083 from bcoles/rubocop-modules-exploits-android
+    
+    modules/exploits/android: Resolve RuboCop violations
+
+ modules/exploits/android/adb/adb_server_exec.rb    |  76 ++++----
+ .../android/browser/samsung_knox_smdm_url.rb       | 101 +++++-----
+ .../android/browser/stagefright_mp4_tx3g_64bit.rb  | 215 +++++++++++----------
+ .../browser/webview_addjavascriptinterface.rb      | 107 +++++-----
+ .../fileformat/adobe_reader_pdf_js_interface.rb    | 166 ++++++++--------
+ modules/exploits/android/local/binder_uaf.rb       | 101 +++++-----
+ modules/exploits/android/local/futex_requeue.rb    |  65 ++++---
+ modules/exploits/android/local/janus.rb            | 154 +++++++--------
+ modules/exploits/android/local/put_user_vroot.rb   |  89 ++++-----
+ modules/exploits/android/local/su_exec.rb          |  90 +++++----
+ 10 files changed, 606 insertions(+), 558 deletions(-)
+
+commit eff44ccd89f0b2dd985b860602c5ce3eed6d9ef5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Apr 26 14:46:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit abe20f103e6440911d0f283306236551ddae23fd
+Merge: 329cbc7da9 4fccbb0760
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Apr 26 15:37:58 2025 +0100
+
+    Merge pull request #20086 from bcoles/rubocop-modules-post-aix
+    
+    modules/post/aix: Resolve RuboCop violations
+
+ modules/post/aix/hashdump.rb | 68 +++++++++++++++++++++++---------------------
+ 1 file changed, 35 insertions(+), 33 deletions(-)
+
+commit 4fccbb07609383c9ebff4971540d24098d897944
+Author: bcoles <bcoles@github>
+Date:   Sat Apr 26 16:28:15 2025 +1000
+
+    modules/post/aix: Resolve RuboCop violations
+
+ modules/post/aix/hashdump.rb | 68 +++++++++++++++++++++++---------------------
+ 1 file changed, 35 insertions(+), 33 deletions(-)
