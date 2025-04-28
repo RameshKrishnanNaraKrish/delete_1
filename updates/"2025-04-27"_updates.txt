@@ -1,0 +1,89 @@
+commit 912931d95c112535d0dbf1c318425634a9c84614
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Apr 27 22:19:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1b3ad5050d6d6a3fd8a55572feac27803ec62b5e
+Merge: 3ce07a2e7a 085f0380c3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 27 23:10:40 2025 +0100
+
+    Merge pull request #20093 from jvoisin/fix_typo
+    
+    Fix an unfortunate typo
+
+ modules/post/linux/gather/enum_protections.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3ce07a2e7ab52cf2fc95592c1ab66931415f263c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Apr 27 22:08:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 162 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 129 insertions(+), 33 deletions(-)
+
+commit ba2b72b4ffd4a89ea9e20608369a8c5b35a55ebb
+Merge: f84cae4cc8 394e7a1ba2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Apr 27 22:59:44 2025 +0100
+
+    Merge pull request #20091 from bcoles/rubocop-modules-post-linux-gather
+    
+    modules/post/linux/gather: Resolve RuboCop violations
+
+ modules/post/linux/gather/checkvm.rb               | 25 ++++----
+ modules/post/linux/gather/ecryptfs_creds.rb        |  7 ++-
+ modules/post/linux/gather/enum_configs.rb          |  7 ++-
+ modules/post/linux/gather/enum_nagios_xi.rb        | 64 +++++++++----------
+ modules/post/linux/gather/enum_network.rb          |  7 ++-
+ modules/post/linux/gather/enum_protections.rb      | 27 ++++----
+ modules/post/linux/gather/enum_system.rb           |  7 ++-
+ modules/post/linux/gather/enum_users_history.rb    |  7 ++-
+ modules/post/linux/gather/gnome_commander_creds.rb |  7 ++-
+ modules/post/linux/gather/gnome_keyring_dump.rb    | 18 ++++--
+ modules/post/linux/gather/hashdump.rb              |  7 ++-
+ modules/post/linux/gather/mount_cifs_creds.rb      |  9 ++-
+ modules/post/linux/gather/openvpn_credentials.rb   | 22 ++++---
+ modules/post/linux/gather/phpmyadmin_credsteal.rb  |  7 ++-
+ modules/post/linux/gather/pptpd_chap_secrets.rb    |  7 ++-
+ modules/post/linux/gather/tor_hiddenservices.rb    | 72 ++++++++++++----------
+ 16 files changed, 186 insertions(+), 114 deletions(-)
+
+commit 085f0380c3c3e55bee68e41b4a3fb69db7d91337
+Author: jvoisin <julien.voisin@dustri.org>
+Date:   Sun Apr 27 20:37:15 2025 +0200
+
+    Fix an unfortunate typo
+
+ modules/post/linux/gather/enum_protections.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 394e7a1ba23a4da2b421d21df0a7e218dc71a281
+Author: bcoles <bcoles@github>
+Date:   Sun Apr 27 12:23:56 2025 +1000
+
+    modules/post/linux/gather: Resolve RuboCop violations
+
+ modules/post/linux/gather/checkvm.rb               | 25 ++++----
+ modules/post/linux/gather/ecryptfs_creds.rb        |  7 ++-
+ modules/post/linux/gather/enum_configs.rb          |  7 ++-
+ modules/post/linux/gather/enum_nagios_xi.rb        | 64 +++++++++----------
+ modules/post/linux/gather/enum_network.rb          |  7 ++-
+ modules/post/linux/gather/enum_protections.rb      | 27 ++++----
+ modules/post/linux/gather/enum_system.rb           |  7 ++-
+ modules/post/linux/gather/enum_users_history.rb    |  7 ++-
+ modules/post/linux/gather/gnome_commander_creds.rb |  7 ++-
+ modules/post/linux/gather/gnome_keyring_dump.rb    | 18 ++++--
+ modules/post/linux/gather/hashdump.rb              |  7 ++-
+ modules/post/linux/gather/mount_cifs_creds.rb      |  9 ++-
+ modules/post/linux/gather/openvpn_credentials.rb   | 22 ++++---
+ modules/post/linux/gather/phpmyadmin_credsteal.rb  |  7 ++-
+ modules/post/linux/gather/pptpd_chap_secrets.rb    |  7 ++-
+ modules/post/linux/gather/tor_hiddenservices.rb    | 72 ++++++++++++----------
+ 16 files changed, 186 insertions(+), 114 deletions(-)
