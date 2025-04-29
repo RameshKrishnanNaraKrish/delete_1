@@ -1,0 +1,150 @@
+commit 157a15a3894f20db1202cf0d1028c08de1a3cf47
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 28 19:37:32 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 733 +++++++++++++++++++++++++++++++-----------
+ 1 file changed, 540 insertions(+), 193 deletions(-)
+
+commit 498bc208c15850eae48c601bbf7d81c7c5be3716
+Merge: ac9669d11a 7ebe8f207d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 28 20:29:19 2025 +0100
+
+    Merge pull request #20094 from bcoles/rubocop-modules-post-hardware
+    
+    modules/post/hardware: Resolve RuboCop violations
+
+ modules/post/hardware/automotive/can_flood.rb      |  7 ++++-
+ modules/post/hardware/automotive/canprobe.rb       |  7 ++++-
+ .../post/hardware/automotive/diagnostic_state.rb   |  2 +-
+ modules/post/hardware/automotive/ecu_hard_reset.rb |  2 +-
+ modules/post/hardware/automotive/getvinfo.rb       | 14 +++++++---
+ .../post/hardware/automotive/identifymodules.rb    |  9 ++++--
+ .../post/hardware/automotive/malibu_overheat.rb    |  9 ++++--
+ modules/post/hardware/automotive/mazda_ic_mover.rb |  9 ++++--
+ modules/post/hardware/automotive/pdt.rb            |  7 ++++-
+ modules/post/hardware/rftransceiver/rfpwnon.rb     | 32 +++++++++++++++-------
+ modules/post/hardware/rftransceiver/transmitter.rb | 16 +++++++----
+ modules/post/hardware/zigbee/zstumbler.rb          | 12 +++++---
+ 12 files changed, 91 insertions(+), 35 deletions(-)
+
+commit ac9669d11a385f2d195b6638803a2c265e03472a
+Merge: 912931d95c 333c38b39e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 28 20:19:54 2025 +0100
+
+    Merge pull request #20092 from bcoles/rubocop-modules-post-windows-gather-credentials
+    
+    modules/post/windows/gather/credentials: Resolve RuboCop violations
+
+ modules/post/windows/gather/credentials/adi_irc.rb |   5 +-
+ modules/post/windows/gather/credentials/aim.rb     |   7 +-
+ .../windows/gather/credentials/avira_password.rb   |  10 +-
+ .../windows/gather/credentials/bulletproof_ftp.rb  |   5 +
+ .../windows/gather/credentials/carotdav_ftp.rb     |   5 +-
+ modules/post/windows/gather/credentials/chrome.rb  |   8 +-
+ modules/post/windows/gather/credentials/comodo.rb  |  17 +--
+ .../post/windows/gather/credentials/coolnovo.rb    |   8 +-
+ modules/post/windows/gather/credentials/coreftp.rb |   9 +-
+ .../gather/credentials/credential_collector.rb     |  27 ++---
+ modules/post/windows/gather/credentials/digsby.rb  |   8 +-
+ .../windows/gather/credentials/domain_hashdump.rb  |   9 +-
+ .../post/windows/gather/credentials/dynazip_log.rb |   7 +-
+ modules/post/windows/gather/credentials/dyndns.rb  |  35 +++---
+ .../windows/gather/credentials/enum_cred_store.rb  | 126 +++++++++++----------
+ .../post/windows/gather/credentials/enum_laps.rb   |   5 +
+ .../windows/gather/credentials/enum_picasa_pwds.rb |   9 +-
+ modules/post/windows/gather/credentials/epo_sql.rb |   5 +
+ .../windows/gather/credentials/filezilla_server.rb |  15 +--
+ .../post/windows/gather/credentials/flashfxp.rb    |   5 +
+ modules/post/windows/gather/credentials/flock.rb   |   7 +-
+ .../windows/gather/credentials/ftpnavigator.rb     |   5 +
+ modules/post/windows/gather/credentials/ftpx.rb    |   5 +
+ .../post/windows/gather/credentials/gadugadu.rb    |   7 +-
+ modules/post/windows/gather/credentials/gpp.rb     |  43 +++----
+ .../post/windows/gather/credentials/halloy_irc.rb  |   5 +-
+ .../post/windows/gather/credentials/heidisql.rb    |  11 +-
+ modules/post/windows/gather/credentials/icq.rb     |   7 +-
+ modules/post/windows/gather/credentials/idm.rb     |  16 ++-
+ modules/post/windows/gather/credentials/ie.rb      |   7 +-
+ modules/post/windows/gather/credentials/imail.rb   |   7 +-
+ modules/post/windows/gather/credentials/imvu.rb    |   9 +-
+ .../post/windows/gather/credentials/incredimail.rb |  76 ++++++-------
+ .../post/windows/gather/credentials/kakaotalk.rb   |   5 +-
+ modules/post/windows/gather/credentials/kmeleon.rb |   5 +-
+ modules/post/windows/gather/credentials/line.rb    |   5 +-
+ modules/post/windows/gather/credentials/maxthon.rb |   5 +-
+ .../gather/credentials/mcafee_vse_hashdump.rb      |  10 +-
+ .../gather/credentials/mdaemon_cred_collector.rb   |   9 +-
+ modules/post/windows/gather/credentials/meebo.rb   |  63 +++++++----
+ modules/post/windows/gather/credentials/miranda.rb |   5 +-
+ modules/post/windows/gather/credentials/mremote.rb |  29 ++---
+ .../gather/credentials/mssql_local_hashdump.rb     |  11 +-
+ modules/post/windows/gather/credentials/nimbuzz.rb |  13 ++-
+ modules/post/windows/gather/credentials/opera.rb   |   5 +-
+ .../post/windows/gather/credentials/operamail.rb   |   5 +-
+ modules/post/windows/gather/credentials/outlook.rb |   5 +
+ modules/post/windows/gather/credentials/postbox.rb |   5 +-
+ .../gather/credentials/purevpn_cred_collector.rb   |  42 ++++---
+ modules/post/windows/gather/credentials/qq.rb      |   5 +-
+ .../post/windows/gather/credentials/quassel_irc.rb |   5 +-
+ .../windows/gather/credentials/razer_synapse.rb    |   7 +-
+ .../post/windows/gather/credentials/razorsql.rb    |   5 +
+ .../gather/credentials/rdc_manager_creds.rb        |   5 +
+ .../gather/credentials/redis_desktop_manager.rb    |   5 +-
+ modules/post/windows/gather/credentials/safari.rb  |   5 +-
+ .../post/windows/gather/credentials/seamonkey.rb   |   5 +-
+ modules/post/windows/gather/credentials/skype.rb   |  14 ++-
+ .../post/windows/gather/credentials/smartermail.rb |  27 +++--
+ .../post/windows/gather/credentials/smartftp.rb    |  21 ++--
+ .../post/windows/gather/credentials/spark_im.rb    |  10 +-
+ modules/post/windows/gather/credentials/srware.rb  |   5 +-
+ modules/post/windows/gather/credentials/sso.rb     |  11 +-
+ modules/post/windows/gather/credentials/steam.rb   |  11 +-
+ .../post/windows/gather/credentials/sylpheed.rb    |   5 +-
+ modules/post/windows/gather/credentials/tango.rb   |   5 +-
+ .../gather/credentials/teamviewer_passwords.rb     |   7 +-
+ .../post/windows/gather/credentials/thunderbird.rb |   5 +-
+ modules/post/windows/gather/credentials/tlen.rb    |   5 +-
+ .../post/windows/gather/credentials/tortoisesvn.rb |  19 +---
+ .../windows/gather/credentials/total_commander.rb  |  14 +--
+ .../post/windows/gather/credentials/trillian.rb    |  11 +-
+ modules/post/windows/gather/credentials/viber.rb   |   5 +-
+ modules/post/windows/gather/credentials/vnc.rb     | 123 +++++++++-----------
+ .../gather/credentials/windows_autologin.rb        |   7 +-
+ .../windows/gather/credentials/windowslivemail.rb  |   5 +-
+ modules/post/windows/gather/credentials/winscp.rb  |   5 +
+ .../windows/gather/credentials/wsftp_client.rb     |   5 +
+ modules/post/windows/gather/credentials/xchat.rb   |   7 +-
+ 79 files changed, 621 insertions(+), 500 deletions(-)
+
+commit 7ebe8f207de10090c1fcf1e3538cef5a37c8d0b8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 28 20:12:59 2025 +0100
+
+    Update modules/post/hardware/zigbee/zstumbler.rb
+
+ modules/post/hardware/zigbee/zstumbler.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 04e1424e31de35c28909d276c223e22450c33db4
+Author: bcoles <bcoles@github>
+Date:   Tue Apr 29 01:52:00 2025 +1000
+
+    modules/post/hardware: Resolve RuboCop violations
+
+ modules/post/hardware/automotive/can_flood.rb      |  7 ++++-
+ modules/post/hardware/automotive/canprobe.rb       |  7 ++++-
+ .../post/hardware/automotive/diagnostic_state.rb   |  2 +-
+ modules/post/hardware/automotive/ecu_hard_reset.rb |  2 +-
+ modules/post/hardware/automotive/getvinfo.rb       | 14 +++++++---
+ .../post/hardware/automotive/identifymodules.rb    |  9 ++++--
+ .../post/hardware/automotive/malibu_overheat.rb    |  9 ++++--
+ modules/post/hardware/automotive/mazda_ic_mover.rb |  9 ++++--
+ modules/post/hardware/automotive/pdt.rb            |  7 ++++-
+ modules/post/hardware/rftransceiver/rfpwnon.rb     | 32 +++++++++++++++-------
+ modules/post/hardware/rftransceiver/transmitter.rb | 16 +++++++----
+ modules/post/hardware/zigbee/zstumbler.rb          | 12 +++++---
+ 12 files changed, 91 insertions(+), 35 deletions(-)
