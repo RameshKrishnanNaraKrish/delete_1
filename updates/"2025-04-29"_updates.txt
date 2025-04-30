@@ -1,0 +1,65 @@
+commit 319037ede5abe41fc53ff0c5b672055ffcfc9a12
+Merge: 3a3a2dbf85 b0f8df0894
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Apr 29 15:42:11 2025 -0400
+
+    Merge pull request #20097 from smashery/action_run_arg
+    
+    Action run arg
+
+ lib/msf/base/simple/exploit.rb                      |  1 +
+ lib/msf/ui/console/command_dispatcher/exploit.rb    |  1 +
+ lib/msf/ui/console/module_argument_parsing.rb       |  8 ++++++--
+ spec/msf/ui/console/module_argument_parsing_spec.rb | 14 ++++++++++++++
+ 4 files changed, 22 insertions(+), 2 deletions(-)
+
+commit 3a3a2dbf851e149c2e81be1f3d7288c84d35f67f
+Merge: bedcaac324 ff3c7232e6
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Apr 29 12:34:35 2025 -0700
+
+    Merge pull request #20084 from bcoles/rubocop-modules-auxiliary-docx
+    
+    modules/auxiliary/docx/word_unc_injector: Resolve RuboCop violations
+
+ modules/auxiliary/docx/word_unc_injector.rb | 201 +++++++++++++---------------
+ 1 file changed, 93 insertions(+), 108 deletions(-)
+
+commit bedcaac324cff283eb016a8c2060fe09016c9ff3
+Merge: 157a15a389 e99ae3d23e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 29 14:00:29 2025 +0100
+
+    Merge pull request #20101 from bcoles/rubocop-modules-post-firefox
+    
+    modules/post/firefox: Resolve RuboCop violations
+
+ modules/post/firefox/gather/cookies.rb     | 13 +++++++++----
+ modules/post/firefox/gather/history.rb     | 13 +++++++++----
+ modules/post/firefox/gather/passwords.rb   | 13 +++++++++----
+ modules/post/firefox/gather/xss.rb         |  7 ++++++-
+ modules/post/firefox/manage/webcam_chat.rb | 11 ++++++++---
+ 5 files changed, 41 insertions(+), 16 deletions(-)
+
+commit e99ae3d23e50c09c20596d28140c706e7dd48028
+Author: bcoles <bcoles@github>
+Date:   Tue Apr 29 21:39:18 2025 +1000
+
+    modules/post/firefox: Resolve RuboCop violations
+
+ modules/post/firefox/gather/cookies.rb     | 13 +++++++++----
+ modules/post/firefox/gather/history.rb     | 13 +++++++++----
+ modules/post/firefox/gather/passwords.rb   | 13 +++++++++----
+ modules/post/firefox/gather/xss.rb         |  7 ++++++-
+ modules/post/firefox/manage/webcam_chat.rb | 11 ++++++++---
+ 5 files changed, 41 insertions(+), 16 deletions(-)
+
+commit b0f8df0894349c4c599e09a2f3ceeba17353ae80
+Author: smashery <smashery@github>
+Date:   Tue Apr 29 17:13:02 2025 +1000
+
+    Flow the action through to the exploit class
+
+ lib/msf/base/simple/exploit.rb                   | 1 +
+ lib/msf/ui/console/command_dispatcher/exploit.rb | 1 +
+ 2 files changed, 2 insertions(+)
