@@ -1,0 +1,476 @@
+commit 314115239384911538741f4a1b2f2fce35f5b20f
+Merge: 0f22a18dac 2fdb2611f9
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 30 14:02:30 2025 -0700
+
+    Merge pull request #20017 from zeroSteiner/feat/mod/ldap/passwords
+    
+    Add LAPSv1 and LAPSv2 LDAP Module
+
+ Gemfile.lock                                       |   4 +-
+ .../gather/ldap_query/ldap_queries_default.yaml    |   4 +-
+ .../modules/auxiliary/gather/ldap_hashdump.md      | 204 -------
+ .../modules/auxiliary/gather/ldap_passwords.md     | 152 +++++
+ lib/msf/core/exploit/remote/ldap/queries.rb        |  17 -
+ lib/msf/core/exploit/remote/ms_gkdi.rb             | 206 +++++++
+ lib/rex/proto/crypto_asn1/cms.rb                   | 643 +++++++++++----------
+ lib/rex/proto/crypto_asn1/o_i_ds.rb                |  10 +-
+ .../proto/ldap/auth_adapter/rex_ntlm/encryptor.rb  |  21 +-
+ metasploit-framework.gemspec                       |   2 +-
+ modules/auxiliary/gather/ldap_hashdump.rb          | 394 -------------
+ modules/auxiliary/gather/ldap_passwords.rb         | 498 ++++++++++++++++
+ spec/acceptance/ldap_spec.rb                       |  13 +-
+ test/ldap/Dockerfile                               |   1 +
+ test/ldap/laps-accounts.ldif                       |  11 +
+ test/ldap/laps-schema-add.ldif                     |  29 +
+ test/ldap/laps-schema-modify.ldif                  |   5 +
+ test/ldap/samba-ad-setup.sh                        |   6 +
+ 18 files changed, 1292 insertions(+), 928 deletions(-)
+
+commit 2fdb2611f9cd02f54bd795d812124271290c85b6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 30 16:38:54 2025 -0400
+
+    Note the version of LAPS here
+
+ data/auxiliary/gather/ldap_query/ldap_queries_default.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5dd4098c7506aad634a7a560036ee93c8b4edb0e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 30 16:37:17 2025 -0400
+
+    Bump the version of RubySMB
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 0f22a18daca2b7d3a994ce6c150ed62014e3b7b7
+Merge: 35ecb89bf8 1f650b0432
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 30 13:14:45 2025 -0700
+
+    Merge pull request #20081 from msutovsky-r7/exploit/wondercms-rce
+    
+    Adds module for  CVE-2023-41425 WonderCMS RCE
+
+ .../modules/exploit/multi/http/wondercms_rce.md    |  63 ++++++++
+ modules/exploits/multi/http/wondercms_rce.rb       | 176 +++++++++++++++++++++
+ 2 files changed, 239 insertions(+)
+
+commit 35ecb89bf898b7d264306c4a70cb7a3d6e6dc797
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Wed Apr 30 13:06:00 2025 -0500
+
+    Bump version of framework to 6.4.61
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit c3d535e965395fcc4034432eec4512a85fc8719e
+Merge: 8aa1923eca ed66e1fbb9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 30 13:48:01 2025 -0400
+
+    Merge pull request #19938 from msutovsky-r7/fix/clipboard_file_download
+    
+    Extapi clipboard updates
+
+ .../post/meterpreter/extensions/stdapi/fs/file.rb  | 1129 ++++++++++----------
+ .../console/command_dispatcher/extapi/clipboard.rb |  891 +++++++--------
+ 2 files changed, 1047 insertions(+), 973 deletions(-)
+
+commit 8aa1923eca0cd200623399516746e57f9089555a
+Merge: 8ae6d353d8 2a616f7560
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 30 18:16:01 2025 +0100
+
+    Merge pull request #20108 from bcoles/rubocop-modules-post-multi
+    
+    modules/post/multi: Resolve RuboCop violations
+
+ modules/post/multi/escalate/aws_create_iam_user.rb |   7 +-
+ modules/post/multi/escalate/cups_root_file_read.rb |  72 +++++++------
+ modules/post/multi/escalate/metasploit_pcaplog.rb  |  95 +++++++++--------
+ modules/post/multi/general/close.rb                |   9 +-
+ modules/post/multi/general/execute.rb              |   7 +-
+ modules/post/multi/general/wall.rb                 |  11 +-
+ modules/post/multi/manage/autoroute.rb             |  72 +++++++------
+ modules/post/multi/manage/dbvis_add_db_admin.rb    | 105 +++++++++++--------
+ modules/post/multi/manage/dbvis_query.rb           |  86 ++++++++--------
+ modules/post/multi/manage/hsts_eraser.rb           |   7 +-
+ modules/post/multi/manage/multi_post.rb            | 114 +++++++++++----------
+ modules/post/multi/manage/open.rb                  |  51 +++++----
+ modules/post/multi/manage/play_youtube.rb          |   6 +-
+ modules/post/multi/manage/record_mic.rb            |   5 +
+ modules/post/multi/manage/set_wallpaper.rb         |   5 +
+ modules/post/multi/manage/shell_to_meterpreter.rb  |  11 +-
+ modules/post/multi/manage/sudo.rb                  |   7 +-
+ modules/post/multi/manage/system_session.rb        |  13 ++-
+ modules/post/multi/manage/upload_exec.rb           |   7 +-
+ modules/post/multi/manage/zip.rb                   |   5 +
+ .../post/multi/recon/local_exploit_suggester.rb    |  29 +++---
+ .../post/multi/recon/multiport_egress_traffic.rb   |   5 +
+ modules/post/multi/recon/sudo_commands.rb          |   7 +-
+ 23 files changed, 427 insertions(+), 309 deletions(-)
+
+commit 2a616f7560ec30b396c6a674307eb65ad7b9456c
+Author: bcoles <bcoles@github>
+Date:   Thu May 1 02:32:23 2025 +1000
+
+    modules/post/multi: Resolve RuboCop violations
+
+ modules/post/multi/escalate/aws_create_iam_user.rb |   7 +-
+ modules/post/multi/escalate/cups_root_file_read.rb |  72 +++++++------
+ modules/post/multi/escalate/metasploit_pcaplog.rb  |  95 +++++++++--------
+ modules/post/multi/general/close.rb                |   9 +-
+ modules/post/multi/general/execute.rb              |   7 +-
+ modules/post/multi/general/wall.rb                 |  11 +-
+ modules/post/multi/manage/autoroute.rb             |  72 +++++++------
+ modules/post/multi/manage/dbvis_add_db_admin.rb    | 105 +++++++++++--------
+ modules/post/multi/manage/dbvis_query.rb           |  86 ++++++++--------
+ modules/post/multi/manage/hsts_eraser.rb           |   7 +-
+ modules/post/multi/manage/multi_post.rb            | 114 +++++++++++----------
+ modules/post/multi/manage/open.rb                  |  51 +++++----
+ modules/post/multi/manage/play_youtube.rb          |   6 +-
+ modules/post/multi/manage/record_mic.rb            |   5 +
+ modules/post/multi/manage/set_wallpaper.rb         |   5 +
+ modules/post/multi/manage/shell_to_meterpreter.rb  |  11 +-
+ modules/post/multi/manage/sudo.rb                  |   7 +-
+ modules/post/multi/manage/system_session.rb        |  13 ++-
+ modules/post/multi/manage/upload_exec.rb           |   7 +-
+ modules/post/multi/manage/zip.rb                   |   5 +
+ .../post/multi/recon/local_exploit_suggester.rb    |  29 +++---
+ .../post/multi/recon/multiport_egress_traffic.rb   |   5 +
+ modules/post/multi/recon/sudo_commands.rb          |   7 +-
+ 23 files changed, 427 insertions(+), 309 deletions(-)
+
+commit 1f650b0432af0a59f9dcac001eeeea7a3fabe33e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 30 17:58:15 2025 +0200
+
+    Adding SRVHOST check
+
+ modules/exploits/multi/http/wondercms_rce.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit f2e0fe79be76b02bcf9f4ac4c1558d829448f579
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 30 17:53:26 2025 +0200
+
+    Responding to comments
+
+ .../modules/exploit/multi/http/wondercms_rce.md          | 16 ++++++++++++----
+ modules/exploits/multi/http/wondercms_rce.rb             |  5 ++++-
+ 2 files changed, 16 insertions(+), 5 deletions(-)
+
+commit 8ae6d353d85c6ef94e3110e554426033d1f6f0a3
+Merge: 2c00a912cb 73f0963d81
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Apr 30 17:22:50 2025 +0200
+
+    Land #20085, module exploit for Craft CMS Preauth RCE (CVE-2025-3243)
+    
+    Land #20085, module exploit for Craft CMS Preauth RCE (CVE-2025-3243)
+
+ .../http/craftcms_preauth_rce_cve_2025_32432.md    | 215 ++++++++++++++++++
+ .../http/craftcms_preauth_rce_cve_2025_32432.rb    | 247 +++++++++++++++++++++
+ 2 files changed, 462 insertions(+)
+
+commit 2c00a912cbc41ec79103615614363ed372174cd5
+Merge: a0f200dba0 fab5a3b1b1
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Apr 30 16:10:36 2025 +0100
+
+    Land #20107, modules/post/multi/gather: Resolve RuboCop violations
+
+ modules/post/multi/gather/apple_ios_backup.rb      |   7 +-
+ .../post/multi/gather/aws_ec2_instance_metadata.rb |   7 +-
+ modules/post/multi/gather/aws_keys.rb              |   7 +-
+ modules/post/multi/gather/check_malware.rb         |  12 +-
+ modules/post/multi/gather/chrome_cookies.rb        |   9 +-
+ modules/post/multi/gather/dbvis_enum.rb            |  71 +++++++----
+ modules/post/multi/gather/dns_bruteforce.rb        |  19 +--
+ modules/post/multi/gather/dns_reverse_lookup.rb    |  10 +-
+ modules/post/multi/gather/dns_srv_lookup.rb        |   8 +-
+ modules/post/multi/gather/docker_creds.rb          |   7 +-
+ modules/post/multi/gather/enum_vbox.rb             |   7 +-
+ modules/post/multi/gather/fetchmailrc_creds.rb     |  11 +-
+ modules/post/multi/gather/filezilla_client_cred.rb |  27 +++--
+ modules/post/multi/gather/find_vmx.rb              |   5 +
+ modules/post/multi/gather/firefox_creds.rb         |  18 +--
+ modules/post/multi/gather/gpg_creds.rb             |   7 +-
+ modules/post/multi/gather/grub_creds.rb            |   9 +-
+ modules/post/multi/gather/irssi_creds.rb           |   7 +-
+ modules/post/multi/gather/jboss_gather.rb          |  67 ++++++-----
+ modules/post/multi/gather/jenkins_gather.rb        |   6 +
+ modules/post/multi/gather/lastpass_creds.rb        |  22 ++--
+ modules/post/multi/gather/maven_creds.rb           |   5 +
+ modules/post/multi/gather/minio_client.rb          |   2 +-
+ modules/post/multi/gather/multi_command.rb         |  57 +++++----
+ modules/post/multi/gather/netrc_creds.rb           |   9 +-
+ modules/post/multi/gather/pgpass_creds.rb          |  15 ++-
+ modules/post/multi/gather/pidgin_cred.rb           |  36 +++---
+ modules/post/multi/gather/ping_sweep.rb            |  16 ++-
+ modules/post/multi/gather/remmina_creds.rb         |   7 +-
+ modules/post/multi/gather/resolve_hosts.rb         |   5 +
+ modules/post/multi/gather/rsyncd_creds.rb          |   7 +-
+ modules/post/multi/gather/rubygems_api_key.rb      |   7 +-
+ modules/post/multi/gather/run_console_rc_file.rb   |  34 +++---
+ modules/post/multi/gather/skype_enum.rb            |  43 ++++---
+ modules/post/multi/gather/ssh_creds.rb             |   5 +
+ modules/post/multi/gather/thunderbird_creds.rb     |  50 ++++----
+ modules/post/multi/gather/tomcat_gather.rb         | 134 +++++++++++----------
+ modules/post/multi/gather/ubiquiti_unifi_backup.rb |  52 +++++---
+ modules/post/multi/gather/wlan_geolocate.rb        |  15 ++-
+ 39 files changed, 527 insertions(+), 315 deletions(-)
+
+commit a0f200dba0e77332703ca0271626b2bac16fd828
+Merge: 0c7ddd58fe 7b8cf0bfbb
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 30 07:51:12 2025 -0700
+
+    Merge pull request #20100 from bcoles/rubocop-modules-post-windows-gather
+    
+    modules/post/windows/gather: Resolve RuboCop violations
+
+ modules/post/windows/gather/ad_to_sqlite.rb        |  18 +-
+ modules/post/windows/gather/arp_scanner.rb         |  16 +-
+ modules/post/windows/gather/bitcoin_jacker.rb      |   7 +-
+ modules/post/windows/gather/bitlocker_fvek.rb      |   9 +-
+ modules/post/windows/gather/cachedump.rb           | 390 +++++++++++----------
+ modules/post/windows/gather/checkvm.rb             |   1 -
+ modules/post/windows/gather/dnscache_dump.rb       |   5 +
+ modules/post/windows/gather/dumplinks.rb           |  18 +-
+ modules/post/windows/gather/enum_ad_bitlocker.rb   |   7 +-
+ modules/post/windows/gather/enum_ad_computers.rb   |   5 +
+ modules/post/windows/gather/enum_ad_groups.rb      |   7 +-
+ .../windows/gather/enum_ad_managedby_groups.rb     |   7 +-
+ .../gather/enum_ad_service_principal_names.rb      |  20 +-
+ modules/post/windows/gather/enum_ad_to_wordlist.rb |   9 +-
+ .../post/windows/gather/enum_ad_user_comments.rb   |   7 +-
+ modules/post/windows/gather/enum_ad_users.rb       |   6 +
+ modules/post/windows/gather/enum_applications.rb   |  10 +-
+ modules/post/windows/gather/enum_av_excluded.rb    |  12 +-
+ modules/post/windows/gather/enum_chrome.rb         |  15 +-
+ modules/post/windows/gather/enum_db.rb             | 181 ++++++----
+ modules/post/windows/gather/enum_devices.rb        |  23 +-
+ modules/post/windows/gather/enum_dirperms.rb       |  13 +-
+ modules/post/windows/gather/enum_domain_users.rb   |   7 +-
+ modules/post/windows/gather/enum_domains.rb        |  12 +-
+ modules/post/windows/gather/enum_emet.rb           |   7 +-
+ modules/post/windows/gather/enum_files.rb          |   5 +
+ modules/post/windows/gather/enum_hostfile.rb       |   7 +-
+ modules/post/windows/gather/enum_ie.rb             |  15 +-
+ modules/post/windows/gather/enum_muicache.rb       |   5 +
+ modules/post/windows/gather/enum_prefetch.rb       |   5 +
+ .../windows/gather/enum_putty_saved_sessions.rb    |   5 +
+ modules/post/windows/gather/enum_termserv.rb       |   8 +-
+ modules/post/windows/gather/enum_tokens.rb         |   2 -
+ modules/post/windows/gather/enum_tomcat.rb         |  58 +--
+ .../post/windows/gather/enum_trusted_locations.rb  |  12 +-
+ modules/post/windows/gather/enum_unattend.rb       |  66 ++--
+ modules/post/windows/gather/exchange.rb            |   2 +-
+ modules/post/windows/gather/file_from_raw_ntfs.rb  |   7 +-
+ .../windows/gather/forensics/browser_history.rb    |   5 +
+ .../post/windows/gather/forensics/duqu_check.rb    |  10 +-
+ .../post/windows/gather/forensics/enum_drives.rb   |  81 +++--
+ modules/post/windows/gather/forensics/imager.rb    |  46 ++-
+ .../post/windows/gather/forensics/nbd_server.rb    |  12 +-
+ .../windows/gather/forensics/recovery_files.rb     |  15 +-
+ modules/post/windows/gather/hashdump.rb            |   7 +-
+ .../post/windows/gather/local_admin_search_enum.rb |  17 +-
+ modules/post/windows/gather/lsa_secrets.rb         |  43 ++-
+ modules/post/windows/gather/make_csv_orgchart.rb   |  25 +-
+ modules/post/windows/gather/memory_dump.rb         |   3 +-
+ modules/post/windows/gather/memory_grep.rb         |  12 +-
+ modules/post/windows/gather/ntds_grabber.rb        |  10 +-
+ modules/post/windows/gather/ntds_location.rb       |   5 +
+ modules/post/windows/gather/outlook.rb             |  89 ++---
+ .../windows/gather/phish_windows_credentials.rb    |  32 +-
+ modules/post/windows/gather/psreadline_history.rb  |   7 +-
+ modules/post/windows/gather/resolve_sid.rb         |   2 +-
+ modules/post/windows/gather/screen_spy.rb          | 118 +++----
+ modules/post/windows/gather/smart_hashdump.rb      | 135 +++----
+ modules/post/windows/gather/tcpnetstat.rb          |  11 +-
+ modules/post/windows/gather/usb_history.rb         | 139 ++++----
+ modules/post/windows/gather/win_privs.rb           |  37 +-
+ modules/post/windows/gather/word_unc_injector.rb   |  51 ++-
+ 62 files changed, 1109 insertions(+), 812 deletions(-)
+
+commit 73f0963d81a94b7376fb391dbb6760c237e5066b
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Wed Apr 30 16:16:30 2025 +0200
+
+    Lint ^^
+
+ modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 691cead95c04df4202e58770ba399afdeab83a69
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed Apr 30 16:10:32 2025 +0200
+
+    Update modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb
+    
+    Co-authored-by: Diego Ledda <diego_ledda@rapid7.com>
+
+ modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0c7ddd58fef13ca0e38457bde34b75cc7799a6ed
+Merge: 319037ede5 f2a69666cd
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Apr 30 15:01:23 2025 +0100
+
+    Land #20104, modules/post/solaris: Resolve RuboCop violations
+
+ modules/post/solaris/escalate/pfexec.rb           | 35 ++++++-----
+ modules/post/solaris/escalate/srsexec_readline.rb | 21 ++++---
+ modules/post/solaris/gather/checkvm.rb            |  7 ++-
+ modules/post/solaris/gather/enum_packages.rb      | 18 ++++--
+ modules/post/solaris/gather/enum_services.rb      | 24 ++++---
+ modules/post/solaris/gather/hashdump.rb           | 77 ++++++++++++-----------
+ 6 files changed, 108 insertions(+), 74 deletions(-)
+
+commit fab5a3b1b1c9d0be55055a67713f1af3bb49d79f
+Author: bcoles <bcoles@github>
+Date:   Wed Apr 30 20:15:08 2025 +1000
+
+    modules/post/multi/gather: Resolve RuboCop violations
+
+ modules/post/multi/gather/apple_ios_backup.rb      |   7 +-
+ .../post/multi/gather/aws_ec2_instance_metadata.rb |   7 +-
+ modules/post/multi/gather/aws_keys.rb              |   7 +-
+ modules/post/multi/gather/check_malware.rb         |  12 +-
+ modules/post/multi/gather/chrome_cookies.rb        |   9 +-
+ modules/post/multi/gather/dbvis_enum.rb            |  71 +++++++----
+ modules/post/multi/gather/dns_bruteforce.rb        |  19 +--
+ modules/post/multi/gather/dns_reverse_lookup.rb    |  10 +-
+ modules/post/multi/gather/dns_srv_lookup.rb        |   8 +-
+ modules/post/multi/gather/docker_creds.rb          |   7 +-
+ modules/post/multi/gather/enum_vbox.rb             |   7 +-
+ modules/post/multi/gather/fetchmailrc_creds.rb     |  11 +-
+ modules/post/multi/gather/filezilla_client_cred.rb |  27 +++--
+ modules/post/multi/gather/find_vmx.rb              |   5 +
+ modules/post/multi/gather/firefox_creds.rb         |  18 +--
+ modules/post/multi/gather/gpg_creds.rb             |   7 +-
+ modules/post/multi/gather/grub_creds.rb            |   9 +-
+ modules/post/multi/gather/irssi_creds.rb           |   7 +-
+ modules/post/multi/gather/jboss_gather.rb          |  67 ++++++-----
+ modules/post/multi/gather/jenkins_gather.rb        |   6 +
+ modules/post/multi/gather/lastpass_creds.rb        |  22 ++--
+ modules/post/multi/gather/maven_creds.rb           |   5 +
+ modules/post/multi/gather/minio_client.rb          |   2 +-
+ modules/post/multi/gather/multi_command.rb         |  57 +++++----
+ modules/post/multi/gather/netrc_creds.rb           |   9 +-
+ modules/post/multi/gather/pgpass_creds.rb          |  15 ++-
+ modules/post/multi/gather/pidgin_cred.rb           |  36 +++---
+ modules/post/multi/gather/ping_sweep.rb            |  16 ++-
+ modules/post/multi/gather/remmina_creds.rb         |   7 +-
+ modules/post/multi/gather/resolve_hosts.rb         |   5 +
+ modules/post/multi/gather/rsyncd_creds.rb          |   7 +-
+ modules/post/multi/gather/rubygems_api_key.rb      |   7 +-
+ modules/post/multi/gather/run_console_rc_file.rb   |  34 +++---
+ modules/post/multi/gather/skype_enum.rb            |  43 ++++---
+ modules/post/multi/gather/ssh_creds.rb             |   5 +
+ modules/post/multi/gather/thunderbird_creds.rb     |  50 ++++----
+ modules/post/multi/gather/tomcat_gather.rb         | 134 +++++++++++----------
+ modules/post/multi/gather/ubiquiti_unifi_backup.rb |  52 +++++---
+ modules/post/multi/gather/wlan_geolocate.rb        |  15 ++-
+ 39 files changed, 527 insertions(+), 315 deletions(-)
+
+commit c85fe605960ef4d248d1fa735ecfc8895b7ca868
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed Apr 30 11:33:14 2025 +0200
+
+    Update modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 301e9e64e7e4dcfb533b133699eb439de113cb4b
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed Apr 30 11:32:58 2025 +0200
+
+    Update modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ modules/exploits/linux/http/craftcms_preauth_rce_cve_2025_32432.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7b8cf0bfbb40589225a220dade18406a575e4ad1
+Author: bcoles <bcoles@github>
+Date:   Wed Apr 30 11:23:07 2025 +1000
+
+    modules/post/windows/gather: Resolve RuboCop violations
+
+ modules/post/windows/gather/ad_to_sqlite.rb        |  18 +-
+ modules/post/windows/gather/arp_scanner.rb         |  16 +-
+ modules/post/windows/gather/bitcoin_jacker.rb      |   7 +-
+ modules/post/windows/gather/bitlocker_fvek.rb      |   9 +-
+ modules/post/windows/gather/cachedump.rb           | 390 +++++++++++----------
+ modules/post/windows/gather/checkvm.rb             |   1 -
+ modules/post/windows/gather/dnscache_dump.rb       |   5 +
+ modules/post/windows/gather/dumplinks.rb           |  18 +-
+ modules/post/windows/gather/enum_ad_bitlocker.rb   |   7 +-
+ modules/post/windows/gather/enum_ad_computers.rb   |   5 +
+ modules/post/windows/gather/enum_ad_groups.rb      |   7 +-
+ .../windows/gather/enum_ad_managedby_groups.rb     |   7 +-
+ .../gather/enum_ad_service_principal_names.rb      |  20 +-
+ modules/post/windows/gather/enum_ad_to_wordlist.rb |   9 +-
+ .../post/windows/gather/enum_ad_user_comments.rb   |   7 +-
+ modules/post/windows/gather/enum_ad_users.rb       |   6 +
+ modules/post/windows/gather/enum_applications.rb   |  10 +-
+ modules/post/windows/gather/enum_av_excluded.rb    |  12 +-
+ modules/post/windows/gather/enum_chrome.rb         |  15 +-
+ modules/post/windows/gather/enum_db.rb             | 181 ++++++----
+ modules/post/windows/gather/enum_devices.rb        |  23 +-
+ modules/post/windows/gather/enum_dirperms.rb       |  13 +-
+ modules/post/windows/gather/enum_domain_users.rb   |   7 +-
+ modules/post/windows/gather/enum_domains.rb        |  12 +-
+ modules/post/windows/gather/enum_emet.rb           |   7 +-
+ modules/post/windows/gather/enum_files.rb          |   5 +
+ modules/post/windows/gather/enum_hostfile.rb       |   7 +-
+ modules/post/windows/gather/enum_ie.rb             |  15 +-
+ modules/post/windows/gather/enum_muicache.rb       |   5 +
+ modules/post/windows/gather/enum_prefetch.rb       |   5 +
+ .../windows/gather/enum_putty_saved_sessions.rb    |   5 +
+ modules/post/windows/gather/enum_termserv.rb       |   8 +-
+ modules/post/windows/gather/enum_tokens.rb         |   2 -
+ modules/post/windows/gather/enum_tomcat.rb         |  58 +--
+ .../post/windows/gather/enum_trusted_locations.rb  |  12 +-
+ modules/post/windows/gather/enum_unattend.rb       |  66 ++--
+ modules/post/windows/gather/exchange.rb            |   2 +-
+ modules/post/windows/gather/file_from_raw_ntfs.rb  |   7 +-
+ .../windows/gather/forensics/browser_history.rb    |   5 +
+ .../post/windows/gather/forensics/duqu_check.rb    |  10 +-
+ .../post/windows/gather/forensics/enum_drives.rb   |  81 +++--
+ modules/post/windows/gather/forensics/imager.rb    |  46 ++-
+ .../post/windows/gather/forensics/nbd_server.rb    |  12 +-
+ .../windows/gather/forensics/recovery_files.rb     |  15 +-
+ modules/post/windows/gather/hashdump.rb            |   7 +-
+ .../post/windows/gather/local_admin_search_enum.rb |  17 +-
+ modules/post/windows/gather/lsa_secrets.rb         |  43 ++-
+ modules/post/windows/gather/make_csv_orgchart.rb   |  25 +-
+ modules/post/windows/gather/memory_dump.rb         |   3 +-
+ modules/post/windows/gather/memory_grep.rb         |  12 +-
+ modules/post/windows/gather/ntds_grabber.rb        |  10 +-
+ modules/post/windows/gather/ntds_location.rb       |   5 +
+ modules/post/windows/gather/outlook.rb             |  89 ++---
+ .../windows/gather/phish_windows_credentials.rb    |  32 +-
+ modules/post/windows/gather/psreadline_history.rb  |   7 +-
+ modules/post/windows/gather/resolve_sid.rb         |   2 +-
+ modules/post/windows/gather/screen_spy.rb          | 118 +++----
+ modules/post/windows/gather/smart_hashdump.rb      | 135 +++----
+ modules/post/windows/gather/tcpnetstat.rb          |  11 +-
+ modules/post/windows/gather/usb_history.rb         | 139 ++++----
+ modules/post/windows/gather/win_privs.rb           |  37 +-
+ modules/post/windows/gather/word_unc_injector.rb   |  51 ++-
+ 62 files changed, 1109 insertions(+), 812 deletions(-)
