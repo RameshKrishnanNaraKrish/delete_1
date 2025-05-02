@@ -1,0 +1,152 @@
+commit 533f83cc5dd3168d6e2c183a841ccba8fc9e0840
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 1 17:22:00 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 808fc5843e29353e79ca351aae3f896f681d43c3
+Merge: 77c2b0c758 1f3f5db30b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 1 19:13:35 2025 +0200
+
+    Land #20027, adds support for Shodan facets
+    
+    Shodan facets
+
+ modules/auxiliary/gather/shodan_search.rb | 155 +++++++++++++++++-------------
+ 1 file changed, 90 insertions(+), 65 deletions(-)
+
+commit 77c2b0c75896322dde5f1f0b92ca39e560a5dcc3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 1 14:50:31 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 78 ++++++++++++++++++++++---------------------
+ 1 file changed, 40 insertions(+), 38 deletions(-)
+
+commit e87f2443579f66cb1602e30700000e916323e036
+Merge: 763fe87143 5a601fc8b2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 1 07:39:50 2025 -0700
+
+    Merge pull request #20106 from bcoles/word_unc_injector
+    
+    Move auxiliary/docx/word_unc_injector module to auxiliary/fileformat/
+
+ modules/auxiliary/{docx => fileformat}/word_unc_injector.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 763fe871438e78a4119107ab80fdeb1a1876bdcf
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu May 1 07:18:38 2025 -0500
+
+    Bump version of framework to 6.4.62
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 79c0fd6b97a71f1a6d3052ca88f83ba0974ae9c7
+Merge: 43ff6c51b5 3002ad551f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 1 12:52:22 2025 +0100
+
+    Merge pull request #20114 from rapid7/revert-20080-adds-http-support-for-network-capture-decryption
+    
+    Revert "Adds network capture decryption support to http scanners"
+
+ lib/metasploit/framework/login_scanner/http.rb       | 4 +---
+ lib/metasploit/framework/login_scanner/rex_socket.rb | 3 ---
+ lib/msf/core/auxiliary/login_scanner.rb              | 1 -
+ lib/rex/proto/http/client.rb                         | 2 +-
+ 4 files changed, 2 insertions(+), 8 deletions(-)
+
+commit 43ff6c51b5f2d237ca52d2550879df297d28a65d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 1 11:52:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 1804 +++++++++++++++++++++++++++++++++--------
+ 1 file changed, 1446 insertions(+), 358 deletions(-)
+
+commit a439ce21479e6ee3f1a31b2846b73d04bb45073c
+Merge: e4aec40a44 a2cf7d7ef6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu May 1 12:44:15 2025 +0100
+
+    Land #20113, Fix broken cache generation
+
+ modules/post/firefox/manage/webcam_chat.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 3002ad551fc68297a71fb9e2a14e9eca70aa9254
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu May 1 12:35:18 2025 +0100
+
+    Revert "Adds network capture decryption support to http scanners"
+
+ lib/metasploit/framework/login_scanner/http.rb       | 4 +---
+ lib/metasploit/framework/login_scanner/rex_socket.rb | 3 ---
+ lib/msf/core/auxiliary/login_scanner.rb              | 1 -
+ lib/rex/proto/http/client.rb                         | 2 +-
+ 4 files changed, 2 insertions(+), 8 deletions(-)
+
+commit a2cf7d7ef6179ba8e67fe264ce54ddb5f703fd81
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 1 12:21:55 2025 +0100
+
+    Fix broken cache generation
+
+ modules/post/firefox/manage/webcam_chat.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit e4aec40a44e9070fb4594b708b8b27ce7c5dabe2
+Merge: 8a40737297 cfd2eda8ab
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu May 1 11:18:34 2025 +0100
+
+    Merge pull request #20080 from cgranleese-r7/adds-http-support-for-network-capture-decryption
+    
+    Adds network capture decryption support to http scanners
+
+ lib/metasploit/framework/login_scanner/http.rb       | 4 +++-
+ lib/metasploit/framework/login_scanner/rex_socket.rb | 3 +++
+ lib/msf/core/auxiliary/login_scanner.rb              | 1 +
+ lib/rex/proto/http/client.rb                         | 2 +-
+ 4 files changed, 8 insertions(+), 2 deletions(-)
+
+commit 8a40737297a9f59a80386079dea5b2876c80df2d
+Merge: 3141152393 bf5269edc0
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu May 1 10:54:33 2025 +0100
+
+    Land #20110, modules/post/osx: Resolve RuboCop violations
+
+ modules/post/osx/admin/say.rb                      |  9 +++-
+ modules/post/osx/capture/keylog_recorder.rb        |  7 ++-
+ modules/post/osx/capture/screen.rb                 | 16 ++++---
+ .../osx/gather/apfs_encrypted_volume_passwd.rb     | 32 ++++++++------
+ modules/post/osx/gather/autologin_password.rb      | 11 +++--
+ modules/post/osx/gather/enum_adium.rb              | 30 ++++++-------
+ modules/post/osx/gather/enum_airport.rb            |  9 +++-
+ .../post/osx/gather/enum_chicken_vnc_profile.rb    | 21 +++++----
+ modules/post/osx/gather/enum_colloquy.rb           | 26 +++++------
+ modules/post/osx/gather/enum_keychain.rb           | 27 +++++++-----
+ modules/post/osx/gather/enum_messages.rb           | 19 ++++----
+ modules/post/osx/gather/enum_osx.rb                | 50 +++++++++++-----------
+ modules/post/osx/gather/hashdump.rb                | 10 +++--
+ modules/post/osx/gather/password_prompt_spoof.rb   | 18 +++++---
+ modules/post/osx/gather/safari_lastsession.rb      | 13 ++++--
+ modules/post/osx/gather/vnc_password_osx.rb        | 43 +++++++++++--------
+ modules/post/osx/manage/mount_share.rb             |  7 ++-
+ modules/post/osx/manage/record_mic.rb              |  7 ++-
+ modules/post/osx/manage/sonic_pi.rb                |  4 +-
+ modules/post/osx/manage/vpn.rb                     |  7 ++-
+ modules/post/osx/manage/webcam.rb                  |  9 +++-
+ 21 files changed, 231 insertions(+), 144 deletions(-)
