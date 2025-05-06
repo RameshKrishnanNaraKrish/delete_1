@@ -7,7 +7,7 @@ on:
 
 
 env:
-  YESTERDAY: \"$(date -d "1 day ago" '+%Y-%m-%d')\"
+  YESTERDAY: \"$(date -d "2 day ago" '+%Y-%m-%d')\"
 
 
 jobs:
