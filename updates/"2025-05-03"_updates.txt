@@ -1,0 +1,158 @@
+commit 5b4c0b674851330ba1b2ba0d56619b39d7420ec0
+Merge: 4a746a3963 be8f4f929c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon May 5 15:26:03 2025 -0700
+
+    Merge pull request #6 from smcintyre-r7/pr/collab/19952
+    
+    Pr/collab/19952
+
+ .../auxiliary/server/relay/relay_get_naa_credentials.md       |  3 ---
+ lib/msf/core/exploit/remote/http/sccm.rb                      | 11 +++--------
+ lib/msf/core/exploit/remote/smb/relay/target_list.rb          |  2 +-
+ modules/auxiliary/admin/sccm/get_naa_credentials.rb           |  4 +++-
+ modules/auxiliary/server/relay/relay_get_naa_credentials.rb   |  4 +++-
+ 5 files changed, 10 insertions(+), 14 deletions(-)
+
+commit 08cd1d0e89897bdeb4d65d8b71d8573378cc294e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 5 22:07:59 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 52 insertions(+), 12 deletions(-)
+
+commit 355dfdda1f5571c819c7b62f9455d4ba73b3aa67
+Merge: 1071c7e6b7 dfb82a37b6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 5 22:56:29 2025 +0100
+
+    Merge pull request #20122 from bcoles/rubocop-modules-auxiliary-vsploit
+    
+    modules/auxiliary/vsploit: Resolve RuboCop violations
+
+ .../auxiliary/vsploit/malware/dns/dns_mariposa.rb  | 61 ++++++++-------
+ modules/auxiliary/vsploit/malware/dns/dns_query.rb | 38 +++++----
+ modules/auxiliary/vsploit/malware/dns/dns_zeus.rb  | 71 +++++++++--------
+ modules/auxiliary/vsploit/pii/email_pii.rb         | 40 ++++++----
+ modules/auxiliary/vsploit/pii/web_pii.rb           | 89 ++++++++++++----------
+ 5 files changed, 165 insertions(+), 134 deletions(-)
+
+commit 1071c7e6b71e9bebbfd62f2141cf303c2e7ea94b
+Merge: c9fb08b422 ae65bb3034
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon May 5 14:15:04 2025 -0400
+
+    Merge pull request #20127 from bcoles/lib-msf-core-option_container
+    
+    Msf::OptionContainer: Replace `.sorted` Array attribute with `self.sort`
+
+ lib/msf/core/option_container.rb                   | 22 +++++++---------------
+ lib/msf/ui/console/module_option_tab_completion.rb |  7 ++++---
+ 2 files changed, 11 insertions(+), 18 deletions(-)
+
+commit be8f4f929c767283c6c5cf23cac525984cbde31a
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Mon May 5 13:40:33 2025 -0400
+
+    Fix an issue in the ESC8 module
+
+ lib/msf/core/exploit/remote/smb/relay/target_list.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c9fb08b422cd99ee0824d3675744630736cdac3e
+Merge: 9797ef1b6c 503d8b8931
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 5 18:19:41 2025 +0100
+
+    Merge pull request #20132 from bcoles/spec-acceptance
+    
+    spec: acceptance: remove RHOST_REGEX constant
+
+ spec/acceptance/ldap_spec.rb  | 2 --
+ spec/acceptance/mysql_spec.rb | 4 +---
+ spec/acceptance/smb_spec.rb   | 2 --
+ 3 files changed, 1 insertion(+), 7 deletions(-)
+
+commit ae412f01544b3660ac4e60c94f497c579cc69c90
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Mon May 5 11:16:35 2025 -0400
+
+    Promote the DOMAIN option
+    
+    LDAP now uses the LDAPDomain option but this module intends to use it
+    for both LDAP and HTTP so deregister LDAPDomain, and reregister DOMAIN
+    as a non-advanced, required option.
+
+ modules/auxiliary/admin/sccm/get_naa_credentials.rb         | 5 ++++-
+ modules/auxiliary/server/relay/relay_get_naa_credentials.rb | 5 ++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+commit d95146e315f9c1e00060602da7645f584faac067
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Mon May 5 11:06:09 2025 -0400
+
+    Use retry to speed things up but also wait longer
+
+ lib/msf/core/exploit/remote/http/sccm.rb                    | 9 +++------
+ modules/auxiliary/admin/sccm/get_naa_credentials.rb         | 3 +--
+ modules/auxiliary/server/relay/relay_get_naa_credentials.rb | 3 +--
+ 3 files changed, 5 insertions(+), 10 deletions(-)
+
+commit 6ab275a120c5717371b574d6a28a9e5fca1e73ff
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Mon May 5 10:51:20 2025 -0400
+
+    Remove a couple of debug prints
+
+ .../modules/auxiliary/server/relay/relay_get_naa_credentials.md        | 3 ---
+ lib/msf/core/exploit/remote/http/sccm.rb                               | 2 --
+ 2 files changed, 5 deletions(-)
+
+commit 503d8b8931a9aa8039e2406e648372a376422ffe
+Author: bcoles <bcoles@github>
+Date:   Mon May 5 22:23:14 2025 +1000
+
+    spec: acceptance: remove RHOST_REGEX constant
+
+ spec/acceptance/ldap_spec.rb  | 2 --
+ spec/acceptance/mysql_spec.rb | 4 +---
+ spec/acceptance/smb_spec.rb   | 2 --
+ 3 files changed, 1 insertion(+), 7 deletions(-)
+
+commit ae65bb30342c1f705cc11b9325fd4b74ee0287d3
+Author: bcoles <bcoles@github>
+Date:   Mon May 5 21:22:21 2025 +1000
+
+    Ui::Console::ModuleOptionTabCompletion#tab_complete_option_names: sort results
+
+ lib/msf/ui/console/module_option_tab_completion.rb | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 9797ef1b6c56acb0d990b70aa04db2b16e7eca26
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 5 06:57:38 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit e4d03ad3e04ef9483fd0f76b901dae9872290378
+Merge: 03e2d25ac9 a99333a9ca
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 5 08:49:15 2025 +0200
+
+    Land #20125, removes quotes around constant
+    
+    Modules: Remove quotes surrounding quoted license constant
+
+ modules/evasion/windows/applocker_evasion_install_util.rb      | 2 +-
+ modules/evasion/windows/applocker_evasion_msbuild.rb           | 2 +-
+ modules/evasion/windows/applocker_evasion_presentationhost.rb  | 2 +-
+ modules/evasion/windows/applocker_evasion_regasm_regsvcs.rb    | 2 +-
+ modules/evasion/windows/applocker_evasion_workflow_compiler.rb | 2 +-
+ modules/post/windows/gather/bitlocker_fvek.rb                  | 2 +-
+ modules/post/windows/gather/file_from_raw_ntfs.rb              | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
