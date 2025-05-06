@@ -1,0 +1,98 @@
+commit 08cd1d0e89897bdeb4d65d8b71d8573378cc294e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 5 22:07:59 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 52 insertions(+), 12 deletions(-)
+
+commit 355dfdda1f5571c819c7b62f9455d4ba73b3aa67
+Merge: 1071c7e6b7 dfb82a37b6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 5 22:56:29 2025 +0100
+
+    Merge pull request #20122 from bcoles/rubocop-modules-auxiliary-vsploit
+    
+    modules/auxiliary/vsploit: Resolve RuboCop violations
+
+ .../auxiliary/vsploit/malware/dns/dns_mariposa.rb  | 61 ++++++++-------
+ modules/auxiliary/vsploit/malware/dns/dns_query.rb | 38 +++++----
+ modules/auxiliary/vsploit/malware/dns/dns_zeus.rb  | 71 +++++++++--------
+ modules/auxiliary/vsploit/pii/email_pii.rb         | 40 ++++++----
+ modules/auxiliary/vsploit/pii/web_pii.rb           | 89 ++++++++++++----------
+ 5 files changed, 165 insertions(+), 134 deletions(-)
+
+commit 1071c7e6b71e9bebbfd62f2141cf303c2e7ea94b
+Merge: c9fb08b422 ae65bb3034
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon May 5 14:15:04 2025 -0400
+
+    Merge pull request #20127 from bcoles/lib-msf-core-option_container
+    
+    Msf::OptionContainer: Replace `.sorted` Array attribute with `self.sort`
+
+ lib/msf/core/option_container.rb                   | 22 +++++++---------------
+ lib/msf/ui/console/module_option_tab_completion.rb |  7 ++++---
+ 2 files changed, 11 insertions(+), 18 deletions(-)
+
+commit c9fb08b422cd99ee0824d3675744630736cdac3e
+Merge: 9797ef1b6c 503d8b8931
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 5 18:19:41 2025 +0100
+
+    Merge pull request #20132 from bcoles/spec-acceptance
+    
+    spec: acceptance: remove RHOST_REGEX constant
+
+ spec/acceptance/ldap_spec.rb  | 2 --
+ spec/acceptance/mysql_spec.rb | 4 +---
+ spec/acceptance/smb_spec.rb   | 2 --
+ 3 files changed, 1 insertion(+), 7 deletions(-)
+
+commit 503d8b8931a9aa8039e2406e648372a376422ffe
+Author: bcoles <bcoles@github>
+Date:   Mon May 5 22:23:14 2025 +1000
+
+    spec: acceptance: remove RHOST_REGEX constant
+
+ spec/acceptance/ldap_spec.rb  | 2 --
+ spec/acceptance/mysql_spec.rb | 4 +---
+ spec/acceptance/smb_spec.rb   | 2 --
+ 3 files changed, 1 insertion(+), 7 deletions(-)
+
+commit ae65bb30342c1f705cc11b9325fd4b74ee0287d3
+Author: bcoles <bcoles@github>
+Date:   Mon May 5 21:22:21 2025 +1000
+
+    Ui::Console::ModuleOptionTabCompletion#tab_complete_option_names: sort results
+
+ lib/msf/ui/console/module_option_tab_completion.rb | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 9797ef1b6c56acb0d990b70aa04db2b16e7eca26
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 5 06:57:38 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit e4d03ad3e04ef9483fd0f76b901dae9872290378
+Merge: 03e2d25ac9 a99333a9ca
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 5 08:49:15 2025 +0200
+
+    Land #20125, removes quotes around constant
+    
+    Modules: Remove quotes surrounding quoted license constant
+
+ modules/evasion/windows/applocker_evasion_install_util.rb      | 2 +-
+ modules/evasion/windows/applocker_evasion_msbuild.rb           | 2 +-
+ modules/evasion/windows/applocker_evasion_presentationhost.rb  | 2 +-
+ modules/evasion/windows/applocker_evasion_regasm_regsvcs.rb    | 2 +-
+ modules/evasion/windows/applocker_evasion_workflow_compiler.rb | 2 +-
+ modules/post/windows/gather/bitlocker_fvek.rb                  | 2 +-
+ modules/post/windows/gather/file_from_raw_ntfs.rb              | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
