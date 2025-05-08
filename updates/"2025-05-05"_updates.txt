@@ -1,98 +1,68 @@
-commit 08cd1d0e89897bdeb4d65d8b71d8573378cc294e
+commit 1f52a28da1907ce9d9a3aba8d74c302a03f3b74b
 Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
-Date:   Mon May 5 22:07:59 2025 +0000
+Date:   Wed May 7 13:04:34 2025 +0000
 
     automatic module_metadata_base.json update
 
- db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++--------
- 1 file changed, 52 insertions(+), 12 deletions(-)
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++------------
+ 1 file changed, 38 insertions(+), 14 deletions(-)
 
-commit 355dfdda1f5571c819c7b62f9455d4ba73b3aa67
-Merge: 1071c7e6b7 dfb82a37b6
-Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
-Date:   Mon May 5 22:56:29 2025 +0100
+commit eb88eb5bc15636a3db9c5222e18eecf7a1baa0ec
+Merge: af657c4b26 ec484f97c6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed May 7 13:56:34 2025 +0100
 
-    Merge pull request #20122 from bcoles/rubocop-modules-auxiliary-vsploit
+    Merge pull request #20119 from bcoles/rubocop-modules-post-linux
     
-    modules/auxiliary/vsploit: Resolve RuboCop violations
+    modules/post/linux: Resolve RuboCop violations
 
- .../auxiliary/vsploit/malware/dns/dns_mariposa.rb  | 61 ++++++++-------
- modules/auxiliary/vsploit/malware/dns/dns_query.rb | 38 +++++----
- modules/auxiliary/vsploit/malware/dns/dns_zeus.rb  | 71 +++++++++--------
- modules/auxiliary/vsploit/pii/email_pii.rb         | 40 ++++++----
- modules/auxiliary/vsploit/pii/web_pii.rb           | 89 ++++++++++++----------
- 5 files changed, 165 insertions(+), 134 deletions(-)
+ modules/post/linux/dos/xen_420_dos.rb                 | 19 +++++++++++--------
+ modules/post/linux/gather/ansible.rb                  |  4 ++--
+ .../ansible_playbook_error_message_file_reader.rb     |  4 ++--
+ modules/post/linux/gather/apache_nifi_credentials.rb  |  2 +-
+ modules/post/linux/gather/openvpn_credentials.rb      |  7 ++++---
+ modules/post/linux/gather/puppet.rb                   |  2 +-
+ modules/post/linux/manage/disable_clamav.rb           |  2 +-
+ modules/post/linux/manage/download_exec.rb            | 16 ++++++++++------
+ modules/post/linux/manage/pseudo_shell.rb             |  8 ++++----
+ modules/post/linux/manage/sshkey_persistence.rb       | 19 +++++++++++--------
+ 10 files changed, 47 insertions(+), 36 deletions(-)
 
-commit 1071c7e6b71e9bebbfd62f2141cf303c2e7ea94b
-Merge: c9fb08b422 ae65bb3034
-Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
-Date:   Mon May 5 14:15:04 2025 -0400
-
-    Merge pull request #20127 from bcoles/lib-msf-core-option_container
-    
-    Msf::OptionContainer: Replace `.sorted` Array attribute with `self.sort`
-
- lib/msf/core/option_container.rb                   | 22 +++++++---------------
- lib/msf/ui/console/module_option_tab_completion.rb |  7 ++++---
- 2 files changed, 11 insertions(+), 18 deletions(-)
-
-commit c9fb08b422cd99ee0824d3675744630736cdac3e
-Merge: 9797ef1b6c 503d8b8931
-Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
-Date:   Mon May 5 18:19:41 2025 +0100
-
-    Merge pull request #20132 from bcoles/spec-acceptance
-    
-    spec: acceptance: remove RHOST_REGEX constant
-
- spec/acceptance/ldap_spec.rb  | 2 --
- spec/acceptance/mysql_spec.rb | 4 +---
- spec/acceptance/smb_spec.rb   | 2 --
- 3 files changed, 1 insertion(+), 7 deletions(-)
-
-commit 503d8b8931a9aa8039e2406e648372a376422ffe
-Author: bcoles <bcoles@github>
-Date:   Mon May 5 22:23:14 2025 +1000
-
-    spec: acceptance: remove RHOST_REGEX constant
-
- spec/acceptance/ldap_spec.rb  | 2 --
- spec/acceptance/mysql_spec.rb | 4 +---
- spec/acceptance/smb_spec.rb   | 2 --
- 3 files changed, 1 insertion(+), 7 deletions(-)
-
-commit ae65bb30342c1f705cc11b9325fd4b74ee0287d3
-Author: bcoles <bcoles@github>
-Date:   Mon May 5 21:22:21 2025 +1000
-
-    Ui::Console::ModuleOptionTabCompletion#tab_complete_option_names: sort results
-
- lib/msf/ui/console/module_option_tab_completion.rb | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-commit 9797ef1b6c56acb0d990b70aa04db2b16e7eca26
+commit af657c4b26f18bc14ad5bd82f0303affe929b292
 Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
-Date:   Mon May 5 06:57:38 2025 +0000
+Date:   Wed May 7 09:32:41 2025 +0000
 
     automatic module_metadata_base.json update
 
- db/modules_metadata_base.json | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ db/modules_metadata_base.json | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
 
-commit e4d03ad3e04ef9483fd0f76b901dae9872290378
-Merge: 03e2d25ac9 a99333a9ca
-Author: msutovsky-r7 <msutovsky-r7@github>
-Date:   Mon May 5 08:49:15 2025 +0200
+commit 5127207dc181207b914654fdef319e06d246c3da
+Merge: 4837cf72d2 6db17f03be
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed May 7 10:24:59 2025 +0100
 
-    Land #20125, removes quotes around constant
-    
-    Modules: Remove quotes surrounding quoted license constant
+    Land #20134, modules/auxiliary/parser: Resolve RuboCop violations
 
- modules/evasion/windows/applocker_evasion_install_util.rb      | 2 +-
- modules/evasion/windows/applocker_evasion_msbuild.rb           | 2 +-
- modules/evasion/windows/applocker_evasion_presentationhost.rb  | 2 +-
- modules/evasion/windows/applocker_evasion_regasm_regsvcs.rb    | 2 +-
- modules/evasion/windows/applocker_evasion_workflow_compiler.rb | 2 +-
- modules/post/windows/gather/bitlocker_fvek.rb                  | 2 +-
- modules/post/windows/gather/file_from_raw_ntfs.rb              | 2 +-
- 7 files changed, 7 insertions(+), 7 deletions(-)
+ modules/auxiliary/parser/unattend.rb | 39 ++++++++++++++++++++----------------
+ 1 file changed, 22 insertions(+), 17 deletions(-)
+
+commit 4837cf72d2e5d8adc40169cacddc331321b654ce
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 7 09:03:30 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
+
+commit 49c041f29193ed28711e9ad6c6f016c2b059df26
+Merge: 863487683e 37c52bb4c7
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed May 7 09:55:41 2025 +0100
+
+    Land #20137, modules/exploits/unix/dhcp: Resolve RuboCop violations
+
+ modules/exploits/unix/dhcp/bash_environment.rb     | 81 ++++++++++------------
+ .../dhcp/rhel_dhcp_client_command_injection.rb     | 66 +++++++++---------
+ 2 files changed, 70 insertions(+), 77 deletions(-)
