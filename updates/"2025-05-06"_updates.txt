@@ -1,0 +1,89 @@
+commit b7df5210a9170756976c72365b3573477bd24302
+Merge: 54cdcc6731 417f9a0d03
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 8 13:55:44 2025 -0400
+
+    Merge pull request #20126 from bcoles/lib-msf-core-post-linux-kernel-yama
+    
+    Msf::Post::Linux::Kernel: Add yama_ptrace_scope method
+
+ lib/msf/core/post/linux/kernel.rb | 24 +++++++++++++++++++++---
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+
+commit 54cdcc6731468e7577fc6674b357096d5c710841
+Merge: d13ffe57db 3f3b997fcf
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu May 8 12:18:31 2025 +0100
+
+    Merge pull request #20151 from adfoster-r7/update-installer-versions-docs
+    
+    Update installer version docs
+
+ .../Downloads-by-Version.md                        | 54 +++++++++++++---------
+ 1 file changed, 32 insertions(+), 22 deletions(-)
+
+commit 3f3b997fcf2538a86d82a380095dd3f4f00139bc
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 8 11:50:57 2025 +0100
+
+    Update installer version docs
+
+ .../Downloads-by-Version.md                        | 54 +++++++++++++---------
+ 1 file changed, 32 insertions(+), 22 deletions(-)
+
+commit d13ffe57dbbff23a25a8e4ea22015aa58513f5cd
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu May 8 05:24:43 2025 -0500
+
+    Bump version of framework to 6.4.63
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 10 +++++-----
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+commit ba7be5b25ae02f3faf46a2c2cf7ec79d8e6279c5
+Merge: cb02d81a58 e4d66e8c55
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu May 8 11:19:37 2025 +0100
+
+    Merge pull request #20148 from adfoster-r7/add-additional-sni-support
+    
+    Add additional sni support
+
+ Gemfile.lock                           | 9 +++++----
+ lib/anemone/rex_http.rb                | 1 +
+ lib/msf/core/auxiliary/http_crawler.rb | 7 ++++---
+ lib/msf/core/auxiliary/web/http.rb     | 1 +
+ lib/msf/core/auxiliary/web/target.rb   | 5 +++++
+ 5 files changed, 16 insertions(+), 7 deletions(-)
+
+commit e4d66e8c5544af152f0cc4780dac5ba3fe602101
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 8 10:56:07 2025 +0100
+
+    Update version for rex-sslscan bump
+
+ Gemfile.lock | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit cb02d81a5888bc16acf660c82631b1c9e8fb937b
+Merge: 1f52a28da1 96b06acfa0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 8 10:40:36 2025 +0100
+
+    Merge pull request #20150 from adfoster-r7/remove-end-of-life-ubuntu-gh-action
+    
+    Remove end of life ubuntu gh action
+
+ .github/workflows/shared_gem_verify.yml | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 96b06acfa0c018f38524aec0ca16af5979f460d1
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 8 10:36:43 2025 +0100
+
+    Remove end of life ubuntu gh action
+
+ .github/workflows/shared_gem_verify.yml | 1 -
+ 1 file changed, 1 deletion(-)
