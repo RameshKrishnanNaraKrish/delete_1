@@ -1,0 +1,177 @@
+commit b5129fe19874e74d5a103bb9d1372fb30f618b32
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 9 14:10:40 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit db75455d2bb792242795c8b079d17106c41761fe
+Merge: 3ff8262865 0589879271
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri May 9 10:02:49 2025 -0400
+
+    Merge pull request #20128 from bcoles/rubocop-modules-auxiliary-bnat
+    
+    modules/auxiliary/bnat: Resolve RuboCop violations
+
+ modules/auxiliary/bnat/bnat_router.rb | 97 +++++++++++++++++------------------
+ modules/auxiliary/bnat/bnat_scan.rb   | 73 +++++++++++++-------------
+ 2 files changed, 85 insertions(+), 85 deletions(-)
+
+commit 3ff826286586331cad53fa5e0126d654109b8ca2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 9 13:41:49 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 634 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 504 insertions(+), 130 deletions(-)
+
+commit 9ee2ec861f361337547da48876a66a5bc8070719
+Merge: b1101e96f3 45336dd612
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri May 9 09:33:17 2025 -0400
+
+    Merge pull request #20120 from bcoles/rubocop-modules-post-windows
+    
+    modules/post/windows: Resolve RuboCop violations
+
+ modules/post/windows/capture/keylog_recorder.rb    |  13 ++-
+ modules/post/windows/capture/lockout_keylogger.rb  |  32 ++++---
+ modules/post/windows/escalate/droplnk.rb           |   5 +
+ modules/post/windows/escalate/getsystem.rb         |   7 +-
+ modules/post/windows/escalate/golden_ticket.rb     |  17 ++--
+ .../post/windows/escalate/ms10_073_kbdlayout.rb    |  53 ++++++-----
+ modules/post/windows/escalate/screen_unlock.rb     |  16 +++-
+ .../post/windows/escalate/unmarshal_cmd_exec.rb    |  19 ++--
+ .../gather/credentials/mdaemon_cred_collector.rb   |  42 ++++-----
+ modules/post/windows/manage/add_user.rb            |   4 +-
+ modules/post/windows/manage/archmigrate.rb         |  98 ++++++++++----------
+ modules/post/windows/manage/change_password.rb     |   5 +
+ modules/post/windows/manage/delete_user.rb         |  11 ++-
+ modules/post/windows/manage/download_exec.rb       |   9 +-
+ modules/post/windows/manage/driver_loader.rb       |  14 ++-
+ modules/post/windows/manage/enable_rdp.rb          |  13 ++-
+ .../post/windows/manage/enable_support_account.rb  |  23 +++--
+ modules/post/windows/manage/exec_powershell.rb     |  15 +--
+ .../post/windows/manage/execute_dotnet_assembly.rb |  15 ++-
+ modules/post/windows/manage/hashcarve.rb           |  25 +++--
+ modules/post/windows/manage/ie_proxypac.rb         |  51 +++++------
+ modules/post/windows/manage/inject_ca.rb           |  23 ++---
+ modules/post/windows/manage/inject_host.rb         |  38 ++++----
+ modules/post/windows/manage/install_ssh.rb         |   7 +-
+ modules/post/windows/manage/migrate.rb             |  15 ++-
+ .../post/windows/manage/mssql_local_auth_bypass.rb |  28 +++---
+ .../windows/manage/multi_meterpreter_inject.rb     |  51 ++++++-----
+ modules/post/windows/manage/nbd_server.rb          |  29 ++++--
+ modules/post/windows/manage/peinjector.rb          |  11 ++-
+ modules/post/windows/manage/persistence_exe.rb     |  13 +--
+ modules/post/windows/manage/portproxy.rb           |   7 +-
+ .../windows/manage/powershell/build_net_code.rb    |  18 ++--
+ .../windows/manage/powershell/exec_powershell.rb   |  10 +-
+ .../post/windows/manage/powershell/load_script.rb  |   7 +-
+ modules/post/windows/manage/pptp_tunnel.rb         |  13 ++-
+ modules/post/windows/manage/priv_migrate.rb        |   5 +
+ .../post/windows/manage/reflective_dll_inject.rb   |  17 +++-
+ modules/post/windows/manage/remove_ca.rb           |  25 ++---
+ modules/post/windows/manage/remove_host.rb         |   6 +-
+ modules/post/windows/manage/rid_hijack.rb          |   7 +-
+ .../windows/manage/rollback_defender_signatures.rb |   6 +-
+ modules/post/windows/manage/rpcapd_start.rb        | 101 +++++++++++----------
+ modules/post/windows/manage/run_as.rb              |   7 +-
+ modules/post/windows/manage/run_as_psh.rb          |  41 ++++++---
+ modules/post/windows/manage/sdel.rb                |  33 ++++---
+ modules/post/windows/manage/shellcode_inject.rb    |  13 ++-
+ modules/post/windows/manage/sshkey_persistence.rb  |   7 +-
+ modules/post/windows/manage/sticky_keys.rb         |   7 +-
+ modules/post/windows/manage/vmdk_mount.rb          |   9 +-
+ modules/post/windows/manage/wdigest_caching.rb     |  74 ++++++++-------
+ modules/post/windows/manage/webcam.rb              |   9 +-
+ .../windows/recon/computer_browser_discovery.rb    |  24 ++---
+ modules/post/windows/recon/outbound_ports.rb       |   9 +-
+ modules/post/windows/wlan/wlan_bss_list.rb         |  12 ++-
+ .../post/windows/wlan/wlan_current_connection.rb   |   5 +
+ modules/post/windows/wlan/wlan_disconnect.rb       |   9 +-
+ modules/post/windows/wlan/wlan_probe_request.rb    |  14 ++-
+ modules/post/windows/wlan/wlan_profile.rb          |   5 +
+ 58 files changed, 716 insertions(+), 486 deletions(-)
+
+commit b1101e96f39d7c5790fef7bf39789292388fe048
+Merge: b7df5210a9 0bc2bcc3d2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 9 09:40:35 2025 +0100
+
+    Merge pull request #20142 from L-codes/fix_didyoumean_notfound
+    
+    fix DidYouMean notfound
+
+ lib/msf_autoload.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 45336dd61264736af4e221b38e440fbadee3ed01
+Author: bcoles <bcoles@github>
+Date:   Fri May 9 10:51:17 2025 +1000
+
+    modules/post/windows: Resolve RuboCop violations
+
+ modules/post/windows/capture/keylog_recorder.rb    |  13 ++-
+ modules/post/windows/capture/lockout_keylogger.rb  |  32 ++++---
+ modules/post/windows/escalate/droplnk.rb           |   5 +
+ modules/post/windows/escalate/getsystem.rb         |   7 +-
+ modules/post/windows/escalate/golden_ticket.rb     |  17 ++--
+ .../post/windows/escalate/ms10_073_kbdlayout.rb    |  53 ++++++-----
+ modules/post/windows/escalate/screen_unlock.rb     |  16 +++-
+ .../post/windows/escalate/unmarshal_cmd_exec.rb    |  19 ++--
+ .../gather/credentials/mdaemon_cred_collector.rb   |  42 ++++-----
+ modules/post/windows/manage/add_user.rb            |   4 +-
+ modules/post/windows/manage/archmigrate.rb         |  98 ++++++++++----------
+ modules/post/windows/manage/change_password.rb     |   5 +
+ modules/post/windows/manage/delete_user.rb         |  11 ++-
+ modules/post/windows/manage/download_exec.rb       |   9 +-
+ modules/post/windows/manage/driver_loader.rb       |  14 ++-
+ modules/post/windows/manage/enable_rdp.rb          |  13 ++-
+ .../post/windows/manage/enable_support_account.rb  |  23 +++--
+ modules/post/windows/manage/exec_powershell.rb     |  15 +--
+ .../post/windows/manage/execute_dotnet_assembly.rb |  15 ++-
+ modules/post/windows/manage/hashcarve.rb           |  25 +++--
+ modules/post/windows/manage/ie_proxypac.rb         |  51 +++++------
+ modules/post/windows/manage/inject_ca.rb           |  23 ++---
+ modules/post/windows/manage/inject_host.rb         |  38 ++++----
+ modules/post/windows/manage/install_ssh.rb         |   7 +-
+ modules/post/windows/manage/migrate.rb             |  15 ++-
+ .../post/windows/manage/mssql_local_auth_bypass.rb |  28 +++---
+ .../windows/manage/multi_meterpreter_inject.rb     |  51 ++++++-----
+ modules/post/windows/manage/nbd_server.rb          |  29 ++++--
+ modules/post/windows/manage/peinjector.rb          |  11 ++-
+ modules/post/windows/manage/persistence_exe.rb     |  13 +--
+ modules/post/windows/manage/portproxy.rb           |   7 +-
+ .../windows/manage/powershell/build_net_code.rb    |  18 ++--
+ .../windows/manage/powershell/exec_powershell.rb   |  10 +-
+ .../post/windows/manage/powershell/load_script.rb  |   7 +-
+ modules/post/windows/manage/pptp_tunnel.rb         |  13 ++-
+ modules/post/windows/manage/priv_migrate.rb        |   5 +
+ .../post/windows/manage/reflective_dll_inject.rb   |  17 +++-
+ modules/post/windows/manage/remove_ca.rb           |  25 ++---
+ modules/post/windows/manage/remove_host.rb         |   6 +-
+ modules/post/windows/manage/rid_hijack.rb          |   7 +-
+ .../windows/manage/rollback_defender_signatures.rb |   6 +-
+ modules/post/windows/manage/rpcapd_start.rb        | 101 +++++++++++----------
+ modules/post/windows/manage/run_as.rb              |   7 +-
+ modules/post/windows/manage/run_as_psh.rb          |  41 ++++++---
+ modules/post/windows/manage/sdel.rb                |  33 ++++---
+ modules/post/windows/manage/shellcode_inject.rb    |  13 ++-
+ modules/post/windows/manage/sshkey_persistence.rb  |   7 +-
+ modules/post/windows/manage/sticky_keys.rb         |   7 +-
+ modules/post/windows/manage/vmdk_mount.rb          |   9 +-
+ modules/post/windows/manage/wdigest_caching.rb     |  74 ++++++++-------
+ modules/post/windows/manage/webcam.rb              |   9 +-
+ .../windows/recon/computer_browser_discovery.rb    |  24 ++---
+ modules/post/windows/recon/outbound_ports.rb       |   9 +-
+ modules/post/windows/wlan/wlan_bss_list.rb         |  12 ++-
+ .../post/windows/wlan/wlan_current_connection.rb   |   5 +
+ modules/post/windows/wlan/wlan_disconnect.rb       |   9 +-
+ modules/post/windows/wlan/wlan_probe_request.rb    |  14 ++-
+ modules/post/windows/wlan/wlan_profile.rb          |   5 +
+ 58 files changed, 716 insertions(+), 486 deletions(-)
