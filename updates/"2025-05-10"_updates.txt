@@ -1,0 +1,207 @@
+commit 3d1646d8f2ac92607738a15c4b8e4491430e108e
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Mon May 12 12:23:54 2025 -0500
+
+    Bump version of framework to 6.4.64
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 3c37c20a8c49049477fc4fa8198d258ab3865740
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 12 17:13:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb7ff313adb55613150c7277e92b536654fe506d
+Merge: f181cbbeff 0b0132c11a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 12 18:05:38 2025 +0100
+
+    Merge pull request #20173 from adfoster-r7/update-web-crawlers-to-support-http-logging
+    
+    Update web crawlers to support HTTP logging
+
+ lib/anemone/rex_http.rb                   | 5 +++--
+ lib/msf/core/auxiliary/http_crawler.rb    | 1 +
+ lib/msf/core/auxiliary/web/http.rb        | 3 ++-
+ lib/rex/proto/http/client.rb              | 3 +--
+ modules/auxiliary/scanner/http/crawler.rb | 3 +++
+ 5 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 0b0132c11af4abe415d4c90e6802688d283b8249
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon May 12 17:46:20 2025 +0100
+
+    Update web crawlers to support HTTP logging
+
+ lib/anemone/rex_http.rb                   | 5 +++--
+ lib/msf/core/auxiliary/http_crawler.rb    | 1 +
+ lib/msf/core/auxiliary/web/http.rb        | 3 ++-
+ lib/rex/proto/http/client.rb              | 3 +--
+ modules/auxiliary/scanner/http/crawler.rb | 3 +++
+ 5 files changed, 10 insertions(+), 5 deletions(-)
+
+commit f181cbbeff7fc6c9a727b91210c1bd2adae41653
+Merge: ebae68db00 558b1e8ebc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 12 17:00:19 2025 +0100
+
+    Merge pull request #20168 from adfoster-r7/update-ruby-prof-version
+    
+    Update ruby prof version
+
+ Gemfile      | 2 +-
+ Gemfile.lock | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit ebae68db0016033ccddf16282907dc6d2cc2237b
+Merge: e5d8f74478 bf5f6b4c2e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 12 17:00:12 2025 +0100
+
+    Merge pull request #20167 from adfoster-r7/update-rex-sslscan
+    
+    Update rex sslscan
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 558b1e8ebc247bcfd20afd0b1e1b1519bff0f45a
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon May 12 09:24:45 2025 +0100
+
+    Update Ruby-prof version
+
+ Gemfile      | 2 +-
+ Gemfile.lock | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit bf5f6b4c2e54ed9a05aab119181bd9f9d3a8e6ca
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Sat May 10 23:12:45 2025 +0100
+
+    Update rex sslscan
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5d8f74478e2a1a79a5de4252022fde7c7b30ab5
+Merge: 8cbfdecf2e 4ccf11981e
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon May 12 16:18:59 2025 +0100
+
+    Merge pull request #20169 from adfoster-r7/update-windows-2019-ci-usage
+    
+    Update windows 2019 CI usage
+
+ .github/workflows/command_shell_acceptance.yml     | 21 +++++++++-------
+ .github/workflows/shared_gem_verify.yml            |  3 ++-
+ .../workflows/shared_meterpreter_acceptance.yml    | 18 +++++++++++---
+ spec/support/acceptance/session/python.rb          | 29 ++++++++++++++++------
+ 4 files changed, 50 insertions(+), 21 deletions(-)
+
+commit 4ccf11981e65130324f7dd5ae96f2cdf9aa0ae51
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon May 12 10:32:48 2025 +0100
+
+    Update windows 2019 CI usage
+
+ .github/workflows/command_shell_acceptance.yml     | 21 +++++++++-------
+ .github/workflows/shared_gem_verify.yml            |  3 ++-
+ .../workflows/shared_meterpreter_acceptance.yml    | 18 +++++++++++---
+ spec/support/acceptance/session/python.rb          | 29 ++++++++++++++++------
+ 4 files changed, 50 insertions(+), 21 deletions(-)
+
+commit 8cbfdecf2ef6fdd35366b065683341c3501b59eb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 12 14:12:58 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 92 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 73 insertions(+), 19 deletions(-)
+
+commit 9363dc4759827678af43c28f70df844d45fb0a5a
+Merge: 56ab89b2dc 126682d72e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon May 12 10:05:17 2025 -0400
+
+    Merge pull request #20143 from bcoles/rubocop-modules-auxiliary-analyze
+    
+    modules/auxiliary/analyze: Resolve RuboCop violations
+
+ modules/auxiliary/analyze/apply_pot.rb       |   5 +
+ modules/auxiliary/analyze/crack_aix.rb       |  62 +++++-----
+ modules/auxiliary/analyze/crack_databases.rb |  80 ++++++-------
+ modules/auxiliary/analyze/crack_linux.rb     |  66 ++++++-----
+ modules/auxiliary/analyze/crack_mobile.rb    |  65 ++++++-----
+ modules/auxiliary/analyze/crack_osx.rb       |  68 ++++++-----
+ modules/auxiliary/analyze/crack_webapps.rb   |  76 +++++++------
+ modules/auxiliary/analyze/crack_windows.rb   | 163 ++++++++++++++-------------
+ modules/auxiliary/analyze/modbus_zip.rb      |  40 ++++---
+ 9 files changed, 335 insertions(+), 290 deletions(-)
+
+commit ce5896d21bfd3d2c0417863cfc3c9b6382600d7a
+Author: lafried <lahuk@protonmail.com>
+Date:   Mon May 12 12:38:45 2025 +0100
+
+    Update platform.rb
+    
+    Removed unnecessary word from pattern
+
+ lib/metasploit/framework/ssh/platform.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 56ab89b2dc1a3419d502144637368b0b17d13d09
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 12 10:37:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 30 +++++++++++++++++++++++-------
+ 1 file changed, 23 insertions(+), 7 deletions(-)
+
+commit cbb4934882a861027b4abf15c8478e01cc0d6d81
+Merge: 57032a30e2 fd8343a706
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 12 12:30:14 2025 +0200
+
+    Land #20133, resolves Rubocop violations for modules/auxiliary/cloud
+    
+    modules/auxiliary/cloud: Resolve RuboCop violations
+
+ modules/auxiliary/cloud/aws/enum_ec2.rb |  6 +--
+ modules/auxiliary/cloud/aws/enum_iam.rb | 73 +++++++++++++++++----------------
+ modules/auxiliary/cloud/aws/enum_s3.rb  | 67 ++++++++++++++++--------------
+ 3 files changed, 77 insertions(+), 69 deletions(-)
+
+commit 57032a30e2279bfe2dc9e029416a3ea206b788aa
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 12 08:04:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 8c647cd1ad9f155ec6c775a05c2e61dcf57bcbfa
+Merge: b5129fe198 3216fbbde3
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 12 09:56:06 2025 +0200
+
+    Land #20118, changes target option for smb_to_ldap module
+    
+    Fix the smb_to_ldap module's missing target option
+
+ documentation/modules/auxiliary/server/relay/esc8.md        |  2 +-
+ documentation/modules/auxiliary/server/relay/smb_to_ldap.md | 10 +++++-----
+ documentation/modules/exploit/windows/smb/smb_relay.md      | 12 ++++++------
+ modules/auxiliary/server/relay/esc8.rb                      |  2 +-
+ modules/auxiliary/server/relay/smb_to_ldap.rb               |  9 ++-------
+ 5 files changed, 15 insertions(+), 20 deletions(-)
