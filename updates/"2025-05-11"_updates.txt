@@ -1,0 +1,331 @@
+commit 33e3e0851f90c233c3eea4e4eee7845e66fe1833
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 21:58:13 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1982d81e229031e0263d989cfe59657e07c1ca5e
+Merge: a041b21cc2 1ab3fc1a72
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue May 13 16:49:25 2025 -0500
+
+    Merge pull request #20098 from smashery/execute-assembly32
+    
+    Execute assembly32
+
+ .../execute-dotnet-assembly/HostingCLRWin32.dll    | Bin 0 -> 110592 bytes
+ .../post/execute-dotnet-assembly/HostingCLRx64.dll | Bin 132608 -> 133120 bytes
+ .../HostingCLR_inject/HostingCLR/EtwTamper.h       |  67 ++++++++------
+ .../HostingCLR_inject/HostingCLR/HostingCLR.cpp    |  77 ++++++----------
+ .../HostingCLR_inject/HostingCLR/HostingCLR.h      |   2 +-
+ .../HostingCLR/HostingCLR.vcxproj                  |  22 ++---
+ .../HostingCLR/HostingCLR.vcxproj.filters          |   5 +-
+ .../HostingCLR/ReflectiveFree.cpp                  |  15 +++-
+ .../HostingCLR_inject/HostingCLR/Syscalls.asm      |  97 ---------------------
+ external/source/HostingCLR_inject/make.bat         |   2 +-
+ external/source/HostingCLR_inject/make.msbuild     |   6 +-
+ .../post/windows/manage/execute_dotnet_assembly.rb |  27 +++---
+ 12 files changed, 115 insertions(+), 205 deletions(-)
+
+commit a041b21cc2dbdc08a95240d2c5f2817510676ce8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 20:11:39 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 220 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 173 insertions(+), 47 deletions(-)
+
+commit 3d67f9ef55c36f215246a4f0bc0b92d46f736997
+Merge: 9379a2af4f 75c2104625
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue May 13 16:04:00 2025 -0400
+
+    Merge pull request #20161 from bcoles/rubocop-modules-auxiliary-fuzzers
+    
+    modules/auxiliary/fuzzers: Resolve RuboCop violations
+
+ modules/auxiliary/fuzzers/dns/dns_fuzzer.rb        | 539 +++++++++----------
+ modules/auxiliary/fuzzers/ftp/client_ftp.rb        | 335 ++++++------
+ modules/auxiliary/fuzzers/ftp/ftp_pre_post.rb      | 299 +++++------
+ modules/auxiliary/fuzzers/http/http_form_field.rb  | 573 +++++++++++----------
+ .../auxiliary/fuzzers/http/http_get_uri_long.rb    |  49 +-
+ .../auxiliary/fuzzers/http/http_get_uri_strings.rb |  45 +-
+ .../auxiliary/fuzzers/ntp/ntp_protocol_fuzzer.rb   |  26 +-
+ .../fuzzers/smb/smb2_negotiate_corrupt.rb          |  51 +-
+ modules/auxiliary/fuzzers/smb/smb_create_pipe.rb   |  43 +-
+ .../fuzzers/smb/smb_create_pipe_corrupt.rb         |  53 +-
+ .../auxiliary/fuzzers/smb/smb_negotiate_corrupt.rb |  49 +-
+ .../fuzzers/smb/smb_ntlm1_login_corrupt.rb         |  56 +-
+ modules/auxiliary/fuzzers/smb/smb_tree_connect.rb  |  41 +-
+ .../fuzzers/smb/smb_tree_connect_corrupt.rb        |  50 +-
+ modules/auxiliary/fuzzers/smtp/smtp_fuzzer.rb      | 161 +++---
+ .../auxiliary/fuzzers/ssh/ssh_kexinit_corrupt.rb   | 255 ++++-----
+ modules/auxiliary/fuzzers/ssh/ssh_version_15.rb    |  56 +-
+ modules/auxiliary/fuzzers/ssh/ssh_version_2.rb     |  56 +-
+ .../auxiliary/fuzzers/ssh/ssh_version_corrupt.rb   |  56 +-
+ modules/auxiliary/fuzzers/tds/tds_login_corrupt.rb |  94 ++--
+ .../auxiliary/fuzzers/tds/tds_login_username.rb    |  92 ++--
+ 21 files changed, 1569 insertions(+), 1410 deletions(-)
+
+commit 1e523e4e0b4630086beaeffd2dfe13d4fbfd8c44
+Author: aaryan-11-x <aaryan.g@somaiya.edu>
+Date:   Tue May 13 23:54:36 2025 +0530
+
+    MsfTidy Fixes again
+
+ modules/exploits/multi/http/carrental_fileupload_rce.rb | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+commit 9379a2af4f7dfd0e1f194a35fbc5d95483a89180
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 16:34:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 204 +++++++++++++++++++++---------------------
+ 1 file changed, 102 insertions(+), 102 deletions(-)
+
+commit b41f0a44303e4cb9ea74fbe28b82922cdd4bf131
+Merge: 432c7e8607 5abf5480d5
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue May 13 11:25:50 2025 -0500
+
+    Merge pull request #20178 from bcoles/modules-post-windows-gather-credentials
+    
+    modules/post/windows/gather/credentials: Update PackRat module descriptions
+
+ modules/post/windows/gather/credentials/adi_irc.rb               | 7 ++-----
+ modules/post/windows/gather/credentials/aim.rb                   | 5 +----
+ modules/post/windows/gather/credentials/carotdav_ftp.rb          | 7 ++-----
+ modules/post/windows/gather/credentials/chrome.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/comodo.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/coolnovo.rb              | 5 +----
+ modules/post/windows/gather/credentials/digsby.rb                | 5 +----
+ modules/post/windows/gather/credentials/flock.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/gadugadu.rb              | 5 +----
+ modules/post/windows/gather/credentials/halloy_irc.rb            | 7 ++-----
+ modules/post/windows/gather/credentials/icq.rb                   | 5 +----
+ modules/post/windows/gather/credentials/ie.rb                    | 7 ++-----
+ modules/post/windows/gather/credentials/incredimail.rb           | 5 +----
+ modules/post/windows/gather/credentials/kakaotalk.rb             | 5 +----
+ modules/post/windows/gather/credentials/kmeleon.rb               | 9 +++------
+ modules/post/windows/gather/credentials/line.rb                  | 7 ++-----
+ modules/post/windows/gather/credentials/maxthon.rb               | 5 +----
+ modules/post/windows/gather/credentials/miranda.rb               | 5 +----
+ modules/post/windows/gather/credentials/opera.rb                 | 5 +----
+ modules/post/windows/gather/credentials/operamail.rb             | 5 +----
+ modules/post/windows/gather/credentials/postbox.rb               | 5 +----
+ modules/post/windows/gather/credentials/qq.rb                    | 5 +----
+ modules/post/windows/gather/credentials/quassel_irc.rb           | 7 ++-----
+ modules/post/windows/gather/credentials/redis_desktop_manager.rb | 5 +----
+ modules/post/windows/gather/credentials/safari.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/seamonkey.rb             | 5 +----
+ modules/post/windows/gather/credentials/srware.rb                | 5 +----
+ modules/post/windows/gather/credentials/sylpheed.rb              | 7 ++-----
+ modules/post/windows/gather/credentials/tango.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/thunderbird.rb           | 7 ++-----
+ modules/post/windows/gather/credentials/tlen.rb                  | 5 +----
+ modules/post/windows/gather/credentials/viber.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/windowslivemail.rb       | 5 +----
+ modules/post/windows/gather/credentials/xchat.rb                 | 7 ++-----
+ 34 files changed, 51 insertions(+), 153 deletions(-)
+
+commit 432c7e86072650b03a62bd13afa35317c19043f3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 16:01:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit cb6495e5bc5035c22c1663b3ccb3c9c16c9bda3d
+Merge: efe7aecacf 40002f87f4
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue May 13 10:53:44 2025 -0500
+
+    Merge pull request #20146 from Chocapikk/wp_suretriggers_auth_bypass
+    
+    Add WP SureTriggers ≤1.0.78 admin-creation & RCE module (CVE-2025-3102)
+
+ data/wordlists/wp-exploitable-plugins.txt          |  11 +-
+ .../multi/http/wp_suretriggers_auth_bypass.md      | 193 ++++++++++++++++++
+ .../multi/http/wp_suretriggers_auth_bypass.rb      | 221 +++++++++++++++++++++
+ 3 files changed, 419 insertions(+), 6 deletions(-)
+
+commit a9447e23f65cef42c68553f371fd352b07f7576c
+Author: bcoles <bcoles@github>
+Date:   Tue May 13 23:28:13 2025 +1000
+
+    modules/auxiliary/dos/windows: Resolve RuboCop violations
+
+ modules/auxiliary/dos/windows/appian/appian_bpm.rb | 107 +++++-----
+ .../dos/windows/browser/ms09_065_eot_integer.rb    |  62 +++---
+ .../dos/windows/ftp/filezilla_admin_user.rb        |  42 ++--
+ .../dos/windows/ftp/filezilla_server_port.rb       |  38 ++--
+ .../auxiliary/dos/windows/ftp/guildftp_cwdlist.rb  |  38 ++--
+ .../dos/windows/ftp/iis75_ftpd_iac_bof.rb          |  54 +++---
+ .../dos/windows/ftp/iis_list_exhaustion.rb         |  91 +++++----
+ modules/auxiliary/dos/windows/ftp/solarftp_user.rb |  60 +++---
+ modules/auxiliary/dos/windows/ftp/titan626_site.rb |  38 ++--
+ .../auxiliary/dos/windows/ftp/vicftps50_list.rb    |  35 ++--
+ .../auxiliary/dos/windows/ftp/winftp230_nlst.rb    |  34 ++--
+ .../auxiliary/dos/windows/ftp/xmeasy560_nlst.rb    |  33 ++--
+ .../auxiliary/dos/windows/ftp/xmeasy570_nlst.rb    |  39 ++--
+ modules/auxiliary/dos/windows/games/kaillera.rb    |  42 ++--
+ .../dos/windows/http/ms10_065_ii6_asp_dos.rb       |  71 +++----
+ modules/auxiliary/dos/windows/http/pi3web_isapi.rb |  58 +++---
+ .../auxiliary/dos/windows/llmnr/ms11_030_dnsapi.rb |  81 ++++----
+ modules/auxiliary/dos/windows/nat/nat_helper.rb    |  40 ++--
+ .../dos/windows/rdp/ms12_020_maxchannelids.rb      | 216 +++++++++++----------
+ modules/auxiliary/dos/windows/smb/ms05_047_pnp.rb  |  59 +++---
+ .../auxiliary/dos/windows/smb/ms06_035_mailslot.rb |  72 +++----
+ .../auxiliary/dos/windows/smb/ms06_063_trans.rb    |  52 ++---
+ .../auxiliary/dos/windows/smb/ms09_001_write.rb    |  74 +++----
+ .../windows/smb/ms09_050_smb2_negotiate_pidhigh.rb |  57 +++---
+ .../windows/smb/ms09_050_smb2_session_logoff.rb    |  63 +++---
+ .../smb/ms10_006_negotiate_response_loop.rb        |  61 +++---
+ .../windows/smb/ms10_054_queryfs_pool_overflow.rb  |  52 ++---
+ .../dos/windows/smb/ms11_019_electbowser.rb        |  98 +++++-----
+ .../dos/windows/smb/rras_vls_null_deref.rb         |  56 +++---
+ .../dos/windows/smb/vista_negotiate_stop.rb        |  83 ++++----
+ .../dos/windows/smtp/ms06_019_exchange.rb          | 131 +++++++------
+ .../dos/windows/ssh/sysax_sshd_kexchange.rb        |  55 +++---
+ modules/auxiliary/dos/windows/tftp/pt360_write.rb  |  32 +--
+ modules/auxiliary/dos/windows/tftp/solarwinds.rb   |  30 +--
+ 34 files changed, 1186 insertions(+), 968 deletions(-)
+
+commit efe7aecacfe199ac1b7f922b7241e6617622fe3d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 13:11:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 5abf5480d5e9d403e2da83fa540d83906ed48d94
+Author: bcoles <bcoles@github>
+Date:   Tue May 13 23:10:04 2025 +1000
+
+    modules/post/windows/gather/credentials: Update PackRat module descriptions
+
+ modules/post/windows/gather/credentials/adi_irc.rb               | 7 ++-----
+ modules/post/windows/gather/credentials/aim.rb                   | 5 +----
+ modules/post/windows/gather/credentials/carotdav_ftp.rb          | 7 ++-----
+ modules/post/windows/gather/credentials/chrome.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/comodo.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/coolnovo.rb              | 5 +----
+ modules/post/windows/gather/credentials/digsby.rb                | 5 +----
+ modules/post/windows/gather/credentials/flock.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/gadugadu.rb              | 5 +----
+ modules/post/windows/gather/credentials/halloy_irc.rb            | 7 ++-----
+ modules/post/windows/gather/credentials/icq.rb                   | 5 +----
+ modules/post/windows/gather/credentials/ie.rb                    | 7 ++-----
+ modules/post/windows/gather/credentials/incredimail.rb           | 5 +----
+ modules/post/windows/gather/credentials/kakaotalk.rb             | 5 +----
+ modules/post/windows/gather/credentials/kmeleon.rb               | 9 +++------
+ modules/post/windows/gather/credentials/line.rb                  | 7 ++-----
+ modules/post/windows/gather/credentials/maxthon.rb               | 5 +----
+ modules/post/windows/gather/credentials/miranda.rb               | 5 +----
+ modules/post/windows/gather/credentials/opera.rb                 | 5 +----
+ modules/post/windows/gather/credentials/operamail.rb             | 5 +----
+ modules/post/windows/gather/credentials/postbox.rb               | 5 +----
+ modules/post/windows/gather/credentials/qq.rb                    | 5 +----
+ modules/post/windows/gather/credentials/quassel_irc.rb           | 7 ++-----
+ modules/post/windows/gather/credentials/redis_desktop_manager.rb | 5 +----
+ modules/post/windows/gather/credentials/safari.rb                | 7 ++-----
+ modules/post/windows/gather/credentials/seamonkey.rb             | 5 +----
+ modules/post/windows/gather/credentials/srware.rb                | 5 +----
+ modules/post/windows/gather/credentials/sylpheed.rb              | 7 ++-----
+ modules/post/windows/gather/credentials/tango.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/thunderbird.rb           | 7 ++-----
+ modules/post/windows/gather/credentials/tlen.rb                  | 5 +----
+ modules/post/windows/gather/credentials/viber.rb                 | 7 ++-----
+ modules/post/windows/gather/credentials/windowslivemail.rb       | 5 +----
+ modules/post/windows/gather/credentials/xchat.rb                 | 7 ++-----
+ 34 files changed, 51 insertions(+), 153 deletions(-)
+
+commit 5faa0a5b6b705f99cb39b597201af2aa2e7fcbfd
+Merge: 6c41e9b248 3af76cfa00
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue May 13 08:03:30 2025 -0500
+
+    Merge pull request #19777 from msutovsky-r7/linqpad_deserialization
+    
+    Linqpad deserialization persistence
+
+ .../windows/local/linqpad_deserialization.md       | 55 +++++++++++++++
+ .../local/linqpad_deserialization_persistence.rb   | 81 ++++++++++++++++++++++
+ 2 files changed, 136 insertions(+)
+
+commit 6c41e9b24885020fc0a1a01577254e882fcd38cc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 13 10:32:58 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 115 +++++++++++++++++++++++++++---------------
+ 1 file changed, 73 insertions(+), 42 deletions(-)
+
+commit 619a284408ed116fd9bb39ef21d27f9daf00055c
+Merge: 509ade7146 81a405355c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue May 13 12:24:41 2025 +0200
+
+    Land #20156, modules/post: Resolve RuboCop violations and typos
+    
+    Land #20156, modules/post: Resolve RuboCop violations and typos
+
+ modules/post/firefox/gather/xss.rb                        | 2 +-
+ modules/post/linux/gather/f5_loot_mcp.rb                  | 2 +-
+ modules/post/linux/gather/mimipenguin.rb                  | 2 +-
+ modules/post/linux/gather/rancher_audit_log_leak.rb       | 2 +-
+ modules/post/linux/manage/disable_clamav.rb               | 1 -
+ modules/post/multi/gather/dbeaver.rb                      | 2 +-
+ modules/post/multi/gather/electerm.rb                     | 2 +-
+ modules/post/multi/gather/firefox_creds.rb                | 2 +-
+ modules/post/multi/gather/minio_client.rb                 | 2 +-
+ modules/post/multi/gather/wlan_geolocate.rb               | 2 +-
+ modules/post/multi/gather/wowza_streaming_engine_creds.rb | 2 +-
+ modules/post/multi/general/close.rb                       | 2 +-
+ modules/post/multi/manage/screensaver.rb                  | 5 +++--
+ modules/post/osx/gather/enum_keychain.rb                  | 2 +-
+ modules/post/windows/gather/bloodhound.rb                 | 2 +-
+ modules/post/windows/gather/credentials/moba_xterm.rb     | 2 +-
+ modules/post/windows/gather/credentials/navicat.rb        | 5 +++--
+ modules/post/windows/gather/credentials/securecrt.rb      | 2 +-
+ modules/post/windows/gather/credentials/viber.rb          | 2 +-
+ modules/post/windows/gather/credentials/xchat.rb          | 2 +-
+ modules/post/windows/gather/forensics/recovery_files.rb   | 2 +-
+ modules/post/windows/manage/kerberos_tickets.rb           | 2 +-
+ modules/post/windows/wlan/wlan_current_connection.rb      | 2 +-
+ modules/post/windows/wlan/wlan_disconnect.rb              | 2 +-
+ 24 files changed, 27 insertions(+), 26 deletions(-)
+
+commit 509ade71462d63efc24f2c5ef01595fff0046f49
+Merge: 3d1646d8f2 ce5896d21b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 13 07:08:38 2025 +0200
+
+    Land #20010, adds another Powershell signature for SSH platform
+    
+    Add Powershell Windows signature for SSH platform identification
+
+ lib/metasploit/framework/ssh/platform.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3af76cfa005b19ff021610a7c9b0a00abfcfc8f5
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 13 06:30:00 2025 +0200
+
+    Renames incorrect option in documentation
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ documentation/modules/exploit/windows/local/linqpad_deserialization.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
