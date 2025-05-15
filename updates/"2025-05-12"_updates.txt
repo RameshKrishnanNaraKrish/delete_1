@@ -1,0 +1,214 @@
+commit 520b9dfc0a549d3c06d243e09bb05afa2c7e9ec4
+Merge: 1c94b2c8dc ed5e6db85e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 15 00:20:12 2025 +0100
+
+    Merge pull request #20111 from cdelafuente-r7/fix/exploit_attempts
+    
+    Fix issue that prevented to correctly register exploit attempts
+
+ lib/msf/core/exploit.rb        | 2 +-
+ lib/msf/core/exploit_driver.rb | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 8ea5d3214f4e1498472e5011e49303b945c04f55
+Author: bcoles <bcoles@github>
+Date:   Thu May 15 08:43:24 2025 +1000
+
+    modules/auxiliary/dos: Resolve RuboCop violations
+
+ .../dos/android/android_stock_browser_iframe.rb    |  23 ++-
+ .../dos/apple_ios/webkit_backdrop_filter_blur.rb   |  17 +-
+ .../auxiliary/dos/cisco/ios_http_percentpercent.rb |  46 ++---
+ modules/auxiliary/dos/cisco/ios_telnet_rocem.rb    |  62 ++++---
+ modules/auxiliary/dos/dhcp/isc_dhcpd_clientid.rb   |  49 +++---
+ modules/auxiliary/dos/dns/bind_tkey.rb             |  66 ++++---
+ modules/auxiliary/dos/dns/bind_tsig.rb             |  78 +++++----
+ modules/auxiliary/dos/freebsd/nfsd/nfsd_mount.rb   |  38 ++--
+ modules/auxiliary/dos/ftp/vsftpd_232.rb            |   4 +-
+ modules/auxiliary/dos/hp/data_protector_rds.rb     |  43 +++--
+ modules/auxiliary/dos/mdns/avahi_portzero.rb       |  24 ++-
+ modules/auxiliary/dos/misc/dopewars.rb             |  41 +++--
+ .../dos/misc/ibm_sametime_webplayer_dos.rb         | 146 ++++++++--------
+ modules/auxiliary/dos/misc/ibm_tsm_dos.rb          |  72 ++++----
+ modules/auxiliary/dos/misc/memcached.rb            |  46 ++---
+ modules/auxiliary/dos/ntp/ntpd_reserved_dos.rb     |  56 +++---
+ modules/auxiliary/dos/pptp/ms02_063_pptp_dos.rb    |  57 +++---
+ modules/auxiliary/dos/rpc/rpcbomb.rb               |  48 ++---
+ modules/auxiliary/dos/samba/lsa_addprivs_heap.rb   |  50 +++---
+ modules/auxiliary/dos/samba/lsa_transnames_heap.rb |  50 +++---
+ .../auxiliary/dos/samba/read_nttrans_ea_list.rb    |  75 ++++----
+ .../dos/sap/sap_soap_rfc_eps_delete_file.rb        |  32 ++--
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb  | 194 +++++++++++----------
+ modules/auxiliary/dos/scada/beckhoff_twincat.rb    |  38 ++--
+ modules/auxiliary/dos/scada/d20_tftp_overflow.rb   | 153 ++++++++--------
+ modules/auxiliary/dos/scada/igss9_dataserver.rb    |  54 +++---
+ modules/auxiliary/dos/scada/siemens_siprotec4.rb   |  56 +++---
+ modules/auxiliary/dos/scada/yokogawa_logsvr.rb     |  53 +++---
+ modules/auxiliary/dos/smtp/sendmail_prescan.rb     |  67 +++----
+ .../auxiliary/dos/solaris/lpd/cascade_delete.rb    |  93 +++++-----
+ modules/auxiliary/dos/ssl/dtls_changecipherspec.rb |  48 ++---
+ .../auxiliary/dos/ssl/dtls_fragment_overflow.rb    |  46 ++---
+ modules/auxiliary/dos/ssl/openssl_aesni.rb         | 126 ++++++-------
+ modules/auxiliary/dos/syslog/rsyslog_long_tag.rb   |  30 ++--
+ modules/auxiliary/dos/tcp/junos_tcp_opt.rb         |  36 ++--
+ modules/auxiliary/dos/tcp/synflood.rb              |  24 ++-
+ modules/auxiliary/dos/upnp/miniupnpd_dos.rb        |  50 +++---
+ modules/auxiliary/dos/wireshark/capwap.rb          |  37 ++--
+ modules/auxiliary/dos/wireshark/chunked.rb         | 122 +++++++------
+ modules/auxiliary/dos/wireshark/cldap.rb           |  48 ++---
+ modules/auxiliary/dos/wireshark/ldap.rb            |  31 ++--
+ 41 files changed, 1335 insertions(+), 1094 deletions(-)
+
+commit 1c94b2c8dcb36169a2a7635fc23ea43ee1db4c02
+Merge: ba25dd48b3 13d18f2c83
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed May 14 12:50:43 2025 -0400
+
+    Merge pull request #20181 from bwatters-r7/fix/wordpress_login
+    
+    Change check for redirect in wordpress_login to be less specific
+
+ lib/msf/core/exploit/remote/http/wordpress/login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ba25dd48b30637feb13629be7cd8a120db4b166c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 14 13:41:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit fe5f56cac053f9a619d98a62883e8c6e0015984b
+Merge: 90f04f6fb5 88ffe892e0
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 14 15:33:30 2025 +0200
+
+    Land #20159, adds module for privilege escalation in Wordpress (CVE-2025-2563)
+    
+    Add Unauthenticated privesc for WP User Registration & Membership plugin (CVE-2025-2563)
+
+ data/wordlists/wp-exploitable-plugins.txt          |   2 +
+ .../wp_user_registration_membership_escalation.md  | 183 ++++++++++++
+ .../wp_user_registration_membership_escalation.rb  | 314 +++++++++++++++++++++
+ 3 files changed, 499 insertions(+)
+
+commit 90f04f6fb543227f95699afaf19e64dec195ef8c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 14 08:58:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 773 +++++++++++++++++++++++++++++++-----------
+ 1 file changed, 583 insertions(+), 190 deletions(-)
+
+commit 1f230f373182720bca2c02c9474cbc73fa919376
+Merge: 621840e9df 1890f8a175
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 14 10:45:03 2025 +0200
+
+    Land #20153, modules/auxiliary/dos/http: Resolve RuboCop violations
+    
+    Land #20153, modules/auxiliary/dos/http: Resolve RuboCop violations
+
+ .../auxiliary/dos/http/3com_superstack_switch.rb   |  65 +++++-----
+ .../dos/http/apache_commons_fileupload_dos.rb      |  82 ++++++------
+ modules/auxiliary/dos/http/apache_mod_isapi.rb     |  99 +++++++-------
+ modules/auxiliary/dos/http/apache_range_dos.rb     | 144 +++++++++++----------
+ .../dos/http/apache_tomcat_transfer_encoding.rb    |  45 ++++---
+ modules/auxiliary/dos/http/brother_debut_dos.rb    |  80 ++++++------
+ .../auxiliary/dos/http/canon_wireless_printer.rb   | 102 ++++++++-------
+ modules/auxiliary/dos/http/dell_openmanage_post.rb |  46 ++++---
+ .../dos/http/f5_bigip_apm_max_sessions.rb          |  98 ++++++++------
+ .../auxiliary/dos/http/flexense_http_server_dos.rb |  78 +++++------
+ modules/auxiliary/dos/http/gzip_bomb_dos.rb        |  77 +++++------
+ modules/auxiliary/dos/http/hashcollision_dos.rb    | 142 ++++++++++----------
+ modules/auxiliary/dos/http/ibm_lotus_notes.rb      |  21 +--
+ modules/auxiliary/dos/http/ibm_lotus_notes2.rb     |  21 +--
+ modules/auxiliary/dos/http/marked_redos.rb         | 124 +++++++++---------
+ .../dos/http/metasploit_httphandler_dos.rb         | 128 +++++++++---------
+ modules/auxiliary/dos/http/monkey_headers.rb       |  32 +++--
+ .../auxiliary/dos/http/ms15_034_ulonglongadd.rb    |  55 ++++----
+ modules/auxiliary/dos/http/nodejs_pipelining.rb    |  57 ++++----
+ .../dos/http/novell_file_reporter_heap_bof.rb      |  70 +++++-----
+ modules/auxiliary/dos/http/rails_action_view.rb    |  85 ++++++------
+ modules/auxiliary/dos/http/rails_json_float_dos.rb |  74 ++++++-----
+ modules/auxiliary/dos/http/sonicwall_ssl_format.rb |  59 +++++----
+ .../auxiliary/dos/http/tautulli_shutdown_exec.rb   |   7 +-
+ modules/auxiliary/dos/http/ua_parser_js_redos.rb   | 124 +++++++++---------
+ modules/auxiliary/dos/http/webkitplus.rb           |  37 +++---
+ modules/auxiliary/dos/http/webrick_regex.rb        |  68 +++++-----
+ .../dos/http/wordpress_directory_traversal_dos.rb  | 144 +++++++++++----------
+ .../dos/http/wordpress_long_password_dos.rb        | 110 ++++++++--------
+ modules/auxiliary/dos/http/wordpress_xmlrpc_dos.rb | 114 ++++++++--------
+ modules/auxiliary/dos/http/ws_dos.rb               |  56 ++++----
+ 31 files changed, 1317 insertions(+), 1127 deletions(-)
+
+commit 621840e9df2c054517af1cde330676e1b5b50e3a
+Merge: d294cc6029 a9447e23f6
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 14 10:42:58 2025 +0200
+
+    Land #20152, modules/auxiliary/dos/windows: Resolve RuboCop violations
+    
+    Land #20152, modules/auxiliary/dos/windows: Resolve RuboCop violations
+
+ modules/auxiliary/dos/windows/appian/appian_bpm.rb | 107 +++++-----
+ .../dos/windows/browser/ms09_065_eot_integer.rb    |  62 +++---
+ .../dos/windows/ftp/filezilla_admin_user.rb        |  42 ++--
+ .../dos/windows/ftp/filezilla_server_port.rb       |  38 ++--
+ .../auxiliary/dos/windows/ftp/guildftp_cwdlist.rb  |  38 ++--
+ .../dos/windows/ftp/iis75_ftpd_iac_bof.rb          |  54 +++---
+ .../dos/windows/ftp/iis_list_exhaustion.rb         |  91 +++++----
+ modules/auxiliary/dos/windows/ftp/solarftp_user.rb |  60 +++---
+ modules/auxiliary/dos/windows/ftp/titan626_site.rb |  38 ++--
+ .../auxiliary/dos/windows/ftp/vicftps50_list.rb    |  35 ++--
+ .../auxiliary/dos/windows/ftp/winftp230_nlst.rb    |  34 ++--
+ .../auxiliary/dos/windows/ftp/xmeasy560_nlst.rb    |  33 ++--
+ .../auxiliary/dos/windows/ftp/xmeasy570_nlst.rb    |  39 ++--
+ modules/auxiliary/dos/windows/games/kaillera.rb    |  42 ++--
+ .../dos/windows/http/ms10_065_ii6_asp_dos.rb       |  71 +++----
+ modules/auxiliary/dos/windows/http/pi3web_isapi.rb |  58 +++---
+ .../auxiliary/dos/windows/llmnr/ms11_030_dnsapi.rb |  81 ++++----
+ modules/auxiliary/dos/windows/nat/nat_helper.rb    |  40 ++--
+ .../dos/windows/rdp/ms12_020_maxchannelids.rb      | 216 +++++++++++----------
+ modules/auxiliary/dos/windows/smb/ms05_047_pnp.rb  |  59 +++---
+ .../auxiliary/dos/windows/smb/ms06_035_mailslot.rb |  72 +++----
+ .../auxiliary/dos/windows/smb/ms06_063_trans.rb    |  52 ++---
+ .../auxiliary/dos/windows/smb/ms09_001_write.rb    |  74 +++----
+ .../windows/smb/ms09_050_smb2_negotiate_pidhigh.rb |  57 +++---
+ .../windows/smb/ms09_050_smb2_session_logoff.rb    |  63 +++---
+ .../smb/ms10_006_negotiate_response_loop.rb        |  61 +++---
+ .../windows/smb/ms10_054_queryfs_pool_overflow.rb  |  52 ++---
+ .../dos/windows/smb/ms11_019_electbowser.rb        |  98 +++++-----
+ .../dos/windows/smb/rras_vls_null_deref.rb         |  56 +++---
+ .../dos/windows/smb/vista_negotiate_stop.rb        |  83 ++++----
+ .../dos/windows/smtp/ms06_019_exchange.rb          | 131 +++++++------
+ .../dos/windows/ssh/sysax_sshd_kexchange.rb        |  55 +++---
+ modules/auxiliary/dos/windows/tftp/pt360_write.rb  |  32 +--
+ modules/auxiliary/dos/windows/tftp/solarwinds.rb   |  30 +--
+ 34 files changed, 1186 insertions(+), 968 deletions(-)
+
+commit d294cc6029f9d7e394979e4f1132708ee34e9b61
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 14 06:10:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 7d8d0230cbd374468d1daf987b2ca8ad5aa9c828
+Merge: 33e3e0851f 1e523e4e0b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 14 08:00:20 2025 +0200
+
+    Land #20026, adds module for CVE-2024-57487
+    
+    New Exploit Module & Documentation for CVE-2024-57487
+
+ .../exploit/multi/http/carrental_fileupload_rce.md | 123 +++++++++++++++++++++
+ .../multi/http/carrental_fileupload_rce.rb         | 118 ++++++++++++++++++++
+ 2 files changed, 241 insertions(+)
