@@ -1,0 +1,352 @@
+commit f722f39175e63301137fcd668c0245278b7ea617
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 17:51:13 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 130 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 104 insertions(+), 26 deletions(-)
+
+commit 5d4aca6c9227f80e23e066384e20b4c58bf767ea
+Merge: 2da6eb841b f53fb9e844
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 15 13:43:23 2025 -0400
+
+    Merge pull request #20145 from bcoles/rubocop-modules-auxiliary-spoof
+    
+    modules/auxiliary/spoof: Resolve RuboCop violations
+
+ modules/auxiliary/spoof/arp/arp_poisoning.rb      | 391 +++++++++++-----------
+ modules/auxiliary/spoof/cisco/cdp.rb              |  70 ++--
+ modules/auxiliary/spoof/cisco/dtp.rb              |  71 ++--
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb | 353 ++++++++++---------
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb   | 385 +++++++++++----------
+ modules/auxiliary/spoof/dns/compare_results.rb    | 130 +++----
+ modules/auxiliary/spoof/dns/native_spoofer.rb     |   1 -
+ modules/auxiliary/spoof/llmnr/llmnr_response.rb   | 162 ++++-----
+ modules/auxiliary/spoof/mdns/mdns_response.rb     | 166 ++++-----
+ modules/auxiliary/spoof/nbns/nbns_response.rb     | 158 ++++-----
+ modules/auxiliary/spoof/replay/pcap_replay.rb     |  62 ++--
+ 11 files changed, 990 insertions(+), 959 deletions(-)
+
+commit 2da6eb841b4d3a485e15ce252c9c1c56012dd0d0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 16:52:39 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 76471731f9c972e9fd272de9582d19290cd39e20
+Merge: 890840f82b 365caab8fc
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu May 15 11:44:49 2025 -0500
+
+    Merge pull request #20112 from cdelafuente-r7/mod/ivanti/rce/cve_2025_22457
+    
+    Ivanti Connect Secure Unauthenticated RCE via Stack-based Buffer Overflow CVE-2025-22457
+
+ ...ect_secure_stack_overflow_rce_cve_2025_22457.md | 108 ++++++
+ ...ect_secure_stack_overflow_rce_cve_2025_22457.rb | 395 +++++++++++++++++++++
+ 2 files changed, 503 insertions(+)
+
+commit 890840f82beaadc642440a56fab8f261a16cb271
+Merge: 3c86d8adcd 050e677577
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 15 11:28:44 2025 -0400
+
+    Merge pull request #20179 from adfoster-r7/update-metasploit-payloads
+    
+    Update Metasploit payloads release version
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 42a383e4c74955a561089dc1b8f8c8475013942d
+Author: bcoles <bcoles@github>
+Date:   Fri May 16 00:09:30 2025 +1000
+
+    modules/exploits/linux/games: Resolve RuboCop violations
+
+ modules/exploits/linux/games/ut2004_secure.rb | 91 ++++++++++++++-------------
+ 1 file changed, 47 insertions(+), 44 deletions(-)
+
+commit 3c86d8adcdfccc1647f042bb9fa2bc4608eeb903
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 13:23:22 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b67a0f78514625f2e6ca5a84bd3d3b682de35dbb
+Merge: 00da2fb32f 20cda86177
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 15 14:14:33 2025 +0100
+
+    Merge pull request #20194 from adfoster-r7/ensure-thinkphp-rce-runs-on-metasploit-pro
+    
+    Ensure thinkphp rce runs on metasploit pro
+
+ modules/exploits/unix/webapp/thinkphp_rce.rb | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 20cda861772b14dc0e9afa9cc4ee45191a13a5f9
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 15 11:57:11 2025 +0100
+
+    Ensure thinkphp rce runs on metasploit pro
+
+ modules/exploits/unix/webapp/thinkphp_rce.rb | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 00da2fb32f64fdeeb9ce35fdbf227c2a44582ac2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 11:20:07 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 17 ++++++++++++++---
+ 1 file changed, 14 insertions(+), 3 deletions(-)
+
+commit d12b6fe3ba6facb28f4471a27e5f65027ed97958
+Merge: 97e20e21df 16ae7af550
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 15 13:11:08 2025 +0200
+
+    Merge pull request #20163 from bcoles/rubocop-modules-exploits-linux-antivirus
+    
+    modules/exploits/linux/antivirus: Resolve RuboCop violations
+
+ .../linux/antivirus/escan_password_exec.rb         | 94 ++++++++++++----------
+ 1 file changed, 50 insertions(+), 44 deletions(-)
+
+commit 97e20e21df30214edb9e67e29b5514d833ba79a0
+Merge: 72ae91e4bc d7506c2411
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 15 13:10:26 2025 +0200
+
+    Merge pull request #20155 from bcoles/msf-payloadset-recalculate
+    
+    Msf::PayloadSet#recalculate: Replace delete_if with replace(slice(...))
+
+ lib/msf/core/payload_set.rb | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 72ae91e4bc763da378bbd5be104f642f9d7eebc1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 10:41:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit c598d8b4b00581ff801cdcb3e79f8de056adf6b8
+Merge: 59a8798dd5 97ecaa7c30
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 15 12:31:51 2025 +0200
+
+    Land #20020, adds module for Nextcloud Workflow Remote Code Execution
+    
+    Add exploit module for the nextcloud workflow vulnerability CVE-2023-26482
+
+ .../exploit/unix/webapp/nextcloud_workflows_rce.md | 148 +++++++++++++
+ .../unix/webapp/nextcloud_workflows_rce.rb         | 230 +++++++++++++++++++++
+ 2 files changed, 378 insertions(+)
+
+commit 365caab8fc200e9de424f3c7a426baab8fbd5535
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu May 15 12:10:53 2025 +0200
+
+    Update the error message in case of Broken pipe error and update the documentation
+
+ ...nti_connect_secure_stack_overflow_rce_cve_2025_22457.md | 14 +++++++++++++-
+ ...nti_connect_secure_stack_overflow_rce_cve_2025_22457.rb |  7 +++++--
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+
+commit 97ecaa7c309ae1cb8ee60c48966dd805beb3b215
+Author: whotwagner <code@feedyourhead.at>
+Date:   Thu May 15 09:16:26 2025 +0000
+
+    Refactoring indentations
+
+ modules/exploits/unix/webapp/nextcloud_workflows_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 61dc956bb3b28febb063d68af330a0566a2440c0
+Author: whotwagner <ilovemail@feedyourhead.at>
+Date:   Thu May 15 11:15:05 2025 +0200
+
+    Update modules/exploits/unix/webapp/nextcloud_workflows_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/unix/webapp/nextcloud_workflows_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 72c9d5b038069ab7a85901ff0ee58926fa00c0b2
+Author: whotwagner <ilovemail@feedyourhead.at>
+Date:   Thu May 15 11:14:25 2025 +0200
+
+    Update modules/exploits/unix/webapp/nextcloud_workflows_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/unix/webapp/nextcloud_workflows_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9b619cbc58d9b3392284dd2461f2c9cc1de000c4
+Author: whotwagner <ilovemail@feedyourhead.at>
+Date:   Thu May 15 11:12:05 2025 +0200
+
+    Update modules/exploits/unix/webapp/nextcloud_workflows_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/unix/webapp/nextcloud_workflows_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 59a8798dd55983f18215ba29e1edac197488eee6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 09:01:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 246 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 195 insertions(+), 51 deletions(-)
+
+commit 6c39f9331fab52418722188cd594a9f6c0f8c13e
+Merge: 308c794c8f c3f5aa41dc
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 15 10:52:37 2025 +0200
+
+    Land #20162, modules/auxiliary/sqli: Resolve RuboCop violations
+    
+    Land #20162, modules/auxiliary/sqli: Resolve RuboCop violations
+
+ .../auxiliary/sqli/openemr/openemr_sqli_dump.rb    | 51 ++++++++------
+ modules/auxiliary/sqli/oracle/dbms_cdc_ipublish.rb | 46 +++++++------
+ modules/auxiliary/sqli/oracle/dbms_cdc_publish.rb  | 57 +++++++++-------
+ modules/auxiliary/sqli/oracle/dbms_cdc_publish2.rb | 62 +++++++++--------
+ modules/auxiliary/sqli/oracle/dbms_cdc_publish3.rb | 57 +++++++++-------
+ .../dbms_cdc_subscribe_activate_subscription.rb    | 51 ++++++++------
+ .../auxiliary/sqli/oracle/dbms_export_extension.rb | 69 ++++++++++---------
+ .../sqli/oracle/dbms_metadata_get_granted_xml.rb   | 49 ++++++++------
+ .../auxiliary/sqli/oracle/dbms_metadata_get_xml.rb | 49 ++++++++------
+ .../auxiliary/sqli/oracle/dbms_metadata_open.rb    | 51 ++++++++------
+ modules/auxiliary/sqli/oracle/droptable_trigger.rb | 78 ++++++++++++----------
+ modules/auxiliary/sqli/oracle/jvm_os_code_10g.rb   | 66 ++++++++++--------
+ modules/auxiliary/sqli/oracle/jvm_os_code_11g.rb   | 48 +++++++------
+ .../auxiliary/sqli/oracle/lt_compressworkspace.rb  | 54 ++++++++-------
+ .../auxiliary/sqli/oracle/lt_findricset_cursor.rb  | 61 +++++++++--------
+ modules/auxiliary/sqli/oracle/lt_mergeworkspace.rb | 66 ++++++++++--------
+ .../auxiliary/sqli/oracle/lt_removeworkspace.rb    | 66 ++++++++++--------
+ .../auxiliary/sqli/oracle/lt_rollbackworkspace.rb  | 65 ++++++++++--------
+ 18 files changed, 595 insertions(+), 451 deletions(-)
+
+commit 308c794c8fb4c0b4242f3088f77ade9b20ed7c8a
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu May 15 03:33:18 2025 -0500
+
+    Bump version of framework to 6.4.65
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit f83d15557099c60d775c35936cadbcd954d5fdce
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 08:31:24 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 469 +++++++++++++++++++++++++++++++-----------
+ 1 file changed, 354 insertions(+), 115 deletions(-)
+
+commit f7e7b5ad1464202cc995b1cf7cb8db49164ba736
+Merge: 0093512369 8ea5d3214f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 15 10:22:51 2025 +0200
+
+    Land #20154, modules/auxiliary/dos: Resolve RuboCop violations
+    
+    Land #20154, modules/auxiliary/dos: Resolve RuboCop violations
+
+ .../dos/android/android_stock_browser_iframe.rb    |  23 ++-
+ .../dos/apple_ios/webkit_backdrop_filter_blur.rb   |  17 +-
+ .../auxiliary/dos/cisco/ios_http_percentpercent.rb |  46 ++---
+ modules/auxiliary/dos/cisco/ios_telnet_rocem.rb    |  62 ++++---
+ modules/auxiliary/dos/dhcp/isc_dhcpd_clientid.rb   |  49 +++---
+ modules/auxiliary/dos/dns/bind_tkey.rb             |  66 ++++---
+ modules/auxiliary/dos/dns/bind_tsig.rb             |  78 +++++----
+ modules/auxiliary/dos/freebsd/nfsd/nfsd_mount.rb   |  38 ++--
+ modules/auxiliary/dos/ftp/vsftpd_232.rb            |   4 +-
+ modules/auxiliary/dos/hp/data_protector_rds.rb     |  43 +++--
+ modules/auxiliary/dos/mdns/avahi_portzero.rb       |  24 ++-
+ modules/auxiliary/dos/misc/dopewars.rb             |  41 +++--
+ .../dos/misc/ibm_sametime_webplayer_dos.rb         | 146 ++++++++--------
+ modules/auxiliary/dos/misc/ibm_tsm_dos.rb          |  72 ++++----
+ modules/auxiliary/dos/misc/memcached.rb            |  46 ++---
+ modules/auxiliary/dos/ntp/ntpd_reserved_dos.rb     |  56 +++---
+ modules/auxiliary/dos/pptp/ms02_063_pptp_dos.rb    |  57 +++---
+ modules/auxiliary/dos/rpc/rpcbomb.rb               |  48 ++---
+ modules/auxiliary/dos/samba/lsa_addprivs_heap.rb   |  50 +++---
+ modules/auxiliary/dos/samba/lsa_transnames_heap.rb |  50 +++---
+ .../auxiliary/dos/samba/read_nttrans_ea_list.rb    |  75 ++++----
+ .../dos/sap/sap_soap_rfc_eps_delete_file.rb        |  32 ++--
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb  | 194 +++++++++++----------
+ modules/auxiliary/dos/scada/beckhoff_twincat.rb    |  38 ++--
+ modules/auxiliary/dos/scada/d20_tftp_overflow.rb   | 153 ++++++++--------
+ modules/auxiliary/dos/scada/igss9_dataserver.rb    |  54 +++---
+ modules/auxiliary/dos/scada/siemens_siprotec4.rb   |  56 +++---
+ modules/auxiliary/dos/scada/yokogawa_logsvr.rb     |  53 +++---
+ modules/auxiliary/dos/smtp/sendmail_prescan.rb     |  67 +++----
+ .../auxiliary/dos/solaris/lpd/cascade_delete.rb    |  93 +++++-----
+ modules/auxiliary/dos/ssl/dtls_changecipherspec.rb |  48 ++---
+ .../auxiliary/dos/ssl/dtls_fragment_overflow.rb    |  46 ++---
+ modules/auxiliary/dos/ssl/openssl_aesni.rb         | 126 ++++++-------
+ modules/auxiliary/dos/syslog/rsyslog_long_tag.rb   |  30 ++--
+ modules/auxiliary/dos/tcp/junos_tcp_opt.rb         |  36 ++--
+ modules/auxiliary/dos/tcp/synflood.rb              |  24 ++-
+ modules/auxiliary/dos/upnp/miniupnpd_dos.rb        |  50 +++---
+ modules/auxiliary/dos/wireshark/capwap.rb          |  37 ++--
+ modules/auxiliary/dos/wireshark/chunked.rb         | 122 +++++++------
+ modules/auxiliary/dos/wireshark/cldap.rb           |  48 ++---
+ modules/auxiliary/dos/wireshark/ldap.rb            |  31 ++--
+ 41 files changed, 1335 insertions(+), 1094 deletions(-)
+
+commit 009351236998b8670b845d266ad9c991e957c996
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 15 05:30:47 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit e3649b31fe709ddbc98f2c77fb14f7c9695bd222
+Merge: 520b9dfc0a 3f4c8a5161
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 15 07:23:07 2025 +0200
+
+    Land #20123, adds module for path traversal and credential harvester in PowerCom UPSMON Pro
+    
+    POWERCOM UPSMON PRO Path Traversal (CVE-2022-38120) and Credential Harvester (CVE-2022-38121) Module
+
+ .../modules/auxiliary/gather/upsmon_traversal.md   |  86 +++++++++++
+ modules/auxiliary/gather/upsmon_traversal.rb       | 170 +++++++++++++++++++++
+ 2 files changed, 256 insertions(+)
+
+commit 3f4c8a5161259328b4b089bb169437adc7e023ce
+Author: h4x-x0r <152236528+h4x-x0r@users.noreply.github.com>
+Date:   Thu May 15 04:28:53 2025 +0100
+
+    Update upsmon_traversal.rb
+
+ modules/auxiliary/gather/upsmon_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
