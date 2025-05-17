@@ -1,0 +1,88 @@
+commit b251fc1b635dc07c66cc3848983bdcbeaa08a81f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 16 21:50:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 166 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 131 insertions(+), 35 deletions(-)
+
+commit e4a5aecf05fdd1c06c90c772de33d72e83bfc09a
+Merge: 34be81df28 3ae2a8fa8c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri May 16 14:43:20 2025 -0700
+
+    Merge pull request #20186 from bcoles/rubocop-modules-auxiliary-server-capture
+    
+    modules/auxiliary/server/capture: Resolve RuboCop violations
+
+ modules/auxiliary/server/capture/drda.rb           | 230 +++++------
+ modules/auxiliary/server/capture/ftp.rb            |  87 ++--
+ modules/auxiliary/server/capture/http.rb           | 362 +++++++++--------
+ modules/auxiliary/server/capture/http_basic.rb     |  69 ++--
+ .../server/capture/http_javascript_keylogger.rb    | 307 ++++++++-------
+ modules/auxiliary/server/capture/http_ntlm.rb      | 379 +++++++++---------
+ modules/auxiliary/server/capture/imap.rb           |  99 ++---
+ modules/auxiliary/server/capture/mssql.rb          | 437 +++++++++++----------
+ modules/auxiliary/server/capture/mysql.rb          | 158 ++++----
+ modules/auxiliary/server/capture/pop3.rb           | 101 ++---
+ modules/auxiliary/server/capture/postgresql.rb     | 106 ++---
+ .../auxiliary/server/capture/printjob_capture.rb   | 232 +++++------
+ modules/auxiliary/server/capture/sip.rb            | 270 ++++++-------
+ modules/auxiliary/server/capture/smb.rb            |  11 +-
+ modules/auxiliary/server/capture/smtp.rb           |  13 +-
+ modules/auxiliary/server/capture/telnet.rb         | 108 ++---
+ modules/auxiliary/server/capture/vnc.rb            |  64 +--
+ 17 files changed, 1550 insertions(+), 1483 deletions(-)
+
+commit 34be81df28a1e4a8c634001d3608a95b79581904
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 16 14:36:42 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 90 ++++++++++++++++++++++++-------------------
+ 1 file changed, 50 insertions(+), 40 deletions(-)
+
+commit 57c69049f7bcf5386cb955ee1cd95c04279ccb55
+Merge: ad0f09c361 a7d092701a
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri May 16 10:28:52 2025 -0400
+
+    Merge pull request #20175 from smashery/ruby-kerberoasting
+    
+    Ruby kerberoasting
+
+ .../modules/auxiliary/gather/get_user_spns.md      |  31 --
+ .../modules/auxiliary/gather/kerberoast.md         |  72 ++++
+ lib/metasploit/framework/hashes.rb                 |   8 +
+ .../password_crackers/hashcat/formatter.rb         |   2 +
+ .../framework/password_crackers/jtr/formatter.rb   |   2 +
+ .../exploit/remote/kerberos/client/tgs_response.rb |  24 ++
+ .../remote/kerberos/service_authenticator/base.rb  | 227 +++++-----
+ lib/msf/core/exploit/remote/ldap/queries.rb        |  61 +++
+ modules/auxiliary/gather/asrep.rb                  |  10 +-
+ modules/auxiliary/gather/get_user_spns.py          | 462 ---------------------
+ modules/auxiliary/gather/kerberoast.rb             | 223 ++++++++++
+ 11 files changed, 511 insertions(+), 611 deletions(-)
+
+commit ad0f09c36182aca0a6bd3c38e0bd469aab9353a1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 16 08:35:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
+
+commit c68b10b64029014f484e5c8e84800da1a906a51e
+Merge: f722f39175 42a383e4c7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 16 10:27:24 2025 +0200
+
+    Merge pull request #20164 from bcoles/rubocop-modules-exploits-linux-games
+    
+    modules/exploits/linux/games: Resolve RuboCop violations
+
+ modules/exploits/linux/games/ut2004_secure.rb | 91 ++++++++++++++-------------
+ 1 file changed, 47 insertions(+), 44 deletions(-)
