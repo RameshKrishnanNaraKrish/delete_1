@@ -1,0 +1,36 @@
+commit eb850f3e70c94a288bd19a93b18d2020dc132c8e
+Merge: 7875feb10d ebed18ed5f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun May 18 02:37:52 2025 +0100
+
+    Merge pull request #20196 from bcoles/gemfile-rubocop
+    
+    Bump rubocop from 1.67.0 to 1.75.6
+
+ Gemfile             |  4 ++--
+ Gemfile.lock        | 32 +++++++++++++++++++-------------
+ spec/spec_helper.rb | 17 +++++++++++++++++
+ 3 files changed, 38 insertions(+), 15 deletions(-)
+
+commit 7875feb10d4024dee8d905a5d85db7cba4fbb03f
+Merge: b251fc1b63 8d534e3251
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun May 18 01:43:58 2025 +0100
+
+    Merge pull request #20166 from bcoles/msf-module-platform
+    
+    Msf::Module::Platform#find_platform: Match known platforms before search
+
+ lib/msf/core/module/platform.rb | 72 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+
+commit ebed18ed5fb6306c415f0ddbd7ada3c881c0e57e
+Author: bcoles <bcoles@github>
+Date:   Sun May 18 10:22:03 2025 +1000
+
+    Bump rubocop from 1.67.0 to 1.75.6
+
+ Gemfile             |  4 ++--
+ Gemfile.lock        | 32 +++++++++++++++++++-------------
+ spec/spec_helper.rb | 17 +++++++++++++++++
+ 3 files changed, 38 insertions(+), 15 deletions(-)
