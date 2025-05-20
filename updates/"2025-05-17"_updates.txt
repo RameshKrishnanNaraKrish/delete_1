@@ -1,0 +1,42 @@
+commit 618db3d53c91e5da972f3119b527eefaa49dbb17
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 19 20:01:23 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ccced2c0adb0d48ebeb2ff0f7b065288e146049a
+Merge: 00cc93f679 17f9038372
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 19 20:54:00 2025 +0100
+
+    Merge pull request #20190 from bcoles/rubocop-modules-auxiliary-dos-smb-smb_loris
+    
+    modules/auxiliary/dos/smb/smb_loris: Resolve RuboCop violations
+
+ modules/auxiliary/dos/smb/smb_loris.rb | 66 ++++++++++++++++------------------
+ 1 file changed, 31 insertions(+), 35 deletions(-)
+
+commit 00cc93f679d904259954dd207f63ea2fb46870bc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 19 07:57:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 561eef98c1bbdd86a4b6b0aec0983153ab4c5b32
+Merge: eb850f3e70 647545c5ef
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 19 09:49:09 2025 +0200
+
+    Land #20188, adds module for CVE-2024-7399 Samsung MagicINFO 9 Server
+    
+    Samsung MagicINFO 9 Server RCE (CVE-2024-7399) Module
+
+ .../exploit/windows/http/magicinfo_traversal.md    |  72 +++++++++++++
+ .../exploits/windows/http/magicinfo_traversal.rb   | 120 +++++++++++++++++++++
+ 2 files changed, 192 insertions(+)
