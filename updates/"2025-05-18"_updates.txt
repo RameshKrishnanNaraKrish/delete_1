@@ -1,0 +1,329 @@
+commit 4ea181751dfb04a364a1d4d79560710134b6dcba
+Author: bcoles <bcoles@github>
+Date:   Wed May 21 08:32:40 2025 +1000
+
+    modules/auxiliary/admin: Resolve RuboCop violations
+
+ .../auxiliary/admin/2wire/xslt_password_reset.rb   | 125 ++++----
+ .../android/google_play_store_uxss_xframe_rce.rb   |  84 ++---
+ .../admin/appletv/appletv_display_image.rb         |  56 ++--
+ .../admin/appletv/appletv_display_video.rb         |  73 +++--
+ modules/auxiliary/admin/atg/atg_client.rb          | 339 +++++++++++----------
+ .../auxiliary/admin/aws/aws_launch_instances.rb    |  65 ++--
+ modules/auxiliary/admin/backupexec/dump.rb         | 149 ++++-----
+ modules/auxiliary/admin/backupexec/registry.rb     | 191 ++++++------
+ .../auxiliary/admin/chromecast/chromecast_reset.rb | 103 ++++---
+ .../admin/chromecast/chromecast_youtube.rb         |  94 +++---
+ modules/auxiliary/admin/db2/db2rcmd.rb             |  63 ++--
+ modules/auxiliary/admin/dns/dyn_dns_update.rb      | 240 +++++++--------
+ .../admin/edirectory/edirectory_dhost_cookie.rb    |  70 +++--
+ .../admin/edirectory/edirectory_edirutil.rb        | 113 +++----
+ .../admin/emc/alphastor_devicemanager_exec.rb      |  47 +--
+ .../admin/emc/alphastor_librarymanager_exec.rb     |  43 +--
+ modules/auxiliary/admin/firetv/firetv_youtube.rb   |  86 +++---
+ .../auxiliary/admin/hp/hp_data_protector_cmd.rb    |  74 ++---
+ .../admin/hp/hp_ilo_create_admin_account.rb        | 107 ++++---
+ .../admin/hp/hp_imc_som_create_account.rb          | 322 +++++++++----------
+ modules/auxiliary/admin/kerberos/forge_ticket.rb   |   2 +-
+ modules/auxiliary/admin/kerberos/inspect_ticket.rb |   2 +-
+ .../admin/kerberos/ms14_068_kerberos_checksum.rb   |  57 ++--
+ .../auxiliary/admin/kerberos/ticket_converter.rb   |   2 +-
+ modules/auxiliary/admin/maxdb/maxdb_cons_exec.rb   |  50 +--
+ .../auxiliary/admin/misc/sercomm_dump_config.rb    | 104 ++++---
+ modules/auxiliary/admin/misc/wol.rb                |  61 ++--
+ modules/auxiliary/admin/motorola/wr850g_cred.rb    |  49 +--
+ modules/auxiliary/admin/ms/ms08_059_his2006.rb     |  59 ++--
+ modules/auxiliary/admin/mysql/mysql_enum.rb        | 110 ++++---
+ modules/auxiliary/admin/mysql/mysql_sql.rb         |  33 +-
+ modules/auxiliary/admin/natpmp/natpmp_map.rb       | 104 +++----
+ modules/auxiliary/admin/netbios/netbios_spoof.rb   |  72 +++--
+ .../admin/officescan/tmlisten_traversal.rb         |  42 +--
+ modules/auxiliary/admin/pop2/uw_fileretrieval.rb   |  53 ++--
+ .../auxiliary/admin/postgres/postgres_readfile.rb  |  34 ++-
+ modules/auxiliary/admin/postgres/postgres_sql.rb   |  35 ++-
+ .../admin/sap/sap_configservlet_exec_noauth.rb     |  42 +--
+ modules/auxiliary/admin/sap/sap_mgmt_con_osexec.rb | 116 +++----
+ modules/auxiliary/admin/serverprotect/file.rb      | 218 +++++++------
+ modules/auxiliary/admin/smb/change_password.rb     |  10 +-
+ modules/auxiliary/admin/smb/check_dir_file.rb      |  69 ++---
+ modules/auxiliary/admin/smb/delete_file.rb         |  47 +--
+ modules/auxiliary/admin/smb/download_file.rb       |  58 ++--
+ modules/auxiliary/admin/smb/list_directory.rb      | 104 ++++---
+ modules/auxiliary/admin/smb/ms17_010_command.rb    | 124 ++++----
+ modules/auxiliary/admin/smb/psexec_ntdsgrab.rb     | 225 +++++++-------
+ .../auxiliary/admin/smb/samba_symlink_traversal.rb |  51 ++--
+ modules/auxiliary/admin/smb/upload_file.rb         |  56 ++--
+ modules/auxiliary/admin/smb/webexec_command.rb     |  48 +--
+ .../admin/sunrpc/solaris_kcms_readfile.rb          |  90 +++---
+ modules/auxiliary/admin/tftp/tftp_transfer_util.rb | 166 +++++-----
+ modules/auxiliary/admin/tikiwiki/tikidblib.rb      | 139 +++++----
+ modules/auxiliary/admin/upnp/soap_portmapping.rb   |  64 ++--
+ modules/auxiliary/admin/vmware/poweroff_vm.rb      |  23 +-
+ modules/auxiliary/admin/vmware/poweron_vm.rb       |  24 +-
+ modules/auxiliary/admin/vmware/tag_vm.rb           |  34 +--
+ .../admin/vmware/terminate_esx_sessions.rb         |  20 +-
+ modules/auxiliary/admin/vnc/realvnc_41_bypass.rb   | 147 ++++-----
+ .../vxworks/apple_airport_extreme_password.rb      |  94 +++---
+ .../admin/vxworks/dlink_i2eye_autoanswer.rb        |  69 +++--
+ .../auxiliary/admin/vxworks/wdbrpc_memory_dump.rb  |  87 +++---
+ modules/auxiliary/admin/vxworks/wdbrpc_reboot.rb   |  50 +--
+ .../auxiliary/admin/webmin/edit_html_fileaccess.rb | 101 +++---
+ modules/auxiliary/admin/webmin/file_disclosure.rb  |  73 +++--
+ modules/auxiliary/admin/wemo/crockpot.rb           |  80 ++---
+ modules/auxiliary/admin/zend/java_bridge.rb        |  77 ++---
+ 67 files changed, 3054 insertions(+), 2765 deletions(-)
+
+commit dda4cb9860a42e73b4a94005beb3e02a4ab24ebe
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 20 20:29:24 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eb6707b7b336d59c7fcda2d29a60f3d7cbfb08f1
+Merge: ee10e09869 973aba2779
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue May 20 16:21:38 2025 -0400
+
+    Merge pull request #20176 from smashery/asrep-update
+    
+    Asrep update
+
+ Gemfile.lock                      |  6 +++-
+ modules/auxiliary/gather/asrep.rb | 76 +++++++++++++++++++++------------------
+ 2 files changed, 46 insertions(+), 36 deletions(-)
+
+commit ee10e0986940bbb0fec42cbb9c8734e4da9311a6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 20 18:36:44 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+
+commit 18dc39e9a573a812ebc393acad2924c36e223b65
+Merge: 3a0e294f50 693620e1a5
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 11:22:05 2025 -0700
+
+    Merge pull request #20213 from bcoles/modules-exploits-linux-pop3
+    
+    modules/exploits/linux/pop3: Resolve RuboCop violations
+
+ .../linux/pop3/cyrus_pop3d_popsubfolders.rb        | 68 +++++++++++-----------
+ 1 file changed, 35 insertions(+), 33 deletions(-)
+
+commit 3a0e294f50cd52f708d016bd37f1861d39c196cf
+Merge: db8d37b8e8 6597a6c5fc
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 11:21:35 2025 -0700
+
+    Merge pull request #20212 from bcoles/modules-exploits-linux-redis
+    
+    modules/exploits/linux/redis: Resolve RuboCop violations
+
+ .../linux/redis/redis_debian_sandbox_escape.rb     |  18 +--
+ .../linux/redis/redis_replication_cmd_exec.rb      | 148 ++++++++++-----------
+ 2 files changed, 83 insertions(+), 83 deletions(-)
+
+commit db8d37b8e8087d8d078eeffec5ffbd1b267eaff9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 20 18:09:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 95 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 75 insertions(+), 20 deletions(-)
+
+commit 426aaa80fb7b46b0e62e426ba746f2ca0822d3dd
+Merge: b99e161003 3aa6e2d8db
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 10:57:03 2025 -0700
+
+    Merge pull request #20211 from bcoles/modules-exploits-linux-ids
+    
+    modules/exploits/linux/ids: Resolve RuboCop violations
+
+ .../linux/ids/alienvault_centerd_soap_exec.rb      | 144 +++++++++++----------
+ modules/exploits/linux/ids/snortbopre.rb           |  87 +++++++------
+ 2 files changed, 121 insertions(+), 110 deletions(-)
+
+commit b99e16100377068e312473974ec058f2cb72b6af
+Merge: dd3093c806 ec7d54152b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 10:50:58 2025 -0700
+
+    Merge pull request #20210 from bcoles/modules-exploits-linux-imap
+    
+    modules/exploits/linux/imap: Resolve RuboCop violations
+
+ modules/exploits/linux/imap/imap_uw_lsub.rb | 73 +++++++++++++++--------------
+ 1 file changed, 39 insertions(+), 34 deletions(-)
+
+commit dd3093c80640849a0c86e75b052d442f342ac37d
+Merge: 85de0bca16 d567248b16
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 10:46:46 2025 -0700
+
+    Merge pull request #20203 from bcoles/rubocop-modules-exploits-linux-upnp
+    
+    modules/exploits/linux/upnp: Resolve RuboCop violations
+
+ .../exploits/linux/upnp/belkin_wemo_upnp_exec.rb   | 137 +++++++++--------
+ .../linux/upnp/dlink_dir859_exec_ssdpcgi.rb        |  73 +++++-----
+ .../linux/upnp/dlink_dir859_subscribe_exec.rb      |  93 ++++++------
+ .../exploits/linux/upnp/dlink_upnp_msearch_exec.rb |   2 +-
+ modules/exploits/linux/upnp/miniupnpd_soap_bof.rb  | 162 +++++++++++----------
+ 5 files changed, 244 insertions(+), 223 deletions(-)
+
+commit 85de0bca16327a3774da7700f9cdc008034bcf20
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 20 16:45:33 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 860 +++++++++++++++++++++++++++++++++++-------
+ 1 file changed, 719 insertions(+), 141 deletions(-)
+
+commit 87c09acf828913d457ae583fde3ed69879fc8c06
+Merge: 4f1fff83e0 6ee7d56b1a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 09:37:23 2025 -0700
+
+    Merge pull request #20195 from bcoles/rubocop-modules-auxiliary-admin-http
+    
+    modules/auxiliary/admin/http: Resolve RuboCop violations
+
+ .../admin/http/allegro_rompager_auth_bypass.rb     |   7 +-
+ .../http/arris_motorola_surfboard_backdoor_xss.rb  |   7 +-
+ modules/auxiliary/admin/http/axigen_file_access.rb |  11 ++-
+ .../admin/http/cfme_manageiq_evm_pass_reset.rb     |   9 +-
+ modules/auxiliary/admin/http/cnpilot_r_cmd_exec.rb |   9 +-
+ modules/auxiliary/admin/http/cnpilot_r_fpt.rb      |   9 +-
+ .../admin/http/contentkeeper_fileaccess.rb         |  23 +++--
+ .../admin/http/dlink_dir_300_600_exec_noauth.rb    |   9 +-
+ .../admin/http/dlink_dir_645_password_extractor.rb | 102 +++++++++++----------
+ .../admin/http/dlink_dsl320b_password_extractor.rb |  88 +++++++++---------
+ .../http/foreman_openstack_satellite_priv_esc.rb   |  31 ++++---
+ .../http/gitlab_password_reset_account_takeover.rb |   5 +
+ modules/auxiliary/admin/http/gitstack_rest.rb      |  11 ++-
+ .../auxiliary/admin/http/hp_web_jetadmin_exec.rb   |   8 +-
+ modules/auxiliary/admin/http/iis_auth_bypass.rb    |   7 +-
+ .../auxiliary/admin/http/intersil_pass_reset.rb    |  20 ++--
+ .../admin/http/iomega_storcenterpro_sessionid.rb   |  12 ++-
+ modules/auxiliary/admin/http/jboss_bshdeployer.rb  |  61 ++++++------
+ .../admin/http/jboss_deploymentfilerepository.rb   |  17 ++--
+ modules/auxiliary/admin/http/jboss_seam_exec.rb    |  21 +++--
+ .../admin/http/joomla_registration_privesc.rb      |   7 +-
+ .../auxiliary/admin/http/kaseya_master_admin.rb    |   7 +-
+ .../admin/http/katello_satellite_priv_esc.rb       |   9 +-
+ .../admin/http/limesurvey_file_download.rb         |   7 +-
+ .../admin/http/linksys_e1500_e2500_exec.rb         |   9 +-
+ .../http/linksys_tmunblock_admin_reset_bof.rb      |   9 +-
+ .../auxiliary/admin/http/linksys_wrt54gl_exec.rb   |  15 ++-
+ .../admin/http/manage_engine_dc_create_admin.rb    |   7 +-
+ .../admin/http/manageengine_dir_listing.rb         |   7 +-
+ .../admin/http/manageengine_file_download.rb       |   7 +-
+ .../admin/http/manageengine_pmp_privesc.rb         |   9 +-
+ .../admin/http/mantisbt_password_reset.rb          |   9 +-
+ .../admin/http/mutiny_frontend_read_delete.rb      |  17 ++--
+ .../auxiliary/admin/http/netflow_file_download.rb  |   7 +-
+ .../auxiliary/admin/http/netgear_auth_download.rb  |  11 ++-
+ .../admin/http/netgear_soap_password_extractor.rb  |   7 +-
+ .../admin/http/netgear_wnr2000_pass_recovery.rb    |   9 +-
+ .../auxiliary/admin/http/nexpose_xxe_file_read.rb  |   5 +
+ .../admin/http/novell_file_reporter_filedelete.rb  |  10 +-
+ modules/auxiliary/admin/http/nuuo_nvrmini_reset.rb |   7 +-
+ modules/auxiliary/admin/http/openbravo_xxe.rb      |  11 ++-
+ .../admin/http/pfadmin_set_protected_alias.rb      |   9 +-
+ .../admin/http/rails_devise_pass_reset.rb          |  27 +++---
+ .../admin/http/scadabr_credential_dump.rb          |   7 +-
+ .../auxiliary/admin/http/scrutinizer_add_user.rb   |   7 +-
+ .../auxiliary/admin/http/sophos_wpa_traversal.rb   |   9 +-
+ .../admin/http/supra_smart_cloud_tv_rfi.rb         |   7 +-
+ modules/auxiliary/admin/http/sysaid_admin_acct.rb  |   7 +-
+ .../auxiliary/admin/http/sysaid_file_download.rb   |   7 +-
+ modules/auxiliary/admin/http/sysaid_sql_creds.rb   |   7 +-
+ .../admin/http/telpho10_credential_dump.rb         |   7 +-
+ .../auxiliary/admin/http/tomcat_administration.rb  |  21 +++--
+ .../auxiliary/admin/http/tomcat_utf8_traversal.rb  |  66 ++++++-------
+ .../admin/http/trendmicro_dlp_traversal.rb         |  66 ++++++-------
+ .../auxiliary/admin/http/typo3_news_module_sqli.rb |   7 +-
+ modules/auxiliary/admin/http/typo3_sa_2009_001.rb  |  34 ++++---
+ modules/auxiliary/admin/http/typo3_sa_2009_002.rb  |  25 +++--
+ modules/auxiliary/admin/http/typo3_sa_2010_020.rb  |  32 ++++---
+ .../http/typo3_winstaller_default_enc_keys.rb      |  41 +++++----
+ .../auxiliary/admin/http/ulterius_file_download.rb |   7 +-
+ .../admin/http/vbulletin_upgrade_admin.rb          |   9 +-
+ .../auxiliary/admin/http/webnms_cred_disclosure.rb |   8 +-
+ .../auxiliary/admin/http/webnms_file_download.rb   |   7 +-
+ .../admin/http/wp_custom_contact_forms.rb          |   7 +-
+ .../admin/http/wp_easycart_privilege_escalation.rb |   7 +-
+ .../auxiliary/admin/http/wp_google_maps_sqli.rb    |   7 +-
+ .../admin/http/wp_post_smtp_acct_takeover.rb       |   2 +-
+ .../admin/http/wp_symposium_sql_injection.rb       |  79 ++++++++--------
+ .../admin/http/wp_wplms_privilege_escalation.rb    |   7 +-
+ .../admin/http/zyxel_admin_password_extractor.rb   |  37 ++++----
+ 70 files changed, 786 insertions(+), 430 deletions(-)
+
+commit 4f1fff83e0515679b9e42e749589cf52694b055a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 20 16:27:26 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+commit 2810fdaa4aef588eee57166d3454c9a39e0719c2
+Merge: 618db3d53c 71565c6cdc
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 20 09:19:34 2025 -0700
+
+    Merge pull request #20165 from bcoles/rubocop-modules-exploits-linux-browser
+    
+    modules/exploits/linux/browser: Resolve RuboCop violations
+
+ .../linux/browser/adobe_flashplayer_aslaunch.rb    | 54 +++++++++++-----------
+ 1 file changed, 28 insertions(+), 26 deletions(-)
+
+commit 693620e1a5cbec0a4fdc6456d9737ee6cf00b62c
+Author: bcoles <bcoles@github>
+Date:   Wed May 21 02:19:09 2025 +1000
+
+    modules/exploits/linux/pop3: Resolve RuboCop violations
+
+ .../linux/pop3/cyrus_pop3d_popsubfolders.rb        | 68 +++++++++++-----------
+ 1 file changed, 35 insertions(+), 33 deletions(-)
+
+commit 6597a6c5fceb96bae8f3d8a0beef3fe54cfa6e4d
+Author: bcoles <bcoles@github>
+Date:   Wed May 21 02:07:54 2025 +1000
+
+    modules/exploits/linux/redis: Resolve RuboCop violations
+
+ .../linux/redis/redis_debian_sandbox_escape.rb     |  18 +--
+ .../linux/redis/redis_replication_cmd_exec.rb      | 148 ++++++++++-----------
+ 2 files changed, 83 insertions(+), 83 deletions(-)
+
+commit 3aa6e2d8db88bc80d808cfc2bbfbd9f45661ab21
+Author: bcoles <bcoles@github>
+Date:   Tue May 20 23:54:29 2025 +1000
+
+    modules/exploits/linux/ids: Resolve RuboCop violations
+
+ .../linux/ids/alienvault_centerd_soap_exec.rb      | 144 +++++++++++----------
+ modules/exploits/linux/ids/snortbopre.rb           |  87 +++++++------
+ 2 files changed, 121 insertions(+), 110 deletions(-)
+
+commit ec7d54152ba42ace8e7304e51a11fe88d16ee0af
+Author: bcoles <bcoles@github>
+Date:   Tue May 20 23:42:47 2025 +1000
+
+    modules/exploits/linux/imap: Resolve RuboCop violations
+
+ modules/exploits/linux/imap/imap_uw_lsub.rb | 73 +++++++++++++++--------------
+ 1 file changed, 39 insertions(+), 34 deletions(-)
