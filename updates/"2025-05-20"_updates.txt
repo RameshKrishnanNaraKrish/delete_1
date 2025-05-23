@@ -1,0 +1,475 @@
+commit 0c5ddcdb1a2fd9501860087b0f0c1e5399d0262f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 22 20:13:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 25 ++++++++++++++++++++-----
+ 1 file changed, 20 insertions(+), 5 deletions(-)
+
+commit d8ad10555d5eddeca7d7ae683ba54d4cda91793b
+Merge: e09f4de787 e00ed40164
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 22 13:05:20 2025 -0700
+
+    Merge pull request #20232 from bcoles/rubocop-modules-auxiliary-afp
+    
+    modules/auxiliary/scanner/afp: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/afp/afp_login.rb       |  50 +++++-----
+ modules/auxiliary/scanner/afp/afp_server_info.rb | 114 ++++++++++++-----------
+ 2 files changed, 89 insertions(+), 75 deletions(-)
+
+commit e09f4de7878e24e0fbdc88342a98808ac163af2b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 22 19:44:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
+
+commit a93becb2f992bb7f0b6af82b4599e4a06934eaae
+Merge: b882873fe2 eb278d7bf0
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 22 12:30:46 2025 -0700
+
+    Merge pull request #20231 from bcoles/rubocop-modules-auxiliary-backdoor
+    
+    modules/auxiliary/scanner/backdoor: Resolve RuboCop violations
+
+ .../scanner/backdoor/energizer_duo_detect.rb       | 99 +++++++++++-----------
+ 1 file changed, 50 insertions(+), 49 deletions(-)
+
+commit b882873fe245a024fef4f2817f998f3a5ac22d67
+Merge: 1dcc905737 4e8901d13c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 22 12:28:59 2025 -0700
+
+    Merge pull request #20230 from bcoles/rubocop-modules-auxiliary-chargen
+    
+    modules/auxiliary/scanner/chargen: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/chargen/chargen_probe.rb | 37 ++++++++++++----------
+ 1 file changed, 21 insertions(+), 16 deletions(-)
+
+commit 1dcc9057375e40eb1939575c6edeec8fa81c0464
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 22 17:05:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+commit 6cd7911b51865a847beac5df162a19a62deb64e3
+Merge: d291fb7741 0b92e32a5a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 22 09:57:42 2025 -0700
+
+    Merge pull request #20227 from bcoles/rubocop-modules-auxiliary-acpp
+    
+    modules/auxiliary/scanner/acpp: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/acpp/login.rb | 30 +++++++++++++++++-------------
+ 1 file changed, 17 insertions(+), 13 deletions(-)
+
+commit eb278d7bf03753da925f64895d447a93d86b97ab
+Author: bcoles <bcoles@github>
+Date:   Fri May 23 00:52:03 2025 +1000
+
+    modules/auxiliary/scanner/backdoor: Resolve RuboCop violations
+
+ .../scanner/backdoor/energizer_duo_detect.rb       | 99 +++++++++++-----------
+ 1 file changed, 50 insertions(+), 49 deletions(-)
+
+commit e00ed401648342886a1dce300cd551af4f6abf4f
+Author: bcoles <bcoles@github>
+Date:   Fri May 23 00:47:48 2025 +1000
+
+    modules/auxiliary/scanner/afp: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/afp/afp_login.rb       |  50 +++++-----
+ modules/auxiliary/scanner/afp/afp_server_info.rb | 114 ++++++++++++-----------
+ 2 files changed, 89 insertions(+), 75 deletions(-)
+
+commit d291fb77419070a166ec658b13a33b1a37f0a984
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 22 14:38:30 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 266 +++++++++++++++++++++---------------------
+ 1 file changed, 133 insertions(+), 133 deletions(-)
+
+commit 48d31811d6a01eaf6d86e1f437c2de36c807e0c9
+Merge: 35de45ee17 4309590ffa
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 22 15:29:55 2025 +0100
+
+    Merge pull request #19939 from cgranleese-r7/fixes-modules-to-correctly-use-hash-with-report-note
+    
+    Updates the `reports_note` method to require a Hash
+
+ data/exploits/psnuffle/smb.rb                      |   6 +-
+ lib/msf/core/auxiliary/report.rb                   |   3 +-
+ lib/msf/core/db_manager/note.rb                    |   8 +
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    |   2 +-
+ lib/msf/core/exploit/remote/dns/enumeration.rb     |   2 +-
+ lib/msf/core/exploit/remote/http_server.rb         |   9 +-
+ lib/msf/core/exploit/remote/smb/client/psexec.rb   |   2 +-
+ lib/msf/core/exploit/remote/wdbrpc_client.rb       |   5 +-
+ lib/msf/core/exploit/remote/x11/connect.rb         |   2 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |   2 +-
+ modules/auxiliary/admin/mssql/mssql_enum.rb        | 541 ++++++++++++---------
+ modules/auxiliary/admin/oracle/oraenum.rb          |   8 +-
+ modules/auxiliary/admin/oracle/sid_brute.rb        |   5 +-
+ .../admin/scada/modicon_password_recovery.rb       |   7 +-
+ modules/auxiliary/admin/smb/ms17_010_command.rb    |  10 +-
+ modules/auxiliary/cloud/aws/enum_ec2.rb            |  17 +-
+ modules/auxiliary/cloud/aws/enum_ssm.rb            |   2 +-
+ modules/auxiliary/dos/http/apache_range_dos.rb     |   8 +-
+ modules/auxiliary/gather/billquick_txtid_sqli.rb   |   2 +-
+ modules/auxiliary/gather/elasticsearch_enum.rb     |   2 +-
+ .../auxiliary/gather/f5_bigip_cookie_disclosure.rb |   8 +-
+ modules/auxiliary/gather/huawei_wifi_info.rb       |   2 +-
+ .../gather/ibm_sametime_enumerate_users.rb         |   2 +-
+ modules/auxiliary/gather/ibm_sametime_version.rb   |   2 +-
+ modules/auxiliary/gather/ie_sandbox_findfiles.rb   |   2 +-
+ modules/auxiliary/gather/ie_uxss_injection.rb      |   2 +-
+ modules/auxiliary/gather/ms14_052_xmldom.rb        |   2 +-
+ modules/auxiliary/gather/nis_bootparamd_domain.rb  |   2 +-
+ modules/auxiliary/gather/windows_secrets_dump.rb   |  48 +-
+ modules/auxiliary/scanner/afp/afp_server_info.rb   |   2 +-
+ .../scanner/backdoor/energizer_duo_detect.rb       |   2 +-
+ modules/auxiliary/scanner/db2/discovery.rb         |   2 +-
+ modules/auxiliary/scanner/dcerpc/hidden.rb         |   2 +-
+ modules/auxiliary/scanner/dcerpc/management.rb     |   2 +-
+ .../auxiliary/scanner/dcerpc/tcp_dcerpc_auditor.rb |   6 +-
+ modules/auxiliary/scanner/discovery/arp_sweep.rb   |   4 +-
+ .../auxiliary/scanner/discovery/ipv6_neighbor.rb   |   6 +-
+ modules/auxiliary/scanner/http/canon_wireless.rb   |  16 +-
+ modules/auxiliary/scanner/http/chromecast_wifi.rb  |   2 +-
+ modules/auxiliary/scanner/http/cisco_ssl_vpn.rb    |   2 +-
+ .../auxiliary/scanner/http/coldfusion_version.rb   |   2 +-
+ modules/auxiliary/scanner/http/dir_scanner.rb      |   4 +-
+ .../scanner/http/dir_webdav_unicode_bypass.rb      |   5 +-
+ modules/auxiliary/scanner/http/docker_version.rb   |   2 +-
+ .../auxiliary/scanner/http/emby_version_ssrf.rb    |   6 +-
+ modules/auxiliary/scanner/http/fortinet_ssl_vpn.rb |   4 +-
+ modules/auxiliary/scanner/http/frontpage_login.rb  |   2 +-
+ modules/auxiliary/scanner/http/gitlab_version.rb   |   2 +-
+ .../auxiliary/scanner/http/hp_sys_mgmt_login.rb    |   2 +-
+ modules/auxiliary/scanner/http/http_header.rb      |   2 +-
+ modules/auxiliary/scanner/http/http_hsts.rb        |   2 +-
+ modules/auxiliary/scanner/http/iis_internal_ip.rb  |   2 +-
+ modules/auxiliary/scanner/http/jboss_status.rb     |   6 +-
+ modules/auxiliary/scanner/http/jenkins_enum.rb     |   7 +-
+ modules/auxiliary/scanner/http/joomla_pages.rb     |   2 +-
+ modules/auxiliary/scanner/http/joomla_plugins.rb   |   4 +-
+ modules/auxiliary/scanner/http/joomla_version.rb   |   2 +-
+ modules/auxiliary/scanner/http/open_proxy.rb       |   4 +-
+ modules/auxiliary/scanner/http/options.rb          |   2 +-
+ .../auxiliary/scanner/http/rfcode_reader_enum.rb   |   9 +-
+ modules/auxiliary/scanner/http/robots_txt.rb       |   2 +-
+ modules/auxiliary/scanner/http/scraper.rb          |   2 +-
+ .../scanner/http/smt_ipmi_static_cert_scanner.rb   |   2 +-
+ modules/auxiliary/scanner/http/soap_xml.rb         |   5 +-
+ modules/auxiliary/scanner/http/svn_scanner.rb      |  11 +-
+ modules/auxiliary/scanner/http/svn_wcdb_scanner.rb |   2 +-
+ modules/auxiliary/scanner/http/trace_axd.rb        |   2 +-
+ modules/auxiliary/scanner/http/verb_auth_bypass.rb |  10 +-
+ modules/auxiliary/scanner/http/vhost_scanner.rb    |   2 +-
+ modules/auxiliary/scanner/http/web_vulndb.rb       |  10 +-
+ .../auxiliary/scanner/http/webdav_internal_ip.rb   |   2 +-
+ modules/auxiliary/scanner/http/webdav_scanner.rb   |   2 +-
+ .../scanner/http/webdav_website_content.rb         |   2 +-
+ .../auxiliary/scanner/http/wordpress_scanner.rb    |   2 +-
+ modules/auxiliary/scanner/ip/ipidseq.rb            |   2 +-
+ .../scanner/lotus/lotus_domino_version.rb          |   6 +-
+ .../scanner/misc/dvr_config_disclosure.rb          |  12 +-
+ modules/auxiliary/scanner/motorola/timbuktu_udp.rb |   2 +-
+ .../auxiliary/scanner/mssql/mssql_schemadump.rb    |   2 +-
+ modules/auxiliary/scanner/mysql/mysql_file_enum.rb |   6 +-
+ .../auxiliary/scanner/mysql/mysql_schemadump.rb    |   2 +-
+ .../auxiliary/scanner/mysql/mysql_writable_dirs.rb |   5 +-
+ modules/auxiliary/scanner/oracle/emc_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/isqlplus_login.rb |   3 +-
+ modules/auxiliary/scanner/oracle/oracle_login.rb   |   4 +-
+ modules/auxiliary/scanner/oracle/sid_brute.rb      |   2 +-
+ modules/auxiliary/scanner/oracle/sid_enum.rb       |  10 +-
+ modules/auxiliary/scanner/oracle/spy_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/xdb_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/xdb_sid_brute.rb  |  24 +-
+ modules/auxiliary/scanner/portscan/ack.rb          |   5 +-
+ modules/auxiliary/scanner/portscan/xmas.rb         |   5 +-
+ .../scanner/postgres/postgres_schemadump.rb        |   2 +-
+ .../auxiliary/scanner/postgres/postgres_version.rb |   2 +-
+ .../auxiliary/scanner/printer/printer_env_vars.rb  |   2 +-
+ .../auxiliary/scanner/printer/printer_list_dir.rb  |   2 +-
+ .../scanner/printer/printer_list_volumes.rb        |   2 +-
+ .../scanner/printer/printer_ready_message.rb       |   2 +-
+ .../auxiliary/scanner/sap/sap_icf_public_info.rb   |  44 +-
+ .../auxiliary/scanner/sap/sap_mgmt_con_version.rb  |   4 +-
+ .../auxiliary/scanner/sap/sap_service_discovery.rb |   2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_ping.rb |   2 +-
+ .../scanner/sap/sap_soap_rfc_system_info.rb        |  44 +-
+ .../scanner/sap/sap_soap_th_saprel_disclosure.rb   |  10 +-
+ .../scanner/scada/modbus_banner_grabbing.rb        |   2 +-
+ modules/auxiliary/scanner/sip/enumerator.rb        |   4 +-
+ modules/auxiliary/scanner/sip/enumerator_tcp.rb    |   4 +-
+ modules/auxiliary/scanner/smb/pipe_auditor.rb      |   2 +-
+ .../auxiliary/scanner/smb/pipe_dcerpc_auditor.rb   |   5 +-
+ .../auxiliary/scanner/smb/psexec_loggedin_users.rb |   5 +-
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb     |   2 +-
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb      |   2 +-
+ modules/auxiliary/scanner/smb/smb_version.rb       |   4 +-
+ modules/auxiliary/scanner/snmp/aix_version.rb      |   2 +-
+ modules/auxiliary/scanner/snmp/sbg6580_enum.rb     |   2 +-
+ modules/auxiliary/scanner/snmp/snmp_enum.rb        |   6 +-
+ modules/auxiliary/scanner/snmp/snmp_enumusers.rb   |   2 +-
+ .../scanner/snmp/xerox_workcentre_enumusers.rb     |   2 +-
+ modules/auxiliary/scanner/telephony/wardial.rb     |   6 +-
+ modules/auxiliary/scanner/tftp/tftpbrute.rb        |   2 +-
+ .../auxiliary/scanner/vmware/vmware_enum_vms.rb    |   2 +-
+ modules/auxiliary/server/capture/http.rb           |  32 +-
+ modules/auxiliary/server/capture/smtp.rb           |   2 +-
+ modules/auxiliary/server/fakedns.rb                |   5 +-
+ modules/auxiliary/server/pxeexploit.rb             |   2 +-
+ modules/exploits/multi/http/glassfish_deployer.rb  |   2 +-
+ modules/exploits/multi/http/rails_double_tap.rb    |   2 +-
+ .../fileformat/office_ole_multiple_dll_hijack.rb   |   2 +-
+ .../windows/fileformat/proshow_load_bof.rb         |   2 +-
+ modules/exploits/windows/local/pxeexploit.rb       |   4 +-
+ modules/post/multi/gather/check_malware.rb         |   2 +-
+ modules/post/multi/gather/saltstack_salt.rb        |   5 +-
+ modules/post/multi/manage/sudo.rb                  |   2 +-
+ .../post/multi/recon/local_exploit_suggester.rb    |   2 +-
+ modules/post/solaris/escalate/pfexec.rb            |   2 +-
+ modules/post/windows/gather/arp_scanner.rb         |   2 +-
+ modules/post/windows/gather/bloodhound.rb          |   5 +-
+ .../windows/gather/enum_chocolatey_applications.rb |   2 +-
+ modules/post/windows/gather/enum_computers.rb      |   2 +-
+ modules/post/windows/gather/enum_domains.rb        |   2 +-
+ modules/post/windows/gather/enum_tokens.rb         |   2 +-
+ .../post/windows/gather/local_admin_search_enum.rb |  10 +-
+ modules/post/windows/manage/pxeexploit.rb          |   2 +-
+ 143 files changed, 729 insertions(+), 518 deletions(-)
+
+commit 4e8901d13c0b6f319a82e32e01bf9bd1f613a333
+Author: bcoles <bcoles@github>
+Date:   Fri May 23 00:27:45 2025 +1000
+
+    modules/auxiliary/scanner/chargen: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/chargen/chargen_probe.rb | 37 ++++++++++++----------
+ 1 file changed, 21 insertions(+), 16 deletions(-)
+
+commit 0b92e32a5a80341aa3c6c341e8237f1762db050f
+Author: bcoles <bcoles@github>
+Date:   Fri May 23 00:26:22 2025 +1000
+
+    modules/auxiliary/scanner/acpp: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/acpp/login.rb | 30 +++++++++++++++++-------------
+ 1 file changed, 17 insertions(+), 13 deletions(-)
+
+commit 35de45ee1777f4b34ec3ba53b89c62d62e22c8ac
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu May 22 06:16:59 2025 -0500
+
+    Bump version of framework to 6.4.66
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 23 +++++++++++++----------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 15 insertions(+), 12 deletions(-)
+
+commit 4309590ffa1faabb20306821986aaae64465f443
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Wed May 21 11:40:06 2025 +0100
+
+    Lint files
+
+ modules/auxiliary/admin/mssql/mssql_enum.rb        |  6 ++--
+ modules/auxiliary/gather/windows_secrets_dump.rb   | 32 +++++++++++-----------
+ .../auxiliary/scanner/http/emby_version_ssrf.rb    |  4 +--
+ modules/auxiliary/scanner/http/jenkins_enum.rb     |  3 +-
+ 4 files changed, 24 insertions(+), 21 deletions(-)
+
+commit f6faa5598b9575d03a48347e19beee06a69f24a5
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Wed May 21 10:45:08 2025 +0100
+
+    Fixes modules to now correctly use a hash with report note
+
+ data/exploits/psnuffle/smb.rb                      |   6 +-
+ lib/msf/core/auxiliary/report.rb                   |   3 +-
+ lib/msf/core/db_manager/note.rb                    |   8 +
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    |   2 +-
+ lib/msf/core/exploit/remote/dns/enumeration.rb     |   2 +-
+ lib/msf/core/exploit/remote/http_server.rb         |   9 +-
+ lib/msf/core/exploit/remote/smb/client/psexec.rb   |   2 +-
+ lib/msf/core/exploit/remote/wdbrpc_client.rb       |   5 +-
+ lib/msf/core/exploit/remote/x11/connect.rb         |   2 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |   2 +-
+ modules/auxiliary/admin/mssql/mssql_enum.rb        | 547 ++++++++++++---------
+ modules/auxiliary/admin/oracle/oraenum.rb          |   8 +-
+ modules/auxiliary/admin/oracle/sid_brute.rb        |   5 +-
+ .../admin/scada/modicon_password_recovery.rb       |   7 +-
+ modules/auxiliary/admin/smb/ms17_010_command.rb    |  10 +-
+ modules/auxiliary/cloud/aws/enum_ec2.rb            |  17 +-
+ modules/auxiliary/cloud/aws/enum_ssm.rb            |   2 +-
+ modules/auxiliary/dos/http/apache_range_dos.rb     |   8 +-
+ modules/auxiliary/gather/billquick_txtid_sqli.rb   |   2 +-
+ modules/auxiliary/gather/elasticsearch_enum.rb     |   2 +-
+ .../auxiliary/gather/f5_bigip_cookie_disclosure.rb |   8 +-
+ modules/auxiliary/gather/huawei_wifi_info.rb       |   2 +-
+ .../gather/ibm_sametime_enumerate_users.rb         |   2 +-
+ modules/auxiliary/gather/ibm_sametime_version.rb   |   2 +-
+ modules/auxiliary/gather/ie_sandbox_findfiles.rb   |   2 +-
+ modules/auxiliary/gather/ie_uxss_injection.rb      |   2 +-
+ modules/auxiliary/gather/ms14_052_xmldom.rb        |   2 +-
+ modules/auxiliary/gather/nis_bootparamd_domain.rb  |   2 +-
+ modules/auxiliary/gather/windows_secrets_dump.rb   |  16 +-
+ modules/auxiliary/scanner/afp/afp_server_info.rb   |   2 +-
+ .../scanner/backdoor/energizer_duo_detect.rb       |   2 +-
+ modules/auxiliary/scanner/db2/discovery.rb         |   2 +-
+ modules/auxiliary/scanner/dcerpc/hidden.rb         |   2 +-
+ modules/auxiliary/scanner/dcerpc/management.rb     |   2 +-
+ .../auxiliary/scanner/dcerpc/tcp_dcerpc_auditor.rb |   6 +-
+ modules/auxiliary/scanner/discovery/arp_sweep.rb   |   4 +-
+ .../auxiliary/scanner/discovery/ipv6_neighbor.rb   |   6 +-
+ modules/auxiliary/scanner/http/canon_wireless.rb   |  16 +-
+ modules/auxiliary/scanner/http/chromecast_wifi.rb  |   2 +-
+ modules/auxiliary/scanner/http/cisco_ssl_vpn.rb    |   2 +-
+ .../auxiliary/scanner/http/coldfusion_version.rb   |   2 +-
+ modules/auxiliary/scanner/http/dir_scanner.rb      |   4 +-
+ .../scanner/http/dir_webdav_unicode_bypass.rb      |   5 +-
+ modules/auxiliary/scanner/http/docker_version.rb   |   2 +-
+ .../auxiliary/scanner/http/emby_version_ssrf.rb    |   2 +-
+ modules/auxiliary/scanner/http/fortinet_ssl_vpn.rb |   4 +-
+ modules/auxiliary/scanner/http/frontpage_login.rb  |   2 +-
+ modules/auxiliary/scanner/http/gitlab_version.rb   |   2 +-
+ .../auxiliary/scanner/http/hp_sys_mgmt_login.rb    |   2 +-
+ modules/auxiliary/scanner/http/http_header.rb      |   2 +-
+ modules/auxiliary/scanner/http/http_hsts.rb        |   2 +-
+ modules/auxiliary/scanner/http/iis_internal_ip.rb  |   2 +-
+ modules/auxiliary/scanner/http/jboss_status.rb     |   6 +-
+ modules/auxiliary/scanner/http/jenkins_enum.rb     |   6 +-
+ modules/auxiliary/scanner/http/joomla_pages.rb     |   2 +-
+ modules/auxiliary/scanner/http/joomla_plugins.rb   |   4 +-
+ modules/auxiliary/scanner/http/joomla_version.rb   |   2 +-
+ modules/auxiliary/scanner/http/open_proxy.rb       |   4 +-
+ modules/auxiliary/scanner/http/options.rb          |   2 +-
+ .../auxiliary/scanner/http/rfcode_reader_enum.rb   |   9 +-
+ modules/auxiliary/scanner/http/robots_txt.rb       |   2 +-
+ modules/auxiliary/scanner/http/scraper.rb          |   2 +-
+ .../scanner/http/smt_ipmi_static_cert_scanner.rb   |   2 +-
+ modules/auxiliary/scanner/http/soap_xml.rb         |   5 +-
+ modules/auxiliary/scanner/http/svn_scanner.rb      |  11 +-
+ modules/auxiliary/scanner/http/svn_wcdb_scanner.rb |   2 +-
+ modules/auxiliary/scanner/http/trace_axd.rb        |   2 +-
+ modules/auxiliary/scanner/http/verb_auth_bypass.rb |  10 +-
+ modules/auxiliary/scanner/http/vhost_scanner.rb    |   2 +-
+ modules/auxiliary/scanner/http/web_vulndb.rb       |  10 +-
+ .../auxiliary/scanner/http/webdav_internal_ip.rb   |   2 +-
+ modules/auxiliary/scanner/http/webdav_scanner.rb   |   2 +-
+ .../scanner/http/webdav_website_content.rb         |   2 +-
+ .../auxiliary/scanner/http/wordpress_scanner.rb    |   2 +-
+ modules/auxiliary/scanner/ip/ipidseq.rb            |   2 +-
+ .../scanner/lotus/lotus_domino_version.rb          |   6 +-
+ .../scanner/misc/dvr_config_disclosure.rb          |  12 +-
+ modules/auxiliary/scanner/motorola/timbuktu_udp.rb |   2 +-
+ .../auxiliary/scanner/mssql/mssql_schemadump.rb    |   2 +-
+ modules/auxiliary/scanner/mysql/mysql_file_enum.rb |   6 +-
+ .../auxiliary/scanner/mysql/mysql_schemadump.rb    |   2 +-
+ .../auxiliary/scanner/mysql/mysql_writable_dirs.rb |   5 +-
+ modules/auxiliary/scanner/oracle/emc_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/isqlplus_login.rb |   3 +-
+ modules/auxiliary/scanner/oracle/oracle_login.rb   |   4 +-
+ modules/auxiliary/scanner/oracle/sid_brute.rb      |   2 +-
+ modules/auxiliary/scanner/oracle/sid_enum.rb       |  10 +-
+ modules/auxiliary/scanner/oracle/spy_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/xdb_sid.rb        |   2 +-
+ modules/auxiliary/scanner/oracle/xdb_sid_brute.rb  |  24 +-
+ modules/auxiliary/scanner/portscan/ack.rb          |   5 +-
+ modules/auxiliary/scanner/portscan/xmas.rb         |   5 +-
+ .../scanner/postgres/postgres_schemadump.rb        |   2 +-
+ .../auxiliary/scanner/postgres/postgres_version.rb |   2 +-
+ .../auxiliary/scanner/printer/printer_env_vars.rb  |   2 +-
+ .../auxiliary/scanner/printer/printer_list_dir.rb  |   2 +-
+ .../scanner/printer/printer_list_volumes.rb        |   2 +-
+ .../scanner/printer/printer_ready_message.rb       |   2 +-
+ .../auxiliary/scanner/sap/sap_icf_public_info.rb   |  44 +-
+ .../auxiliary/scanner/sap/sap_mgmt_con_version.rb  |   4 +-
+ .../auxiliary/scanner/sap/sap_service_discovery.rb |   2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_ping.rb |   2 +-
+ .../scanner/sap/sap_soap_rfc_system_info.rb        |  44 +-
+ .../scanner/sap/sap_soap_th_saprel_disclosure.rb   |  10 +-
+ .../scanner/scada/modbus_banner_grabbing.rb        |   2 +-
+ modules/auxiliary/scanner/sip/enumerator.rb        |   4 +-
+ modules/auxiliary/scanner/sip/enumerator_tcp.rb    |   4 +-
+ modules/auxiliary/scanner/smb/pipe_auditor.rb      |   2 +-
+ .../auxiliary/scanner/smb/pipe_dcerpc_auditor.rb   |   5 +-
+ .../auxiliary/scanner/smb/psexec_loggedin_users.rb |   5 +-
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb     |   2 +-
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb      |   2 +-
+ modules/auxiliary/scanner/smb/smb_version.rb       |   4 +-
+ modules/auxiliary/scanner/snmp/aix_version.rb      |   2 +-
+ modules/auxiliary/scanner/snmp/sbg6580_enum.rb     |   2 +-
+ modules/auxiliary/scanner/snmp/snmp_enum.rb        |   6 +-
+ modules/auxiliary/scanner/snmp/snmp_enumusers.rb   |   2 +-
+ .../scanner/snmp/xerox_workcentre_enumusers.rb     |   2 +-
+ modules/auxiliary/scanner/telephony/wardial.rb     |   6 +-
+ modules/auxiliary/scanner/tftp/tftpbrute.rb        |   2 +-
+ .../auxiliary/scanner/vmware/vmware_enum_vms.rb    |   2 +-
+ modules/auxiliary/server/capture/http.rb           |  32 +-
+ modules/auxiliary/server/capture/smtp.rb           |   2 +-
+ modules/auxiliary/server/fakedns.rb                |   5 +-
+ modules/auxiliary/server/pxeexploit.rb             |   2 +-
+ modules/exploits/multi/http/glassfish_deployer.rb  |   2 +-
+ modules/exploits/multi/http/rails_double_tap.rb    |   2 +-
+ .../fileformat/office_ole_multiple_dll_hijack.rb   |   2 +-
+ .../windows/fileformat/proshow_load_bof.rb         |   2 +-
+ modules/exploits/windows/local/pxeexploit.rb       |   4 +-
+ modules/post/multi/gather/check_malware.rb         |   2 +-
+ modules/post/multi/gather/saltstack_salt.rb        |   5 +-
+ modules/post/multi/manage/sudo.rb                  |   2 +-
+ .../post/multi/recon/local_exploit_suggester.rb    |   2 +-
+ modules/post/solaris/escalate/pfexec.rb            |   2 +-
+ modules/post/windows/gather/arp_scanner.rb         |   2 +-
+ modules/post/windows/gather/bloodhound.rb          |   5 +-
+ .../windows/gather/enum_chocolatey_applications.rb |   2 +-
+ modules/post/windows/gather/enum_computers.rb      |   2 +-
+ modules/post/windows/gather/enum_domains.rb        |   2 +-
+ modules/post/windows/gather/enum_tokens.rb         |   2 +-
+ .../post/windows/gather/local_admin_search_enum.rb |  10 +-
+ modules/post/windows/manage/pxeexploit.rb          |   2 +-
+ 143 files changed, 712 insertions(+), 504 deletions(-)
+
+commit c5a5488328cf9f7178f310464f497c4389096ae1
+Merge: 3408a3fa1b 75fe738cd7
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu May 22 09:38:56 2025 +0100
+
+    Merge pull request #20222 from adfoster-r7/pin-setup-ruby-github-action
+    
+    Pin setup ruby github action
+
+ .github/workflows/command_shell_acceptance.yml      | 7 ++++---
+ .github/workflows/shared_meterpreter_acceptance.yml | 5 +++--
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+commit 3408a3fa1bb1117bdd2639e83ba6176d807538dc
+Merge: 1069b144fb e7a2809ca0
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 22 08:32:12 2025 +0200
+
+    Land #20221, adds document for copy_of_file.rb and ipv6_multicast_ping.rb
+    
+    New documentation for some auxiliary modules
+
+ .../scanner/discovery/ipv6_multicast_ping.md       | 48 ++++++++++++++++++++++
+ .../modules/auxiliary/scanner/http/copy_of_file.md | 37 +++++++++++++++++
+ 2 files changed, 85 insertions(+)
