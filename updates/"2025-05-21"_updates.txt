@@ -1,0 +1,24 @@
+commit d2da920ee15971c268473d87d43a12a858208969
+Merge: 28d9e776e8 5f15fd30e8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 23 18:28:42 2025 +0100
+
+    Merge pull request #20199 from bcoles/rubocop
+    
+    Rubocop: Enable Layout/SpaceBeforeBrackets
+
+ .rubocop.yml | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 28d9e776e8b20abc85912bba4531ba46a2859378
+Merge: 0c5ddcdb1a 8280e5d702
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 23 18:28:12 2025 +0100
+
+    Merge pull request #20224 from bcoles/gemfile-rubocop
+    
+    Bump rubocop from 1.75.6 to 1.75.7
+
+ Gemfile      | 2 +-
+ Gemfile.lock | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
