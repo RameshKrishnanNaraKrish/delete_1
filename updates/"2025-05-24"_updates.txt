@@ -1,0 +1,147 @@
+commit 97beb2029c43240fa94f8838b0ea53a8093b02d0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 26 20:55:47 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 164 ++++++++++++++++++++++++++++++------------
+ 1 file changed, 120 insertions(+), 44 deletions(-)
+
+commit 526a8014b4c905c5af8936a081b295c496c5833b
+Merge: 59562d9367 4c0ec87d7c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 26 21:48:13 2025 +0100
+
+    Merge pull request #20244 from bcoles/modules-auxiliary-scanner-vmware
+    
+    modules/auxiliary/scanner/vmware: Resolve RuboCop violations
+
+ .../auxiliary/scanner/vmware/esx_fingerprint.rb    | 109 ++++++++++++---------
+ modules/auxiliary/scanner/vmware/vmauthd_login.rb  |  85 +++++++++-------
+ .../auxiliary/scanner/vmware/vmauthd_version.rb    |  90 ++++++++---------
+ .../scanner/vmware/vmware_enum_permissions.rb      |  46 +++++----
+ .../scanner/vmware/vmware_enum_sessions.rb         |  36 ++++---
+ .../auxiliary/scanner/vmware/vmware_enum_users.rb  |  60 ++++++------
+ .../auxiliary/scanner/vmware/vmware_enum_vms.rb    |  62 ++++++------
+ .../scanner/vmware/vmware_host_details.rb          |  33 ++++---
+ .../auxiliary/scanner/vmware/vmware_http_login.rb  |  75 +++++++-------
+ .../scanner/vmware/vmware_screenshot_stealer.rb    | 106 ++++++++++----------
+ .../scanner/vmware/vmware_server_dir_trav.rb       |  99 ++++++++++---------
+ .../vmware/vmware_update_manager_traversal.rb      |  58 ++++++-----
+ 12 files changed, 458 insertions(+), 401 deletions(-)
+
+commit 59562d9367639dc3c1a6e31ba13d15bc219200a6
+Merge: b19b087feb caf17eea37
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 26 20:16:42 2025 +0100
+
+    Merge pull request #20236 from bcoles/rubocop-Style/RedundantRegexpArgument
+    
+    Rubocop: Enable Style/RedundantRegexpArgument
+
+ .rubocop.yml                                                 |  6 ++++++
+ lib/metasploit/framework/ntds/account.rb                     |  4 ++--
+ lib/msf/base/sessions/meterpreter.rb                         |  2 +-
+ lib/msf/base/sessions/mettle_config.rb                       |  4 ++--
+ lib/msf/core/auxiliary/auth_brute.rb                         |  2 +-
+ lib/msf/core/auxiliary/nmap.rb                               |  2 +-
+ lib/msf/core/auxiliary/rocketmq.rb                           |  2 +-
+ lib/msf/core/cert_provider.rb                                |  2 +-
+ lib/msf/core/db_manager/import/ip360/v3.rb                   |  6 +++---
+ lib/msf/core/db_manager/import/libpcap.rb                    |  2 +-
+ .../core/exploit/local/sap_smd_agent_unencrypted_property.rb |  2 +-
+ lib/msf/core/exploit/php_exe.rb                              |  2 +-
+ lib/msf/core/exploit/remote/http/joomla/version.rb           |  2 +-
+ lib/msf/core/exploit/remote/http/sccm.rb                     |  2 +-
+ lib/msf/core/exploit/remote/mssql_sqli.rb                    |  4 ++--
+ lib/msf/core/exploit/sqli/mssqli/common.rb                   | 12 ++++++------
+ lib/msf/core/exploit/sqli/mysqli/common.rb                   | 10 +++++-----
+ lib/msf/core/exploit/sqli/postgresqli/common.rb              | 10 +++++-----
+ lib/msf/core/exploit/sqli/sqlitei/common.rb                  | 10 +++++-----
+ lib/msf/core/modules/metadata/search.rb                      |  2 +-
+ lib/msf/core/payload/apk.rb                                  |  4 ++--
+ lib/msf/core/payload/java.rb                                 |  2 +-
+ lib/msf/core/payload/python/meterpreter_loader.rb            |  2 +-
+ lib/msf/core/payload/ruby.rb                                 |  2 +-
+ lib/msf/core/post/file.rb                                    |  4 ++--
+ lib/msf/core/post/linux/f5_mcp.rb                            |  2 +-
+ lib/msf/core/post/unix.rb                                    |  2 +-
+ lib/msf/core/post/webrtc.rb                                  | 10 +++++-----
+ lib/msf/ui/console/command_dispatcher/core.rb                |  6 +++---
+ lib/msf/util/document_generator/document_normalizer.rb       |  2 +-
+ lib/msf/util/exe.rb                                          |  4 ++--
+ lib/msf/util/windows_registry/remote_registry.rb             |  2 +-
+ lib/postgres/postgres-pr/typeconv/array.rb                   |  4 ++--
+ lib/rbmysql/error.rb                                         |  4 ++--
+ lib/rex/parser/acunetix_document.rb                          |  2 +-
+ lib/rex/parser/appscan_document.rb                           |  4 ++--
+ lib/rex/parser/nexpose_raw_document.rb                       |  2 +-
+ lib/rex/parser/openvas_document.rb                           |  4 ++--
+ lib/rex/payloads/meterpreter/config.rb                       |  2 +-
+ lib/rex/post/meterpreter/extensions/priv/passwd.rb           |  2 +-
+ lib/rex/post/meterpreter/extensions/priv/priv.rb             |  2 +-
+ lib/rex/post/meterpreter/extensions/stdapi/webcam/webcam.rb  |  6 +++---
+ lib/rex/post/meterpreter/pivot.rb                            |  2 +-
+ lib/rex/proto/http/request.rb                                |  8 ++++----
+ lib/rex/proto/http/response.rb                               |  2 +-
+ lib/rex/proto/ldap/auth.rb                                   |  6 +++---
+ lib/rex/proto/mms/model/message.rb                           |  2 +-
+ lib/rex/proto/mssql/client.rb                                |  4 ++--
+ lib/rex/proto/sip/response.rb                                |  2 +-
+ tools/dev/msftidy_docs.rb                                    |  2 +-
+ tools/exploit/find_badchars.rb                               |  2 +-
+ tools/exploit/metasm_shell.rb                                |  2 +-
+ tools/exploit/nasm_shell.rb                                  |  2 +-
+ tools/hardware/elm327_relay.rb                               |  4 ++--
+ tools/modules/missing_payload_tests.rb                       |  2 +-
+ 55 files changed, 104 insertions(+), 98 deletions(-)
+
+commit b19b087feb8f82e0673f08bd186884afdbf21fcc
+Merge: d2da920ee1 ffeddaaee3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 26 20:14:55 2025 +0100
+
+    Merge pull request #20204 from bcoles/rubocop-Layout/LineContinuationLeadingSpace
+    
+    Rubocop: Disable Layout/LineContinuationLeadingSpace
+
+ .rubocop.yml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 4c0ec87d7cf2cba28a015d7bc800a04a776dba84
+Author: bcoles <bcoles@github>
+Date:   Mon May 26 21:30:58 2025 +1000
+
+    modules/auxiliary/scanner/vmware: Resolve RuboCop violations
+
+ .../auxiliary/scanner/vmware/esx_fingerprint.rb    | 109 ++++++++++++---------
+ modules/auxiliary/scanner/vmware/vmauthd_login.rb  |  85 +++++++++-------
+ .../auxiliary/scanner/vmware/vmauthd_version.rb    |  90 ++++++++---------
+ .../scanner/vmware/vmware_enum_permissions.rb      |  46 +++++----
+ .../scanner/vmware/vmware_enum_sessions.rb         |  36 ++++---
+ .../auxiliary/scanner/vmware/vmware_enum_users.rb  |  60 ++++++------
+ .../auxiliary/scanner/vmware/vmware_enum_vms.rb    |  62 ++++++------
+ .../scanner/vmware/vmware_host_details.rb          |  33 ++++---
+ .../auxiliary/scanner/vmware/vmware_http_login.rb  |  75 +++++++-------
+ .../scanner/vmware/vmware_screenshot_stealer.rb    | 106 ++++++++++----------
+ .../scanner/vmware/vmware_server_dir_trav.rb       |  99 ++++++++++---------
+ .../vmware/vmware_update_manager_traversal.rb      |  58 ++++++-----
+ 12 files changed, 458 insertions(+), 401 deletions(-)
+
+commit d03b65e7e5e5e71bbff018e17a5b69a66888892d
+Author: bcoles <bcoles@github>
+Date:   Mon May 26 20:49:19 2025 +1000
+
+    modules/auxiliary/admin/scada: Resolve RuboCop violations
+
+ .../scada/advantech_webaccess_dbvisitor_sqli.rb    | 190 +++++++++++----------
+ .../admin/scada/ge_proficy_substitute_traversal.rb | 101 +++++------
+ modules/auxiliary/admin/scada/modicon_command.rb   |  77 +++++----
+ .../admin/scada/modicon_password_recovery.rb       | 173 +++++++++++--------
+ .../auxiliary/admin/scada/modicon_stux_transfer.rb | 132 +++++++-------
+ .../admin/scada/moxa_credentials_recovery.rb       | 168 +++++++++---------
+ modules/auxiliary/admin/scada/multi_cip_command.rb | 111 ++++++------
+ modules/auxiliary/admin/scada/pcom_command.rb      |  59 ++++---
+ modules/auxiliary/admin/scada/phoenix_command.rb   |  75 ++++----
+ .../admin/scada/yokogawa_bkbcopyd_client.rb        | 105 ++++++------
+ 10 files changed, 647 insertions(+), 544 deletions(-)
