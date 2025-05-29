@@ -1,0 +1,231 @@
+commit a847038d90324652b0e8f1ba41d55cb080c4f154
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 28 16:49:12 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 63 insertions(+), 1 deletion(-)
+
+commit 9b7e27e9461d415ce270c677672384fd96252d5a
+Merge: 5c6f6f1070 6cb8d8c599
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 28 18:38:52 2025 +0200
+
+    Merge pull request #20185 from Chocapikk/wp_depicter_sqli_cve_2025_2011
+    
+    Add WP Depicter Plugin Unauth SQL Injection (CVE-2025-2011)
+
+ data/wordlists/wp-exploitable-plugins.txt          |   1 +
+ .../gather/wp_depicter_sqli_cve_2025_2011.md       | 136 +++++++++++++++++++++
+ .../gather/wp_depicter_sqli_cve_2025_2011.rb       | 102 ++++++++++++++++
+ 3 files changed, 239 insertions(+)
+
+commit 5c6f6f1070842a19bebce66ac1b5c1606eaa6473
+Merge: 1264bfa606 e282bbda99
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed May 28 12:33:43 2025 -0400
+
+    Merge pull request #20261 from bwatters-r7/fix/vmcenter_vmdir_auth
+    
+    Update datastore option names in vmware_vcenter_vmdir_auth_bypass module and docs
+
+ .../admin/ldap/vmware_vcenter_vmdir_auth_bypass.md | 119 ++++++++++++++++-----
+ .../admin/ldap/vmware_vcenter_vmdir_auth_bypass.rb |   2 +-
+ 2 files changed, 96 insertions(+), 25 deletions(-)
+
+commit 6cb8d8c599247acb81e9d7c943ea6b29692fb0e4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 28 18:01:32 2025 +0200
+
+    fix(modules): renaming run_host to run
+
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1264bfa606295f12d8151655ef99990f87ab58a2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 28 15:02:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 396 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 318 insertions(+), 78 deletions(-)
+
+commit f3668f436bfd9e19bcd7900c082621898d024677
+Merge: c73bffaf87 1b95ece26d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 28 16:54:01 2025 +0200
+
+    Land #20242, resolves RuboCop violations for modules/auxiliary/scanner/sap
+    
+    modules/auxiliary/scanner/sap: Resolve RuboCop violations
+
+ .../sap/sap_ctc_verb_tampering_user_mgmt.rb        |  55 ++--
+ .../scanner/sap/sap_hostctrl_getcomputersystem.rb  | 240 +++++++--------
+ .../auxiliary/scanner/sap/sap_icf_public_info.rb   |  88 +++---
+ modules/auxiliary/scanner/sap/sap_icm_urlscan.rb   | 105 ++++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_abaplog.rb  |  59 ++--
+ .../scanner/sap/sap_mgmt_con_brute_login.rb        |  66 ++--
+ .../scanner/sap/sap_mgmt_con_extractusers.rb       |  70 +++--
+ .../scanner/sap/sap_mgmt_con_getaccesspoints.rb    |  93 +++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_getenv.rb   |  68 +++--
+ .../scanner/sap/sap_mgmt_con_getlogfiles.rb        | 115 ++++---
+ .../scanner/sap/sap_mgmt_con_getprocesslist.rb     |  93 +++---
+ .../sap/sap_mgmt_con_getprocessparameter.rb        |  95 +++---
+ .../scanner/sap/sap_mgmt_con_instanceproperties.rb | 308 +++++++++----------
+ .../scanner/sap/sap_mgmt_con_listconfigfiles.rb    |  63 ++--
+ .../scanner/sap/sap_mgmt_con_listlogfiles.rb       |  94 +++---
+ .../scanner/sap/sap_mgmt_con_startprofile.rb       |  87 +++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_version.rb  | 104 +++----
+ .../scanner/sap/sap_router_info_request.rb         | 182 +++++------
+ .../scanner/sap/sap_router_portscanner.rb          | 298 +++++++++---------
+ .../auxiliary/scanner/sap/sap_service_discovery.rb | 332 +++++++++++----------
+ modules/auxiliary/scanner/sap/sap_smb_relay.rb     | 146 ++++-----
+ .../scanner/sap/sap_soap_bapi_user_create1.rb      |  50 ++--
+ .../scanner/sap/sap_soap_rfc_brute_login.rb        |  56 ++--
+ ...oap_rfc_dbmcli_sxpg_call_system_command_exec.rb | 101 +++----
+ .../sap/sap_soap_rfc_dbmcli_sxpg_command_exec.rb   |  94 +++---
+ .../sap/sap_soap_rfc_eps_get_directory_listing.rb  |  43 +--
+ .../sap_soap_rfc_pfl_check_os_file_existence.rb    |  37 +--
+ modules/auxiliary/scanner/sap/sap_soap_rfc_ping.rb |  54 ++--
+ .../scanner/sap/sap_soap_rfc_read_table.rb         |  73 ++---
+ .../scanner/sap/sap_soap_rfc_rzl_read_dir.rb       |  42 +--
+ .../sap/sap_soap_rfc_susr_rfc_user_interface.rb    | 106 ++++---
+ .../sap/sap_soap_rfc_sxpg_call_system_exec.rb      |  59 ++--
+ .../scanner/sap/sap_soap_rfc_sxpg_command_exec.rb  |  63 ++--
+ .../scanner/sap/sap_soap_rfc_system_info.rb        | 110 +++----
+ .../scanner/sap/sap_soap_th_saprel_disclosure.rb   | 135 +++++----
+ .../scanner/sap/sap_web_gui_brute_login.rb         |  73 +++--
+ 36 files changed, 1964 insertions(+), 1893 deletions(-)
+
+commit 8055ba3d659afdfd1b9a650f1ec09cc30bb9ebef
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed May 28 16:28:59 2025 +0200
+
+    Update modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb
+    
+    Co-authored-by: Diego Ledda <diego_ledda@rapid7.com>
+
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit e282bbda99c9aabe73586c3ce7668a7e888d4bfe
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed May 28 09:23:36 2025 -0500
+
+    Update datastore option names in module and docs
+
+ .../admin/ldap/vmware_vcenter_vmdir_auth_bypass.md | 119 ++++++++++++++++-----
+ .../admin/ldap/vmware_vcenter_vmdir_auth_bypass.rb |   2 +-
+ 2 files changed, 96 insertions(+), 25 deletions(-)
+
+commit c73bffaf87974d944db71638cc03631e73e40dfa
+Merge: 02d7a23fef bae1a3e93a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed May 28 13:28:13 2025 +0100
+
+    Merge pull request #20257 from cgranleese-r7/fixes-deprecation-error
+    
+    Fixes an error in `report_note` deprecation message
+
+ lib/msf/core/db_manager/note.rb | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 1b95ece26dd0175234ba46f5e53667daa63dd10b
+Author: bcoles <bcoles@github>
+Date:   Wed May 28 22:15:05 2025 +1000
+
+    modules/auxiliary/scanner/sap: Resolve RuboCop violations
+
+ .../sap/sap_ctc_verb_tampering_user_mgmt.rb        |  55 ++--
+ .../scanner/sap/sap_hostctrl_getcomputersystem.rb  | 240 +++++++--------
+ .../auxiliary/scanner/sap/sap_icf_public_info.rb   |  88 +++---
+ modules/auxiliary/scanner/sap/sap_icm_urlscan.rb   | 105 ++++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_abaplog.rb  |  59 ++--
+ .../scanner/sap/sap_mgmt_con_brute_login.rb        |  66 ++--
+ .../scanner/sap/sap_mgmt_con_extractusers.rb       |  70 +++--
+ .../scanner/sap/sap_mgmt_con_getaccesspoints.rb    |  93 +++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_getenv.rb   |  68 +++--
+ .../scanner/sap/sap_mgmt_con_getlogfiles.rb        | 115 ++++---
+ .../scanner/sap/sap_mgmt_con_getprocesslist.rb     |  93 +++---
+ .../sap/sap_mgmt_con_getprocessparameter.rb        |  95 +++---
+ .../scanner/sap/sap_mgmt_con_instanceproperties.rb | 308 +++++++++----------
+ .../scanner/sap/sap_mgmt_con_listconfigfiles.rb    |  63 ++--
+ .../scanner/sap/sap_mgmt_con_listlogfiles.rb       |  94 +++---
+ .../scanner/sap/sap_mgmt_con_startprofile.rb       |  87 +++---
+ .../auxiliary/scanner/sap/sap_mgmt_con_version.rb  | 104 +++----
+ .../scanner/sap/sap_router_info_request.rb         | 182 +++++------
+ .../scanner/sap/sap_router_portscanner.rb          | 298 +++++++++---------
+ .../auxiliary/scanner/sap/sap_service_discovery.rb | 332 +++++++++++----------
+ modules/auxiliary/scanner/sap/sap_smb_relay.rb     | 146 ++++-----
+ .../scanner/sap/sap_soap_bapi_user_create1.rb      |  50 ++--
+ .../scanner/sap/sap_soap_rfc_brute_login.rb        |  56 ++--
+ ...oap_rfc_dbmcli_sxpg_call_system_command_exec.rb | 101 +++----
+ .../sap/sap_soap_rfc_dbmcli_sxpg_command_exec.rb   |  94 +++---
+ .../sap/sap_soap_rfc_eps_get_directory_listing.rb  |  43 +--
+ .../sap_soap_rfc_pfl_check_os_file_existence.rb    |  37 +--
+ modules/auxiliary/scanner/sap/sap_soap_rfc_ping.rb |  54 ++--
+ .../scanner/sap/sap_soap_rfc_read_table.rb         |  73 ++---
+ .../scanner/sap/sap_soap_rfc_rzl_read_dir.rb       |  42 +--
+ .../sap/sap_soap_rfc_susr_rfc_user_interface.rb    | 106 ++++---
+ .../sap/sap_soap_rfc_sxpg_call_system_exec.rb      |  59 ++--
+ .../scanner/sap/sap_soap_rfc_sxpg_command_exec.rb  |  63 ++--
+ .../scanner/sap/sap_soap_rfc_system_info.rb        | 110 +++----
+ .../scanner/sap/sap_soap_th_saprel_disclosure.rb   | 135 +++++----
+ .../scanner/sap/sap_web_gui_brute_login.rb         |  73 +++--
+ 36 files changed, 1964 insertions(+), 1893 deletions(-)
+
+commit 02d7a23fef3c866e8230046d45640161579b9e00
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 28 12:00:57 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 219 ++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 188 insertions(+), 31 deletions(-)
+
+commit ce6e0d1164ef607a09c7932c0466ab6567bf36ab
+Merge: cd63d653a8 2baabfa17b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 28 13:46:13 2025 +0200
+
+    Merge pull request #20096 from h00die-gr3y/CVE-2025-30406
+    
+    Gladinet CentreStack/Triofox ASP.NET ViewState Deserialization [CVE-2025-30406]
+
+ ...net_viewstate_deserialization_cve_2025_30406.md | 110 ++++++++++++++
+ ...net_viewstate_deserialization_cve_2025_30406.rb | 162 +++++++++++++++++++++
+ 2 files changed, 272 insertions(+)
+
+commit cd63d653a82c9d118add02bac214fa503c0e35b4
+Merge: 53ee96fc1f 32c5280b13
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed May 28 13:45:33 2025 +0200
+
+    Merge pull request #20200 from bcoles/rubocop-modules-auxiliary-admin-oracle
+    
+    modules/auxiliary/admin/oracle: Resolve RuboCop violations
+
+ modules/auxiliary/admin/oracle/ora_ntlm_stealer.rb |  74 +--
+ .../auxiliary/admin/oracle/oracle_index_privesc.rb |  38 +-
+ modules/auxiliary/admin/oracle/oracle_login.rb     |  48 +-
+ modules/auxiliary/admin/oracle/oracle_sql.rb       |  39 +-
+ modules/auxiliary/admin/oracle/oraenum.rb          | 573 +++++++--------------
+ modules/auxiliary/admin/oracle/osb_execqr.rb       |  39 +-
+ modules/auxiliary/admin/oracle/osb_execqr2.rb      |  71 +--
+ modules/auxiliary/admin/oracle/osb_execqr3.rb      |  77 +--
+ .../admin/oracle/post_exploitation/win32exec.rb    |  52 +-
+ .../admin/oracle/post_exploitation/win32upload.rb  | 110 ++--
+ modules/auxiliary/admin/oracle/sid_brute.rb        |  81 +--
+ modules/auxiliary/admin/oracle/tnscmd.rb           |  54 +-
+ 12 files changed, 587 insertions(+), 669 deletions(-)
+
+commit bae1a3e93a25ce356a77aaf2c21eb0ca04d463ed
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Wed May 28 12:29:16 2025 +0100
+
+    Fixes an error for report_note deprecation message
+
+ lib/msf/core/db_manager/note.rb | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
