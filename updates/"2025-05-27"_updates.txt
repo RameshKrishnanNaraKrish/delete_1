@@ -1,0 +1,134 @@
+commit 14a219e7e3b298fe25f07f18181ede57556c41dd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 29 15:05:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 664 ++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 642 insertions(+), 22 deletions(-)
+
+commit d08995c0510eebf49a304d0b23aa315170317153
+Merge: 537f12b6ec aba6af805d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 29 16:53:07 2025 +0200
+
+    Merge pull request #20201 from bcoles/rubocop-modules-auxiliary-admin-networking
+    
+    modules/auxiliary/admin/networking: Resolve RuboCop violations
+
+ .../auxiliary/admin/networking/arista_config.rb    |  2 +-
+ .../auxiliary/admin/networking/brocade_config.rb   |  9 +++--
+ .../admin/networking/cisco_asa_extrabacon.rb       |  5 ++-
+ modules/auxiliary/admin/networking/cisco_config.rb |  9 +++--
+ .../admin/networking/cisco_dcnm_download.rb        | 43 +++++++++++-----------
+ .../admin/networking/cisco_secure_acs_bypass.rb    | 26 +++++++------
+ modules/auxiliary/admin/networking/f5_config.rb    |  2 +-
+ .../auxiliary/admin/networking/juniper_config.rb   |  2 +-
+ .../auxiliary/admin/networking/mikrotik_config.rb  |  2 +-
+ modules/auxiliary/admin/networking/vyos_config.rb  |  2 +-
+ 10 files changed, 57 insertions(+), 45 deletions(-)
+
+commit 537f12b6ec1c79c4e42e26f49e851c231749ad20
+Merge: 379e62b3ee 4d956ba4e4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 29 16:49:58 2025 +0200
+
+    Merge pull request #19976 from msutovsky-r7/feat/php_cmd_adapter
+    
+    PHP cmd adapter
+
+ lib/msf/core/payload/php/send_uuid.rb      |  2 +-
+ modules/payloads/adapters/cmd/unix/php.rb  | 40 ++++++++++++++++++++++++++++++
+ modules/payloads/stages/php/meterpreter.rb |  2 +-
+ spec/modules/payloads_spec.rb              |  9 +++++++
+ 4 files changed, 51 insertions(+), 2 deletions(-)
+
+commit 379e62b3ee34e6772ce4f105ec4dfa351b8a6326
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 29 13:23:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8f64994f47e069c3163220e4133294586acebafd
+Merge: 3c876901ff 1b4d65e8b7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 29 15:15:49 2025 +0200
+
+    Merge pull request #20246 from bcoles/encoders-metasm-cpu
+    
+    Encoders: Fix assemble method Metasm CPU definition
+
+ modules/encoders/x64/zutto_dekiru.rb | 4 ++--
+ modules/encoders/x86/service.rb      | 6 +++---
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 3c876901ff9f61c13ca978f9e1b61da6b4c3b439
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu May 29 05:29:32 2025 -0500
+
+    Bump version of framework to 6.4.67
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 05fa8c6b30660298126daeaeca4efa4bae3f5d7f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 29 10:17:57 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 52a097b7e0823c3cb3775bc4668303329ecb181f
+Merge: 9651c8b966 f1d7f2ed22
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 29 11:09:48 2025 +0100
+
+    Merge pull request #20268 from rapid7/revert-20194-ensure-thinkphp-rce-runs-on-metasploit-pro
+    
+    Revert "Ensure thinkphp rce runs on metasploit pro"
+
+ modules/exploits/unix/webapp/thinkphp_rce.rb | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit f1d7f2ed222b1212d90701c48b7f3576e80553b3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 29 10:54:51 2025 +0100
+
+    Revert "Ensure thinkphp rce runs on metasploit pro"
+
+ modules/exploits/unix/webapp/thinkphp_rce.rb | 6 ------
+ 1 file changed, 6 deletions(-)
+
+commit 9651c8b9660d14b458f291d797f1f6f81784f783
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 29 08:46:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 90 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 71 insertions(+), 19 deletions(-)
+
+commit a5d80290f8ec182899497c8cd1c367b205551924
+Merge: a847038d90 b25925d28a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 29 10:38:28 2025 +0200
+
+    Land #20241, resolves RuboCop violations for modules/auxiliary/scanner/discovery
+    
+    modules/auxiliary/scanner/discovery: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/discovery/arp_sweep.rb   |  70 +--
+ modules/auxiliary/scanner/discovery/empty_udp.rb   |  17 +-
+ .../scanner/discovery/ipv6_multicast_ping.rb       |  74 +--
+ .../auxiliary/scanner/discovery/ipv6_neighbor.rb   | 121 +++--
+ .../ipv6_neighbor_router_advertisement.rb          | 118 +++--
+ modules/auxiliary/scanner/discovery/udp_probe.rb   | 564 +++++++++++----------
+ modules/auxiliary/scanner/discovery/udp_sweep.rb   | 526 ++++++++++---------
+ 7 files changed, 787 insertions(+), 703 deletions(-)
