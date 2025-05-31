@@ -1,0 +1,70 @@
+commit 9aa775d140e6593a0a66bd81c102dde785addff8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 30 11:56:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 35 ++++++++++++++++++++++++++++-------
+ 1 file changed, 28 insertions(+), 7 deletions(-)
+
+commit e55032a14fe3cdc2282cf9dcd58f8c0882c9c2e3
+Merge: 94b5ba520b feebf2bc49
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri May 30 13:48:59 2025 +0200
+
+    Land #20238, resolves RuboCop violations in auxiliary/scanner/db2
+    
+    modules/auxiliary/scanner/db2: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/db2/db2_auth.rb    | 57 ++++++++++++--------
+ modules/auxiliary/scanner/db2/db2_version.rb | 68 +++++++++++++-----------
+ modules/auxiliary/scanner/db2/discovery.rb   | 78 +++++++++++++++-------------
+ 3 files changed, 113 insertions(+), 90 deletions(-)
+
+commit 94b5ba520b4db0efaf102acefe25d8728bb65525
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 30 10:55:29 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 66 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 52 insertions(+), 14 deletions(-)
+
+commit d92088fa97af42a9230a76f7f7799e95a5d3866a
+Merge: b0b0022158 e9d682dca7
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri May 30 12:47:18 2025 +0200
+
+    Land #20239, resolves RuboCop violations in auxiliary/scanner/dcerpc
+    
+    modules/auxiliary/scanner/dcerpc: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/dcerpc/dfscoerce.rb      |   7 +-
+ .../auxiliary/scanner/dcerpc/endpoint_mapper.rb    |  91 +++++----
+ modules/auxiliary/scanner/dcerpc/hidden.rb         |  19 +-
+ modules/auxiliary/scanner/dcerpc/management.rb     |  90 +++++----
+ .../auxiliary/scanner/dcerpc/tcp_dcerpc_auditor.rb | 106 +++++-----
+ .../scanner/dcerpc/windows_deployment_services.rb  | 222 +++++++++++----------
+ 6 files changed, 284 insertions(+), 251 deletions(-)
+
+commit b0b0022158780475276768bd8e1559d7403be242
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 30 10:09:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
+
+commit 9ef3134049e6818ac4104d3a374642877dfad4ba
+Merge: 14a219e7e3 e0d2cd29c2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri May 30 12:01:30 2025 +0200
+
+    Land #20240, resolves RuboCop violations in modules/auxiliary/scanner/dect
+    
+    modules/auxiliary/scanner/dect: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/dect/call_scanner.rb    | 35 +++++++++++----------
+ modules/auxiliary/scanner/dect/station_scanner.rb | 38 ++++++++++++-----------
+ 2 files changed, 39 insertions(+), 34 deletions(-)
