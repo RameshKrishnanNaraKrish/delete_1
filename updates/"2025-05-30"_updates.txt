@@ -1,0 +1,11 @@
+commit 847fd9aa8355689bc22235eea3512acb8fa835d2
+Merge: 9aa775d140 50ae65d59c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 1 22:25:49 2025 +0200
+
+    Landing #20270, adds documentation for auxiliary/scanner/discovery/udp_probe
+    
+    Add documentation for auxiliary/scanner/discovery/udp_probe
+
+ .../auxiliary/scanner/discovery/udp_probe.md       | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
