@@ -1,0 +1,218 @@
+commit 4836243f1ac8c2b8c2f4f509f45af6aeff99b761
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 2 22:06:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 18fbf3d6569af8e3eb8530a36f125201c9246032
+Merge: 5e2418cf1f d118b34823
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Jun 2 17:57:39 2025 -0400
+
+    Merge pull request #20275 from msutovsky-r7/fix/sap_router_info_failure
+    
+    Fixes bug in auxiliary/scanner/sap/sap_router_info_request
+
+ modules/auxiliary/scanner/sap/sap_router_info_request.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 486390d881aaaecbee0b933ee5d9155868d7486d
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 20:45:44 2025 +0200
+
+    Update ms10_061_spoolss.rb
+
+ modules/exploits/windows/smb/ms10_061_spoolss.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit e39b400bb8271f215d34dbb2a8e37c641eb4e4ce
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:05:31 2025 +0200
+
+    Update modules/auxiliary/dos/smtp/sendmail_prescan.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/auxiliary/dos/smtp/sendmail_prescan.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 97b9b80b2606962978848f083808bb8fb4f8a7ef
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:05:19 2025 +0200
+
+    Update modules/auxiliary/dos/windows/smb/ms09_050_smb2_negotiate_pidhigh.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/auxiliary/dos/windows/smb/ms09_050_smb2_negotiate_pidhigh.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08c5654ef25f3f883520a938070a7342005aa1a3
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:05:12 2025 +0200
+
+    Update modules/exploits/freebsd/samba/trans2open.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/exploits/freebsd/samba/trans2open.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7738d146b94a6f38519f6fbd750c9a36caa1c633
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:05:06 2025 +0200
+
+    Update modules/exploits/solaris/samba/trans2open.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/exploits/solaris/samba/trans2open.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 54c5e7df18d153925c463cf82e5b146cc6273e03
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:04:59 2025 +0200
+
+    Update modules/exploits/windows/smb/ms10_061_spoolss.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/exploits/windows/smb/ms10_061_spoolss.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit af57c9ba775459da993f43e7a3203ceb63b650c2
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:04:51 2025 +0200
+
+    Update modules/auxiliary/dos/windows/smb/ms09_050_smb2_session_logoff.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/auxiliary/dos/windows/smb/ms09_050_smb2_session_logoff.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ea7d88d8be663e98a156d1f13e46cebc3bfca468
+Author: Julien Voisin <jvoisin@users.noreply.github.com>
+Date:   Mon Jun 2 16:04:42 2025 +0200
+
+    Update modules/auxiliary/admin/kerberos/ms14_068_kerberos_checksum.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/auxiliary/admin/kerberos/ms14_068_kerberos_checksum.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e2418cf1f68a392981b832e72d1731f322d0ebb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 2 10:46:07 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 4238fd6babaa42fbad68994e480fe380e798b4d9
+Merge: 7a3697820c 176dd849e0
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Jun 2 11:38:13 2025 +0100
+
+    Merge pull request #20272 from zeroSteiner/fix/mod/add-esc-refs
+    
+    Add missing references for AD CS modules
+
+ modules/auxiliary/admin/dcerpc/icpr_cert.rb         | 1 +
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d118b3482369333a0db9170951b1d6981b2dcc79
+Merge: cb0ef76140 7a3697820c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jun 2 11:25:08 2025 +0200
+
+    Merge branch 'rapid7:master' into fix/sap_router_info_failure
+
+ Gemfile.lock                                       |   2 +-
+ LICENSE_GEMS                                       |   6 +-
+ db/modules_metadata_base.json                      | 846 +++++++++++++++++++--
+ .../auxiliary/scanner/discovery/udp_probe.md       |  22 +
+ lib/metasploit/framework/version.rb                |   2 +-
+ lib/msf/core/payload/php/send_uuid.rb              |   2 +-
+ .../auxiliary/admin/networking/arista_config.rb    |   2 +-
+ .../auxiliary/admin/networking/brocade_config.rb   |   9 +-
+ .../admin/networking/cisco_asa_extrabacon.rb       |   5 +-
+ modules/auxiliary/admin/networking/cisco_config.rb |   9 +-
+ .../admin/networking/cisco_dcnm_download.rb        |  43 +-
+ .../admin/networking/cisco_secure_acs_bypass.rb    |  26 +-
+ modules/auxiliary/admin/networking/f5_config.rb    |   2 +-
+ .../auxiliary/admin/networking/juniper_config.rb   |   2 +-
+ .../auxiliary/admin/networking/mikrotik_config.rb  |   2 +-
+ modules/auxiliary/admin/networking/vyos_config.rb  |   2 +-
+ modules/auxiliary/scanner/couchdb/couchdb_enum.rb  | 115 +--
+ modules/auxiliary/scanner/couchdb/couchdb_login.rb |  92 ++-
+ modules/auxiliary/scanner/db2/db2_auth.rb          |  57 +-
+ modules/auxiliary/scanner/db2/db2_version.rb       |  68 +-
+ modules/auxiliary/scanner/db2/discovery.rb         |  78 +-
+ modules/auxiliary/scanner/dcerpc/dfscoerce.rb      |   7 +-
+ .../auxiliary/scanner/dcerpc/endpoint_mapper.rb    |  91 +--
+ modules/auxiliary/scanner/dcerpc/hidden.rb         |  19 +-
+ modules/auxiliary/scanner/dcerpc/management.rb     |  90 +--
+ .../auxiliary/scanner/dcerpc/tcp_dcerpc_auditor.rb | 106 +--
+ .../scanner/dcerpc/windows_deployment_services.rb  | 222 +++---
+ modules/auxiliary/scanner/dect/call_scanner.rb     |  35 +-
+ modules/auxiliary/scanner/dect/station_scanner.rb  |  38 +-
+ modules/auxiliary/server/dns/native_server.rb      | 106 +--
+ modules/auxiliary/server/dns/spoofhelper.rb        | 114 ++-
+ modules/encoders/x64/zutto_dekiru.rb               |   4 +-
+ modules/encoders/x86/service.rb                    |   6 +-
+ modules/exploits/unix/webapp/thinkphp_rce.rb       |   6 -
+ modules/payloads/adapters/cmd/unix/php.rb          |  40 +
+ modules/payloads/stages/php/meterpreter.rb         |   2 +-
+ spec/modules/payloads_spec.rb                      |   9 +
+ 37 files changed, 1584 insertions(+), 703 deletions(-)
+
+commit 7a3697820cfeae2ac063868dc7bde4ae4051b267
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 2 07:12:08 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 27 +++++++++++++++++++++------
+ 1 file changed, 21 insertions(+), 6 deletions(-)
+
+commit be8bb631868f286aabd57ca4a399b7b53c18694e
+Merge: d04df220c7 170d007375
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jun 2 09:03:47 2025 +0200
+
+    Land #20237, resolves RuboCop violations in auxiliary/scanner/couchdb
+    
+    modules/auxiliary/scanner/couchdb: Resolve RuboCop violations
+
+ modules/auxiliary/scanner/couchdb/couchdb_enum.rb  | 115 +++++++++++----------
+ modules/auxiliary/scanner/couchdb/couchdb_login.rb |  92 ++++++++++-------
+ 2 files changed, 114 insertions(+), 93 deletions(-)
+
+commit d04df220c786fe3e488fa2404352c99ebb2257e7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 2 06:15:58 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
+
+commit 11a3564dffabd617b6a6e35a7848f460c46e7391
+Merge: 847fd9aa83 5ecf5b770b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jun 2 08:07:42 2025 +0200
+
+    Landing #20271, resolves RuboCop violations in auxiliary/server/dns
+    
+    modules/auxiliary/server/dns: Resolve RuboCop violations
+
+ modules/auxiliary/server/dns/native_server.rb | 106 +++++++++++++-----------
+ modules/auxiliary/server/dns/spoofhelper.rb   | 114 +++++++++++++-------------
+ 2 files changed, 112 insertions(+), 108 deletions(-)
