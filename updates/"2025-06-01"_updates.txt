@@ -1,0 +1,189 @@
+commit 3b67e551ceabbd413b4673224cd0b41952d1169b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 3 20:42:08 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da97d5c2b3a307381ed2c3a6551d0e5834c3b98a
+Merge: c23c848d2e 39bbf4ba05
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jun 3 16:34:23 2025 -0400
+
+    Merge pull request #20281 from JohannesLks/fix(post/windows/manage/remove_host--hard-coded-hosts-file-path-causes-failure-when-%SystemRoot%-=!-C--Windows)
+    
+    post/windows/manage/remove_host: resolve hosts-file path dynamically instead of hard-coded C:\Windows
+
+ modules/post/windows/manage/remove_host.rb | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 39bbf4ba057293ef42e92ec1b86993118cd2ef39
+Author: Lukas Johannes Möller <74617774+JohannesLks@users.noreply.github.com>
+Date:   Tue Jun 3 19:51:16 2025 +0200
+
+    fix #20280
+
+ modules/post/windows/manage/remove_host.rb | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit c23c848d2eeffa5a01dfdcdafa63340002b06eb9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 3 17:15:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1e98d3ffca275fad29b9859904bbf31eda38f4f3
+Merge: f45e08097c 306496eef8
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Jun 3 18:07:07 2025 +0100
+
+    Merge pull request #20218 from jheysel-r7/fix/crawler_canonicalize_method
+    
+    Improve canonicalize method in msfcrawler.rb
+
+ modules/auxiliary/crawler/msfcrawler.rb | 38 ++++++++++++++++-----------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
+
+commit f45e08097c677c3a0317e7c04a0009665a261634
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 3 16:54:38 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d497156f842361197d1fc4fb50d5aae945bc309d
+Merge: 043f8cb6b4 3057f80a1b
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Jun 3 17:45:18 2025 +0100
+
+    Merge pull request #20258 from zeroSteiner/fix/issue/20251
+    
+    Update the ldap options for shadow credentials
+
+ .../auxiliary/admin/ldap/shadow_credentials.md     | 45 ++++++++++++++--------
+ modules/auxiliary/admin/ldap/shadow_credentials.rb | 10 ++---
+ 2 files changed, 34 insertions(+), 21 deletions(-)
+
+commit 043f8cb6b4b410400736908d2d0885535229b884
+Merge: dd166b4d49 dae8c9b43a
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Jun 3 17:44:26 2025 +0100
+
+    Merge pull request #20260 from zeroSteiner/fix/issue/20252
+    
+    Update the ldap/change_password module
+
+ .../modules/auxiliary/admin/ldap/change_password.md      |  8 ++++----
+ modules/auxiliary/admin/ldap/change_password.rb          | 16 ++++++++--------
+ 2 files changed, 12 insertions(+), 12 deletions(-)
+
+commit 3057f80a1bd63b04cad98943b1f81595dbeecbb6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed May 28 09:32:56 2025 -0400
+
+    Update the ldap options for shadow credentials
+
+ .../auxiliary/admin/ldap/shadow_credentials.md     | 45 ++++++++++++++--------
+ modules/auxiliary/admin/ldap/shadow_credentials.rb | 10 ++---
+ 2 files changed, 34 insertions(+), 21 deletions(-)
+
+commit dd166b4d497a402da9151850a0c82c8eb4ea4b39
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 3 14:03:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2476ce52d84d484e93cc0d219a2c6d1003155ab8
+Merge: c4f2b9e070 d9e96f91ca
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jun 3 09:55:06 2025 -0400
+
+    Merge pull request #20273 from JohannesLks/fix/post-windows-manage-remove-host-20157
+    
+    fix(post/windows/manage/remove_host): handle whitespace parsing robustly
+
+ modules/post/windows/manage/remove_host.rb | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit c4f2b9e070e67aaa3acd8b8128bef201c93c8dd6
+Merge: ae1db09f32 adecc23728
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jun 3 09:37:11 2025 -0400
+
+    Merge pull request #20278 from cdelafuente-r7/fix/spec/krb5_ccache_presenter
+    
+    Fix krb5_ccache_presenter specs
+
+ .../credential_cache/krb5_ccache_presenter_spec.rb | 28 +++++++++++-----------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+commit adecc237289774d77cc9d78bfad600c4cf4a3017
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Jun 3 14:35:44 2025 +0200
+
+    Set time to localtime
+
+ .../credential_cache/krb5_ccache_presenter_spec.rb | 28 +++++++++++-----------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+commit f5161ea9e18b90313fc69a995df2bd32a96d4be9
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Jun 3 14:27:20 2025 +0200
+
+    Code Review
+
+ lib/msf/core/db_manager/exploit_attempt.rb | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+commit d9e96f91cafc96f462352dc245038ffeff1f134b
+Author: Lukas Johannes Möller <74617774+JohannesLks@users.noreply.github.com>
+Date:   Tue Jun 3 11:21:07 2025 +0200
+
+    see https://github.com/rapid7/metasploit-framework/pull/20273#issuecomment-2932671250
+
+ modules/post/windows/manage/remove_host.rb | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+commit ae1db09f32cd04c007dbf445cf16dc22c9fc2e53
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 3 07:53:41 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 84 ++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 63 insertions(+), 21 deletions(-)
+
+commit d8c7c5049d0942a8fba32a0fdb85ae6354712faa
+Merge: 4836243f1a 486390d881
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Jun 3 08:45:54 2025 +0100
+
+    Merge pull request #19900 from jvoisin/aka_equationgroup
+    
+    Add Notes->AKA for EquationGroup codenames
+
+ modules/auxiliary/admin/kerberos/ms14_068_kerberos_checksum.rb       | 1 +
+ modules/auxiliary/dos/smtp/sendmail_prescan.rb                       | 1 +
+ modules/auxiliary/dos/windows/smb/ms09_050_smb2_negotiate_pidhigh.rb | 1 +
+ modules/auxiliary/dos/windows/smb/ms09_050_smb2_session_logoff.rb    | 3 ++-
+ modules/auxiliary/scanner/ike/cisco_ike_benigncertain.rb             | 3 +++
+ modules/exploits/freebsd/samba/trans2open.rb                         | 1 +
+ modules/exploits/linux/local/sock_sendpage.rb                        | 4 ++++
+ modules/exploits/linux/samba/trans2open.rb                           | 4 ++++
+ modules/exploits/osx/samba/trans2open.rb                             | 4 ++++
+ modules/exploits/solaris/samba/trans2open.rb                         | 1 +
+ modules/exploits/unix/webapp/phpbb_highlight.rb                      | 4 ++++
+ modules/exploits/windows/smb/ms08_067_netapi.rb                      | 3 +++
+ modules/exploits/windows/smb/ms09_050_smb2_negotiate_func_index.rb   | 3 +++
+ modules/exploits/windows/smb/ms10_061_spoolss.rb                     | 4 +++-
+ 14 files changed, 35 insertions(+), 2 deletions(-)
