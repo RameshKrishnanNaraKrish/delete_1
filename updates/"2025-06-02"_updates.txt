@@ -1,0 +1,202 @@
+commit 958ae5b87e9cf174b55e4a209f0eb6e3aa109e6d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 4 21:56:31 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 44 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit 312d052a5c3ee5cce3a4af1c478fb2513e801fff
+Merge: bd5d47034e f802e99004
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jun 4 16:48:39 2025 -0500
+
+    Merge pull request #20141 from h4x-x0r/CVE-2023-2917
+    
+    ThinManager Path Traversal Upload (CVE-2023-2917) Module
+
+ .../networking/thinmanager_traversal_upload2.md    |  62 ++++++++
+ .../networking/thinmanager_traversal_upload2.rb    | 162 +++++++++++++++++++++
+ 2 files changed, 224 insertions(+)
+
+commit bd5d47034e74d65d879e640cea69faec5ec95967
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 4 19:11:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit 2a7f40dcc91db575054db971d4839d8acfb718a1
+Merge: bd8eadb3aa 53145d7a65
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jun 4 14:03:21 2025 -0500
+
+    Merge pull request #20139 from h4x-x0r/CVE-2023-27856
+    
+    ThinManager Path Traversal Download (CVE-2023-27856) Module
+
+ .../gather/thinmanager_traversal_download.md       |  69 ++++++++++
+ .../gather/thinmanager_traversal_download.rb       | 146 +++++++++++++++++++++
+ 2 files changed, 215 insertions(+)
+
+commit 53145d7a65a65d201bf95104a604b16a3cd2bb98
+Author: h4x-x0r <152236528+h4x-x0r@users.noreply.github.com>
+Date:   Wed Jun 4 19:18:43 2025 +0100
+
+    Update thinmanager_traversal_download.rb
+
+ modules/auxiliary/gather/thinmanager_traversal_download.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit bd8eadb3aa9b9f57d9794bd25e4ed17e7b1c8d09
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 4 17:49:24 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 44 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit 10d443d5d95232f8357aec4ca21e0938a85c5741
+Merge: 856eb18434 3bd16e9d0e
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jun 4 12:41:34 2025 -0500
+
+    Merge pull request #20138 from h4x-x0r/CVE-2023-27855
+    
+    ThinManager Path Traversal Upload (CVE-2023-27855) Module
+
+ .../networking/thinmanager_traversal_upload.md     |  61 ++++++++
+ .../networking/thinmanager_traversal_upload.rb     | 154 +++++++++++++++++++++
+ 2 files changed, 215 insertions(+)
+
+commit 856eb184343be5f27c5a6ba54b4633a80dda20a6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 4 14:21:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 64 insertions(+), 1 deletion(-)
+
+commit 8e4890fbc0e3dfd17fe78df7c0aa607c162dde9b
+Merge: 26156dfac2 f7fd84b82d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jun 4 09:08:49 2025 -0500
+
+    Merge pull request #20286 from msutovsky-r7/fix/add_priority_udev_persistence
+    
+    Adds different udev rule naming for udev persistence
+
+ modules/exploits/linux/local/udev_persistence.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 26156dfac2e01379eb858a87aa85e2ecfea929ff
+Merge: 66c1dac7c6 97f308386b
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jun 4 09:05:04 2025 -0500
+
+    Merge pull request #20265 from remmons-r7/cve_2025_4427_4428
+    
+    Exploit module for CVE-2025-4427/CVE-2025-4428 - Ivanti EPMM (AKA MobileIron Core) Authentication Bypass to EL Injection
+
+ .../http/ivanti_epmm_rce_cve_2025_4427_4428.md     |  78 ++++++++++++++++
+ .../http/ivanti_epmm_rce_cve_2025_4427_4428.rb     | 100 +++++++++++++++++++++
+ 2 files changed, 178 insertions(+)
+
+commit 97f308386b044d1b3a826a607cf6ed6f4918af7c
+Author: remmons-r7 <166433046+remmons-r7@users.noreply.github.com>
+Date:   Wed Jun 4 08:30:11 2025 -0500
+
+    Update documentation/modules/exploit/multi/http/ivanti_epmm_rce_cve_2025_4427_4428.md
+    
+    Update docs to reflect the new Python payload approach
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../http/ivanti_epmm_rce_cve_2025_4427_4428.md     | 92 ++++++----------------
+ 1 file changed, 24 insertions(+), 68 deletions(-)
+
+commit f7fd84b82d1c345517e0ce43b60829dcceb3ca1c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 4 15:24:43 2025 +0200
+
+    Adds different approach to udev rule naming
+
+ modules/exploits/linux/local/udev_persistence.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 66c1dac7c655e72a739742327f23022336a5f2ff
+Merge: 99a616e657 da9b9ca64d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jun 4 13:52:44 2025 +0100
+
+    Merge pull request #20277 from adfoster-r7/update-ruby-3.2.8
+    
+    Update ruby version 3.2.8
+
+ .ruby-version |  2 +-
+ Dockerfile    | 11 ++++++-----
+ 2 files changed, 7 insertions(+), 6 deletions(-)
+
+commit 99a616e65744b4c0ad7150539a6d16ffe6a765bb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 4 11:28:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 5fbf46ba7f99c77a91bc7e7de757e1f91258fb84
+Merge: 257f6dbbe1 6806385292
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 4 13:21:04 2025 +0200
+
+    Land #19472, adds exploits/linux/local/udev_persistence
+    
+    Add modules/exploits/linux/local/udev_persistence.rb
+
+ .../exploit/linux/local/udev_persistence.md        |  43 +++++++++
+ modules/exploits/linux/local/udev_persistence.rb   | 100 +++++++++++++++++++++
+ 2 files changed, 143 insertions(+)
+
+commit 680638529298586ead0df35e71bb1a0c5683a924
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 4 12:56:51 2025 +0200
+
+    Update
+
+ modules/exploits/linux/local/udev_persistence.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 0d31440722dd568fca6a896854d1a1add1342f8f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 4 12:19:36 2025 +0200
+
+    Update the module
+
+ modules/exploits/linux/local/udev_persistence.rb | 63 +++++++++++++++++-------
+ 1 file changed, 46 insertions(+), 17 deletions(-)
+
+commit 257f6dbbe133063da4f37e1b802ebf0c4ea042c0
+Merge: 3b67e551ce f5161ea9e1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 4 08:27:17 2025 +0200
+
+    Land #20263, adds registration of VulnAttempts for Exploit/Auxiliary modules
+    
+    Register VulnAttempts for both Exploit and Auxiliary modules
+
+ lib/msf/base/simple/auxiliary.rb                   | 25 ++++++++++
+ lib/msf/core/auxiliary.rb                          | 21 +++++++-
+ lib/msf/core/db_manager/exploit_attempt.rb         | 42 ++++++++++++----
+ lib/msf/core/db_manager/vuln.rb                    |  4 +-
+ lib/msf/core/exploit.rb                            | 28 -----------
+ lib/msf/core/module.rb                             |  1 +
+ lib/msf/core/module/failure.rb                     | 33 ++++++++++++-
+ .../examples/msf/db_manager/exploit_attempt.rb     | 56 +++++++++++++++++-----
+ 8 files changed, 155 insertions(+), 55 deletions(-)
