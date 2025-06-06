@@ -1,0 +1,180 @@
+commit e3206fb88ab6da508dfad929ff64a81ad310dee0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 5 21:52:28 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a1e3a23eb42c5930fed1cc6a36fba3d3b9279151
+Merge: 56dbd91168 02a9eb3233
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jun 5 17:44:21 2025 -0400
+
+    Merge pull request #20262 from bwatters-r7/fix/vcenter_vmdir_gather
+    
+    Fix references to LDAP Datastore Options
+
+ .../auxiliary/gather/vmware_vcenter_vmdir_ldap.md  | 41 +++++++++++++++-------
+ .../auxiliary/gather/vmware_vcenter_vmdir_ldap.rb  | 17 ++++++---
+ 2 files changed, 41 insertions(+), 17 deletions(-)
+
+commit 02a9eb32335fa4f7757d11a7636ce024c7255891
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jun 5 16:33:42 2025 -0500
+
+    Update rescue clauses and rubocop
+
+ modules/auxiliary/gather/vmware_vcenter_vmdir_ldap.rb | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 56dbd91168b3d3f080bee39432b6888437ecb89d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 5 17:16:15 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 66a9f332b1db6dfd55981985b8ea6bf08441e94b
+Merge: e7bde75f57 b488403c73
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jun 5 13:08:06 2025 -0400
+
+    Merge pull request #20283 from cdelafuente-r7/fix/20249/ldap/certifried
+    
+    Fix the cve_2022_26923_certifried module after the datastore option changes
+
+ modules/auxiliary/admin/dcerpc/cve_2022_26923_certifried.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit e7bde75f57abe7986c3c346932f49c8fa37cba8a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 5 16:11:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
+
+commit 19e8e6cdf8a49e49221249581e0b8f406a3e94b3
+Merge: 0a280ae800 2e158d2d1a
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jun 5 11:03:00 2025 -0500
+
+    Merge pull request #20187 from Chocapikk/wp_ottokit
+    
+    Add CVE-2025-27007 in existing `exploit(multi/http/wp_suretriggers_auth_bypass)` module
+
+ .../multi/http/wp_suretriggers_auth_bypass.md      | 224 +++++++++++++--------
+ .../multi/http/wp_suretriggers_auth_bypass.rb      | 195 +++++++++++-------
+ 2 files changed, 263 insertions(+), 156 deletions(-)
+
+commit 0a280ae800565d12ce904a122782c448b957b4b8
+Merge: 2042fa6f27 28c0992e77
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jun 5 11:56:50 2025 -0400
+
+    Merge pull request #19996 from hantwister/patch-1
+    
+    Detect the CxUIUSvcChannel named pipe
+
+ data/wordlists/named_pipes.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 2042fa6f27aa639676ca4ac98275df2a3ad316b1
+Merge: a18d284fb4 7df255f4cd
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 5 16:20:26 2025 +0100
+
+    Merge pull request #20288 from bcoles/rubocop-Style/RedundantParentheses
+    
+    Rubocop: Disable Style/RedundantParentheses
+
+ .rubocop.yml | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit a18d284fb45cf6e89c91d7ce18c108debf9128ee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 5 15:18:07 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit cc98ef58d4983cbcd36f618bde083bc6a495e615
+Merge: 602212fe9c 2425eb08d2
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jun 5 10:08:42 2025 -0500
+
+    Merge pull request #20140 from h4x-x0r/CVE-2023-2915
+    
+    ThinManager Path Traversal Delete (CVE-2023-2915) Module
+
+ .../networking/thinmanager_traversal_delete.md     |  55 ++++++++
+ .../networking/thinmanager_traversal_delete.rb     | 152 +++++++++++++++++++++
+ 2 files changed, 207 insertions(+)
+
+commit 602212fe9cf3ef71b9aefc1cbbe71d5ae65967e5
+Merge: f2b2fe4f60 166db38e67
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jun 5 10:50:39 2025 -0400
+
+    Merge pull request #20282 from SweilemCodes/docs/Jenkins_enum
+    
+    Jenkins Enum Documentation Added
+
+ .../modules/auxiliary/scanner/http/jenkins_enum.md | 72 ++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+
+commit 166db38e67de3d46129a40568abc1eb82e00388c
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Thu Jun 5 10:49:47 2025 -0400
+
+    Add missing newlines to render the markdown properly
+
+ documentation/modules/auxiliary/scanner/http/jenkins_enum.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 7df255f4cdb99df207475916ca017e5866a90da5
+Author: bcoles <bcoles@github>
+Date:   Fri Jun 6 00:27:20 2025 +1000
+
+    Rubocop: Disable Style/RedundantParentheses
+
+ .rubocop.yml | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit f2b2fe4f6070f2017c7e82868d26aead8a613126
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jun 5 05:56:26 2025 -0500
+
+    Bump version of framework to 6.4.69
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 7434581e1cfa85498ffdcaad8381481b32076095
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jun 5 04:47:54 2025 -0500
+
+    Bump version of framework to 6.4.68
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 2425eb08d22a6eb16e688e0ecf048263e6743140
+Author: h4x-x0r <152236528+h4x-x0r@users.noreply.github.com>
+Date:   Thu Jun 5 02:57:40 2025 +0100
+
+    Update thinmanager_traversal_delete.rb
+
+ .../networking/thinmanager_traversal_delete.rb     | 59 +++++++++++-----------
+ 1 file changed, 29 insertions(+), 30 deletions(-)
