@@ -1,0 +1,38 @@
+commit d553aa6f0db313fdf67b3bc41a6298d8d8587f6f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jun 6 12:45:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit 0f522220d46a425e64ed0300c096368cd327f269
+Merge: ab57ec105a 144cfd2d42
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 6 14:36:24 2025 +0200
+
+    Land #20072, adds Maldoc in PDF fileformat module
+    
+    Add Maldoc in PDF polyglot fileformat module
+
+ .../auxiliary/fileformat/maldoc_in_pdf_polyglot.md | 101 ++++++++++
+ .../auxiliary/fileformat/maldoc_in_pdf_polyglot.rb | 216 +++++++++++++++++++++
+ 2 files changed, 317 insertions(+)
+
+commit ab57ec105aa479f0d0f8c04b846411d6186db678
+Merge: e3206fb88a b40dbe89ff
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 6 13:59:09 2025 +0200
+
+    Land #20264, adds processing of KERB-SUPERSEDED-BY-USER error message
+    
+    Process and propagate KERB-SUPERSEDED-BY-USER error details
+
+ lib/metasploit/framework/login_scanner/kerberos.rb |  9 ++-
+ lib/rex/proto/kerberos/model.rb                    |  5 +-
+ lib/rex/proto/kerberos/model/error.rb              | 13 ++++
+ .../kerberos/model/kerb_superseded_by_user.rb      | 85 ++++++++++++++++++++++
+ lib/rex/proto/kerberos/model/krb_error.rb          | 26 +++----
+ .../proto/kerberos/model/pre_auth_data_entry.rb    |  3 +
+ 6 files changed, 121 insertions(+), 20 deletions(-)
