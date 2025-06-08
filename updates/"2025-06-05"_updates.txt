@@ -1,0 +1,31 @@
+commit 18c21f1ea6447526e72c1fd7d9f8c1d723be24e0
+Merge: d553aa6f0d ffcc145ccc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Jun 7 19:59:55 2025 +0100
+
+    Merge pull request #20170 from bcoles/msf-module-uuid
+    
+    Msf::Module::UUID: Generate UUID using UUID_CHARS.sample(8).join
+
+ lib/msf/core/module.rb      |  1 -
+ lib/msf/core/module/uuid.rb | 24 ++++++++++--------------
+ 2 files changed, 10 insertions(+), 15 deletions(-)
+
+commit ffcc145ccc707b292788f466514a449b47531376
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 8 00:24:27 2025 +1000
+
+    Msf::Module::UUID: Generate UUID using UUID_CHARS.sample(8).join
+
+ lib/msf/core/module/uuid.rb | 19 +++++++------------
+ 1 file changed, 7 insertions(+), 12 deletions(-)
+
+commit aed00d1ff75b5d289887d16eb13e4f38dda37fa3
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 8 00:15:04 2025 +1000
+
+    Msf::Module: Lazy-load module instance UUID
+
+ lib/msf/core/module.rb      | 1 -
+ lib/msf/core/module/uuid.rb | 7 ++++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
