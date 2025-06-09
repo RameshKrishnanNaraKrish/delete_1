@@ -1,0 +1,69 @@
+commit 5d61c5271e613bee266b1cc641b47e583618e427
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jun 8 14:11:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit f20e72b6c8b2f3fd5b628f6bdeb0cfdfd7c8350c
+Merge: dbefbe0296 6105b99465
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 8 16:03:58 2025 +0200
+
+    Land #20256, adds RCE module for Remote For Mac 2025.7
+    
+    Add Remote for Mac 2025.6 unauthenticated RCE module
+
+ .../modules/exploit/osx/http/remote_for_mac_rce.md |  40 ++++++++
+ modules/exploits/osx/http/remote_for_mac_rce.rb    | 106 +++++++++++++++++++++
+ 2 files changed, 146 insertions(+)
+
+commit dbefbe02964e8c442072aee70f889aac792c6c4f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jun 8 13:57:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3e1bca072a43d6cc927ec0fceadae80f4177d54e
+Merge: 18c21f1ea6 8f2b364e7b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 8 15:48:58 2025 +0200
+
+    Land #20290, fixes space in CVE number
+    
+    Fix errant space in CVE number
+
+ modules/auxiliary/admin/networking/thinmanager_traversal_upload.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6105b99465722c8f16c13c20d3910dbb35d24f0f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 8 15:36:37 2025 +0200
+
+    Fixed response parsing
+
+ modules/exploits/osx/http/remote_for_mac_rce.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 16541d9f64e9ee7d2737b414aa7aacea8e446cfa
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 8 12:17:58 2025 +0200
+
+    Fixes notes
+
+ modules/exploits/osx/http/remote_for_mac_rce.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c9713a7184e5099bd47aeb64758ac944bfc4b3df
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jun 8 12:06:33 2025 +0200
+
+    Code reformat, rubocoping
+
+ modules/exploits/osx/http/remote_for_mac_rce.rb | 19 +++++++------------
+ 1 file changed, 7 insertions(+), 12 deletions(-)
