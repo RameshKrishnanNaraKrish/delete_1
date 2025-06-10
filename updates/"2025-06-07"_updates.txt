@@ -1,0 +1,100 @@
+commit b6ed7f0970fc88d9e85ac48d0aec58c3f0321076
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 9 21:19:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 899840c208977f064c011553f0b7dc0fc37c0552
+Merge: 12d4527bdc b1d5319fcb
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 9 22:11:25 2025 +0100
+
+    Merge pull request #20295 from bwatters-r7/fix/thinmanager-spaces
+    
+    Fix some spacing issues
+
+ .../auxiliary/admin/networking/thinmanager_traversal_delete.rb   | 7 ++++---
+ .../auxiliary/admin/networking/thinmanager_traversal_upload.rb   | 7 ++++---
+ .../auxiliary/admin/networking/thinmanager_traversal_upload2.rb  | 9 +++++----
+ modules/auxiliary/gather/thinmanager_traversal_download.rb       | 7 ++++---
+ 4 files changed, 17 insertions(+), 13 deletions(-)
+
+commit b1d5319fcbbe34d4f1a1b176787153f9778b4b69
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Jun 9 09:17:11 2025 -0500
+
+    Fix some spacing inssues
+
+ .../auxiliary/admin/networking/thinmanager_traversal_delete.rb   | 7 ++++---
+ .../auxiliary/admin/networking/thinmanager_traversal_upload.rb   | 7 ++++---
+ .../auxiliary/admin/networking/thinmanager_traversal_upload2.rb  | 9 +++++----
+ modules/auxiliary/gather/thinmanager_traversal_download.rb       | 7 ++++---
+ 4 files changed, 17 insertions(+), 13 deletions(-)
+
+commit 12d4527bdcbe8542ca7efa2f0f8fe3b766cd02d2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 9 13:46:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 6f7064f8f0a2cb4cb86db4fc2fe9889d927948c1
+Merge: b7f381d8b1 ff802129c1
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Jun 9 09:37:49 2025 -0400
+
+    Merge pull request #20293 from Chocapikk/easter-egg
+    
+    Add Mr. Robot Easter egg
+
+ modules/exploits/android/browser/samsung_knox_smdm_url.rb | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit b7f381d8b14a4b4af64ce832b1760ffc9a4c2248
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 9 12:50:23 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2128 +++++++++++++++++++++++++++++++++++------
+ 1 file changed, 1859 insertions(+), 269 deletions(-)
+
+commit ebae20119864383dd79bf40d6ba6c171a058d510
+Merge: 5d61c5271e 6c05ffb67d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Jun 9 07:41:50 2025 -0500
+
+    Merge pull request #20160 from zeroSteiner/feat/mod/payload/php-adapters
+    
+    Add PHP adapters and refactor PHP payloads
+
+ Gemfile.lock                                       |   3 +-
+ lib/msf/core/exploit/php_exe.rb                    |   5 +-
+ .../core/exploit/remote/http/wordpress/admin.rb    |   7 +-
+ lib/msf/core/payload/php.rb                        | 109 ++++++++++++++-------
+ lib/msf/core/payload/python.rb                     |  10 +-
+ .../http/craftcms_preauth_rce_cve_2025_32432.rb    |  12 ---
+ .../multi/http/cacti_package_import_rce.rb         |  14 +--
+ .../exploits/multi/http/invision_customcss_rce.rb  |  13 ---
+ .../exploits/multi/http/spip_bigup_unauth_rce.rb   |  16 ---
+ modules/exploits/multi/http/spip_connect_exec.rb   |  12 ---
+ .../multi/http/spip_porte_plume_previsu_rce.rb     |  11 ---
+ modules/exploits/multi/http/spip_rce_form.rb       |  12 ---
+ .../multi/http/wp_backup_migration_php_filter.rb   |  12 ---
+ modules/exploits/multi/http/wp_hash_form_rce.rb    |  13 ---
+ .../multi/http/wp_time_capsule_file_upload_rce.rb  |  12 ---
+ modules/payloads/adapters/cmd/unix/php.rb          |  15 ++-
+ modules/payloads/adapters/cmd/unix/python.rb       |   4 +-
+ modules/payloads/adapters/php/unix/cmd.rb          |  36 +++++++
+ modules/payloads/singles/php/bind_perl.rb          |  58 -----------
+ modules/payloads/singles/php/bind_perl_ipv6.rb     |  58 -----------
+ modules/payloads/singles/php/exec.rb               |  14 +--
+ modules/payloads/singles/php/reverse_perl.rb       |  56 -----------
+ modules/payloads/singles/php/shell_findsock.rb     |  12 ++-
+ spec/modules/payloads_spec.rb                      |  46 +++------
+ 24 files changed, 167 insertions(+), 393 deletions(-)
