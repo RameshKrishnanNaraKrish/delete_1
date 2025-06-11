@@ -1,0 +1,172 @@
+commit db022164de6f8c58f7e7781b6398e976fbb90779
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 10 16:23:06 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1ad158cd4cbd59a8900a28eb403f44114126bd15
+Merge: f122e72feb 304de9e1c9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jun 10 18:15:16 2025 +0200
+
+    Land #20297, converts Privileged property to Bool
+    
+    Modules: Convert Privileged property to Boolean in several modules
+
+ modules/exploits/multi/http/uptime_file_upload_2.rb        | 2 +-
+ modules/exploits/unix/http/pfsense_graph_injection_exec.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 3272ee0f28d70cc16d9978cae255a1f61e836d45
+Author: bcoles <bcoles@github>
+Date:   Tue Jun 10 23:57:52 2025 +1000
+
+    Modules: Convert DisableNops property to Boolean in several modules
+
+ modules/exploits/freebsd/tacacs/xtacacsd_report.rb                  | 2 +-
+ modules/exploits/mainframe/ftp/ftp_jcl_creds.rb                     | 2 +-
+ modules/exploits/multi/browser/msfd_rce_browser.rb                  | 2 +-
+ modules/exploits/multi/ftp/wuftpd_site_exec_format.rb               | 2 +-
+ modules/exploits/windows/browser/orbit_connecting.rb                | 2 +-
+ modules/exploits/windows/fileformat/acdsee_xpm.rb                   | 2 +-
+ modules/exploits/windows/fileformat/apple_quicktime_pnsize.rb       | 2 +-
+ modules/exploits/windows/fileformat/audio_wkstn_pls.rb              | 2 +-
+ modules/exploits/windows/fileformat/ccmplayer_m3u_bof.rb            | 2 +-
+ modules/exploits/windows/fileformat/csound_getnum_bof.rb            | 2 +-
+ modules/exploits/windows/fileformat/digital_music_pad_pls.rb        | 2 +-
+ modules/exploits/windows/fileformat/fdm_torrent.rb                  | 2 +-
+ modules/exploits/windows/fileformat/free_mp3_ripper_wav.rb          | 2 +-
+ modules/exploits/windows/fileformat/ht_mp3player_ht3_bof.rb         | 2 +-
+ modules/exploits/windows/fileformat/magix_musikmaker_16_mmm.rb      | 2 +-
+ modules/exploits/windows/fileformat/mini_stream_pls_bof.rb          | 2 +-
+ modules/exploits/windows/fileformat/mjm_coreplayer2011_s3m.rb       | 2 +-
+ modules/exploits/windows/fileformat/mjm_quickplayer_s3m.rb          | 2 +-
+ modules/exploits/windows/fileformat/ms_visual_basic_vbp.rb          | 2 +-
+ modules/exploits/windows/fileformat/safenet_softremote_groupname.rb | 2 +-
+ modules/exploits/windows/fileformat/videospirit_visprj.rb           | 2 +-
+ modules/exploits/windows/fileformat/vuplayer_cue.rb                 | 2 +-
+ modules/exploits/windows/fileformat/vuplayer_m3u.rb                 | 2 +-
+ modules/exploits/windows/fileformat/wireshark_mpeg_overflow.rb      | 2 +-
+ modules/exploits/windows/fileformat/wireshark_packet_dect.rb        | 2 +-
+ modules/exploits/windows/ftp/comsnd_ftpd_fmtstr.rb                  | 2 +-
+ modules/exploits/windows/ftp/httpdx_tolog_format.rb                 | 2 +-
+ modules/exploits/windows/ftp/seagull_list_reply.rb                  | 2 +-
+ modules/exploits/windows/ftp/vermillion_ftpd_port.rb                | 2 +-
+ modules/exploits/windows/http/amlibweb_webquerydll_app.rb           | 2 +-
+ modules/exploits/windows/http/apache_mod_rewrite_ldap.rb            | 2 +-
+ modules/exploits/windows/http/badblue_passthru.rb                   | 2 +-
+ modules/exploits/windows/http/belkin_bulldog.rb                     | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_hostname.rb         | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_icount.rb           | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_maxage.rb           | 2 +-
+ modules/exploits/windows/http/httpdx_handlepeer.rb                  | 2 +-
+ modules/exploits/windows/http/httpdx_tolog_format.rb                | 2 +-
+ modules/exploits/windows/http/steamcast_useragent.rb                | 2 +-
+ modules/exploits/windows/iis/iis_webdav_scstoragepathfromurl.rb     | 2 +-
+ modules/exploits/windows/local/pxeexploit.rb                        | 2 +-
+ modules/exploits/windows/misc/bigant_server.rb                      | 2 +-
+ modules/exploits/windows/misc/bigant_server_250.rb                  | 2 +-
+ modules/exploits/windows/misc/nettransport.rb                       | 2 +-
+ modules/exploits/windows/misc/poppeeper_date.rb                     | 2 +-
+ modules/exploits/windows/misc/poppeeper_uidl.rb                     | 2 +-
+ modules/exploits/windows/misc/talkative_response.rb                 | 2 +-
+ modules/exploits/windows/misc/wireshark_packet_dect.rb              | 2 +-
+ modules/exploits/windows/novell/groupwisemessenger_client.rb        | 2 +-
+ modules/exploits/windows/scada/sunway_force_control_netdbsrv.rb     | 2 +-
+ 50 files changed, 50 insertions(+), 50 deletions(-)
+
+commit f122e72febf8d3f3d92a89a62fc01feac637e75a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 10 13:36:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 33 +++++++++++++++++++++++++++------
+ 1 file changed, 27 insertions(+), 6 deletions(-)
+
+commit 4e41af23b52a3297b5727406d3388d005e617437
+Merge: b6ed7f0970 f95f5c928e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 10 14:27:45 2025 +0100
+
+    Merge pull request #20296 from bcoles/rubocop-modules-exploits-linux-ftp
+    
+    modules/exploits/linux/ftp: Resolve RuboCop violations
+
+ modules/exploits/linux/ftp/proftp_sreplace.rb   | 220 +++++-----
+ modules/exploits/linux/ftp/proftp_telnet_iac.rb | 535 ++++++++++++------------
+ 2 files changed, 383 insertions(+), 372 deletions(-)
+
+commit 304de9e1c9609d1c858df51833f052e4c7ad01db
+Author: bcoles <bcoles@github>
+Date:   Tue Jun 10 23:01:52 2025 +1000
+
+    Modules: Convert Privileged property to Boolean in several modules
+
+ modules/exploits/multi/http/uptime_file_upload_2.rb        | 2 +-
+ modules/exploits/unix/http/pfsense_graph_injection_exec.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit f95f5c928ec714db9a66eed92a5a7e81da188f53
+Author: bcoles <bcoles@github>
+Date:   Tue Jun 10 22:36:46 2025 +1000
+
+    modules/exploits/linux/ftp: Resolve RuboCop violations
+
+ modules/exploits/linux/ftp/proftp_sreplace.rb   | 220 +++++-----
+ modules/exploits/linux/ftp/proftp_telnet_iac.rb | 535 ++++++++++++------------
+ 2 files changed, 383 insertions(+), 372 deletions(-)
+
+commit 8fe5c91801626d7f0be8f4e74ffb8fc9cc44477d
+Author: Maksim Rogov <vognik@tuta.io>
+Date:   Tue Jun 10 14:29:39 2025 +0300
+
+    fix parsing.rb
+
+ modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 10ab54369da3b9f18c64a284fb5626a7487a1231
+Author: Maksim Rogov <vognik@tuta.io>
+Date:   Tue Jun 10 14:18:44 2025 +0300
+
+    Update modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 97c493a9246a94276b07db41c3cb7be50583ab8d
+Author: Maksim Rogov <vognik@tuta.io>
+Date:   Tue Jun 10 14:17:55 2025 +0300
+
+    Update modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d764237230ac45a0098bef49a88fb86bc6540fe3
+Author: Vognik <vognik@tuta.io>
+Date:   Tue Jun 10 14:54:09 2025 +0400
+
+    migrated to nokogiri methods for csrf token parsing
+
+ .../exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb  | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+commit 5725e6faf7b1399db5b21e6095c995e811996f60
+Author: Maksim Rogov <vognik@tuta.io>
+Date:   Tue Jun 10 11:09:05 2025 +0300
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+
+ modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
