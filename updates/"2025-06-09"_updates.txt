@@ -1,0 +1,130 @@
+commit 52c5343ff722049bdc82fb0e40c1a4b2a6b61b92
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 11 21:32:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3f69bcb3c9f2ec3305c83a58de6b59ada3ddd517
+Merge: 35f770997a 8efbfc0608
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jun 11 22:23:57 2025 +0100
+
+    Merge pull request #20300 from zeroSteiner/fix/mod/smb-version/win-ver
+    
+    Fix a regression in Windows version fingerprinting
+
+ modules/auxiliary/scanner/smb/smb_version.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 8efbfc06083c686693ce7a1a0374055111e3ba3d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jun 11 11:56:56 2025 -0400
+
+    Fix a regression in Windows version fingerprinting
+
+ modules/auxiliary/scanner/smb/smb_version.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 35f770997a667fdb3ebc074a2901d9279fc648a3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 11 08:57:20 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit f2920f868aa458cdaf74f20632ffa91faf68dfdc
+Merge: ac6402993f 582e32c14e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 11 10:48:58 2025 +0200
+
+    Land #20291, adds Roundcube post-authentication RCE (CVE-2025-49113)
+    
+    Add Remote for Roundсube CVE-2025-49113 post-authentication RCE module
+
+ .../http/roundcube_auth_rce_cve_2025_49113.md      | 147 +++++++++++++
+ .../http/roundcube_auth_rce_cve_2025_49113.rb      | 238 +++++++++++++++++++++
+ 2 files changed, 385 insertions(+)
+
+commit 582e32c14e765a2969401ad0588d2d07067cace1
+Author: Maksim Rogov <vognik@tuta.io>
+Date:   Wed Jun 11 11:05:33 2025 +0300
+
+    remove timeout
+
+ modules/exploits/multi/http/roundcube_auth_rce_cve_2025_49113.rb | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit ac6402993fbd6892697ad880fc58fed341ab18d8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 11 05:39:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 100 +++++++++++++++++++++---------------------
+ 1 file changed, 50 insertions(+), 50 deletions(-)
+
+commit a175e89d07c0b0a9f4d9fe52418a4ac820903bc8
+Merge: db022164de 3272ee0f28
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 11 07:31:53 2025 +0200
+
+    Land #20299, converts DisableNops to Boolean
+    
+    Modules: Convert DisableNops property to Boolean in several modules
+
+ modules/exploits/freebsd/tacacs/xtacacsd_report.rb                  | 2 +-
+ modules/exploits/mainframe/ftp/ftp_jcl_creds.rb                     | 2 +-
+ modules/exploits/multi/browser/msfd_rce_browser.rb                  | 2 +-
+ modules/exploits/multi/ftp/wuftpd_site_exec_format.rb               | 2 +-
+ modules/exploits/windows/browser/orbit_connecting.rb                | 2 +-
+ modules/exploits/windows/fileformat/acdsee_xpm.rb                   | 2 +-
+ modules/exploits/windows/fileformat/apple_quicktime_pnsize.rb       | 2 +-
+ modules/exploits/windows/fileformat/audio_wkstn_pls.rb              | 2 +-
+ modules/exploits/windows/fileformat/ccmplayer_m3u_bof.rb            | 2 +-
+ modules/exploits/windows/fileformat/csound_getnum_bof.rb            | 2 +-
+ modules/exploits/windows/fileformat/digital_music_pad_pls.rb        | 2 +-
+ modules/exploits/windows/fileformat/fdm_torrent.rb                  | 2 +-
+ modules/exploits/windows/fileformat/free_mp3_ripper_wav.rb          | 2 +-
+ modules/exploits/windows/fileformat/ht_mp3player_ht3_bof.rb         | 2 +-
+ modules/exploits/windows/fileformat/magix_musikmaker_16_mmm.rb      | 2 +-
+ modules/exploits/windows/fileformat/mini_stream_pls_bof.rb          | 2 +-
+ modules/exploits/windows/fileformat/mjm_coreplayer2011_s3m.rb       | 2 +-
+ modules/exploits/windows/fileformat/mjm_quickplayer_s3m.rb          | 2 +-
+ modules/exploits/windows/fileformat/ms_visual_basic_vbp.rb          | 2 +-
+ modules/exploits/windows/fileformat/safenet_softremote_groupname.rb | 2 +-
+ modules/exploits/windows/fileformat/videospirit_visprj.rb           | 2 +-
+ modules/exploits/windows/fileformat/vuplayer_cue.rb                 | 2 +-
+ modules/exploits/windows/fileformat/vuplayer_m3u.rb                 | 2 +-
+ modules/exploits/windows/fileformat/wireshark_mpeg_overflow.rb      | 2 +-
+ modules/exploits/windows/fileformat/wireshark_packet_dect.rb        | 2 +-
+ modules/exploits/windows/ftp/comsnd_ftpd_fmtstr.rb                  | 2 +-
+ modules/exploits/windows/ftp/httpdx_tolog_format.rb                 | 2 +-
+ modules/exploits/windows/ftp/seagull_list_reply.rb                  | 2 +-
+ modules/exploits/windows/ftp/vermillion_ftpd_port.rb                | 2 +-
+ modules/exploits/windows/http/amlibweb_webquerydll_app.rb           | 2 +-
+ modules/exploits/windows/http/apache_mod_rewrite_ldap.rb            | 2 +-
+ modules/exploits/windows/http/badblue_passthru.rb                   | 2 +-
+ modules/exploits/windows/http/belkin_bulldog.rb                     | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_hostname.rb         | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_icount.rb           | 2 +-
+ modules/exploits/windows/http/hp_nnm_getnnmdata_maxage.rb           | 2 +-
+ modules/exploits/windows/http/httpdx_handlepeer.rb                  | 2 +-
+ modules/exploits/windows/http/httpdx_tolog_format.rb                | 2 +-
+ modules/exploits/windows/http/steamcast_useragent.rb                | 2 +-
+ modules/exploits/windows/iis/iis_webdav_scstoragepathfromurl.rb     | 2 +-
+ modules/exploits/windows/local/pxeexploit.rb                        | 2 +-
+ modules/exploits/windows/misc/bigant_server.rb                      | 2 +-
+ modules/exploits/windows/misc/bigant_server_250.rb                  | 2 +-
+ modules/exploits/windows/misc/nettransport.rb                       | 2 +-
+ modules/exploits/windows/misc/poppeeper_date.rb                     | 2 +-
+ modules/exploits/windows/misc/poppeeper_uidl.rb                     | 2 +-
+ modules/exploits/windows/misc/talkative_response.rb                 | 2 +-
+ modules/exploits/windows/misc/wireshark_packet_dect.rb              | 2 +-
+ modules/exploits/windows/novell/groupwisemessenger_client.rb        | 2 +-
+ modules/exploits/windows/scada/sunway_force_control_netdbsrv.rb     | 2 +-
+ 50 files changed, 50 insertions(+), 50 deletions(-)
