@@ -1,0 +1,93 @@
+commit b39d45c20504551614f5547d39e42efbf4bd8fa0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 12 14:03:39 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit e4feb4f581fc7665852b7b487acdf83b3cbc42e8
+Merge: 86a321f53d 1c72a3adc3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 12 14:55:19 2025 +0100
+
+    Merge pull request #20305 from cgranleese-r7/fix-duplicate-notes
+    
+    Fixes duplicate notes in a couple of modules
+
+ modules/exploits/linux/local/sock_sendpage.rb   | 8 +++-----
+ modules/exploits/unix/webapp/phpbb_highlight.rb | 9 +++------
+ 2 files changed, 6 insertions(+), 11 deletions(-)
+
+commit 1c72a3adc3a4533b10df9ffe25c2f70728248bfb
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Thu Jun 12 14:32:12 2025 +0100
+
+    Fixes duplicate notes in a couple of modules
+
+ modules/exploits/linux/local/sock_sendpage.rb   | 8 +++-----
+ modules/exploits/unix/webapp/phpbb_highlight.rb | 9 +++------
+ 2 files changed, 6 insertions(+), 11 deletions(-)
+
+commit 86a321f53d6be92570f0dbf0b031f7bb72986dc3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 12 13:30:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 39 ++++++++++++++++++++++++++++++---------
+ 1 file changed, 30 insertions(+), 9 deletions(-)
+
+commit 663cf4af246defb86d9185c3a87dd1ad1cba106d
+Merge: b8dff5e701 e0e5e4157a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jun 12 15:20:05 2025 +0200
+
+    Land #20303, resolves Rubocop violations in modules/exploits/linux/postgres
+    
+    modules/exploits/linux/postgres: Resolve RuboCop violations
+
+ .../exploits/linux/postgres/postgres_payload.rb    | 173 ++++++++++-----------
+ 1 file changed, 86 insertions(+), 87 deletions(-)
+
+commit b8dff5e701a9b49af8f9a0c89627484b214715db
+Merge: 7e88b53da1 bf68b56f88
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jun 12 15:13:29 2025 +0200
+
+    Land #20304, resolves Rubocop violations in modules/exploits/linux/pptp
+    
+    modules/exploits/linux/pptp: Resolve RuboCop violations
+
+ .../exploits/linux/pptp/poptop_negative_read.rb    | 122 +++++++++++----------
+ 1 file changed, 67 insertions(+), 55 deletions(-)
+
+commit bf68b56f8871208da9904ba9852f6373754efcee
+Author: bcoles <bcoles@github>
+Date:   Thu Jun 12 21:14:25 2025 +1000
+
+    modules/exploits/linux/pptp: Resolve RuboCop violations
+
+ .../exploits/linux/pptp/poptop_negative_read.rb    | 122 +++++++++++----------
+ 1 file changed, 67 insertions(+), 55 deletions(-)
+
+commit e0e5e4157a090f1689e6f0aea47b4178a29359ce
+Author: bcoles <bcoles@github>
+Date:   Thu Jun 12 21:03:41 2025 +1000
+
+    modules/exploits/linux/postgres: Resolve RuboCop violations
+
+ .../exploits/linux/postgres/postgres_payload.rb    | 173 ++++++++++-----------
+ 1 file changed, 86 insertions(+), 87 deletions(-)
+
+commit 7e88b53da1422f3f350840949befe55cefdc17b7
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jun 12 04:04:12 2025 -0500
+
+    Bump version of framework to 6.4.70
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
