@@ -1,0 +1,66 @@
+commit 580e2b3211c63386c5dc50f55d0a43a2f65a3f8f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jun 15 21:50:54 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 77 +++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 63 insertions(+), 14 deletions(-)
+
+commit 97b84b033ffd2e32737d207fc7a28632fbba9a55
+Merge: ed2d6cdda6 91d3675c3b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 15 22:42:56 2025 +0100
+
+    Merge pull request #20309 from bcoles/rubocop-modules-exploits-linux-samba
+    
+    modules/exploits/linux/samba: Resolve RuboCop violations
+
+ modules/exploits/linux/samba/chain_reply.rb        | 216 ++++++------
+ modules/exploits/linux/samba/is_known_pipename.rb  | 308 ++++++++---------
+ .../exploits/linux/samba/lsa_transnames_heap.rb    | 380 +++++++++++----------
+ modules/exploits/linux/samba/setinfopolicy_heap.rb | 243 ++++++-------
+ modules/exploits/linux/samba/trans2open.rb         | 102 +++---
+ 5 files changed, 627 insertions(+), 622 deletions(-)
+
+commit ed2d6cdda64810161f9627094ad569a75faa4a00
+Merge: b0ef381e02 682a4b46e0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 15 22:37:53 2025 +0100
+
+    Merge pull request #20312 from bcoles/rubocop-lib-msf-module-platform_list
+    
+    Msf::Module::PlatformList: Resolve RuboCop violations
+
+ lib/msf/core/module/platform_list.rb | 62 ++++++++++++++++--------------------
+ 1 file changed, 28 insertions(+), 34 deletions(-)
+
+commit 682a4b46e0979ea31c5c58d828bfec58206128d9
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 15 23:27:50 2025 +1000
+
+    Msf::Module::PlatformList: Resolve RuboCop violations
+
+ lib/msf/core/module/platform_list.rb | 62 ++++++++++++++++--------------------
+ 1 file changed, 28 insertions(+), 34 deletions(-)
+
+commit b0ef381e025213ab72033b87e26c3c60f72ed586
+Merge: b39d45c205 52010861b6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 15 13:00:11 2025 +0100
+
+    Merge pull request #20313 from bcoles/rubocop-Style/FormatStringToken
+    
+    Rubocop: Disable Style/FormatStringToken
+
+ .rubocop.yml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 52010861b6173e22151c5ae37caa4260b031d62f
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 15 16:31:16 2025 +1000
+
+    Rubocop: Disable Style/FormatStringToken
+
+ .rubocop.yml | 6 ++++++
+ 1 file changed, 6 insertions(+)
