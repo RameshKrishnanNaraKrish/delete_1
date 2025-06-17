@@ -1,0 +1,11 @@
+commit a02dff9bb5428bec04c78ff00c79a4c1251103b2
+Merge: 580e2b3211 32b978d768
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 16 11:02:31 2025 +0100
+
+    Merge pull request #20302 from dwelch-r7/enable-defer-module-loads
+    
+    Enable defer module loads by default
+
+ lib/msf/core/feature_manager.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
