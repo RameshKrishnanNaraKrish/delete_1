@@ -1,0 +1,68 @@
+commit ab2c693f04f37a52d9ac2412f85c4e0a7fa41346
+Merge: 04c368f9de fb02b4ade5
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Jun 17 12:25:03 2025 +0100
+
+    Merge pull request #20320 from rapid7/revert-20109-rails-7.2-upgrade
+    
+    Revert "Bump rails version to 7.2"
+
+ Gemfile.lock                                       |  91 +++---
+ config/application.rb                              |   2 +-
+ db/schema.rb                                       |   3 +-
+ .../framework/rails_version_constraint.rb          |   2 +-
+ lib/msf/core/db_manager/cred.rb                    |   2 +-
+ lib/msf/core/exploit/remote/mysql.rb               |   2 +-
+ metasploit-framework.gemspec                       |   6 +-
+ modules/post/windows/gather/win_privs.rb           |   2 +-
+ modules/post/windows/manage/make_token.rb          |   2 +-
+ ...tion.rb => 99999999999999_test_db_migration.rb} |   0
+ spec/lib/msf/debug_spec.rb                         | 336 +++++++++++++--------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  |  11 +-
+ spec/support/shared/contexts/msf/db_manager.rb     |   2 +-
+ 13 files changed, 268 insertions(+), 193 deletions(-)
+
+commit fb02b4ade5f7d2a13a7366e9a8aa2abaea7f8651
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 17 12:20:49 2025 +0100
+
+    Revert "Bump rails version to 7.2"
+
+ Gemfile.lock                                       |  91 +++---
+ config/application.rb                              |   2 +-
+ db/schema.rb                                       |   3 +-
+ .../framework/rails_version_constraint.rb          |   2 +-
+ lib/msf/core/db_manager/cred.rb                    |   2 +-
+ lib/msf/core/exploit/remote/mysql.rb               |   2 +-
+ metasploit-framework.gemspec                       |   6 +-
+ modules/post/windows/gather/win_privs.rb           |   2 +-
+ modules/post/windows/manage/make_token.rb          |   2 +-
+ ...tion.rb => 99999999999999_test_db_migration.rb} |   0
+ spec/lib/msf/debug_spec.rb                         | 336 +++++++++++++--------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  |  11 +-
+ spec/support/shared/contexts/msf/db_manager.rb     |   2 +-
+ 13 files changed, 268 insertions(+), 193 deletions(-)
+
+commit 04c368f9de5db4114745bc1ce6b1aaa4f5257b9f
+Merge: a02dff9bb5 39356d55e0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 17 10:43:11 2025 +0100
+
+    Merge pull request #20109 from dwelch-r7/rails-7.2-upgrade
+    
+    Bump rails version to 7.2 [WIP]
+
+ Gemfile.lock                                       |  91 +++---
+ config/application.rb                              |   2 +-
+ db/schema.rb                                       |   3 +-
+ .../framework/rails_version_constraint.rb          |   2 +-
+ lib/msf/core/db_manager/cred.rb                    |   2 +-
+ lib/msf/core/exploit/remote/mysql.rb               |   2 +-
+ metasploit-framework.gemspec                       |   6 +-
+ modules/post/windows/gather/win_privs.rb           |   2 +-
+ modules/post/windows/manage/make_token.rb          |   2 +-
+ ...tion.rb => 20250612131915_test_db_migration.rb} |   0
+ spec/lib/msf/debug_spec.rb                         | 336 ++++++++-------------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  |  11 +-
+ spec/support/shared/contexts/msf/db_manager.rb     |   2 +-
+ 13 files changed, 193 insertions(+), 268 deletions(-)
