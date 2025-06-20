@@ -1,0 +1,71 @@
+commit b0dbe03544bfe9b832012bb1a492ac776ee49c20
+Merge: 6d897eaeac 9eef0cf13f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jun 20 00:22:42 2025 +0100
+
+    Merge pull request #20315 from cgranleese-r7/adds-rubocop-rule-to-detect-module-metadata-whitespace
+    
+    Adds Rubocop rule to detect leading/trailing whitespace in module metadata
+
+ .rubocop.yml                                       |   4 +
+ .../detect_metadata_trailing_leading_whitespace.rb |  90 ++++++++++++++
+ ...ct_metadata_trailing_leading_whitespace_spec.rb | 131 +++++++++++++++++++++
+ 3 files changed, 225 insertions(+)
+
+commit 6d897eaeacfa5d192dc1ef42de64338edf2a783c
+Merge: c0dfbf43f2 65ed80f5b0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jun 20 00:21:51 2025 +0100
+
+    Merge pull request #20327 from cgranleese-r7/update-vulns-command
+    
+    Update `vulns` command
+
+ lib/msf/ui/console/command_dispatcher/db.rb        | 65 ++++++++++++++++++++--
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 57 +++++++++++++++++++
+ 2 files changed, 118 insertions(+), 4 deletions(-)
+
+commit 65ed80f5b0baadf637cf72c338ff706c1af5cac5
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Jun 17 15:03:55 2025 +0100
+
+    Add flag to vuln command to show vuln attempts
+
+ lib/msf/ui/console/command_dispatcher/db.rb        | 65 ++++++++++++++++++++--
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 57 +++++++++++++++++++
+ 2 files changed, 118 insertions(+), 4 deletions(-)
+
+commit 9eef0cf13fee786db0663deeb79d8775d8fd5310
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Jun 16 11:55:07 2025 +0100
+
+    Adds Rubocop rule to detect leading/trailing whitespace in module metadata
+
+ .rubocop.yml                                       |   4 +
+ .../detect_metadata_trailing_leading_whitespace.rb |  90 ++++++++++++++
+ ...ct_metadata_trailing_leading_whitespace_spec.rb | 131 +++++++++++++++++++++
+ 3 files changed, 225 insertions(+)
+
+commit c0dfbf43f2e81b3831e2ecae06bfcc93946697c7
+Merge: 5ff0588554 33439fccb3
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jun 19 14:20:16 2025 +0200
+
+    Merge pull request #20235 from Chocapikk/vbulletin_replace_ad_template_rce
+    
+    vBulletin replaceAdTemplate Remote Code Execution
+
+ .../http/vbulletin_replace_ad_template_rce.md      | 173 +++++++++++++++++++++
+ .../http/vbulletin_replace_ad_template_rce.rb      | 143 +++++++++++++++++
+ 2 files changed, 316 insertions(+)
+
+commit 5ff0588554fd39eeb9d229416661700fe3a996d9
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jun 19 03:33:21 2025 -0500
+
+    Bump version of framework to 6.4.71
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
