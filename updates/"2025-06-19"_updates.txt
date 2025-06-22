@@ -1,0 +1,10 @@
+commit 0307bab692a2c424e87794a108b997844aa088d2
+Author: Ahmed Ezzat <ahmed.ezzat119@outlook.com>
+Date:   Sat Jun 21 20:37:33 2025 +0300
+
+    Update opennms_horizon_authenticated_rce.rb
+    
+    Fix Arch
+
+ modules/exploits/linux/http/opennms_horizon_authenticated_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
