@@ -1,0 +1,64 @@
+commit 51e71dc7544b35035263cf09774a1856dfa7a1e6
+Merge: b8c375d087 81cb85eef0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 22 23:13:32 2025 +0100
+
+    Merge pull request #20332 from todb/update-module-counter
+    
+    Update module counter
+
+ tools/modules/module_commits.rb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit e1dec29ef90cb7d2c1c4407e867cd6ecfb74f1f1
+Author: bcoles <bcoles@github>
+Date:   Mon Jun 23 00:38:44 2025 +1000
+
+    exploit/windows/browser/ms08_070_visual_studio_msmask: Cleanup and add documentation
+
+ .../browser/ms08_070_visual_studio_msmask.md       | 52 ++++++++++++++
+ .../browser/ms08_070_visual_studio_msmask.rb       | 81 +++++++++++++---------
+ 2 files changed, 101 insertions(+), 32 deletions(-)
+
+commit b8c375d087590c2b98d5103983f73bd4c55298bf
+Merge: 17125b492a cede07596f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 22 14:51:04 2025 +0100
+
+    Merge pull request #20337 from bcoles/exploit-linux-http-opentsdb_key_cmd_injection
+    
+    opentsdb_key_cmd_injection: Set Arch to ARCH_CMD
+
+ modules/exploits/linux/http/opentsdb_key_cmd_injection.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 17125b492a090774adef4077bf4efb2fd3588d93
+Merge: 8ab259122e e65532a7fc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jun 22 14:36:07 2025 +0100
+
+    Merge pull request #20335 from bcoles/rubocop-Lint/DetectMetadataTrailingLeadingWhitespace
+    
+    Rubocop: Lint/DetectMetadataTrailingLeadingWhitespace: Except BadChars
+
+ lib/rubocop/cop/lint/detect_metadata_trailing_leading_whitespace.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cede07596f0e6c94f7f44eba545b84adadcf6ae1
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 22 12:39:04 2025 +1000
+
+    opentsdb_key_cmd_injection: Set Arch to ARCH_CMD
+
+ modules/exploits/linux/http/opentsdb_key_cmd_injection.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8ab259122e1574b3300a327314ffbefc7b3ad3c2
+Merge: 04a6185f3a 0307bab692
+Author: bcoles <bcoles@github>
+Date:   Sun Jun 22 12:31:22 2025 +1000
+
+    Land #20336: opennms_horizon_authenticated_rce: Set Arch to ARCH_CMD
+
+ modules/exploits/linux/http/opennms_horizon_authenticated_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
