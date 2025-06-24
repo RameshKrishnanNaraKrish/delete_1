@@ -1,0 +1,150 @@
+commit 4c4a864b064ed51844a7182fce95c703a20ba483
+Merge: be8864fe84 b1e1fbcc97
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 23 11:28:02 2025 +0100
+
+    Merge pull request #20326 from 00nx/patch-1
+    
+    Add total number of currently defined aliases
+
+ plugins/alias.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit be8864fe84810402c5dc23a555757f8fc157c448
+Merge: 8c2d0f50bc c0baf1888b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 23 10:41:14 2025 +0100
+
+    Merge pull request #20339 from bcoles/exploit-windows-fileformat-ms_visual_basic_vbp
+    
+    exploit/windows/fileformat/ms_visual_basic_vbp: Add offsets, cleanup, document
+
+ .../windows/fileformat/ms_visual_basic_vbp.md      | 87 ++++++++++++++++++++++
+ .../windows/fileformat/ms_visual_basic_vbp.rb      | 75 ++++++++++++++-----
+ 2 files changed, 142 insertions(+), 20 deletions(-)
+
+commit 8c2d0f50bc0e09a21c174b867e71818711edf15f
+Merge: b37b6487e3 ade9b54d94
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 23 10:02:57 2025 +0100
+
+    Merge pull request #20342 from cgranleese-r7/runs-trailing-comma-in-arguements-rubocop-on-modules
+    
+    Runs Style/TrailingCommaInArguments Rubocop against modules
+
+ modules/auxiliary/admin/oracle/oraenum.rb                      | 10 +++++-----
+ modules/auxiliary/gather/ms14_052_xmldom.rb                    |  2 +-
+ modules/auxiliary/gather/windows_deployment_services_shares.rb |  2 +-
+ modules/auxiliary/scanner/http/appletv_login.rb                |  4 ++--
+ modules/auxiliary/scanner/http/es_file_explorer_open_port.rb   |  6 +++---
+ modules/auxiliary/scanner/http/frontpage_credential_dump.rb    |  2 +-
+ modules/auxiliary/scanner/http/trace.rb                        |  2 +-
+ modules/auxiliary/scanner/misc/cisco_smart_install.rb          |  2 +-
+ modules/auxiliary/scanner/scada/moxa_discover.rb               |  4 ++--
+ modules/auxiliary/scanner/smb/smb_enumshares.rb                |  2 +-
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb                 |  2 +-
+ modules/auxiliary/scanner/ssh/karaf_login.rb                   |  2 +-
+ modules/auxiliary/scanner/ssh/ssh_login.rb                     |  2 +-
+ modules/auxiliary/scanner/varnish/varnish_cli_login.rb         |  2 +-
+ modules/auxiliary/server/ms15_134_mcl_leak.rb                  |  2 +-
+ modules/exploits/linux/http/cve_2019_1663_cisco_rmi_rce.rb     |  2 +-
+ modules/exploits/linux/http/dlink_dir615_up_exec.rb            |  2 +-
+ modules/exploits/linux/http/dlink_dir850l_unauth_exec.rb       |  2 +-
+ modules/exploits/linux/http/linksys_wrt110_cmd_exec.rb         |  2 +-
+ .../exploits/linux/http/netgear_dgn1000_setup_unauth_exec.rb   |  2 +-
+ modules/exploits/linux/http/netgear_dnslookup_cmd_exec.rb      |  2 +-
+ modules/exploits/linux/http/xplico_exec.rb                     | 10 +++++-----
+ modules/exploits/linux/local/service_persistence.rb            |  2 +-
+ modules/exploits/linux/snmp/net_snmpd_rw_access.rb             |  2 +-
+ modules/exploits/multi/ftp/pureftpd_bash_env_exec.rb           |  2 +-
+ modules/exploits/multi/hams/steamed.rb                         |  2 +-
+ modules/exploits/multi/http/cisco_dcnm_upload_2019.rb          |  4 ++--
+ modules/exploits/multi/http/horde_form_file_upload.rb          |  2 +-
+ modules/exploits/multi/http/netwin_surgeftp_exec.rb            |  2 +-
+ modules/exploits/multi/http/phpmailer_arg_injection.rb         |  2 +-
+ modules/exploits/multi/misc/erlang_cookie_rce.rb               |  2 +-
+ modules/exploits/unix/http/laravel_token_unserialize_exec.rb   |  2 +-
+ modules/exploits/unix/http/lifesize_room.rb                    |  2 +-
+ modules/exploits/unix/http/pfsense_graph_injection_exec.rb     |  2 +-
+ modules/exploits/unix/http/xdebug_unauth_exec.rb               |  2 +-
+ modules/exploits/unix/webapp/actualanalyzer_ant_cookie_exec.rb |  2 +-
+ modules/exploits/unix/webapp/drupal_coder_exec.rb              |  2 +-
+ modules/exploits/windows/fileformat/blazedvd_plf.rb            |  2 +-
+ modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb   |  2 +-
+ modules/exploits/windows/fileformat/ms14_017_rtf.rb            |  2 +-
+ modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb        |  2 +-
+ modules/exploits/windows/local/ps_persist.rb                   |  2 +-
+ modules/exploits/windows/local/razer_zwopenprocess.rb          |  2 +-
+ modules/exploits/windows/local/service_permissions.rb          |  2 +-
+ modules/exploits/windows/misc/hta_server.rb                    |  2 +-
+ modules/exploits/windows/misc/lianja_db_net.rb                 |  2 +-
+ modules/exploits/windows/postgres/postgres_payload.rb          |  2 +-
+ 47 files changed, 60 insertions(+), 60 deletions(-)
+
+commit ade9b54d949a4977620a6e57b4052c09dde1afd7
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Jun 23 09:30:35 2025 +0100
+
+    Runs Style/TrailingCommaInArguments Rubocop against modules
+
+ modules/auxiliary/admin/oracle/oraenum.rb                      | 10 +++++-----
+ modules/auxiliary/gather/ms14_052_xmldom.rb                    |  2 +-
+ modules/auxiliary/gather/windows_deployment_services_shares.rb |  2 +-
+ modules/auxiliary/scanner/http/appletv_login.rb                |  4 ++--
+ modules/auxiliary/scanner/http/es_file_explorer_open_port.rb   |  6 +++---
+ modules/auxiliary/scanner/http/frontpage_credential_dump.rb    |  2 +-
+ modules/auxiliary/scanner/http/trace.rb                        |  2 +-
+ modules/auxiliary/scanner/misc/cisco_smart_install.rb          |  2 +-
+ modules/auxiliary/scanner/scada/moxa_discover.rb               |  4 ++--
+ modules/auxiliary/scanner/smb/smb_enumshares.rb                |  2 +-
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb                 |  2 +-
+ modules/auxiliary/scanner/ssh/karaf_login.rb                   |  2 +-
+ modules/auxiliary/scanner/ssh/ssh_login.rb                     |  2 +-
+ modules/auxiliary/scanner/varnish/varnish_cli_login.rb         |  2 +-
+ modules/auxiliary/server/ms15_134_mcl_leak.rb                  |  2 +-
+ modules/exploits/linux/http/cve_2019_1663_cisco_rmi_rce.rb     |  2 +-
+ modules/exploits/linux/http/dlink_dir615_up_exec.rb            |  2 +-
+ modules/exploits/linux/http/dlink_dir850l_unauth_exec.rb       |  2 +-
+ modules/exploits/linux/http/linksys_wrt110_cmd_exec.rb         |  2 +-
+ .../exploits/linux/http/netgear_dgn1000_setup_unauth_exec.rb   |  2 +-
+ modules/exploits/linux/http/netgear_dnslookup_cmd_exec.rb      |  2 +-
+ modules/exploits/linux/http/xplico_exec.rb                     | 10 +++++-----
+ modules/exploits/linux/local/service_persistence.rb            |  2 +-
+ modules/exploits/linux/snmp/net_snmpd_rw_access.rb             |  2 +-
+ modules/exploits/multi/ftp/pureftpd_bash_env_exec.rb           |  2 +-
+ modules/exploits/multi/hams/steamed.rb                         |  2 +-
+ modules/exploits/multi/http/cisco_dcnm_upload_2019.rb          |  4 ++--
+ modules/exploits/multi/http/horde_form_file_upload.rb          |  2 +-
+ modules/exploits/multi/http/netwin_surgeftp_exec.rb            |  2 +-
+ modules/exploits/multi/http/phpmailer_arg_injection.rb         |  2 +-
+ modules/exploits/multi/misc/erlang_cookie_rce.rb               |  2 +-
+ modules/exploits/unix/http/laravel_token_unserialize_exec.rb   |  2 +-
+ modules/exploits/unix/http/lifesize_room.rb                    |  2 +-
+ modules/exploits/unix/http/pfsense_graph_injection_exec.rb     |  2 +-
+ modules/exploits/unix/http/xdebug_unauth_exec.rb               |  2 +-
+ modules/exploits/unix/webapp/actualanalyzer_ant_cookie_exec.rb |  2 +-
+ modules/exploits/unix/webapp/drupal_coder_exec.rb              |  2 +-
+ modules/exploits/windows/fileformat/blazedvd_plf.rb            |  2 +-
+ modules/exploits/windows/fileformat/cve_2017_8464_lnk_rce.rb   |  2 +-
+ modules/exploits/windows/fileformat/ms14_017_rtf.rb            |  2 +-
+ modules/exploits/windows/local/cve_2017_8464_lnk_lpe.rb        |  2 +-
+ modules/exploits/windows/local/ps_persist.rb                   |  2 +-
+ modules/exploits/windows/local/razer_zwopenprocess.rb          |  2 +-
+ modules/exploits/windows/local/service_permissions.rb          |  2 +-
+ modules/exploits/windows/misc/hta_server.rb                    |  2 +-
+ modules/exploits/windows/misc/lianja_db_net.rb                 |  2 +-
+ modules/exploits/windows/postgres/postgres_payload.rb          |  2 +-
+ 47 files changed, 60 insertions(+), 60 deletions(-)
+
+commit b37b6487e31e8be24c77fe0333f8566a3e014a7c
+Merge: 51e71dc754 e1dec29ef9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jun 23 08:05:22 2025 +0200
+
+    Land #20340, adds documentation and cleans up exploit/windows/browser/ms08_070_visual_studio_msmask
+    
+    exploit/windows/browser/ms08_070_visual_studio_msmask: Cleanup and add documentation
+
+ .../browser/ms08_070_visual_studio_msmask.md       | 52 ++++++++++++++
+ .../browser/ms08_070_visual_studio_msmask.rb       | 81 +++++++++++++---------
+ 2 files changed, 101 insertions(+), 32 deletions(-)
