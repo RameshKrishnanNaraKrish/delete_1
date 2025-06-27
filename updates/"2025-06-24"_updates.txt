@@ -1,0 +1,38 @@
+commit a0bb2d8c89b7bb705e306ede026602c0b7bd80b2
+Merge: 29b0efc5cf b483312eca
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 26 15:00:59 2025 +0100
+
+    Merge pull request #20298 from bcoles/modules-SSL
+    
+    Modules: Convert SSL default option to Boolean in several modules
+
+ modules/auxiliary/admin/http/cisco_ssm_onprem_account.rb            | 2 +-
+ modules/auxiliary/admin/http/idsecure_auth_bypass.rb                | 2 +-
+ modules/auxiliary/admin/http/ivanti_vtm_admin.rb                    | 2 +-
+ modules/auxiliary/admin/http/whatsup_gold_sqli.rb                   | 2 +-
+ modules/auxiliary/admin/networking/thinmanager_traversal_delete.rb  | 2 +-
+ modules/auxiliary/admin/networking/thinmanager_traversal_upload.rb  | 2 +-
+ modules/auxiliary/admin/networking/thinmanager_traversal_upload2.rb | 2 +-
+ modules/auxiliary/admin/scada/mypro_mgr_creds.rb                    | 2 +-
+ modules/auxiliary/gather/pacsserver_traversal.rb                    | 2 +-
+ modules/auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb         | 2 +-
+ modules/auxiliary/gather/thinmanager_traversal_download.rb          | 2 +-
+ modules/auxiliary/gather/upsmon_traversal.rb                        | 2 +-
+ modules/exploits/linux/http/cisco_firepower_useradd.rb              | 2 +-
+ modules/exploits/linux/http/paloalto_expedition_rce.rb              | 2 +-
+ modules/exploits/multi/http/papercut_ng_auth_bypass.rb              | 2 +-
+ modules/exploits/windows/http/magicinfo_traversal.rb                | 2 +-
+ modules/exploits/windows/scada/mypro_mgr_cmd.rb                     | 2 +-
+ 17 files changed, 17 insertions(+), 17 deletions(-)
+
+commit 29b0efc5cf95301435b326e99a5aac0abb018bb2
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jun 26 03:33:38 2025 -0500
+
+    Bump version of framework to 6.4.72
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
