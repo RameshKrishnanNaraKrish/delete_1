@@ -1,0 +1,64 @@
+commit 50a2749f97d9246880520f9ef35de9f9a28570bc
+Merge: 126bff18a1 a6cdb6deb9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Jun 27 11:26:09 2025 -0400
+
+    Merge pull request #20289 from cgranleese-r7/adds-mitre-attack-references
+    
+    Adds support for MITRE ATT&CK References
+
+ lib/msf/core/mitre/attack/categories.rb            |   20 +
+ lib/msf/core/mitre/attack/technique.rb             | 1184 ++++++++++++++++++++
+ lib/msf/core/module/reference.rb                   |    5 +
+ lib/msf/core/modules/metadata/search.rb            |   13 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   |   12 +-
+ modules/exploits/linux/samba/is_known_pipename.rb  |    4 +
+ .../windows/ftp/quickshare_traversal_write.rb      |    5 +-
+ modules/exploits/windows/ldap/pgp_keyserver7.rb    |    2 +
+ .../windows/lotus/domino_sametime_stmux.rb         |    1 +
+ modules/exploits/windows/mysql/mysql_mof.rb        |    6 +-
+ .../windows/rdp/cve_2019_0708_bluekeep_rce.rb      |    4 +-
+ .../windows/scada/sunway_force_control_netdbsrv.rb |    2 +
+ modules/exploits/windows/sip/aim_triton_cseq.rb    |    3 +
+ .../exploits/windows/smb/ms17_010_eternalblue.rb   |    5 +
+ modules/exploits/windows/smb/ms17_010_psexec.rb    |    6 +
+ modules/exploits/windows/smb/psexec.rb             |   10 +-
+ modules/exploits/windows/ssl/ms04_011_pct.rb       |    3 +-
+ spec/module_validation_spec.rb                     |   32 +-
+ spec/support/lib/module_validation.rb              |   18 +
+ .../generate_mitre_attack_technique_constants.rb   |   95 ++
+ 20 files changed, 1413 insertions(+), 17 deletions(-)
+
+commit 126bff18a13da459c3c8575c47b8709d59ecec51
+Merge: a7b038b822 6334996e60
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 27 17:15:05 2025 +0200
+
+    Land #20346, fixes payload encoding and substitutes for smaller base64 encoder
+    
+    Use the smaller base64 encoder
+
+ modules/exploits/multi/http/php_fpm_rce.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit a7b038b8226afcb44cba8549714fb646da5f49a5
+Merge: a0bb2d8c89 ee890a83ca
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Jun 27 14:14:40 2025 +0200
+
+    Merge pull request #20341 from msutovsky-r7/exploit/skyvern_ssti_rce
+    
+    Adds module for Skyvern SSTI (CVE-2025-49619)
+
+ .../linux/http/skyvern_ssti_cve_2025_49619.md      | 221 +++++++++++++++++++++
+ .../linux/http/skyvern_ssti_cve_2025_49619.rb      | 137 +++++++++++++
+ 2 files changed, 358 insertions(+)
+
+commit ee890a83ca22a04558273e9724e17c6bfec02a61
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 27 11:03:08 2025 +0200
+
+    Adds BadChars
+
+ modules/exploits/linux/http/skyvern_ssti_cve_2025_49619.rb | 1 +
+ 1 file changed, 1 insertion(+)
