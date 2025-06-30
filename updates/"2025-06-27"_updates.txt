@@ -1,0 +1,65 @@
+commit 65faeb438c537b8da605dfffb9b4a88e9969b93f
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Sun Jun 29 15:25:40 2025 -0500
+
+    Bump version of framework to 6.4.73
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 3 ++-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 07ae49d6dc6bd324d2174ef1e3511d835eea7ca3
+Merge: 583ffce9d7 bdc368f792
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Sun Jun 29 17:40:40 2025 +0100
+
+    Merge pull request #20360 from adfoster-r7/add-syslog-to-gemspec
+    
+    Add syslog to gemspec
+
+ Gemfile.lock                 | 3 +++
+ metasploit-framework.gemspec | 1 +
+ 2 files changed, 4 insertions(+)
+
+commit bdc368f792097c602638d9429cb904e09ad9a97f
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Sun Jun 29 15:57:53 2025 +0100
+
+    Add syslog to gemspec
+
+ Gemfile.lock                 | 3 +++
+ metasploit-framework.gemspec | 1 +
+ 2 files changed, 4 insertions(+)
+
+commit 583ffce9d72077381fd90cffb623aa92b856f558
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jun 29 14:45:21 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 33642 ++++++++++++++++++++++++++++++++--------
+ 1 file changed, 27233 insertions(+), 6409 deletions(-)
+
+commit f57a3c278cc904f46b10619d3400712ec97ac9a1
+Merge: 50a2749f97 66bae427fb
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Sun Jun 29 13:44:28 2025 +0100
+
+    Merge pull request #20358 from adfoster-r7/fix-module-cache-generation
+    
+    Fix module cache generation
+
+ tools/automation/cache/build_new_cache.sh | 4 ++--
+ tools/automation/cache/wait_for_cache.rc  | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 66bae427fba9b86b5f9d92d5374ad1ddd310dd59
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Sun Jun 29 01:05:40 2025 +0100
+
+    Fix module cache generation
+
+ tools/automation/cache/build_new_cache.sh | 4 ++--
+ tools/automation/cache/wait_for_cache.rc  | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
