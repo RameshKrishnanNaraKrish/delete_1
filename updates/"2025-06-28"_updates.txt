@@ -1,0 +1,29 @@
+commit eb638820e230d9a6ea6ef722a8cf1503f9673383
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 30 14:49:29 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a034ba2ba8bf8a1034bfb5c12fe416c20a8756e
+Merge: 65faeb438c 41b83b7170
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 30 15:18:44 2025 +0100
+
+    Merge pull request #20362 from sjanusz-r7/improve-bleichenbacher-oracle-python-version-detection
+    
+    Fix Bleichenbacher Oracle module on hosts with Python 2
+
+ .../auxiliary/scanner/ssl/bleichenbacher_oracle.py | 28 ++++++++++++----------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
+
+commit 41b83b71704aa43087217c1153c0e447abd6ab86
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Jun 30 13:02:40 2025 +0100
+
+    Fix Bleichenbacher Oracle module on hosts with Python 2
+
+ .../auxiliary/scanner/ssl/bleichenbacher_oracle.py | 28 ++++++++++++----------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
