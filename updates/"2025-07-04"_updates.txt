@@ -1,0 +1,21 @@
+commit 1e0a3de01e7e7e271b54a133c3f0f71f050b1d0d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jul 6 17:04:38 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 133 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 133 insertions(+)
+
+commit bc705b8c5aea4ce62f78db385e5cfb623ae66045
+Merge: 346c17dcb7 1ee9d61de1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Jul 6 18:56:43 2025 +0200
+
+    Land #20334, adds payload linux/x64/set_hostname
+    
+    Add payload/linux/x64/set_hostname module.
+
+ modules/payloads/singles/linux/x64/set_hostname.rb | 65 ++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      | 10 ++++
+ 2 files changed, 75 insertions(+)
