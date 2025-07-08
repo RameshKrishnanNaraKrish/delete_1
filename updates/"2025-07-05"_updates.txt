@@ -1,0 +1,58 @@
+commit 306840831f14c122cbf7008cb71e174020b26d6b
+Merge: a8bb2189e7 11099c2d3b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jul 7 13:54:45 2025 +0100
+
+    Merge pull request #19709 from szymonj99/bump-irb
+    
+    Bump IRB
+
+ Gemfile.lock                 | 23 ++++++++++++++++++-----
+ metasploit-framework.gemspec |  4 ++--
+ 2 files changed, 20 insertions(+), 7 deletions(-)
+
+commit a8bb2189e7f44eec84e8f182a1cd75900edd2e33
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 7 11:20:21 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 93f902fe2768b9e5094fcb6a0ea9f327f9e303dc
+Merge: ada43cd132 7629dd7518
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jul 7 13:12:10 2025 +0200
+
+    Land #20364, adds WingFTP unauthenticated RCE module
+    
+    Add WingFTP unauthenticated RCE (CVE-2025-47812)
+
+ .../exploit/multi/http/wingftp_null_byte_rce.md    | 161 +++++++++++++++++++++
+ .../exploits/multi/http/wingftp_null_byte_rce.rb   | 148 +++++++++++++++++++
+ 2 files changed, 309 insertions(+)
+
+commit 11099c2d3be09e717640546962412e3ca98d835a
+Author: szymonj99 <szymon.j@hotmail.com>
+Date:   Mon Dec 9 18:17:08 2024 +0000
+
+    Bump IRB
+
+ Gemfile.lock                 | 23 ++++++++++++++++++-----
+ metasploit-framework.gemspec |  4 ++--
+ 2 files changed, 20 insertions(+), 7 deletions(-)
+
+commit ada43cd132ed2aaba8ce396ea3b90d7fd1a9ce14
+Merge: 1e0a3de01e f0626b38cb
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jul 7 10:12:34 2025 +0100
+
+    Merge pull request #20209 from adfoster-r7/update-ruby-version-3.3.8
+    
+    Update ruby version 3.3.8
+
+ .ruby-version | 2 +-
+ Dockerfile    | 4 ++--
+ Gemfile.lock  | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
