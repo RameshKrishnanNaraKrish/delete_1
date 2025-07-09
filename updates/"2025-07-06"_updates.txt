@@ -1,0 +1,184 @@
+commit 4626e8fce93fbc499a4da5820983ec26205eee2d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jul 8 21:46:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 79d67dd1f035376c43c5903db235eb093714b26c
+Merge: 65124d0c62 2ab90df4b2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jul 8 14:37:23 2025 -0700
+
+    Merge pull request #20345 from zeroSteiner/feat/lib/ldap-adds/1
+    
+    Add an Active Directory LDAP Mixin
+
+ Gemfile.lock                                       |   2 +
+ lib/msf/core/exploit/remote/ldap.rb                |   2 +-
+ .../core/exploit/remote/ldap/active_directory.rb   | 358 +++++++++++++++++++++
+ .../security_descriptor_matcher.rb                 | 179 +++++++++++
+ lib/msf/core/exploit/remote/ldap/entry_cache.rb    |  42 +++
+ lib/rex/proto/ms_dtyp.rb                           | 133 +++++---
+ lib/rex/proto/secauthz/well_known_sids.rb          |   2 +
+ metasploit-framework.gemspec                       |   3 +
+ .../auxiliary/admin/ldap/ad_cs_cert_template.rb    |  80 ++---
+ modules/auxiliary/admin/ldap/rbcd.rb               | 135 ++++----
+ modules/auxiliary/admin/ldap/shadow_credentials.rb | 130 +++++---
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      |   2 +-
+ .../security_descriptor_matcher_spec.rb            | 163 ++++++++++
+ 13 files changed, 1024 insertions(+), 207 deletions(-)
+
+commit 2ab90df4b2c8e594e365e39ccd6927d47d3b550d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jul 8 15:46:43 2025 -0400
+
+    Check for full permissions on certs too
+
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+commit 566020abbf5db22177f697d1864773722f44787d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jul 8 15:43:41 2025 -0400
+
+    Cache the result of whoami
+
+ lib/msf/core/exploit/remote/ldap/active_directory.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 23c02d687371bb4cd2e0210ff2069dcffebd2a9b
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jul 8 14:58:26 2025 -0400
+
+    Note the permissions required for checking permissions
+
+ lib/msf/core/exploit/remote/ldap/active_directory.rb | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit 2650956fcea2a571224d10cc25c0aa0d7f7630de
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Jul 7 18:05:32 2025 -0400
+
+    Add special handling for more groups
+    
+    Add handling for the special `Authenticated Users` and `Users` groups.
+
+ .../core/exploit/remote/ldap/active_directory.rb   | 22 ++++++++++++++++++----
+ .../security_descriptor_matcher.rb                 |  2 +-
+ 2 files changed, 19 insertions(+), 5 deletions(-)
+
+commit a93d20ccfe2ff2fd5378c2dcb6a03cd64d959591
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 2 21:25:43 2025 -0400
+
+    Add some basic tests
+
+ .../security_descriptor_matcher.rb                 |   4 +
+ .../security_descriptor_matcher_spec.rb            | 163 +++++++++++++++++++++
+ 2 files changed, 167 insertions(+)
+
+commit d0d3a2719d5b8d4f340aef3da2246acbce518f13
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Jul 7 12:37:13 2025 -0400
+
+    Add some commented code for debugging
+    
+    Squash me
+
+ lib/msf/core/exploit/remote/ldap/active_directory.rb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 8b8b35095028f8747269c2ecd091e72ddc2718ba
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 26 15:55:31 2025 -0400
+
+    Use the new function instead of the old
+
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
+
+commit 7cacc4cd45e5cfcb3c49128f3a5b30a133aea53a
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jun 25 17:37:53 2025 -0400
+
+    Update the ad_cs_cert_template module too
+
+ .../core/exploit/remote/ldap/active_directory.rb   | 10 ++-
+ .../security_descriptor_matcher.rb                 | 30 ++++++--
+ .../auxiliary/admin/ldap/ad_cs_cert_template.rb    | 81 +++++++++-------------
+ 3 files changed, 63 insertions(+), 58 deletions(-)
+
+commit c2a06e341dcf098641c71c7ec0219570c12badd4
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Jun 23 18:39:19 2025 -0400
+
+    Expand on the matcher logic
+
+ .../core/exploit/remote/ldap/active_directory.rb   |  97 +++----------
+ .../security_descriptor_matcher.rb                 | 157 +++++++++++++++++++++
+ lib/rex/proto/ms_dtyp.rb                           |  17 ++-
+ modules/auxiliary/admin/ldap/rbcd.rb               |   2 +-
+ modules/auxiliary/admin/ldap/shadow_credentials.rb | 130 +++++++++++------
+ 5 files changed, 284 insertions(+), 119 deletions(-)
+
+commit 65124d0c623331ae2a31719ab54a3f40ae6a64f2
+Merge: 3dc9e6a9b5 fe4da472f0
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jul 8 13:28:39 2025 -0400
+
+    Merge pull request #20373 from adfoster-r7/update-metasploit-docs-branding
+    
+    Update Metasploit docs branding
+
+ docs/_includes/title.html                                |  2 +-
+ docs/assets/css/main.css                                 |  5 +++++
+ docs/assets/images/metasploit-logo-dark-external-use.svg | 11 +++++++++++
+ 3 files changed, 17 insertions(+), 1 deletion(-)
+
+commit fe4da472f01eda22abf9cbc75eb2f5efbbeecdee
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Jul 8 17:22:52 2025 +0100
+
+    Update Metasploit docs branding
+
+ docs/_includes/title.html                                |  2 +-
+ docs/assets/css/main.css                                 |  5 +++++
+ docs/assets/images/metasploit-logo-dark-external-use.svg | 11 +++++++++++
+ 3 files changed, 17 insertions(+), 1 deletion(-)
+
+commit ef611d18150c06525732187cf3e3f5e806efcd0f
+Merge: 1700b2eaaa ffa2152a6a
+Author: Rudraditya Thakur <mr.rudradityathakur@gmail.com>
+Date:   Tue Jul 8 07:48:59 2025 -0700
+
+    Merge pull request #1 from msutovsky-r7/collab/cve-2023-46818
+    
+    Refactors and updates the docs
+
+ .../http/ispconfig_lang_edit_php_code_injection.md | 52 +++++++++-------------
+ .../http/ispconfig_lang_edit_php_code_injection.rb | 14 ++----
+ 2 files changed, 25 insertions(+), 41 deletions(-)
+
+commit 3dc9e6a9b5f88563ae56587692eabf10855432a2
+Merge: 306840831f 432bcfc4d3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 8 14:20:42 2025 +0100
+
+    Merge pull request #20371 from zeroSteiner/feat/ui/r7-banner
+    
+    Update the banner for brand consistency
+
+ lib/msf/ui/console/command_dispatcher/core.rb | 26 +++++++++++++++++---------
+ 1 file changed, 17 insertions(+), 9 deletions(-)
+
+commit 432bcfc4d3e2a702b6c7f2b4da6a12c6081e5e34
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jun 4 15:01:07 2025 -0400
+
+    Mention our corporate sponsors in the banner
+
+ lib/msf/ui/console/command_dispatcher/core.rb | 26 +++++++++++++++++---------
+ 1 file changed, 17 insertions(+), 9 deletions(-)
