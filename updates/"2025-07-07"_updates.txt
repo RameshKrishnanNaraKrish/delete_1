@@ -1,0 +1,71 @@
+commit 14fb0014573f1e616e518e4e5dbcf0a5284af6d5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 9 18:15:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 36675ccd9aead4459ad54d32b8e43fd32f124257
+Merge: 32559a328f df24090fc0
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 9 13:07:25 2025 -0500
+
+    Merge pull request #20349 from sfewer-r7/0day-cve-2024-51978
+    
+    Add auxiliary module for multiple Brother devices authentication bypass (CVE-2024-51978)
+
+ ...her_default_admin_auth_bypass_cve_2024_51978.md | 142 +++++++
+ ...her_default_admin_auth_bypass_cve_2024_51978.rb | 420 +++++++++++++++++++++
+ 2 files changed, 562 insertions(+)
+
+commit df24090fc0817fa857a0c80088e6bc1b8eccfe3b
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Jul 9 14:59:54 2025 +0100
+
+    fix typo in message
+
+ .../admin/misc/brother_default_admin_auth_bypass_cve_2024_51978.rb      | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab913b04168f59697303a61ea53f170946a73392
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Jul 9 14:58:59 2025 +0100
+
+    make this error message not that no password may be present on the device
+
+ .../admin/misc/brother_default_admin_auth_bypass_cve_2024_51978.rb      | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34952d73f695ce403c60eb94470511cc7ccd3529
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Jul 9 10:15:30 2025 +0100
+
+    display the AuthCookie if one is received
+
+ .../admin/misc/brother_default_admin_auth_bypass_cve_2024_51978.md  | 6 ++++++
+ .../admin/misc/brother_default_admin_auth_bypass_cve_2024_51978.rb  | 2 ++
+ 2 files changed, 8 insertions(+)
+
+commit 32559a328f178ec49a9f65d0b8c97298571353ed
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 9 05:55:58 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit ffdfa0795498a3f375c924d463b68833c311ab37
+Merge: 4626e8fce9 ef611d1815
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jul 9 07:47:56 2025 +0200
+
+    Land #20354, adds module for ISPConfig code injection (CVE-2023-46818)
+    
+    Add module for ISPConfig Code Injection (CVE-2023-46818)
+
+ .../http/ispconfig_lang_edit_php_code_injection.md |  69 ++++++
+ .../http/ispconfig_lang_edit_php_code_injection.rb | 270 +++++++++++++++++++++
+ 2 files changed, 339 insertions(+)
