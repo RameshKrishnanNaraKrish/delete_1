@@ -1,0 +1,35 @@
+commit 74cce35cf02feadb5fcc7b76b163931944cd225e
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jul 10 11:31:34 2025 -0500
+
+    Bump version of framework to 6.4.75
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 22 +++++++++++++++++-----
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 19 insertions(+), 7 deletions(-)
+
+commit 7a2753fa913cd4f2484b6c3ce7de543cec2b3779
+Merge: 14fb001457 c2007c796e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jul 10 15:56:56 2025 +0100
+
+    Merge pull request #20377 from adfoster-r7/update-license-generation
+    
+    Update license generation
+
+ Gemfile                          |  2 ++
+ Gemfile.lock                     | 14 ++++++++++++++
+ tools/dev/update_gem_licenses.sh |  3 +--
+ 3 files changed, 17 insertions(+), 2 deletions(-)
+
+commit c2007c796eae4e669e7345bba59b032376bd4b77
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jul 10 15:27:02 2025 +0100
+
+    Update license generation
+
+ Gemfile                          |  2 ++
+ Gemfile.lock                     | 14 ++++++++++++++
+ tools/dev/update_gem_licenses.sh |  3 +--
+ 3 files changed, 17 insertions(+), 2 deletions(-)
