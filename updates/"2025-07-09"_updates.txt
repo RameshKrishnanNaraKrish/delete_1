@@ -1,0 +1,38 @@
+commit 60a6658f0e53f34748dd614a3f36c3cea39d44d5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 11 15:26:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+
+commit b4188e70be2379207d76b040b984672cdf4cdd0d
+Merge: 3e5bdda701 8d0aaac0db
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Jul 11 10:18:17 2025 -0500
+
+    Merge pull request #20357 from xaitax/add-windows-aarch64-winexec-payload
+    
+    Revive and Finalize windows/aarch64/exec Payload
+
+ .../src/pe/exe/template_aarch64_windows.asm        |  98 ++++++++
+ .../src/pe/exe/template_aarch64_windows.c          |  69 ++++++
+ data/templates/template_aarch64_windows.exe        | Bin 0 -> 6656 bytes
+ lib/msf/util/exe.rb                                |  23 ++
+ modules/payloads/singles/windows/aarch64/exec.rb   | 272 +++++++++++++++++++++
+ .../payloads/singles/windows/aarch64/exec_spec.rb  |  40 +++
+ spec/modules/payloads_spec.rb                      |  11 +
+ 7 files changed, 513 insertions(+)
+
+commit 3e5bdda701f54fea26ea87b58ac14ff4e3d3490e
+Merge: 74cce35cf0 b643c62eb6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jul 11 13:28:06 2025 +0200
+
+    Land #20359, fixes payload reloading
+    
+    Fix payload module reloading functionality
+
+ lib/msf/core/module_manager/reloading.rb | 93 +++++++++++++++++++++++++++++---
+ 1 file changed, 85 insertions(+), 8 deletions(-)
