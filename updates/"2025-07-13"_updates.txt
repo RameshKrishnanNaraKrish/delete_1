@@ -1,0 +1,21 @@
+commit 04c7945d4ad5c4ce7d20dba300bd58203f583d94
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jul 15 17:48:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit 914f874e12af3a739b87e11c0b218f1b18f4e53d
+Merge: 60a6658f0e cdc51b41f6
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jul 15 10:39:44 2025 -0700
+
+    Merge pull request #20216 from sjanusz-r7/add-graphql-aux-scanner-module
+    
+    Add GraphQL Auxiliary Scanner module
+
+ .../scanner/http/graphql_introspection_scanner.md  |  62 ++++
+ .../scanner/http/graphql_introspection_scanner.rb  | 312 +++++++++++++++++++++
+ 2 files changed, 374 insertions(+)
