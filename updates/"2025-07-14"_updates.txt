@@ -1,0 +1,80 @@
+commit 28108517a70e8a24945d1e68cb9563a9e49560d3
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 16 15:40:38 2025 -0400
+
+    Remove the version from the default prompt
+    
+    Fixes #20355
+
+ lib/msf/ui/console/driver.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit be10b827b8ba5621640011a949b3d6ec8f8235c1
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 16 15:34:14 2025 -0400
+
+    Add a missing keyword for option validation
+
+ lib/msf/core/opt_int_range.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 850b93445c1098f12772d8cdcb619e479db741af
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jul 16 17:55:56 2025 +0100
+
+    Pin StringIO version
+
+ Gemfile.lock                 | 3 ++-
+ metasploit-framework.gemspec | 4 ++++
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit 8fdf0eacbc0a01947a995864d778a9ae3b7492e4
+Merge: 87122cbe94 0f86dd7c5f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jul 16 16:43:57 2025 +0100
+
+    Merge pull request #20389 from cdelafuente-r7/enh/gems_version_bump
+    
+    Bump data_models gem to 6.0.10 and model gem to 5.0.4
+
+ Gemfile.lock | 42 +++++++++++++++++++++++++-----------------
+ 1 file changed, 25 insertions(+), 17 deletions(-)
+
+commit 0f86dd7c5f69846b64aa73b0ee180467a8bff4f1
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Jul 16 16:55:38 2025 +0200
+
+    Bump data_models gem to 6.0.10 and model gem to 5.0.4
+
+ Gemfile.lock | 42 +++++++++++++++++++++++++-----------------
+ 1 file changed, 25 insertions(+), 17 deletions(-)
+
+commit 87122cbe9453048846ef96f8e25548bba8326e41
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 16 10:17:45 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 166479f6bce0659cfd34ea5c84b7efdf32858aa4
+Merge: 04c7945d4a e328a8f8c4
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Jul 16 11:09:27 2025 +0100
+
+    Merge pull request #20388 from jheysel-r7/fix/regression/ad_cs_cert_template
+    
+    Fix the UPDATE Action in the ad_cs_cert_template Module
+
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit e328a8f8c4ba1b5f1e186cd7d03780ae35be9218
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Jul 15 17:20:36 2025 -0700
+
+    Fix update action in ad_cs_cert_template
+
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
