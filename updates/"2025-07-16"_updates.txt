@@ -1,0 +1,21 @@
+commit 6dcefab6ab226c8bbbc01e9cb1a3dd9e71d92b77
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 18 23:45:22 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 00c8c773a3587e0ae6750235c2297ae5a20c4f34
+Merge: b6a04c2b97 efa49d2aa2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jul 18 16:37:14 2025 -0700
+
+    Merge pull request #20375 from Chocapikk/wp_photo_gallery_sqli
+    
+    WP Photo Gallery by 10Web Unauthenticated SQLi (CVE-2022-0169)
+
+ .../auxiliary/gather/wp_photo_gallery_sqli.md      | 137 +++++++++++++++++++++
+ modules/auxiliary/gather/wp_photo_gallery_sqli.rb  |  92 ++++++++++++++
+ 2 files changed, 229 insertions(+)
