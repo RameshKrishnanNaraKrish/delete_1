@@ -1,0 +1,26 @@
+commit 0a1cbf131d8c4802246618932d58762062f45899
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jul 22 15:27:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 169 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 169 insertions(+)
+
+commit 05f2012cccaf64ebdec03284f3a8256cabbafa56
+Merge: 6dcefab6ab 56f6a65e21
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jul 22 08:19:36 2025 -0700
+
+    Merge pull request #20338 from Chocapikk/xorcom
+    
+    Add auxiliary and exploit modules for Xorcom CompletePBX 5.2.35 CVEs (2025-2292, 30004, 30005)
+
+ .../xorcom_completepbx_diagnostics_file_read.md    | 142 ++++++++++++++++
+ .../http/xorcom_completepbx_file_disclosure.md     | 112 +++++++++++++
+ .../linux/http/xorcom_completepbx_scheduler.md     | 108 ++++++++++++
+ .../exploit/remote/http/xorcom_complete_pbx.rb     |  60 +++++++
+ .../xorcom_completepbx_diagnostics_file_read.rb    | 165 ++++++++++++++++++
+ .../http/xorcom_completepbx_file_disclosure.rb     |  90 ++++++++++
+ .../linux/http/xorcom_completepbx_scheduler.rb     | 184 +++++++++++++++++++++
+ 7 files changed, 861 insertions(+)
