@@ -1,0 +1,24 @@
+commit 9a46ce6628a7c764502581a0e19cb37021097090
+Merge: 0a1cbf131d 9b330018ad
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 23 13:18:31 2025 -0700
+
+    Merge pull request #20403 from adfoster-r7/dependency-update
+    
+    Dependency update
+
+ .../workflows/shared_meterpreter_acceptance.yml    |   3 +-
+ Gemfile.lock                                       | 147 +++++++++++----------
+ metasploit-framework.gemspec                       |   5 +-
+ 3 files changed, 82 insertions(+), 73 deletions(-)
+
+commit 9b330018ad7e0489a3a61630964d167a7e3205a1
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Jul 22 09:42:32 2025 +0100
+
+    Dependency update
+
+ .../workflows/shared_meterpreter_acceptance.yml    |   3 +-
+ Gemfile.lock                                       | 147 +++++++++++----------
+ metasploit-framework.gemspec                       |   5 +-
+ 3 files changed, 82 insertions(+), 73 deletions(-)
