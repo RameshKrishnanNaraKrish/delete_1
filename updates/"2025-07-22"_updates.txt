@@ -1,0 +1,111 @@
+commit fcff88b6442f4694a48075a2a19324427a45d61a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 24 21:58:39 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 392f87dee25b561eaa0487ee302506086cdeee2a
+Merge: 679c74f145 54c5cdaf61
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jul 24 14:50:24 2025 -0700
+
+    Merge pull request #20401 from zeroSteiner/feat/mod/ldap/gmsa-secrets
+    
+    Add gMSA Secret Extraction From LDAP
+
+ .../framework/password_crackers/jtr/formatter.rb   |  63 ++---
+ lib/msf/util/windows_crypto_helpers.rb             |  13 +-
+ modules/auxiliary/gather/ldap_passwords.rb         | 258 +++++++++++++--------
+ spec/acceptance/ldap_spec.rb                       |   4 +-
+ 4 files changed, 211 insertions(+), 127 deletions(-)
+
+commit 679c74f145594febb5d646c173d45fff0b72cdd7
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jul 24 09:38:58 2025 -0500
+
+    Bump version of framework to 6.4.77
+
+ Gemfile.lock                        |   2 +-
+ LICENSE_GEMS                        | 114 ++++++++++++++++++------------------
+ lib/metasploit/framework/version.rb |   2 +-
+ 3 files changed, 59 insertions(+), 59 deletions(-)
+
+commit 237a315c7c48fabd9552d8c737584cbb88c39862
+Merge: 75d02b5630 485b458bac
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jul 24 15:35:33 2025 +0100
+
+    Merge pull request #20415 from adfoster-r7/unpin-json-dependency
+    
+    Unpin json dependency
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 485b458bacb5fbf6f31818fdfc833b5050348b10
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jul 24 14:58:13 2025 +0100
+
+    Unpin json dependency
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit e4686fe12993d91734a45f136af0e2e26fb109ec
+Author: laptop <git@463521192@qq.com>
+Date:   Thu Jul 24 19:23:44 2025 +0800
+
+    deleted the spaces in EOF
+
+ modules/auxiliary/scanner/redis/redis_server.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 75d02b56303cb634cd19cc377610cf5162d696fc
+Merge: 04b08fb545 90346ad812
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Jul 24 12:06:24 2025 +0100
+
+    Merge pull request #20414 from adfoster-r7/pin-json-dependency
+    
+    Pin json dependency
+
+ Gemfile.lock                 | 16 +++++++---------
+ metasploit-framework.gemspec |  2 +-
+ 2 files changed, 8 insertions(+), 10 deletions(-)
+
+commit 04b08fb5450cbe3165dbdc70cbf2f098a060ac52
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 24 10:37:43 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 48 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+commit afeded56aabc0859e447ac53db2b8386e108a897
+Merge: 9a46ce6628 c5ec45452a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jul 24 12:29:34 2025 +0200
+
+    Land #20384, adds module for malicious Windows Registration Entries files
+    
+    Add Malicious Windows Registration Entries (.reg) File module
+
+ .../fileformat/windows_registration_entries.md     | 114 ++++++++++++
+ .../fileformat/windows_registration_entries.rb     | 203 +++++++++++++++++++++
+ 2 files changed, 317 insertions(+)
+
+commit 90346ad8126e0cb8ad9be450635961bd07a290f9
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jul 24 10:46:25 2025 +0100
+
+    Pin json dependency
+
+ Gemfile.lock                 | 16 +++++++---------
+ metasploit-framework.gemspec |  2 +-
+ 2 files changed, 8 insertions(+), 10 deletions(-)
