@@ -1,0 +1,20 @@
+commit 86d5d52838a76b019c3aedb15de2e7ecc1904de4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 25 08:55:33 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1fb76b1776c36cedd007906cf9a3adad9fdad841
+Merge: fcff88b644 e4686fe129
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jul 25 10:47:14 2025 +0200
+
+    Land #20408, fixes arguments passing to redis_command function in auxiliary/scanner/redis/redis_server
+    
+    Fix modules\auxiliary\scanner\redis\redis_server
+
+ modules/auxiliary/scanner/redis/redis_server.rb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
