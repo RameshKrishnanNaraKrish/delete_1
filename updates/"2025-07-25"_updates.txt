@@ -1,0 +1,11 @@
+commit 5162a8d3b3a88c6ae698690cbe82bfb7933061e4
+Merge: 86d5d52838 64905f866e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Jul 27 18:02:04 2025 +0100
+
+    Merge pull request #20417 from fishBone000/typo
+    
+    fix: Fix typo in reflective_pe_loader.rb
+
+ lib/msf/core/payload/windows/reflective_pe_loader.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
