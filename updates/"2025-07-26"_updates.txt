@@ -1,0 +1,99 @@
+commit c2971d53075e3c70a4d5c8df97fe82788215b16e
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Mon Jul 28 10:22:00 2025 -0500
+
+    Bump version of framework to 6.4.78
+
+ Gemfile.lock                        |   2 +-
+ LICENSE_GEMS                        | 159 ++++++++++++++++++------------------
+ lib/metasploit/framework/version.rb |   2 +-
+ 3 files changed, 82 insertions(+), 81 deletions(-)
+
+commit 85aca3c38099ff0329c73d3bda2d077866952b61
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 28 15:07:55 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit eb8e7cec272e266d77de378eb81be5ffd4df5a1f
+Merge: e40da3a887 0ce1617288
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jul 28 15:59:31 2025 +0100
+
+    Merge pull request #20420 from dwelch-r7/rails-7.2-upgrade
+    
+    Bump rails to 7.2
+
+ Gemfile.lock                                       | 230 +++++++-------
+ config/application.rb                              |   2 +-
+ db/schema.rb                                       |   3 +-
+ .../framework/rails_version_constraint.rb          |   2 +-
+ lib/msf/core/db_manager/cred.rb                    |   2 +-
+ lib/msf/core/exploit/remote/mysql.rb               |   2 +-
+ metasploit-framework.gemspec                       |   4 -
+ modules/post/windows/gather/win_privs.rb           |   2 +-
+ modules/post/windows/manage/make_token.rb          |   2 +-
+ ...tion.rb => 20250612131915_test_db_migration.rb} |   0
+ spec/lib/msf/debug_spec.rb                         | 336 ++++++++-------------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  |  11 +-
+ spec/support/shared/contexts/msf/db_manager.rb     |   2 +-
+ 13 files changed, 249 insertions(+), 349 deletions(-)
+
+commit e40da3a887b2866eef8b4913d1327a8127e03daf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 28 12:08:06 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 86 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 86 insertions(+)
+
+commit f4622d802e23861741283c8147eed65653e357ca
+Merge: 12340ef6b5 cbc03eaeeb
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jul 28 13:58:07 2025 +0200
+
+    Land #20406, adds malicious Windows Script Host VBScript fileformat module
+    
+    Add Malicious Windows Script Host VBScript (.vbs) File module
+
+ .../fileformat/windows_script_host_vbscript.md     |  87 ++++++++
+ .../fileformat/windows_script_host_vbscript.rb     | 220 +++++++++++++++++++++
+ 2 files changed, 307 insertions(+)
+
+commit 12340ef6b5d418c39db9f8c6eeb4a96b30c0cc80
+Merge: 5162a8d3b3 44c61a7e4d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jul 28 13:51:26 2025 +0200
+
+    Land #20398, adds malicious Windows Script Host JScript fileformat module
+    
+    Add Malicious Windows Script Host JScript (.js) File module
+
+ .../fileformat/windows_script_host_jscript.md      |  89 ++++++++++++++++
+ .../fileformat/windows_script_host_jscript.rb      | 116 +++++++++++++++++++++
+ 2 files changed, 205 insertions(+)
+
+commit 0ce161728835cbb752feacca30c020439da8a14b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jul 28 12:09:20 2025 +0100
+
+    Bump rails to 7.2
+
+ Gemfile.lock                                       | 230 +++++++-------
+ config/application.rb                              |   2 +-
+ db/schema.rb                                       |   3 +-
+ .../framework/rails_version_constraint.rb          |   2 +-
+ lib/msf/core/db_manager/cred.rb                    |   2 +-
+ lib/msf/core/exploit/remote/mysql.rb               |   2 +-
+ metasploit-framework.gemspec                       |   4 -
+ modules/post/windows/gather/win_privs.rb           |   2 +-
+ modules/post/windows/manage/make_token.rb          |   2 +-
+ ...tion.rb => 20250612131915_test_db_migration.rb} |   0
+ spec/lib/msf/debug_spec.rb                         | 336 ++++++++-------------
+ .../auxiliary/admin/kerberos/forge_ticket_spec.rb  |  11 +-
+ spec/support/shared/contexts/msf/db_manager.rb     |   2 +-
+ 13 files changed, 249 insertions(+), 349 deletions(-)
