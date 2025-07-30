@@ -1,0 +1,63 @@
+commit 552a791e3752f71fb72345366a094e8f6116366f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jul 29 10:35:15 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb381ad542157a6a8a434bec91e20c072aa46f75
+Merge: 0a531b48c5 541e8d6191
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jul 29 12:24:05 2025 +0200
+
+    Land #20421, adds more reliable check in get_nonce function for auxiliary/scanner/http/wp_ultimate_member_sorting_sqli
+    
+    Fix `get_nonce` in `auxiliary/scanner/http/wp_ultimate_member_sorting_sqli`
+
+ modules/auxiliary/scanner/http/wp_ultimate_member_sorting_sqli.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0a531b48c531d2e7c04720207155b1482607a837
+Merge: c2971d5307 77f6110842
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Jul 29 11:19:37 2025 +0100
+
+    Merge pull request #20422 from adfoster-r7/update-jsonrpc-dependencies
+    
+    Update jsonrpc dependencies
+
+ Gemfile.lock                 | 6 +++---
+ metasploit-framework.gemspec | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 541e8d619147dac529c5c4cd01395cef72a1140d
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Tue Jul 29 11:36:48 2025 +0200
+
+    Update modules/auxiliary/scanner/http/wp_ultimate_member_sorting_sqli.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/auxiliary/scanner/http/wp_ultimate_member_sorting_sqli.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 77f61108421bea4ec8eb6b4457e991175051ace2
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Jul 29 10:17:36 2025 +0100
+
+    Update jsonrpc dependencies
+
+ Gemfile.lock                 | 6 +++---
+ metasploit-framework.gemspec | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit e095c793c7e46aa61f11186eb5687ecdbb382fbd
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Tue Jul 29 07:59:06 2025 +0200
+
+    Fix `get_nonce` in `auxiliary/scanner/http/wp_ultimate_member_sorting_sqli`
+
+ modules/auxiliary/scanner/http/wp_ultimate_member_sorting_sqli.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
