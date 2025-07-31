@@ -1,0 +1,152 @@
+commit 53c3396821d424620a20918243692ebd62dc88ef
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 30 22:45:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 123 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 122 insertions(+), 1 deletion(-)
+
+commit 8bbfaac13c03c605000c4f2b34840b55b9ab45eb
+Merge: f766f49d6a ff724d0b5c
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jul 30 18:36:59 2025 -0400
+
+    Merge pull request #20189 from jheysel-r7/feat/mod/esc9-esc10-exploit
+    
+    Add Exploit Support for ESC9, ESC10 & ESC16
+
+ .../Attacking-AD-CS-ESC-Vulnerabilities.md         | 564 ++++++++++++++++++++-
+ .../admin/dcerpc/esc_update_ldap_object.md         | 208 ++++++++
+ .../modules/auxiliary/admin/dcerpc/icpr_cert.md    |   6 +
+ .../auxiliary/admin/ldap/ldap_object_attribute.md  | 172 +++++++
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  48 +-
+ .../admin/dcerpc/esc_update_ldap_object.rb         | 243 +++++++++
+ .../auxiliary/admin/ldap/ldap_object_attribute.rb  | 153 ++++++
+ modules/auxiliary/admin/ldap/shadow_credentials.rb |   4 +-
+ 8 files changed, 1391 insertions(+), 7 deletions(-)
+
+commit ff724d0b5c81bc02d49edccbd04133ef88f8925f
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jul 30 15:28:56 2025 -0700
+
+    Deregister SMBUser
+
+ modules/auxiliary/admin/dcerpc/esc_update_ldap_object.rb | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit f766f49d6a5cc60ff1754dd6142c135794c00147
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 30 22:11:51 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit de15d1e449da414e2c47b17ebd75c93069e400c0
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jul 30 10:44:05 2025 -0700
+
+    Minor doc update
+
+ .../ad-certificates/Attacking-AD-CS-ESC-Vulnerabilities.md            | 3 ---
+ .../modules/auxiliary/admin/dcerpc/esc_update_ldap_object.md          | 4 ++--
+ 2 files changed, 2 insertions(+), 5 deletions(-)
+
+commit e88883c82b78f2927168b111b2993aaefe162daf
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue May 13 09:23:28 2025 -0700
+
+    ESC9, ESC10 ESC16 exploit support
+
+ .../Attacking-AD-CS-ESC-Vulnerabilities.md         | 567 ++++++++++++++++++++-
+ .../admin/dcerpc/esc_update_ldap_object.md         | 208 ++++++++
+ .../modules/auxiliary/admin/dcerpc/icpr_cert.md    |   6 +
+ .../auxiliary/admin/ldap/ldap_object_attribute.md  | 172 +++++++
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  48 +-
+ .../admin/dcerpc/esc_update_ldap_object.rb         | 244 +++++++++
+ .../auxiliary/admin/ldap/ldap_object_attribute.rb  | 153 ++++++
+ modules/auxiliary/admin/ldap/shadow_credentials.rb |   4 +-
+ 8 files changed, 1395 insertions(+), 7 deletions(-)
+
+commit 84e2e6be695f9569f734a2f708bace4f12709c17
+Merge: 1361e91fa1 13df676863
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jul 30 18:03:14 2025 -0400
+
+    Merge pull request #20149 from jheysel-r7/esc9_esc10_cert_finder_update
+    
+    ESC9, ESC10 and ESC16 detection for ldap_esc_vulnerable_cert_finder
+
+ .../ad-certificates/overview.md                    |  77 +----
+ .../gather/ldap_esc_vulnerable_cert_finder.md      |  96 ++++++
+ .../security_descriptor_matcher.rb                 |   2 +-
+ lib/rex/proto/crypto_asn1/o_i_ds.rb                |   3 +
+ lib/rex/proto/ms_crtd.rb                           |   1 +
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 342 ++++++++++++++++-----
+ 6 files changed, 367 insertions(+), 154 deletions(-)
+
+commit 3fb2477fbfce078a9bd59cb69eecc4910a868111
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 30 16:13:01 2025 -0400
+
+    Increase payload space
+
+ modules/exploits/windows/misc/achat_bof.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13df676863dfe726b0d97de416707a6e37bde6a7
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jul 30 12:13:33 2025 -0700
+
+    Update validate method fix failed test
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a1c95e64ba6fa0d885ea8da1f69027e61398f2b2
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jul 30 11:59:51 2025 -0700
+
+    Fixed unnecesary merge conflict additions
+
+ .../ldap/active_directory/security_descriptor_matcher.rb   | 14 +++++++-------
+ .../active_directory/security_descriptor_matcher_spec.rb   |  2 +-
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 8179de6cea66a5a83a5fab11c28a34aec696fd08
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue May 6 14:36:08 2025 -0700
+
+    ESC9 ESC10 and ESC16 detection
+
+ .../ad-certificates/overview.md                    |  77 +----
+ .../gather/ldap_esc_vulnerable_cert_finder.md      |  96 ++++++
+ .../security_descriptor_matcher.rb                 |  16 +-
+ lib/rex/proto/crypto_asn1/o_i_ds.rb                |   3 +
+ lib/rex/proto/ms_crtd.rb                           |   1 +
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 343 ++++++++++++++++-----
+ .../security_descriptor_matcher_spec.rb            |   2 +-
+ 7 files changed, 376 insertions(+), 162 deletions(-)
+
+commit 1361e91fa1f4f839dae7f6821f3693ee0757d315
+Merge: 552a791e37 5fc5c6691e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jul 30 10:28:54 2025 +0100
+
+    Merge pull request #20426 from adfoster-r7/update-multiple-dependencies
+    
+    Update multiple dependencies
+
+ Gemfile.lock | 52 ++++++++++++++++++++++++++--------------------------
+ 1 file changed, 26 insertions(+), 26 deletions(-)
+
+commit 5fc5c6691e6689944b13bc3a42a4e0ea5ee90930
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jul 30 10:11:30 2025 +0100
+
+    Update multiple dependencies
+
+ Gemfile.lock | 52 ++++++++++++++++++++++++++--------------------------
+ 1 file changed, 26 insertions(+), 26 deletions(-)
