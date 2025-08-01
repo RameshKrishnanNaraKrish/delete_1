@@ -1,0 +1,82 @@
+commit 569387c4706295e973eba03e2b296aef866ff9f4
+Merge: 96532bd1e7 2cab34736c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jul 31 16:59:49 2025 +0100
+
+    Merge pull request #20432 from cgranleese-r7/fixes-exploit-uuid-sessions-job-correlation
+    
+    Fixes RPC `exploit_uuid` correlation for jobs and sessions
+
+ lib/msf/core/module.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 96532bd1e7ee970e338b21bd4a60df1ca56dd546
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 31 11:09:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 540e8b91d0eba56a6084bc04a1c40a7415d37b5a
+Merge: e34397b8e5 d2175c372f
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 31 12:01:01 2025 +0100
+
+    Merge pull request #20433 from msutovsky-r7/module/fix/disclosure_date
+    
+    Fixes disclosure date in exploit/linux/http/pandora_fms_auth_netflow_rce.rb
+
+ modules/exploits/linux/http/pandora_fms_auth_netflow_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d2175c372f2b6aeb9924a38b612a70b4c7435d8e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jul 31 12:58:28 2025 +0200
+
+    Fixes disclosure date
+
+ modules/exploits/linux/http/pandora_fms_auth_netflow_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2cab34736c7772f14cb23166d7f37341ec7b4efe
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Thu Jul 31 09:41:32 2025 +0100
+
+    Fixes RPC exploit_uuid correlation for jobs and sessions
+
+ lib/msf/core/module.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e34397b8e530b8fd3ecaebc603427ff558e68ec5
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Jul 31 03:33:24 2025 -0500
+
+    Bump version of framework to 6.4.79
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 52 ++++++++++++++++++-------------------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 28 insertions(+), 28 deletions(-)
+
+commit 854a5bc01c177c3b09562e5289e149cb368aa0c8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 31 05:53:30 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 333b5278ac255df2bb9206cbd4e76f8f0631ea43
+Merge: 53c3396821 3fb2477fbf
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jul 31 07:42:32 2025 +0200
+
+    Land #20428, fixes available payload space in exploits/windows/misc/achat_bof
+    
+    Fix achat_bof by increasing the available payload space
+
+ modules/exploits/windows/misc/achat_bof.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
