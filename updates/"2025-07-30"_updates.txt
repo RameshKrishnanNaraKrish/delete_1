@@ -1,0 +1,81 @@
+commit 4c94f9f94b4a69b98caae6318a0adebfd2442403
+Merge: 7d82ecb6b0 8b4ea900cc
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Aug 1 14:37:59 2025 +0100
+
+    Merge pull request #20443 from rapid7/revert-20435-adds-survey-banner-to-docs-site
+    
+    Revert "Adds survey banner to the docs site"
+
+ docs/_includes/header_custom.html |  9 ----
+ docs/_includes/js/custom.js       | 34 --------------
+ docs/assets/css/main.css          | 96 ---------------------------------------
+ 3 files changed, 139 deletions(-)
+
+commit 8b4ea900ccab0cfe64661f2ec32d3ae4b55968c2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Aug 1 14:37:15 2025 +0100
+
+    Revert "Adds survey banner to the docs site"
+
+ docs/_includes/header_custom.html |  9 ----
+ docs/_includes/js/custom.js       | 34 --------------
+ docs/assets/css/main.css          | 96 ---------------------------------------
+ 3 files changed, 139 deletions(-)
+
+commit 7d82ecb6b034ab6c0773fe7fa3fff5c6d66ffb1b
+Merge: 480a81dddb 53e2d138e8
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 1 15:16:15 2025 +0200
+
+    Land #20435, adds survey banner to the docs site
+    
+    Adds survey banner to the docs site
+
+ docs/_includes/header_custom.html |  9 ++++
+ docs/_includes/js/custom.js       | 34 ++++++++++++++
+ docs/assets/css/main.css          | 96 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 139 insertions(+)
+
+commit 480a81dddbd67ef301f0e62b496e5128d5e68427
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Aug 1 11:54:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 63cd2cb93ad209cba08ec9cb6bf6513338c83e18
+Merge: 569387c470 8d3a35f332
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 1 13:45:39 2025 +0200
+
+    Land #20437, fixes variable initialization in auxiliary/dos/http/apache_range_dos
+    
+    Fixes variable initialization in auxiliary/dos/http/apache_range_dos
+
+ modules/auxiliary/dos/http/apache_range_dos.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d3a35f3327d3710346c754c885ec5f700107f94
+Author: Desiree05 <95355425+Desiree05@users.noreply.github.com>
+Date:   Fri Aug 1 10:48:54 2025 +0100
+
+    Fixing issue #20436
+    
+    The module did not initialize the variable uri
+
+ modules/auxiliary/dos/http/apache_range_dos.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 53e2d138e87b1246d80df406570ce29f1f2f57a9
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Aug 1 09:16:39 2025 +0100
+
+    Adds survey banner to the docs site
+
+ docs/_includes/header_custom.html |  9 ++++
+ docs/_includes/js/custom.js       | 34 ++++++++++++++
+ docs/assets/css/main.css          | 96 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 139 insertions(+)
