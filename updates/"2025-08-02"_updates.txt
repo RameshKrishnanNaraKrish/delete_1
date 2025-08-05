@@ -1,0 +1,228 @@
+commit 26bf49a0248e73afdf97f0e8afebace7f0019fc5
+Merge: cf92cbb3d8 becdda1591
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Aug 4 18:12:05 2025 -0400
+
+    Merge pull request #20431 from Wopseeion/problem-fi
+    
+    Fix NoMethodError in kerberos/get_ticket by properly decoding ASN.1 OctetString in certificate SAN parsing for ticket reuqest --> "#20427"
+
+ .../core/exploit/remote/kerberos/client/pkinit.rb  | 28 +++++++++++++++++-----
+ 1 file changed, 22 insertions(+), 6 deletions(-)
+
+commit becdda1591d9a588cf88bad300e910c5e295a7dc
+Author: Tanush-Jain <tanushjain2004@hotmail.com>
+Date:   Mon Aug 4 21:56:14 2025 +0530
+
+    added fixed pkinit file
+
+ .../core/exploit/remote/kerberos/client/pkinit.rb  | 28 +++++++++++++++++-----
+ 1 file changed, 22 insertions(+), 6 deletions(-)
+
+commit cf92cbb3d88c40937198ef2882132e9ea61a5cab
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 4 21:36:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 30c32d264382a347f79fbb7d8301ad6f6c2f872d
+Merge: a5b7c9859d 6d60db195b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Aug 4 17:28:14 2025 -0400
+
+    Merge pull request #20450 from dledda-r7/chore/bump-metasploit_payloads-mettle-1_0_45
+    
+    Bump metasploit_payloads-mettle gem to 1.0.45
+
+ Gemfile.lock                                                      | 4 ++--
+ LICENSE_GEMS                                                      | 2 +-
+ metasploit-framework.gemspec                                      | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_http.rb  | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_https.rb | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_tcp.rb   | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_http.rb  | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_https.rb | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_tcp.rb   | 2 +-
+ 9 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 6ff04da954e69fe4f02c800a707d20fef0a490d9
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Mon Aug 4 18:33:28 2025 +0200
+
+    Add LPE suggestions in documentation
+
+ .../linux/http/ictbroadcast_unauth_cookie.md       | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+commit a81884fb9eb41969acfc0d05f6817a04e9d9d593
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Mon Aug 4 17:53:29 2025 +0200
+
+    Update metadata
+
+ modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7d744c2a4567d39eba1fa220b675af21718cbee7
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Mon Aug 4 17:51:42 2025 +0200
+
+    Update documentation
+
+ .../exploit/linux/http/ictbroadcast_unauth_cookie.md   | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 2c9053c45e13398449d9de8549db191690d9a842
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Mon Aug 4 17:49:34 2025 +0200
+
+    Refactor fingerprint detection, cookie handling and per-cookie injection
+    
+    - Centralize JS fingerprint checks in `check`
+    - Memoize `get_valid_cookies` correctly and reuse a single `cookie_jar`
+    - Update `inject_command` to test payload on each cookie separately
+
+ .../linux/http/ictbroadcast_unauth_cookie.rb       | 114 ++++++++++-----------
+ 1 file changed, 53 insertions(+), 61 deletions(-)
+
+commit 26099da7a23cb9f3d456de09d56df917a739784e
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Mon Aug 4 17:03:04 2025 +0200
+
+    Update modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 46b3012cdacf5f43abf386c79f7848e17001cf82
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Mon Aug 4 17:02:47 2025 +0200
+
+    Update modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a6d86fbe595f6e58ea0e9e37dcb24d02f0e0a739
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Mon Aug 4 17:02:35 2025 +0200
+
+    Update modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/http/ictbroadcast_unauth_cookie.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c8f756dd37e6c155085f87a7f6e5e2ae73452fa4
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Mon Aug 4 17:02:12 2025 +0200
+
+    Update documentation/modules/exploit/linux/http/ictbroadcast_unauth_cookie.md
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ documentation/modules/exploit/linux/http/ictbroadcast_unauth_cookie.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6d60db195bef3fefd2b6d48990b8335ba1288813
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Aug 4 10:10:09 2025 -0400
+
+    feat: bump metasploit_payloads-mettle gem to 1.0.45
+
+ Gemfile.lock                                                      | 4 ++--
+ LICENSE_GEMS                                                      | 2 +-
+ metasploit-framework.gemspec                                      | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_http.rb  | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_https.rb | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_tcp.rb   | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_http.rb  | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_https.rb | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_tcp.rb   | 2 +-
+ 9 files changed, 10 insertions(+), 10 deletions(-)
+
+commit a5b7c9859d0bfccdd37b2101e51d9f4725cd1f06
+Merge: f7930a9977 02ff2ad000
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Aug 4 14:55:16 2025 +0100
+
+    Merge pull request #20448 from cgranleese-r7/bump-rex-powershell-and-rex-random-identifier
+    
+    Bumps rex-powershell and rex-random_identifier gems
+
+ Gemfile.lock | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 02ff2ad000a2f0c2c0ef3c1b214a66c99590e0b9
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Aug 4 13:49:53 2025 +0100
+
+    Bumps rex-powershell and rex-random_identifier
+
+ Gemfile.lock | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit f7930a9977044ca02e77569dc97b3fdf7f12a698
+Merge: 5dd2fef0a9 5fe57c6804
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Aug 4 12:20:01 2025 +0100
+
+    Merge pull request #20444 from cgranleese-r7/adds-survey-banner-docs-site
+    
+    Adds survey banner to the docs site
+
+ docs/_includes/header_custom.html |  5 +++
+ docs/_includes/js/custom.js       | 41 ++++++++++++++++++++++
+ docs/assets/css/main.css          | 74 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 120 insertions(+)
+
+commit 5fe57c680419258ddc61c289dfe9bb40c020a89e
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Aug 1 17:11:11 2025 +0100
+
+    Adds survey banner to the docs site
+
+ docs/_includes/header_custom.html |  5 +++
+ docs/_includes/js/custom.js       | 41 ++++++++++++++++++++++
+ docs/assets/css/main.css          | 74 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 120 insertions(+)
+
+commit 5dd2fef0a9158f0f5ec3db04f6754025157ee56f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 4 09:57:20 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 5fd61844944459bee5ba99996ee4dec0ce52b092
+Merge: 4c94f9f94b a7ab23d083
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Aug 4 11:44:02 2025 +0200
+
+    Land #20423, adds malicious XDG Desktop fileformat module
+    
+    Add Malicious XDG Desktop File module
+
+ .../exploit/multi/fileformat/xdg_desktop.md        | 122 +++++++++++++++++++++
+ modules/exploits/multi/fileformat/xdg_desktop.rb   |  86 +++++++++++++++
+ 2 files changed, 208 insertions(+)
+
+commit a7ab23d0839e90481bdaac16ffd41e27f0c502ba
+Author: bcoles <bcoles@github>
+Date:   Mon Aug 4 19:23:02 2025 +1000
+
+    Add Malicious XDG Desktop File module
+
+ .../exploit/multi/fileformat/xdg_desktop.md        | 122 +++++++++++++++++++++
+ modules/exploits/multi/fileformat/xdg_desktop.rb   |  86 +++++++++++++++
+ 2 files changed, 208 insertions(+)
