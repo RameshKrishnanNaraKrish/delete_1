@@ -1,0 +1,131 @@
+commit 2553fed202ab919444cc3cefc62ef7d2e505b719
+Merge: f8acc93fdd cb615899ee
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 5 15:12:46 2025 -0500
+
+    Merge pull request #20438 from msutovsky-r7/fix/lib/chmod_in_compile
+    
+    Fixes incorrect path parameter for `chmod` in `upload_and_compile`
+
+ lib/msf/core/post/linux/compile.rb           | 7 ++++---
+ spec/lib/msf/core/post/linux/compile_spec.rb | 4 ++--
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+commit f8acc93fddf064e09fd85edd4593808c825f2c3d
+Merge: 74c10a4d4b 9a9028e93d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Aug 5 17:41:40 2025 +0100
+
+    Merge pull request #20452 from adfoster-r7/update-download-versions
+    
+    Update download versions
+
+ .github/workflows/docs.yml                             | 2 +-
+ docs/.ruby-version                                     | 2 +-
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 6 ++++--
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+
+commit 9a9028e93d6da834ddb5c357c20d95c31ae1da50
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Aug 5 16:45:51 2025 +0100
+
+    Update download versions
+
+ .github/workflows/docs.yml                             | 2 +-
+ docs/.ruby-version                                     | 2 +-
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 6 ++++--
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+
+commit 74c10a4d4bb081014a1a1d3e50bb1ba2773e45b5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 5 13:48:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 36 ++++++++++++++++++++++++++++++------
+ 1 file changed, 30 insertions(+), 6 deletions(-)
+
+commit 8914520139ad7e0b1c917a7e8d638239ae568788
+Merge: 6f97dbe239 c4a2189614
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Aug 5 15:39:50 2025 +0200
+
+    Land #20418, adds auto selection feature for password crackers
+    
+    Adds auto selection of cracker for password crackers
+
+ .../framework/password_crackers/cracker.rb         | 41 +++++++++++++++-------
+ modules/auxiliary/analyze/crack_aix.rb             | 29 ++++++++-------
+ modules/auxiliary/analyze/crack_databases.rb       | 31 +++++++++-------
+ modules/auxiliary/analyze/crack_linux.rb           | 29 ++++++++-------
+ modules/auxiliary/analyze/crack_osx.rb             | 29 ++++++++-------
+ modules/auxiliary/analyze/crack_webapps.rb         | 29 ++++++++-------
+ modules/auxiliary/analyze/crack_windows.rb         | 28 ++++++++-------
+ 7 files changed, 130 insertions(+), 86 deletions(-)
+
+commit 6f97dbe239d9a3d68591b4c0622ba25d94324efc
+Merge: 31b9dcdeb2 604fc95bc6
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Aug 5 09:36:27 2025 -0400
+
+    Merge pull request #20372 from cgranleese-r7/add-cache-validation-logic
+    
+    Adds cache invalidation logic
+
+ lib/msf/core/modules/metadata/store.rb | 163 +++++++++++++++++++++++++++++++++
+ lib/msf/ui/console/driver.rb           |  13 ++-
+ 2 files changed, 175 insertions(+), 1 deletion(-)
+
+commit 604fc95bc6fc13969cfd242a9ad7cba9857a5127
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Aug 4 14:28:11 2025 +0100
+
+    Moves checksum to top level of file cache
+
+ lib/msf/core/modules/metadata/store.rb | 130 ++++++++++++++++-----------------
+ lib/msf/ui/console/driver.rb           |  18 +++--
+ 2 files changed, 73 insertions(+), 75 deletions(-)
+
+commit aab414206883ace83a91030b24b4151fc5934fe8
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Wed Jul 23 15:31:20 2025 +0100
+
+    Updates to only use local store dir
+
+ lib/msf/core/modules/metadata/store.rb    | 83 +++++++------------------------
+ lib/msf/ui/console/driver.rb              | 15 +++---
+ tools/automation/cache/build_new_cache.sh |  1 -
+ 3 files changed, 25 insertions(+), 74 deletions(-)
+
+commit e9941fd91f578746090ab9992b5ff34128b7aae8
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Jun 27 12:08:23 2025 +0100
+
+    Adds cache invalidation logic
+
+ lib/msf/core/modules/metadata/store.rb    | 212 ++++++++++++++++++++++++++++++
+ lib/msf/ui/console/driver.rb              |  12 ++
+ tools/automation/cache/build_new_cache.sh |   1 +
+ 3 files changed, 225 insertions(+)
+
+commit 31b9dcdeb2ef81f6649706e6df65e3c88162e7b5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 5 07:39:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit c99702c8bfffaf5fc84a98842c9685cfe2c1e01a
+Merge: 26bf49a024 6ff04da954
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Aug 5 09:29:36 2025 +0200
+
+    Land #20446, adds module for ICTBroadcast Unauthenticated RCE (CVE-2025-2611)
+    
+    Add ICTBroadcast Unauthenticated Remote Code Execution (CVE-2025-2611)
+
+ .../linux/http/ictbroadcast_unauth_cookie.md       | 180 +++++++++++++++++++++
+ .../linux/http/ictbroadcast_unauth_cookie.rb       | 123 ++++++++++++++
+ 2 files changed, 303 insertions(+)
