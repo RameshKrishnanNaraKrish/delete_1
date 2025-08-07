@@ -1,0 +1,61 @@
+commit 41698afa32eb697d078fd9dd27861e89fa6b46d6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 6 19:33:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 75 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 75 insertions(+)
+
+commit b6dc0860e736e3129d4df8a029b61079a9127a05
+Merge: 00ea22600c 0a923a611d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Aug 6 14:24:28 2025 -0500
+
+    Merge pull request #20409 from sfewer-r7/sharepoint-hax
+    
+    Exploit module for Microsoft SharePoint ToolPane Unauthenticated RCE (CVE-2025-53770 and CVE-2025-53771)
+
+ .../windows/http/sharepoint_toolpane_rce.md        | 191 ++++++++++++
+ .../windows/http/sharepoint_toolpane_rce.rb        | 336 +++++++++++++++++++++
+ 2 files changed, 527 insertions(+)
+
+commit 0a923a611d26053bcdd6a99d46bcef4403c6d5f7
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Aug 6 15:33:57 2025 +0100
+
+    reword the language around our usage of CVE-2025-53770 to make it clear that this module is leveraging the authentication bypass for both CVE-2025-49706 and CVE-2025-53771, and the unsafe deserialization for CVE-2025-49704.
+
+ .../windows/http/sharepoint_toolpane_rce.md        | 19 +++++++------
+ .../windows/http/sharepoint_toolpane_rce.rb        | 31 ++++++++++++++--------
+ 2 files changed, 31 insertions(+), 19 deletions(-)
+
+commit 00ea22600c7666269dd436c6970be6bfcc589c0d
+Merge: 2553fed202 c5e342d874
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Aug 6 11:50:09 2025 +0100
+
+    Merge pull request #20454 from adfoster-r7/fix-show-options-crash
+    
+    Fix show options crash
+
+ lib/msf/base/serializer/readable_text.rb | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit c5e342d874a9aa3ef0665f214093c636d17a2ae6
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Aug 6 10:26:56 2025 +0100
+
+    Fix show options crash
+
+ lib/msf/base/serializer/readable_text.rb | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 70f2cbe055dafaa00eff7c895d872de313c4b8a9
+Author: h00die-gr3y <h00die.gr3y@gmail.com>
+Date:   Wed Aug 6 08:22:06 2025 +0000
+
+    simplified cleaning procedure
+
+ .../linux/http/pandora_itsm_auth_rce_cve_2025_4653.rb     | 15 ---------------
+ 1 file changed, 15 deletions(-)
