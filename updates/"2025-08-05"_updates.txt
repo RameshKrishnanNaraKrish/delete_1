@@ -1,0 +1,141 @@
+commit 5e6d4428605a11d2efd341c3eaa52f093a3cf32e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 7 13:46:28 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 140 +++++++++++++++++++++---------------------
+ 1 file changed, 70 insertions(+), 70 deletions(-)
+
+commit e8b441a5d36e9701c9c25af86e838ea2db0068e8
+Merge: 6a26428029 8985cd773d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 7 15:28:56 2025 +0200
+
+    Land #20012, MeterpreterOptions break-up and default extension loading removal
+    
+    MeterpreterOptions break-up and default extension loading removal
+
+ lib/msf/base/sessions/meterpreter.rb               | 44 +++++++++++-----------
+ .../base/sessions/meterpreter_options/android.rb   | 27 +++++++++++++
+ .../base/sessions/meterpreter_options/apple_ios.rb | 31 +++++++++++++++
+ lib/msf/base/sessions/meterpreter_options/bsd.rb   | 27 +++++++++++++
+ .../common.rb}                                     | 10 +----
+ lib/msf/base/sessions/meterpreter_options/java.rb  | 27 +++++++++++++
+ lib/msf/base/sessions/meterpreter_options/linux.rb | 31 +++++++++++++++
+ lib/msf/base/sessions/meterpreter_options/osx.rb   | 31 +++++++++++++++
+ lib/msf/base/sessions/meterpreter_options/php.rb   | 27 +++++++++++++
+ .../base/sessions/meterpreter_options/python.rb    | 27 +++++++++++++
+ .../base/sessions/meterpreter_options/windows.rb   | 31 +++++++++++++++
+ lib/msf/core/payload/android/meterpreter_loader.rb |  2 +-
+ lib/msf/core/payload/java/meterpreter_loader.rb    |  2 +-
+ lib/msf/core/payload/python/meterpreter_loader.rb  |  2 +-
+ lib/rex/post/meterpreter/pivot.rb                  |  2 +-
+ .../singles/android/meterpreter_reverse_http.rb    |  2 +-
+ .../singles/android/meterpreter_reverse_https.rb   |  2 +-
+ .../singles/android/meterpreter_reverse_tcp.rb     |  2 +-
+ .../apple_ios/aarch64/meterpreter_reverse_http.rb  |  2 +-
+ .../apple_ios/aarch64/meterpreter_reverse_https.rb |  2 +-
+ .../apple_ios/aarch64/meterpreter_reverse_tcp.rb   |  2 +-
+ .../apple_ios/armle/meterpreter_reverse_http.rb    |  2 +-
+ .../apple_ios/armle/meterpreter_reverse_https.rb   |  2 +-
+ .../apple_ios/armle/meterpreter_reverse_tcp.rb     |  2 +-
+ .../payloads/singles/bsd/x86/metsvc_bind_tcp.rb    |  2 +-
+ .../payloads/singles/bsd/x86/metsvc_reverse_tcp.rb |  2 +-
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  2 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  2 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  2 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  2 +-
+ .../singles/linux/ppc/meterpreter_reverse_http.rb  |  2 +-
+ .../singles/linux/ppc/meterpreter_reverse_https.rb |  2 +-
+ .../singles/linux/ppc/meterpreter_reverse_tcp.rb   |  2 +-
+ .../linux/ppc64le/meterpreter_reverse_http.rb      |  2 +-
+ .../linux/ppc64le/meterpreter_reverse_https.rb     |  2 +-
+ .../linux/ppc64le/meterpreter_reverse_tcp.rb       |  2 +-
+ .../linux/ppce500v2/meterpreter_reverse_http.rb    |  2 +-
+ .../linux/ppce500v2/meterpreter_reverse_https.rb   |  2 +-
+ .../linux/ppce500v2/meterpreter_reverse_tcp.rb     |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  2 +-
+ .../payloads/singles/linux/x86/metsvc_bind_tcp.rb  |  2 +-
+ .../singles/linux/x86/metsvc_reverse_tcp.rb        |  2 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  2 +-
+ .../osx/aarch64/meterpreter_reverse_http.rb        |  2 +-
+ .../osx/aarch64/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/osx/aarch64/meterpreter_reverse_tcp.rb |  2 +-
+ .../singles/osx/x64/meterpreter_reverse_http.rb    |  2 +-
+ .../singles/osx/x64/meterpreter_reverse_https.rb   |  2 +-
+ .../singles/osx/x64/meterpreter_reverse_tcp.rb     |  2 +-
+ .../singles/php/meterpreter_reverse_tcp.rb         |  2 +-
+ .../singles/windows/meterpreter_bind_named_pipe.rb |  2 +-
+ .../singles/windows/meterpreter_bind_tcp.rb        |  2 +-
+ .../singles/windows/meterpreter_reverse_http.rb    |  2 +-
+ .../singles/windows/meterpreter_reverse_https.rb   |  2 +-
+ .../windows/meterpreter_reverse_ipv6_tcp.rb        |  2 +-
+ .../singles/windows/meterpreter_reverse_tcp.rb     |  2 +-
+ .../payloads/singles/windows/metsvc_bind_tcp.rb    |  2 +-
+ .../payloads/singles/windows/metsvc_reverse_tcp.rb |  2 +-
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |  2 +-
+ .../singles/windows/x64/meterpreter_bind_tcp.rb    |  2 +-
+ .../windows/x64/meterpreter_reverse_http.rb        |  2 +-
+ .../windows/x64/meterpreter_reverse_https.rb       |  2 +-
+ .../windows/x64/meterpreter_reverse_ipv6_tcp.rb    |  2 +-
+ .../singles/windows/x64/meterpreter_reverse_tcp.rb |  2 +-
+ modules/payloads/stages/android/meterpreter.rb     |  2 +-
+ modules/payloads/stages/java/meterpreter.rb        |  2 +-
+ .../payloads/stages/linux/aarch64/meterpreter.rb   |  2 +-
+ modules/payloads/stages/linux/armle/meterpreter.rb |  2 +-
+ .../payloads/stages/linux/mipsbe/meterpreter.rb    |  2 +-
+ .../payloads/stages/linux/mipsle/meterpreter.rb    |  2 +-
+ modules/payloads/stages/linux/x64/meterpreter.rb   |  2 +-
+ modules/payloads/stages/linux/x86/meterpreter.rb   |  2 +-
+ modules/payloads/stages/osx/aarch64/meterpreter.rb |  2 +-
+ modules/payloads/stages/osx/x64/meterpreter.rb     |  2 +-
+ modules/payloads/stages/php/meterpreter.rb         |  2 +-
+ modules/payloads/stages/windows/meterpreter.rb     |  2 +-
+ .../payloads/stages/windows/patchupmeterpreter.rb  |  2 +-
+ modules/payloads/stages/windows/x64/meterpreter.rb |  2 +-
+ tools/modules/meterpreter_reverse.erb              |  2 +-
+ 100 files changed, 370 insertions(+), 121 deletions(-)
+
+commit 6a2642802972606b1c6cf1705a78d15c2a844e39
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 7 06:46:55 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 9caa2be9a23e5d99908a4cf9f901b4a45d1b4736
+Merge: 41698afa32 70f2cbe055
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 7 08:37:45 2025 +0200
+
+    Land #20399, adds module for Pandora ITSM authenticated RCE (CVE-2025-4653)
+    
+    Pandora ITSM auth RCE [CVE-2025-4653]
+
+ .../http/pandora_itsm_auth_rce_cve_2025_4653.md    | 131 +++++++++
+ .../http/pandora_itsm_auth_rce_cve_2025_4653.rb    | 324 +++++++++++++++++++++
+ 2 files changed, 455 insertions(+)
