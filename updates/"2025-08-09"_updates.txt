@@ -1,0 +1,115 @@
+commit 9dee394cabbc3aaa089ceea26f9172d7937512c2
+Merge: 003870e295 7c3ba83dd4
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Aug 11 17:50:09 2025 +0100
+
+    Merge pull request #20463 from adfoster-r7/update-display-module-action-wording
+    
+    Update display module action wording
+
+ lib/msf/ui/console/command_dispatcher/modules.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 003870e295cc05df3d135a9fb133cd44fcaf4498
+Merge: 3817ed2e70 332a55cb4f
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Aug 11 17:49:31 2025 +0100
+
+    Merge pull request #20462 from adfoster-r7/fix-error-in-kerberos-authenticator
+    
+    Fix logging error in kerberos authenticator
+
+ lib/msf/core/exploit/remote/kerberos/service_authenticator/base.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7c3ba83dd4dc0646073585475457950cce313712
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Aug 11 17:02:35 2025 +0100
+
+    Update display module action wording
+
+ lib/msf/ui/console/command_dispatcher/modules.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 332a55cb4f1bba025b5b98333a259045acf1519e
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Aug 11 16:48:37 2025 +0100
+
+    Fix error in kerberos authenticator
+
+ lib/msf/core/exploit/remote/kerberos/service_authenticator/base.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3817ed2e703d345e8151e2f88b6cfdb37c439de0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 11 15:02:00 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 2734daec0fc605de6f2ccffe274fc0e84be01e7c
+Merge: d25fd0825c ced20bf15a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Aug 11 15:53:38 2025 +0100
+
+    Merge pull request #20459 from adfoster-r7/consolidate-pkcs12-cert-file-reads
+    
+    Consolidate pkcs12 cert file reads
+
+ lib/metasploit/framework/ldap/client.rb        | 13 ++-----------
+ lib/msf/core/exploit/remote/ldap.rb            |  3 ++-
+ lib/msf/core/exploit/remote/pkcs12/storage.rb  | 17 +++++++++++++++++
+ modules/auxiliary/admin/kerberos/get_ticket.rb |  8 ++------
+ modules/auxiliary/scanner/ldap/ldap_login.rb   |  5 +++--
+ 5 files changed, 26 insertions(+), 20 deletions(-)
+
+commit ced20bf15ad426ef8b7d1f203bfc8acbafaffdc8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Aug 11 14:08:21 2025 +0100
+
+    Consolidate pkcs12 cert file reads
+
+ lib/metasploit/framework/ldap/client.rb        | 13 ++-----------
+ lib/msf/core/exploit/remote/ldap.rb            |  3 ++-
+ lib/msf/core/exploit/remote/pkcs12/storage.rb  | 17 +++++++++++++++++
+ modules/auxiliary/admin/kerberos/get_ticket.rb |  8 ++------
+ modules/auxiliary/scanner/ldap/ldap_login.rb   |  5 +++--
+ 5 files changed, 26 insertions(+), 20 deletions(-)
+
+commit d25fd0825cc4b947394a5cd0e6a2f6b99705ec58
+Merge: b23775124b 093d9f9a99
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Aug 11 13:10:59 2025 +0100
+
+    Merge pull request #20458 from adfoster-r7/fix-rendering-issue-on-kerberos-docs
+    
+    Fix rendering issue on kerberos docs
+
+ docs/metasploit-framework.wiki/kerberos/service_authentication.md | 2 +-
+ documentation/modules/auxiliary/admin/kerberos/get_ticket.md      | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 093d9f9a992d2e3e929a16044141e6c56357381c
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Aug 11 12:13:53 2025 +0100
+
+    Fix rendering issue on kerberos docs
+
+ docs/metasploit-framework.wiki/kerberos/service_authentication.md | 2 +-
+ documentation/modules/auxiliary/admin/kerberos/get_ticket.md      | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit b23775124b80086f1a811e3d094592cac2cf3cf5
+Merge: b8dad8d85f d0f0b3532f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Aug 11 12:54:41 2025 +0200
+
+    Land #20451, adds support for lwp-request GET fetch adapter
+    
+    Msf::Payload::Adapter::Fetch: Add lwp-request GET fetch adapter
+
+ lib/msf/core/payload/adapter/fetch.rb              | 43 +++++++++++++++++++++-
+ .../core/payload/adapter/fetch/linux_options.rb    |  4 +-
+ 2 files changed, 44 insertions(+), 3 deletions(-)
