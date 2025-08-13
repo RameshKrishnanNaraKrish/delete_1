@@ -1,0 +1,86 @@
+commit 7ca82b47fbefd0ccae001740fa4356a684f1ec7a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 12 19:37:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 8251d89e9275304e7218be3739a15e4864923619
+Merge: 3e882a3767 0273f1474f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Aug 12 12:28:28 2025 -0700
+
+    Merge pull request #20400 from msutovsky-r7/exploit/pivotx-rce
+    
+    Adds module for PivotX RCE (CVE-2025-52367)
+
+ .../linux/http/pivotx_index_php_overwrite.md       |  56 +++++++
+ .../linux/http/pivotx_index_php_overwrite.rb       | 162 +++++++++++++++++++++
+ 2 files changed, 218 insertions(+)
+
+commit 0273f1474f18eef14285409fec7043199764f7a4
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Aug 12 10:42:46 2025 -0700
+
+    Added incorrect creds check
+
+ modules/exploits/linux/http/pivotx_index_php_overwrite.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 3e882a3767d22d63b67647080cd8438570e421b8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 12 16:30:43 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit e59a24823b610fca6c208bef9451799e31aa4d47
+Merge: 4200f51fdf 3d0cfd0dfc
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Aug 12 09:22:22 2025 -0700
+
+    Merge pull request #20387 from h00die-gr3y/wazuh-auth-rce
+    
+    Wazuh Server authenticated RCE [CVE-2025-24016]
+
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.md    | 365 +++++++++++++++++++++
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.rb    | 144 ++++++++
+ 2 files changed, 509 insertions(+)
+
+commit 4200f51fdfd8c61588d77134e0e7f96e19203593
+Merge: e1407833c2 90b60c78ac
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Aug 12 07:59:10 2025 -0700
+
+    Merge pull request #20445 from zeroSteiner/feat/lib/ldap-adds/2
+    
+    Don't look up the local system SID
+
+ lib/msf/core/exploit/remote/ldap/active_directory.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit e1407833c237d1bf96bce123d2c4a32c8bc68111
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 12 10:34:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ec7d47c2718dae17140bc4d9843a151723482db1
+Merge: 9dee394cab a1630c0b81
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Aug 12 11:25:50 2025 +0100
+
+    Merge pull request #20461 from adfoster-r7/improve-login-summary-for-ldap-scanner
+    
+    Improve login summary for ldap schannel scanner
+
+ lib/msf/core/auxiliary/report_summary.rb     | 27 ++++++++++++++++++---------
+ modules/auxiliary/scanner/ldap/ldap_login.rb |  6 +++++-
+ 2 files changed, 23 insertions(+), 10 deletions(-)
