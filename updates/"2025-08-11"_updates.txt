@@ -1,0 +1,21 @@
+commit b59fd1c61a4652c2e809a018150b154d3acdb625
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 13 10:07:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 201 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 201 insertions(+)
+
+commit eb003f704dedc48b1c7d3411f3f0bd8311efa09d
+Merge: 7ca82b47fb 3122426ebe
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Aug 13 11:58:22 2025 +0200
+
+    Merge pull request #20386 from xHector1337/payload/windows/x64/download_exec
+    
+    Port payload/windows/download_exec to x64
+
+ .../payloads/singles/windows/x64/download_exec.rb  | 126 +++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |   9 ++
+ 2 files changed, 135 insertions(+)
