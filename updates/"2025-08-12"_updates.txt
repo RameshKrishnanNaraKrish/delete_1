@@ -1,0 +1,21 @@
+commit 996b1d0632ff5a239e739ebad1810cbb5e0b2379
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Aug 14 16:20:34 2025 -0500
+
+    Bump version of framework to 6.4.82
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 6ef226f43e6af9cfe2a0af4d4ce9399ff9aeb036
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Aug 14 13:39:23 2025 -0500
+
+    Bump version of framework to 6.4.81
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
