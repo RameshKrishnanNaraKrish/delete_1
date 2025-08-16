@@ -1,0 +1,132 @@
+commit 0830de84040b421c7f5ecd8db9f899b5e04cd0df
+Merge: c843e36402 170fbcb2bd
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Aug 15 16:52:29 2025 -0700
+
+    Merge pull request #20471 from zeroSteiner/feat/mod/ldap/esc-finder-updates
+    
+    Update the ldap_esc_vulnerable_cert_finder to check enrollment permissions
+
+ .../gather/ldap_esc_vulnerable_cert_finder.md      |  16 +-
+ .../core/exploit/remote/ldap/active_directory.rb   |   2 +
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 301 +++++++++++----------
+ 3 files changed, 168 insertions(+), 151 deletions(-)
+
+commit 170fbcb2bd1bfe0e002060b794a15e4b21030ab6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Aug 15 15:34:13 2025 -0400
+
+    Add two more report filters
+
+ .../auxiliary/gather/ldap_esc_vulnerable_cert_finder.md      |  2 ++
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb  | 12 ++++++++++--
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+commit 1c41c734f0b72086cf56682565dcba043a1d62de
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Aug 15 15:11:52 2025 -0400
+
+    Fix a missing ESC16 check
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+commit 25c72d4858e8fa89f1e93e3cf1ae1f5d7b727fc6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Aug 15 14:49:48 2025 -0400
+
+    Handle some edge cases in report filtering
+
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 56 +++++++++++++++-------
+ 1 file changed, 38 insertions(+), 18 deletions(-)
+
+commit f3719b884a222a6bfd11e8d1e067bf4b94574e3c
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Aug 14 15:40:02 2025 -0400
+
+    Document the new report filtering option
+
+ .../auxiliary/gather/ldap_esc_vulnerable_cert_finder.md    | 14 ++++++--------
+ .../auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb    |  2 +-
+ 2 files changed, 7 insertions(+), 9 deletions(-)
+
+commit c8f72a83c039fe60059a6070fcc84485aa44866e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Aug 14 15:36:03 2025 -0400
+
+    Refactor to remove redundant code
+
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 66 ++++++----------------
+ 1 file changed, 16 insertions(+), 50 deletions(-)
+
+commit 2338ad7c8429ee4b51ccaaaca531497b4035c0ec
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Aug 14 15:15:17 2025 -0400
+
+    Implement the desired filtering
+
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 78 +++++++++++-----------
+ 1 file changed, 39 insertions(+), 39 deletions(-)
+
+commit fa33c846121f5df43491bd4295ce6034d9b28e9e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Aug 13 16:10:54 2025 -0400
+
+    Evaluate permissions for templates and CAs
+
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 166 ++++++++++++---------
+ 1 file changed, 92 insertions(+), 74 deletions(-)
+
+commit 13b3af325f25b94f90976c5da68f78bb8f5808fd
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Aug 13 16:10:18 2025 -0400
+
+    Apply the ACEs for Authenticated Users
+
+ lib/msf/core/exploit/remote/ldap/active_directory.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit c843e3640240abfc8d93efe6b528459c1f97b760
+Merge: 487c204b52 bebb43f8f6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Aug 15 12:51:52 2025 +0100
+
+    Merge pull request #20469 from adfoster-r7/improve-kerberos-file-load-error-messages
+    
+    Improve Kerberos file load error messages
+
+ .../remote/kerberos/service_authenticator/base.rb  |  60 ++++++++-----
+ .../administrator_dev_demo_local_expired.ccache    | Bin 0 -> 1227 bytes
+ .../fake_user_example_local_forged_silver.ccache   | Bin 0 -> 1160 bytes
+ .../kerberos/service_authenticator/base_spec.rb    | 100 +++++++++++++++++++--
+ spec/support/shared/contexts/msf/ui_driver.rb      |   7 +-
+ 5 files changed, 137 insertions(+), 30 deletions(-)
+
+commit bebb43f8f64644e6fd7495d5a202fa7c1954d73a
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Aug 13 08:10:00 2025 +0100
+
+    Improve kerberos file load error messages
+
+ .../remote/kerberos/service_authenticator/base.rb  |  60 ++++++++-----
+ .../administrator_dev_demo_local_expired.ccache    | Bin 0 -> 1227 bytes
+ .../fake_user_example_local_forged_silver.ccache   | Bin 0 -> 1160 bytes
+ .../kerberos/service_authenticator/base_spec.rb    | 100 +++++++++++++++++++--
+ spec/support/shared/contexts/msf/ui_driver.rb      |   7 +-
+ 5 files changed, 137 insertions(+), 30 deletions(-)
+
+commit 487c204b52b2c6c0f586316a4b305c3ec15ebdea
+Merge: 996b1d0632 dcde8d1580
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Aug 15 12:40:55 2025 +0200
+
+    Merge pull request #20381 from h00die/persistence_phase_1
+    
+    Persistence libraries/Mixins
+
+ lib/msf/core/exploit/local/persistence.rb        | 74 ++++++++++++++++++++++++
+ lib/msf/core/exploit/local/timespec.rb           | 28 +++++++++
+ lib/msf/core/post/linux/user.rb                  | 22 +++++++
+ spec/lib/msf/core/exploit/local/timespec_spec.rb | 42 ++++++++++++++
+ spec/lib/msf/core/post/linux/user_spec.rb        | 37 ++++++++++++
+ 5 files changed, 203 insertions(+)
