@@ -1,0 +1,20 @@
+commit 7f833ceba5d6ad01272fbf6169fb24dcf0173c68
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 18 10:20:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+commit be3d77715ebcb6d100cdb75da9e1d3c8af4119a1
+Merge: bcc59f1ec7 e42af1843b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Aug 18 12:08:45 2025 +0200
+
+    Merge pull request #20382 from Chocapikk/depicter-fix
+    
+    Fix `auxiliary/gather/wp_depicter_sqli_cve_2025_2011`
+
+ .../gather/wp_depicter_sqli_cve_2025_2011.rb       | 52 ++++++++++++----------
+ 1 file changed, 28 insertions(+), 24 deletions(-)
