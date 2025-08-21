@@ -1,0 +1,111 @@
+commit ab45ae60f3470f2dee8f8197ec48980e4385e00c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 20 18:26:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 5735a82df7ee6f27bdd211601e942b13b986bdc4
+Merge: 8602f8beaf e23feb0faf
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Aug 20 14:13:24 2025 -0400
+
+    Merge pull request #20460 from msutovsky-r7/exploit/ndsudo-priv-esc
+    
+    Adds an exploit for ndsudo privilege escalation (CVE-2024-32019)
+
+ .../exploit/linux/local/ndsudo_cve_2024_32019.md   | 60 ++++++++++++++++
+ .../exploits/linux/local/ndsudo_cve_2024_32019.rb  | 83 ++++++++++++++++++++++
+ 2 files changed, 143 insertions(+)
+
+commit 8602f8beaf0fe170593ae185e016d12b7e263a5e
+Merge: f18b0ccf7d 97958cdf33
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Aug 20 10:57:18 2025 -0400
+
+    Merge pull request #20470 from bwatters-r7/docs/readd-esc8
+    
+    re-add ESC8 creation guide
+
+ .../auxiliary/gather/ldap_esc_vulnerable_cert_finder.md  | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+commit e23feb0faf5a375ff4593929a48f18485a0b4969
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 20 12:49:38 2025 +0200
+
+    Adds check for ndsudo binary
+
+ modules/exploits/linux/local/ndsudo_cve_2024_32019.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit f18b0ccf7db4b2319d5675cffa4191c65ace4729
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Wed Aug 20 05:44:43 2025 -0500
+
+    Bump version of framework to 6.4.83
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 5ad5384b7fc5ac403ea8dfdb4921f032e349de13
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 20 10:33:47 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d09d5212ece6fe1470a5fb71cc257553b2876ed9
+Merge: 29a7e4b7a8 0557d63127
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 20 11:25:20 2025 +0100
+
+    Merge pull request #20457 from adfoster-r7/add-database-ref-opts-for-kerberos-and-pkcs12
+    
+    Add database ref opts for kerberos and pkcs12
+
+ Gemfile.lock                                       |  2 +-
+ .../remote/kerberos/service_authenticator/base.rb  | 40 +++++++----
+ .../kerberos/service_authenticator/options.rb      |  2 +-
+ lib/msf/core/exploit/remote/ldap.rb                |  2 +-
+ lib/msf/core/exploit/remote/pkcs12/storage.rb      | 15 +++-
+ lib/msf/core/opt_database_ref_or_path.rb           | 37 ++++++++++
+ lib/msf/core/opt_kerberos_credential_cache.rb      | 14 ++++
+ lib/msf/core/opt_pkcs12_cert.rb                    | 14 ++++
+ lib/msf/ui/console/command_dispatcher/creds.rb     |  6 +-
+ modules/auxiliary/admin/kerberos/get_ticket.rb     |  4 +-
+ .../msf/core/opt_kerberos_credential_cache_spec.rb |  7 ++
+ spec/lib/msf/core/opt_pkcs12_cert_spec.rb          |  7 ++
+ .../ui/console/command_dispatcher/creds_spec.rb    | 82 ++++++++++++----------
+ .../examples/a_database_ref_or_path_option.rb      | 20 ++++++
+ 14 files changed, 192 insertions(+), 60 deletions(-)
+
+commit aae5356190aec930ae5be80542b8c851d0e8b864
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 20 12:10:11 2025 +0200
+
+    Updates the docs
+
+ documentation/modules/exploit/linux/local/ndsudo_cve_2024_32019.md | 2 +-
+ modules/exploits/linux/local/ndsudo_cve_2024_32019.rb              | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 29a7e4b7a845cbb9554f3ef9c64e1a7ac11cacbe
+Merge: 7f833ceba5 c8f44cfbce
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 20 10:17:44 2025 +0200
+
+    Land #20429, updates communication channels in Metasploit documentation
+    
+    Update communication channels in documentation
+
+ CONTRIBUTING.md                           |  2 +-
+ README.md                                 |  9 ++++++++-
+ docs/metasploit-framework.wiki/Contact.md | 28 ++++++++++++++++++++++++----
+ 3 files changed, 33 insertions(+), 6 deletions(-)
