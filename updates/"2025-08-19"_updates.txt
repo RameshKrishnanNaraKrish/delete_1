@@ -1,0 +1,65 @@
+commit f6b91012494b37338b554cdf4f9acc53dddeaaf2
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Aug 21 06:36:19 2025 -0500
+
+    Bump version of framework to 6.4.85
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 4b2ae82f87e2c645e251b5b2a6207adb19cb3132
+Merge: 99dd2a0613 f3dd030574
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Aug 21 11:52:53 2025 +0100
+
+    Merge pull request #20485 from adfoster-r7/fix-ldap-schannel-supercall
+    
+    Fix ldap schannel superclass method call
+
+ lib/msf/core/auxiliary/report_summary.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit f3dd0305744d9e85bfd0e1e40eac0ef8e941e325
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Aug 21 11:28:26 2025 +0100
+
+    Fix ldap schannel supercall
+
+ lib/msf/core/auxiliary/report_summary.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 99dd2a0613df7ff6209f85398a79a48aa1dc9561
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Aug 21 05:13:14 2025 -0500
+
+    Bump version of framework to 6.4.84
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 30bda5c6a5fec4844820f90141a14d8c35bd6c09
+Merge: ab45ae60f3 39e008e650
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Aug 21 10:54:31 2025 +0100
+
+    Merge pull request #20484 from cdelafuente-r7/add_parallel_gem
+    
+    Add parallel gem to gemspec
+
+ Gemfile.lock                 | 1 +
+ metasploit-framework.gemspec | 3 +++
+ 2 files changed, 4 insertions(+)
+
+commit 39e008e65010814b883e2e3000aa3789d91374bd
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Aug 21 11:47:42 2025 +0200
+
+    Add parallel gem to gemspec
+
+ Gemfile.lock                 | 1 +
+ metasploit-framework.gemspec | 3 +++
+ 2 files changed, 4 insertions(+)
