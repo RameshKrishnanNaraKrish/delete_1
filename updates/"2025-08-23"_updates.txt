@@ -1,0 +1,20 @@
+commit 2e1e2efd5c0de9a2b48420020540fafb54e8897a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 25 23:28:32 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51a2c96e7b5406de0a0cb5dc1565c6945cc9f1dc
+Merge: f6b9101249 baa5469a21
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Aug 25 19:20:09 2025 -0400
+
+    Merge pull request #20489 from 2tunnels/patch-1
+    
+    Fix legacy method override in torchserver_cve_2023_43654
+
+ modules/exploits/multi/http/torchserver_cve_2023_43654.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
