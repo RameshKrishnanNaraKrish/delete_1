@@ -1,0 +1,20 @@
+commit df86d1bd7964c81dd4af20eb76d53b86388d81fe
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 26 20:23:12 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c56bfcaa5b33707e613edbca58ad95b97a7e7eeb
+Merge: 2e1e2efd5c 6c77f7479d
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Aug 26 16:14:23 2025 -0400
+
+    Merge pull request #20488 from mwalas-r7/fix/ssl-version-scanner
+    
+    Fixed listing weak ciphers in ssl_version scan
+
+ modules/auxiliary/scanner/ssl/ssl_version.rb | 329 ++++++++++++---------------
+ 1 file changed, 150 insertions(+), 179 deletions(-)
