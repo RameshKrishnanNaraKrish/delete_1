@@ -1,0 +1,64 @@
+commit 7549339e017d5fc984c458733bc9442f2e5508ff
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 27 20:55:20 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 114 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 114 insertions(+)
+
+commit f1dffd3ad6826b979745909cae8c60ae3e043fa0
+Merge: df86d1bd79 f43b141886
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Aug 27 15:46:39 2025 -0500
+
+    Merge pull request #20480 from msutovsky-r7/exploit/pretalx/file-rw
+    
+    Adds modules for Pretalx File Read/Limited File Write (CVE-2023-28459, CVE-2023-28458)
+
+ .../http/pretalx_file_read_cve_2023_28459.md       | 177 ++++++++
+ .../linux/http/pretalx_rce_cve_2023_28458.md       | 196 +++++++++
+ lib/msf/core/exploit/remote/http/pretalx.rb        | 482 +++++++++++++++++++++
+ lib/msf/core/exploit/remote/http/pretalx/error.rb  |  41 ++
+ .../http/pretalx_file_read_cve_2023_28459.rb       | 125 ++++++
+ .../linux/http/pretalx_rce_cve_2023_28458.rb       | 125 ++++++
+ 6 files changed, 1146 insertions(+)
+
+commit f43b14188632981e9098346da8372a124927fa7b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 27 21:18:03 2025 +0200
+
+    Fine-tunning docs
+
+ .../auxiliary/scanner/http/pretalx_file_read_cve_2023_28459.md       | 3 ++-
+ .../modules/exploit/linux/http/pretalx_rce_cve_2023_28458.md         | 5 +++--
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 61a0d68d97bdeb72af8d94247989c09250dc53dd
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 27 19:22:46 2025 +0200
+
+    Fine-tuning docs
+
+ .../auxiliary/scanner/http/pretalx_file_read_cve_2023_28459.md        | 4 +++-
+ .../modules/exploit/linux/http/pretalx_rce_cve_2023_28458.md          | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 23f486dc531d41c7cab57645b51f7133f3d7774e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 27 19:16:33 2025 +0200
+
+    Updates docs
+
+ .../http/pretalx_file_read_cve_2023_28459.md       | 60 ++++++++++++++++++++++
+ .../linux/http/pretalx_rce_cve_2023_28458.md       | 60 ++++++++++++++++++++++
+ 2 files changed, 120 insertions(+)
+
+commit 719678625802ae40c96a79b82d039cbbea251b5d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Aug 27 18:12:54 2025 +0200
+
+    Clarifies docs
+
+ documentation/modules/exploit/linux/http/pretalx_rce_cve_2023_28458.md | 1 +
+ 1 file changed, 1 insertion(+)
