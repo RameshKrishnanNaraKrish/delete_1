@@ -1,0 +1,154 @@
+commit c163cb3141fc9ce7e6989034ee79ce2ca09d62b0
+Merge: 3d809fa11b 196e19808d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 28 16:13:38 2025 +0200
+
+    Land #20490, adds the HTTP::Auth option to HTTP modules
+    
+    This adds the `HTTP::Auth` Option to HTTP Modules
+
+ lib/msf/core/exploit/remote/http_client.rb | 45 ++++++++++++++++++++++++++++++
+ lib/rex/proto/http/client.rb               | 22 +++++++++++----
+ 2 files changed, 62 insertions(+), 5 deletions(-)
+
+commit 196e19808d00a5c627a6d4023c958f63f2577e52
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Aug 28 09:29:37 2025 -0400
+
+    Add some error handling for kerberos options
+
+ lib/msf/core/exploit/remote/http_client.rb | 39 ++++++++++++++++++------------
+ lib/rex/proto/http/client.rb               |  9 ++++++-
+ 2 files changed, 31 insertions(+), 17 deletions(-)
+
+commit 3d809fa11b85841075e04e54e05913536f073528
+Merge: 2896b232d1 672e9fb32e
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Aug 28 13:05:52 2025 +0100
+
+    Merge pull request #20499 from dwelch-r7/fix-msfconsole-crash-in-pro-install
+    
+    Add the monkey patch for the TagBuilder that pro needs
+
+ config/application.rb | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit 672e9fb32e14667abff8d15c4409991cf4e9421a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Aug 28 12:42:42 2025 +0100
+
+    Add the monkey patch for the TagBuilder that pro needs
+
+ config/application.rb | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit 2896b232d1542fa4072b4701e4a79487567c2db4
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Aug 28 06:09:25 2025 -0500
+
+    Bump version of framework to 6.4.86
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 66c16b0887f7ba31d18ab96fc33c36ed7882a736
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 28 07:59:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit c5e5cb84f1fc8d8f4fb117d0f4ecbc469fb2fcf8
+Merge: 7549339e01 b177507041
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 28 09:47:16 2025 +0200
+
+    Land #20266, adds UDP keyboard exploit module for Remote for Mac 2025.6
+    
+    Adds UDP Keyboard RCE for Remote for Mac 2025.6
+
+ .../exploit/osx/misc/remote_for_mac_udp_rce.md     |  43 +++++++
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    | 132 +++++++++++++++++++++
+ 2 files changed, 175 insertions(+)
+
+commit b177507041079aa74c01741549ed3bb839074f01
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 28 09:27:32 2025 +0200
+
+    Adds docs
+
+ .../exploit/osx/misc/remote_for_mac_udp_rce.md     | 43 ++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit f9b8a9b95ea5a920dec94a707f618ffc5e868a90
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 28 09:11:01 2025 +0200
+
+    Adds more robust check method
+
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
+
+commit 6c65db52c5c6e90b78bf74e5e5f3f1a8230f8e2d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Aug 28 08:57:21 2025 +0200
+
+    Code rebase, fixing according to the comments
+
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    | 108 ++++++++-------------
+ 1 file changed, 41 insertions(+), 67 deletions(-)
+
+commit a251694e2f4aa967af85e7d0d85a4e7456b24373
+Author: Chokri Hammedi <52697989+blue0x1@users.noreply.github.com>
+Date:   Wed Jun 11 17:20:03 2025 +0000
+
+    Update modules/exploits/osx/misc/remote_for_mac_udp_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/osx/misc/remote_for_mac_udp_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eda79be4bd2c461d3902ad8b2ad14823e1394236
+Author: Chokri Hammedi <52697989+blue0x1@users.noreply.github.com>
+Date:   Wed Jun 11 17:19:24 2025 +0000
+
+    Update modules/exploits/osx/misc/remote_for_mac_udp_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/osx/misc/remote_for_mac_udp_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2d1f700935fc43705562569d375f00d48dad85b4
+Author: Chokri Hammedi <52697989+blue0x1@users.noreply.github.com>
+Date:   Wed Jun 11 17:19:10 2025 +0000
+
+    Update modules/exploits/osx/misc/remote_for_mac_udp_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/osx/misc/remote_for_mac_udp_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8a6d12a2f4b1b90c61450d9f174f99ef6888d0a3
+Author: root <root@localhost.localdomain>
+Date:   Thu May 29 06:57:36 2025 +0100
+
+    Add exploit for Remote for Mac 2025.6 unauthenticated UDP RCE
+
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    | 179 +++++++++++----------
+ 1 file changed, 93 insertions(+), 86 deletions(-)
+
+commit 374407fc79ed7e79ae52d918dad1f25d3d0998c5
+Author: root <root@localhost.localdomain>
+Date:   Thu May 29 06:41:20 2025 +0100
+
+    Add exploit for Remote for Mac 2025.6 unauthenticated UDP RCE
+
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    | 139 +++++++++++++++++++++
+ 1 file changed, 139 insertions(+)
