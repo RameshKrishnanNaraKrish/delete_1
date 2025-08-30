@@ -1,0 +1,40 @@
+commit 0e64aef9f78bde868d157c1de84db058122ab7e7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Aug 29 18:21:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 5d59fbd333e2485750ef393f0cf61e47bfdc70da
+Merge: c163cb3141 2681e7cfed
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 29 20:12:12 2025 +0200
+
+    Land #19903, adds module for periodic script persistence
+    
+    Add OSX Periodic Script Peristence
+
+ .../multi/local/periodic_script_persistence.md     |  62 ++++++++++++
+ .../multi/local/periodic_script_persistence.rb     | 106 +++++++++++++++++++++
+ 2 files changed, 168 insertions(+)
+
+commit 2681e7cfedcd56c3faf000e677773b6b64edfd25
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 29 17:53:07 2025 +0200
+
+    Update docs
+
+ .../multi/local/periodic_script_persistence.md     | 53 +++++++++++-----------
+ .../multi/local/periodic_script_persistence.rb     |  5 +-
+ 2 files changed, 31 insertions(+), 27 deletions(-)
+
+commit 57f14339d94877d3dee21e539c3db3ad4b104fd9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 29 14:47:11 2025 +0200
+
+    Adds x64 to BSD target
+
+ modules/exploits/multi/local/periodic_script_persistence.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
