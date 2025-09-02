@@ -1,0 +1,21 @@
+commit e0fec0e61b16a7321da7515f91ff2a08436c965d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 1 11:46:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 9283562ee5e1fd80d4fb02e7c9fbac057381d1a3
+Merge: 0e64aef9f7 071a4a34fc
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 1 13:37:31 2025 +0200
+
+    Land #20493, adds XWiki unauthenticated exploit module (CVE-2025-24893)
+    
+    Add XWiki Unauthenticated RCE (CVE-2025-24893)
+
+ .../multi/http/xwiki_unauth_rce_cve_2025_24893.md  | 119 +++++++++++++++++
+ .../multi/http/xwiki_unauth_rce_cve_2025_24893.rb  | 146 +++++++++++++++++++++
+ 2 files changed, 265 insertions(+)
