@@ -1,0 +1,66 @@
+commit 9efd3c3c790fe1ba49349b1ed0991536576de618
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 2 14:07:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 657280b4b840e4408878b858c2bc3fc633c00e0a
+Merge: b3176f0274 0fe22ead4f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 2 15:56:59 2025 +0200
+
+    Land #20505, adds fix for sap_router_portscanner module
+    
+    fix output of `sap_router_portscanner` that causes module crash
+
+ modules/auxiliary/scanner/sap/sap_router_portscanner.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b3176f02740baa0e8a30391d268447ff8546f9a5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 2 12:40:28 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 99 ++++++++++++++++++++++---------------------
+ 1 file changed, 51 insertions(+), 48 deletions(-)
+
+commit 7820c6caece410f7a07a6bb1e52bd1ea80e8d8f4
+Merge: 3d6993d4ba d9f96571e4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 2 14:31:42 2025 +0200
+
+    Land #20504, moves bash_profile module to persistence category
+    
+    update bash_profile to persistence mixin
+
+ .../linux/local/bash_profile_persistence.md        |  50 --------
+ .../exploit/linux/persistence/bash_profile.md      | 111 +++++++++++++++++
+ .../linux/local/bash_profile_persistence.rb        | 122 -------------------
+ modules/exploits/linux/persistence/bash_profile.rb | 132 +++++++++++++++++++++
+ 4 files changed, 243 insertions(+), 172 deletions(-)
+
+commit 3d6993d4bab3c8787880a33c5ab6e8a555d8ffd5
+Merge: e0fec0e61b 5a3195d9f6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Sep 2 12:42:53 2025 +0100
+
+    Merge pull request #20500 from cgranleese-r7/fixes-docker-invalid-uri-error
+    
+    Fixes database name stripping
+
+ lib/msf/core/db_connector.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0fe22ead4fc40145caa8c5b9b1e2299543a933b6
+Author: randomstr1ng <julian@petersohn.it>
+Date:   Tue Sep 2 10:05:42 2025 +0200
+
+    Fix table output to use print_line instead of print in
+    sap_router_port_scanner
+
+ modules/auxiliary/scanner/sap/sap_router_portscanner.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
