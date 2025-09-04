@@ -1,0 +1,46 @@
+commit ef61041ae1a3f4b984a86232182eef00f5542def
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 3 22:03:28 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit da7224ed1b5e42676f0f096024531694a3ea2256
+Merge: 0bc993b9ca eef1d34506
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 3 16:53:43 2025 -0500
+
+    Merge pull request #20376 from msutovsky-r7/exploit/sudo-chroot-privesc
+    
+    Adds module for sudo chroot LPE (CVE-2025-32463)
+
+ .../linux/local/sudo_chroot_cve_2025_32463.md      |  94 +++++++++++++
+ .../linux/local/sudo_chroot_cve_2025_32463.rb      | 153 +++++++++++++++++++++
+ 2 files changed, 247 insertions(+)
+
+commit 0bc993b9cab0c8961cbfd94c9148e36a659a6d27
+Merge: 9efd3c3c79 be01d0578b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Sep 3 16:29:45 2025 +0100
+
+    Merge pull request #20513 from rapid7/revert-20444-adds-survey-banner-docs-site
+    
+    Revert "Adds survey banner to the docs site"
+
+ docs/_includes/header_custom.html |  5 ---
+ docs/_includes/js/custom.js       | 41 ----------------------
+ docs/assets/css/main.css          | 74 ---------------------------------------
+ 3 files changed, 120 deletions(-)
+
+commit be01d0578b2e409d67f3222cb54835f1d6dc4064
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Sep 3 16:11:00 2025 +0100
+
+    Revert "Adds survey banner to the docs site"
+
+ docs/_includes/header_custom.html |  5 ---
+ docs/_includes/js/custom.js       | 41 ----------------------
+ docs/assets/css/main.css          | 74 ---------------------------------------
+ 3 files changed, 120 deletions(-)
