@@ -1,0 +1,61 @@
+commit db80e8173aa4961ecbace2fa1c1c5331cfd256f2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 4 17:31:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e07d174011135694c9d46a2875a672007ee0fdab
+Merge: 2ca14c900b 9fb4966e52
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Sep 4 13:22:57 2025 -0400
+
+    Merge pull request #20511 from mwalas-r7/fix/sni-support-for-ssl-scanner
+    
+    Added SNI support for the ssl_version scanner
+
+ modules/auxiliary/scanner/ssl/ssl_version.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 9fb4966e52294a7ca4b2677c4bf8cf1f16b5b473
+Author: mwalas-r7 <mwalas-r7@github>
+Date:   Wed Sep 3 11:08:43 2025 +0200
+
+    Added SNI support for ssl scanner
+
+ modules/auxiliary/scanner/ssl/ssl_version.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 2ca14c900bc483cddbd7bd4922fcc23250cdf9f4
+Merge: 9beacd1980 ce3dc123f9
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Sep 4 12:25:18 2025 +0100
+
+    Merge pull request #20516 from adfoster-r7/fix-msfdb-init-failures-on-nixos
+    
+    Fix msfdb init failures on NixOs
+
+ lib/msfdb_helpers/pg_ctl.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ce3dc123f977b98f04ee555e4f74f6cc14923581
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Sep 4 11:41:30 2025 +0100
+
+    Fix msfdb init failures on nixos
+
+ lib/msfdb_helpers/pg_ctl.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9beacd19805ea742c126330c83ac9583631d3889
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Sep 4 03:32:48 2025 -0500
+
+    Bump version of framework to 6.4.87
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
