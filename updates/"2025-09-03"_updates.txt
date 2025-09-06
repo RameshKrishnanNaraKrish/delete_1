@@ -1,0 +1,20 @@
+commit 5fedbe026b4d8cb29f6ff14faa5516aca3e0dff0
+Merge: db80e8173a 0966954549
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Sep 5 13:07:55 2025 +0100
+
+    Merge pull request #20519 from cgranleese-r7/adds-base-sessions-path-to-meterpreter-workflow-paths
+    
+    Adds `lib/msf/base/sessions` path to Meterpreter acceptance workflow paths
+
+ .github/workflows/meterpreter_acceptance.yml | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 09669545493afb299a5d4c36a7c083f6f4006a8e
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Sep 5 07:10:40 2025 +0100
+
+    Adds lib/msf/base/sessions to meterpreter acceptance workflow paths
+
+ .github/workflows/meterpreter_acceptance.yml | 1 +
+ 1 file changed, 1 insertion(+)
