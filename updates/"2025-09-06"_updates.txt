@@ -1,0 +1,42 @@
+commit 704a8f10b889ebab3cebf7db832ebbe96950d78c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 8 23:57:37 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 797201793672df565ebf249710396db37c38fdd1
+Merge: 68940822fd 0e325e6217
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 8 16:48:29 2025 -0700
+
+    Merge pull request #20397 from vognik/CVE-2025-34300
+    
+    Add Lighthouse Studio unauthenticated RCE (CVE-2025-34300)
+
+ .../lighthouse_studio_unauth_rce_CVE_2025_34300.md | 414 +++++++++++++++++++++
+ .../lighthouse_studio_unauth_rce_cve_2025_34300.rb | 154 ++++++++
+ 2 files changed, 568 insertions(+)
+
+commit 0e325e62174b2a762fe9fcdf69cbf8ef56d27ff5
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 8 16:29:00 2025 -0700
+
+    Update documentation/modules/exploit/multi/http/lighthouse_studio_unauth_rce_CVE_2025_34300.md
+
+ .../multi/http/lighthouse_studio_unauth_rce_CVE_2025_34300.md        | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 68940822fd56fb35e58c7c6ba2706d91379a149e
+Merge: 5fedbe026b 56c692fc3e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 8 16:23:20 2025 +0200
+
+    Merge pull request #20494 from h00die/modern_persistence_example
+    
+    add example linux persistence module
+
+ modules/exploits/example_linux_persistence.rb | 132 ++++++++++++++++++++++++++
+ 1 file changed, 132 insertions(+)
