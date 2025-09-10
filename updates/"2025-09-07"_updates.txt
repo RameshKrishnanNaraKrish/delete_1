@@ -1,0 +1,56 @@
+commit b650776c838fcf6957c9bb1159cd25524eb1c990
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 9 14:36:48 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 140232da2cfea521ea366842ec0ce6a97c71917b
+Merge: 6df1871523 c4936d1b0f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 9 16:25:24 2025 +0200
+
+    Merge pull request #20534 from h00die/persistence_lib_fixes
+    
+    adjustments to the persistence lib and landed modules
+
+ lib/msf/core/exploit/local/persistence.rb          | 25 ++++++++++++++++++----
+ modules/exploits/example_linux_persistence.rb      |  6 +++---
+ modules/exploits/linux/persistence/bash_profile.rb |  7 +++---
+ 3 files changed, 28 insertions(+), 10 deletions(-)
+
+commit c4936d1b0f0b820899de3741b98e20380ecf2253
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Sep 9 10:02:06 2025 -0400
+
+    adjustments to the persistence lib and modules
+
+ lib/msf/core/exploit/local/persistence.rb          | 25 ++++++++++++++++++----
+ modules/exploits/example_linux_persistence.rb      |  6 +++---
+ modules/exploits/linux/persistence/bash_profile.rb |  7 +++---
+ 3 files changed, 28 insertions(+), 10 deletions(-)
+
+commit 6df18715238240662b1a17f09d5166d97c99b8dd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 9 13:51:25 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2f27fe4ed58f2aa60e46c38a0ca5a1b598b663e6
+Merge: 704a8f10b8 736d89bc2c
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Sep 9 14:42:12 2025 +0100
+
+    Merge pull request #19653 from Mathiou04/fix_bugs_in_credentials_collection_enumerator_and_refacto
+    
+    Fixing multiple bugs in credential generation + refactoring
+
+ lib/metasploit/framework/credential_collection.rb  | 289 ++++++------------
+ modules/auxiliary/scanner/ldap/ldap_login.rb       |  40 ++-
+ .../framework/credential_collection_spec.rb        | 338 +++++++++++++++++----
+ 3 files changed, 403 insertions(+), 264 deletions(-)
