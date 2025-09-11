@@ -1,0 +1,52 @@
+commit 41044974982343a2bbe827b9820822ee7968ef52
+Merge: 1fe1512596 9979af9fd7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Sep 10 12:37:35 2025 +0200
+
+    Merge pull request #20502 from zeroSteiner/feat/refactor-pe-compiling
+    
+    Update PE EXE Templates
+
+ data/templates/src/pe/README.md                    |   4 +-
+ data/templates/src/pe/build_all.bat                |  17 +
+ data/templates/src/pe/build_dlls.bat               |   7 -
+ data/templates/src/pe/dll_mixed_mode/build.bat     |   1 +
+ data/templates/src/pe/exe/build.bat                |  13 +
+ data/templates/src/pe/exe/service/Service.sln      |  26 --
+ data/templates/src/pe/exe/service/Service.vcproj   | 343 ---------------------
+ data/templates/src/pe/exe/template.c               |  14 +-
+ data/templates/src/pe/exe/template.s               | 341 --------------------
+ data/templates/src/pe/exe/template_x64_windows.asm |  32 --
+ data/templates/src/pe/exe_service/build.bat        |  13 +
+ .../service/service.c => exe_service/template.c}   |  59 ++--
+ data/templates/template_x64_windows.exe            | Bin 6144 -> 6656 bytes
+ data/templates/template_x64_windows_svc.exe        | Bin 48640 -> 12288 bytes
+ data/templates/template_x86_windows.exe            | Bin 73802 -> 6656 bytes
+ data/templates/template_x86_windows_svc.exe        | Bin 15872 -> 12288 bytes
+ lib/msf/core/exploit/exe.rb                        |   3 +-
+ lib/msf/util/exe.rb                                |  23 +-
+ spec/lib/msf/core/exe/segment_appender_spec.rb     |   2 +-
+ spec/lib/msf/core/exe/segment_injector_spec.rb     |   2 +-
+ 20 files changed, 96 insertions(+), 804 deletions(-)
+
+commit 1fe1512596dda898ef03e42861c6dad9d309539d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 10 08:23:55 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 1314f5d0bbb547dbceefeb8da2e01abfbc07d936
+Merge: b650776c83 f4e71c1e93
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Sep 10 10:12:41 2025 +0200
+
+    Merge pull request #20455 from Chocapikk/aitemi_m300_time_rce
+    
+    Add unauthenticated RCE on Shenzhen Aitemi M300 MT02 (CVE-2025-34152)
+
+ .../exploit/linux/http/aitemi_m300_time_rce.md     | 125 +++++++++++++++++++
+ .../exploits/linux/http/aitemi_m300_time_rce.rb    | 132 +++++++++++++++++++++
+ 2 files changed, 257 insertions(+)
