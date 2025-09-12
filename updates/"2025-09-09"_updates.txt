@@ -1,0 +1,127 @@
+commit cc48f38e21404a88327b4a509b715c993f96a0b2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 11 18:34:00 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 120 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 120 insertions(+)
+
+commit 96a83143f1bfcf9f125b4471c47206e67c7eed93
+Merge: dd7c491d9e a3a1e146f0
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Sep 11 11:25:27 2025 -0700
+
+    Merge pull request #20479 from msutovsky-r7/exploit/sitecore/postauth-rce
+    
+    Adds modules for Sitecore XP post-auth remote code executions (CVE-2025-34510, CVE-2025-34511)
+
+ .../windows/http/sitecore_xp_cve_2025_34510.md     |  63 ++++
+ .../windows/http/sitecore_xp_cve_2025_34511.md     |  72 +++++
+ lib/msf/core/exploit/remote/http/sitecore/error.rb |  13 +
+ lib/msf/core/exploit/remote/http/sitecore_xp.rb    | 124 ++++++++
+ .../windows/http/sitecore_xp_cve_2025_34510.rb     | 353 +++++++++++++++++++++
+ .../windows/http/sitecore_xp_cve_2025_34511.rb     | 132 ++++++++
+ 6 files changed, 757 insertions(+)
+
+commit dd7c491d9edad74cf1aeb265e0d79e102857427c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 11 17:06:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 97 +++++++++++++++++++++++--------------------
+ 1 file changed, 52 insertions(+), 45 deletions(-)
+
+commit 985af001d20f31cd529381f7a991722bc485c668
+Merge: 947a0ed339 71e9602eba
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 11 18:58:32 2025 +0200
+
+    Merge pull request #20497 from h00die/modern_persistence_autostart
+    
+    update autostart to persistence mixin
+
+ .../exploit/linux/local/autostart_persistence.md   |  22 ----
+ .../modules/exploit/linux/persistence/autostart.md | 118 +++++++++++++++++++
+ .../exploits/linux/local/autostart_persistence.rb  |  69 -----------
+ modules/exploits/linux/persistence/autostart.rb    | 130 +++++++++++++++++++++
+ 4 files changed, 248 insertions(+), 91 deletions(-)
+
+commit a3a1e146f0efc667061c9bb0b11e9c3de07833eb
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Sep 11 09:40:34 2025 -0700
+
+    Apply suggestions from code review
+
+ .../modules/exploit/windows/http/sitecore_xp_cve_2025_34510.md | 10 +++++-----
+ .../modules/exploit/windows/http/sitecore_xp_cve_2025_34511.md |  4 ++--
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 947a0ed339d5b7fba3ea30bdad5d00d4542e88ea
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 11 14:54:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 94 ++++++++++++++++++++++---------------------
+ 1 file changed, 49 insertions(+), 45 deletions(-)
+
+commit afdaf4ff397fd657b2da2721aa08c8dcadbe20c9
+Merge: 80c5e41650 4ede319b0a
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Sep 11 10:45:39 2025 -0400
+
+    Merge pull request #20514 from dledda-r7/fix/remove-unhook-autoload
+    
+    Removing unhook extension autoload
+
+ lib/msf/base/sessions/meterpreter.rb                 | 6 ++++--
+ lib/msf/base/sessions/meterpreter_options/windows.rb | 8 ++------
+ 2 files changed, 6 insertions(+), 8 deletions(-)
+
+commit 5ab864b9b1d6fde151178e685fa392debc102447
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Sep 11 11:04:34 2025 +0200
+
+    Uses between? for version check, clearer webshell upload
+
+ .../windows/http/sitecore_xp_cve_2025_34510.rb     | 61 +++++-----------------
+ .../windows/http/sitecore_xp_cve_2025_34511.rb     |  2 +-
+ 2 files changed, 14 insertions(+), 49 deletions(-)
+
+commit 80c5e4165088227b63d343ab9083bababbafd1f1
+Merge: f494b9871a 638beeb738
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 11 10:49:08 2025 +0200
+
+    Merge pull request #20495 from h00die/modern_persistence_apt
+    
+    update apt_package_manager to persistence mixin
+
+ .../linux/local/apt_package_manager_persistence.md |  66 ----------
+ .../linux/persistence/apt_package_manager.md       | 138 +++++++++++++++++++++
+ .../linux/local/apt_package_manager_persistence.rb | 103 ---------------
+ .../linux/persistence/apt_package_manager.rb       | 110 ++++++++++++++++
+ 4 files changed, 248 insertions(+), 169 deletions(-)
+
+commit 00bd70751ca65c487c8720d8747b1c7bcecd4501
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Sep 11 10:41:28 2025 +0200
+
+    Updates docs
+
+ .../exploit/windows/http/sitecore_xp_cve_2025_34510.md   | 16 +++++++++++++---
+ .../exploit/windows/http/sitecore_xp_cve_2025_34511.md   | 16 +++++++++++++---
+ 2 files changed, 26 insertions(+), 6 deletions(-)
+
+commit f494b9871a163a54420c8a710ab6693044b6606e
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Sep 11 03:32:35 2025 -0500
+
+    Bump version of framework to 6.4.88
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
