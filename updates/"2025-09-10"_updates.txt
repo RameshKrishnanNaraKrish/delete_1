@@ -1,0 +1,193 @@
+commit 8ad35c05346b7caa94284e66e9045012dc3b8006
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 12 23:27:45 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 95 +++++++++++++++++++++++--------------------
+ 1 file changed, 50 insertions(+), 45 deletions(-)
+
+commit b45a3caaa575533adff5ab6426e173a629fb5695
+Merge: 831912a81b 8bc611465b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Sep 12 16:18:08 2025 -0700
+
+    Merge pull request #20509 from h00die/modern_persistence_motd
+    
+    update motd to persistence mixin
+
+ .../exploit/linux/local/motd_persistence.md        |  37 ------
+ .../modules/exploit/linux/persistence/motd.md      | 126 +++++++++++++++++++++
+ modules/exploits/linux/local/motd_persistence.rb   |  63 -----------
+ modules/exploits/linux/persistence/motd.rb         | 102 +++++++++++++++++
+ 4 files changed, 228 insertions(+), 100 deletions(-)
+
+commit 831912a81bc22442054b55c3285e6afa2f9820c3
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Fri Sep 12 16:38:50 2025 -0500
+
+    Bump version of framework to 6.4.89
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 4328e9951fadcee19fbf7aa97e1ff11be39b709f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 12 21:22:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e473c08b61247b5f0edbf33d9c4c59846ab3ae0b
+Merge: 3f1698f209 c27138a5bf
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Sep 12 14:13:54 2025 -0700
+
+    Merge pull request #20542 from zeroSteiner/fix/smb-kerberos-login-exp
+    
+    Fix a Kerberos Error Edge Case When Logging In
+
+ lib/metasploit/framework/login_scanner/kerberos.rb | 25 +++++++++++++++++++++-
+ modules/auxiliary/scanner/smb/smb_login.rb         |  4 ++--
+ 2 files changed, 26 insertions(+), 3 deletions(-)
+
+commit c27138a5bfc6e6f9844436713750fe108bbf2871
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Sep 12 16:48:13 2025 -0400
+
+    Filter for an edge case in response codes
+
+ lib/metasploit/framework/login_scanner/kerberos.rb | 25 +++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+commit 829166def471b862c9d5071c34ec300041b72db8
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Sep 12 14:27:32 2025 -0400
+
+    Fix a regression in smb_login
+
+ modules/auxiliary/scanner/smb/smb_login.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3f1698f209da08e025d91ee4b2b81f4888572498
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 12 19:56:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 796404c1d7995b2a084c89c3fc1f2803cd63a09d
+Merge: 59f1dd4879 3e396ce31f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Sep 12 12:42:19 2025 -0700
+
+    Merge pull request #20541 from zeroSteiner/fix/smb-login-nil-passwords
+    
+    Fix a regression in smb_login
+
+ modules/auxiliary/scanner/smb/smb_login.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3e396ce31f29181a7d58896d8c5408ee944a64ff
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Sep 12 15:11:23 2025 -0400
+
+    Deregister KrbCacheMode because it's ignored
+
+ modules/auxiliary/scanner/smb/smb_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d748b9ba3833b478cbb1be9b7905cde93569505
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Sep 12 14:27:32 2025 -0400
+
+    Fix a regression in smb_login
+
+ modules/auxiliary/scanner/smb/smb_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 59f1dd4879df515f27af53457720b320fece46d1
+Merge: dbc7867dd7 c40e4cc8bc
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Sep 12 13:01:26 2025 -0400
+
+    Merge pull request #20529 from bwatters-r7/docs/update-contributing
+    
+    Add section on Vibecoding and AI/LLM
+
+ CONTRIBUTING.md | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit dbc7867dd7620a455f39ad78c539ff2e1d2067d7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 12 12:49:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 97 ++++++++++++++++++++++++-------------------
+ 1 file changed, 54 insertions(+), 43 deletions(-)
+
+commit c901b5a30635ecba53dbbdf398967d720b00a720
+Merge: d3d2950e80 5abe0f57b7
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Sep 12 14:41:00 2025 +0200
+
+    Land #20526, moves at_persistence to persistence category and mixin
+    
+    Modern persistence: at
+
+ .../modules/exploit/multi/persistence/at.md        | 190 +++++++++++++++++++++
+ .../modules/exploit/unix/local/at_persistence.md   |  32 ----
+ modules/exploits/multi/persistence/at.rb           | 112 ++++++++++++
+ modules/exploits/unix/local/at_persistence.rb      |  72 --------
+ 4 files changed, 302 insertions(+), 104 deletions(-)
+
+commit d3d2950e808cc083df5945b25c15988ca9d295d6
+Merge: cc48f38e21 e197f532db
+Author: mwalas-r7 <mwalas-r7@github>
+Date:   Fri Sep 12 05:18:37 2025 -0700
+
+    Merge pull request #20537 from zeroSteiner/fix/null-cache-path
+    
+    Check the path is set before checking the file exists
+
+ lib/msf/core/modules/metadata/store.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5abe0f57b780cbf29ff8420e151f868a41ef3952
+Author: h00die <h00die@github>
+Date:   Thu Sep 11 11:59:51 2025 -0400
+
+    Update documentation/modules/exploit/multi/persistence/at.md
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ documentation/modules/exploit/multi/persistence/at.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 15cdbfac2e8588da2a1a2a8ea6d6aef91fec898d
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Sep 6 15:12:16 2025 -0400
+
+    update at persistence to use attck ref
+
+ modules/exploits/multi/persistence/at.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit fd1d70ef936f0b7c689afced983a1f0702e74257
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Sep 6 15:10:45 2025 -0400
+
+    update at persistence to mixin
+
+ .../modules/exploit/multi/persistence/at.md        | 190 +++++++++++++++++++++
+ .../modules/exploit/unix/local/at_persistence.md   |  32 ----
+ modules/exploits/multi/persistence/at.rb           | 111 ++++++++++++
+ modules/exploits/unix/local/at_persistence.rb      |  72 --------
+ 4 files changed, 301 insertions(+), 104 deletions(-)
