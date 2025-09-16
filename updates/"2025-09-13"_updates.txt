@@ -1,0 +1,104 @@
+commit 555423b2eb44f401d6eaa569aff9afb3d8cb4673
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 15 23:04:23 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit 02e35f7e927b80f94c0f2e22965a5d8e2ab6cd01
+Merge: ab1dd8787c ebe0234ddb
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 15 15:54:31 2025 -0700
+
+    Merge pull request #20520 from h00die/modern_persistence_openrc
+    
+    update openrc to persistence mixin
+
+ .../exploit/linux/persistence/init_openrc.md       | 117 +++++++++++++++
+ modules/exploits/linux/persistence/init_openrc.rb  | 157 +++++++++++++++++++++
+ 2 files changed, 274 insertions(+)
+
+commit ebe0234ddbbbbcadd09d50d15d620147f226e121
+Author: h00die <h00die@github>
+Date:   Mon Sep 15 16:30:17 2025 -0400
+
+    Update documentation/modules/exploit/linux/persistence/init_openrc.md
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ documentation/modules/exploit/linux/persistence/init_openrc.md | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit ab1dd8787c7b4917d2df14890e8e651edbcba171
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 15 19:56:40 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 96 +++++++++++++++++++++++--------------------
+ 1 file changed, 51 insertions(+), 45 deletions(-)
+
+commit 1ec10ec877557c806f21d2e87d1f34a8debb13b4
+Merge: a538a8ea14 2bd3ea0e6a
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Sep 15 14:47:48 2025 -0500
+
+    Merge pull request #20510 from h00die/modern_persistence_rc_local
+    
+    update rc_local to persistence mixin
+
+ .../exploit/linux/local/rc_local_persistence.md    |  46 --------
+ .../modules/exploit/linux/persistence/rc_local.md  | 124 +++++++++++++++++++++
+ .../exploits/linux/local/rc_local_persistence.rb   |  65 -----------
+ modules/exploits/linux/persistence/rc_local.rb     | 119 ++++++++++++++++++++
+ 4 files changed, 243 insertions(+), 111 deletions(-)
+
+commit a538a8ea1442f027ee1ac54d1c825e3fe67055e0
+Merge: 8ad35c0534 20345c2234
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Sep 15 15:43:16 2025 -0400
+
+    Merge pull request #20483 from dledda-r7/fix/update-metasploit-payloads-runner
+    
+    Update CI for meterpreter vs2022
+
+ .../workflows/shared_meterpreter_acceptance.yml    | 22 ++++++++++++++++++----
+ 1 file changed, 18 insertions(+), 4 deletions(-)
+
+commit 20345c22347831f14fd2ecf82203f6db8853cf3f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 15 10:12:45 2025 -0400
+
+    fix: replace Start-Process with Invoke-Command in meterpreter acceptance
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7be73c59e990694fe09cfb7427fd8cf1f5d08df2
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 15 09:33:54 2025 -0400
+
+    fix: replace Start-Process with Invoke-Command in meterpreter acceptance
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit b30c3e32c6e8f74afe4609c1e7326fb5cf9e4549
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 15 08:53:39 2025 -0400
+
+    fix: replace Start-Process with Invoke-Command in meterpreter acceptance
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 85c65bd48fc8b820ffd97b171a894c319c43377f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 15 08:04:35 2025 -0400
+
+    fix: replace Start-Process with Invoke-Command in meterpreter acceptance
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
