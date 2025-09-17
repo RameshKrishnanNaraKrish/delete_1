@@ -1,0 +1,88 @@
+commit 076fd0cc45ab2d2f059b899af6ed821ffaa2aa35
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 16 22:06:51 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit 81ce0f8868bd93a298b6698b322ae48362906fde
+Merge: 5394ff4b1b e3cad5b772
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Sep 16 14:56:26 2025 -0700
+
+    Merge pull request #20521 from h00die/modern_persistence_systemd
+    
+    update systemd to persistence mixin
+
+ .../exploit/linux/persistence/init_systemd.md      | 208 ++++++++++++++++++++
+ modules/exploits/linux/persistence/init_systemd.rb | 218 +++++++++++++++++++++
+ 2 files changed, 426 insertions(+)
+
+commit 5394ff4b1b04ea53ab01a66fa7dd2e45db302034
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 16 20:30:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit 58dfd4d0ca474b841ab8b368e3f2565371ba6179
+Merge: 5eecb1feac eddc81f10c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Sep 16 13:22:18 2025 -0700
+
+    Merge pull request #20507 from remmons-r7/commvault_rce_cve_2025_57790_cve_2025_57791
+    
+    Exploit Module for CVE-2025-57790/CVE-2025-57791 - Commvault Unauthenticated RCE
+
+ .../commvault_rce_cve_2025_57790_cve_2025_57791.md | 107 +++++
+ .../commvault_rce_cve_2025_57790_cve_2025_57791.rb | 492 +++++++++++++++++++++
+ 2 files changed, 599 insertions(+)
+
+commit 93bc79e87dd21b2af33dc2229c927079fe1e6360
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Sep 16 15:57:24 2025 -0400
+
+    peer review for docker_image persistence
+
+ modules/exploits/linux/persistence/docker_image.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 5eecb1feacb338ea3c5b90df9815ac2eb14cae6f
+Merge: 76977aeb61 1bd44fa485
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 16 16:51:26 2025 +0200
+
+    Land #20535, adds a test login scanner and fixes ANONYMOUS_LOGIN
+    
+    Add a test login scanner and fix ANONYMOUS_LOGIN
+
+ lib/msf/core/auxiliary/auth_brute.rb |  1 +
+ test/modules/auxiliary/test/login.rb | 72 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 73 insertions(+)
+
+commit 76977aeb61286fa4692074d2bbb766fed6f88c97
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 16 13:06:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 114 +++++++++++++++++++++---------------------
+ 1 file changed, 58 insertions(+), 56 deletions(-)
+
+commit 32aa0d84e41279b950d72c9ae8fa3fb16bdf2e53
+Merge: 555423b2eb 5c1673bb20
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 16 14:58:15 2025 +0200
+
+    Land #20525, moves obsidian plugin module to persistence category and mixin
+    
+    update obsidian to persistence mixin
+
+ .../multi/local/obsidian_plugin_persistence.md     | 124 --------------------
+ .../exploit/multi/persistence/obsidian_plugin.md   | 126 +++++++++++++++++++++
+ .../obsidian_plugin.rb}                            |  14 ++-
+ 3 files changed, 135 insertions(+), 129 deletions(-)
