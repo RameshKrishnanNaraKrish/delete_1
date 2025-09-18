@@ -1,0 +1,51 @@
+commit 99c24c37f264f9b8ceb7ff9e321bc2ad9fdb4b28
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 17 13:29:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 448381ee96d9aeb6139feb3a0ccb392384fad5d4
+Merge: a333c81338 b5b1ac237a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Sep 17 15:21:27 2025 +0200
+
+    Merge pull request #20548 from xHector1337/fix-exploits/linux/samba/is_known_pipename.rb
+    
+    Fixes samba share iteration in linux/samba/is_known_pipename
+
+ modules/exploits/linux/samba/is_known_pipename.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b5b1ac237af0c13ec0c395cefd3bb067c1e0b17c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Sep 17 11:04:28 2025 +0200
+
+    Update is_known_pipename.rb
+
+ modules/exploits/linux/samba/is_known_pipename.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit a333c813385eea93b4417658d90cb8de4623fe8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 17 08:06:57 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 48 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+commit dc8d67538cd8475e0238f2920632dba2d58d1344
+Merge: 076fd0cc45 93bc79e87d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Sep 17 09:56:16 2025 +0200
+
+    Land #20536, adds docker image persistence module
+    
+    docker image persistence module
+
+ .../exploit/linux/persistence/docker_image.md      | 168 +++++++++++++++++++++
+ modules/exploits/linux/persistence/docker_image.rb | 158 +++++++++++++++++++
+ 2 files changed, 326 insertions(+)
