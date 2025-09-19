@@ -1,0 +1,155 @@
+commit a496ad0ac7653d21f07d74c221ad5fee777e54f5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 18 20:48:23 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 94 ++++++++++++++++++++++---------------------
+ 1 file changed, 49 insertions(+), 45 deletions(-)
+
+commit 8b539f7e964e1a268e0520dda6ca62b4a4df9242
+Merge: ed88e5397c 160cf5c55b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Sep 18 13:39:57 2025 -0700
+
+    Merge pull request #20524 from h00die/modern_persistence_yum
+    
+    update yum to persistence module
+
+ .../linux/local/yum_package_manager_persistence.md |  84 ----------------
+ .../linux/persistence/yum_package_manager.md       | 112 +++++++++++++++++++++
+ .../yum_package_manager.rb}                        | 107 +++++++++++---------
+ 3 files changed, 170 insertions(+), 133 deletions(-)
+
+commit 160cf5c55b317223f42b5207e920742f56e8cfd5
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Thu Sep 18 16:15:24 2025 -0400
+
+    peer review for yum persistence
+
+ modules/exploits/linux/persistence/yum_package_manager.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ed88e5397c271773664ad5836df89afd7f89da29
+Merge: dbc7af30b7 08c43670ff
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Sep 18 15:39:08 2025 -0400
+
+    Merge pull request #20553 from BenoitDePaoli/fix/userpass_password_persistence
+    
+    fix: ensure USERPASS_FILE credentials store password (set private_type)
+
+ lib/metasploit/framework/credential_collection.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 15f4abd1b2f5269516a360ac2857396bfbd7f98b
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Sep 6 13:23:13 2025 -0400
+
+    update yum to persistence module
+
+ .../linux/local/yum_package_manager_persistence.md |  84 ----------------
+ .../linux/persistence/yum_package_manager.md       | 112 +++++++++++++++++++++
+ .../yum_package_manager.rb}                        | 106 ++++++++++---------
+ 3 files changed, 169 insertions(+), 133 deletions(-)
+
+commit dbc7af30b72349bf89b1c493682a8db01938e54b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 18 16:05:00 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 205 +++++++++++++++++++++++++++---------------
+ 1 file changed, 131 insertions(+), 74 deletions(-)
+
+commit cf3abc280e15c20413d1411a7c19671a84eb72e1
+Merge: 05273263c9 788b9c27b4
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Sep 18 11:56:33 2025 -0400
+
+    Merge pull request #20533 from cdelafuente-r7/feat/mitre/add_ref
+    
+    Add T1003 "OS credential dumping" MITRE technique reference
+
+ modules/auxiliary/admin/smb/psexec_ntdsgrab.rb                       | 3 ++-
+ .../auxiliary/gather/checkpoint_gateway_fileread_cve_2024_24919.rb   | 3 ++-
+ modules/auxiliary/gather/fortios_vpnssl_traversal_creds_leak.rb      | 3 ++-
+ modules/auxiliary/gather/ldap_passwords.rb                           | 3 ++-
+ modules/auxiliary/gather/qnap_backtrace_admin_hash.rb                | 3 ++-
+ modules/auxiliary/gather/qnap_lfi.rb                                 | 3 ++-
+ modules/auxiliary/gather/vmware_vcenter_vmdir_ldap.rb                | 3 ++-
+ modules/auxiliary/gather/windows_secrets_dump.rb                     | 4 ++++
+ modules/auxiliary/scanner/http/epmp1000_dump_hashes.rb               | 3 ++-
+ modules/auxiliary/scanner/ssh/apache_karaf_command_execution.rb      | 5 ++++-
+ modules/exploits/linux/http/terramaster_unauth_rce_cve_2022_24990.rb | 3 ++-
+ modules/post/aix/hashdump.rb                                         | 5 ++++-
+ modules/post/android/gather/hashdump.rb                              | 1 +
+ modules/post/bsd/gather/hashdump.rb                                  | 5 ++++-
+ modules/post/linux/gather/f5_loot_mcp.rb                             | 1 +
+ modules/post/linux/gather/hashdump.rb                                | 5 ++++-
+ modules/post/linux/gather/manageengine_password_manager_creds.rb     | 3 ++-
+ modules/post/linux/gather/mimipenguin.rb                             | 4 +++-
+ modules/post/linux/gather/openvpn_credentials.rb                     | 3 ++-
+ modules/post/linux/gather/vcenter_secrets_dump.rb                    | 3 ++-
+ modules/post/osx/gather/hashdump.rb                                  | 5 ++++-
+ modules/post/solaris/gather/hashdump.rb                              | 5 ++++-
+ modules/post/windows/gather/cachedump.rb                             | 3 ++-
+ modules/post/windows/gather/credentials/credential_collector.rb      | 5 ++++-
+ modules/post/windows/gather/credentials/domain_hashdump.rb           | 5 ++++-
+ modules/post/windows/gather/credentials/enum_cred_store.rb           | 5 ++++-
+ modules/post/windows/gather/credentials/enum_laps.rb                 | 5 ++++-
+ modules/post/windows/gather/credentials/sso.rb                       | 5 ++++-
+ modules/post/windows/gather/credentials/windows_autologin.rb         | 3 ++-
+ modules/post/windows/gather/credentials/windows_sam_hivenightmare.rb | 3 ++-
+ modules/post/windows/gather/file_from_raw_ntfs.rb                    | 3 ++-
+ modules/post/windows/gather/hashdump.rb                              | 5 ++++-
+ modules/post/windows/gather/lsa_secrets.rb                           | 5 ++++-
+ modules/post/windows/gather/memory_dump.rb                           | 5 ++++-
+ modules/post/windows/gather/ntds_grabber.rb                          | 4 +++-
+ modules/post/windows/gather/smart_hashdump.rb                        | 5 ++++-
+ modules/post/windows/manage/kerberos_tickets.rb                      | 3 ++-
+ 37 files changed, 106 insertions(+), 34 deletions(-)
+
+commit 05273263c9b5723dc591f81e18b204a2cbd078d6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 18 10:13:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 98 ++++++++++++++++++++++++-------------------
+ 1 file changed, 54 insertions(+), 44 deletions(-)
+
+commit c718a965d754b4ba4f005666542623f446bc3c66
+Merge: c1b9cc7150 cb2f3992de
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 18 12:04:00 2025 +0200
+
+    Merge pull request #20508 from h00die/modern_persistence_cron
+    
+    update cron to persistence mixin
+
+ .../exploit/linux/local/cron_persistence.md        | 144 --------------
+ .../modules/exploit/multi/persistence/cron.md      | 213 +++++++++++++++++++++
+ modules/exploits/linux/local/cron_persistence.rb   | 139 --------------
+ modules/exploits/multi/persistence/cron.rb         | 186 ++++++++++++++++++
+ 4 files changed, 399 insertions(+), 283 deletions(-)
+
+commit cb2f3992de964013b34b3f8bdd63f7bf5c54d7c1
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 18 11:48:17 2025 +0200
+
+    chore: fix white-space issue
+
+ modules/exploits/multi/persistence/cron.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c1b9cc7150181d317cf5af9fa412b6d8085e3218
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Sep 18 03:32:20 2025 -0500
+
+    Bump version of framework to 6.4.90
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
