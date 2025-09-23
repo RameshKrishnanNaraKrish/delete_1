@@ -1,0 +1,23 @@
+commit 052fdb7234b4fceda08ca797801f538277dd80a6
+Merge: e6e7a455e5 4f606bc216
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Sep 22 15:37:08 2025 -0500
+
+    Merge pull request #20512 from cdelafuente-r7/fix_native_wth_gcc15
+    
+    Fix issue with native extensions and GCC 15
+
+ Gemfile.lock | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e6e7a455e592aba34d9455c2632580e793183b86
+Merge: a496ad0ac7 93472898ce
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Sep 22 13:25:59 2025 -0500
+
+    Merge pull request #20540 from Chocapikk/tips
+    
+    Add new helpful tips to COMMON_TIPS for better usability
+
+ lib/msf/ui/tip.rb | 23 +++++++++++++++++------
+ 1 file changed, 17 insertions(+), 6 deletions(-)
