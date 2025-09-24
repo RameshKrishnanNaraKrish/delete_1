@@ -1,0 +1,69 @@
+commit 74de3c73144826f7e97cb318d5b3c2113d5dca39
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 23 15:44:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a1e3e1545b30bc93e3f4a13904302f20337003c8
+Merge: 1a84744f15 5af0dd3357
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Sep 23 10:35:19 2025 -0500
+
+    Merge pull request #20562 from uhei/fix/weblogic-regex
+    
+    fix: WebLogic server detection regex
+
+ modules/exploits/multi/misc/weblogic_deserialize_badattr_extcomp.rb | 2 +-
+ modules/exploits/multi/misc/weblogic_deserialize_badattrval.rb      | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 1a84744f1582d3b239d6fd91cf5b6d61b46d429c
+Merge: 468b1027f3 893a4a5c98
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 23 16:28:10 2025 +0200
+
+    Land #20557, fixes ActiveRecord error in reporting failure for file-based/multi-value RHOSTS
+    
+    Fix ActiveRecord error when reporting failures with file-based RHOSTS
+
+ lib/msf/core/module/failure.rb | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+commit 468b1027f32df11f975e5ba13deaf44d63498481
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 23 11:51:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 13b3e20a6b87c731d3eedca768fa0cb17b2cdeb2
+Merge: 052fdb7234 b51cc87f88
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Sep 23 13:38:44 2025 +0200
+
+    Land #20559, adds FreePBX unauthenticated SQLi to RCE module (CVE-2025-57819)
+    
+    Add FreePBX Unauthenticated SQLi to RCE (CVE-2025-57819)
+
+ .../unix/http/freepbx_unauth_sqli_to_rce.md        | 115 +++++++++++++++++
+ .../unix/http/freepbx_unauth_sqli_to_rce.rb        | 143 +++++++++++++++++++++
+ 2 files changed, 258 insertions(+)
+
+commit 5af0dd3357a90563d932f162876d89ee3b6ee611
+Author: Uli Heilmeier <uh@heilmeier.eu>
+Date:   Tue Sep 23 09:58:50 2025 +0200
+
+    fix: WebLogic server detection regex
+    
+    Some WebLogic server versions reports their version with a dash
+    between 'Server' and 'Version', like
+    '<p id="footerVersion">WebLogic Server-Version: 12.2.1.3.0</p>'
+
+ modules/exploits/multi/misc/weblogic_deserialize_badattr_extcomp.rb | 2 +-
+ modules/exploits/multi/misc/weblogic_deserialize_badattrval.rb      | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
