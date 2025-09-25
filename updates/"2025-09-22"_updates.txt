@@ -1,0 +1,22 @@
+commit 40c32a25995fec631947dd9c730092d5bacd50b2
+Merge: 74de3c7314 13b6c6eb98
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Sep 24 14:29:45 2025 +0100
+
+    Merge pull request #20561 from cgranleese-r7/fixes-report-note-warning-when-no-data-key
+    
+    Fixes deprecation message logic when no `data` object present
+
+ lib/msf/core/db_manager/note.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 13b6c6eb9841b2d52e70c292ed0717e6372a67f3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Sep 24 13:57:39 2025 +0100
+
+    Add named variable
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ lib/msf/core/db_manager/note.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
