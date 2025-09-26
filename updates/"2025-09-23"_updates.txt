@@ -1,0 +1,56 @@
+commit 070bf7f2874f73a701a41943274c58f708da0e1f
+Merge: 7f88110032 1891ebef87
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Sep 25 15:40:51 2025 +0100
+
+    Merge pull request #20555 from bwatters-r7/spec/add-x64-meterp-acc-tests
+    
+    add x64 acceptance tests, and use single, release payload
+
+ spec/support/acceptance/session/windows_meterpreter.rb | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit 7f88110032040b72c194aad82c4a0ee60811b97e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 25 10:58:08 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 86381a6394d1085f71770b75461d4d6275d1d2af
+Merge: 391e4e22f6 5260da1867
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Sep 25 12:49:33 2025 +0200
+
+    Land #20412, swaps to psh_exec in powershell/exec_powershell
+    
+    Remove errant write_log call and swap to the all-in-one psh_exec rath…
+
+ lib/msf/core/post/windows/powershell.rb            |  3 +-
+ .../windows/manage/powershell/exec_powershell.rb   | 32 ++++++----------------
+ 2 files changed, 10 insertions(+), 25 deletions(-)
+
+commit 391e4e22f60e56d6b24303eb72fa183f7f44b21f
+Merge: c4b7d9b42f 6d693c8586
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Sep 25 10:08:40 2025 +0100
+
+    Merge pull request #20567 from bcoles/rex-exploitation
+    
+    bump rex-exploitation gem from 0.1.41 to 0.1.44
+
+ Gemfile.lock | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit c4b7d9b42f5d0b6d52a7bc2ad42f641691d4c237
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Sep 25 03:32:30 2025 -0500
+
+    Bump version of framework to 6.4.91
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
