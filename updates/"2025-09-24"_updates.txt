@@ -1,0 +1,57 @@
+commit 20c8708c9696d48ed9da68839e9f1ef1cce00aef
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 26 14:06:43 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit 79ff667d5e4e707b419c21a9a4b21bde2855b333
+Merge: 95bc7a4599 00f902b04b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Sep 26 15:57:31 2025 +0200
+
+    Land #20538, adds systemd override persistence module
+    
+    persistence: systemd service override
+
+ .../linux/persistence/init_systemd_override.md     | 160 +++++++++++++++++++++
+ .../linux/persistence/init_systemd_override.rb     | 155 ++++++++++++++++++++
+ 2 files changed, 315 insertions(+)
+
+commit 95bc7a45999789ea00a98e95c2e94b14671c7b01
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 26 13:02:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 00f902b04ba2eaf58b9f0a1811deba0406191985
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Sep 26 15:00:09 2025 +0200
+
+    Adds formatting to cleanup commands
+
+ modules/exploits/linux/persistence/init_systemd_override.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3d1d49b71ab118896ecf563116ac1c987364b973
+Merge: 070bf7f287 40f6e2ca60
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Sep 26 08:53:47 2025 -0400
+
+    Merge pull request #20517 from cgranleese-r7/adds-postgres-ssl-support
+    
+    Adds SSL support to the postgres_login module
+
+ lib/metasploit/framework/login_scanner/postgres.rb | 46 ++++++++++++--
+ lib/msf/core/exploit/remote/postgres.rb            |  2 +
+ lib/postgres/postgres-pr/connection.rb             | 43 ++++++++++---
+ .../auxiliary/scanner/postgres/postgres_login.rb   |  6 ++
+ .../framework/login_scanner/postgres_spec.rb       |  5 +-
+ spec/lib/msf/core/rhosts_walker_spec.rb            | 12 ++--
+ spec/lib/rex/proto/postgresql/client_spec.rb       | 73 ++++++++++++++++++++--
+ 7 files changed, 159 insertions(+), 28 deletions(-)
