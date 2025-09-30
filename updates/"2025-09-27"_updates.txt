@@ -1,0 +1,126 @@
+commit 81127918fed642ba2039d8bbd2ad352ba278191b
+Merge: a849571502 c044db677d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 15:34:40 2025 +0200
+
+    Land #20518, adds NTLM leak/LNK padding fileformat modules
+    
+    Adds fileformat NTLM leak/LNK padding modules
+
+ .../auxiliary/fileformat/datablock_padding_lnk.md  |  94 +++++++++++
+ .../environment_variable_datablock_leak.md         | 104 ++++++++++++
+ .../fileformat/icon_environment_datablock_leak.md  |  88 ++++++++++
+ .../auxiliary/fileformat/specialfolder_leak.md     |  72 ++++++++
+ .../auxiliary/fileformat/datablock_padding_lnk.rb  | 155 +++++++++++++++++
+ .../environment_variable_datablock_leak.rb         | 185 +++++++++++++++++++++
+ .../fileformat/icon_environment_datablock_leak.rb  | 183 ++++++++++++++++++++
+ modules/auxiliary/fileformat/specialfolder_leak.rb | 174 +++++++++++++++++++
+ 8 files changed, 1055 insertions(+)
+
+commit c044db677d0c40ce71a612cf529fecb321443bd6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 14:29:11 2025 +0200
+
+    Cleares up docs
+
+ .../auxiliary/fileformat/datablock_padding_lnk.md  | 32 +++------
+ .../environment_variable_datablock_leak.md         | 50 +++-----------
+ .../fileformat/icon_environment_datablock_leak.md  | 79 ++--------------------
+ .../auxiliary/fileformat/specialfolder_leak.md     | 78 ++-------------------
+ 4 files changed, 31 insertions(+), 208 deletions(-)
+
+commit 310b8b7f8a56b2bc5cf3dc4b2b180ffd8aea988b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 11:37:42 2025 +0200
+
+    Includes share datastore option in UNC path
+
+ modules/auxiliary/fileformat/environment_variable_datablock_leak.rb | 4 +++-
+ modules/auxiliary/fileformat/icon_environment_datablock_leak.rb     | 5 +++--
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+commit 38efab0bab4f5167c6113ddc3c2c840f4dc31f7a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 11:33:33 2025 +0200
+
+    Rubocopes, fixes SMB server, code cleanup
+
+ modules/auxiliary/fileformat/specialfolder_leak.rb | 34 ++++++++++------------
+ 1 file changed, 15 insertions(+), 19 deletions(-)
+
+commit 5faf18795c56c75e41d7e93e6df69692cd9808cf
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 11:20:55 2025 +0200
+
+    Rubocopes, fixes SMB server
+
+ .../fileformat/icon_environment_datablock_leak.rb  | 63 ++++++++--------------
+ 1 file changed, 22 insertions(+), 41 deletions(-)
+
+commit eaada61d800cabfeedaf0c497108b89cf814e754
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 11:10:00 2025 +0200
+
+    Fixes notes
+
+ modules/auxiliary/fileformat/environment_variable_datablock_leak.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 042cdb7a60aedb0df02133caaeb178162395f096
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 10:55:10 2025 +0200
+
+    Code cleanup, adds Faker, fixing SMB server
+
+ .../environment_variable_datablock_leak.rb         | 41 +++++++++-------------
+ 1 file changed, 17 insertions(+), 24 deletions(-)
+
+commit 82e2f03c23928966311cfca40e5724aa815b7ebd
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 10:12:50 2025 +0200
+
+    Fixes ZDI reference, code cleanup
+
+ .../auxiliary/fileformat/datablock_padding_lnk.rb  | 31 +++++++---------------
+ 1 file changed, 10 insertions(+), 21 deletions(-)
+
+commit d21f7917a9c68883e7b9c64b5f7b86cbc51c91aa
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 10:01:24 2025 +0200
+
+    Fixes regex
+
+ modules/auxiliary/fileformat/icon_environment_datablock_leak.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a8495715025f566ca679063a4a12d4991372dbd8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 29 07:44:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 100 ++++++++++++++++++++++--------------------
+ 1 file changed, 52 insertions(+), 48 deletions(-)
+
+commit 7b4bb55e1201e3a7c44e4959e46467e3d8362290
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 09:41:10 2025 +0200
+
+    Rubocopes
+
+ .../environment_variable_datablock_leak.rb         | 142 +++++++++++----------
+ 1 file changed, 72 insertions(+), 70 deletions(-)
+
+commit a23473a1038724dd01992fe2cb1b61336408f983
+Merge: 20c8708c96 81d8d46166
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Sep 29 09:32:25 2025 +0200
+
+    Land #20565, moves image exec module to persistence category and mixin
+    
+    Modern persistence image exec
+
+ .../local/persistence_image_exec_options.md        |  93 --------------
+ .../windows/persistence/image_exec_options.md      | 143 +++++++++++++++++++++
+ .../image_exec_options.rb}                         |  61 ++++++---
+ 3 files changed, 184 insertions(+), 113 deletions(-)
