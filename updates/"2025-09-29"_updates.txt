@@ -1,0 +1,21 @@
+commit a3498db126a028db1c45f185f8c23209c605d77a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 1 06:48:16 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 166 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 164 insertions(+), 2 deletions(-)
+
+commit 6e0696349562453861efb1404919102eebf79e08
+Merge: 81127918fe 7b3c82f2e6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Oct 1 08:39:26 2025 +0200
+
+    Land #20566, adds support to esc_update_ldap module when shadow credentials are not required
+    
+    Update esc_update_ldap module so shadow creds not required
+
+ .../admin/dcerpc/esc_update_ldap_object.md         | 69 ++++++++++++++++++++++
+ .../admin/dcerpc/esc_update_ldap_object.rb         | 35 +++++++----
+ 2 files changed, 93 insertions(+), 11 deletions(-)
