@@ -1,0 +1,61 @@
+commit 0aed5fcfbc508baabdda3dfdf8684ea5aba6f167
+Merge: 8a021abf56 82f1335e82
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Oct 2 17:35:56 2025 -0400
+
+    Merge pull request #20582 from xHector1337/bump-rex-random_identifier
+    
+    Bump rex-random_identifier to version 0.1.21
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 82f1335e82ee9bdd7d61c34ad3b9e9286e06194b
+Author: Muzaffer Umut ŞAHİN <140441119+xHector1337@users.noreply.github.com>
+Date:   Thu Oct 2 18:47:47 2025 +0300
+
+    Bump rex-random_identifier to version 0.1.21
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8a021abf569d327433528917be03932fea6bdffa
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Oct 2 03:32:41 2025 -0500
+
+    Bump version of framework to 6.4.92
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 8 ++++----
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit b5c9547cc01e08cbb05a327cfb3b84cddd3bcbbd
+Merge: a3498db126 3cc91f544e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 2 08:02:12 2025 +0200
+
+    Land #20456, adds documentation for wordpress_cp_calendar_sqli auxiliary module
+    
+    Add documentation for auxiliary/scanner/http/wordpress_cp_calendar_sqli
+
+ .../scanner/http/wordpress_cp_calendar_sqli.md     | 104 +++++++++++++++++++++
+ 1 file changed, 104 insertions(+)
+
+commit 3cc91f544eebdb537d3b909a944356b5ea0287ce
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 2 07:39:48 2025 +0200
+
+    Fixes msftidy_docs issues
+
+ .../scanner/http/wordpress_cp_calendar_sqli.md     | 24 ++++++++++++++--------
+ 1 file changed, 15 insertions(+), 9 deletions(-)
+
+commit 103ae28696f10d51d8f2348873e8636fa083a3de
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 2 07:36:10 2025 +0200
+
+    Addressing comments
+
+ .../modules/auxiliary/scanner/http/wordpress_cp_calendar_sqli.md  | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
