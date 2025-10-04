@@ -1,0 +1,78 @@
+commit 05c854b1c58df6d4b9f6497918277786ca6c4602
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 3 20:45:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5252e92954d634d27e0ab7d8837dd7621ad647ec
+Merge: 7b9ce27117 bbc9928a75
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Oct 3 13:36:43 2025 -0700
+
+    Merge pull request #20568 from bcoles/vbsobfuscate
+    
+    Msf::Exploit::VBSObfuscate: Add VBS obfuscation library
+
+ lib/msf/core/exploit/vbsobfuscate.rb               | 39 +++++++++++
+ lib/msf_autoload.rb                                |  1 +
+ .../fileformat/windows_script_host_vbscript.rb     | 77 +---------------------
+ 3 files changed, 42 insertions(+), 75 deletions(-)
+
+commit 7b9ce27117581e6138cc7b317f9a26486292d461
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 3 17:13:21 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 109 +++++++++++++++++++++++-------------------
+ 1 file changed, 59 insertions(+), 50 deletions(-)
+
+commit 04188cb9cbb619ae4a8f022ad828216a91eace49
+Merge: 4526ae920e 2b16a23436
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Oct 3 10:05:17 2025 -0700
+
+    Merge pull request #20527 from h00die/modern_persistence_plist
+    
+    update plist persistence to mixin
+
+ .../persistence.rb => persistence/launch_plist.rb} | 54 +++++++++++++---------
+ 1 file changed, 33 insertions(+), 21 deletions(-)
+
+commit 4526ae920eda29421f09f572030ce4102dc055f2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 3 14:53:51 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1491edeeb0c2648fdae5f9d0cd0891e85311b1f6
+Merge: 0aed5fcfbc 74d229e11f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 3 16:45:09 2025 +0200
+
+    Land #20563, adds automatic identifying and checking of CAs when running registry check
+    
+    Update reg checks when DC and CA are separate
+
+ .../gather/ldap_esc_vulnerable_cert_finder.md      |  25 ++--
+ .../core/exploit/remote/ldap/active_directory.rb   |  20 ++++
+ .../admin/dcerpc/esc_update_ldap_object.rb         |  48 +++++++-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 133 ++++++++++++++-------
+ 4 files changed, 172 insertions(+), 54 deletions(-)
+
+commit 74d229e11f1c0d3a0785310d84c2d052ebf026e6
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Oct 2 18:14:00 2025 -0700
+
+    Multiple CA testing
+
+ .../gather/ldap_esc_vulnerable_cert_finder.md      | 25 +++---
+ .../admin/dcerpc/esc_update_ldap_object.rb         | 48 ++++++++++-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 95 ++++++++++------------
+ 3 files changed, 103 insertions(+), 65 deletions(-)
