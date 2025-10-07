@@ -1,0 +1,39 @@
+commit f61a321dcd6ed6c635611d6d56912dd5aa81bf30
+Merge: e1bcc0aab6 77f760c1bf
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Oct 6 13:43:32 2025 -0700
+
+    Merge pull request #20591 from survivant/feature/fix-typos-hacktoberfest
+    
+    Fix typos in documentation / hacktoberfest
+
+ CONTRIBUTING.md                                    |  4 ++--
+ docker/README.md                                   |  2 +-
+ .../Evading-Anti-Virus.md                          |  2 +-
+ .../Get-Started-Writing-an-Exploit.md              |  2 +-
+ ...get-started-with-writing-an-auxiliary-module.md |  2 +-
+ .../auxiliary/admin/aws/aws_launch_instances.md    | 22 +++++++++++-----------
+ .../auxiliary/admin/smb/ms17_010_command.md        |  2 +-
+ 7 files changed, 18 insertions(+), 18 deletions(-)
+
+commit e1bcc0aab6e6295780fc85c449058d1ea66b20e9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 6 20:31:43 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 43 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit dbf84abec386dacc6d90d407198d96ad9c60aa68
+Merge: 05c854b1c5 9a8d1473d8
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Oct 6 13:21:56 2025 -0700
+
+    Merge pull request #20586 from bcoles/windows_script_host_wsf
+    
+    Add Malicious Windows Script Host Script File (.wsf) module
+
+ .../windows/fileformat/windows_script_host_wsf.md  |  96 +++++++++
+ .../windows/fileformat/windows_script_host_wsf.rb  | 222 +++++++++++++++++++++
+ 2 files changed, 318 insertions(+)
