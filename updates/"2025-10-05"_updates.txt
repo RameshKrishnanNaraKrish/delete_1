@@ -1,0 +1,759 @@
+commit eeaf7609484a427ac1c6abe0fc1c5448ff7230c7
+Merge: e202546d5d 9dc5696cc4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 7 15:28:37 2025 -0700
+
+    Merge pull request #20595 from zeroSteiner/fix/add-missing-cves
+    
+    Add Missing CVE Data To Modules In Bulk
+
+ modules/auxiliary/admin/http/contentkeeper_fileaccess.rb |  1 +
+ .../admin/http/dlink_dir_300_600_exec_noauth.rb          |  1 +
+ modules/auxiliary/admin/http/limesurvey_file_download.rb |  1 +
+ modules/auxiliary/admin/http/linksys_e1500_e2500_exec.rb |  1 +
+ .../admin/http/linksys_tmunblock_admin_reset_bof.rb      |  1 +
+ modules/auxiliary/admin/http/linksys_wrt54gl_exec.rb     |  1 +
+ .../http/netgear_pnpx_getsharefolderlist_auth_bypass.rb  |  1 +
+ .../auxiliary/admin/http/wp_automatic_plugin_privesc.rb  |  1 +
+ .../admin/http/wp_wplms_privilege_escalation.rb          |  1 +
+ modules/auxiliary/admin/pop2/uw_fileretrieval.rb         |  1 +
+ modules/auxiliary/dos/http/ws_dos.rb                     |  1 +
+ modules/auxiliary/dos/misc/ibm_tsm_dos.rb                |  1 +
+ modules/auxiliary/dos/windows/ftp/solarftp_user.rb       |  1 +
+ modules/auxiliary/dos/windows/games/kaillera.rb          |  3 +++
+ .../auxiliary/dos/windows/ssh/sysax_sshd_kexchange.rb    |  1 +
+ modules/auxiliary/gather/alienvault_iso27001_sqli.rb     |  1 +
+ .../auxiliary/gather/android_object_tag_webview_uxss.rb  |  1 +
+ .../gather/checkpoint_gateway_fileread_cve_2024_24919.rb |  1 +
+ modules/auxiliary/gather/jasmin_ransomware_sqli.rb       |  1 +
+ modules/auxiliary/gather/joomla_weblinks_sqli.rb         |  1 +
+ modules/auxiliary/gather/microweber_lfi.rb               |  1 +
+ modules/auxiliary/gather/suite_crm_export_sqli.rb        |  1 +
+ modules/auxiliary/gather/xbmc_traversal.rb               |  1 +
+ modules/auxiliary/scanner/ftp/colorado_ftp_traversal.rb  |  1 +
+ .../scanner/http/a10networks_ax_directory_traversal.rb   |  1 +
+ .../auxiliary/scanner/http/apache_activemq_traversal.rb  |  1 +
+ .../scanner/http/barracuda_directory_traversal.rb        |  1 +
+ modules/auxiliary/scanner/http/clansphere_traversal.rb   |  1 +
+ modules/auxiliary/scanner/http/dicoogle_traversal.rb     |  1 +
+ .../auxiliary/scanner/http/dolibarr_16_contact_dump.rb   |  1 +
+ modules/auxiliary/scanner/http/epmp1000_ping_cmd_exec.rb |  1 +
+ .../scanner/http/httpdasm_directory_traversal.rb         |  1 +
+ modules/auxiliary/scanner/http/linknat_vos_traversal.rb  |  1 +
+ .../auxiliary/scanner/http/linksys_e1500_traversal.rb    |  1 +
+ .../auxiliary/scanner/http/netgear_sph200d_traversal.rb  |  1 +
+ modules/auxiliary/scanner/http/rips_traversal.rb         |  1 +
+ .../scanner/http/riverbed_steelhead_vcx_file_read.rb     |  1 +
+ modules/auxiliary/scanner/http/s40_traversal.rb          |  1 +
+ .../auxiliary/scanner/http/servicedesk_plus_traversal.rb |  1 +
+ .../scanner/http/smt_ipmi_url_redirect_traversal.rb      |  1 +
+ modules/auxiliary/scanner/http/sockso_traversal.rb       |  1 +
+ modules/auxiliary/scanner/http/webpagetest_traversal.rb  |  1 +
+ modules/auxiliary/scanner/http/wp_abandoned_cart_sqli.rb |  1 +
+ .../auxiliary/scanner/http/wp_arbitrary_file_deletion.rb |  1 +
+ .../scanner/http/wp_gimedia_library_file_read.rb         |  1 +
+ .../auxiliary/scanner/http/wp_mobileedition_file_read.rb |  1 +
+ .../scanner/http/wp_nextgen_galley_file_read.rb          |  1 +
+ .../auxiliary/scanner/http/wp_simple_backup_file_read.rb |  1 +
+ .../scanner/http/wp_subscribe_comments_file_read.rb      |  1 +
+ .../auxiliary/scanner/http/wp_total_upkeep_downloader.rb |  1 +
+ .../auxiliary/scanner/http/zenload_balancer_traversal.rb |  1 +
+ .../scanner/misc/cups_browsed_info_disclosure.rb         |  1 +
+ .../auxiliary/scanner/misc/easycafe_server_fileaccess.rb |  1 +
+ modules/exploits/linux/antivirus/escan_password_exec.rb  |  1 +
+ modules/exploits/linux/http/astium_sqli_upload.rb        |  1 +
+ .../exploits/linux/http/atutor_filemanager_traversal.rb  |  2 ++
+ .../linux/http/crypttech_cryptolog_login_exec.rb         |  1 +
+ modules/exploits/linux/http/dcos_marathon.rb             |  1 +
+ .../exploits/linux/http/dlink_authentication_cgi_bof.rb  |  1 +
+ .../exploits/linux/http/dlink_command_php_exec_noauth.rb |  1 +
+ ...nk_dcs_930l_authenticated_remote_command_execution.rb |  3 +++
+ modules/exploits/linux/http/dlink_dir300_exec_telnet.rb  |  1 +
+ modules/exploits/linux/http/dlink_dir605l_captcha_bof.rb |  1 +
+ modules/exploits/linux/http/dlink_dir615_up_exec.rb      |  1 +
+ modules/exploits/linux/http/dlink_dir850l_unauth_exec.rb |  1 +
+ .../exploits/linux/http/dlink_dsl2750b_exec_noauth.rb    |  1 +
+ .../linux/http/dlink_dspw110_cookie_noauth_exec.rb       |  1 +
+ .../exploits/linux/http/dlink_dspw215_info_cgi_bof.rb    |  1 +
+ modules/exploits/linux/http/dlink_hedwig_cgi_bof.rb      |  1 +
+ .../exploits/linux/http/dlink_hnap_header_exec_noauth.rb |  1 +
+ modules/exploits/linux/http/dolibarr_cmd_exec.rb         |  1 +
+ modules/exploits/linux/http/esva_exec.rb                 |  1 +
+ modules/exploits/linux/http/github_enterprise_secret.rb  |  1 +
+ modules/exploits/linux/http/h2_webinterface_rce.rb       |  1 +
+ modules/exploits/linux/http/imperva_securesphere_exec.rb |  1 +
+ modules/exploits/linux/http/ipfire_proxy_exec.rb         |  1 +
+ modules/exploits/linux/http/kaltura_unserialize_rce.rb   |  1 +
+ .../linux/http/kibana_upgrade_assistant_telemetry_rce.rb |  1 +
+ modules/exploits/linux/http/kloxo_sqli.rb                |  1 +
+ modules/exploits/linux/http/linksys_e1500_apply_exec.rb  |  1 +
+ modules/exploits/linux/http/linksys_themoon_exec.rb      |  1 +
+ .../exploits/linux/http/linksys_wrt160nv2_apply_exec.rb  |  1 +
+ modules/exploits/linux/http/logsign_exec.rb              |  1 +
+ modules/exploits/linux/http/mvpower_dvr_shell_exec.rb    |  1 +
+ modules/exploits/linux/http/nagios_xi_chained_rce.rb     |  4 ++++
+ .../linux/http/netgear_dgn1000_setup_unauth_exec.rb      |  1 +
+ .../exploits/linux/http/netgear_dgn1000b_setup_exec.rb   |  1 +
+ .../exploits/linux/http/netgear_dgn2200b_pppoe_exec.rb   |  1 +
+ modules/exploits/linux/http/op5_config_exec.rb           |  1 +
+ .../exploits/linux/http/openfiler_networkcard_exec.rb    |  1 +
+ modules/exploits/linux/http/pandora_fms_exec.rb          |  1 +
+ modules/exploits/linux/http/pandora_fms_sqli.rb          |  1 +
+ modules/exploits/linux/http/pandora_ping_cmd_exec.rb     |  3 +++
+ .../linux/http/raidsonic_nas_ib5220_exec_noauth.rb       |  1 +
+ .../linux/http/rconfig_vendors_auth_file_upload_rce.rb   |  1 +
+ .../linux/http/riverbed_netprofiler_netexpress_exec.rb   |  1 +
+ modules/exploits/linux/http/tiki_calendar_exec.rb        |  1 +
+ .../exploits/linux/http/trendmicro_imsva_widget_exec.rb  |  3 +++
+ .../exploits/linux/http/ubiquiti_airos_file_upload.rb    |  1 +
+ modules/exploits/linux/http/wanem_exec.rb                |  1 +
+ modules/exploits/linux/http/webid_converter.rb           |  1 +
+ modules/exploits/linux/http/wipg1000_cmd_injection.rb    |  1 +
+ modules/exploits/linux/http/zen_load_balancer_exec.rb    |  1 +
+ .../linux/http/zenoss_showdaemonxmlconfig_exec.rb        |  1 +
+ modules/exploits/linux/local/cpi_runrshell_priv_esc.rb   |  1 +
+ modules/exploits/linux/local/kloxo_lxsuexec.rb           |  1 +
+ .../exploits/linux/local/lastore_daemon_dbus_priv_esc.rb |  1 +
+ .../linux/local/progress_flowmon_sudo_privesc_2024.rb    |  1 +
+ .../local/progress_kemp_loadmaster_sudo_privesc_2024.rb  |  1 +
+ modules/exploits/linux/local/zpanel_zsudo.rb             |  3 +++
+ modules/exploits/linux/misc/igel_command_injection.rb    |  1 +
+ .../exploits/linux/misc/netcore_udp_53413_backdoor.rb    |  1 +
+ modules/exploits/linux/misc/sercomm_exec.rb              |  1 +
+ .../exploits/linux/redis/redis_replication_cmd_exec.rb   |  1 +
+ modules/exploits/linux/upnp/belkin_wemo_upnp_exec.rb     |  1 +
+ modules/exploits/multi/fileformat/maple_maplet.rb        |  1 +
+ .../exploits/multi/http/ajaxplorer_checkinstall_exec.rb  |  1 +
+ modules/exploits/multi/http/auxilium_upload_exec.rb      |  1 +
+ modules/exploits/multi/http/builderengine_upload_exec.rb |  1 +
+ modules/exploits/multi/http/cuteflow_upload_exec.rb      |  1 +
+ modules/exploits/multi/http/extplorer_upload_exec.rb     |  1 +
+ modules/exploits/multi/http/freenas_exec_raw.rb          |  1 +
+ modules/exploits/multi/http/gestioip_exec.rb             |  1 +
+ modules/exploits/multi/http/glossword_upload_exec.rb     |  1 +
+ modules/exploits/multi/http/kordil_edms_upload_exec.rb   |  1 +
+ modules/exploits/multi/http/lucee_scheduled_job.rb       |  1 +
+ modules/exploits/multi/http/makoserver_cmd_exec.rb       |  1 +
+ modules/exploits/multi/http/manageengine_sd_uploader.rb  |  1 +
+ modules/exploits/multi/http/mobilecartly_upload_exec.rb  |  1 +
+ modules/exploits/multi/http/netwin_surgeftp_exec.rb      |  1 +
+ .../multi/http/oscommerce_installer_unauth_code_exec.rb  |  1 +
+ modules/exploits/multi/http/php_volunteer_upload_exec.rb |  1 +
+ modules/exploits/multi/http/phpstudy_backdoor_rce.rb     |  1 +
+ modules/exploits/multi/http/phptax_exec.rb               |  1 +
+ modules/exploits/multi/http/processmaker_exec.rb         |  1 +
+ .../exploits/multi/http/processmaker_plugin_upload.rb    |  1 +
+ modules/exploits/multi/http/qdpm_upload_exec.rb          |  1 +
+ modules/exploits/multi/http/sflog_upload_exec.rb         |  1 +
+ modules/exploits/multi/http/snortreport_exec.rb          |  1 +
+ modules/exploits/multi/http/spip_connect_exec.rb         |  1 +
+ modules/exploits/multi/http/spree_search_exec.rb         |  1 +
+ modules/exploits/multi/http/spree_searchlogic_exec.rb    |  1 +
+ modules/exploits/multi/http/traq_plugin_exec.rb          |  1 +
+ modules/exploits/multi/http/uptime_file_upload_1.rb      |  1 +
+ modules/exploits/multi/http/uptime_file_upload_2.rb      |  1 +
+ modules/exploits/multi/http/webpagetest_upload_exec.rb   |  1 +
+ modules/exploits/multi/http/werkzeug_debug_rce.rb        |  1 +
+ modules/exploits/multi/http/wp_ait_csv_rce.rb            |  1 +
+ modules/exploits/multi/http/wp_db_backup_rce.rb          |  1 +
+ modules/exploits/multi/http/wp_simple_file_list_rce.rb   |  3 ++-
+ .../multi/http/zpanel_information_disclosure_rce.rb      |  1 +
+ modules/exploits/multi/misc/erlang_cookie_rce.rb         |  1 +
+ .../multi/misc/freeswitch_event_socket_cmd_exec.rb       |  1 +
+ .../multi/misc/qemu_monitor_hmp_migrate_cmd_exec.rb      |  1 +
+ modules/exploits/osx/http/remote_for_mac_rce.rb          |  1 +
+ modules/exploits/osx/misc/ufo_ai.rb                      |  1 +
+ modules/exploits/unix/ftp/proftpd_133c_backdoor.rb       |  1 +
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb         |  1 +
+ modules/exploits/unix/http/contentkeeperweb_mimencode.rb |  1 +
+ modules/exploits/unix/http/dell_kace_k1000_upload.rb     |  1 +
+ modules/exploits/unix/http/maltrail_rce.rb               |  1 +
+ modules/exploits/unix/http/pfsense_group_member_exec.rb  |  1 +
+ modules/exploits/unix/http/pihole_whitelist_exec.rb      |  1 +
+ modules/exploits/unix/http/xdebug_unauth_exec.rb         |  1 +
+ modules/exploits/unix/misc/polycom_hdx_auth_bypass.rb    |  1 +
+ .../exploits/unix/misc/polycom_hdx_traceroute_exec.rb    |  1 +
+ modules/exploits/unix/sonicwall/sonicwall_xmlrpc_rce.rb  |  1 +
+ .../exploits/unix/ssh/array_vxag_vapv_privkey_privesc.rb |  1 +
+ .../unix/webapp/ajenti_auth_username_cmd_injection.rb    |  1 +
+ modules/exploits/unix/webapp/bolt_authenticated_rce.rb   |  1 +
+ modules/exploits/unix/webapp/cacti_graphimage_exec.rb    |  1 +
+ modules/exploits/unix/webapp/clipbucket_upload_exec.rb   |  1 +
+ modules/exploits/unix/webapp/dogfood_spell_exec.rb       |  1 +
+ modules/exploits/unix/webapp/egallery_upload_exec.rb     |  1 +
+ modules/exploits/unix/webapp/flashchat_upload_exec.rb    |  1 +
+ modules/exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb  |  1 +
+ .../exploits/unix/webapp/get_simple_cms_upload_exec.rb   |  1 +
+ modules/exploits/unix/webapp/havalite_upload_exec.rb     |  1 +
+ .../exploits/unix/webapp/hybridauth_install_php_exec.rb  |  1 +
+ modules/exploits/unix/webapp/instantcms_exec.rb          |  1 +
+ modules/exploits/unix/webapp/kimai_sqli.rb               |  1 +
+ modules/exploits/unix/webapp/libretto_upload_exec.rb     |  1 +
+ modules/exploits/unix/webapp/mybb_backdoor.rb            |  1 +
+ modules/exploits/unix/webapp/nagios_graph_explorer.rb    |  1 +
+ modules/exploits/unix/webapp/narcissus_backend_exec.rb   |  1 +
+ .../exploits/unix/webapp/openemr_sqli_privesc_upload.rb  |  1 +
+ .../unix/webapp/opennetadmin_ping_cmd_injection.rb       |  1 +
+ modules/exploits/unix/webapp/oscommerce_filemanager.rb   |  1 +
+ modules/exploits/unix/webapp/php_charts_exec.rb          |  1 +
+ .../unix/webapp/piwik_superuser_plugin_upload.rb         |  1 +
+ modules/exploits/unix/webapp/projectpier_upload_exec.rb  |  1 +
+ modules/exploits/unix/webapp/projectsend_upload_exec.rb  |  1 +
+ .../unix/webapp/simple_e_document_upload_exec.rb         |  1 +
+ .../unix/webapp/sugarcrm_rest_unserialize_exec.rb        |  1 +
+ modules/exploits/unix/webapp/tikiwiki_upload_exec.rb     |  1 +
+ .../vicidial_user_authorization_unauth_cmd_exec.rb       |  1 +
+ modules/exploits/unix/webapp/webtester_exec.rb           |  1 +
+ .../unix/webapp/wp_advanced_custom_fields_exec.rb        |  1 +
+ .../unix/webapp/wp_ajax_load_more_file_upload.rb         |  1 +
+ .../exploits/unix/webapp/wp_asset_manager_upload_exec.rb |  1 +
+ .../unix/webapp/wp_creativecontactform_file_upload.rb    |  1 +
+ modules/exploits/unix/webapp/wp_foxypress_upload.rb      |  1 +
+ .../unix/webapp/wp_frontend_editor_file_upload.rb        |  1 +
+ .../exploits/unix/webapp/wp_infinitewp_auth_bypass.rb    |  1 +
+ .../unix/webapp/wp_mobile_detector_upload_execute.rb     |  1 +
+ .../exploits/unix/webapp/wp_nmediawebsite_file_upload.rb |  1 +
+ .../exploits/unix/webapp/wp_pie_register_bypass_rce.rb   |  1 +
+ modules/exploits/unix/webapp/wp_platform_exec.rb         |  1 +
+ modules/exploits/unix/webapp/wp_property_upload_exec.rb  |  1 +
+ .../exploits/unix/webapp/wp_symposium_shell_upload.rb    |  1 +
+ modules/exploits/unix/webapp/wp_worktheflow_upload.rb    |  1 +
+ .../unix/webapp/wp_wpshop_ecommerce_file_upload.rb       |  1 +
+ .../exploits/unix/webapp/wp_wysija_newsletters_upload.rb |  1 +
+ modules/exploits/unix/webapp/xoda_file_upload.rb         |  1 +
+ modules/exploits/unix/webapp/zpanel_username_exec.rb     |  1 +
+ modules/exploits/unix/x11/x11_keyboard_exec.rb           |  3 +++
+ modules/exploits/windows/brightstor/tape_engine_0x8a.rb  |  1 +
+ modules/exploits/windows/browser/aol_ampx_convertfile.rb |  1 +
+ .../windows/browser/communicrypt_mail_activex.rb         |  1 +
+ .../windows/browser/foxit_reader_plugin_url_bof.rb       |  1 +
+ modules/exploits/windows/browser/greendam_url.rb         |  1 +
+ modules/exploits/windows/browser/maxthon_history_xcs.rb  |  1 +
+ .../exploits/windows/browser/real_arcade_installerdlg.rb |  1 +
+ .../windows/browser/synactis_connecttosynactis_bof.rb    |  1 +
+ modules/exploits/windows/browser/teechart_pro.rb         |  1 +
+ .../windows/browser/x360_video_player_set_text_bof.rb    |  1 +
+ modules/exploits/windows/fileformat/a_pdf_wav_to_mp3.rb  |  1 +
+ modules/exploits/windows/fileformat/abbs_amp_lst.rb      |  1 +
+ .../windows/fileformat/actfax_import_users_bof.rb        |  1 +
+ .../exploits/windows/fileformat/activepdf_webgrabber.rb  |  1 +
+ .../exploits/windows/fileformat/aol_desktop_linktag.rb   |  1 +
+ modules/exploits/windows/fileformat/aol_phobos_bof.rb    |  1 +
+ .../exploits/windows/fileformat/audiotran_pls_1424.rb    |  1 +
+ modules/exploits/windows/fileformat/aviosoft_plf_buf.rb  |  1 +
+ .../windows/fileformat/beetel_netconfig_ini_bof.rb       |  1 +
+ modules/exploits/windows/fileformat/blazedvd_hdtv_bof.rb |  1 +
+ modules/exploits/windows/fileformat/bsplayer_m3u.rb      |  1 +
+ modules/exploits/windows/fileformat/cytel_studio_cy3.rb  |  1 +
+ .../exploits/windows/fileformat/digital_music_pad_pls.rb |  1 +
+ .../fileformat/documalis_pdf_editor_and_scanner.rb       |  1 +
+ .../windows/fileformat/foxit_reader_filewrite.rb         |  1 +
+ modules/exploits/windows/fileformat/foxit_title_bof.rb   |  1 +
+ .../exploits/windows/fileformat/galan_fileformat_bof.rb  |  1 +
+ modules/exploits/windows/fileformat/gta_samp.rb          |  1 +
+ modules/exploits/windows/fileformat/homm3_h3m.rb         |  1 +
+ modules/exploits/windows/fileformat/iftp_schedule_bof.rb |  1 +
+ modules/exploits/windows/fileformat/ispvm_xcf_ispxcf.rb  |  1 +
+ .../windows/fileformat/magix_musikmaker_16_mmm.rb        |  1 +
+ modules/exploits/windows/fileformat/millenium_mp3_pls.rb |  1 +
+ .../windows/fileformat/mjm_coreplayer2011_s3m.rb         |  1 +
+ .../exploits/windows/fileformat/mjm_quickplayer_s3m.rb   |  1 +
+ modules/exploits/windows/fileformat/mplayer_m3u_bof.rb   |  1 +
+ modules/exploits/windows/fileformat/mplayer_sami_bof.rb  |  1 +
+ modules/exploits/windows/fileformat/mymp3player_m3u.rb   |  1 +
+ modules/exploits/windows/fileformat/netop.rb             |  1 +
+ modules/exploits/windows/fileformat/proshow_load_bof.rb  |  1 +
+ .../windows/fileformat/real_networks_netzip_bof.rb       |  1 +
+ modules/exploits/windows/fileformat/shaper_pdf_bof.rb    |  1 +
+ modules/exploits/windows/fileformat/somplplayer_m3u.rb   |  1 +
+ .../windows/fileformat/subtitle_processor_m3u_bof.rb     |  1 +
+ .../windows/fileformat/total_video_player_ini_bof.rb     |  1 +
+ modules/exploits/windows/fileformat/varicad_dwb.rb       |  1 +
+ .../exploits/windows/fileformat/videocharge_studio.rb    |  1 +
+ modules/exploits/windows/fileformat/vuplayer_cue.rb      |  1 +
+ .../exploits/windows/fileformat/winrar_name_spoofing.rb  |  1 +
+ modules/exploits/windows/fileformat/wm_downloader_m3u.rb |  1 +
+ modules/exploits/windows/fileformat/xenorate_xpl_bof.rb  |  1 +
+ modules/exploits/windows/fileformat/xion_m3u_sehbof.rb   |  1 +
+ modules/exploits/windows/ftp/32bitftp_list_reply.rb      |  1 +
+ modules/exploits/windows/ftp/aasync_list_reply.rb        |  1 +
+ modules/exploits/windows/ftp/comsnd_ftpd_fmtstr.rb       |  1 +
+ modules/exploits/windows/ftp/easyftp_cwd_fixret.rb       |  1 +
+ modules/exploits/windows/ftp/easyftp_list_fixret.rb      |  1 +
+ modules/exploits/windows/ftp/easyftp_mkd_fixret.rb       |  1 +
+ modules/exploits/windows/ftp/filewrangler_list_reply.rb  |  1 +
+ modules/exploits/windows/ftp/freefloatftp_user.rb        |  1 +
+ modules/exploits/windows/ftp/freefloatftp_wbem.rb        |  1 +
+ modules/exploits/windows/ftp/freeftpd_pass.rb            |  1 +
+ modules/exploits/windows/ftp/ftpgetter_pwd_reply.rb      |  1 +
+ modules/exploits/windows/ftp/ftppad_list_reply.rb        |  1 +
+ modules/exploits/windows/ftp/ftpshell51_pwd_reply.rb     |  1 +
+ modules/exploits/windows/ftp/ftpsynch_list_reply.rb      |  1 +
+ modules/exploits/windows/ftp/gekkomgr_list_reply.rb      |  1 +
+ modules/exploits/windows/ftp/leapftp_list_reply.rb       |  1 +
+ modules/exploits/windows/ftp/odin_list_reply.rb          |  1 +
+ .../exploits/windows/ftp/quickshare_traversal_write.rb   |  1 +
+ modules/exploits/windows/ftp/sami_ftpd_list.rb           |  1 +
+ modules/exploits/windows/ftp/seagull_list_reply.rb       |  1 +
+ modules/exploits/windows/ftp/turboftp_port.rb            |  1 +
+ modules/exploits/windows/ftp/vermillion_ftpd_port.rb     |  1 +
+ modules/exploits/windows/ftp/winaxe_server_ready.rb      |  1 +
+ modules/exploits/windows/ftp/wing_ftp_admin_exec.rb      |  1 +
+ modules/exploits/windows/ftp/xftp_client_pwd.rb          |  1 +
+ .../exploits/windows/http/amlibweb_webquerydll_app.rb    |  1 +
+ modules/exploits/windows/http/belkin_bulldog.rb          |  1 +
+ modules/exploits/windows/http/cyclope_ess_sqli.rb        |  1 +
+ .../exploits/windows/http/disk_pulse_enterprise_bof.rb   |  1 +
+ .../exploits/windows/http/disk_pulse_enterprise_get.rb   |  1 +
+ modules/exploits/windows/http/diskboss_get_bof.rb        |  1 +
+ modules/exploits/windows/http/easychatserver_seh.rb      |  1 +
+ modules/exploits/windows/http/easyfilesharing_post.rb    |  1 +
+ modules/exploits/windows/http/easyfilesharing_seh.rb     |  1 +
+ modules/exploits/windows/http/easyftp_list.rb            |  1 +
+ modules/exploits/windows/http/ezserver_http.rb           |  1 +
+ modules/exploits/windows/http/integard_password_bof.rb   |  1 +
+ modules/exploits/windows/http/intersystems_cache.rb      |  1 +
+ modules/exploits/windows/http/intrasrv_bof.rb            |  1 +
+ .../windows/http/kaseya_uploadimage_file_upload.rb       |  1 +
+ modules/exploits/windows/http/miniweb_upload_wbem.rb     |  1 +
+ modules/exploits/windows/http/nscp_authenticated_rce.rb  |  1 +
+ modules/exploits/windows/http/octopusdeploy_deploy.rb    |  1 +
+ modules/exploits/windows/http/rabidhamster_r4_log.rb     |  1 +
+ .../windows/http/serviio_checkstreamurl_cmd_exec.rb      |  1 +
+ modules/exploits/windows/http/sws_connection_bof.rb      |  1 +
+ modules/exploits/windows/http/umbraco_upload_aspx.rb     |  1 +
+ modules/exploits/windows/http/vxsrchs_bof.rb             |  3 +++
+ modules/exploits/windows/http/xampp_webdav_upload_php.rb | 10 +++++++++-
+ modules/exploits/windows/imap/novell_netmail_auth.rb     |  1 +
+ modules/exploits/windows/license/flexnet_lmgrd_bof.rb    |  1 +
+ modules/exploits/windows/local/agnitum_outpost_acs.rb    |  1 +
+ modules/exploits/windows/local/nscp_pe.rb                |  1 +
+ modules/exploits/windows/local/panda_psevents.rb         |  1 +
+ modules/exploits/windows/misc/achat_bof.rb               |  1 +
+ modules/exploits/windows/misc/actfax_raw_server_bof.rb   |  1 +
+ modules/exploits/windows/misc/mobile_mouse_rce.rb        |  1 +
+ .../windows/misc/remote_control_collection_rce.rb        |  1 +
+ modules/exploits/windows/misc/splayer_content_type.rb    |  1 +
+ modules/exploits/windows/misc/talkative_response.rb      |  1 +
+ modules/exploits/windows/misc/ufo_ai.rb                  |  1 +
+ .../windows/scada/sunway_force_control_netdbsrv.rb       |  1 +
+ modules/exploits/windows/ssh/sysax_ssh_username.rb       |  1 +
+ tools/dev/msftidy.rb                                     |  6 ++++++
+ tools/dev/pre-commit-hook.rb                             | 16 ++++++++--------
+ 333 files changed, 372 insertions(+), 10 deletions(-)
+
+commit 9dc5696cc43491ac4647b8cbc337aa92d42509c6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Oct 7 14:03:32 2025 -0400
+
+    Update dash characters in module references
+
+ .../admin/http/netgear_pnpx_getsharefolderlist_auth_bypass.rb         | 2 +-
+ modules/auxiliary/gather/jasmin_ransomware_sqli.rb                    | 2 +-
+ modules/exploits/linux/http/atutor_filemanager_traversal.rb           | 4 ++--
+ modules/exploits/linux/http/trendmicro_imsva_widget_exec.rb           | 4 ++--
+ modules/exploits/multi/http/wp_simple_file_list_rce.rb                | 2 +-
+ modules/exploits/multi/misc/qemu_monitor_hmp_migrate_cmd_exec.rb      | 2 +-
+ 6 files changed, 8 insertions(+), 8 deletions(-)
+
+commit fd21209e4d38ca374b40b4d7963bed7b7ccc5821
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Oct 6 17:15:11 2025 -0400
+
+    Add missing CVEs from VulnCheck
+
+ modules/auxiliary/admin/http/contentkeeper_fileaccess.rb              | 1 +
+ modules/auxiliary/admin/http/dlink_dir_300_600_exec_noauth.rb         | 1 +
+ modules/auxiliary/admin/http/limesurvey_file_download.rb              | 1 +
+ modules/auxiliary/admin/http/linksys_e1500_e2500_exec.rb              | 1 +
+ modules/auxiliary/admin/http/linksys_tmunblock_admin_reset_bof.rb     | 1 +
+ modules/auxiliary/admin/http/linksys_wrt54gl_exec.rb                  | 1 +
+ .../admin/http/netgear_pnpx_getsharefolderlist_auth_bypass.rb         | 1 +
+ modules/auxiliary/admin/http/wp_automatic_plugin_privesc.rb           | 1 +
+ modules/auxiliary/admin/http/wp_wplms_privilege_escalation.rb         | 1 +
+ modules/auxiliary/admin/pop2/uw_fileretrieval.rb                      | 1 +
+ modules/auxiliary/dos/http/ws_dos.rb                                  | 1 +
+ modules/auxiliary/dos/misc/ibm_tsm_dos.rb                             | 1 +
+ modules/auxiliary/dos/windows/ftp/solarftp_user.rb                    | 1 +
+ modules/auxiliary/dos/windows/games/kaillera.rb                       | 3 +++
+ modules/auxiliary/dos/windows/ssh/sysax_sshd_kexchange.rb             | 1 +
+ modules/auxiliary/gather/alienvault_iso27001_sqli.rb                  | 1 +
+ modules/auxiliary/gather/android_object_tag_webview_uxss.rb           | 1 +
+ .../auxiliary/gather/checkpoint_gateway_fileread_cve_2024_24919.rb    | 1 +
+ modules/auxiliary/gather/jasmin_ransomware_sqli.rb                    | 1 +
+ modules/auxiliary/gather/joomla_weblinks_sqli.rb                      | 1 +
+ modules/auxiliary/gather/microweber_lfi.rb                            | 1 +
+ modules/auxiliary/gather/suite_crm_export_sqli.rb                     | 1 +
+ modules/auxiliary/gather/xbmc_traversal.rb                            | 1 +
+ modules/auxiliary/scanner/ftp/colorado_ftp_traversal.rb               | 1 +
+ modules/auxiliary/scanner/http/a10networks_ax_directory_traversal.rb  | 1 +
+ modules/auxiliary/scanner/http/apache_activemq_traversal.rb           | 1 +
+ modules/auxiliary/scanner/http/barracuda_directory_traversal.rb       | 1 +
+ modules/auxiliary/scanner/http/clansphere_traversal.rb                | 1 +
+ modules/auxiliary/scanner/http/dicoogle_traversal.rb                  | 1 +
+ modules/auxiliary/scanner/http/dolibarr_16_contact_dump.rb            | 1 +
+ modules/auxiliary/scanner/http/epmp1000_ping_cmd_exec.rb              | 1 +
+ modules/auxiliary/scanner/http/httpdasm_directory_traversal.rb        | 1 +
+ modules/auxiliary/scanner/http/linknat_vos_traversal.rb               | 1 +
+ modules/auxiliary/scanner/http/linksys_e1500_traversal.rb             | 1 +
+ modules/auxiliary/scanner/http/netgear_sph200d_traversal.rb           | 1 +
+ modules/auxiliary/scanner/http/rips_traversal.rb                      | 1 +
+ modules/auxiliary/scanner/http/riverbed_steelhead_vcx_file_read.rb    | 1 +
+ modules/auxiliary/scanner/http/s40_traversal.rb                       | 1 +
+ modules/auxiliary/scanner/http/servicedesk_plus_traversal.rb          | 1 +
+ modules/auxiliary/scanner/http/smt_ipmi_url_redirect_traversal.rb     | 1 +
+ modules/auxiliary/scanner/http/sockso_traversal.rb                    | 1 +
+ modules/auxiliary/scanner/http/webpagetest_traversal.rb               | 1 +
+ modules/auxiliary/scanner/http/wp_abandoned_cart_sqli.rb              | 1 +
+ modules/auxiliary/scanner/http/wp_arbitrary_file_deletion.rb          | 1 +
+ modules/auxiliary/scanner/http/wp_gimedia_library_file_read.rb        | 1 +
+ modules/auxiliary/scanner/http/wp_mobileedition_file_read.rb          | 1 +
+ modules/auxiliary/scanner/http/wp_nextgen_galley_file_read.rb         | 1 +
+ modules/auxiliary/scanner/http/wp_simple_backup_file_read.rb          | 1 +
+ modules/auxiliary/scanner/http/wp_subscribe_comments_file_read.rb     | 1 +
+ modules/auxiliary/scanner/http/wp_total_upkeep_downloader.rb          | 1 +
+ modules/auxiliary/scanner/http/zenload_balancer_traversal.rb          | 1 +
+ modules/auxiliary/scanner/misc/cups_browsed_info_disclosure.rb        | 1 +
+ modules/auxiliary/scanner/misc/easycafe_server_fileaccess.rb          | 1 +
+ modules/exploits/linux/antivirus/escan_password_exec.rb               | 1 +
+ modules/exploits/linux/http/astium_sqli_upload.rb                     | 1 +
+ modules/exploits/linux/http/atutor_filemanager_traversal.rb           | 2 ++
+ modules/exploits/linux/http/crypttech_cryptolog_login_exec.rb         | 1 +
+ modules/exploits/linux/http/dcos_marathon.rb                          | 1 +
+ modules/exploits/linux/http/dlink_authentication_cgi_bof.rb           | 1 +
+ modules/exploits/linux/http/dlink_command_php_exec_noauth.rb          | 1 +
+ .../http/dlink_dcs_930l_authenticated_remote_command_execution.rb     | 3 +++
+ modules/exploits/linux/http/dlink_dir300_exec_telnet.rb               | 1 +
+ modules/exploits/linux/http/dlink_dir605l_captcha_bof.rb              | 1 +
+ modules/exploits/linux/http/dlink_dir615_up_exec.rb                   | 1 +
+ modules/exploits/linux/http/dlink_dir850l_unauth_exec.rb              | 1 +
+ modules/exploits/linux/http/dlink_dsl2750b_exec_noauth.rb             | 1 +
+ modules/exploits/linux/http/dlink_dspw110_cookie_noauth_exec.rb       | 1 +
+ modules/exploits/linux/http/dlink_dspw215_info_cgi_bof.rb             | 1 +
+ modules/exploits/linux/http/dlink_hedwig_cgi_bof.rb                   | 1 +
+ modules/exploits/linux/http/dlink_hnap_header_exec_noauth.rb          | 1 +
+ modules/exploits/linux/http/dolibarr_cmd_exec.rb                      | 1 +
+ modules/exploits/linux/http/esva_exec.rb                              | 1 +
+ modules/exploits/linux/http/github_enterprise_secret.rb               | 1 +
+ modules/exploits/linux/http/h2_webinterface_rce.rb                    | 1 +
+ modules/exploits/linux/http/imperva_securesphere_exec.rb              | 1 +
+ modules/exploits/linux/http/ipfire_proxy_exec.rb                      | 1 +
+ modules/exploits/linux/http/kaltura_unserialize_rce.rb                | 1 +
+ modules/exploits/linux/http/kibana_upgrade_assistant_telemetry_rce.rb | 1 +
+ modules/exploits/linux/http/kloxo_sqli.rb                             | 1 +
+ modules/exploits/linux/http/linksys_e1500_apply_exec.rb               | 1 +
+ modules/exploits/linux/http/linksys_themoon_exec.rb                   | 1 +
+ modules/exploits/linux/http/linksys_wrt160nv2_apply_exec.rb           | 1 +
+ modules/exploits/linux/http/logsign_exec.rb                           | 1 +
+ modules/exploits/linux/http/mvpower_dvr_shell_exec.rb                 | 1 +
+ modules/exploits/linux/http/nagios_xi_chained_rce.rb                  | 4 ++++
+ modules/exploits/linux/http/netgear_dgn1000_setup_unauth_exec.rb      | 1 +
+ modules/exploits/linux/http/netgear_dgn1000b_setup_exec.rb            | 1 +
+ modules/exploits/linux/http/netgear_dgn2200b_pppoe_exec.rb            | 1 +
+ modules/exploits/linux/http/op5_config_exec.rb                        | 1 +
+ modules/exploits/linux/http/openfiler_networkcard_exec.rb             | 1 +
+ modules/exploits/linux/http/pandora_fms_exec.rb                       | 1 +
+ modules/exploits/linux/http/pandora_fms_sqli.rb                       | 1 +
+ modules/exploits/linux/http/pandora_ping_cmd_exec.rb                  | 3 +++
+ modules/exploits/linux/http/raidsonic_nas_ib5220_exec_noauth.rb       | 1 +
+ modules/exploits/linux/http/rconfig_vendors_auth_file_upload_rce.rb   | 1 +
+ modules/exploits/linux/http/riverbed_netprofiler_netexpress_exec.rb   | 1 +
+ modules/exploits/linux/http/tiki_calendar_exec.rb                     | 1 +
+ modules/exploits/linux/http/trendmicro_imsva_widget_exec.rb           | 3 +++
+ modules/exploits/linux/http/ubiquiti_airos_file_upload.rb             | 1 +
+ modules/exploits/linux/http/wanem_exec.rb                             | 1 +
+ modules/exploits/linux/http/webid_converter.rb                        | 1 +
+ modules/exploits/linux/http/wipg1000_cmd_injection.rb                 | 1 +
+ modules/exploits/linux/http/zen_load_balancer_exec.rb                 | 1 +
+ modules/exploits/linux/http/zenoss_showdaemonxmlconfig_exec.rb        | 1 +
+ modules/exploits/linux/local/cpi_runrshell_priv_esc.rb                | 1 +
+ modules/exploits/linux/local/kloxo_lxsuexec.rb                        | 1 +
+ modules/exploits/linux/local/lastore_daemon_dbus_priv_esc.rb          | 1 +
+ modules/exploits/linux/local/progress_flowmon_sudo_privesc_2024.rb    | 1 +
+ .../linux/local/progress_kemp_loadmaster_sudo_privesc_2024.rb         | 1 +
+ modules/exploits/linux/local/zpanel_zsudo.rb                          | 3 +++
+ modules/exploits/linux/misc/igel_command_injection.rb                 | 1 +
+ modules/exploits/linux/misc/netcore_udp_53413_backdoor.rb             | 1 +
+ modules/exploits/linux/misc/sercomm_exec.rb                           | 1 +
+ modules/exploits/linux/redis/redis_replication_cmd_exec.rb            | 1 +
+ modules/exploits/linux/upnp/belkin_wemo_upnp_exec.rb                  | 1 +
+ modules/exploits/multi/fileformat/maple_maplet.rb                     | 1 +
+ modules/exploits/multi/http/ajaxplorer_checkinstall_exec.rb           | 1 +
+ modules/exploits/multi/http/auxilium_upload_exec.rb                   | 1 +
+ modules/exploits/multi/http/builderengine_upload_exec.rb              | 1 +
+ modules/exploits/multi/http/cuteflow_upload_exec.rb                   | 1 +
+ modules/exploits/multi/http/extplorer_upload_exec.rb                  | 1 +
+ modules/exploits/multi/http/freenas_exec_raw.rb                       | 1 +
+ modules/exploits/multi/http/gestioip_exec.rb                          | 1 +
+ modules/exploits/multi/http/glossword_upload_exec.rb                  | 1 +
+ modules/exploits/multi/http/kordil_edms_upload_exec.rb                | 1 +
+ modules/exploits/multi/http/lucee_scheduled_job.rb                    | 1 +
+ modules/exploits/multi/http/makoserver_cmd_exec.rb                    | 1 +
+ modules/exploits/multi/http/manageengine_sd_uploader.rb               | 1 +
+ modules/exploits/multi/http/mobilecartly_upload_exec.rb               | 1 +
+ modules/exploits/multi/http/netwin_surgeftp_exec.rb                   | 1 +
+ modules/exploits/multi/http/oscommerce_installer_unauth_code_exec.rb  | 1 +
+ modules/exploits/multi/http/php_volunteer_upload_exec.rb              | 1 +
+ modules/exploits/multi/http/phpstudy_backdoor_rce.rb                  | 1 +
+ modules/exploits/multi/http/phptax_exec.rb                            | 1 +
+ modules/exploits/multi/http/processmaker_exec.rb                      | 1 +
+ modules/exploits/multi/http/processmaker_plugin_upload.rb             | 1 +
+ modules/exploits/multi/http/qdpm_upload_exec.rb                       | 1 +
+ modules/exploits/multi/http/sflog_upload_exec.rb                      | 1 +
+ modules/exploits/multi/http/snortreport_exec.rb                       | 1 +
+ modules/exploits/multi/http/spip_connect_exec.rb                      | 1 +
+ modules/exploits/multi/http/spree_search_exec.rb                      | 1 +
+ modules/exploits/multi/http/spree_searchlogic_exec.rb                 | 1 +
+ modules/exploits/multi/http/traq_plugin_exec.rb                       | 1 +
+ modules/exploits/multi/http/uptime_file_upload_1.rb                   | 1 +
+ modules/exploits/multi/http/uptime_file_upload_2.rb                   | 1 +
+ modules/exploits/multi/http/webpagetest_upload_exec.rb                | 1 +
+ modules/exploits/multi/http/werkzeug_debug_rce.rb                     | 1 +
+ modules/exploits/multi/http/wp_ait_csv_rce.rb                         | 1 +
+ modules/exploits/multi/http/wp_db_backup_rce.rb                       | 1 +
+ modules/exploits/multi/http/wp_simple_file_list_rce.rb                | 1 +
+ modules/exploits/multi/http/zpanel_information_disclosure_rce.rb      | 1 +
+ modules/exploits/multi/misc/erlang_cookie_rce.rb                      | 1 +
+ modules/exploits/multi/misc/freeswitch_event_socket_cmd_exec.rb       | 1 +
+ modules/exploits/multi/misc/qemu_monitor_hmp_migrate_cmd_exec.rb      | 1 +
+ modules/exploits/osx/http/remote_for_mac_rce.rb                       | 1 +
+ modules/exploits/osx/misc/ufo_ai.rb                                   | 1 +
+ modules/exploits/unix/ftp/proftpd_133c_backdoor.rb                    | 1 +
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb                      | 1 +
+ modules/exploits/unix/http/contentkeeperweb_mimencode.rb              | 1 +
+ modules/exploits/unix/http/dell_kace_k1000_upload.rb                  | 1 +
+ modules/exploits/unix/http/maltrail_rce.rb                            | 1 +
+ modules/exploits/unix/http/pfsense_group_member_exec.rb               | 1 +
+ modules/exploits/unix/http/pihole_whitelist_exec.rb                   | 1 +
+ modules/exploits/unix/http/xdebug_unauth_exec.rb                      | 1 +
+ modules/exploits/unix/misc/polycom_hdx_auth_bypass.rb                 | 1 +
+ modules/exploits/unix/misc/polycom_hdx_traceroute_exec.rb             | 1 +
+ modules/exploits/unix/sonicwall/sonicwall_xmlrpc_rce.rb               | 1 +
+ modules/exploits/unix/ssh/array_vxag_vapv_privkey_privesc.rb          | 1 +
+ modules/exploits/unix/webapp/ajenti_auth_username_cmd_injection.rb    | 1 +
+ modules/exploits/unix/webapp/bolt_authenticated_rce.rb                | 1 +
+ modules/exploits/unix/webapp/cacti_graphimage_exec.rb                 | 1 +
+ modules/exploits/unix/webapp/clipbucket_upload_exec.rb                | 1 +
+ modules/exploits/unix/webapp/dogfood_spell_exec.rb                    | 1 +
+ modules/exploits/unix/webapp/egallery_upload_exec.rb                  | 1 +
+ modules/exploits/unix/webapp/flashchat_upload_exec.rb                 | 1 +
+ modules/exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb               | 1 +
+ modules/exploits/unix/webapp/get_simple_cms_upload_exec.rb            | 1 +
+ modules/exploits/unix/webapp/havalite_upload_exec.rb                  | 1 +
+ modules/exploits/unix/webapp/hybridauth_install_php_exec.rb           | 1 +
+ modules/exploits/unix/webapp/instantcms_exec.rb                       | 1 +
+ modules/exploits/unix/webapp/kimai_sqli.rb                            | 1 +
+ modules/exploits/unix/webapp/libretto_upload_exec.rb                  | 1 +
+ modules/exploits/unix/webapp/mybb_backdoor.rb                         | 1 +
+ modules/exploits/unix/webapp/nagios_graph_explorer.rb                 | 1 +
+ modules/exploits/unix/webapp/narcissus_backend_exec.rb                | 1 +
+ modules/exploits/unix/webapp/openemr_sqli_privesc_upload.rb           | 1 +
+ modules/exploits/unix/webapp/opennetadmin_ping_cmd_injection.rb       | 1 +
+ modules/exploits/unix/webapp/oscommerce_filemanager.rb                | 1 +
+ modules/exploits/unix/webapp/php_charts_exec.rb                       | 1 +
+ modules/exploits/unix/webapp/piwik_superuser_plugin_upload.rb         | 1 +
+ modules/exploits/unix/webapp/projectpier_upload_exec.rb               | 1 +
+ modules/exploits/unix/webapp/projectsend_upload_exec.rb               | 1 +
+ modules/exploits/unix/webapp/simple_e_document_upload_exec.rb         | 1 +
+ modules/exploits/unix/webapp/sugarcrm_rest_unserialize_exec.rb        | 1 +
+ modules/exploits/unix/webapp/tikiwiki_upload_exec.rb                  | 1 +
+ .../unix/webapp/vicidial_user_authorization_unauth_cmd_exec.rb        | 1 +
+ modules/exploits/unix/webapp/webtester_exec.rb                        | 1 +
+ modules/exploits/unix/webapp/wp_advanced_custom_fields_exec.rb        | 1 +
+ modules/exploits/unix/webapp/wp_ajax_load_more_file_upload.rb         | 1 +
+ modules/exploits/unix/webapp/wp_asset_manager_upload_exec.rb          | 1 +
+ modules/exploits/unix/webapp/wp_creativecontactform_file_upload.rb    | 1 +
+ modules/exploits/unix/webapp/wp_foxypress_upload.rb                   | 1 +
+ modules/exploits/unix/webapp/wp_frontend_editor_file_upload.rb        | 1 +
+ modules/exploits/unix/webapp/wp_infinitewp_auth_bypass.rb             | 1 +
+ modules/exploits/unix/webapp/wp_mobile_detector_upload_execute.rb     | 1 +
+ modules/exploits/unix/webapp/wp_nmediawebsite_file_upload.rb          | 1 +
+ modules/exploits/unix/webapp/wp_pie_register_bypass_rce.rb            | 1 +
+ modules/exploits/unix/webapp/wp_platform_exec.rb                      | 1 +
+ modules/exploits/unix/webapp/wp_property_upload_exec.rb               | 1 +
+ modules/exploits/unix/webapp/wp_symposium_shell_upload.rb             | 1 +
+ modules/exploits/unix/webapp/wp_worktheflow_upload.rb                 | 1 +
+ modules/exploits/unix/webapp/wp_wpshop_ecommerce_file_upload.rb       | 1 +
+ modules/exploits/unix/webapp/wp_wysija_newsletters_upload.rb          | 1 +
+ modules/exploits/unix/webapp/xoda_file_upload.rb                      | 1 +
+ modules/exploits/unix/webapp/zpanel_username_exec.rb                  | 1 +
+ modules/exploits/unix/x11/x11_keyboard_exec.rb                        | 3 +++
+ modules/exploits/windows/brightstor/tape_engine_0x8a.rb               | 1 +
+ modules/exploits/windows/browser/aol_ampx_convertfile.rb              | 1 +
+ modules/exploits/windows/browser/communicrypt_mail_activex.rb         | 1 +
+ modules/exploits/windows/browser/foxit_reader_plugin_url_bof.rb       | 1 +
+ modules/exploits/windows/browser/greendam_url.rb                      | 1 +
+ modules/exploits/windows/browser/maxthon_history_xcs.rb               | 1 +
+ modules/exploits/windows/browser/real_arcade_installerdlg.rb          | 1 +
+ modules/exploits/windows/browser/synactis_connecttosynactis_bof.rb    | 1 +
+ modules/exploits/windows/browser/teechart_pro.rb                      | 1 +
+ modules/exploits/windows/browser/x360_video_player_set_text_bof.rb    | 1 +
+ modules/exploits/windows/fileformat/a_pdf_wav_to_mp3.rb               | 1 +
+ modules/exploits/windows/fileformat/abbs_amp_lst.rb                   | 1 +
+ modules/exploits/windows/fileformat/actfax_import_users_bof.rb        | 1 +
+ modules/exploits/windows/fileformat/activepdf_webgrabber.rb           | 1 +
+ modules/exploits/windows/fileformat/aol_desktop_linktag.rb            | 1 +
+ modules/exploits/windows/fileformat/aol_phobos_bof.rb                 | 1 +
+ modules/exploits/windows/fileformat/audiotran_pls_1424.rb             | 1 +
+ modules/exploits/windows/fileformat/aviosoft_plf_buf.rb               | 1 +
+ modules/exploits/windows/fileformat/beetel_netconfig_ini_bof.rb       | 1 +
+ modules/exploits/windows/fileformat/blazedvd_hdtv_bof.rb              | 1 +
+ modules/exploits/windows/fileformat/bsplayer_m3u.rb                   | 1 +
+ modules/exploits/windows/fileformat/cytel_studio_cy3.rb               | 1 +
+ modules/exploits/windows/fileformat/digital_music_pad_pls.rb          | 1 +
+ .../exploits/windows/fileformat/documalis_pdf_editor_and_scanner.rb   | 1 +
+ modules/exploits/windows/fileformat/foxit_reader_filewrite.rb         | 1 +
+ modules/exploits/windows/fileformat/foxit_title_bof.rb                | 1 +
+ modules/exploits/windows/fileformat/galan_fileformat_bof.rb           | 1 +
+ modules/exploits/windows/fileformat/gta_samp.rb                       | 1 +
+ modules/exploits/windows/fileformat/homm3_h3m.rb                      | 1 +
+ modules/exploits/windows/fileformat/iftp_schedule_bof.rb              | 1 +
+ modules/exploits/windows/fileformat/ispvm_xcf_ispxcf.rb               | 1 +
+ modules/exploits/windows/fileformat/magix_musikmaker_16_mmm.rb        | 1 +
+ modules/exploits/windows/fileformat/millenium_mp3_pls.rb              | 1 +
+ modules/exploits/windows/fileformat/mjm_coreplayer2011_s3m.rb         | 1 +
+ modules/exploits/windows/fileformat/mjm_quickplayer_s3m.rb            | 1 +
+ modules/exploits/windows/fileformat/mplayer_m3u_bof.rb                | 1 +
+ modules/exploits/windows/fileformat/mplayer_sami_bof.rb               | 1 +
+ modules/exploits/windows/fileformat/mymp3player_m3u.rb                | 1 +
+ modules/exploits/windows/fileformat/netop.rb                          | 1 +
+ modules/exploits/windows/fileformat/proshow_load_bof.rb               | 1 +
+ modules/exploits/windows/fileformat/real_networks_netzip_bof.rb       | 1 +
+ modules/exploits/windows/fileformat/shaper_pdf_bof.rb                 | 1 +
+ modules/exploits/windows/fileformat/somplplayer_m3u.rb                | 1 +
+ modules/exploits/windows/fileformat/subtitle_processor_m3u_bof.rb     | 1 +
+ modules/exploits/windows/fileformat/total_video_player_ini_bof.rb     | 1 +
+ modules/exploits/windows/fileformat/varicad_dwb.rb                    | 1 +
+ modules/exploits/windows/fileformat/videocharge_studio.rb             | 1 +
+ modules/exploits/windows/fileformat/vuplayer_cue.rb                   | 1 +
+ modules/exploits/windows/fileformat/winrar_name_spoofing.rb           | 1 +
+ modules/exploits/windows/fileformat/wm_downloader_m3u.rb              | 1 +
+ modules/exploits/windows/fileformat/xenorate_xpl_bof.rb               | 1 +
+ modules/exploits/windows/fileformat/xion_m3u_sehbof.rb                | 1 +
+ modules/exploits/windows/ftp/32bitftp_list_reply.rb                   | 1 +
+ modules/exploits/windows/ftp/aasync_list_reply.rb                     | 1 +
+ modules/exploits/windows/ftp/comsnd_ftpd_fmtstr.rb                    | 1 +
+ modules/exploits/windows/ftp/easyftp_cwd_fixret.rb                    | 1 +
+ modules/exploits/windows/ftp/easyftp_list_fixret.rb                   | 1 +
+ modules/exploits/windows/ftp/easyftp_mkd_fixret.rb                    | 1 +
+ modules/exploits/windows/ftp/filewrangler_list_reply.rb               | 1 +
+ modules/exploits/windows/ftp/freefloatftp_user.rb                     | 1 +
+ modules/exploits/windows/ftp/freefloatftp_wbem.rb                     | 1 +
+ modules/exploits/windows/ftp/freeftpd_pass.rb                         | 1 +
+ modules/exploits/windows/ftp/ftpgetter_pwd_reply.rb                   | 1 +
+ modules/exploits/windows/ftp/ftppad_list_reply.rb                     | 1 +
+ modules/exploits/windows/ftp/ftpshell51_pwd_reply.rb                  | 1 +
+ modules/exploits/windows/ftp/ftpsynch_list_reply.rb                   | 1 +
+ modules/exploits/windows/ftp/gekkomgr_list_reply.rb                   | 1 +
+ modules/exploits/windows/ftp/leapftp_list_reply.rb                    | 1 +
+ modules/exploits/windows/ftp/odin_list_reply.rb                       | 1 +
+ modules/exploits/windows/ftp/quickshare_traversal_write.rb            | 1 +
+ modules/exploits/windows/ftp/sami_ftpd_list.rb                        | 1 +
+ modules/exploits/windows/ftp/seagull_list_reply.rb                    | 1 +
+ modules/exploits/windows/ftp/turboftp_port.rb                         | 1 +
+ modules/exploits/windows/ftp/vermillion_ftpd_port.rb                  | 1 +
+ modules/exploits/windows/ftp/winaxe_server_ready.rb                   | 1 +
+ modules/exploits/windows/ftp/wing_ftp_admin_exec.rb                   | 1 +
+ modules/exploits/windows/ftp/xftp_client_pwd.rb                       | 1 +
+ modules/exploits/windows/http/amlibweb_webquerydll_app.rb             | 1 +
+ modules/exploits/windows/http/belkin_bulldog.rb                       | 1 +
+ modules/exploits/windows/http/cyclope_ess_sqli.rb                     | 1 +
+ modules/exploits/windows/http/disk_pulse_enterprise_bof.rb            | 1 +
+ modules/exploits/windows/http/disk_pulse_enterprise_get.rb            | 1 +
+ modules/exploits/windows/http/diskboss_get_bof.rb                     | 1 +
+ modules/exploits/windows/http/easychatserver_seh.rb                   | 1 +
+ modules/exploits/windows/http/easyfilesharing_post.rb                 | 1 +
+ modules/exploits/windows/http/easyfilesharing_seh.rb                  | 1 +
+ modules/exploits/windows/http/easyftp_list.rb                         | 1 +
+ modules/exploits/windows/http/ezserver_http.rb                        | 1 +
+ modules/exploits/windows/http/integard_password_bof.rb                | 1 +
+ modules/exploits/windows/http/intersystems_cache.rb                   | 1 +
+ modules/exploits/windows/http/intrasrv_bof.rb                         | 1 +
+ modules/exploits/windows/http/kaseya_uploadimage_file_upload.rb       | 1 +
+ modules/exploits/windows/http/miniweb_upload_wbem.rb                  | 1 +
+ modules/exploits/windows/http/nscp_authenticated_rce.rb               | 1 +
+ modules/exploits/windows/http/octopusdeploy_deploy.rb                 | 1 +
+ modules/exploits/windows/http/rabidhamster_r4_log.rb                  | 1 +
+ modules/exploits/windows/http/serviio_checkstreamurl_cmd_exec.rb      | 1 +
+ modules/exploits/windows/http/sws_connection_bof.rb                   | 1 +
+ modules/exploits/windows/http/umbraco_upload_aspx.rb                  | 1 +
+ modules/exploits/windows/http/vxsrchs_bof.rb                          | 3 +++
+ modules/exploits/windows/http/xampp_webdav_upload_php.rb              | 3 +++
+ modules/exploits/windows/imap/novell_netmail_auth.rb                  | 1 +
+ modules/exploits/windows/license/flexnet_lmgrd_bof.rb                 | 1 +
+ modules/exploits/windows/local/agnitum_outpost_acs.rb                 | 1 +
+ modules/exploits/windows/local/nscp_pe.rb                             | 1 +
+ modules/exploits/windows/local/panda_psevents.rb                      | 1 +
+ modules/exploits/windows/misc/achat_bof.rb                            | 1 +
+ modules/exploits/windows/misc/actfax_raw_server_bof.rb                | 1 +
+ modules/exploits/windows/misc/mobile_mouse_rce.rb                     | 1 +
+ modules/exploits/windows/misc/remote_control_collection_rce.rb        | 1 +
+ modules/exploits/windows/misc/splayer_content_type.rb                 | 1 +
+ modules/exploits/windows/misc/talkative_response.rb                   | 1 +
+ modules/exploits/windows/misc/ufo_ai.rb                               | 1 +
+ modules/exploits/windows/scada/sunway_force_control_netdbsrv.rb       | 1 +
+ modules/exploits/windows/ssh/sysax_ssh_username.rb                    | 1 +
+ 331 files changed, 351 insertions(+)
+
+commit 17c5b3707a67e9348a969fdc468b0a8b467ef3a6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Oct 6 15:39:52 2025 -0400
+
+    Add missing module notes
+
+ modules/exploits/windows/http/xampp_webdav_upload_php.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit d727302de6a2c5713f37f3288c2fa36ba6b59536
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Oct 7 13:56:50 2025 -0400
+
+    Pass all the files to msftidy to speed things up
+
+ tools/dev/msftidy.rb         |  6 ++++++
+ tools/dev/pre-commit-hook.rb | 16 ++++++++--------
+ 2 files changed, 14 insertions(+), 8 deletions(-)
+
+commit e202546d5d4dadb82599531c11aac27f4db0fb9c
+Merge: 08510166a4 8991bec4c3
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 7 07:59:04 2025 -0700
+
+    Merge pull request #20597 from adfoster-r7/update-developer-dependencies
+    
+    Update developer dependencies
+
+ Gemfile.lock | 64 +++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 33 insertions(+), 31 deletions(-)
+
+commit 08510166a42a2c0c4ed562cb63c208f3ed15641c
+Merge: f61a321dcd a029f34a6f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 7 07:52:56 2025 -0700
+
+    Merge pull request #20596 from adfoster-r7/update-rails-dependencies
+    
+    Update rails dependencies
+
+ Gemfile.lock          | 40 ++++++++++++++++++++--------------------
+ config/application.rb |  2 +-
+ 2 files changed, 21 insertions(+), 21 deletions(-)
+
+commit 8991bec4c3614b6299ca25529f60197933a5ad45
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Oct 7 13:36:06 2025 +0100
+
+    Update developer dependencies
+
+ Gemfile.lock | 64 +++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 33 insertions(+), 31 deletions(-)
+
+commit a029f34a6f0dd80c988e53964d6a4f1d21b47758
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Oct 7 13:23:39 2025 +0100
+
+    Update rails dependencies
+
+ Gemfile.lock          | 40 ++++++++++++++++++++--------------------
+ config/application.rb |  2 +-
+ 2 files changed, 21 insertions(+), 21 deletions(-)
