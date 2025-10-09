@@ -1,0 +1,198 @@
+commit 7c997c88f0cad3b52159e86b309dbf3b44ba5eb7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 8 21:09:17 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit a8ec46f2b27a94629b608e9b938b6f8f012bbe1f
+Merge: 5f80ca6a2b 7c840a1bac
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 8 14:00:37 2025 -0700
+
+    Merge pull request #20579 from nakkouchtarek/listmonk_env_disclosure
+    
+    Add Listmonk Template Function Environment Variable Disclosure Auxiliary Module (CVE-2025-49136)
+
+ .../auxiliary/gather/listmonk_env_disclosure.md    | 178 ++++++++++++++
+ .../auxiliary/gather/listmonk_env_disclosure.rb    | 258 +++++++++++++++++++++
+ 2 files changed, 436 insertions(+)
+
+commit 7c840a1bac416a2efcdd1df8a40c600c8a09f468
+Author: Tarek Nakkouch <nakkouchtarek@gmail.com>
+Date:   Wed Oct 8 21:02:24 2025 +0100
+
+    Add Listmonk environment disclosure auxiliary module
+
+ .../auxiliary/gather/listmonk_env_disclosure.md    | 178 ++++++++++++++
+ .../auxiliary/gather/listmonk_env_disclosure.rb    | 258 +++++++++++++++++++++
+ 2 files changed, 436 insertions(+)
+
+commit 5f80ca6a2b87c7e7b1937382124a5cbf34365cce
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 8 18:08:33 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit 10d1f53692031bea8d328e1ebedbd1b514975198
+Merge: 3ed3b3964c 05894ccb78
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 8 13:00:04 2025 -0500
+
+    Merge pull request #19975 from dledda-r7/feat/split-stdapi
+    
+    Split Stdapi
+
+ Gemfile.lock                                       |   4 +-
+ LICENSE_GEMS                                       |   2 +-
+ lib/msf/base/sessions/meterpreter.rb               |  28 ++++-
+ lib/rex/payloads/meterpreter/config.rb             |  12 ++
+ lib/rex/post/meterpreter/client_core.rb            |  17 ++-
+ .../extensions/stdapi_audio/stdapi_audio.rb        |  64 ++++++++++
+ .../meterpreter/extensions/stdapi_fs/stdapi_fs.rb  |  87 ++++++++++++++
+ .../extensions/stdapi_net/stdapi_net.rb            |  61 ++++++++++
+ .../extensions/stdapi_railgun/stdapi_railgun.rb    |  56 +++++++++
+ .../extensions/stdapi_sys/stdapi_sys.rb            |  94 +++++++++++++++
+ .../meterpreter/extensions/stdapi_ui/stdapi_ui.rb  | 129 +++++++++++++++++++++
+ .../extensions/stdapi_webcam/stdapi_webcam.rb      | 124 ++++++++++++++++++++
+ .../ui/console/command_dispatcher/core.rb          |  23 +++-
+ .../ui/console/command_dispatcher/stdapi_audio.rb  |  72 ++++++++++++
+ .../ui/console/command_dispatcher/stdapi_fs.rb     |  70 +++++++++++
+ .../ui/console/command_dispatcher/stdapi_net.rb    |  71 ++++++++++++
+ .../console/command_dispatcher/stdapi_railgun.rb   |  69 +++++++++++
+ .../ui/console/command_dispatcher/stdapi_sys.rb    |  72 ++++++++++++
+ .../ui/console/command_dispatcher/stdapi_ui.rb     |  71 ++++++++++++
+ .../ui/console/command_dispatcher/stdapi_webcam.rb |  71 ++++++++++++
+ metasploit-framework.gemspec                       |   2 +-
+ .../singles/php/meterpreter_reverse_tcp.rb         |   2 +-
+ .../singles/windows/meterpreter_bind_named_pipe.rb |   2 +-
+ .../singles/windows/meterpreter_bind_tcp.rb        |   2 +-
+ .../singles/windows/meterpreter_reverse_http.rb    |   2 +-
+ .../singles/windows/meterpreter_reverse_https.rb   |   2 +-
+ .../windows/meterpreter_reverse_ipv6_tcp.rb        |   2 +-
+ .../singles/windows/meterpreter_reverse_tcp.rb     |   2 +-
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |   2 +-
+ .../singles/windows/x64/meterpreter_bind_tcp.rb    |   2 +-
+ .../windows/x64/meterpreter_reverse_http.rb        |   2 +-
+ .../windows/x64/meterpreter_reverse_https.rb       |   2 +-
+ .../windows/x64/meterpreter_reverse_ipv6_tcp.rb    |   2 +-
+ .../singles/windows/x64/meterpreter_reverse_tcp.rb |   2 +-
+ 34 files changed, 1199 insertions(+), 26 deletions(-)
+
+commit 3ed3b3964ccf1b04507084b872cd7a354cb3bc0d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 8 15:59:46 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 4f4febfcac4d61d7735536df0a81a740fc02d81d
+Merge: 02a894a189 7b2643ce5d
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 8 08:51:17 2025 -0700
+
+    Merge pull request #20602 from zeroSteiner/fix/fusionpbx-cve
+    
+    Remove a CVE that was mistakenly added
+
+ modules/exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 05894ccb7877317f0f5d9992df4814f10392d1c6
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 8 10:36:32 2025 -0500
+
+    Apply suggestion from @bwatters-r7
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d56f70ef21e9fd61311e18f2c7d86ecc0c9a397
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 8 10:35:50 2025 -0500
+
+    Apply suggestion from @bwatters-r7
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e9936265ddb2cbd04281c3eb99816b3e69c91b92
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 8 10:33:59 2025 -0500
+
+    Update LICENSE_GEMS
+
+ LICENSE_GEMS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6a0a19b05dcd015b3b7e97bc8bf3cae2570c3b77
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 8 10:21:15 2025 -0500
+
+    Apply suggestion from @bwatters-r7
+    
+    Bump Payloads version again
+
+ metasploit-framework.gemspec | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7b2643ce5df6bd5e304558b0cdfc1468cbb5075e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Oct 8 10:45:59 2025 -0400
+
+    Remove a CVE that was mistakenly added
+
+ modules/exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 02a894a189f77aeb28746b46319c8a44ad794254
+Merge: 077ed6b567 9fe13e204a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Oct 8 14:17:38 2025 +0100
+
+    Merge pull request #20601 from adfoster-r7/remove-faraday-pin
+    
+    Remove faraday pin
+
+ Gemfile.lock                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 9fe13e204abcfa7ae618a47b54389b7b25d9549c
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Oct 8 13:35:00 2025 +0100
+
+    Remove faraday pin
+
+ Gemfile.lock                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 077ed6b567eae0a0bcc33ac5ae3f072aeea0db2c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 8 11:13:33 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 1044 +++++++++++++++++++++++++++--------------
+ 1 file changed, 701 insertions(+), 343 deletions(-)
+
+commit c03dd45875fd3a6f0b87e0b0955bb83f0ccf1d3a
+Merge: eeaf760948 e0ed3f7d6f
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Oct 8 12:04:58 2025 +0100
+
+    Merge pull request #20600 from adfoster-r7/unpin-octokit
+    
+    Unpin octokit
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 3 +--
+ 2 files changed, 3 insertions(+), 4 deletions(-)
