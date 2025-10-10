@@ -1,0 +1,82 @@
+commit 67ff15edebf2b08a459fc171fbb3fba3ff5b63be
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 9 18:59:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 91c0adb17f1ae2c915aaa95c0ed243182239a6de
+Merge: 2c082a4fef 267a26b763
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 9 13:50:25 2025 -0500
+
+    Merge pull request #20585 from vognik/CVE_2025_60787
+    
+    Add MotionEye Authenticated RCE (CVE-2025-60787)
+
+ data/exploits/CVE-2025-60787/sign_request.py       |  88 +++++
+ .../http/motioneye_auth_rce_cve_2025_60787.md      | 112 ++++++
+ .../http/motioneye_auth_rce_cve_2025_60787.rb      | 378 +++++++++++++++++++++
+ 3 files changed, 578 insertions(+)
+
+commit 2c082a4fef54b2cde321492bf9d6a3151847aa1a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 9 18:33:04 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 27d0e638eda27303663b4d7399836ef38630ea48
+Merge: 9e8b1d5a9c 8c5c395ce7
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Oct 9 14:24:09 2025 -0400
+
+    Merge pull request #20546 from dwelch-r7/fix-ssh-login-pubkey
+    
+    Fix ssh login pubkey module
+
+ Gemfile.lock                                       |   4 +-
+ lib/metasploit/framework/login_scanner/ssh.rb      |   1 +
+ lib/msf/core/auxiliary/report_summary.rb           |   2 +-
+ modules/auxiliary/scanner/ssh/ssh_login_pubkey.rb  | 133 ++++++++++++---------
+ .../metasploit/framework/login_scanner/ssh_spec.rb |   5 +-
+ 5 files changed, 83 insertions(+), 62 deletions(-)
+
+commit 267a26b763304dd20efcb4eaa374672a7c1f57ad
+Author: Vognik <187316334+vognik@users.noreply.github.com>
+Date:   Thu Oct 9 21:51:31 2025 +0400
+
+    code review changes from smcintyre-r7@
+
+ data/exploits/CVE-2025-60787/sign_request.py       | 88 +++++++++++++++++++
+ .../http/motioneye_auth_rce_cve_2025_60787.md      | 99 +---------------------
+ .../http/motioneye_auth_rce_cve_2025_60787.rb      | 13 +--
+ 3 files changed, 93 insertions(+), 107 deletions(-)
+
+commit 8c5c395ce7b8096ee005c2d9d3993cdfdd1e3a7b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 15 14:08:25 2025 +0100
+
+    Fix ssh login pubkey module
+
+ Gemfile.lock                                       |   4 +-
+ lib/metasploit/framework/login_scanner/ssh.rb      |   1 +
+ lib/msf/core/auxiliary/report_summary.rb           |   2 +-
+ modules/auxiliary/scanner/ssh/ssh_login_pubkey.rb  | 133 ++++++++++++---------
+ .../metasploit/framework/login_scanner/ssh_spec.rb |   5 +-
+ 5 files changed, 83 insertions(+), 62 deletions(-)
+
+commit 9e8b1d5a9ceece2d96cf9c928dd0824ff4ada9a0
+Author: Metasploit Bot <metasploit@rapid7.com>
+Date:   Thu Oct 9 03:33:47 2025 -0500
+
+    Bump version of framework to 6.4.93
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 79 +++++++++++++++++++------------------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 42 insertions(+), 41 deletions(-)
