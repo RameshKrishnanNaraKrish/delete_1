@@ -1,0 +1,20 @@
+commit 55bb27711d84dfe296d151af20ba7e89c0f0780f
+Merge: 67ff15edeb 7d5ad67ad6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 10 19:18:36 2025 +0100
+
+    Merge pull request #20608 from molecula2788/peinject_valid_fix
+    
+    Add missing datastore argument in the `valid?` function in pe_inject.rb
+
+ lib/msf/core/payload/windows/pe_inject.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7d5ad67ad6b33e8cec3a6792cf1f4bb9688568ae
+Author: Adrian Șendroiu <sendroiu.adrian@gmail.com>
+Date:   Fri Oct 10 13:22:05 2025 +0300
+
+    pe_inject.rb: Add missing datastore argument
+
+ lib/msf/core/payload/windows/pe_inject.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
