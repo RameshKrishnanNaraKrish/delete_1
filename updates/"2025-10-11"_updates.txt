@@ -1,0 +1,64 @@
+commit 6f461098ccc085636f49753276e8eef6a273c58d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 13 17:01:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fcb469bf667ed59a7163f87c0699d00af37bffde
+Merge: 475b294ff9 93b3ec34ac
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Oct 13 17:50:57 2025 +0100
+
+    Merge pull request #20611 from bcoles/periodic_script_persistence
+    
+    exploit/multi/local/periodic_script_persistence: Unset DefaultTarget
+
+ modules/exploits/multi/local/periodic_script_persistence.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 475b294ff99f7f2ba154b0e998a746da44cb32dc
+Merge: 8672c52d95 3532254691
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Oct 13 17:49:42 2025 +0100
+
+    Merge pull request #20620 from adfoster-r7/pin-rack-dependencies
+    
+    Pin rack dependencies
+
+ Gemfile.lock                 | 6 +++---
+ metasploit-framework.gemspec | 9 ++++++---
+ 2 files changed, 9 insertions(+), 6 deletions(-)
+
+commit 8672c52d955ef784959d09b9229376f5fd6088db
+Merge: 55bb27711d edd536b3bf
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Oct 13 16:24:57 2025 +0100
+
+    Merge pull request #20619 from adfoster-r7/future-proof-peinject-method-override
+    
+    Future proof peinject method override
+
+ lib/msf/core/payload/windows/pe_inject.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3532254691ff6367be5285e1bdf4a57915c5c0e9
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Oct 13 16:03:28 2025 +0100
+
+    Pin rack dependencies
+
+ Gemfile.lock                 | 6 +++---
+ metasploit-framework.gemspec | 9 ++++++---
+ 2 files changed, 9 insertions(+), 6 deletions(-)
+
+commit edd536b3bf7f895b733a5ce1133e4b2872408756
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Oct 13 15:22:05 2025 +0100
+
+    Future proof peinject method override
+
+ lib/msf/core/payload/windows/pe_inject.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
