@@ -1,0 +1,336 @@
+commit bb9f3b46de0e050891aa64656b1e2283ca18af1a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 15 17:32:08 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 104 +++++++++++++++++++++---------------------
+ 1 file changed, 53 insertions(+), 51 deletions(-)
+
+commit 677af06c9ff2f2132a9ca9776748d95c41fd18b0
+Merge: aa34a0e016 68c74e1bcf
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 15 10:23:56 2025 -0700
+
+    Merge pull request #20621 from h00die/modern_periodic_script
+    
+    update periodic_script to persistence mixin
+
+ .../multi/local/periodic_script_persistence.md     |  62 --------
+ .../exploit/multi/persistence/periodic_script.md   | 169 +++++++++++++++++++++
+ .../periodic_script.rb}                            |  27 ++--
+ 3 files changed, 183 insertions(+), 75 deletions(-)
+
+commit aa34a0e01618588bade32bb31f20926e54b50c25
+Merge: 1549f9cae5 c629dc408c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 15 17:47:52 2025 +0100
+
+    Merge pull request #20622 from h00die/fix_doc_options
+    
+    Update aux docs to use modern h3 for options instead of original spec (bold)
+
+ .../admin/chromecast/chromecast_youtube.md         |  2 +-
+ .../admin/hp/hp_ilo_create_admin_account.md        |  6 ++--
+ .../auxiliary/admin/http/tomcat_administration.md  |  2 +-
+ .../auxiliary/admin/http/typo3_news_module_sqli.md |  4 +--
+ .../auxiliary/admin/http/ulterius_file_download.md |  2 +-
+ .../auxiliary/admin/ldap/change_password.md        | 10 +++----
+ .../auxiliary/admin/netbios/netbios_spoof.md       |  6 ++--
+ .../admin/networking/cisco_dcnm_auth_bypass.md     |  8 ++---
+ .../auxiliary/admin/oracle/oracle_index_privesc.md |  4 +--
+ .../admin/scada/moxa_credentials_recovery.md       |  8 ++---
+ .../auxiliary/admin/scada/phoenix_command.md       |  2 +-
+ .../modules/auxiliary/admin/smb/change_password.md | 12 ++++----
+ .../auxiliary/admin/smb/ms17_010_command.md        | 10 +++----
+ .../admin/vmware/vcenter_forge_saml_token.md       | 14 ++++-----
+ .../admin/vmware/vcenter_offline_mdb_extract.md    |  6 ++--
+ .../modules/auxiliary/admin/wemo/crockpot.md       |  6 ++--
+ .../modules/auxiliary/analyze/modbus_zip.md        |  2 +-
+ .../modules/auxiliary/client/hwbridge/connect.md   |  4 +--
+ .../modules/auxiliary/client/mms/send_mms.md       | 22 +++++++-------
+ .../modules/auxiliary/client/sms/send_text.md      | 19 ++++++------
+ .../modules/auxiliary/cloud/aws/enum_ec2.md        |  4 +--
+ .../modules/auxiliary/cloud/aws/enum_iam.md        |  8 ++---
+ .../modules/auxiliary/cloud/aws/enum_s3.md         |  6 ++--
+ .../dos/http/apache_commons_fileupload_dos.md      |  4 +--
+ .../dos/http/cable_haunt_websocket_dos.md          | 10 +++----
+ .../dos/http/metasploit_httphandler_dos.md         |  2 +-
+ .../modules/auxiliary/fileformat/badpdf.md         |  8 ++---
+ .../modules/auxiliary/fileformat/odt_badodt.md     |  6 ++--
+ .../auxiliary/gather/advantech_webaccess_creds.md  |  4 +--
+ .../modules/auxiliary/gather/chrome_debugger.md    |  4 +--
+ .../cve_2021_27850_apache_tapestry_hmac_key.md     |  6 ++--
+ .../modules/auxiliary/gather/http_pdf_authors.md   |  6 ++--
+ .../gather/ibm_bigfix_sites_packages_enum.md       | 10 +++----
+ .../modules/auxiliary/gather/kerberos_enumusers.md |  6 ++--
+ .../auxiliary/gather/nis_bootparamd_domain.md      |  6 ++--
+ .../modules/auxiliary/gather/nis_ypserv_map.md     |  8 ++---
+ .../modules/auxiliary/gather/pimcore_creds_sqli.md |  2 +-
+ .../gather/pulse_secure_file_disclosure.md         |  4 +--
+ .../auxiliary/gather/qnap_backtrace_admin_hash.md  |  8 ++---
+ .../auxiliary/gather/rails_doubletap_file_read.md  |  4 +--
+ .../modules/auxiliary/gather/shodan_honeyscore.md  |  4 +--
+ .../modules/auxiliary/gather/shodan_host.md        |  6 ++--
+ .../modules/auxiliary/gather/snare_registry.md     | 10 +++----
+ documentation/modules/auxiliary/multidrop.md       |  6 ++--
+ .../auxiliary/scanner/couchdb/couchdb_enum.md      |  4 +--
+ .../auxiliary/scanner/dcerpc/nrpc_enumusers.md     | 24 ++++-----------
+ .../auxiliary/scanner/finger/finger_users.md       |  2 +-
+ .../scanner/ftp/colorado_ftp_traversal.md          |  6 ++--
+ .../auxiliary/scanner/ftp/easy_file_sharing_ftp.md |  4 +--
+ .../auxiliary/scanner/gopher/gopher_gophermap.md   |  2 +-
+ .../modules/auxiliary/scanner/gprs/gtp_echo.md     |  2 +-
+ .../scanner/http/apache_mod_cgi_bash_env.md        |  8 ++---
+ .../scanner/http/apache_normalize_path.md          |  8 ++---
+ .../auxiliary/scanner/http/bavision_cam_login.md   |  2 +-
+ .../auxiliary/scanner/http/cgit_traversal.md       |  2 +-
+ .../auxiliary/scanner/http/cisco_device_manager.md |  4 +--
+ .../modules/auxiliary/scanner/http/crawler.md      |  8 ++---
+ .../auxiliary/scanner/http/docker_version.md       |  2 +-
+ .../scanner/http/es_file_explorer_open_port.md     |  4 +--
+ .../http/exchange_web_server_pushsubscription.md   |  4 +--
+ .../modules/auxiliary/scanner/http/git_scanner.md  |  8 ++---
+ .../auxiliary/scanner/http/goahead_traversal.md    |  4 +--
+ .../modules/auxiliary/scanner/http/http_put.md     |  4 +--
+ .../modules/auxiliary/scanner/http/robots_txt.md   |  2 +-
+ .../modules/auxiliary/scanner/http/rpyc_rce.md     |  6 ++--
+ .../scanner/http/symantec_brightmail_ldapcreds.md  |  2 +-
+ .../modules/auxiliary/scanner/http/title.md        |  4 +--
+ .../auxiliary/scanner/http/totaljs_traversal.md    |  4 +--
+ .../scanner/http/wordpress_xmlrpc_login.md         | 12 ++++----
+ .../scanner/http/wp_dukapress_file_read.md         |  4 +--
+ .../modules/auxiliary/scanner/imap/imap_version.md |  4 +--
+ .../scanner/jenkins/jenkins_udp_broadcast_enum.md  |  2 +-
+ .../auxiliary/scanner/kerberos/kerberos_login.md   | 16 +++++-----
+ .../auxiliary/scanner/misc/clamav_control.md       |  6 ++--
+ .../auxiliary/scanner/misc/ibm_mq_channel_brute.md |  2 +-
+ .../auxiliary/scanner/misc/java_jmx_server.md      |  4 ---
+ .../modules/auxiliary/scanner/mqtt/connect.md      |  4 +--
+ .../auxiliary/scanner/oracle/oracle_hashdump.md    |  8 ++---
+ .../auxiliary/scanner/oracle/oracle_login.md       | 34 +++++++++++-----------
+ .../modules/auxiliary/scanner/portscan/syn.md      |  6 ++--
+ .../modules/auxiliary/scanner/portscan/tcp.md      |  6 ++--
+ .../modules/auxiliary/scanner/portscan/xmas.md     |  8 ++---
+ .../modules/auxiliary/scanner/rdp/rdp_scanner.md   | 14 +++++++--
+ .../modules/auxiliary/scanner/redis/file_upload.md |  8 ++---
+ .../auxiliary/scanner/redis/redis_server.md        |  2 +-
+ .../auxiliary/scanner/rsync/modules_list.md        |  4 +--
+ .../scanner/sap/sap_mgmt_con_listconfigfiles.md    |  6 ++--
+ .../auxiliary/scanner/scada/moxa_discover.md       |  2 +-
+ .../auxiliary/scanner/smb/impacket/dcomexec.md     |  2 +-
+ .../auxiliary/scanner/smb/impacket/wmiexec.md      |  2 +-
+ .../modules/auxiliary/scanner/smb/smb1.md          |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_ms17_010.md  |  4 +--
+ .../auxiliary/scanner/snmp/cisco_config_tftp.md    |  2 +-
+ .../auxiliary/scanner/snmp/cisco_upload_file.md    |  4 +--
+ .../auxiliary/scanner/ssh/libssh_auth_bypass.md    |  6 ++--
+ .../modules/auxiliary/scanner/ssh/ssh_enumusers.md |  8 ++---
+ .../auxiliary/scanner/ssl/openssl_heartbleed.md    | 16 +++++-----
+ .../modules/auxiliary/scanner/tftp/tftpbrute.md    |  2 +-
+ .../auxiliary/scanner/udp/udp_amplification.md     |  4 +--
+ .../scanner/varnish/varnish_cli_file_read.md       |  4 +--
+ .../auxiliary/scanner/varnish/varnish_cli_login.md |  2 +-
+ .../auxiliary/scanner/vxworks/urgent11_check.md    |  4 +--
+ .../modules/auxiliary/server/capture/ftp.md        |  6 ++--
+ .../modules/auxiliary/server/capture/http_basic.md | 10 +++----
+ .../modules/auxiliary/server/capture/imap.md       |  6 ++--
+ .../modules/auxiliary/server/capture/ldap.md       |  2 +-
+ .../modules/auxiliary/server/capture/mysql.md      | 12 ++++----
+ .../modules/auxiliary/server/capture/postgresql.md |  4 +--
+ .../auxiliary/server/capture/printjob_capture.md   | 10 +++----
+ .../modules/auxiliary/server/capture/smb.md        | 10 +++----
+ .../modules/auxiliary/server/capture/telnet.md     |  6 ++--
+ .../modules/auxiliary/server/capture/vnc.md        |  8 ++---
+ .../modules/auxiliary/server/socks_proxy.md        |  4 +--
+ .../modules/auxiliary/spoof/mdns/mdns_response.md  |  8 ++---
+ 114 files changed, 348 insertions(+), 363 deletions(-)
+
+commit 1549f9cae50a4c3e9f351df2a541932f58dd66d6
+Merge: 6f461098cc daf280ad11
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 15 13:22:56 2025 +0100
+
+    Merge pull request #20623 from bcoles/spec-module-validation
+    
+    spec: ModuleValidation: Validate module DefaultTarget value
+
+ spec/module_validation_spec.rb        | 45 +++++++++++++++++++++++++++++++++++
+ spec/support/lib/module_validation.rb | 12 ++++++++++
+ 2 files changed, 57 insertions(+)
+
+commit daf280ad11a2b85aa188c2eb3adb58de61f595d4
+Author: bcoles <bcoles@github>
+Date:   Wed Oct 15 19:58:25 2025 +1100
+
+    spec: ModuleValidation: Validate module DefaultTarget value
+
+ spec/module_validation_spec.rb        | 45 +++++++++++++++++++++++++++++++++++
+ spec/support/lib/module_validation.rb | 12 ++++++++++
+ 2 files changed, 57 insertions(+)
+
+commit c629dc408c3cc879ba280a144c73cba7915f6582
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Oct 14 20:34:50 2025 -0400
+
+    replace some bolds
+
+ .../auxiliary/admin/aws/aws_launch_instances.md    |  2 +-
+ .../auxiliary/admin/http/typo3_news_module_sqli.md |  2 +-
+ .../admin/scada/moxa_credentials_recovery.md       |  4 ----
+ .../auxiliary/admin/scada/phoenix_command.md       |  2 +-
+ .../modules/auxiliary/client/sms/send_text.md      |  5 ++---
+ .../modules/auxiliary/gather/chrome_debugger.md    |  2 +-
+ .../auxiliary/gather/jetty_web_inf_disclosure.md   |  2 +-
+ .../auxiliary/gather/listmonk_env_disclosure.md    |  4 ++--
+ .../auxiliary/scanner/dcerpc/nrpc_enumusers.md     | 24 +++++-----------------
+ .../scanner/http/grafana_plugin_traversal.md       |  2 +-
+ .../http/riverbed_steelhead_vcx_file_read.md       |  2 +-
+ .../auxiliary/scanner/kerberos/kerberos_login.md   | 16 +++++++--------
+ .../auxiliary/scanner/misc/ibm_mq_channel_brute.md |  2 +-
+ .../auxiliary/scanner/misc/java_jmx_server.md      |  4 ----
+ .../auxiliary/scanner/msmail/exchange_enum.md      |  2 +-
+ .../modules/auxiliary/scanner/rdp/rdp_scanner.md   | 14 ++++++++++---
+ .../auxiliary/scanner/rservices/rexec_login.md     |  2 +-
+ .../auxiliary/scanner/rservices/rlogin_login.md    |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_enumusers.md |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_lookupsid.md |  2 +-
+ .../scanner/telnet/brocade_enable_login.md         |  2 +-
+ .../auxiliary/scanner/vmware/esx_fingerprint.md    |  2 +-
+ .../modules/auxiliary/scanner/x11/open_x11.md      |  2 +-
+ 23 files changed, 44 insertions(+), 59 deletions(-)
+
+commit 1f479ddedc86e2f92723f97a25e160cd5382b082
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Oct 14 20:23:50 2025 -0400
+
+    update doc options to h3 from bold
+
+ .../auxiliary/admin/aws/aws_launch_instances.md    |  2 +-
+ .../admin/chromecast/chromecast_youtube.md         |  2 +-
+ .../admin/hp/hp_ilo_create_admin_account.md        |  6 ++--
+ .../auxiliary/admin/http/tomcat_administration.md  |  2 +-
+ .../auxiliary/admin/http/typo3_news_module_sqli.md |  4 +--
+ .../auxiliary/admin/http/ulterius_file_download.md |  2 +-
+ .../auxiliary/admin/ldap/change_password.md        | 10 +++----
+ .../auxiliary/admin/netbios/netbios_spoof.md       |  6 ++--
+ .../admin/networking/cisco_dcnm_auth_bypass.md     |  8 ++---
+ .../auxiliary/admin/oracle/oracle_index_privesc.md |  4 +--
+ .../admin/scada/moxa_credentials_recovery.md       |  6 ++--
+ .../auxiliary/admin/scada/phoenix_command.md       |  2 +-
+ .../modules/auxiliary/admin/smb/change_password.md | 12 ++++----
+ .../auxiliary/admin/smb/ms17_010_command.md        | 10 +++----
+ .../admin/vmware/vcenter_forge_saml_token.md       | 14 ++++-----
+ .../admin/vmware/vcenter_offline_mdb_extract.md    |  6 ++--
+ .../modules/auxiliary/admin/wemo/crockpot.md       |  6 ++--
+ .../modules/auxiliary/analyze/modbus_zip.md        |  2 +-
+ .../modules/auxiliary/client/hwbridge/connect.md   |  4 +--
+ .../modules/auxiliary/client/mms/send_mms.md       | 22 +++++++-------
+ .../modules/auxiliary/client/sms/send_text.md      | 22 +++++++-------
+ .../modules/auxiliary/cloud/aws/enum_ec2.md        |  4 +--
+ .../modules/auxiliary/cloud/aws/enum_iam.md        |  8 ++---
+ .../modules/auxiliary/cloud/aws/enum_s3.md         |  6 ++--
+ .../dos/http/apache_commons_fileupload_dos.md      |  4 +--
+ .../dos/http/cable_haunt_websocket_dos.md          | 10 +++----
+ .../dos/http/metasploit_httphandler_dos.md         |  2 +-
+ .../modules/auxiliary/fileformat/badpdf.md         |  8 ++---
+ .../modules/auxiliary/fileformat/odt_badodt.md     |  6 ++--
+ .../auxiliary/gather/advantech_webaccess_creds.md  |  4 +--
+ .../modules/auxiliary/gather/chrome_debugger.md    |  6 ++--
+ .../cve_2021_27850_apache_tapestry_hmac_key.md     |  6 ++--
+ .../modules/auxiliary/gather/http_pdf_authors.md   |  6 ++--
+ .../gather/ibm_bigfix_sites_packages_enum.md       | 10 +++----
+ .../auxiliary/gather/jetty_web_inf_disclosure.md   |  2 +-
+ .../modules/auxiliary/gather/kerberos_enumusers.md |  6 ++--
+ .../auxiliary/gather/listmonk_env_disclosure.md    |  4 +--
+ .../auxiliary/gather/nis_bootparamd_domain.md      |  6 ++--
+ .../modules/auxiliary/gather/nis_ypserv_map.md     |  8 ++---
+ .../modules/auxiliary/gather/pimcore_creds_sqli.md |  2 +-
+ .../gather/pulse_secure_file_disclosure.md         |  4 +--
+ .../auxiliary/gather/qnap_backtrace_admin_hash.md  |  8 ++---
+ .../auxiliary/gather/rails_doubletap_file_read.md  |  4 +--
+ .../modules/auxiliary/gather/shodan_honeyscore.md  |  4 +--
+ .../modules/auxiliary/gather/shodan_host.md        |  6 ++--
+ .../modules/auxiliary/gather/snare_registry.md     | 10 +++----
+ documentation/modules/auxiliary/multidrop.md       |  6 ++--
+ .../auxiliary/scanner/couchdb/couchdb_enum.md      |  4 +--
+ .../auxiliary/scanner/dcerpc/nrpc_enumusers.md     | 18 ++++++------
+ .../auxiliary/scanner/finger/finger_users.md       |  2 +-
+ .../scanner/ftp/colorado_ftp_traversal.md          |  6 ++--
+ .../auxiliary/scanner/ftp/easy_file_sharing_ftp.md |  4 +--
+ .../auxiliary/scanner/gopher/gopher_gophermap.md   |  2 +-
+ .../modules/auxiliary/scanner/gprs/gtp_echo.md     |  2 +-
+ .../scanner/http/apache_mod_cgi_bash_env.md        |  8 ++---
+ .../scanner/http/apache_normalize_path.md          |  8 ++---
+ .../auxiliary/scanner/http/bavision_cam_login.md   |  2 +-
+ .../auxiliary/scanner/http/cgit_traversal.md       |  2 +-
+ .../auxiliary/scanner/http/cisco_device_manager.md |  4 +--
+ .../modules/auxiliary/scanner/http/crawler.md      |  8 ++---
+ .../auxiliary/scanner/http/docker_version.md       |  2 +-
+ .../scanner/http/es_file_explorer_open_port.md     |  4 +--
+ .../http/exchange_web_server_pushsubscription.md   |  4 +--
+ .../modules/auxiliary/scanner/http/git_scanner.md  |  8 ++---
+ .../auxiliary/scanner/http/goahead_traversal.md    |  4 +--
+ .../scanner/http/grafana_plugin_traversal.md       |  2 +-
+ .../modules/auxiliary/scanner/http/http_put.md     |  4 +--
+ .../http/riverbed_steelhead_vcx_file_read.md       |  2 +-
+ .../modules/auxiliary/scanner/http/robots_txt.md   |  2 +-
+ .../modules/auxiliary/scanner/http/rpyc_rce.md     |  6 ++--
+ .../scanner/http/symantec_brightmail_ldapcreds.md  |  2 +-
+ .../modules/auxiliary/scanner/http/title.md        |  4 +--
+ .../auxiliary/scanner/http/totaljs_traversal.md    |  4 +--
+ .../scanner/http/wordpress_xmlrpc_login.md         | 12 ++++----
+ .../scanner/http/wp_dukapress_file_read.md         |  4 +--
+ .../modules/auxiliary/scanner/imap/imap_version.md |  4 +--
+ .../scanner/jenkins/jenkins_udp_broadcast_enum.md  |  2 +-
+ .../auxiliary/scanner/kerberos/kerberos_login.md   | 16 +++++-----
+ .../auxiliary/scanner/misc/clamav_control.md       |  6 ++--
+ .../auxiliary/scanner/misc/ibm_mq_channel_brute.md |  2 +-
+ .../auxiliary/scanner/misc/java_jmx_server.md      |  2 +-
+ .../modules/auxiliary/scanner/mqtt/connect.md      |  4 +--
+ .../auxiliary/scanner/msmail/exchange_enum.md      |  2 +-
+ .../auxiliary/scanner/oracle/oracle_hashdump.md    |  8 ++---
+ .../auxiliary/scanner/oracle/oracle_login.md       | 34 +++++++++++-----------
+ .../modules/auxiliary/scanner/portscan/syn.md      |  6 ++--
+ .../modules/auxiliary/scanner/portscan/tcp.md      |  6 ++--
+ .../modules/auxiliary/scanner/portscan/xmas.md     |  8 ++---
+ .../modules/auxiliary/scanner/rdp/rdp_scanner.md   |  6 ++--
+ .../modules/auxiliary/scanner/redis/file_upload.md |  8 ++---
+ .../auxiliary/scanner/redis/redis_server.md        |  2 +-
+ .../auxiliary/scanner/rservices/rexec_login.md     |  2 +-
+ .../auxiliary/scanner/rservices/rlogin_login.md    |  2 +-
+ .../auxiliary/scanner/rsync/modules_list.md        |  4 +--
+ .../scanner/sap/sap_mgmt_con_listconfigfiles.md    |  6 ++--
+ .../auxiliary/scanner/scada/moxa_discover.md       |  2 +-
+ .../auxiliary/scanner/smb/impacket/dcomexec.md     |  2 +-
+ .../auxiliary/scanner/smb/impacket/wmiexec.md      |  2 +-
+ .../modules/auxiliary/scanner/smb/smb1.md          |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_enumusers.md |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_lookupsid.md |  2 +-
+ .../modules/auxiliary/scanner/smb/smb_ms17_010.md  |  4 +--
+ .../auxiliary/scanner/snmp/cisco_config_tftp.md    |  2 +-
+ .../auxiliary/scanner/snmp/cisco_upload_file.md    |  4 +--
+ .../auxiliary/scanner/ssh/libssh_auth_bypass.md    |  6 ++--
+ .../modules/auxiliary/scanner/ssh/ssh_enumusers.md |  8 ++---
+ .../auxiliary/scanner/ssl/openssl_heartbleed.md    | 16 +++++-----
+ .../scanner/telnet/brocade_enable_login.md         |  2 +-
+ .../modules/auxiliary/scanner/tftp/tftpbrute.md    |  2 +-
+ .../auxiliary/scanner/udp/udp_amplification.md     |  4 +--
+ .../scanner/varnish/varnish_cli_file_read.md       |  4 +--
+ .../auxiliary/scanner/varnish/varnish_cli_login.md |  2 +-
+ .../auxiliary/scanner/vmware/esx_fingerprint.md    |  2 +-
+ .../auxiliary/scanner/vxworks/urgent11_check.md    |  4 +--
+ .../modules/auxiliary/scanner/x11/open_x11.md      |  2 +-
+ .../modules/auxiliary/server/capture/ftp.md        |  6 ++--
+ .../modules/auxiliary/server/capture/http_basic.md | 10 +++----
+ .../modules/auxiliary/server/capture/imap.md       |  6 ++--
+ .../modules/auxiliary/server/capture/ldap.md       |  2 +-
+ .../modules/auxiliary/server/capture/mysql.md      | 12 ++++----
+ .../modules/auxiliary/server/capture/postgresql.md |  4 +--
+ .../auxiliary/server/capture/printjob_capture.md   | 10 +++----
+ .../modules/auxiliary/server/capture/smb.md        | 10 +++----
+ .../modules/auxiliary/server/capture/telnet.md     |  6 ++--
+ .../modules/auxiliary/server/capture/vnc.md        |  8 ++---
+ .../modules/auxiliary/server/socks_proxy.md        |  4 +--
+ .../modules/auxiliary/spoof/mdns/mdns_response.md  |  8 ++---
+ 127 files changed, 363 insertions(+), 363 deletions(-)
