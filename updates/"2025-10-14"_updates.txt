@@ -1,0 +1,55 @@
+commit 2d5f10d965ec016cb64ccf91b9c3eb7dda037133
+Merge: a059f239c9 6cc4465f6f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 16 08:42:07 2025 -0700
+
+    Merge pull request #20626 from h00die/fix_payload_docs_options
+    
+    Update payload docs to use modern h3 for options instead of original spec (bold)
+
+ documentation/modules/payload/cmd/unix/bind_busybox_telnetd.md | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit a059f239c945edfc277919d99b739ab6681bf03c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 16 14:48:42 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit 644bcfabbb256d93ed85deb2aa70053abb496bcd
+Merge: 5c3b9480bb 55583bd2c8
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Oct 16 16:35:16 2025 +0200
+
+    Merge pull request #20522 from h00die/modern_persistence_sysvinit
+    
+    update systemvinit to persistence mixin
+
+ .../exploit/linux/persistence/init_sysvinit.md     | 206 +++++++++++++++++
+ .../exploits/linux/persistence/init_sysvinit.rb    | 244 +++++++++++++++++++++
+ 2 files changed, 450 insertions(+)
+
+commit 5c3b9480bb333dc0ca8c863dc819e7a775f89604
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 16 11:06:34 2025 +0000
+
+    Bump version of framework to 6.4.95
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit f271212ab0fab320fcbe6e7411db33b90f80ff5a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 16 09:42:01 2025 +0000
+
+    Bump version of framework to 6.4.94
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
