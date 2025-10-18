@@ -1,0 +1,77 @@
+commit 52f07b68204cb1476214e9d36053dc6b1f3868b8
+Merge: 664c9559d1 c86aefa328
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 17 21:09:59 2025 +0100
+
+    Merge pull request #20627 from h00die/fix_post_docs_options
+    
+    Update post docs to use modern h3 for options instead of original spec (bold)
+
+ .../modules/post/android/capture/screen.md         |  4 ++--
+ .../modules/post/android/gather/wireless_ap.md     |  4 +++-
+ documentation/modules/post/bsd/gather/hashdump.md  |  2 +-
+ .../modules/post/hardware/automotive/can_flood.md  |  8 ++++----
+ .../modules/post/hardware/automotive/canprobe.md   | 12 ++++++------
+ .../post/hardware/automotive/ecu_hard_reset.md     |  4 ++--
+ .../modules/post/hardware/automotive/getvinfo.md   | 12 ++++++------
+ .../post/hardware/automotive/identifymodules.md    |  6 +++---
+ .../post/hardware/automotive/mazda_ic_mover.md     |  2 +-
+ .../modules/post/hardware/automotive/pdt.md        |  8 ++++----
+ .../modules/post/hardware/rftransceiver/rfpwnon.md | 22 +++++++++++-----------
+ .../post/hardware/rftransceiver/transmitter.md     | 10 +++++-----
+ .../modules/post/hardware/zigbee/zstumbler.md      |  8 ++++----
+ .../modules/post/linux/gather/checkcontainer.md    |  4 ++--
+ documentation/modules/post/linux/gather/checkvm.md |  2 +-
+ .../modules/post/linux/gather/enum_containers.md   |  4 ++--
+ .../modules/post/linux/gather/enum_nagios_xi.md    |  2 +-
+ .../post/linux/manage/sshkey_persistence.md        |  6 +++---
+ .../modules/post/multi/gather/chrome_cookies.md    |  6 +++---
+ documentation/modules/post/multi/gather/dbeaver.md |  4 ++--
+ .../modules/post/multi/gather/grub_creds.md        |  4 ++--
+ .../modules/post/multi/gather/jenkins_gather.md    |  6 +++---
+ .../modules/post/multi/gather/wlan_geolocate.md    |  4 ++--
+ documentation/modules/post/multi/manage/open.md    |  2 +-
+ .../modules/post/multi/manage/upload_exec.md       |  4 ++--
+ .../modules/post/multi/recon/sudo_commands.md      |  6 +++---
+ documentation/modules/post/osx/admin/say.md        |  4 ++--
+ documentation/modules/post/osx/capture/screen.md   | 10 +++++-----
+ documentation/modules/post/osx/gather/hashdump.md  |  2 +-
+ .../post/osx/gather/password_prompt_spoof.md       |  8 ++++----
+ documentation/modules/post/osx/manage/sonic_pi.md  | 12 ++++++------
+ .../modules/post/solaris/escalate/pfexec.md        |  4 ++--
+ .../post/solaris/escalate/srsexec_readline.md      |  2 +-
+ .../modules/post/windows/gather/arp_scanner.md     |  6 +++---
+ .../post/windows/gather/avast_memory_dump.md       |  4 ++--
+ .../modules/post/windows/gather/bitlocker_fvek.md  |  6 +++---
+ .../modules/post/windows/gather/bloodhound.md      |  4 ++--
+ .../modules/post/windows/gather/cachedump.md       |  2 +-
+ .../gather/credentials/mdaemon_cred_collector.md   |  2 +-
+ .../post/windows/gather/credentials/moba_xterm.md  |  4 ++--
+ .../windows/gather/credentials/plsql_developer.md  |  2 +-
+ .../gather/credentials/purevpn_cred_collector.md   |  2 +-
+ .../gather/credentials/teamviewer_passwords.md     |  2 +-
+ .../gather/credentials/xshell_xftp_password.md     |  4 ++--
+ .../modules/post/windows/gather/dumplinks.md       |  2 +-
+ .../post/windows/gather/enum_applications.md       |  2 +-
+ .../modules/post/windows/gather/enum_av.md         |  2 +-
+ .../modules/post/windows/gather/enum_devices.md    |  2 +-
+ .../modules/post/windows/gather/get_bookmarks.md   |  2 +-
+ .../windows/gather/phish_windows_credentials.md    |  6 +++---
+ .../modules/post/windows/gather/tcpnetstat.md      |  2 +-
+ .../modules/post/windows/manage/archmigrate.md     |  6 +++---
+ .../modules/post/windows/manage/install_python.md  |  8 ++++----
+ .../post/windows/manage/sshkey_persistence.md      | 12 ++++++------
+ 54 files changed, 141 insertions(+), 139 deletions(-)
+
+commit 664c9559d150ff0c67faac6cf01ed76cc96ae9f6
+Merge: 2d5f10d965 976c208414
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 17 21:06:31 2025 +0100
+
+    Merge pull request #20629 from h00die/no_4_space_options
+    
+    Clean up 2 aux docs
+
+ .../dos/http/metasploit_httphandler_dos.md         | 18 ++++++----
+ .../modules/auxiliary/gather/office365userenum.md  | 42 ++++++++++++++++------
+ 2 files changed, 44 insertions(+), 16 deletions(-)
