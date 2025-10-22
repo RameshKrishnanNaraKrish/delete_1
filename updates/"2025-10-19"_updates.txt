@@ -1,0 +1,31 @@
+commit 7a9f24dc2920d0af288ae433a1e1cfd3d69c15e4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 21 16:37:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 306ee8454b9ea8d8b50ceaab5eae7f2fe2686095
+Merge: 52f07b6820 97b58f9372
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Oct 21 17:28:49 2025 +0100
+
+    Merge pull request #20633 from Chocapikk/typo-freepbx
+    
+    easy-fix: Fix typo in modules/exploits/unix/http/freepbx_unauth_sqli_to_rce
+
+ modules/exploits/unix/http/freepbx_unauth_sqli_to_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ff733631595444287fd398fe9ed5fea4dac626ba
+Author: Maksim Rogov <187316334+vognik@users.noreply.github.com>
+Date:   Tue Oct 21 19:10:16 2025 +0300
+
+    Update modules/exploits/multi/http/vvveb_auth_rce_cve_2025_8518.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/multi/http/vvveb_auth_rce_cve_2025_8518.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
