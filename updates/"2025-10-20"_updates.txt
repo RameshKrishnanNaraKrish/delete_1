@@ -1,0 +1,68 @@
+commit c20dd4a278313e3611558fada52f0a1a31162b0b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 22 12:35:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f24552cdfdec97e0883a997ac546cf9f12839e4a
+Merge: 1e1355bc7b 8490ce844d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 22 13:23:32 2025 +0100
+
+    Merge pull request #20632 from h00die/linqpad_cleanup
+    
+    Linqpad cleanup
+
+ ...n.md => linqpad_deserialization_persistence.md} | 28 ++++++++++------------
+ .../local/linqpad_deserialization_persistence.rb   |  6 ++---
+ 2 files changed, 16 insertions(+), 18 deletions(-)
+
+commit 1e1355bc7b25aa6ff6569492fe94329275df9906
+Merge: 546d17e032 fa6abd6011
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 22 11:35:19 2025 +0100
+
+    Merge pull request #20636 from sjanusz-r7/anemone-infinite-recursion-fix
+    
+    Infinite recursion on error page fix for Anemone
+
+ lib/anemone/core.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit fa6abd601136bae7c116b07f1d7e463665acf429
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Oct 20 14:53:25 2025 +0100
+
+    Infinite recursion on error page fix for Anemone
+
+ lib/anemone/core.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 546d17e032f6be839d6add2e499ad7b6d37cf05e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 22 07:36:35 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit e5ee4d538477aab0aec29ecc7c768cc02c8dd57b
+Merge: 7a9f24dc29 ff73363159
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Oct 22 09:27:59 2025 +0200
+
+    Land #20630, adds authenticated RCE module for Vvveb CMS (CVE-2025-8518)
+    
+    Add Vvveb CMS Authenticated RCE (CVE-2025-8518)
+
+ data/exploits/CVE-2025-8518/Dockerfile             |  25 +++
+ data/exploits/CVE-2025-8518/docker-compose.yml     |  43 ++++
+ data/exploits/CVE-2025-8518/nginx.conf             |  21 ++
+ data/exploits/CVE-2025-8518/php.ini                |   5 +
+ .../multi/http/vvveb_auth_rce_cve_2025_8518.md     |  76 +++++++
+ .../multi/http/vvveb_auth_rce_cve_2025_8518.rb     | 249 +++++++++++++++++++++
+ 6 files changed, 419 insertions(+)
