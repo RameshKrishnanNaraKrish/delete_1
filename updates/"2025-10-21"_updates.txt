@@ -1,0 +1,61 @@
+commit 909d872cf6638694f642c90693883d4deaf1164b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 23 16:52:30 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4bc06606ff0217b52eb05accc6d4bd36414f487a
+Merge: 52f2094ccb 3c11db422a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 23 09:44:17 2025 -0700
+
+    Merge pull request #20640 from msutovsky-r7/fix/ldap/cert_finder/register_values
+    
+    Adds safe navigator in ldap_esc_vulnerable_cert_finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 52f2094ccbe2fbea52552d5c14dda8e898aba26a
+Merge: c20dd4a278 c41c0c882b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Oct 23 15:01:47 2025 +0100
+
+    Merge pull request #20641 from rapid7/smcintyre-r7-patch-1
+    
+    Update contact emails in CODE_OF_CONDUCT.md
+
+ CODE_OF_CONDUCT.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c41c0c882bdffc969d29e996bd0a12dbb065daa0
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Oct 23 09:15:15 2025 -0400
+
+    Update contact emails in CODE_OF_CONDUCT.md
+    
+    Updated contact emails for reporting unacceptable behavior.
+
+ CODE_OF_CONDUCT.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3c11db422a85919d8684531cc20958e5c48ab52e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 23 14:41:18 2025 +0200
+
+    Adds safe navigation operator
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 51e3a2d0c593a748d752214019bb3a36597cbd1d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 23 13:53:57 2025 +0200
+
+    Changes return value from nil to [] in enum_registry_values
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
