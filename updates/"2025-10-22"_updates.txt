@@ -1,0 +1,155 @@
+commit 8528cb255a994eb621269a34412be0caa1d511f5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 24 16:27:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit d1c9410a951f7759365069d03ba2da88189dd1d8
+Merge: 5d73d8a2c7 e17b2a0598
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Oct 24 11:19:13 2025 -0500
+
+    Merge pull request #20594 from HamzaSahin61/feat/redoc-exposed-scanner
+    
+    auxiliary(scanner/http/redoc_exposed): detect exposed ReDoc API docs UI
+
+ .../auxiliary/scanner/http/redoc_exposed.md        | 37 ++++++++++
+ modules/auxiliary/scanner/http/redoc_exposed.rb    | 86 ++++++++++++++++++++++
+ 2 files changed, 123 insertions(+)
+
+commit 5d73d8a2c70b8db765bfd956ce6b934f7abfa4d0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 24 14:56:49 2025 +0000
+
+    Bump version of framework to 6.4.96
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 52308d0df6164a012037bd59c12d3ff21260f6c9
+Merge: c4dd66723f a984e15cb6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 24 14:39:21 2025 +0100
+
+    Merge pull request #20655 from adfoster-r7/fix-meterpreter-migration-crash
+    
+    Fix Meterpreter migration crash
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit c4dd66723f286fb177bc0b67fa84ce7cdb7581a6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 24 13:38:10 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 39 ++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 38 insertions(+), 1 deletion(-)
+
+commit d8357ce3291cf46f75bcd7f0817e1ad9c401c9a0
+Merge: 4dd245a60e 09475fc2b9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 24 15:29:54 2025 +0200
+
+    Land #20564, adds persistence suggester module
+    
+    persistence suggester
+
+ .../post/multi/recon/persistence_suggester.md      | 178 +++++++++
+ .../post/multi/recon/local_exploit_suggester.rb    |   5 +-
+ modules/post/multi/recon/persistence_suggester.rb  | 443 +++++++++++++++++++++
+ 3 files changed, 624 insertions(+), 2 deletions(-)
+
+commit a984e15cb666325843851f276ce581dfc4448861
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Oct 24 13:56:49 2025 +0100
+
+    Fix Meterpreter migration crash
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 4dd245a60e2b2965354f9dfe5439ee390953b91d
+Merge: a5dd6c37ff b2d1095d22
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 24 14:06:59 2025 +0100
+
+    Merge pull request #20639 from adfoster-r7/fix-oracle-login-crash
+    
+    Fix oracle login crash
+
+ lib/rex/parser/nmap_xml.rb | 16 ++--------------
+ 1 file changed, 2 insertions(+), 14 deletions(-)
+
+commit a5dd6c37ff882ad5e727514f742383fd1b2b5e6c
+Merge: 1ee88e1a7a c2ce203281
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 24 13:43:04 2025 +0100
+
+    Merge pull request #20654 from molecula2788/msf_session_bootstrap_fix
+    
+    lib/msf/base/sessions/meterpreter.rb: Use &. across the entire chain when handling datastore['AutoLoadExtensions']
+
+ lib/msf/base/sessions/meterpreter.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c2ce2032817afb9d0c18c6e51c3cfab2ef0b8c92
+Author: Adrian Șendroiu <sendroiu.adrian@gmail.com>
+Date:   Fri Oct 24 14:30:56 2025 +0300
+
+    lib/msf/base/sessions/meterpreter.rb: Use &. across the entire chain when handling datastore['AutoLoadExtensions']
+
+ lib/msf/base/sessions/meterpreter.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1ee88e1a7abada8b6624d85f2bfd46730f01d517
+Merge: 7303e78f4a 8d35eb975d
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Oct 24 11:14:53 2025 +0100
+
+    Merge pull request #20651 from adfoster-r7/pin-rexml-to-avoid-winrm-warnings
+    
+    Pin rexml to avoid winrm warnings
+
+ Gemfile.lock                 | 3 ++-
+ metasploit-framework.gemspec | 2 ++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+commit 7303e78f4adc8b0f995dd7269caf596de93768a6
+Merge: 909d872cf6 25772a5a64
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Oct 24 11:14:07 2025 +0100
+
+    Merge pull request #20652 from adfoster-r7/fix-ssh-login-crash-for-pro
+    
+    Fix ssh login crash for pro
+
+ lib/metasploit/framework/login_scanner/ssh.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 25772a5a645f38b5b1318c90f1c760056a41bbc5
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Oct 24 10:31:27 2025 +0100
+
+    Fix ssh login crash for pro
+
+ lib/metasploit/framework/login_scanner/ssh.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8d35eb975d901e7da4dd1d825c9096312c20b2e8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Oct 24 10:18:15 2025 +0100
+
+    Pin rexml to avoid winrm warnings
+
+ Gemfile.lock                 | 3 ++-
+ metasploit-framework.gemspec | 2 ++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
