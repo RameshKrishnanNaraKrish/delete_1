@@ -1,0 +1,51 @@
+commit 8dd2724977b2c201ab488b6ccf23041d915b9bde
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 27 14:06:20 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 100 +++++++++++++++++++++++-------------------
+ 1 file changed, 55 insertions(+), 45 deletions(-)
+
+commit d839a84a129b4472c0ef8350df4f17f5f9e2d1f6
+Merge: 086fad626b 0f26c9316a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Oct 27 14:57:48 2025 +0100
+
+    Land #20631, moves windows registry module into persistence category
+    
+    update windows registry to persistence mixin
+
+ .../exploit/windows/persistence/registry.md        | 165 +++++++++++++++++++++
+ .../registry.rb}                                   | 129 ++++++----------
+ 2 files changed, 213 insertions(+), 81 deletions(-)
+
+commit 086fad626b7567c9c7addf8880b37cb9e4bb4546
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 27 07:28:31 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c6d58d1b574cc57df0cc05be494d9587685c7ca1
+Merge: 8528cb255a b481b9ef7b
+Author: bcoles <bcoles@github>
+Date:   Mon Oct 27 18:18:26 2025 +1100
+
+    Land #20661, Add aarch64 payload support to gitea_git_fetch_rce module
+
+ modules/exploits/multi/http/gitea_git_fetch_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b481b9ef7bb0814ab11db97853430f268cadabea
+Author: Michael MacFadden <michael@macfadden.org>
+Date:   Sun Oct 26 19:19:11 2025 -0500
+
+    gitea_git_fetch_rce aarch64 payload support
+    
+    Add support for the Linux Dropper to use payloads targeted to ARCH_AARCH64
+
+ modules/exploits/multi/http/gitea_git_fetch_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
