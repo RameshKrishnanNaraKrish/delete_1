@@ -1,0 +1,60 @@
+commit 90408517f11c1f81b7a8538fb8558e230f794410
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 29 12:50:37 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ca2f3ab3a69433910a2cedb1836a70c20ce3a426
+Merge: a9c91baf6f 33462bf233
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Oct 29 08:42:15 2025 -0400
+
+    Merge pull request #20648 from bcoles/cydia_default_ssh
+    
+    exploit/apple_ios/ssh/cydia_default_ssh: Add mobile:alpine creds
+
+ modules/exploits/apple_ios/ssh/cydia_default_ssh.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a9c91baf6f2d4deb31f425ace320dd9036bf9edc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 29 12:32:11 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 56480df99fc74d3e68792430c9ec52b751d773b7
+Merge: 8dd2724977 85fa7e0391
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Oct 29 13:23:35 2025 +0100
+
+    Land #20662, adds windows startup folder persistence module
+    
+    windows persistence: startup folder
+
+ .../exploit/windows/persistence/startup_folder.md  | 120 +++++++++++++++++++++
+ .../exploits/windows/persistence/startup_folder.rb |  90 ++++++++++++++++
+ 2 files changed, 210 insertions(+)
+
+commit 85fa7e039153f3196b4a4c92b0417aeb42e5286a
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Oct 29 05:18:20 2025 -0400
+
+    windows persistence: startup folder review
+
+ modules/exploits/windows/persistence/startup_folder.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b98e66b74426b1d68b0c470028c19cb1f42f0511
+Author: Muhammad Daffa <36522826+daffainfo@users.noreply.github.com>
+Date:   Wed Oct 29 13:18:17 2025 +0700
+
+    Minor changes, code review from @msutovsky-r7
+
+ modules/exploits/windows/misc/ncr_cmcagent_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
