@@ -1,0 +1,41 @@
+commit 7098e47626643b850ce6100a861920c65e36c0cc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 30 16:37:30 2025 +0000
+
+    Bump version of framework to 6.4.97
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit fc7040bb1ba5794dad69ea42b9b9aa64447afd69
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 30 07:38:51 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 44 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit 09f1d1ae578df227665d1cd749b4fb68d601e3f5
+Merge: 90408517f1 666e63f993
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 30 08:26:42 2025 +0100
+
+    Land #20650, adds module for NCR Command Center Agent unauthenticated RCE (CVE-2021-3122)
+    
+    Add NCR Command Center Agent Unauthenticated RCE (CVE-2021-3122)
+
+ .../exploit/windows/misc/ncr_cmcagent_rce.md       |  55 +++++++++
+ modules/exploits/windows/misc/ncr_cmcagent_rce.rb  | 131 +++++++++++++++++++++
+ 2 files changed, 186 insertions(+)
+
+commit 666e63f993c21ae6b28fa0833f2c7f85b19183f0
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Oct 30 07:43:32 2025 +0100
+
+    Rubocopes module
+
+ modules/exploits/windows/misc/ncr_cmcagent_rce.rb | 41 +++++++++++------------
+ 1 file changed, 20 insertions(+), 21 deletions(-)
