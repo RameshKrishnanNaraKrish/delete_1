@@ -1,0 +1,80 @@
+commit 1c4e3d59eeeb07b3716c5459b34a5ebc98bcd9ca
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 31 11:38:37 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 103 ++++++++++++++++++++++--------------------
+ 1 file changed, 53 insertions(+), 50 deletions(-)
+
+commit 13dc61e2e87971f7ba5baf59aeb252a24ee3f94f
+Merge: ad0f984f4c c0b3f40b3e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Oct 31 12:28:59 2025 +0100
+
+    Merge pull request #20523 from h00die/modern_persistence_upstart
+    
+    update upstart to persistence mixin
+
+ .../exploit/linux/local/service_persistence.md     | 305 --------------
+ .../exploit/linux/persistence/init_upstart.md      | 115 ++++++
+ .../exploits/linux/local/service_persistence.rb    | 453 ---------------------
+ modules/exploits/linux/persistence/init_upstart.rb | 162 ++++++++
+ 4 files changed, 277 insertions(+), 758 deletions(-)
+
+commit ad0f984f4c5729eb7ae3deaecf6ba1f8125cf265
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 31 09:26:00 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 50 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+
+commit af5baeb3c652af4b2ab562e991f36805cf946a4d
+Merge: 54a1810273 34b630736a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 31 10:16:19 2025 +0100
+
+    Land #20660, adds windows task scheduler persistence module
+    
+    Windows task scheduler persistence
+
+ .../exploit/windows/persistence/task_scheduler.md  | 140 +++++++++++++++++++++
+ lib/msf/core/post/windows/task_scheduler.rb        |   5 +-
+ .../exploits/windows/persistence/task_scheduler.rb | 110 ++++++++++++++++
+ 3 files changed, 254 insertions(+), 1 deletion(-)
+
+commit 54a18102734dbc46bb3877caf8912c078f0186a7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 31 09:09:45 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 104 +++++++++++++++++++++++-------------------
+ 1 file changed, 56 insertions(+), 48 deletions(-)
+
+commit c804e5fb554a0e36dfbccaac1cb7ce4b2c553f11
+Merge: 7098e47626 676a2ed4b1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 31 10:00:21 2025 +0100
+
+    Land #20643, expands diamorphine privilege escalation module to other rootkits
+    
+    Add Rootkit Privilege Escalation Signal Hunter
+
+ .../local/diamorphine_rootkit_signal_priv_esc.md   |  66 --------
+ .../linux/local/rootkit_privesc_signal_hunter.md   |  80 +++++++++
+ .../local/diamorphine_rootkit_signal_priv_esc.rb   | 108 ------------
+ .../linux/local/rootkit_privesc_signal_hunter.rb   | 187 +++++++++++++++++++++
+ 4 files changed, 267 insertions(+), 174 deletions(-)
+
+commit 676a2ed4b1dd70722dd08096f067d09a1e1a9934
+Author: bcoles <bcoles@github>
+Date:   Fri Oct 31 17:22:19 2025 +1100
+
+    Add Rootkit Privilege Escalation Signal Hunter
+
+ .../linux/local/rootkit_privesc_signal_hunter.md   | 112 +++++++------
+ .../linux/local/rootkit_privesc_signal_hunter.rb   | 181 +++++++++++++++------
+ 2 files changed, 193 insertions(+), 100 deletions(-)
