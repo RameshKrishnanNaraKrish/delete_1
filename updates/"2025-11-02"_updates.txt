@@ -1,0 +1,12 @@
+commit b70d9c074a6ac50c47024b543d8ddc0636b57dcd
+Merge: 1c4e3d59ee 57a3590a94
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Nov 4 12:29:56 2025 -0600
+
+    Merge pull request #20673 from adfoster-r7/pin-date-dependency
+    
+    Pin date dependency
+
+ Gemfile.lock                 | 1 +
+ metasploit-framework.gemspec | 1 +
+ 2 files changed, 2 insertions(+)
