@@ -1,0 +1,30 @@
+commit 1d19c37c6296139e4a616375d13649025aa458c1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 5 15:39:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 110cb837aab47bb8c87d415634986f25c3d003ea
+Merge: b70d9c074a 34c424f473
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Nov 5 16:29:29 2025 +0100
+
+    Merge pull request #20672 from h00die-gr3y/centreon_auth_rce
+    
+    Centreon authenticated command injection leading to RCE via broker engine "reload" parameter [CVE-2025-5946]
+
+ .../linux/http/centreon_auth_rce_cve_2025_5946.md  |  85 ++++++
+ .../linux/http/centreon_auth_rce_cve_2025_5946.rb  | 297 +++++++++++++++++++++
+ 2 files changed, 382 insertions(+)
+
+commit 34c424f473b575279d80718ae7baec9cc0262cc6
+Author: h00die-gr3y <h00die.gr3y@gmail.com>
+Date:   Wed Nov 5 09:20:13 2025 +0000
+
+    update based on dledda-r7 comments
+
+ modules/exploits/linux/http/centreon_auth_rce_cve_2025_5946.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
