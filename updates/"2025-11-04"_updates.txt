@@ -1,0 +1,10 @@
+commit 47f60e162519e3fb1ba188ddb3c04d1fcad1f444
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 6 18:14:52 2025 +0000
+
+    Bump version of framework to 6.4.98
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
