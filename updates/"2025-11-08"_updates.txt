@@ -1,0 +1,235 @@
+commit b545defca5780469774befd49ce8c7d62441c58a
+Merge: 0c6a8c10c5 7aebd592ef
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Nov 10 17:27:58 2025 -0500
+
+    Merge pull request #20690 from dbono-r7/patch-1
+    
+    Update named_pipes.txt
+
+ data/wordlists/named_pipes.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 7aebd592efd76a37b77447a8634c04a1dba0447b
+Author: dbono-r7 <90337831+dbono-r7@users.noreply.github.com>
+Date:   Mon Nov 10 16:00:39 2025 -0600
+
+    Update named_pipes.txt
+    
+    Added the cert pipe for quick unauthenticated for likely Certificate Authority servers.
+
+ data/wordlists/named_pipes.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0c6a8c10c56a8c3d05f596020e9ea0464d79a7ef
+Merge: 0e8fd9c603 b646e0e044
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Nov 10 08:26:03 2025 -0800
+
+    Merge pull request #20625 from h00die/fix_exploit_docs_options
+    
+    Update exploit docs to use modern h3 for options instead of original spec (bold)
+
+ .../modules/exploit/aix/local/xorg_x11_server.md   |   4 +-
+ .../modules/exploit/android/local/janus.md         |   2 +-
+ .../exploit/freebsd/local/intel_sysret_priv_esc.md |   4 +-
+ .../exploit/freebsd/local/rtld_execl_priv_esc.md   |   2 +-
+ .../modules/exploit/linux/http/asuswrt_lan_rce.md  |   2 +-
+ .../exploit/linux/http/cisco_firepower_useradd.md  |  20 +++-
+ .../modules/exploit/linux/http/cisco_rv32x_rce.md  |  12 +--
+ .../http/craftcms_preauth_rce_cve_2025_32432.md    |   6 +-
+ .../exploit/linux/http/goahead_ldpreload.md        |   2 +-
+ .../exploit/linux/http/hp_van_sdn_cmd_inject.md    |  10 +-
+ .../exploit/linux/http/ipfire_bashbug_exec.md      |   4 +-
+ .../exploit/linux/http/ipfire_oinkcode_exec.md     |   4 +-
+ .../exploit/linux/http/ipfire_pakfire_exec.md      |   4 +-
+ .../exploit/linux/http/ipfire_proxy_exec.md        |   4 +-
+ .../http/linksys_wvbr0_user_agent_exec_noauth.md   |   2 +-
+ .../exploit/linux/http/nagios_xi_chained_rce.md    |   4 +-
+ .../linux/http/netgear_dnslookup_cmd_exec.md       |   4 +-
+ .../linux/http/netgear_r7000_cgibin_exec.md        |   2 +-
+ .../modules/exploit/linux/http/op5_config_exec.md  |   6 +-
+ .../exploit/linux/http/pandora_ping_cmd_exec.md    |   4 +-
+ .../exploit/linux/http/panos_readsessionvars.md    |   4 +-
+ .../exploit/linux/http/php_imap_open_rce.md        |   2 +-
+ .../exploit/linux/http/pulse_secure_cmd_exec.md    |   2 +-
+ .../linux/http/qnap_qcenter_change_passwd_exec.md  |   4 +-
+ .../exploit/linux/http/supervisor_xmlrpc_exec.md   |   6 +-
+ .../exploit/linux/http/tiki_calendar_exec.md       |   2 +-
+ .../exploit/linux/http/unraid_auth_bypass_exec.md  |   4 +-
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.md    |   2 +-
+ .../modules/exploit/linux/http/webmin_backdoor.md  |   6 +-
+ .../exploit/linux/http/wipg1000_cmd_injection.md   |   2 +-
+ .../exploit/linux/local/abrt_raceabrt_priv_esc.md  |   6 +-
+ .../exploit/linux/local/abrt_sosreport_priv_esc.md |   4 +-
+ .../linux/local/af_packet_chocobo_root_priv_esc.md |   8 +-
+ .../local/af_packet_packet_set_ring_priv_esc.md    |   6 +-
+ .../linux/local/apport_abrt_chroot_priv_esc.md     |   4 +-
+ .../linux/local/asan_suid_executable_priv_esc.md   |   8 +-
+ .../blueman_set_dhcp_handler_dbus_priv_esc.md      |   4 +-
+ .../modules/exploit/linux/local/bpf_priv_esc.md    |   6 +-
+ .../linux/local/bpf_sign_extension_priv_esc.md     |   4 +-
+ .../exploit/linux/local/cve_2021_3493_overlayfs.md |   9 +-
+ .../local/glibc_ld_audit_dso_load_priv_esc.md      |   4 +-
+ .../linux/local/glibc_origin_expansion_priv_esc.md |   4 +-
+ .../exploit/linux/local/glibc_realpath_priv_esc.md |   6 +-
+ .../exploit/linux/local/juju_run_agent_priv_esc.md |   4 +-
+ .../exploit/linux/local/ktsuss_suid_priv_esc.md    |   4 +-
+ .../linux/local/lastore_daemon_dbus_priv_esc.md    |   4 +-
+ .../linux/local/libuser_roothelper_priv_esc.md     |   8 +-
+ .../local/nested_namespace_idmap_limit_priv_esc.md |   6 +-
+ .../exploit/linux/local/netfilter_priv_esc_ipv4.md |   6 +-
+ .../network_manager_vpnc_username_priv_esc.md      |   4 +-
+ .../modules/exploit/linux/local/ntfs3g_priv_esc.md |   2 +-
+ .../linux/local/omniresolve_suid_priv_esc.md       |   4 +-
+ .../exploit/linux/local/overlayfs_priv_esc.md      |   4 +-
+ .../exploit/linux/local/polkit_dbus_auth_bypass.md |   8 +-
+ .../linux/local/ptrace_sudo_token_priv_esc.md      |   6 +-
+ .../linux/local/ptrace_traceme_pkexec_helper.md    |   4 +-
+ ...s_atomic_free_op_null_pointer_deref_priv_esc.md |   6 +-
+ .../linux/local/rds_rds_page_copy_user_priv_esc.md |   6 +-
+ .../exploit/linux/local/recvmmsg_priv_esc.md       |   4 +-
+ .../local/reptile_rootkit_reptile_cmd_priv_esc.md  |   4 +-
+ ...ervu_ftp_server_prepareinstallation_priv_esc.md |   4 +-
+ .../modules/exploit/linux/local/sock_sendpage.md   |   6 +-
+ .../local/systemtap_modprobe_options_priv_esc.md   |   4 +-
+ .../linux/local/ufo_privilege_escalation.md        |   4 +-
+ .../exploit/linux/local/vmware_alsa_config.md      |   6 +-
+ .../linux/misc/asus_infosvr_auth_bypass_exec.md    |   8 +-
+ .../exploit/linux/misc/jenkins_ldap_deserialize.md |  10 +-
+ .../exploit/linux/misc/qnap_transcode_server.md    |   2 +-
+ .../exploit/linux/samba/is_known_pipename.md       |   6 +-
+ .../exploit/linux/smtp/apache_james_exec.md        |  12 +--
+ documentation/modules/exploit/linux/smtp/haraka.md |  10 +-
+ .../exploit/linux/snmp/net_snmpd_rw_access.md      |  12 +--
+ .../exploit/linux/telnet/netgear_telnetenable.md   |   6 +-
+ .../exploit/linux/upnp/belkin_wemo_upnp_exec.md    |   2 +-
+ .../linux/upnp/dlink_dir859_exec_ssdpcgi.md        |   2 +-
+ .../exploit/multi/browser/msfd_rce_browser.md      |   4 +-
+ .../multi/fileformat/evince_cbt_cmd_injection.md   |   2 +-
+ .../multi/fileformat/ghostscript_failed_restore.md |   4 +-
+ .../exploit/multi/fileformat/office_word_macro.md  |   2 +-
+ .../modules/exploit/multi/hams/steamed.md          |   2 +-
+ .../multi/http/apache_normalize_path_rce.md        |   6 +-
+ .../exploit/multi/http/caidao_php_backdoor_exec.md |   4 +-
+ .../multi/http/clipbucket_fileupload_exec.md       |   2 +-
+ .../multi/http/git_submodule_command_exec.md       |   4 +-
+ .../exploit/multi/http/git_submodule_url_exec.md   |   4 +-
+ .../exploit/multi/http/jenkins_metaprogramming.md  |   8 +-
+ .../exploit/multi/http/jenkins_script_console.md   |   8 +-
+ .../multi/http/jenkins_xstream_deserialize.md      |   8 +-
+ .../multi/http/mediawiki_syntaxhighlight.md        |  10 +-
+ .../modules/exploit/multi/http/php_fpm_rce.md      |   2 +-
+ .../multi/http/phpmyadmin_null_termination_exec.md |   2 +-
+ .../exploit/multi/http/processmaker_exec.md        |   6 +-
+ .../multi/http/processmaker_plugin_upload.md       |   6 +-
+ .../exploit/multi/http/qdpm_authenticated_rce.md   |   8 +-
+ .../multi/http/rails_actionpack_inline_exec.md     |   4 +-
+ .../http/shiro_rememberme_v124_deserialize.md      |   2 +-
+ .../exploit/multi/http/splunk_upload_app_exec.md   |   6 +-
+ .../multi/http/struts2_content_type_ognl.md        |   4 +-
+ .../exploit/multi/http/struts2_namespace_ognl.md   |   4 +-
+ .../exploit/multi/http/struts2_rest_xstream.md     |   4 +-
+ .../modules/exploit/multi/http/struts_dmi_exec.md  |   2 +-
+ .../exploit/multi/http/struts_dmi_rest_exec.md     |   2 +-
+ .../multi/http/vbulletin_widgetconfig_rce.md       |   6 +-
+ .../exploit/multi/http/vtiger_logo_upload_exec.md  |   2 +-
+ .../misc/claymore_dual_miner_remote_manager_rce.md |   4 +-
+ .../multi/misc/cups_ipp_remote_code_execution.md   |   6 +-
+ .../multi/misc/freeswitch_event_socket_cmd_exec.md |   2 +-
+ .../exploit/multi/misc/ibm_tm1_unauth_rce.md       |   6 +-
+ .../modules/exploit/multi/misc/msf_rpc_console.md  |   4 +-
+ .../modules/exploit/multi/misc/msfd_rce_remote.md  |   4 +-
+ .../multi/misc/openoffice_document_macro.md        |   2 +-
+ .../exploit/multi/misc/osgi_console_exec.md        |   4 +-
+ .../multi/misc/teamcity_agent_xmlrpc_exec.md       |   4 +-
+ .../exploit/multi/mysql/mysql_udf_payload.md       |   2 +-
+ .../exploit/multi/php/wp_duplicator_code_inject.md |   2 +-
+ .../postgres_copy_from_program_cmd_exec.md         |  10 +-
+ .../openbsd/local/dynamic_loader_chpass_privesc.md |   4 +-
+ .../exploit/osx/persistence/launch_plist.md        | 114 +++++++++++++++++++++
+ .../modules/exploit/qnx/local/ifwatchd_priv_esc.md |   4 +-
+ .../local/extremeparr_dtappgather_priv_esc.md      |   6 +-
+ .../local/libnspr_nspr_log_file_priv_esc.md        |   4 +-
+ .../solaris/local/rsh_stack_clash_priv_esc.md      |   6 +-
+ .../solaris/local/xscreensaver_log_priv_esc.md     |   4 +-
+ .../unix/fileformat/imagemagick_delegate.md        |   2 +-
+ .../exploit/unix/http/pfsense_clickjacking.md      |   2 +-
+ .../unix/http/quest_kace_systems_management_rce.md |   6 +-
+ .../http/schneider_electric_net55xx_encoder.md     |   2 +-
+ .../exploit/unix/local/netbsd_mail_local.md        |  10 +-
+ .../exploit/unix/smtp/qmail_bash_env_exec.md       |   2 +-
+ .../webapp/ajenti_auth_username_cmd_injection.md   |   4 +-
+ .../exploit/unix/webapp/drupal_drupalgeddon2.md    |  12 +--
+ .../unix/webapp/drupal_restws_unserialize.md       |   6 +-
+ ...lfinder_php_connector_exiftran_cmd_injection.md |   2 +-
+ .../exploit/unix/webapp/fusionpbx_exec_cmd_exec.md |   6 +-
+ .../fusionpbx_operator_panel_exec_cmd_exec.md      |   6 +-
+ .../exploit/unix/webapp/jquery_file_upload.md      |   2 +-
+ .../exploit/unix/webapp/openmediavault_rpc_rce.md  |   6 +-
+ .../unix/webapp/opennetadmin_ping_cmd_injection.md |   2 +-
+ .../unix/webapp/piwik_superuser_plugin_upload.md   |   6 +-
+ .../unix/webapp/rconfig_install_cmd_exec.md        |   2 +-
+ .../exploit/unix/webapp/webmin_upload_exec.md      |   2 +-
+ .../unix/webapp/wp_phpmailer_host_header.md        |   2 +-
+ .../webapp/wp_plainview_activity_monitor_rce.md    |   6 +-
+ .../exploit/unix/webapp/xymon_useradm_cmd_exec.md  |   6 +-
+ .../exploit/windows/antivirus/ams_hndlrsvc.md      |   4 +-
+ .../modules/exploit/windows/backupexec/ssl_uaf.md  |   6 +-
+ .../windows/browser/ms14_064_ole_code_execution.md |   4 +-
+ .../exploit/windows/fileformat/adobe_geticon.md    |   2 +-
+ .../windows/fileformat/adobe_pdf_embedded_exe.md   |   8 +-
+ .../exploit/windows/fileformat/adobe_reader_u3d.md |   4 +-
+ .../windows/fileformat/boxoft_wav_to_mp3.md        |   2 +-
+ .../windows/fileformat/cve_2017_8464_lnk_rce.md    |   6 +-
+ .../fileformat/documalis_pdf_editor_and_scanner.md |   2 +-
+ .../exploit/windows/fileformat/office_excel_slk.md |   2 +-
+ .../exploit/windows/fileformat/winrar_ace.md       |   6 +-
+ .../exploit/windows/fileformat/word_msdtjs_rce.md  |   6 +-
+ .../windows/http/disk_pulse_enterprise_get.md      |   4 +-
+ .../windows/http/dnn_cookie_deserialization_rce.md |  18 ++--
+ .../exploit/windows/http/ektron_xslt_exec_ws.md    |   4 +-
+ .../windows/http/hp_imc_java_deserialize.md        |   6 +-
+ .../exploit/windows/http/moveit_cve_2023_34362.md  |  12 ++-
+ .../exploit/windows/http/octopusdeploy_deploy.md   |  12 +--
+ .../exploit/windows/http/prtg_authenticated_rce.md |   6 +-
+ .../http/prtg_authenticated_rce_cve_2023_32781.md  |   4 +-
+ .../exploit/windows/http/smartermail_rce.md        |   8 +-
+ .../windows/local/cve_2020_0668_service_tracing.md |   8 +-
+ .../cve_2020_0787_bits_arbitrary_file_move.md      |   4 +-
+ .../windows/local/cve_2020_1048_printerdemon.md    |  14 +--
+ .../local/cve_2020_1313_system_orchestrator.md     |  10 +-
+ .../windows/local/cve_2020_1337_printerdemon.md    |  12 +--
+ .../exploit/windows/local/panda_psevents.md        |   4 +-
+ .../exploit/windows/local/persistence_service.md   |  10 +-
+ .../plantronics_hub_spokesupdateservice_privesc.md |   4 +-
+ .../modules/exploit/windows/local/tokenmagic.md    |  10 +-
+ .../local/windscribe_windscribeservice_priv_esc.md |   4 +-
+ .../modules/exploit/windows/misc/gh0st.md          |   2 +-
+ .../exploit/windows/rdp/rdp_doublepulsar_rce.md    |   4 +-
+ .../exploit/windows/smb/group_policy_startup.md    |   6 +-
+ .../modules/exploit/windows/smb/ms17_010_psexec.md |  10 +-
+ .../modules/exploit/windows/smb/psexec.md          |   4 +-
+ .../exploit/windows/smb/smb_doublepulsar_rce.md    |   4 +-
+ 181 files changed, 588 insertions(+), 449 deletions(-)
+
+commit 0e8fd9c6030a9237ae2fa1230ee59efe5cc8fcae
+Merge: 47f60e1625 e5597ee57e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Nov 10 12:20:20 2025 +0000
+
+    Merge pull request #20686 from adfoster-r7/bump-mqtt-dependency
+    
+    Bump mqtt dependency
+
+ Gemfile.lock | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit e5597ee57e28cc143a51ad25f5598208e5080a2b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Nov 10 11:55:10 2025 +0000
+
+    Bump mqtt dependency
+
+ Gemfile.lock | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
