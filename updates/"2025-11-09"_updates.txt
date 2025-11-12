@@ -1,0 +1,30 @@
+commit 8648398b1121ba08d9fc2e32361c8555dc4265ab
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 11 15:50:51 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 98 +++++++++++++++++++++----------------------
+ 1 file changed, 49 insertions(+), 49 deletions(-)
+
+commit 29088b47123f01e535e0c4330a9b7a478f97d679
+Merge: b545defca5 9058f6676b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Nov 11 16:41:12 2025 +0100
+
+    Merge pull request #20576 from msutovsky-r7/modules/persistence/linqpad_deserialization
+    
+    Moves LINQPad module into persistence category
+
+ .../windows/persistence/linqpad_deserialization.md | 53 ++++++++++++++++++++++
+ .../linqpad_deserialization.rb}                    | 31 +++++++------
+ 2 files changed, 71 insertions(+), 13 deletions(-)
+
+commit 9058f6676b8166bf880ceddfc496ff2b1e9404ce
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Nov 11 11:22:31 2025 +0100
+
+    Removes if condition
+
+ modules/exploits/windows/persistence/linqpad_deserialization.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
