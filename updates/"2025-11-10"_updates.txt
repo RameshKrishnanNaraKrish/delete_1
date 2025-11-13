@@ -1,0 +1,42 @@
+commit 7f95c562aea83e014e4982948c9bf73610896ef3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 12 18:54:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 90ff800e411401eb283880b5f86f7f10d353435d
+Merge: 667fd73597 00661fa43a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Nov 12 10:45:32 2025 -0800
+
+    Merge pull request #20669 from stfnw/azure-ad-login-default-message
+    
+    azure_ad_login: add context to error message
+
+ modules/auxiliary/scanner/http/azure_ad_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 667fd73597580adfd4540b9fdd0f5194f9212e86
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 12 11:50:09 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit c007d3a89f3769edea7a666c313fc25a958c456f
+Merge: 8648398b11 6aeb81a499
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Nov 12 12:40:32 2025 +0100
+
+    Merge pull request #20674 from msutovsky-r7/exploit/win/cve-2025-59287
+    
+    Adds module for unauthenticated deserialization in WSUS (CVE-2025-59287)
+
+ .../windows/http/wsus_deserialization_rce.md       |  58 ++++++
+ .../windows/http/wsus_deserialization_rce.rb       | 220 +++++++++++++++++++++
+ 2 files changed, 278 insertions(+)
