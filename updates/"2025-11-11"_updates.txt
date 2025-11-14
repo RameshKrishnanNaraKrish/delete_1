@@ -1,0 +1,39 @@
+commit 9cdf7bd9b25d94ab976bf95efe11cd106a7d22e4
+Merge: 871ac7db61 b1f57b303f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Nov 13 09:29:56 2025 -0800
+
+    Merge pull request #20695 from zeroSteiner/fix/bump-payloads/2.0.237
+    
+    Update metasploit-payloads gem to 2.0.237
+
+ Gemfile.lock                 | 4 ++--
+ LICENSE_GEMS                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit b1f57b303f480898d3149922a0e575c0cee56581
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Nov 13 12:11:10 2025 -0500
+
+    Update metasploit-payloads gem to 2.0.237
+    
+    Includes changes from:
+    * rapid7/metasploit-payloads#782
+    * rapid7/metasploit-payloads#781
+
+ Gemfile.lock                 | 4 ++--
+ LICENSE_GEMS                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 871ac7db61aaafe216c4829c90cdb0385477e57f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 13 11:14:45 2025 +0000
+
+    Bump version of framework to 6.4.99
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
