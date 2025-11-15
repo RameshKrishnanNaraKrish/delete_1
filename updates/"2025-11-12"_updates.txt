@@ -1,0 +1,61 @@
+commit 3aba23186ca7b295396f1e2c912ac719cf92ed60
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 14 15:42:34 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 9dcea0c20dadd0579a1de20712ec6f9c4fcd9383
+Merge: 4cd70a4d15 06fbe46172
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Nov 14 09:32:03 2025 -0600
+
+    Merge pull request #20698 from sfewer-r7/fortiweb-exploit
+    
+    Add an aux module for the recent FortiWeb exploit (No CVE assigned yet)
+
+ .../admin/http/fortinet_fortiweb_create_admin.md   | 108 ++++++++++++
+ .../admin/http/fortinet_fortiweb_create_admin.rb   | 184 +++++++++++++++++++++
+ 2 files changed, 292 insertions(+)
+
+commit 4cd70a4d159f47d200d96a740b7c4b8c935b32a7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 14 13:49:09 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c000e9cfa5e9e0b28a7c270aa88840f2a8baf768
+Merge: 9cdf7bd9b2 771856ac6b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Nov 14 08:39:26 2025 -0500
+
+    Merge pull request #20687 from dwelch-r7/winrm-error-handling-improvements
+    
+    Add error handling for winrm login issues
+
+ modules/auxiliary/scanner/winrm/winrm_login.rb | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+
+commit 771856ac6beeaa3d296809e001f822787415f8ae
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Nov 14 13:22:05 2025 +0000
+
+    Use print_brute over print_warning
+
+ modules/auxiliary/scanner/winrm/winrm_login.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 06fbe46172b31a0553687aa22d84bae44f8b3fc8
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Fri Nov 14 12:02:10 2025 +0000
+
+    add in aux moduel for recent FortiWeb exploit
+
+ .../admin/http/fortinet_fortiweb_create_admin.md   | 108 ++++++++++++
+ .../admin/http/fortinet_fortiweb_create_admin.rb   | 184 +++++++++++++++++++++
+ 2 files changed, 292 insertions(+)
