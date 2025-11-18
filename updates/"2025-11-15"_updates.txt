@@ -1,0 +1,38 @@
+commit 8e642d43768d7590e65870673fa586a22ec1f04d
+Merge: 8062673bfc f2a05ad295
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Nov 17 08:32:14 2025 -0800
+
+    Merge pull request #20689 from zeroSteiner/feat/mod/socket-channel-tests
+    
+    Add socket channel tests
+
+ spec/support/acceptance/session/java.rb            |  22 ++
+ spec/support/acceptance/session/mettle.rb          |  22 ++
+ spec/support/acceptance/session/php.rb             |  70 ++++
+ spec/support/acceptance/session/python.rb          |  22 ++
+ .../acceptance/session/windows_meterpreter.rb      |  18 +
+ test/modules/post/test/socket_channels.rb          | 376 +++++++++++++++++++++
+ 6 files changed, 530 insertions(+)
+
+commit 8062673bfcfe13ed000ad9759ebf6a5c50d660b9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 17 15:19:06 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit c3f221e2f28e4a45d89611f906618884b4013dea
+Merge: 3aba23186c c1ff36668c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Nov 17 09:08:47 2025 -0600
+
+    Merge pull request #20699 from sfewer-r7/fortiweb-exploit-cve
+    
+    Update auxiliary/admin/http/fortinet_fortiweb_create_admin with CVE ID and advisory URL
+
+ .../admin/http/fortinet_fortiweb_create_admin.md        | 10 ++++++++--
+ .../admin/http/fortinet_fortiweb_create_admin.rb        | 17 ++++++++++++-----
+ 2 files changed, 20 insertions(+), 7 deletions(-)
