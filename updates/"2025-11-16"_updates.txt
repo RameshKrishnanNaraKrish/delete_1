@@ -1,0 +1,101 @@
+commit 3576e2bceffcdc0def51049996748f152c882dd9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 18 15:59:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 99 +++++++++++++++++++++++--------------------
+ 1 file changed, 53 insertions(+), 46 deletions(-)
+
+commit 069de9fbf8c43a8e66e9e7a2d0dbdf4ccd0554a7
+Merge: 8e642d4376 3209fdc937
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Nov 18 09:49:06 2025 -0600
+
+    Merge pull request #20638 from h00die/windows_service_persistence
+    
+    update windows service to persistence mixin
+
+ data/exploits/persistence_service/service.erb      | 304 ---------------------
+ .../exploit/windows/local/persistence_service.md   | 110 --------
+ .../modules/exploit/windows/persistence/service.md | 254 +++++++++++++++++
+ .../exploits/windows/local/persistence_service.rb  | 202 --------------
+ modules/exploits/windows/persistence/service.rb    | 168 ++++++++++++
+ 5 files changed, 422 insertions(+), 616 deletions(-)
+
+commit 3209fdc937ae552ea447901f44e633a5f1037007
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Mon Nov 17 19:03:55 2025 -0500
+
+    remove old file
+
+ .../exploits/windows/local/persistence_service.rb  | 202 ---------------------
+ 1 file changed, 202 deletions(-)
+
+commit 7c8fbd1672d520dbeaf2ae702e41270f8af12a19
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Nov 5 16:38:46 2025 -0500
+
+    rework windows service persistence
+
+ modules/exploits/windows/persistence/service.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a0222d07837b501bcf1d80142a1e4752b0d7dced
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Nov 5 16:36:54 2025 -0500
+
+    rework windows service persistence
+
+ .../modules/exploit/windows/persistence/service.md | 233 +++++++++++++++------
+ modules/exploits/windows/persistence/service.rb    |  81 ++++---
+ 2 files changed, 214 insertions(+), 100 deletions(-)
+
+commit 1ad89ef1ef04613e1f128e2cc946c3eefaff432c
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Nov 4 19:37:22 2025 -0500
+
+    rewriting service
+
+ modules/exploits/windows/persistence/service.rb | 64 +++++++++++++------------
+ 1 file changed, 33 insertions(+), 31 deletions(-)
+
+commit 06f5c89bf430c03001f5b6d37b1399be90242081
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Thu Oct 23 17:42:26 2025 -0400
+
+    throw this away
+
+ .../exploits/windows/local/persistence_service.rb  | 202 +++++++++++++++++++++
+ 1 file changed, 202 insertions(+)
+
+commit 92e1720ad5a68fe2382d4f21340154141abbd1d5
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Oct 22 16:58:09 2025 -0400
+
+    fix docs
+
+ .../modules/exploit/windows/persistence/service.md | 22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+commit 8c211b4d4a1a5128e18ef9413557a93d3577c348
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Oct 22 16:45:30 2025 -0400
+
+    fix sc commands in windows service persistence
+
+ modules/exploits/windows/persistence/service.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 450e1df340bbb60928abeb2e045869fe7f58160f
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Oct 22 16:19:37 2025 -0400
+
+    windows service now with persistence mixin
+
+ data/exploits/persistence_service/service.erb      | 304 ---------------------
+ .../exploit/windows/local/persistence_service.md   | 110 --------
+ .../modules/exploit/windows/persistence/service.md | 163 +++++++++++
+ .../exploits/windows/local/persistence_service.rb  | 202 --------------
+ modules/exploits/windows/persistence/service.rb    | 147 ++++++++++
+ 5 files changed, 310 insertions(+), 616 deletions(-)
