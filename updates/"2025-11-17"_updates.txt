@@ -1,0 +1,72 @@
+commit 8f19fe532b51985bacb8e6985e207b1ed8a54525
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 19 23:23:59 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 ++++++++++++++++++++++++++++---------------
+ 1 file changed, 30 insertions(+), 16 deletions(-)
+
+commit dff3e3f4a7c3642fb4edf4e3b15ea1e1f40662b3
+Merge: d8b544b1ab b0ce58d631
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 19 23:14:21 2025 +0000
+
+    Merge pull request #20694 from cgranleese-r7/add-rubocop-detect-cmd-exec
+    
+    Adds Rubocop rule to detect calls to old cmd_exec API
+
+ .rubocop.yml                                       |   7 +
+ docs/metasploit-framework.wiki/Post-Mixins.md      | 192 +++++++++++++++++++++
+ docs/navigation.rb                                 |   4 +
+ .../cop/lint/detect_outdated_cmd_exec_api.rb       |  66 +++++++
+ .../cop/lint/detect_outdated_cmd_exec_api_spec.rb  |  81 +++++++++
+ 5 files changed, 350 insertions(+)
+
+commit b0ce58d631d047b5b1b9d8602eb0e620467071c3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 19 22:24:15 2025 +0000
+
+    Update URL in specs
+
+ spec/rubocop/cop/lint/detect_outdated_cmd_exec_api_spec.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit d64625d95f3ffda52335c5d46347de45e831f489
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Wed Nov 19 14:28:31 2025 +0000
+
+    Adds post mixin docs and update cop message
+
+ docs/metasploit-framework.wiki/Post-Mixins.md      | 192 +++++++++++++++++++++
+ docs/navigation.rb                                 |   4 +
+ .../cop/lint/detect_outdated_cmd_exec_api.rb       |   2 +-
+ .../cop/lint/detect_outdated_cmd_exec_api_spec.rb  |   8 +-
+ 4 files changed, 201 insertions(+), 5 deletions(-)
+
+commit d8b544b1aba7a8817451bf4808d03bc4d2ad54e4
+Merge: 3576e2bcef c77c138117
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Nov 19 12:10:03 2025 +0100
+
+    Land #20707, adds note "CAP_SYS_BOOT privileges are required" to Linux Reboot payloads
+    
+    Add note "CAP_SYS_BOOT privileges are required" to Linux Reboot payloads
+
+ modules/payloads/singles/linux/mipsbe/reboot.rb    | 2 ++
+ modules/payloads/singles/linux/mipsle/reboot.rb    | 6 ++++--
+ modules/payloads/singles/linux/riscv32le/reboot.rb | 8 ++++++--
+ modules/payloads/singles/linux/riscv64le/reboot.rb | 8 ++++++--
+ 4 files changed, 18 insertions(+), 6 deletions(-)
+
+commit c77c1381172ffd9560cfce617b8fd031af5624a9
+Author: bcoles <bcoles@github>
+Date:   Wed Nov 19 21:39:44 2025 +1100
+
+    Add note "CAP_SYS_BOOT privileges are required" to Linux Reboot payloads
+
+ modules/payloads/singles/linux/mipsbe/reboot.rb    | 2 ++
+ modules/payloads/singles/linux/mipsle/reboot.rb    | 6 ++++--
+ modules/payloads/singles/linux/riscv32le/reboot.rb | 8 ++++++--
+ modules/payloads/singles/linux/riscv64le/reboot.rb | 8 ++++++--
+ 4 files changed, 18 insertions(+), 6 deletions(-)
