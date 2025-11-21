@@ -1,0 +1,149 @@
+commit 93f4775e3a1973e0e158e7dac1f59b348714ba59
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 20 17:42:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 328 +++++++++++++++++++++++++-----------------
+ 1 file changed, 200 insertions(+), 128 deletions(-)
+
+commit bb728c44d7a57e71ba7ac0ff8356ff936fa3b9ed
+Merge: 374074cad5 179a545312
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Nov 20 11:19:31 2025 -0600
+
+    Merge pull request #20560 from cdelafuente-r7/feat/mitre/T1021
+    
+    Add T1021 "Remote Services" MITRE technique and sub-technique references
+
+ modules/auxiliary/admin/smb/change_password.rb                |  1 +
+ modules/auxiliary/admin/smb/check_dir_file.rb                 |  1 +
+ modules/auxiliary/admin/smb/delete_file.rb                    |  3 +++
+ modules/auxiliary/admin/smb/download_file.rb                  |  5 ++++-
+ modules/auxiliary/admin/smb/list_directory.rb                 |  1 +
+ modules/auxiliary/admin/smb/ms17_010_command.rb               |  1 +
+ modules/auxiliary/admin/smb/psexec_ntdsgrab.rb                |  3 ++-
+ modules/auxiliary/admin/smb/samba_symlink_traversal.rb        |  3 ++-
+ modules/auxiliary/admin/smb/upload_file.rb                    |  1 +
+ modules/auxiliary/admin/smb/webexec_command.rb                |  3 ++-
+ modules/auxiliary/admin/vnc/realvnc_41_bypass.rb              |  1 +
+ modules/auxiliary/scanner/smb/smb_login.rb                    |  1 +
+ modules/auxiliary/scanner/ssh/eaton_xpert_backdoor.rb         |  3 ++-
+ modules/auxiliary/scanner/ssh/fortinet_backdoor.rb            |  3 ++-
+ modules/auxiliary/scanner/ssh/juniper_backdoor.rb             |  3 ++-
+ modules/auxiliary/scanner/ssh/libssh_auth_bypass.rb           |  3 ++-
+ modules/auxiliary/scanner/ssh/ssh_enum_git_keys.rb            |  5 ++++-
+ modules/auxiliary/scanner/ssh/ssh_login.rb                    |  3 ++-
+ modules/auxiliary/scanner/ssh/ssh_login_pubkey.rb             |  5 ++++-
+ modules/auxiliary/scanner/telnet/telnet_login.rb              |  3 ++-
+ modules/auxiliary/scanner/telnet/telnet_ruggedcom.rb          |  3 ++-
+ modules/auxiliary/scanner/vnc/ard_root_pw.rb                  |  3 ++-
+ modules/auxiliary/scanner/vnc/vnc_login.rb                    |  3 ++-
+ modules/auxiliary/scanner/winrm/winrm_cmd.rb                  |  5 ++++-
+ modules/auxiliary/scanner/winrm/winrm_login.rb                |  3 ++-
+ modules/auxiliary/scanner/winrm/winrm_wql.rb                  |  5 ++++-
+ modules/exploits/apple_ios/ssh/cydia_default_ssh.rb           |  3 ++-
+ .../exploits/linux/http/acronis_cyber_infra_cve_2023_45249.rb |  3 ++-
+ modules/exploits/linux/http/f5_icontrol_exec.rb               |  3 ++-
+ .../http/nagios_xi_plugins_check_plugin_authenticated_rce.rb  |  5 ++++-
+ modules/exploits/linux/http/supervisor_xmlrpc_exec.rb         |  3 ++-
+ modules/exploits/linux/http/synology_dsm_smart_exec_auth.rb   | 11 ++++++-----
+ .../http/tp_link_sc2020n_authenticated_telnet_injection.rb    |  3 ++-
+ modules/exploits/linux/http/wazuh_auth_rce_cve_2025_24016.rb  |  3 ++-
+ modules/exploits/linux/ssh/ceragon_fibeair_known_privkey.rb   |  1 +
+ modules/exploits/linux/ssh/exagrid_known_privkey.rb           |  3 ++-
+ modules/exploits/linux/ssh/f5_bigip_known_privkey.rb          |  3 ++-
+ modules/exploits/linux/ssh/ibm_drm_a3user.rb                  |  3 ++-
+ .../linux/ssh/loadbalancerorg_enterprise_known_privkey.rb     |  3 ++-
+ modules/exploits/linux/ssh/mercurial_ssh_exec.rb              |  3 ++-
+ modules/exploits/linux/ssh/quantum_dxi_known_privkey.rb       |  3 ++-
+ modules/exploits/linux/ssh/solarwinds_lem_exec.rb             |  3 ++-
+ modules/exploits/linux/ssh/symantec_smg_ssh.rb                |  3 ++-
+ modules/exploits/linux/ssh/vmware_vdp_known_privkey.rb        |  1 +
+ modules/exploits/linux/ssh/vmware_vrni_known_privkey.rb       |  1 +
+ modules/exploits/linux/telnet/netgear_telnetenable.rb         |  3 ++-
+ modules/exploits/multi/http/glassfish_deployer.rb             |  3 ++-
+ modules/exploits/multi/http/orientdb_exec.rb                  |  3 ++-
+ modules/exploits/multi/http/splunk_mappy_exec.rb              |  3 ++-
+ modules/exploits/multi/http/tomcat_mgr_deploy.rb              |  3 ++-
+ modules/exploits/multi/http/tomcat_mgr_upload.rb              |  3 ++-
+ modules/exploits/multi/ssh/sshexec.rb                         |  3 ++-
+ modules/exploits/multi/vnc/vnc_keyboard_exec.rb               |  3 ++-
+ modules/exploits/solaris/telnet/fuser.rb                      |  2 +-
+ modules/exploits/solaris/telnet/ttyprompt.rb                  |  2 +-
+ .../exploits/windows/dcerpc/cve_2021_1675_printnightmare.rb   |  3 ++-
+ modules/exploits/windows/http/nscp_authenticated_rce.rb       |  3 ++-
+ modules/exploits/windows/local/powershell_remoting.rb         |  3 ++-
+ modules/exploits/windows/local/wmi.rb                         |  1 +
+ modules/exploits/windows/rdp/rdp_doublepulsar_rce.rb          |  3 ++-
+ modules/exploits/windows/smb/ipass_pipe_exec.rb               |  1 +
+ modules/exploits/windows/smb/smb_shadow.rb                    |  3 ++-
+ modules/exploits/windows/winrm/winrm_script_exec.rb           |  1 +
+ modules/post/windows/manage/forward_pageant.rb                |  5 ++++-
+ modules/post/windows/manage/pptp_tunnel.rb                    |  3 ++-
+ 65 files changed, 134 insertions(+), 55 deletions(-)
+
+commit 374074cad5eaab730cd313c930e4cafd7d3d1565
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 20 14:25:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit e2097ee1bc91065158801001b9b59d1fd7d40a80
+Merge: d79e8a3402 abaa4e6c7a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 20 15:15:22 2025 +0100
+
+    Land #20701, adds windows WSL registry persistence module
+    
+    Windows WSL registry persistence
+
+ .../exploit/windows/persistence/wsl/registry.md    | 168 ++++++++++++++
+ lib/msf/core/handler/reverse_ssh.rb                |   4 +-
+ .../exploits/windows/persistence/wsl/registry.rb   | 246 +++++++++++++++++++++
+ 3 files changed, 417 insertions(+), 1 deletion(-)
+
+commit d79e8a340275e01426f797269c5d4075eb2f4137
+Merge: 19ffa739b7 bdef9a6b46
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 20 14:36:20 2025 +0100
+
+    Land #20708, fixes msfdb startup
+    
+    Fix msfdb startup
+
+ msfdb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 19ffa739b7f52ef97eff4ad214702e88206e60ce
+Merge: 8f19fe532b eff40ba207
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 20 11:54:37 2025 +0100
+
+    Land #20711, fixes description in AppendExit datastore option
+    
+    Msf::Payload::Linux::Prepends: Fix AppendExit description
+
+ lib/msf/core/payload/linux/prepends.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit abaa4e6c7a13d19a40827e0930ad9b75d12a60c2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 20 11:27:34 2025 +0100
+
+    Fixes cmd_exec call
+
+ modules/exploits/windows/persistence/wsl/registry.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eff40ba207ae5f9c74a6ca26e630b633023d0cb5
+Author: bcoles <bcoles@github>
+Date:   Thu Nov 20 18:30:44 2025 +1100
+
+    Msf::Payload::Linux::Prepends: Fix AppendExit description
+
+ lib/msf/core/payload/linux/prepends.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
