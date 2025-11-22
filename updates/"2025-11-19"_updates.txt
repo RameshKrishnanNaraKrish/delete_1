@@ -1,0 +1,66 @@
+commit e670167fe11b5b10125b8d5136113396d18b3c3c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 21 20:39:02 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 167 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 167 insertions(+)
+
+commit 21777b8969561dd824afc789332c6672184d2270
+Merge: 8f2525aba7 098af341f9
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Nov 21 14:28:28 2025 -0600
+
+    Merge pull request #20685 from msutovsky-r7/persistence/windows/notepad++_persistence
+    
+    Adds notepad++ persistence module for Windows
+
+ .../persistence/notepadpp_plugin_persistence.md    | 96 ++++++++++++++++++++++
+ .../persistence/notepadpp_plugin_persistence.rb    | 94 +++++++++++++++++++++
+ 2 files changed, 190 insertions(+)
+
+commit 8f2525aba7ffb7ef5cdd95ca18510f729c52ac7d
+Merge: cb68802c7b 8702256ec2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Nov 21 21:20:22 2025 +0100
+
+    Land #20705, adds modules for Flowise RCEs (CVE-2025-59528, CVE-2025-8943)
+    
+    Add Flowise RCE exploits (CVE-2025-59528, CVE-2025-8943)
+
+ .../exploit/multi/http/flowise_custommcp_rce.md    | 215 +++++++++++++++++++
+ .../modules/exploit/multi/http/flowise_js_rce.md   | 235 +++++++++++++++++++++
+ lib/msf/core/exploit/remote/http/flowise.rb        | 174 +++++++++++++++
+ .../exploits/multi/http/flowise_custommcp_rce.rb   | 123 +++++++++++
+ modules/exploits/multi/http/flowise_js_rce.rb      | 143 +++++++++++++
+ 5 files changed, 890 insertions(+)
+
+commit 8702256ec2aaabfc1bc63f7f2a7daed7e447a097
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Fri Nov 21 19:34:33 2025 +0100
+
+    Remove manual substitution and add BadChars for backslash and quote in flowise_js_rce
+
+ modules/exploits/multi/http/flowise_js_rce.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit cb68802c7b7a36c9e844ad8bcce75aaf07174c0d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 21 16:45:50 2025 +0000
+
+    Bump version of framework to 6.4.100
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 098af341f95ec5d2b94328beba0b61760baa7cd4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Nov 21 13:04:52 2025 +0100
+
+    Fix payload name escaping
+
+ modules/exploits/windows/persistence/notepadpp_plugin_persistence.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
