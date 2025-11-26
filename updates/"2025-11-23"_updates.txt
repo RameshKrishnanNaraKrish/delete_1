@@ -1,0 +1,126 @@
+commit 7325d2a265761f4bbbd7aa518d879976c11c510c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 25 20:23:49 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 77 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 74 insertions(+), 3 deletions(-)
+
+commit e998b91aeed38b487f34d81b8411ed57d2e60e9a
+Merge: 766150ae27 fa03ac8b66
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Nov 25 14:14:31 2025 -0600
+
+    Merge pull request #20717 from sfewer-r7/fortiweb-exploit-rce
+    
+    Add exploit module for Fortinet FortiWeb (CVE-2025-64446 + CVE-2025-58034)
+
+ .../exploit/linux/http/fortinet_fortiweb_rce.md    | 202 +++++++++++
+ .../admin/http/fortinet_fortiweb_create_admin.rb   |   3 +-
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   | 404 +++++++++++++++++++++
+ 3 files changed, 608 insertions(+), 1 deletion(-)
+
+commit 766150ae27126e436a81a59466194bfcf645e273
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 25 20:09:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 138 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 136 insertions(+), 2 deletions(-)
+
+commit 1912fe2a95e8834fcb16f0f317f172925d291557
+Merge: 3dfa649591 d1fe17747c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Nov 25 13:59:44 2025 -0600
+
+    Merge pull request #20702 from Zedeldi/igel-os-modules
+    
+    IGEL OS modules
+
+ .../exploit/linux/local/igel_network_priv_esc.md   |  57 +++++++++
+ .../exploit/linux/persistence/igel_persistence.md  |  56 +++++++++
+ .../modules/post/linux/gather/igel_dump_file.md    |  55 +++++++++
+ .../exploits/linux/local/igel_network_priv_esc.rb  | 120 +++++++++++++++++++
+ .../exploits/linux/persistence/igel_persistence.rb | 133 +++++++++++++++++++++
+ modules/post/linux/gather/igel_dump_file.rb        |  77 ++++++++++++
+ 6 files changed, 498 insertions(+)
+
+commit 3dfa6495913d22bd0e62c0aee5deb3020ff138da
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 25 17:20:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 68 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 3b799a50e89cff52fc271bd15ee8a5fb0ea8a7f0
+Merge: 2eb71ad31c d510adb13c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Nov 25 18:10:57 2025 +0100
+
+    Merge pull request #20703 from bcoles/linux-riscv-chmod-payloads
+    
+    Add Linux RISC-V chmod payloads
+
+ modules/payloads/singles/linux/riscv32le/chmod.rb | 73 +++++++++++++++++++++++
+ modules/payloads/singles/linux/riscv64le/chmod.rb | 73 +++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                     | 20 +++++++
+ 3 files changed, 166 insertions(+)
+
+commit 2eb71ad31cfc97b12da3237d2d9ce22b07fc7b38
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 25 15:33:53 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 47b742ba0cb9bd80c0373cd73120f50452845b53
+Merge: 7e454475e4 e99c1f648d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Nov 25 16:23:39 2025 +0100
+
+    Land #20482, fixes bug in HTTP-based login scanners
+    
+    Fix HTTP-based login scanners when using SSL with custom port
+
+ lib/msf/core/exploit/remote/http_client.rb   |  1 +
+ modules/auxiliary/scanner/http/http_login.rb | 58 ++++++++++++++--------------
+ 2 files changed, 29 insertions(+), 30 deletions(-)
+
+commit 7e454475e450251e176ae693613536c01e8d09f2
+Merge: ebd5b129bc f842bb7169
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 25 13:03:10 2025 +0000
+
+    Merge pull request #20721 from cpomfret-r7/fix-nexpose-api-error-when-site-has-credential
+    
+    Fix issue when scanning via Nexpose plugin when Site has Credential
+
+ Gemfile.lock                 |  8 ++++
+ metasploit-framework.gemspec |  3 +-
+ plugins/nexpose.rb           | 90 ++++++++++++++++++++++++++++++++------------
+ 3 files changed, 76 insertions(+), 25 deletions(-)
+
+commit fa03ac8b66010902ad535560be6f0bd3f4486f06
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Tue Nov 25 11:25:41 2025 +0000
+
+    on 7.4.8 the command nohup is not available. we must execute our payload in a new session, so we use a python stub to essentially call setsid. This has been tested to work on both 8.0.1 and 7.4.8. Teh payload cmd/unix/reverse_python isnot working as it previously was, so I am removing from the list of confirmed paylaods. The other two, cmd/unix/reverse_bash and cmd/unix/reverse_openssl work fine on both versions
+
+ .../exploit/linux/http/fortinet_fortiweb_rce.md    |  1 -
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   | 22 ++++++++++++++++------
+ 2 files changed, 16 insertions(+), 7 deletions(-)
+
+commit 8a054b74db905510c499e27faeae34d3f987b112
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Tue Nov 25 11:22:43 2025 +0000
+
+    improve check logic to actualy parse JSON result for expected reply, tested against 8.0.1 and 7.4.8
+
+ modules/exploits/linux/http/fortinet_fortiweb_rce.rb | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
