@@ -1,0 +1,9 @@
+commit db3ac6acc6bd32a8ad20f3cb8da67ad4085e0976
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Nov 26 22:51:40 2025 +0000
+
+    Fix broken module metadata
+
+ modules/payloads/singles/linux/riscv32le/chmod.rb | 4 ++--
+ modules/payloads/singles/linux/riscv64le/chmod.rb | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
