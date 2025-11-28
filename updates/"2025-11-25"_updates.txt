@@ -1,0 +1,63 @@
+commit f9b61890b57b66e39c6d23aff198f74afddf8a3e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 27 14:26:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 62 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+
+commit b6330acb126a51216090313b64e9b3a587c66911
+Merge: 99533752f3 819b259b4c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 27 15:16:58 2025 +0100
+
+    Land #20718, adds module for Monsta FTP RCE (CVE-2025-34299)
+    
+    Add Monsta FTP downloadFile RCE (CVE-2025-34299)
+
+ .../multi/http/monsta_ftp_downloadfile_rce.md      | 222 ++++++++++++++++++
+ .../multi/http/monsta_ftp_downloadfile_rce.rb      | 252 +++++++++++++++++++++
+ 2 files changed, 474 insertions(+)
+
+commit 99533752f30fa16a7b66c9d07caecb3704098cda
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 27 13:52:30 2025 +0000
+
+    Bump version of framework to 6.4.101
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 5 ++++-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 6 insertions(+), 3 deletions(-)
+
+commit 1153f3cf6ae125c330de6cc6d46f72d85ee3d3c3
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Nov 27 14:33:57 2025 +0100
+
+    Fixing regex
+
+ modules/auxiliary/gather/twonky_authbypass_logleak.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 205221fba9392392fa46f65dfb3bcc76dd757f7d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 27 00:33:37 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 4c5d086aeb822444f75d1fe4bf1eeaae779ef93b
+Merge: 7325d2a265 db3ac6acc6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 27 00:07:11 2025 +0000
+
+    Merge pull request #20731 from adfoster-r7/fix-broken-module-metadata
+    
+    Fix broken module metadata
+
+ modules/payloads/singles/linux/riscv32le/chmod.rb | 4 ++--
+ modules/payloads/singles/linux/riscv64le/chmod.rb | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
