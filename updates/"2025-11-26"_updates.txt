@@ -1,0 +1,21 @@
+commit 35479840920ac27c76476460815796ce6191e462
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 28 06:51:42 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit d7c307bb69095d3ee83b8cfcc74893aa4b6a9d77
+Merge: f9b61890b5 1153f3cf6a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Nov 28 07:35:30 2025 +0100
+
+    Land #20709, adds module for Twonky Server Authentication Bypass (CVE-2025-13315,CVE-2025-13316)
+    
+    Auxiliary module for CVE-2025-13315/CVE-2025-13316 - Twonky Server Log Leak Authentication Bypass
+
+ .../auxiliary/gather/twonky_authbypass_logleak.md  |  57 ++++++++
+ .../auxiliary/gather/twonky_authbypass_logleak.rb  | 154 +++++++++++++++++++++
+ 2 files changed, 211 insertions(+)
