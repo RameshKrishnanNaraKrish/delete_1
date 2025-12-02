@@ -1,0 +1,22 @@
+commit ce2dc0bb0351f367f5a1db8f8185937c1e6060b8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Dec 1 11:53:49 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 70 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
+
+commit d20345263bf1b1ba3a99dc02d4c358ea77200567
+Merge: 3547984092 c467330892
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Dec 1 12:43:42 2025 +0100
+
+    Merge pull request #20712 from bcoles/linux-riscv-tcp-reverse-shell
+    
+    Add Linux RISC-V 32-bit/64-bit TCP reverse shell payloads
+
+ .../singles/linux/riscv32le/shell_reverse_tcp.rb   | 136 ++++++++++++++++
+ .../singles/linux/riscv64le/shell_reverse_tcp.rb   | 174 +++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  20 +++
+ 3 files changed, 330 insertions(+)
