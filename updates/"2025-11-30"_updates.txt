@@ -1,0 +1,79 @@
+commit c425f1519cd1aaa6d29244b87e5f011580a87231
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Nov 25 14:16:58 2025 -0500
+
+    Support relaying to MSSQL server that require TLS
+
+ lib/msf/core/exploit/remote/smb/relay/ntlm/target/mssql/client.rb | 2 ++
+ lib/msf/core/exploit/remote/smb/relay_server.rb                   | 2 ++
+ 2 files changed, 4 insertions(+)
+
+commit db1e0187c3ea2108f53f9b9babc4e7235ae3cb8d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Nov 5 14:50:25 2025 -0500
+
+    Fix the PostreSQL SSL tests for #starttls method
+
+ spec/lib/rex/proto/postgresql/client_spec.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 66a4aba1ad82a90cb58360f71d0595e497d3da87
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Nov 5 14:18:20 2025 -0500
+
+    Remove the old MS-TDS SSL Proxy code
+
+ lib/metasploit/framework/mssql/tdssslproxy.rb | 145 --------------------------
+ lib/rex/proto/mssql/client.rb                 |  33 ++----
+ 2 files changed, 9 insertions(+), 169 deletions(-)
+
+commit 9c1f54556299fd33fae9d8cda344353884394e45
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Nov 4 15:52:27 2025 -0500
+
+    Initialize the info for web sockets
+
+ lib/msf/core/handler/bind_aws_ssm.rb | 3 ++-
+ lib/rex/proto/http/web_socket.rb     | 6 ++++--
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+commit d4ba707fa5239a032b1500fc5b635d675fd4d37f
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Nov 4 17:51:47 2025 -0500
+
+    Add the new encrypted MsTds channel
+
+ lib/rex/proto/ms_tds/channel.rb | 62 +++++++++++++++++++++++++++++++++++++++++
+ lib/rex/proto/mssql/client.rb   | 50 +++++++++++++++++++++++++--------
+ 2 files changed, 100 insertions(+), 12 deletions(-)
+
+commit dcd3a62e884cd3fb72a888fa7f793d1e7fb00a6e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Nov 4 17:51:21 2025 -0500
+
+    Switch to the new fiber relay manager
+
+ Gemfile.lock                                                     | 6 +++---
+ lib/rex/post/channel/socket_abstraction.rb                       | 6 ------
+ lib/rex/post/meterpreter/channels/pools/stream_pool.rb           | 9 ---------
+ lib/rex/post/meterpreter/channels/socket_abstraction.rb          | 9 ---------
+ .../extensions/stdapi/net/socket_subsystem/tcp_client_channel.rb | 6 ++++++
+ 5 files changed, 9 insertions(+), 27 deletions(-)
+
+commit 3908fd4829f86c6eb8dc91c787014a95a454e36d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Oct 24 10:45:15 2025 -0400
+
+    Use the new #starttls method
+
+ lib/postgres/postgres-pr/connection.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 8e3a97b3e069b42164b3de7165153512206f2019
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Oct 24 10:39:09 2025 -0400
+
+    Don't open pass_file if it's blank
+
+ lib/metasploit/framework/credential_collection.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
