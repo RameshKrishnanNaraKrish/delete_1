@@ -1,0 +1,79 @@
+commit 81a1808b5d437a44995bae0e812b0a3995a618ba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Dec 3 21:21:03 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 0f795d715e19bc12f2291b1edb9db4cf2c1bc420
+Merge: 81e23bdbdd 98dd33a3cd
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Dec 3 16:12:17 2025 -0500
+
+    Merge pull request #20741 from SaiSakthidar/remove-cain
+    
+    Remove CAIN
+
+ .../modules/auxiliary/server/capture/mysql.md      |  4 ----
+ .../modules/auxiliary/server/capture/smb.md        |  4 ----
+ .../modules/auxiliary/server/relay/smb_to_ldap.md  |  4 ----
+ .../modules/auxiliary/server/relay/smb_to_mssql.md |  4 ----
+ .../modules/exploit/windows/smb/smb_relay.md       |  4 ----
+ .../core/exploit/remote/smb/server/hash_capture.rb | 15 --------------
+ modules/auxiliary/server/capture/http_ntlm.rb      | 22 --------------------
+ modules/auxiliary/server/capture/mssql.rb          | 24 ----------------------
+ modules/auxiliary/server/capture/mysql.rb          | 17 +--------------
+ modules/auxiliary/server/capture/sip.rb            | 19 +----------------
+ modules/auxiliary/server/capture/smb.rb            |  4 +---
+ .../windows/fileformat/cain_abel_4918_rdp.rb       |  2 +-
+ plugins/capture.rb                                 |  2 --
+ 13 files changed, 4 insertions(+), 121 deletions(-)
+
+commit 98dd33a3cdc056bb12eb57e0435a56e5b3e10b7c
+Author: SaiSakthidar <3.youth.sai@gmail.com>
+Date:   Sun Nov 30 23:39:52 2025 +0530
+
+    Remove CAIN
+
+ .../modules/auxiliary/server/capture/mysql.md      |  4 ----
+ .../modules/auxiliary/server/capture/smb.md        |  4 ----
+ .../modules/auxiliary/server/relay/smb_to_ldap.md  |  4 ----
+ .../modules/auxiliary/server/relay/smb_to_mssql.md |  4 ----
+ .../modules/exploit/windows/smb/smb_relay.md       |  4 ----
+ .../core/exploit/remote/smb/server/hash_capture.rb | 15 --------------
+ modules/auxiliary/server/capture/http_ntlm.rb      | 22 --------------------
+ modules/auxiliary/server/capture/mssql.rb          | 24 ----------------------
+ modules/auxiliary/server/capture/mysql.rb          | 17 +--------------
+ modules/auxiliary/server/capture/sip.rb            | 19 +----------------
+ modules/auxiliary/server/capture/smb.rb            |  4 +---
+ .../windows/fileformat/cain_abel_4918_rdp.rb       |  2 +-
+ plugins/capture.rb                                 |  2 --
+ 13 files changed, 4 insertions(+), 121 deletions(-)
+
+commit 81e23bdbdd2f38c7a81c473931763b63408d29dd
+Merge: ce2dc0bb03 c425f1519c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Dec 2 16:03:31 2025 -0800
+
+    Merge pull request #20677 from zeroSteiner/fix/issue/18745
+    
+    Support Encrypted MSSQL Sessions
+
+ Gemfile.lock                                       |   6 +-
+ lib/metasploit/framework/credential_collection.rb  |   2 +-
+ lib/metasploit/framework/mssql/tdssslproxy.rb      | 145 ---------------------
+ .../remote/smb/relay/ntlm/target/mssql/client.rb   |   2 +
+ lib/msf/core/exploit/remote/smb/relay_server.rb    |   2 +
+ lib/msf/core/handler/bind_aws_ssm.rb               |   3 +-
+ lib/postgres/postgres-pr/connection.rb             |   3 +-
+ lib/rex/post/channel/socket_abstraction.rb         |   6 -
+ .../post/meterpreter/channels/pools/stream_pool.rb |   9 --
+ .../meterpreter/channels/socket_abstraction.rb     |   9 --
+ .../net/socket_subsystem/tcp_client_channel.rb     |   6 +
+ lib/rex/proto/http/web_socket.rb                   |   6 +-
+ lib/rex/proto/ms_tds/channel.rb                    |  62 +++++++++
+ lib/rex/proto/mssql/client.rb                      |  75 ++++++-----
+ spec/lib/rex/proto/postgresql/client_spec.rb       |   3 +-
+ 15 files changed, 127 insertions(+), 212 deletions(-)
