@@ -1,0 +1,31 @@
+commit adc3d2e175d6d2b4a403aeae77b82d028ba8b082
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 4 12:05:42 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 4d52e224803ce8c3fe24e91a7b6d3db893bac01b
+Merge: 81a1808b5d 296e931b7d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Dec 4 12:56:04 2025 +0100
+
+    Merge pull request #20720 from Chocapikk/wp-ai-engine
+    
+    Add WordPress AI Engine MCP RCE exploit (CVE-2025-11749)
+
+ data/wordlists/wp-exploitable-plugins.txt          |   1 +
+ .../exploit/multi/http/wp_ai_engine_mcp_rce.md     | 198 ++++++++++++++
+ .../exploits/multi/http/wp_ai_engine_mcp_rce.rb    | 292 +++++++++++++++++++++
+ 3 files changed, 491 insertions(+)
+
+commit 296e931b7dc81f6bc6f05b9a2a8c0f42561cd6ec
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Dec 4 01:39:25 2025 +0100
+
+    Fix WordPress lab permissions in documentation
+
+ .../modules/exploit/multi/http/wp_ai_engine_mcp_rce.md    | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
