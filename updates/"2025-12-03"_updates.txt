@@ -1,0 +1,75 @@
+commit 0fd8f0984e10a135c000d1fb8797d76d62fb24f7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Dec 5 17:16:16 2025 +0000
+
+    Bump version of framework to 6.4.102
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 8 ++++----
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 97c9e8274fd606d8680452134ef48ce31b2194fd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Dec 5 16:17:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 7e48e12ed0e98f5346418a6271ffe73634e4aa58
+Merge: d66e93afc0 a5e3a5ea85
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Dec 5 11:04:24 2025 -0500
+
+    Merge pull request #20716 from bcoles/linux-riscv-prepends
+    
+    Add Linux RISC-V 32-bit/64-bit prepends
+
+ lib/msf/core/payload/linux/riscv32le/prepends.rb   | 77 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/riscv64le/prepends.rb   | 77 ++++++++++++++++++++++
+ modules/payloads/singles/linux/riscv32le/reboot.rb |  1 +
+ modules/payloads/singles/linux/riscv64le/reboot.rb |  1 +
+ 4 files changed, 156 insertions(+)
+
+commit d66e93afc0ebd59275023e0ba50a50e715671073
+Merge: c77578dbe8 0e2af23287
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Dec 5 10:55:52 2025 -0500
+
+    Merge pull request #20658 from jheysel-r7/feat/mod/cert_details_update
+    
+    Add Updates to LDAP ESC Vulnerable Cert Finder
+
+ .../Attacking-AD-CS-ESC-Vulnerabilities.md         |   2 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  37 ++++-
+ .../admin/dcerpc/esc_update_ldap_object.rb         |   5 +-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 181 ++++++++++++++++++---
+ 4 files changed, 193 insertions(+), 32 deletions(-)
+
+commit c77578dbe81e5f5b748c86e3b4d292d369e6363b
+Merge: adc3d2e175 5fc6af500f
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Dec 5 10:55:06 2025 -0500
+
+    Merge pull request #20681 from jheysel-r7/fix/test/ldap_whoami_error
+    
+    Remove ldap_esc_vulnerable_cert_finder acceptance test
+
+ spec/acceptance/ldap_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0e2af232872319d375379c148dc7aa36feba63e1
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Oct 6 10:39:20 2025 -0700
+
+    Add Updates to LDAP ESC Vulnerable Cert Finder
+    
+    Add CertificateAuthorityRhost to avoid DNS failures
+
+ .../Attacking-AD-CS-ESC-Vulnerabilities.md         |   2 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  37 ++++-
+ .../admin/dcerpc/esc_update_ldap_object.rb         |   5 +-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 181 ++++++++++++++++++---
+ 4 files changed, 193 insertions(+), 32 deletions(-)
