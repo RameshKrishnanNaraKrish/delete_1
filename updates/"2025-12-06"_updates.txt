@@ -1,0 +1,86 @@
+commit ba648b33710d0cb48c1fbd47ec0b4832b52b6605
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Dec 8 23:52:15 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit caa672231b687a874c1ce78552f2f482c289113d
+Merge: 0e71557829 795c38c524
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Dec 8 17:43:49 2025 -0600
+
+    Merge pull request #20736 from sfewer-r7/fortiweb-exploit-rce-v6-support
+    
+    Update the FortiWeb exploit module (CVE-2025-64446 + CVE-2025-58034) to target older unsupported versions 6.x
+
+ .../exploit/linux/http/fortinet_fortiweb_rce.md    | 161 +++++++++++++++-
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   | 202 ++++++++++++++++++---
+ 2 files changed, 329 insertions(+), 34 deletions(-)
+
+commit 0e71557829c73213a55a2d4924f122759f5b9494
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Dec 8 21:50:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit 66279422d10e90e8b76e871d43bb287f22495aeb
+Merge: 2777178962 bdd7cb5365
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Dec 8 13:41:49 2025 -0800
+
+    Merge pull request #20747 from vognik/2025-55182
+    
+    Add CVE-2025-55182 / CVE-2025-66478
+
+ .../Dockerfile                                     |  14 ++
+ .../index.html                                     |  12 ++
+ .../next.config.js                                 |   6 +
+ .../package.json                                   |  22 ++++
+ .../src/app/actions.tsx                            |   5 +
+ .../src/app/layout.tsx                             |  11 ++
+ .../src/app/page.tsx                               |  11 ++
+ .../tsconfig.json                                  |  26 ++++
+ .../vite.config.js                                 |   6 +
+ .../http/react2shell_unauth_rce_cve_2025_55102.md  | 106 +++++++++++++++
+ .../http/react2shell_unauth_rce_cve_2025_55102.rb  | 146 +++++++++++++++++++++
+ 11 files changed, 365 insertions(+)
+
+commit 2777178962d78c44593b38597480ddab1d9bb0fe
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Dec 8 15:53:57 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 42 ++++++------------------------------------
+ 1 file changed, 6 insertions(+), 36 deletions(-)
+
+commit 2a53d9c86692ae9e3a631c35c32a8152176acfd4
+Merge: 0fd8f0984e 2de3623274
+Author: cpomfret-r7 <chris_pomfret@rapid7.com>
+Date:   Mon Dec 8 15:44:58 2025 +0000
+
+    Merge pull request #20704 from dwelch-r7/combine-ssh-login-modules
+    
+    The module `auxiliary/scanner/ssh/ssh_login_pubkey` has been removed.
+    Its functionality has been moved into `auxiliary/scanner/ssh/ssh_login`.
+
+ lib/metasploit/framework/key_collection.rb        | 111 +++++++
+ modules/auxiliary/scanner/ssh/ssh_login.rb        | 168 ++++++++++-
+ modules/auxiliary/scanner/ssh/ssh_login_pubkey.rb | 334 ----------------------
+ 3 files changed, 272 insertions(+), 341 deletions(-)
+
+commit bdd7cb5365f1f6474c46a641f95ee9b1b38399a2
+Author: vognik <vognik@tuta.io>
+Date:   Mon Dec 8 01:32:43 2025 -0800
+
+    upgraded payload
+
+ .../http/react2shell_unauth_rce_cve_2025_55102.md  |  9 +++--
+ .../http/react2shell_unauth_rce_cve_2025_55102.rb  | 43 +++++++++-------------
+ 2 files changed, 22 insertions(+), 30 deletions(-)
