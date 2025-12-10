@@ -1,0 +1,65 @@
+commit 47771a67892a9fa6b0fcbfeb11de9e1e4ec703c3
+Merge: 3e3eb12c57 1a8e88c054
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Dec 9 10:32:33 2025 -0800
+
+    Merge pull request #20760 from sfewer-r7/fix-55182
+    
+    fix a typo with the use of CVE-2025-55102, it should be CVE-2025-55182
+
+ .../Dockerfile                                     |  0
+ .../index.html                                     |  0
+ .../next.config.js                                 |  0
+ .../package.json                                   |  0
+ .../src/app/actions.tsx                            |  0
+ .../src/app/layout.tsx                             |  0
+ .../src/app/page.tsx                               |  0
+ .../tsconfig.json                                  |  0
+ .../vite.config.js                                 |  0
+ db/modules_metadata_base.json                      |  8 ++---
+ ...md => react2shell_unauth_rce_cve_2025_55182.md} | 34 +++++++++++-----------
+ ...rb => react2shell_unauth_rce_cve_2025_55182.rb} |  0
+ 12 files changed, 21 insertions(+), 21 deletions(-)
+
+commit 3e3eb12c571aedc9acf9b15aa8085d22590aa32d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Dec 9 12:15:57 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 327 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 321 insertions(+), 6 deletions(-)
+
+commit 94892966641e6ac0bf61d90af94b9d89dd567c33
+Merge: ba648b3371 f8ae3912be
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 9 07:04:14 2025 -0500
+
+    Merge pull request #20758 from msutovsky-r7/payload/ppc/fetch_payloads
+    
+    Adds PPC reverse payloads to fetch adapters
+
+ modules/payloads/singles/linux/ppc/shell_bind_tcp.rb    | 2 +-
+ modules/payloads/singles/linux/ppc/shell_find_port.rb   | 2 +-
+ modules/payloads/singles/linux/ppc/shell_reverse_tcp.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 1a8e88c054d36740aed9bacd525725cbd6c7ccfe
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Tue Dec 9 09:05:59 2025 +0000
+
+    fix a typo with the use of CVE-2025-55102, it should be CVE-2025-55182
+
+ .../Dockerfile                                     |  0
+ .../index.html                                     |  0
+ .../next.config.js                                 |  0
+ .../package.json                                   |  0
+ .../src/app/actions.tsx                            |  0
+ .../src/app/layout.tsx                             |  0
+ .../src/app/page.tsx                               |  0
+ .../tsconfig.json                                  |  0
+ .../vite.config.js                                 |  0
+ db/modules_metadata_base.json                      |  8 ++---
+ ...md => react2shell_unauth_rce_cve_2025_55182.md} | 34 +++++++++++-----------
+ ...rb => react2shell_unauth_rce_cve_2025_55182.rb} |  0
+ 12 files changed, 21 insertions(+), 21 deletions(-)
