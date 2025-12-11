@@ -1,0 +1,230 @@
+commit c8773660fb40fcf1b0e7e0b589785e93a95980a1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Dec 10 17:05:19 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 0c921ea2e745f485cb28502c7b78beae9f44c7a3
+Merge: ba258777f2 e9467cd1e3
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Dec 10 08:56:47 2025 -0800
+
+    Merge pull request #20725 from Chocapikk/magento
+    
+    Add Magento SessionReaper (CVE-2025-54236) exploit module
+
+ .../exploit/multi/http/magento_sessionreaper.md    | 405 +++++++++++++++++++++
+ .../exploits/multi/http/magento_sessionreaper.rb   | 272 ++++++++++++++
+ 2 files changed, 677 insertions(+)
+
+commit ba258777f219d842b992383d6b6da65c45c01550
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Dec 10 16:45:52 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit d86c5f0908420bd03bd6d9d6626ccf1cf0a74dab
+Merge: 2b58dec0f3 be4c3c1a91
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Dec 10 08:37:11 2025 -0800
+
+    Merge pull request #20746 from Chocapikk/king-addons
+    
+    Add WordPress King Addons privilege escalation exploit (CVE-2025-8489)
+
+ data/wordlists/wp-exploitable-plugins.txt          |   1 +
+ .../http/wp_king_addons_privilege_escalation.md    | 206 ++++++++++++++++++++
+ .../http/wp_king_addons_privilege_escalation.rb    | 214 +++++++++++++++++++++
+ 3 files changed, 421 insertions(+)
+
+commit 2b58dec0f36bcdd6dd6e49db7700a3a408eec9c3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Dec 10 13:11:54 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 64 insertions(+), 1 deletion(-)
+
+commit 27557e149d87e78b8c3232747a96ebfbf1a11f70
+Merge: 47771a6789 efcb07a53f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 10 08:02:26 2025 -0500
+
+    Merge pull request #20682 from bcoles/loongarch64
+    
+    Add support for LoongArch64 payloads
+
+ .../src/elf/dll/elf_dll_loongarch64_template.s     |  99 +++++++++++++++
+ .../src/elf/exe/elf_loongarch64_template.s         |  42 +++++++
+ data/templates/template_loongarch64_linux.bin      | Bin 0 -> 120 bytes
+ data/templates/template_loongarch64_linux_dll.bin  | Bin 0 -> 240 bytes
+ lib/msf/util/exe.rb                                |  33 +++++
+ modules/nops/loongarch64/simple.rb                 | 135 +++++++++++++++++++++
+ .../payloads/singles/linux/loongarch64/reboot.rb   |  48 ++++++++
+ spec/modules/payloads_spec.rb                      |  12 +-
+ 8 files changed, 368 insertions(+), 1 deletion(-)
+
+commit efcb07a53fb10f22374a54b3237b17a92bbe92f2
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 10 13:11:21 2025 +0100
+
+    fix: restoring missing end after merge
+
+ spec/modules/payloads_spec.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit d6560b951f748e0b6cba256eaed8e0b6bf1d7ca8
+Merge: 2e000c2b1c 47771a6789
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 10 07:08:40 2025 -0500
+
+    Merge branch 'master' into loongarch64
+
+ Gemfile.lock                                       |   16 +-
+ LICENSE_GEMS                                       |   11 +-
+ .../Dockerfile                                     |   14 +
+ .../index.html                                     |   12 +
+ .../next.config.js                                 |    6 +
+ .../package.json                                   |   22 +
+ .../src/app/actions.tsx                            |    5 +
+ .../src/app/layout.tsx                             |   11 +
+ .../src/app/page.tsx                               |   11 +
+ .../tsconfig.json                                  |   26 +
+ .../vite.config.js                                 |    6 +
+ data/wordlists/wp-exploitable-plugins.txt          |    1 +
+ db/modules_metadata_base.json                      | 1283 ++++++++++++++++++--
+ .../Attacking-AD-CS-ESC-Vulnerabilities.md         |    2 +-
+ .../auxiliary/gather/twonky_authbypass_logleak.md  |   57 +
+ .../auxiliary/scanner/mssql/mssql_hashdump.md      |   23 +-
+ .../modules/auxiliary/scanner/mssql/mssql_login.md |    1 -
+ .../modules/auxiliary/server/capture/mysql.md      |    4 -
+ .../modules/auxiliary/server/capture/smb.md        |    4 -
+ .../modules/auxiliary/server/relay/smb_to_ldap.md  |    8 +-
+ .../modules/auxiliary/server/relay/smb_to_mssql.md |   76 ++
+ .../exploit/linux/http/fortinet_fortiweb_rce.md    |  345 ++++++
+ .../exploit/linux/local/igel_network_priv_esc.md   |   57 +
+ .../exploit/linux/persistence/igel_persistence.md  |   56 +
+ .../exploit/multi/http/flowise_custommcp_rce.md    |  215 ++++
+ .../modules/exploit/multi/http/flowise_js_rce.md   |  235 ++++
+ .../multi/http/monsta_ftp_downloadfile_rce.md      |  222 ++++
+ .../http/react2shell_unauth_rce_cve_2025_55182.md  |  106 ++
+ .../exploit/multi/http/wp_ai_engine_mcp_rce.md     |  198 +++
+ .../persistence/notepadpp_plugin_persistence.md    |   96 ++
+ .../modules/exploit/windows/smb/smb_relay.md       |    4 -
+ .../modules/post/linux/gather/igel_dump_file.md    |   55 +
+ lib/metasploit/framework/credential_collection.rb  |    2 +-
+ lib/metasploit/framework/key_collection.rb         |  111 ++
+ lib/metasploit/framework/login_scanner/mssql.rb    |   17 +-
+ lib/metasploit/framework/mssql/tdssslproxy.rb      |  145 ---
+ lib/metasploit/framework/version.rb                |    2 +-
+ lib/msf/base/sessions/meterpreter.rb               |    1 +
+ lib/msf/core/auxiliary/auth_brute.rb               |    2 +-
+ lib/msf/core/exploit/remote/http/flowise.rb        |  174 +++
+ lib/msf/core/exploit/remote/http_client.rb         |    1 +
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   37 +-
+ lib/msf/core/exploit/remote/mssql.rb               |    3 +-
+ .../exploit/remote/smb/relay/ntlm/server_client.rb |    2 +
+ .../remote/smb/relay/ntlm/target/mssql/client.rb   |   84 ++
+ lib/msf/core/exploit/remote/smb/relay_server.rb    |    2 +
+ .../core/exploit/remote/smb/server/hash_capture.rb |   15 -
+ lib/msf/core/handler/bind_aws_ssm.rb               |    3 +-
+ lib/msf/core/optional_session/mssql.rb             |    4 +-
+ lib/msf/core/payload/linux/riscv32le/prepends.rb   |   77 ++
+ lib/msf/core/payload/linux/riscv64le/prepends.rb   |   77 ++
+ lib/postgres/postgres-pr/connection.rb             |    3 +-
+ lib/rex/post/channel/socket_abstraction.rb         |    6 -
+ .../post/meterpreter/channels/pools/stream_pool.rb |    9 -
+ .../meterpreter/channels/socket_abstraction.rb     |    9 -
+ .../net/socket_subsystem/tcp_client_channel.rb     |    6 +
+ .../extensions/stdapi_audio/stdapi_audio.rb        |    1 +
+ .../extensions/stdapi_net/stdapi_net.rb            |    1 +
+ .../extensions/stdapi_railgun/stdapi_railgun.rb    |    1 +
+ .../extensions/stdapi_sys/stdapi_sys.rb            |    1 +
+ .../meterpreter/extensions/stdapi_ui/stdapi_ui.rb  |    1 +
+ .../extensions/stdapi_webcam/stdapi_webcam.rb      |    1 +
+ lib/rex/proto/http/web_socket.rb                   |    6 +-
+ lib/rex/proto/ms_tds.rb                            |    8 +
+ lib/rex/proto/ms_tds/channel.rb                    |   62 +
+ lib/rex/proto/ms_tds/ms_tds_header.rb              |   16 +
+ lib/rex/proto/ms_tds/ms_tds_login7.rb              |  216 ++++
+ lib/rex/proto/ms_tds/ms_tds_login7_password.rb     |   31 +
+ lib/rex/proto/ms_tds/ms_tds_status.rb              |   17 +
+ lib/rex/proto/ms_tds/ms_tds_type.rb                |   23 +
+ lib/rex/proto/ms_tds/ms_tds_version.rb             |   17 +
+ lib/rex/proto/mssql/client.rb                      |  540 +++-----
+ lib/rex/proto/mssql/client_mixin.rb                |   42 +-
+ metasploit-framework.gemspec                       |    3 +-
+ .../admin/dcerpc/esc_update_ldap_object.rb         |    5 +-
+ .../admin/http/fortinet_fortiweb_create_admin.rb   |    3 +-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      |  181 ++-
+ .../auxiliary/gather/twonky_authbypass_logleak.rb  |  154 +++
+ modules/auxiliary/scanner/http/http_login.rb       |   58 +-
+ modules/auxiliary/scanner/mssql/mssql_hashdump.rb  |    2 +-
+ modules/auxiliary/scanner/mssql/mssql_login.rb     |   12 +-
+ modules/auxiliary/scanner/ssh/ssh_login.rb         |  168 ++-
+ modules/auxiliary/scanner/ssh/ssh_login_pubkey.rb  |  334 -----
+ modules/auxiliary/server/capture/http_ntlm.rb      |   22 -
+ modules/auxiliary/server/capture/mssql.rb          |   24 -
+ modules/auxiliary/server/capture/mysql.rb          |   17 +-
+ modules/auxiliary/server/capture/sip.rb            |   19 +-
+ modules/auxiliary/server/capture/smb.rb            |    4 +-
+ modules/auxiliary/server/relay/smb_to_mssql.rb     |  106 ++
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   |  556 +++++++++
+ .../exploits/linux/local/igel_network_priv_esc.rb  |  120 ++
+ .../exploits/linux/persistence/igel_persistence.rb |  133 ++
+ .../exploits/multi/http/flowise_custommcp_rce.rb   |  123 ++
+ modules/exploits/multi/http/flowise_js_rce.rb      |  143 +++
+ .../multi/http/monsta_ftp_downloadfile_rce.rb      |  252 ++++
+ .../http/react2shell_unauth_rce_cve_2025_55182.rb  |  146 +++
+ .../exploits/multi/http/wp_ai_engine_mcp_rce.rb    |  292 +++++
+ .../windows/fileformat/cain_abel_4918_rdp.rb       |    2 +-
+ .../persistence/notepadpp_plugin_persistence.rb    |   94 ++
+ .../payloads/singles/linux/ppc/shell_bind_tcp.rb   |    2 +-
+ .../payloads/singles/linux/ppc/shell_find_port.rb  |    2 +-
+ .../singles/linux/ppc/shell_reverse_tcp.rb         |    2 +-
+ modules/payloads/singles/linux/riscv32le/chmod.rb  |   73 ++
+ modules/payloads/singles/linux/riscv32le/reboot.rb |    1 +
+ .../singles/linux/riscv32le/shell_reverse_tcp.rb   |  136 +++
+ modules/payloads/singles/linux/riscv64le/chmod.rb  |   73 ++
+ modules/payloads/singles/linux/riscv64le/reboot.rb |    1 +
+ .../singles/linux/riscv64le/shell_reverse_tcp.rb   |  174 +++
+ modules/post/linux/gather/igel_dump_file.rb        |   77 ++
+ plugins/capture.rb                                 |    2 -
+ plugins/nexpose.rb                                 |   90 +-
+ spec/acceptance/ldap_spec.rb                       |    2 +-
+ .../framework/login_scanner/mssql_spec.rb          |   28 -
+ spec/lib/rex/proto/ms_tds/ms_tds_header_spec.rb    |   33 +
+ .../proto/ms_tds/ms_tds_login7_password_spec.rb    |   55 +
+ spec/lib/rex/proto/ms_tds/ms_tds_login7_spec.rb    |  281 +++++
+ spec/lib/rex/proto/postgresql/client_spec.rb       |    3 +-
+ spec/modules/payloads_spec.rb                      |   41 +-
+ 118 files changed, 7737 insertions(+), 1276 deletions(-)
+
+commit be4c3c1a917c27454e5c9abfd9e906c39dbed1e2
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed Dec 10 06:07:41 2025 +0100
+
+    Update modules/exploits/multi/http/wp_king_addons_privilege_escalation.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/exploits/multi/http/wp_king_addons_privilege_escalation.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fc8f07cf913def4f33abb9cf9a464abb57d6c134
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Wed Dec 10 06:07:23 2025 +0100
+
+    Update modules/exploits/multi/http/wp_king_addons_privilege_escalation.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/exploits/multi/http/wp_king_addons_privilege_escalation.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
