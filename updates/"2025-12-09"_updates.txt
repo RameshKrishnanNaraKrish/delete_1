@@ -1,0 +1,110 @@
+commit 7ca43c621b6bceb7d77af41139d17f050a070f2e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 11 19:19:18 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 33197bd59c50d64d78903e20084cb114a92571d8
+Merge: 1523d01a8d 35d7b2e334
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Dec 11 11:10:48 2025 -0800
+
+    Merge pull request #20713 from Chocapikk/nable
+    
+    Add N-able N-Central authentication bypass and XXE scanner module (CVE-2025-9316, CVE-2025-11700)
+
+ .../scanner/http/nable_ncentral_auth_bypass_xxe.md | 153 +++++++++
+ .../scanner/http/nable_ncentral_auth_bypass_xxe.rb | 352 +++++++++++++++++++++
+ 2 files changed, 505 insertions(+)
+
+commit a20e2dfa6e9bf385691b4b56c2a1e608e1ad015c
+Author: Tarek Nakkouch <nakkouchtarek@gmail.com>
+Date:   Thu Dec 11 20:03:17 2025 +0100
+
+    Use send_request_cgi! for automatic redirect handling
+
+ .../multi/http/grav_twig_ssti_sandbox_bypass_rce.rb    | 18 ++----------------
+ 1 file changed, 2 insertions(+), 16 deletions(-)
+
+commit 028aa2f544d946ecfac2d9274e77d0c9af02e7be
+Author: Tarek Nakkouch <nakkouchtarek@gmail.com>
+Date:   Thu Dec 11 19:53:02 2025 +0100
+
+    Wrap zlib require in begin/rescue block for proper error handling
+
+ modules/exploits/multi/http/grav_twig_ssti_sandbox_bypass_rce.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit df9f546d0188915164e47b73d6a3c6941f18f191
+Author: Tarek Nakkouch <nakkouchtarek@gmail.com>
+Date:   Thu Dec 11 19:52:16 2025 +0100
+
+    Use HttpClientTimeout datastore option instead of hardcoded timeout value
+
+ modules/exploits/multi/http/grav_twig_ssti_sandbox_bypass_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 80f60b431c747b5fa143a0c9caa873f184896914
+Author: Tarek Nakkouch <nakkouchtarek@gmail.com>
+Date:   Thu Dec 11 19:45:24 2025 +0100
+
+    Set default value for FORM_NAME option and remove fallback check
+
+ modules/exploits/multi/http/grav_twig_ssti_sandbox_bypass_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 35d7b2e334989b47ca703a84a4e592918dabdeb7
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Dec 11 18:57:18 2025 +0100
+
+    Improve file content parsing in extract_file_contents method
+
+ .../scanner/http/nable_ncentral_auth_bypass_xxe.rb | 26 +++++++++++++++-------
+ 1 file changed, 18 insertions(+), 8 deletions(-)
+
+commit 1523d01a8d4762aa99919cc1265b6675680e2e2b
+Merge: 4d5996a5ff b9d3780afe
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Dec 11 16:30:26 2025 +0000
+
+    Merge pull request #20759 from zeroSteiner/fix/ldap-acceptance/1
+    
+    Drop the ldap_esc_vulnerable_cert_finder tests
+
+ spec/acceptance/ldap_spec.rb | 18 ------------------
+ 1 file changed, 18 deletions(-)
+
+commit 4d5996a5ffc2845f3755e3d55ac3f06f33322c52
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 11 13:06:50 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f7abf967a60ddff558c0b898a36e842053b9dce5
+Merge: 0384917038 334c599cb3
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Dec 11 12:58:09 2025 +0000
+
+    Merge pull request #20743 from zeroSteiner/fix/mssql-encryption-guard
+    
+    Remove the TDSENCRYPTION Guard Clause
+
+ modules/auxiliary/scanner/mssql/mssql_login.rb | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+commit 03849170384ad9e1b58f286bd0b828f7ab0c8a9c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 11 10:24:16 2025 +0000
+
+    Bump version of framework to 6.4.103
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
