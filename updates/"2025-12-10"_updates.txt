@@ -1,0 +1,21 @@
+commit 05fba0ad8ff6bbc9121656abaf91a56a60599375
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Dec 12 00:21:44 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 388a9671012621c0dcab50c25c7aca33ed983fce
+Merge: 7ca43c621b a20e2dfa6e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Dec 11 16:13:09 2025 -0800
+
+    Merge pull request #20749 from nakkouchtarek/grav-ssti-rce
+    
+    Add Grav CMS Twig SSTI Sandbox Bypass RCE Exploit Module & Documentation
+
+ .../http/grav_twig_ssti_sandbox_bypass_rce.md      |  92 +++++
+ .../http/grav_twig_ssti_sandbox_bypass_rce.rb      | 369 +++++++++++++++++++++
+ 2 files changed, 461 insertions(+)
