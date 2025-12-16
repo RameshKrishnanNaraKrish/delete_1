@@ -1,0 +1,206 @@
+commit 74774783fc44654f87aaa85df726c7629aca7cca
+Merge: ee6d594dd1 0589121fb9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Dec 15 18:55:09 2025 -0500
+
+    Merge pull request #20773 from jheysel-r7/fix/react2shell_targets
+    
+    Change react2shell default encoder and payload
+
+ lib/msf/core/payload/nodejs.rb                                 |  2 +-
+ .../multi/http/react2shell_unauth_rce_cve_2025_55182.rb        | 10 +++++++---
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+commit 0589121fb93d3d4d6cef30312dcd798c9b4b88af
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Dec 15 13:46:15 2025 -0800
+
+    Update payload options
+
+ modules/exploits/multi/http/react2shell_unauth_rce_cve_2025_55182.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit ff188b8a5efeb19a56c6409558851cfb5d2ed167
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Dec 15 08:08:54 2025 -0800
+
+    Update regex
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ lib/msf/core/payload/nodejs.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee6d594dd1d843708aeef5a2337aaf448dde0f4f
+Merge: 3936fc7640 c35537252f
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Dec 15 13:00:22 2025 +0000
+
+    Merge pull request #20777 from rapid7/revert-20424-enh/MS-9930/vuln_report
+    
+    Revert "Vulnerability Report Enhancement"
+
+ Gemfile.lock                                       |   5 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  80 +----
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +---
+ lib/msf/core/exploit.rb                            |  10 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  16 -
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |  13 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 -
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 327 +++---------------
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 -----
+ .../shared/examples/msf/db_manager/service.rb      | 373 +--------------------
+ .../shared/examples/msf/db_manager/session.rb      |  46 ---
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 --------------------
+ 17 files changed, 101 insertions(+), 1376 deletions(-)
+
+commit c35537252f896f05c3f115fe5cd299a2c409712d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Dec 15 12:40:02 2025 +0000
+
+    Revert "Vulnerability Report Enhancement"
+
+ Gemfile.lock                                       |   5 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  80 +----
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +---
+ lib/msf/core/exploit.rb                            |  10 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  16 -
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |  13 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 -
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 327 +++---------------
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 -----
+ .../shared/examples/msf/db_manager/service.rb      | 373 +--------------------
+ .../shared/examples/msf/db_manager/session.rb      |  46 ---
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 --------------------
+ 17 files changed, 101 insertions(+), 1376 deletions(-)
+
+commit 3936fc7640426b03eee57292faa8afb25a8e2fa8
+Merge: 861700b1f6 fbea976e2f
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Dec 15 11:51:27 2025 +0000
+
+    Merge pull request #20424 from cdelafuente-r7/enh/MS-9930/vuln_report
+    
+    Vulnerability Report Enhancement
+
+ Gemfile.lock                                       |   5 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  80 ++++-
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +++-
+ lib/msf/core/exploit.rb                            |  10 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  16 +
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |  13 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 +
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 327 +++++++++++++++---
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 +++++
+ .../shared/examples/msf/db_manager/service.rb      | 373 ++++++++++++++++++++-
+ .../shared/examples/msf/db_manager/session.rb      |  46 +++
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 ++++++++++++++++++++
+ 17 files changed, 1376 insertions(+), 101 deletions(-)
+
+commit fbea976e2f30296c3febeaa8b50f40162b99401f
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Dec 10 15:16:06 2025 +0100
+
+    Bump metasploit_data_models version to 6.0.11
+
+ Gemfile      |  2 --
+ Gemfile.lock | 33 +++++++++++++--------------------
+ 2 files changed, 13 insertions(+), 22 deletions(-)
+
+commit 3dc70b751a7dc5d94f4337ac5995164803d6b5db
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Oct 9 17:18:09 2025 -0400
+
+    Report the ICertPassage protocol using the new API
+
+ lib/msf/core/exploit/remote/ms_icpr.rb        | 16 ++++++++++++++++
+ lib/msf/core/exploit/remote/smb/client/ipc.rb | 13 ++++++++++---
+ 2 files changed, 26 insertions(+), 3 deletions(-)
+
+commit 3a6eec56914a275df201fb90e6b44e130911adc9
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Dec 3 18:53:08 2025 +0100
+
+    Fix deleting services with `services -d`
+
+ lib/msf/core/db_manager/service.rb | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit 09e7bff7f5c24fc5e0750bfd4fcc9e4857f954e9
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Nov 19 18:44:43 2025 +0100
+
+    Code review
+
+ lib/msf/core/db_manager/service.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 40ac35c02ae8a0935a84a1ad9bc75b037c76cf26
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Jul 16 17:11:38 2025 +0200
+
+    Vulnerability Report enhancement
+    
+    - update `#report_service` and `#report_vuln`
+    - update vulnerability report when a session is established
+    - update CheckCode and `#cmd_check` to report a vulnerability when
+      Vulnerable checkcode is returned
+    - update `vulns` and `services` commands to display the `resource` and
+      parent services
+    - specs
+
+ Gemfile                                            |   2 +
+ Gemfile.lock                                       |  30 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  71 +++-
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +++-
+ lib/msf/core/exploit.rb                            |  10 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 +
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 327 +++++++++++++++---
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 +++++
+ .../shared/examples/msf/db_manager/service.rb      | 373 ++++++++++++++++++++-
+ .../shared/examples/msf/db_manager/session.rb      |  46 +++
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 ++++++++++++++++++++
+ 16 files changed, 1360 insertions(+), 106 deletions(-)
+
+commit 861700b1f63e876e39c05e463cb84fc6531a9786
+Merge: 05fba0ad8f afcfd1bbc5
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Dec 15 11:26:56 2025 +0000
+
+    Merge pull request #20776 from cgranleese-r7/update-macos-runner
+    
+    Updates macos runners
+
+ .github/workflows/shared_gem_verify.yml             | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit afcfd1bbc567f3bbf6d9988f0100a1c52924c0b5
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Dec 15 10:16:53 2025 +0000
+
+    Updates macos runners
+
+ .github/workflows/shared_gem_verify.yml             | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
