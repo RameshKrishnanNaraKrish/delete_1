@@ -1,0 +1,8 @@
+commit 040179cf40a0525102e6b7a2f3ec677e0ee87151
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Dec 16 00:04:05 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
