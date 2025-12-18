@@ -1,0 +1,64 @@
+commit ecfdec95de82d72504a6a6d52c39e769f4f054cd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Dec 17 23:32:14 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4f1341611710f1b6bade0bf5ff089862a489cfc8
+Merge: 3b8c3d3007 05479c022a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Dec 17 23:22:26 2025 +0000
+
+    Merge pull request #20787 from zeroSteiner/fix/payload-cache-sizes/2025-12-17
+    
+    Update nodejs cache sizes
+
+ modules/payloads/singles/cmd/unix/bind_nodejs.rb    | 2 +-
+ modules/payloads/singles/cmd/unix/reverse_nodejs.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 3b8c3d3007ba4a9e38cbcb84a642c64fca5f1a99
+Merge: b3f3b82f36 9cd49466e8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Dec 17 22:46:05 2025 +0000
+
+    Merge pull request #20771 from zeroSteiner/feat/lib/preferred-payloads
+    
+    Update the payload preferences
+
+ lib/msf/core/payload.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 05479c022a0c41ab04220ed899d2f6cfb613f655
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Dec 17 17:33:51 2025 -0500
+
+    Update nodejs cache sizes
+
+ modules/payloads/singles/cmd/unix/bind_nodejs.rb    | 2 +-
+ modules/payloads/singles/cmd/unix/reverse_nodejs.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b3f3b82f365147934303ef5dd6aafb4a950bde83
+Merge: 040179cf40 375ff5e9da
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Dec 17 22:29:25 2025 +0000
+
+    Merge pull request #20783 from adfoster-r7/update-pro-versions
+    
+    Update Pro versions
+
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 375ff5e9da7dc991390d6e1225044e7e9c236616
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Dec 17 13:41:31 2025 +0000
+
+    Update Pro versions
+
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
