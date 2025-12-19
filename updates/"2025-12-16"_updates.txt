@@ -1,0 +1,33 @@
+commit 2bb30ba7a3eae4560a7e8ac34e09339804ddef2e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 18 22:13:06 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 6c4a61fa42307b9300826eb0ef14cba631edcc1b
+Merge: 019ac75f1b b4d65afcf5
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Dec 18 16:03:06 2025 -0600
+
+    Merge pull request #20761 from Chocapikk/acf-extended-rce
+    
+    Add WordPress ACF Extended unauthenticated RCE exploit (CVE-2025-13486)
+
+ data/wordlists/wp-exploitable-plugins.txt          |   1 +
+ .../exploit/multi/http/wp_acf_extended_rce.md      | 232 +++++++++++++++++++++
+ modules/exploits/multi/http/wp_acf_extended_rce.rb | 173 +++++++++++++++
+ 3 files changed, 406 insertions(+)
+
+commit 019ac75f1be334f92d711be1baca6b322c4f4c52
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Dec 18 03:35:46 2025 +0000
+
+    Bump version of framework to 6.4.104
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
