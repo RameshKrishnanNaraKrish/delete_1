@@ -1,0 +1,91 @@
+commit 1904145225217f3614ecf9809acead8d282c74d1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Dec 19 23:51:36 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 3015c9f962acda526cd75c15a6f57732aa425f51
+Merge: cd31acae15 d40a35acdb
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Dec 19 17:41:51 2025 -0600
+
+    Merge pull request #20792 from sfewer-r7/hpe_oneview_rce
+    
+    Add unauth RCE exploit module for HPE OneView (CVE-2025-37164)
+
+ .../modules/exploit/linux/http/hpe_oneview_rce.md  | 248 +++++++++++++++++++++
+ modules/exploits/linux/http/hpe_oneview_rce.rb     | 158 +++++++++++++
+ 2 files changed, 406 insertions(+)
+
+commit cd31acae15f1461109b1f87ba1e9e60dfdf8c198
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Dec 19 22:42:56 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit b12ebc95c025abb1153fb6c104769747140e47b3
+Merge: 2bb30ba7a3 5ac586a788
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Dec 19 16:33:21 2025 -0600
+
+    Merge pull request #20754 from h00die/assist_tech
+    
+    assistive technology persistence
+
+ .../windows/persistence/assistive_technology.md    | 123 +++++++++++++++++++++
+ .../windows/persistence/assistive_technology.rb    | 117 ++++++++++++++++++++
+ 2 files changed, 240 insertions(+)
+
+commit 5ac586a788a642effbf8b6d369c8548e2fc624a3
+Author: h00die <h00die@github>
+Date:   Fri Dec 19 14:52:34 2025 -0500
+
+    Update modules/exploits/windows/persistence/assistive_technology.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/exploits/windows/persistence/assistive_technology.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit d40a35acdbd794a65858e30a6bba8c96960f536c
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Fri Dec 19 15:48:07 2025 +0000
+
+    the version logic changes, update the docs
+
+ documentation/modules/exploit/linux/http/hpe_oneview_rce.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 0c947d05ab544fb696079cfa2271acf288764619
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Fri Dec 19 15:38:43 2025 +0000
+
+    add in the AKB analysis
+
+ modules/exploits/linux/http/hpe_oneview_rce.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 5c6c8a3956d85d912e2fd72f15d8b6860266541f
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Fri Dec 19 15:38:27 2025 +0000
+
+    better check result given we have the version string
+
+ modules/exploits/linux/http/hpe_oneview_rce.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit a4dba967122de40dc3e4cba554dc4fa2be73ca48
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Fri Dec 19 15:30:53 2025 +0000
+
+    add in the HPE OneView exploit
+
+ .../modules/exploit/linux/http/hpe_oneview_rce.md  | 248 +++++++++++++++++++++
+ modules/exploits/linux/http/hpe_oneview_rce.rb     | 156 +++++++++++++
+ 2 files changed, 404 insertions(+)
