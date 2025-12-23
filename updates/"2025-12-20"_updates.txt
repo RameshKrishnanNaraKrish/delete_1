@@ -1,0 +1,68 @@
+commit d4eba39b1d8c810883fce661fc63f1142ee7bb7f
+Merge: f743b42353 34ceae4e2c
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Dec 22 15:58:18 2025 -0500
+
+    Merge pull request #20800 from adfoster-r7/add-autocheck-vulnerability-logic
+    
+    Add autocheck report_vuln logic
+
+ lib/msf/core/exploit/remote/auto_check.rb          |  26 +++++-
+ .../lib/msf/core/exploit/remote/auto_check_spec.rb | 102 +++++++++++++++++++--
+ 2 files changed, 120 insertions(+), 8 deletions(-)
+
+commit f743b42353872b8bc1db6ac0f3cd9d32bd3993e6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Dec 22 20:06:27 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 963 ------------------------------------------
+ 1 file changed, 963 deletions(-)
+
+commit fba6040445c34db1915754827c21b8a4ac02b60f
+Merge: 1904145225 68965f667e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Dec 22 14:56:48 2025 -0500
+
+    Merge pull request #20781 from jbx81-1337/fix/remove-ppc
+    
+    remove ppc meterpreter
+
+ .../payloads/adapters/cmd/linux/http/ppc64le.rb    | 25 ------
+ .../payloads/adapters/cmd/linux/https/ppc64le.rb   | 25 ------
+ .../payloads/adapters/cmd/linux/tftp/ppc64le.rb    | 25 ------
+ .../singles/linux/ppc/meterpreter_reverse_http.rb  | 41 ----------
+ .../singles/linux/ppc/meterpreter_reverse_https.rb | 41 ----------
+ .../singles/linux/ppc/meterpreter_reverse_tcp.rb   | 41 ----------
+ .../linux/ppc64le/meterpreter_reverse_http.rb      | 41 ----------
+ .../linux/ppc64le/meterpreter_reverse_https.rb     | 41 ----------
+ .../linux/ppc64le/meterpreter_reverse_tcp.rb       | 41 ----------
+ .../linux/ppce500v2/meterpreter_reverse_http.rb    | 41 ----------
+ .../linux/ppce500v2/meterpreter_reverse_https.rb   | 41 ----------
+ .../linux/ppce500v2/meterpreter_reverse_tcp.rb     | 41 ----------
+ spec/modules/payloads_spec.rb                      | 90 ----------------------
+ 13 files changed, 534 deletions(-)
+
+commit 68965f667e9b105f3cc4edba77b2a3559e902bde
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Mon Dec 22 14:27:09 2025 -0500
+
+    Remove the ppc64le adapters
+    
+    This is dead code now. We don't have any PPC64LE payloads.
+
+ .../payloads/adapters/cmd/linux/http/ppc64le.rb    | 25 ----------------------
+ .../payloads/adapters/cmd/linux/https/ppc64le.rb   | 25 ----------------------
+ .../payloads/adapters/cmd/linux/tftp/ppc64le.rb    | 25 ----------------------
+ 3 files changed, 75 deletions(-)
+
+commit 34ceae4e2c47f0b1963f73dec1505879fa2d7166
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Dec 22 13:09:32 2025 +0000
+
+    Add autocheck report_vuln logic
+
+ lib/msf/core/exploit/remote/auto_check.rb          |  26 +++++-
+ .../lib/msf/core/exploit/remote/auto_check_spec.rb | 102 +++++++++++++++++++--
+ 2 files changed, 120 insertions(+), 8 deletions(-)
