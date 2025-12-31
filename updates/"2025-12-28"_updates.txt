@@ -1,0 +1,82 @@
+commit db8028c219bf95aac6a13d6f0461bb57ad654f1d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Dec 30 13:59:48 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 47 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 47 insertions(+)
+
+commit acc206b2dca97ec99bb58782232e304f98ab4142
+Merge: 259180e73d 3b3d4f238e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 30 08:49:30 2025 -0500
+
+    Merge pull request #20833 from xaitax/CVE-2025-14847_Mongobleed
+    
+    Add MongoDB memory disclosure module (CVE-2025-14847)
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   | 168 ++++++
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 642 +++++++++++++++++++++
+ 2 files changed, 810 insertions(+)
+
+commit 259180e73de640fe4220e8847adc854017caa846
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Dec 30 13:48:29 2025 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit cd83a441b9f38625853078d55e0eba9184ea7dc0
+Merge: 079d76da69 bd98d3b160
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 30 08:39:00 2025 -0500
+
+    Merge pull request #20767 from Chocapikk/geoserver
+    
+    Add GeoServer WMS GetMap XXE file read module (CVE-2025-58360)
+
+ .../gather/geoserver_wms_getmap_xxe_file_read.md   | 111 +++++++++++++++++
+ .../gather/geoserver_wms_getmap_xxe_file_read.rb   | 133 +++++++++++++++++++++
+ 2 files changed, 244 insertions(+)
+
+commit 3b3d4f238e01f4533904c6a318f15b0d470578f7
+Author: Alex <ah@primepage.de>
+Date:   Tue Dec 30 14:34:57 2025 +0100
+
+    Update cve_2025_14847_mongobleed.rb
+
+ modules/auxiliary/scanner/mongodb/cve_2025_14847_mongobleed.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit ece7649af5386a9459bfdd119974a6ab690ad961
+Author: Alex Hagenah <ah@primepage.de>
+Date:   Tue Dec 30 14:25:22 2025 +0100
+
+    Update modules/auxiliary/scanner/mongodb/cve_2025_14847_mongobleed.rb
+    
+    Co-authored-by: Diego Ledda <diego_ledda@rapid7.com>
+
+ .../auxiliary/scanner/mongodb/cve_2025_14847_mongobleed.rb | 14 --------------
+ 1 file changed, 14 deletions(-)
+
+commit 70798665aa23311eaa39795082e6c1c7840ceba9
+Author: Alex <ah@primepage.de>
+Date:   Tue Dec 30 13:49:57 2025 +0100
+
+    Update cve_2025_14847_mongobleed.rb
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 121 +++++++++++----------
+ 1 file changed, 62 insertions(+), 59 deletions(-)
+
+commit 44b2adafa7dd3f06629ee6fda7033c83a923c8ca
+Author: Alex <ah@primepage.de>
+Date:   Tue Dec 30 13:04:25 2025 +0100
+
+    Add MongoDB memory disclosure module (CVE-2025-14847)
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   | 168 ++++++
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 654 +++++++++++++++++++++
+ 2 files changed, 822 insertions(+)
