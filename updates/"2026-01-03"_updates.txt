@@ -1,0 +1,61 @@
+commit bd870b4caf2ab7189871d4d323c77f0232106ef3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jan 5 11:48:09 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 308 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 308 insertions(+)
+
+commit 385c4f9896e4e8dd73fae1393cc0c2f40c043732
+Merge: 141c823e2c 5871d90cf6
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jan 5 06:38:23 2026 -0500
+
+    Merge pull request #20733 from bcoles/linux-riscv-tcp-bind-shell
+    
+    Add Linux RISC-V 32-bit/64-bit TCP bind shell payloads
+
+ .../singles/linux/riscv32le/shell_bind_tcp.rb      | 147 ++++++++++++++++
+ .../singles/linux/riscv64le/shell_bind_tcp.rb      | 186 +++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  20 +++
+ 3 files changed, 353 insertions(+)
+
+commit 141c823e2c42dfd168a3f406562abb81edaa4ca2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jan 5 10:25:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 944 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 934 insertions(+), 10 deletions(-)
+
+commit ee992c6f5c676dda8229b841eee10eca4e874b32
+Merge: 0dee8a82b8 1e769ad5aa
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jan 5 11:07:09 2026 +0100
+
+    Land #20831, adds link to Framework Github issues
+    
+    Fix broken links in CONTRIBUTING.md code-free contributions section
+
+ CONTRIBUTING.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0dee8a82b8026e0df449ae134f4909615f4672c3
+Merge: 7eccbcdc6c 2d414d39fa
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jan 5 05:06:21 2026 -0500
+
+    Merge pull request #20734 from bcoles/linux-riscv-command-payload-adapters
+    
+    Add Linux RISC-V command payload adapters
+
+ .../payloads/adapters/cmd/linux/http/riscv32le.rb  | 25 +++++++++++
+ .../payloads/adapters/cmd/linux/http/riscv64le.rb  | 25 +++++++++++
+ .../payloads/adapters/cmd/linux/https/riscv32le.rb | 25 +++++++++++
+ .../payloads/adapters/cmd/linux/https/riscv64le.rb | 25 +++++++++++
+ .../payloads/adapters/cmd/linux/tftp/riscv32le.rb  | 25 +++++++++++
+ .../payloads/adapters/cmd/linux/tftp/riscv64le.rb  | 25 +++++++++++
+ spec/modules/payloads_spec.rb                      | 48 ++++++++++++++++++++++
+ 7 files changed, 198 insertions(+)
