@@ -1,0 +1,1219 @@
+commit 8ce13f05fde01b880e04bddf6f693d3cbad0ab0e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 6 19:39:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++----------------------
+ 1 file changed, 27 insertions(+), 27 deletions(-)
+
+commit f545b5b487e1cdf6213060fe60a7fcda97ea01eb
+Merge: 86f13f71de 79e2b844dd
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jan 6 14:30:06 2026 -0500
+
+    Merge pull request #19799 from dledda-r7/fix/mettle-stageless-payload
+    
+    Fix Linux Stageless Payload to be Shellcodes
+
+ data/templates/src/elf/exe/build.sh                |    8 +
+ data/templates/src/elf/exe/elf_aarch64_template.s  |    1 -
+ data/templates/src/elf/exe/elf_armbe_template.s    |   37 +
+ data/templates/src/elf/exe/elf_mips64_template.s   |   55 +
+ data/templates/src/elf/exe/elf_ppc64le_template.s  |   40 +
+ data/templates/src/elf/exe/elf_ppc_template.s      |   37 +
+ .../templates/src/elf/exe/elf_ppce500v2_template.s |   37 +
+ data/templates/src/elf/exe/elf_zarch_template.s    |   34 +
+ data/templates/template_armbe_linux.bin            |  Bin 0 -> 84 bytes
+ data/templates/template_mips64_linux.bin           |  Bin 0 -> 120 bytes
+ data/templates/template_ppc64le_linux.bin          |  Bin 0 -> 128 bytes
+ data/templates/template_ppc_linux.bin              |  Bin 0 -> 84 bytes
+ data/templates/template_ppce500v2_linux.bin        |  Bin 0 -> 84 bytes
+ data/templates/template_zarch_linux.bin            |  Bin 0 -> 120 bytes
+ lib/msf/base/sessions/mettle_config.rb             |   20 +-
+ lib/msf/core/payload/linux/aarch64/elf_loader.rb   |   66 +
+ lib/msf/core/payload/linux/armbe/prepends.rb       |   22 +
+ lib/msf/core/payload/linux/armle/elf_loader.rb     |   71 +
+ lib/msf/core/payload/linux/mips64/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mips64/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/mipsbe/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mipsbe/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/mipsle/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mipsle/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/ppc64le/prepends.rb     |   76 +
+ lib/msf/core/payload/linux/ppce500v2/prepends.rb   |   75 +
+ lib/msf/core/payload/linux/prepends.rb             |    4 +
+ lib/msf/core/payload/linux/x64/elf_loader.rb       |   57 +
+ lib/msf/core/payload/linux/x86/elf_loader.rb       |   56 +
+ lib/msf/core/payload/linux/zarch/prepends.rb       |   24 +
+ lib/msf/util/exe.rb                                | 3966 ++++++++++----------
+ .../linux/aarch64/meterpreter_reverse_http.rb      |   27 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |   27 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |   26 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |   21 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |   21 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |   21 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |   27 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |   27 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |   27 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |   27 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |   27 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |   27 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |   27 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |   27 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |   27 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |   27 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |   27 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |   27 +-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |   27 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |   27 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |   27 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |   21 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |   21 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |   21 +-
+ modules/payloads/stages/linux/x86/meterpreter.rb   |   31 +-
+ tools/modules/meterpreter_reverse.erb              |   13 +-
+ 60 files changed, 3445 insertions(+), 2271 deletions(-)
+
+commit 79e2b844dd5034924f0b5c14e6607857225a2917
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Jan 6 14:07:29 2026 -0500
+
+    fix: fixing meterpreter template for zarch, removing prepends
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb  | 1 -
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb | 1 -
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb   | 1 -
+ tools/modules/meterpreter_reverse.erb                             | 2 +-
+ 4 files changed, 1 insertion(+), 4 deletions(-)
+
+commit d6bffff14351c58fbfb5a873004918335fb4cb03
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 6 18:38:31 2026 +0100
+
+    Putting cmd_exec arguments into single argument
+
+ modules/exploits/multi/persistence/python_site_specific_hook.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 86f13f71de0f650ae074c0154a49278327687d3e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 6 17:03:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f0323e806903eaa96e1ec19335bec9d01e347106
+Merge: 61004db2be 0e28807458
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jan 6 08:54:29 2026 -0800
+
+    Merge pull request #20744 from ptrstr/patch-2
+    
+    Remove current date constraint from uploaded path in `wp_reflexgallery_file_upload`
+
+ .../unix/webapp/wp_reflexgallery_file_upload.rb    | 36 ++++++++++++++++------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
+
+commit b42fc2eb1eb402c071b1c0c803660edc164c25b5
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Dec 19 07:58:09 2025 -0500
+
+    fix: remove armbe, ppc, ppc64le, ppce500v2 and zarch elf_loaders
+
+ lib/msf/core/payload/linux/armbe/elf_loader.rb     | 69 ----------------------
+ lib/msf/core/payload/linux/ppc/elf_loader.rb       | 69 ----------------------
+ lib/msf/core/payload/linux/ppc64le/elf_loader.rb   | 63 --------------------
+ lib/msf/core/payload/linux/ppce500v2/elf_loader.rb | 66 ---------------------
+ lib/msf/core/payload/linux/zarch/elf_loader.rb     | 67 ---------------------
+ 5 files changed, 334 deletions(-)
+
+commit beddb75ce711aa03a885416c8cc3201ae86e47ca
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 17 12:12:24 2025 -0500
+
+    fix: fix correct zarch value for meterpreter_reverse.erb
+
+ tools/modules/meterpreter_reverse.erb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eaead1d2f3570096d906fa7a6de6fda8dc34c81a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 17 12:09:35 2025 -0500
+
+    fix: remove zarch inmemory_loader from stageless meterpreter
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb  | 7 +------
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb | 7 +------
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb   | 7 +------
+ tools/modules/meterpreter_reverse.erb                             | 2 +-
+ 4 files changed, 4 insertions(+), 19 deletions(-)
+
+commit b3b7e5f0fbb51781563cfaad52e9ea61bc9067ff
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Dec 17 11:55:22 2025 -0500
+
+    rebase: post-rebase
+
+ lib/msf/util/exe.rb | 660 ++++++----------------------------------------------
+ 1 file changed, 74 insertions(+), 586 deletions(-)
+
+commit 892ef86515fb642e2d2a8bae78e8a6dce9da6c7f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 16 14:28:47 2025 -0500
+
+    fix: remove in_memoryloader for ppc, ppc64le, ppce500v2 and armbe from erb file
+
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_http.rb  | 6 ------
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_https.rb | 5 -----
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_tcp.rb   | 5 -----
+ tools/modules/meterpreter_reverse.erb                             | 8 +++-----
+ 4 files changed, 3 insertions(+), 21 deletions(-)
+
+commit 6d4cefdff7c03fe691fe79c904f8f9e1780da0a1
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 16 10:36:56 2025 -0500
+
+    fix: fix erb for mettle payload generation
+
+ .../payloads/singles/linux/aarch64/meterpreter_reverse_http.rb    | 8 ++++----
+ .../payloads/singles/linux/aarch64/meterpreter_reverse_https.rb   | 8 ++++----
+ modules/payloads/singles/linux/aarch64/meterpreter_reverse_tcp.rb | 6 +++---
+ modules/payloads/singles/linux/armle/meterpreter_reverse_http.rb  | 7 ++++---
+ modules/payloads/singles/linux/armle/meterpreter_reverse_https.rb | 8 ++++----
+ modules/payloads/singles/linux/armle/meterpreter_reverse_tcp.rb   | 7 ++++---
+ modules/payloads/singles/linux/mips64/meterpreter_reverse_http.rb | 7 ++++---
+ .../payloads/singles/linux/mips64/meterpreter_reverse_https.rb    | 8 ++++----
+ modules/payloads/singles/linux/mips64/meterpreter_reverse_tcp.rb  | 7 ++++---
+ modules/payloads/singles/linux/mipsbe/meterpreter_reverse_http.rb | 7 ++++---
+ .../payloads/singles/linux/mipsbe/meterpreter_reverse_https.rb    | 7 ++++---
+ modules/payloads/singles/linux/mipsbe/meterpreter_reverse_tcp.rb  | 7 ++++---
+ modules/payloads/singles/linux/mipsle/meterpreter_reverse_http.rb | 7 ++++---
+ .../payloads/singles/linux/mipsle/meterpreter_reverse_https.rb    | 7 ++++---
+ modules/payloads/singles/linux/mipsle/meterpreter_reverse_tcp.rb  | 7 ++++---
+ modules/payloads/singles/linux/x64/meterpreter_reverse_http.rb    | 7 ++++---
+ modules/payloads/singles/linux/x64/meterpreter_reverse_https.rb   | 7 ++++---
+ modules/payloads/singles/linux/x64/meterpreter_reverse_tcp.rb     | 7 ++++---
+ modules/payloads/singles/linux/x86/meterpreter_reverse_http.rb    | 7 ++++---
+ modules/payloads/singles/linux/x86/meterpreter_reverse_https.rb   | 7 ++++---
+ modules/payloads/singles/linux/x86/meterpreter_reverse_tcp.rb     | 7 ++++---
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb  | 7 ++++---
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb | 7 ++++---
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb   | 7 ++++---
+ tools/modules/meterpreter_reverse.erb                             | 8 +++++---
+ 25 files changed, 100 insertions(+), 79 deletions(-)
+
+commit a4cb822d1336edbddb2edc8778284600dc7c6917
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Dec 16 15:34:57 2025 +0100
+
+    Update lib/msf/core/payload/linux/aarch64/elf_loader.rb
+
+ lib/msf/core/payload/linux/aarch64/elf_loader.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ed87ffeb66747e01c4ca68ce02debaa731e38c0a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Nov 18 08:34:36 2025 -0500
+
+    fix: rollback itoa and execve instead of execveat
+
+ lib/msf/core/payload/linux/mips64/elf_loader.rb | 82 ++++++++++++++---------
+ lib/msf/core/payload/linux/mipsbe/elf_loader.rb | 84 +++++++++++++++---------
+ lib/msf/core/payload/linux/mipsle/elf_loader.rb | 87 +++++++++++++++----------
+ lib/msf/core/payload/linux/x64/elf_loader.rb    | 35 +++++++---
+ lib/msf/core/payload/linux/x86/elf_loader.rb    | 31 +++++++--
+ 5 files changed, 208 insertions(+), 111 deletions(-)
+
+commit 91bb23f41d97b01a4c44a954e0d39e632f337072
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Nov 11 11:33:58 2025 +0100
+
+    Update lib/msf/core/payload/linux/aarch64/elf_loader.rb
+    
+    fix aarch64 packing
+
+ lib/msf/core/payload/linux/aarch64/elf_loader.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8ab2f4450f5635ec954deea352c6a52c94ce02e6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 31 13:49:00 2025 +0100
+
+    Rolling back zarch to exec syscall
+
+ lib/msf/core/payload/linux/zarch/elf_loader.rb | 78 +++++++++++++++-----------
+ 1 file changed, 45 insertions(+), 33 deletions(-)
+
+commit 70ad726dd649c6818b62f94a901ab8f5802e7523
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 31 12:51:55 2025 +0100
+
+    Rolling back ppc/ppc64/ppce500v2 to exec syscall
+
+ lib/msf/core/payload/linux/ppc/elf_loader.rb       | 49 ++++++++++++++--------
+ lib/msf/core/payload/linux/ppc64le/elf_loader.rb   | 46 +++++++++++---------
+ lib/msf/core/payload/linux/ppce500v2/elf_loader.rb | 47 +++++++++++++--------
+ 3 files changed, 87 insertions(+), 55 deletions(-)
+
+commit ad44f7c6374ffc6507748de8300b33d2381d04fb
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 31 11:16:49 2025 +0100
+
+    Rolling back arm/arm64 to exec syscall
+
+ lib/msf/core/payload/linux/aarch64/elf_loader.rb | 58 ++++++++++++-------
+ lib/msf/core/payload/linux/armbe/elf_loader.rb   | 72 +++++++++++++++---------
+ lib/msf/core/payload/linux/armle/elf_loader.rb   | 59 ++++++++++++-------
+ 3 files changed, 123 insertions(+), 66 deletions(-)
+
+commit 17776b637779786afa8b90c9a09fee46d2dd28e4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 08:25:31 2025 -0400
+
+    fix: fix linux prepends, uniform ppc prepends
+
+ lib/msf/core/payload/linux/armbe/prepends.rb     |  2 +-
+ lib/msf/core/payload/linux/mips64/prepends.rb    |  2 +-
+ lib/msf/core/payload/linux/mipsle/prepends.rb    |  2 +-
+ lib/msf/core/payload/linux/ppc64le/prepends.rb   | 64 ++++++++++++++++++++++--
+ lib/msf/core/payload/linux/ppce500v2/prepends.rb | 63 +++++++++++++++++++++--
+ lib/msf/core/payload/linux/zarch/prepends.rb     |  2 +-
+ 6 files changed, 121 insertions(+), 14 deletions(-)
+
+commit d2a2d1e1c8c0d9ca6b2d3f99d6f4f8721fe9070b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 08:19:13 2025 -0400
+
+    fix: removed + character in PayloadLinuxMinKernel
+
+ lib/msf/base/sessions/mettle_config.rb                              | 2 +-
+ lib/msf/core/payload/linux/prepends.rb                              | 4 ++--
+ modules/payloads/singles/linux/aarch64/meterpreter_reverse_http.rb  | 2 +-
+ modules/payloads/singles/linux/aarch64/meterpreter_reverse_https.rb | 2 +-
+ modules/payloads/singles/linux/aarch64/meterpreter_reverse_tcp.rb   | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_http.rb    | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_https.rb   | 2 +-
+ modules/payloads/singles/linux/armbe/meterpreter_reverse_tcp.rb     | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_http.rb    | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_https.rb   | 2 +-
+ modules/payloads/singles/linux/armle/meterpreter_reverse_tcp.rb     | 2 +-
+ modules/payloads/singles/linux/mips64/meterpreter_reverse_http.rb   | 2 +-
+ modules/payloads/singles/linux/mips64/meterpreter_reverse_https.rb  | 2 +-
+ modules/payloads/singles/linux/mips64/meterpreter_reverse_tcp.rb    | 2 +-
+ modules/payloads/singles/linux/mipsbe/meterpreter_reverse_http.rb   | 2 +-
+ modules/payloads/singles/linux/mipsbe/meterpreter_reverse_https.rb  | 2 +-
+ modules/payloads/singles/linux/mipsbe/meterpreter_reverse_tcp.rb    | 2 +-
+ modules/payloads/singles/linux/mipsle/meterpreter_reverse_http.rb   | 2 +-
+ modules/payloads/singles/linux/mipsle/meterpreter_reverse_https.rb  | 2 +-
+ modules/payloads/singles/linux/mipsle/meterpreter_reverse_tcp.rb    | 2 +-
+ modules/payloads/singles/linux/x64/meterpreter_reverse_http.rb      | 2 +-
+ modules/payloads/singles/linux/x64/meterpreter_reverse_https.rb     | 2 +-
+ modules/payloads/singles/linux/x64/meterpreter_reverse_tcp.rb       | 2 +-
+ modules/payloads/singles/linux/x86/meterpreter_reverse_http.rb      | 2 +-
+ modules/payloads/singles/linux/x86/meterpreter_reverse_https.rb     | 2 +-
+ modules/payloads/singles/linux/x86/meterpreter_reverse_tcp.rb       | 2 +-
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb    | 2 +-
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb   | 2 +-
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb     | 2 +-
+ tools/modules/meterpreter_reverse.erb                               | 2 +-
+ 30 files changed, 31 insertions(+), 31 deletions(-)
+
+commit d5fb4a95ed109782715a26fd8dc6d707c008858d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 08:14:27 2025 -0400
+
+    fix: minor fix linux elf templates
+
+ data/templates/src/elf/exe/elf_armbe_template.s     | 2 +-
+ data/templates/src/elf/exe/elf_ppc64le_template.s   | 2 +-
+ data/templates/src/elf/exe/elf_ppc_template.s       | 2 +-
+ data/templates/src/elf/exe/elf_ppce500v2_template.s | 2 +-
+ data/templates/src/elf/exe/elf_zarch_template.s     | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 540f16b3b0e954883d0e044cf93a86ef381cf992
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 14:05:29 2025 +0200
+
+    Update modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d8d801454be08e0b72f4287ac27a239a5e41d27
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 12:22:26 2025 +0200
+
+    Update modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 43669bb7dcece721887097f702d28f18e2de8fde
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 12:14:26 2025 +0200
+
+    Update modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cab1337d7666593ebf45d7edc620afdea55bc8a1
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 06:01:57 2025 -0400
+
+    fix: update util/exe.rb to support new linux templates, code refactoring
+
+ lib/msf/util/exe.rb | 124 +++++++++++++---------------------------------------
+ 1 file changed, 31 insertions(+), 93 deletions(-)
+
+commit d157779b7298f916f0d64838e283ee31dfb15619
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 25 11:10:01 2025 +0200
+
+    Update lib/msf/core/payload/linux/mipsbe/prepends.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ lib/msf/core/payload/linux/mipsbe/prepends.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c02498274ee35160e1ba3b10c72b4a8f03941803
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 23 09:36:21 2025 +0200
+
+    chore: remove white-space
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 3886401cea5f5e45ecf4b1276b5d6020c8c2e282
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 23 09:32:38 2025 +0200
+
+    fix: update cached size
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_tcp.rb | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 29678264c06b46c07c779f863d119f3ecc2129c1
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 23 09:25:14 2025 +0200
+
+    fix: update cached size
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_https.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9e830c2faf7c8e8a94be1327f97dfa26957c5585
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 23 09:16:41 2025 +0200
+
+    fix: update cached size
+
+ modules/payloads/singles/linux/zarch/meterpreter_reverse_http.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34318f81b6ddfbd414ef983ed3a2ed13f3d99e3d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jun 17 13:27:50 2025 +0200
+
+    Fixing mipsbe loader stub
+
+ lib/msf/core/payload/linux/mipsbe/elf_loader.rb | 53 +++++++++++++------------
+ 1 file changed, 27 insertions(+), 26 deletions(-)
+
+commit 187a7d361a83a2cc03d00829bf664da6e41b8489
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Jun 11 10:28:23 2025 -0400
+
+    fix: changes based on review comments
+
+ lib/msf/base/sessions/mettle_config.rb             | 22 +++++----
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  6 +--
+ .../armbe/{meterpreter_loader.rb => elf_loader.rb} |  5 +-
+ .../armle/{meterpreter_loader.rb => elf_loader.rb} |  4 +-
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  4 +-
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  4 +-
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  4 +-
+ .../ppc/{meterpreter_loader.rb => elf_loader.rb}   |  8 ++--
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  4 +-
+ .../{meterpreter_loader.rb => elf_loader.rb}       |  7 ++-
+ lib/msf/core/payload/linux/prepends.rb             |  4 +-
+ .../x64/{meterpreter_loader.rb => elf_loader.rb}   |  2 +-
+ .../x86/{meterpreter_loader.rb => elf_loader.rb}   |  2 +-
+ lib/msf/core/payload/linux/zarch/elf_loader.rb     | 55 ++++++++++++++++++++++
+ .../core/payload/linux/zarch/meterpreter_loader.rb | 55 ----------------------
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  4 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  4 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  4 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |  4 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  4 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  4 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |  4 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  4 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  4 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |  4 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  4 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  4 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  4 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  4 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  4 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  4 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  4 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  4 +-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  4 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  4 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  4 +-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  4 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  4 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  4 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |  4 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  4 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  4 +-
+ tools/modules/meterpreter_reverse.erb              |  4 +-
+ 43 files changed, 149 insertions(+), 149 deletions(-)
+
+commit f29d7aeea0bf4973255d405e41afffd407081639
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jun 11 10:47:13 2025 +0200
+
+    Fixed comments
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb  |  7 +++----
+ lib/msf/core/payload/linux/armbe/meterpreter_loader.rb    |  7 +++----
+ lib/msf/core/payload/linux/armle/meterpreter_loader.rb    |  7 +++----
+ lib/msf/core/payload/linux/mips64/meterpreter_loader.rb   |  3 +--
+ lib/msf/core/payload/linux/mipsbe/meterpreter_loader.rb   |  3 +--
+ lib/msf/core/payload/linux/mipsle/meterpreter_loader.rb   | 11 +++++------
+ lib/msf/core/payload/linux/ppc/meterpreter_loader.rb      | 11 +++++------
+ lib/msf/core/payload/linux/ppc64le/meterpreter_loader.rb  | 11 +++++------
+ .../core/payload/linux/ppce500v2/meterpreter_loader.rb    | 11 +++++------
+ lib/msf/core/payload/linux/zarch/meterpreter_loader.rb    | 15 +++++++--------
+ 10 files changed, 38 insertions(+), 48 deletions(-)
+
+commit f391e1dda288e896ce93794250d47a8d5cf0690d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jun 10 12:41:31 2025 +0200
+
+    Adds convetion for each architecture
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb   | 7 ++++++-
+ lib/msf/core/payload/linux/armbe/meterpreter_loader.rb     | 5 +++++
+ lib/msf/core/payload/linux/armle/meterpreter_loader.rb     | 5 +++++
+ lib/msf/core/payload/linux/mips64/meterpreter_loader.rb    | 7 +++++++
+ lib/msf/core/payload/linux/mipsbe/meterpreter_loader.rb    | 7 +++++++
+ lib/msf/core/payload/linux/mipsle/meterpreter_loader.rb    | 7 +++++++
+ lib/msf/core/payload/linux/ppc/meterpreter_loader.rb       | 7 +++++++
+ lib/msf/core/payload/linux/ppc64le/meterpreter_loader.rb   | 7 +++++++
+ lib/msf/core/payload/linux/ppce500v2/meterpreter_loader.rb | 7 +++++++
+ lib/msf/core/payload/linux/zarch/meterpreter_loader.rb     | 9 +++++++++
+ 10 files changed, 67 insertions(+), 1 deletion(-)
+
+commit 58a32627c078c4d64941c97fce9c9396dec8b96f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jun 2 06:27:01 2025 -0400
+
+    chore: linting meterpreter_loader and prepends
+
+ .../payload/linux/aarch64/meterpreter_loader.rb    | 71 ++++++++++-----------
+ .../core/payload/linux/armbe/meterpreter_loader.rb | 68 ++++++++++----------
+ lib/msf/core/payload/linux/armbe/prepends.rb       |  6 +-
+ .../core/payload/linux/armle/meterpreter_loader.rb | 71 ++++++++++-----------
+ .../payload/linux/mips64/meterpreter_loader.rb     | 61 +++++++++---------
+ lib/msf/core/payload/linux/mips64/prepends.rb      |  6 +-
+ .../payload/linux/mipsbe/meterpreter_loader.rb     | 65 ++++++++++---------
+ lib/msf/core/payload/linux/mipsbe/prepends.rb      |  6 +-
+ .../payload/linux/mipsle/meterpreter_loader.rb     | 65 +++++++++----------
+ lib/msf/core/payload/linux/mipsle/prepends.rb      |  6 +-
+ .../core/payload/linux/ppc/meterpreter_loader.rb   | 71 ++++++++++-----------
+ .../payload/linux/ppc64le/meterpreter_loader.rb    | 72 ++++++++++-----------
+ lib/msf/core/payload/linux/ppc64le/prepends.rb     |  6 +-
+ .../payload/linux/ppce500v2/meterpreter_loader.rb  | 74 +++++++++++-----------
+ lib/msf/core/payload/linux/ppce500v2/prepends.rb   |  6 +-
+ .../core/payload/linux/x64/meterpreter_loader.rb   |  2 +-
+ .../core/payload/linux/x86/meterpreter_loader.rb   |  3 +-
+ 17 files changed, 314 insertions(+), 345 deletions(-)
+
+commit f7caa72f3fbb3735b72ff16a37090577eaf1a845
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jun 2 05:49:27 2025 -0400
+
+    fix: align assembly comments, add single build instructions
+
+ data/templates/src/elf/exe/elf_aarch64_template.s  |  1 -
+ data/templates/src/elf/exe/elf_armbe_template.s    | 19 ++++++++-------
+ data/templates/src/elf/exe/elf_ppc64le_template.s  |  1 +
+ data/templates/src/elf/exe/elf_ppc_template.s      | 19 ++++++++-------
+ .../templates/src/elf/exe/elf_ppce500v2_template.s | 19 ++++++++-------
+ data/templates/src/elf/exe/elf_zarch_template.s    | 27 +++++++++++-----------
+ 6 files changed, 48 insertions(+), 38 deletions(-)
+
+commit 0fd1bd8047ef1cea1d4e82f329ec4424c831016a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 30 11:16:48 2025 -0400
+
+    fix: updating MeterpreterLinuxMinKernel default value, displaying warning on prepends usage
+
+ lib/msf/base/sessions/mettle_config.rb | 2 +-
+ lib/msf/core/payload/linux/prepends.rb | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 75765fb0ebff33c08ab35b5846f029b0a9cfeed4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 30 11:13:47 2025 -0400
+
+    fix: including prepends mixin on linux stageless meterpreter
+
+ lib/msf/core/payload/linux/armbe/prepends.rb       | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/mips64/prepends.rb      | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/mipsbe/prepends.rb      | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/mipsle/prepends.rb      | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/ppc64le/prepends.rb     | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/ppce500v2/prepends.rb   | 24 ++++++++++++++++++++++
+ lib/msf/core/payload/linux/zarch/prepends.rb       | 24 ++++++++++++++++++++++
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  1 +
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  1 +
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  1 +
+ .../linux/armbe/meterpreter_reverse_http.rb        |  1 +
+ .../linux/armbe/meterpreter_reverse_https.rb       |  1 +
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  1 +
+ .../linux/armle/meterpreter_reverse_http.rb        |  1 +
+ .../linux/armle/meterpreter_reverse_https.rb       |  1 +
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  1 +
+ .../linux/mips64/meterpreter_reverse_http.rb       |  1 +
+ .../linux/mips64/meterpreter_reverse_https.rb      |  1 +
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  1 +
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  1 +
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  1 +
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  1 +
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  1 +
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  1 +
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  1 +
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  1 +
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  1 +
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  1 +
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  1 +
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  1 +
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  1 +
+ .../linux/zarch/meterpreter_reverse_http.rb        |  1 +
+ .../linux/zarch/meterpreter_reverse_https.rb       |  1 +
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  1 +
+ tools/modules/meterpreter_reverse.erb              |  1 +
+ 35 files changed, 196 insertions(+)
+
+commit cd0645b50223ba5ac5c718b97b79c3194a1c7b1d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 30 06:27:40 2025 -0400
+
+    fix: changing MeterpreterLegacyElf to MeterpreterLinuxMinKernel
+
+ lib/msf/base/sessions/mettle_config.rb               |  7 +++----
+ lib/msf/core/payload/linux/prepends.rb               |  4 ++++
+ .../linux/aarch64/meterpreter_reverse_http.rb        | 20 ++++++++++----------
+ .../linux/aarch64/meterpreter_reverse_https.rb       | 20 ++++++++++----------
+ .../singles/linux/aarch64/meterpreter_reverse_tcp.rb | 20 ++++++++++----------
+ .../singles/linux/armbe/meterpreter_reverse_http.rb  | 20 ++++++++++----------
+ .../singles/linux/armbe/meterpreter_reverse_https.rb | 20 ++++++++++----------
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb   | 20 ++++++++++----------
+ .../singles/linux/armle/meterpreter_reverse_http.rb  | 20 ++++++++++----------
+ .../singles/linux/armle/meterpreter_reverse_https.rb | 20 ++++++++++----------
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb   | 20 ++++++++++----------
+ .../singles/linux/mips64/meterpreter_reverse_http.rb | 20 ++++++++++----------
+ .../linux/mips64/meterpreter_reverse_https.rb        | 20 ++++++++++----------
+ .../singles/linux/mips64/meterpreter_reverse_tcp.rb  | 20 ++++++++++----------
+ .../singles/linux/mipsbe/meterpreter_reverse_http.rb | 20 ++++++++++----------
+ .../linux/mipsbe/meterpreter_reverse_https.rb        | 20 ++++++++++----------
+ .../singles/linux/mipsbe/meterpreter_reverse_tcp.rb  | 20 ++++++++++----------
+ .../singles/linux/mipsle/meterpreter_reverse_http.rb | 20 ++++++++++----------
+ .../linux/mipsle/meterpreter_reverse_https.rb        | 20 ++++++++++----------
+ .../singles/linux/mipsle/meterpreter_reverse_tcp.rb  | 20 ++++++++++----------
+ .../singles/linux/x64/meterpreter_reverse_http.rb    | 20 ++++++++++----------
+ .../singles/linux/x64/meterpreter_reverse_https.rb   | 20 ++++++++++----------
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb     | 20 ++++++++++----------
+ .../singles/linux/x86/meterpreter_reverse_http.rb    | 20 ++++++++++----------
+ .../singles/linux/x86/meterpreter_reverse_https.rb   | 20 ++++++++++----------
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb     | 20 ++++++++++----------
+ .../singles/linux/zarch/meterpreter_reverse_http.rb  | 20 ++++++++++----------
+ .../singles/linux/zarch/meterpreter_reverse_https.rb | 20 ++++++++++----------
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb   | 20 ++++++++++----------
+ tools/modules/meterpreter_reverse.erb                |  2 +-
+ 30 files changed, 278 insertions(+), 275 deletions(-)
+
+commit 98e974dfea41c67f7c201f94eb43997221be360d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 19 16:01:01 2025 +0200
+
+    Adds comments for zarch
+
+ lib/msf/core/payload/linux/zarch/meterpreter_loader.rb | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit d93c9af7b07580d2fd021981ce2b84b1de50c0e7
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 19 13:54:29 2025 +0200
+
+    Adds comments for ARM, Mips and PPC
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb   |  9 +++++++++
+ lib/msf/core/payload/linux/armbe/meterpreter_loader.rb     | 10 ++++++++++
+ lib/msf/core/payload/linux/armle/meterpreter_loader.rb     | 10 ++++++++++
+ lib/msf/core/payload/linux/mips64/meterpreter_loader.rb    |  9 ++++++++-
+ lib/msf/core/payload/linux/mipsbe/meterpreter_loader.rb    |  8 ++++++++
+ lib/msf/core/payload/linux/mipsle/meterpreter_loader.rb    | 10 ++++++++--
+ lib/msf/core/payload/linux/ppc/meterpreter_loader.rb       | 12 +++++++++++-
+ lib/msf/core/payload/linux/ppc64le/meterpreter_loader.rb   | 12 ++++++++++++
+ lib/msf/core/payload/linux/ppce500v2/meterpreter_loader.rb | 11 +++++++++++
+ 9 files changed, 87 insertions(+), 4 deletions(-)
+
+commit 494aeb806124bdd8c2e6ec0c67eef0b680f27ed9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 12 12:16:49 2025 +0200
+
+    Updates cached_sizes and rubocop
+
+ .../singles/linux/aarch64/meterpreter_reverse_http.rb  | 18 +++++++++---------
+ .../singles/linux/aarch64/meterpreter_reverse_https.rb | 18 +++++++++---------
+ .../singles/linux/aarch64/meterpreter_reverse_tcp.rb   | 18 +++++++++---------
+ .../singles/linux/armbe/meterpreter_reverse_http.rb    |  1 +
+ .../singles/linux/armbe/meterpreter_reverse_https.rb   |  1 +
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb     | 18 +++++++++---------
+ .../singles/linux/armle/meterpreter_reverse_http.rb    |  1 +
+ .../singles/linux/armle/meterpreter_reverse_https.rb   |  1 +
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb     | 18 +++++++++---------
+ .../singles/linux/mips64/meterpreter_reverse_http.rb   |  1 +
+ .../singles/linux/mips64/meterpreter_reverse_https.rb  |  1 +
+ .../singles/linux/mips64/meterpreter_reverse_tcp.rb    |  1 +
+ .../singles/linux/mipsbe/meterpreter_reverse_http.rb   |  1 +
+ .../singles/linux/mipsbe/meterpreter_reverse_https.rb  |  1 +
+ .../singles/linux/mipsbe/meterpreter_reverse_tcp.rb    |  1 +
+ .../singles/linux/mipsle/meterpreter_reverse_http.rb   |  1 +
+ .../singles/linux/mipsle/meterpreter_reverse_https.rb  |  1 +
+ .../singles/linux/mipsle/meterpreter_reverse_tcp.rb    |  1 +
+ .../singles/linux/x64/meterpreter_reverse_http.rb      |  1 +
+ .../singles/linux/x64/meterpreter_reverse_https.rb     |  1 +
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb       |  1 +
+ .../singles/linux/x86/meterpreter_reverse_http.rb      |  1 +
+ .../singles/linux/x86/meterpreter_reverse_https.rb     |  1 +
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb       |  1 +
+ .../singles/linux/zarch/meterpreter_reverse_http.rb    |  1 +
+ .../singles/linux/zarch/meterpreter_reverse_https.rb   |  1 +
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb     | 18 +++++++++---------
+ 27 files changed, 75 insertions(+), 54 deletions(-)
+
+commit 351db917696f0786eedb2e3714390a1e0519c8db
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 1 13:23:36 2025 +0200
+
+    Adds execveat for MIPS64, PPC64 and Zarch
+
+ .../payload/linux/mips64/meterpreter_loader.rb     | 51 ++++++++--------
+ .../payload/linux/ppc64le/meterpreter_loader.rb    | 49 ++++++++-------
+ .../core/payload/linux/zarch/meterpreter_loader.rb | 71 ++++++++--------------
+ 3 files changed, 75 insertions(+), 96 deletions(-)
+
+commit 34aeb6fc89b19d297c198a8321618ab62392de3c
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 30 12:32:27 2025 +0200
+
+    Uses execveat syscall to make loader stub smaller
+
+ .../payload/linux/aarch64/meterpreter_loader.rb    | 78 +++++++-------------
+ .../core/payload/linux/armbe/meterpreter_loader.rb | 79 +++++++--------------
+ .../core/payload/linux/armle/meterpreter_loader.rb | 82 +++++++---------------
+ .../payload/linux/mips64/meterpreter_loader.rb     | 80 ++++++++-------------
+ .../payload/linux/mipsbe/meterpreter_loader.rb     | 77 +++++++-------------
+ .../payload/linux/mipsle/meterpreter_loader.rb     | 81 ++++++++-------------
+ .../core/payload/linux/ppc/meterpreter_loader.rb   | 70 +++++++-----------
+ .../payload/linux/ppc64le/meterpreter_loader.rb    | 69 +++++++-----------
+ .../payload/linux/ppce500v2/meterpreter_loader.rb  | 73 +++++++------------
+ .../core/payload/linux/x64/meterpreter_loader.rb   | 33 +++------
+ .../core/payload/linux/x86/meterpreter_loader.rb   | 30 ++------
+ 11 files changed, 259 insertions(+), 493 deletions(-)
+
+commit 0b0ab915946019c31d7576098a99afffd6fdc3fe
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Apr 17 15:06:08 2025 +0200
+
+    Add build script
+
+ data/templates/src/elf/exe/build.sh | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 768331d234d551545e2cb80b99beb4edaa0ae9b7
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Apr 17 09:06:37 2025 +0200
+
+    Adding comments for PPC
+
+ lib/msf/core/payload/linux/ppc/meterpreter_loader.rb       | 12 +++++++++++-
+ lib/msf/core/payload/linux/ppc64le/meterpreter_loader.rb   |  9 +++++++++
+ lib/msf/core/payload/linux/ppce500v2/meterpreter_loader.rb | 10 ++++++++++
+ 3 files changed, 30 insertions(+), 1 deletion(-)
+
+commit 3a22eae7c896e3e7203d68cb4bc7721bed70a66e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Apr 17 06:51:16 2025 -0400
+
+    feat: add elf-legacy option for systems unsupported by in_memory_loader
+
+ lib/msf/base/sessions/mettle_config.rb             |  5 +++++
+ .../linux/aarch64/meterpreter_reverse_http.rb      | 25 +++++++++++++---------
+ .../linux/aarch64/meterpreter_reverse_https.rb     | 23 ++++++++++++--------
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       | 23 ++++++++++++--------
+ .../linux/armbe/meterpreter_reverse_http.rb        |  6 +++++-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  6 +++++-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  6 +++++-
+ .../linux/armle/meterpreter_reverse_http.rb        |  6 +++++-
+ .../linux/armle/meterpreter_reverse_https.rb       |  6 +++++-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  6 +++++-
+ .../linux/mips64/meterpreter_reverse_http.rb       |  6 +++++-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  6 +++++-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  6 +++++-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  6 +++++-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  6 +++++-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  6 +++++-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  6 +++++-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  6 +++++-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  6 +++++-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  6 +++++-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  6 +++++-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  6 +++++-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  6 +++++-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  6 +++++-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  6 +++++-
+ .../linux/zarch/meterpreter_reverse_http.rb        |  6 +++++-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  6 +++++-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  6 +++++-
+ tools/modules/meterpreter_reverse.erb              |  6 +++++-
+ 29 files changed, 173 insertions(+), 53 deletions(-)
+
+commit eb68c8d93cef9695f29e9e41e6ce6ac10b730f9a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 16 13:14:11 2025 +0200
+
+    Add armbe/armle comments
+
+ lib/msf/core/payload/linux/armbe/meterpreter_loader.rb | 10 ++++++++++
+ lib/msf/core/payload/linux/armle/meterpreter_loader.rb | 10 ++++++++++
+ 2 files changed, 20 insertions(+)
+
+commit 85091a41111ecad1501265682acc134570c44708
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 16 10:24:37 2025 +0200
+
+    Aarch64 comments
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 9c2ea9c0dc3b58f68f3ea2e1c4d30c0f9c3b5c0d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Mar 20 17:11:43 2025 +0100
+
+    Rubocoping AARCH64 payload modules
+
+ .../singles/linux/aarch64/meterpreter_reverse_http.rb   |  1 +
+ .../singles/linux/aarch64/meterpreter_reverse_https.rb  |  1 +
+ .../singles/linux/aarch64/meterpreter_reverse_tcp.rb    | 17 ++++++++---------
+ 3 files changed, 10 insertions(+), 9 deletions(-)
+
+commit 16437e7421f39e783cfa6cb8aca6c231197b7d93
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Mar 17 10:28:17 2025 +0100
+
+    Fixed missing payload length for AARCH64
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 753b80322fe069fbf89336866174bcb9f2007c00
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Feb 14 06:03:07 2025 -0500
+
+    fix: updated mettle payload generation and cached_size
+
+ .../core/payload/linux/zarch/meterpreter_loader.rb | 52 ++++++++++++++++++++--
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  2 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  2 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  2 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  2 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |  3 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |  4 +-
+ tools/modules/meterpreter_reverse.erb              |  2 +-
+ 28 files changed, 78 insertions(+), 31 deletions(-)
+
+commit 0cc080fbe9cfa89af3bc87bd12cbe108d1c625f5
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Feb 14 05:42:14 2025 -0500
+
+    fix: updated mettle payload generation and cached_size
+
+ .../payload/linux/aarch64/meterpreter_loader.rb    |  2 +-
+ .../core/payload/linux/armbe/meterpreter_loader.rb |  2 +-
+ .../core/payload/linux/armle/meterpreter_loader.rb |  2 +-
+ .../core/payload/linux/ppc/meterpreter_loader.rb   |  2 +-
+ .../payload/linux/ppc64le/meterpreter_loader.rb    |  2 +-
+ .../payload/linux/ppce500v2/meterpreter_loader.rb  |  2 +-
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  6 ++++--
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  6 ++++--
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       | 22 ++++++++++++----------
+ .../linux/armbe/meterpreter_reverse_http.rb        |  7 +++++--
+ .../linux/armbe/meterpreter_reverse_https.rb       |  6 ++++--
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb | 22 ++++++++++++----------
+ .../linux/armle/meterpreter_reverse_http.rb        |  6 ++++--
+ .../linux/armle/meterpreter_reverse_https.rb       |  7 +++++--
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb | 21 +++++++++++----------
+ .../linux/mips64/meterpreter_reverse_http.rb       |  6 ++++--
+ .../linux/mips64/meterpreter_reverse_https.rb      |  7 +++++--
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  6 ++++--
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  6 ++++--
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  6 ++++--
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  6 ++++--
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  2 +-
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |  6 ++++--
+ .../singles/linux/x64/meterpreter_reverse_https.rb |  6 ++++--
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |  3 ++-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |  6 ++++--
+ .../singles/linux/x86/meterpreter_reverse_https.rb |  6 ++++--
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |  2 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |  6 ++++--
+ .../linux/zarch/meterpreter_reverse_https.rb       |  6 ++++--
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb | 21 +++++++++++----------
+ tools/modules/meterpreter_reverse.erb              |  4 +++-
+ 34 files changed, 136 insertions(+), 88 deletions(-)
+
+commit 978a2c23a5e8ed967edb489f6d51a7179df76964
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Feb 14 05:07:07 2025 -0500
+
+    fix: improved x86 and x64 shellcodes
+
+ lib/msf/core/payload/linux/aarch64/meterpreter_loader.rb |  2 +-
+ lib/msf/core/payload/linux/x64/meterpreter_loader.rb     | 13 +++----------
+ lib/msf/core/payload/linux/x86/meterpreter_loader.rb     | 11 ++---------
+ 3 files changed, 6 insertions(+), 20 deletions(-)
+
+commit 679ebb070b9464669a579644bc74c114c0c600f5
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Feb 13 17:56:58 2025 +0100
+
+    Code refactor, loader delivery update
+
+ .../payload/linux/aarch64/meterpreter_loader.rb    |  53 +++++++++++++++++++
+ .../core/payload/linux/armbe/meterpreter_loader.rb |  55 ++++++++++++++++++++
+ .../core/payload/linux/armle/meterpreter_loader.rb |  57 +++++++++++++++++++++
+ .../core/payload/linux/ppc/meterpreter_loader.rb   |  55 ++++++++++++++++++++
+ .../payload/linux/ppc64le/meterpreter_loader.rb    |  48 +++++++++++++++++
+ .../payload/linux/ppce500v2/meterpreter_loader.rb  |  52 +++++++++++++++++++
+ .../core/payload/linux/zarch/meterpreter_loader.rb |  14 +++++
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  46 +----------------
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  47 +----------------
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  49 +-----------------
+ .../linux/ppc/.meterpreter_reverse_tcp.rb.swo      | Bin 12288 -> 0 bytes
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |   6 +--
+ 12 files changed, 342 insertions(+), 140 deletions(-)
+
+commit 7c77a9cfc724e9082df0cd4a454786838c0601d3
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Feb 13 16:42:28 2025 +0100
+
+    ARMBe and Zarch stageless payload
+
+ data/templates/src/elf/exe/elf_armbe_template.s    |  34 +++++++++++++++++++++
+ data/templates/src/elf/exe/elf_zarch_template.s    |  33 ++++++++++++++++++++
+ data/templates/template_armbe_linux.bin            | Bin 0 -> 84 bytes
+ data/templates/template_zarch_linux.bin            | Bin 0 -> 120 bytes
+ .../payload/linux/aarch64/meterpreter_loader.rb    |   0
+ .../core/payload/linux/armle/meterpreter_loader.rb |   0
+ .../core/payload/linux/ppc/meterpreter_loader.rb   |   0
+ .../core/payload/linux/zarch/meterpreter_loader.rb |   0
+ lib/msf/util/exe.rb                                |  25 +++++++++++++++
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |   5 +--
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |   6 +++-
+ 11 files changed, 98 insertions(+), 5 deletions(-)
+
+commit c4cc47c60e28867e674c835825cb39aeb55eca31
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 12 03:56:03 2025 -0500
+
+    fix: fix exe after merge issue
+
+ lib/msf/util/exe.rb | 37 +++++++++++++++----------------------
+ 1 file changed, 15 insertions(+), 22 deletions(-)
+
+commit 3f2be78f9b9eb1d9e7d08c84d8ef17de23191f52
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 12 03:30:00 2025 -0500
+
+    feat: add mips64 elf template and meterpreter_loader
+
+ data/templates/src/elf/exe/elf_mips64_template.s   |  55 +++++++++++++++++
+ data/templates/template_mips64_linux.bin           | Bin 0 -> 120 bytes
+ .../payload/linux/mips64/meterpreter_loader.rb     |  65 +++++++++++++++++++++
+ lib/msf/util/exe.rb                                |  24 +++++++-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |   4 +-
+ 5 files changed, 145 insertions(+), 3 deletions(-)
+
+commit 861e1b77d62b6c36eeda78553ecc65e722c02a18
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Feb 3 15:07:56 2025 +0100
+
+    PowerPC stageless payload
+
+ data/templates/src/elf/exe/elf_ppc_template.s      |   16 +-
+ .../templates/src/elf/exe/elf_ppce500v2_template.s |   34 +
+ data/templates/template_ppc_linux.bin              |  Bin 84 -> 84 bytes
+ data/templates/template_ppce500v2_linux.bin        |  Bin 0 -> 84 bytes
+ lib/msf/util/exe.rb                                | 3378 +++++++++++---------
+ 5 files changed, 1974 insertions(+), 1454 deletions(-)
+
+commit ca9706b6ae4ec83b7b03f8610f6af0d0b59e0975
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jan 30 16:18:20 2025 +0100
+
+    PPC progress
+
+ data/templates/src/elf/exe/elf_ppc_template.s           |   5 ++---
+ data/templates/template_ppc_linux.bin                   | Bin 84 -> 84 bytes
+ .../singles/linux/ppc/.meterpreter_reverse_tcp.rb.swo   | Bin 0 -> 12288 bytes
+ 3 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 0c2b25e0999333e09526975b48af65514830c322
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jan 27 14:12:44 2025 +0100
+
+    PPC64 shellcode added, adding PPC initial work
+
+ data/templates/src/elf/exe/elf_ppc64le_template.s  |  22 ++++++-------
+ data/templates/src/elf/exe/elf_ppc_template.s      |  35 +++++++++++++++++++++
+ .../src/elf/exe/template_ppc64le_linux.bin         | Bin 84 -> 0 bytes
+ data/templates/src/elf/exe/template_ppc_linux.bin  | Bin 88 -> 0 bytes
+ data/templates/template_ppc64le_linux.bin          | Bin 0 -> 128 bytes
+ data/templates/template_ppc_linux.bin              | Bin 0 -> 84 bytes
+ lib/msf/util/exe.rb                                |  20 +++++++++---
+ 7 files changed, 62 insertions(+), 15 deletions(-)
+
+commit 764c0c449f1d22fa18b73bae0624511bc4d7971b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jan 24 16:50:59 2025 +0100
+
+    PPC64le init
+
+ data/templates/src/elf/exe/elf_ppc64le_template.s  |  39 +++++++++++++++++++++
+ .../src/elf/exe/template_ppc64le_linux.bin         | Bin 0 -> 84 bytes
+ data/templates/src/elf/exe/template_ppc_linux.bin  | Bin 0 -> 88 bytes
+ 3 files changed, 39 insertions(+)
+
+commit 71d2eb2046da96463364dc13b40676aca78f8dcd
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Feb 10 06:32:13 2025 -0500
+
+    fix: move mipsbe and mipsle meterpreter_loader into separate mixin
+
+ .../payload/linux/mipsbe/meterpreter_loader.rb     | 65 ++++++++++++++++++++++
+ .../payload/linux/mipsle/meterpreter_loader.rb     | 65 ++++++++++++++++++++++
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        | 59 +-------------------
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        | 59 +-------------------
+ 4 files changed, 134 insertions(+), 114 deletions(-)
+
+commit 6d750fef079308d00c37871ebb7254b43d5cb792
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Feb 10 04:47:39 2025 -0500
+
+    fix: move x64 meterpreter_loader into separate mixin
+
+ .../core/payload/linux/x64/meterpreter_loader.rb   | 64 ++++++++++++++++++++++
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   | 57 +------------------
+ 2 files changed, 66 insertions(+), 55 deletions(-)
+
+commit 38cd623b63738e322de3cef89391ef29a4a17036
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Feb 10 03:22:47 2025 -0500
+
+    fix: move meterpreter_loader into separate mixin
+
+ .../core/payload/linux/x86/meterpreter_loader.rb   | 63 ++++++++++++++++++++++
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   | 56 +------------------
+ 2 files changed, 65 insertions(+), 54 deletions(-)
+
+commit afb93ec158fc0d64a431b4bf1c4b12f2e906c54d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jan 23 06:49:49 2025 -0500
+
+    feat(payload): linux/mips in_memory_loader for stageless meterpreter
+
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        | 59 +++++++++++++++++++++-
+ 1 file changed, 58 insertions(+), 1 deletion(-)
+
+commit dba8ddbd6f60e9c133ad043e917f23e3543a25f6
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jan 23 04:52:54 2025 -0500
+
+    feat(payload): linux/mipsel in_memory_loader for stageless meterpreter
+
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        | 59 +++++++++++++++++++++-
+ 1 file changed, 58 insertions(+), 1 deletion(-)
+
+commit fd0427e55fdee7dea1ba3f0a602e48676806ab88
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jan 17 10:02:47 2025 +0100
+
+    Adding itoa function for ARM64 and ARMbe
+
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       | 80 +++++++++++-----------
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb | 80 +++++++++++-----------
+ 2 files changed, 80 insertions(+), 80 deletions(-)
+
+commit afba87eb4fa75c4b9d95a7ccc56c7eb396229f01
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jan 17 10:02:31 2025 +0100
+
+    Adding itoa function for ARM64 and ARMbe
+
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       | 65 +++++++++++++---------
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb | 65 ++++++++++++++--------
+ 2 files changed, 81 insertions(+), 49 deletions(-)
+
+commit 4c8e4285cf5a09b8ce210bb0e2f5cdc86eb66c65
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jan 17 09:06:27 2025 +0100
+
+    Adding itoa for ARMle stageless payload
+
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb | 67 ++++++++++++++--------
+ 1 file changed, 42 insertions(+), 25 deletions(-)
+
+commit c9cd7831ead2787dfb940e21741587e6fa98e74f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jan 16 09:06:08 2025 +0100
+
+    Armbe draft and ARM64 functional payload for memfd_create
+
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       | 30 +++++++++++++++++++-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb | 32 +++++++++++++++++++++-
+ 2 files changed, 60 insertions(+), 2 deletions(-)
+
+commit bc28e3a712effdb56c8d56d42eaa0387141bfd47
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 15 13:27:10 2025 +0100
+
+    Shellcode for memfd_create for ARM
+
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb | 32 +++++++++++++++++++++-
+ 1 file changed, 31 insertions(+), 1 deletion(-)
+
+commit a5bae331bc13304970ba886b0aa92f88673a7aca
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Jan 14 05:56:54 2025 -0500
+
+    feat(payload): linux/x64 in_memory_loader for stageless meterpreter
+
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   | 56 +++++++++++++++++++++-
+ 1 file changed, 55 insertions(+), 1 deletion(-)
+
+commit 750bbdf9d73aed1e1080bb6cbd9e6afe403322d4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Jan 14 05:19:34 2025 -0500
+
+    feat(payload): linux/x86 in_memory_loader itoa improvement
+
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   | 25 +++++++++++++++++++---
+ 1 file changed, 22 insertions(+), 3 deletions(-)
+
+commit 14f62457b3cd14dc1d7ac78cf622d8c680a32c32
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jan 13 12:21:19 2025 -0500
+
+    feat(payload): linux/x86 in_memory_loader for stageless meterpreter
+
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   | 37 +++++++++++++++++++++-
+ 1 file changed, 36 insertions(+), 1 deletion(-)
+
+commit b9adfb740e1302d97f5073ba179b0ca16f34b194
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Jan 10 09:19:18 2025 -0500
+
+    fix: removing unnecessary elf parsing in linux/x86/meterpreter
+
+ modules/payloads/stages/linux/x86/meterpreter.rb | 31 ++++++++++++------------
+ 1 file changed, 15 insertions(+), 16 deletions(-)
+
+commit 0e28807458b897555b9a76c6047f87b1e7333b0c
+Author: ptrstr <ptrstr@protonmail.com>
+Date:   Tue Jan 6 09:44:22 2026 -0500
+
+    Fix formatting
+
+ .../exploits/unix/webapp/wp_reflexgallery_file_upload.rb   | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 61004db2be9661411631885adbf34d5997a03e0f
+Merge: 7aebd446fb 20fcecc963
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Jan 6 10:34:23 2026 +0000
+
+    Merge pull request #20370 from msutovsky-r7/fix/smb_login_crash
+    
+    Fixes smb_login crash
+
+ lib/rex/proto/smb/simple_client.rb | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 7aebd446fb35f56a5af0cb54bd5a4708660b102e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 6 09:49:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit 3bf76a3f9fb993fcd87c9c2c0ea29bfd9b04c7e4
+Merge: bd870b4caf 2b85112a36
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Jan 6 09:40:02 2026 +0000
+
+    Merge pull request #20815 from h00die/fix_panda_refs
+    
+    fix panda local privesc refs
+
+ modules/exploits/windows/local/panda_psevents.rb | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit 13e93abfdfea03b180f22b6101c13d22ca5571ba
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 6 08:31:46 2026 +0100
+
+    Addressing comments
+
+ modules/exploits/multi/persistence/python_site_specific_hook.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
