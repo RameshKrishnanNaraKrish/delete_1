@@ -1,0 +1,65 @@
+commit 23b86eba7e11d2cbdd389ded619d87b61fd36f59
+Merge: 0f3ac31712 27fc0bf2e2
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Jan 7 06:36:30 2026 -0500
+
+    Merge pull request #20848 from msutovsky-r7/fix/lib/exe/x64_to_executable_fix
+    
+    Fixes typo in generating X64 PE file
+
+ lib/msf/util/exe.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 27fc0bf2e29e27470330fed4d4e189003b3da9dd
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 7 12:12:37 2026 +0100
+
+    Fixes typo in to_executable
+
+ lib/msf/util/exe.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0f3ac31712e36b315401ace10996ea78b5c13cdf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 7 11:03:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit b39e7815008229cf78fa130c28723e537e8f7469
+Merge: d104bdeeb1 4decd07c29
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 7 11:53:32 2026 +0100
+
+    Land #20700, adds module for Taiga.io RCE (CVE-2025-62368)
+    
+    Adds exploit module for authenticated deserialization vulnerability in Taiga.io (CVE-2025-62368)
+
+ .../exploit/multi/http/taiga_tribe_gig_unserial.md | 318 +++++++++++++++++++++
+ .../multi/http/taiga_tribe_gig_unserial.rb         | 221 ++++++++++++++
+ 2 files changed, 539 insertions(+)
+
+commit d104bdeeb1f3b651dc19968e877976aa536f7411
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 7 00:28:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 0d21fd4cc974f98e0a31140248c4af0821d807dc
+Merge: 8ce13f05fd d6bffff143
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jan 6 16:19:31 2026 -0800
+
+    Merge pull request #20692 from msutovsky-r7/persistence/multi/python-site-specific-config-hook
+    
+    Adds module for python site-specific hook persistence
+
+ .../multi/persistence/python_site_specific_hook.md |  98 ++++++++++++++++
+ lib/msf/core/mitre/attack/technique.rb             |   2 +-
+ .../multi/persistence/python_site_specific_hook.rb | 123 +++++++++++++++++++++
+ 3 files changed, 222 insertions(+), 1 deletion(-)
