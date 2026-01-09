@@ -1,0 +1,191 @@
+commit 4e2233827bf441d7a83e012716c2810549796eb2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 8 21:27:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da89d98b1e8931efbb80c6e2f463b7344d6a2415
+Merge: cb6b96e17b 2867729808
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 8 16:17:43 2026 -0500
+
+    Merge pull request #20847 from dwelch-r7/fix-ssh-login-print-and-docs
+    
+    Fix extra characters in print and merge docs for ssh_login/ssh_login_pubkey
+
+ .../modules/auxiliary/scanner/ssh/ssh_login.md     | 203 +++++++++++++++++-
+ .../auxiliary/scanner/ssh/ssh_login_pubkey.md      | 236 ---------------------
+ modules/auxiliary/scanner/ssh/ssh_login.rb         |   2 +-
+ 3 files changed, 200 insertions(+), 241 deletions(-)
+
+commit cb6b96e17b03d86efd8ca0bb0103a1b11752e2ca
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 8 20:54:58 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit f7857f0a4e5a818be83d8aca4eed110c408fd8bf
+Merge: 6627686e74 16c1b6fa64
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 8 15:45:36 2026 -0500
+
+    Merge pull request #20853 from zeroSteiner/fix/bump-payloads/2.0.239
+    
+    Update metasploit-payloads gem to 2.0.239
+
+ Gemfile.lock                                                         | 4 ++--
+ LICENSE_GEMS                                                         | 2 +-
+ metasploit-framework.gemspec                                         | 2 +-
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb              | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_http.rb         | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_https.rb        | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_http.rb     | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_https.rb    | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ 16 files changed, 17 insertions(+), 17 deletions(-)
+
+commit 16c1b6fa64c4f8c4fd278788063fe7b2c1ddb488
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jan 8 15:26:57 2026 -0500
+
+    Update payload cached sizes
+
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb              | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_http.rb         | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_https.rb        | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_http.rb     | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_https.rb    | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ 13 files changed, 13 insertions(+), 13 deletions(-)
+
+commit 86f77beb2ed8aac9c186d6d2472932e753546b07
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jan 8 14:58:17 2026 -0500
+
+    Update metasploit-payloads gem to 2.0.239
+    
+    Includes changes from:
+    * rapid7/metasploit-payloads#764
+    * rapid7/metasploit-payloads#786
+
+ Gemfile.lock                 | 4 ++--
+ LICENSE_GEMS                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 6627686e745895dba36c1fa3e51a40fc261029d8
+Merge: 8e6be3940e b40fc5afa8
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 8 12:01:51 2026 -0500
+
+    Merge pull request #20850 from dledda-r7/poolparty_injection
+    
+    Poolparty injection Stubs
+
+ .../windows/x64/src/migrate/poolparty.asm          | 75 ++++++++++++++++++++
+ .../windows/x86/src/migrate/poolparty.asm          | 81 ++++++++++++++++++++++
+ 2 files changed, 156 insertions(+)
+
+commit 0583a4c983a85bb2bfa5271f60d1e8798e4e0ab5
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Jan 8 16:50:55 2026 +0100
+
+    Apply review feedback: revert Platform, simplify framework_config, improve Waku detection
+    
+    Co-authored-by: jheysel-r7 <jheysel-r7@users.noreply.github.com>
+
+ .../multi/http/react2shell_unauth_rce_cve_2025_55182.rb   | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+commit 28677298086ef374bdc3a47ce748cd2cdb56b216
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Jan 6 15:39:36 2026 +0000
+
+    Fix extra characters in print and merge docs for ssh_login/ssh_login_pubkey
+
+ .../modules/auxiliary/scanner/ssh/ssh_login.md     | 203 +++++++++++++++++-
+ .../auxiliary/scanner/ssh/ssh_login_pubkey.md      | 236 ---------------------
+ modules/auxiliary/scanner/ssh/ssh_login.rb         |   2 +-
+ 3 files changed, 200 insertions(+), 241 deletions(-)
+
+commit 8e6be3940e54a6fb34367df6c4c5bf069e2d1e4a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 8 11:42:27 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit c289ff44b94fd458bd0167c8c107a6d78c3f7057
+Merge: ac263282a6 2030d19438
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jan 8 12:33:00 2026 +0100
+
+    Land #20811, adds module for Prison Management System 1.0 RCE (CVE-2024-48594)
+    
+    Add Prison Management System 1.0 auth RCE (CVE-2024-48594)
+
+ .../exploit/linux/http/prison_management_rce.md    |  91 ++++++++++
+ .../exploits/linux/http/prison_management_rce.rb   | 192 +++++++++++++++++++++
+ 2 files changed, 283 insertions(+)
+
+commit b40fc5afa8a6c75eb4765a3e9cfca87fbaa1e9db
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jan 8 12:20:43 2026 +0100
+
+    chore: update author information in poolparty shellcode 32-bit
+
+ external/source/shellcode/windows/x86/src/migrate/poolparty.asm | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c5fd212334f3441d8edb3ee193dc22f293c64e08
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jan 8 05:15:28 2026 -0500
+
+    docs: add poolparty 32-bit, update poolparty 64-bit stubs
+
+ .../windows/x64/src/migrate/poolparty.asm          |  1 -
+ .../windows/x86/src/migrate/poolparty.asm          | 81 ++++++++++++++++++++++
+ 2 files changed, 81 insertions(+), 1 deletion(-)
+
+commit 4774c038885c21107fd88ae5515f4dfb4c871e60
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jan 8 04:46:05 2026 -0500
+
+    docs: removing unused sources
+
+ .../windows/x64/src/migrate/createwow64.asm        | 60 ----------------------
+ .../shellcode/windows/x64/src/migrate/x64tox86.asm | 20 --------
+ 2 files changed, 80 deletions(-)
+
+commit ac263282a635fd470a99801b5d61bf64a2699ca9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 8 03:35:47 2026 +0000
+
+    Bump version of framework to 6.4.107
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
