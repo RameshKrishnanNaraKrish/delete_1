@@ -1,0 +1,51 @@
+commit aa5d4d05043df7a082fd6ba0b7206e4efda32367
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jan 12 23:23:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 10d12570c05302e99bb392cdcc5c581664e2bbc4
+Merge: 87da6e2bee 7b1e7d5320
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Jan 12 17:14:04 2026 -0600
+
+    Merge pull request #20791 from Chocapikk/webcheck
+    
+    Add Web-Check screenshot API command injection RCE exploit (CVE-2025-32778)
+
+ .../exploit/multi/http/web_check_screenshot_rce.md | 110 +++++++++++++++++
+ .../multi/http/web_check_screenshot_rce.rb         | 137 +++++++++++++++++++++
+ 2 files changed, 247 insertions(+)
+
+commit 87da6e2beef0b95b1717259e1ec9768b624765fe
+Merge: 838dcad772 defa2b1337
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jan 12 15:16:41 2026 +0100
+
+    Land #20665, adds documentation for ipv6_neighbor_router_advertisement module
+    
+    Add documentation for ipv6_neighbour_router_advertisement.rb
+
+ .../ipv6_neighbor_router_advertisement.md          | 48 ++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+commit defa2b1337c15b1cf946a178a713bd441294708b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jan 12 14:50:10 2026 +0100
+
+    Adds reference to protocol, fixes formatting
+
+ .../discovery/ipv6_neighbor_router_advertisement.md | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
+
+commit 2f62e7c03165f8fc5126bf4b0d483a56dd9646b5
+Author: basicallyabidoof <sean.juroviesky@soundcloud.com>
+Date:   Thu Oct 30 12:10:17 2025 -0500
+
+    Add documentation for ipv6_neighbor_router_advertisement.rb see https://github.com/rapid7/metasploit-framework/issues/12389
+
+ .../ipv6_neighbor_router_advertisement.md          | 39 ++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
