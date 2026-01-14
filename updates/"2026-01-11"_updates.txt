@@ -1,0 +1,334 @@
+commit 595dce895663e5c58fcf9de425e3d2edf0e4f843
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 13 16:00:41 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit eae97b314a77efba2498543f0953b14e5cc17c1c
+Merge: a3ca8dd27e fec9388c33
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 13 16:51:06 2026 +0100
+
+    Land #20810, adds module for authenticated RCE in n8n (CVE-2025-68613)
+    
+    Adds module for n8n workflow expression RCE (CVE-2025-68613)
+
+ .../multi/http/n8n_workflow_expression_rce.md      |  81 ++++++
+ .../multi/http/n8n_workflow_expression_rce.rb      | 323 +++++++++++++++++++++
+ 2 files changed, 404 insertions(+)
+
+commit fec9388c33c2b4d2afcdc3a45ac9858031969ae4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 13 16:31:01 2026 +0100
+
+    Adds comment
+
+ modules/exploits/multi/http/n8n_workflow_expression_rce.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit a3ca8dd27e4ac3b7a8cecea17149fe30b0b93763
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 13 15:30:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 104 +++++++++++++++++++++++++++---------------
+ 1 file changed, 67 insertions(+), 37 deletions(-)
+
+commit 9463ed445375b675ce38975c4e3cc2af048192c7
+Merge: 7ad037accb 19f5970c61
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Jan 13 10:20:46 2026 -0500
+
+    Merge pull request #20855 from h00die/fix_persistence_windows
+    
+    Enhance Persistences
+
+ modules/exploits/example_linux_persistence.rb                        | 2 +-
+ modules/exploits/linux/persistence/apt_package_manager.rb            | 5 ++++-
+ modules/exploits/linux/persistence/autostart.rb                      | 1 +
+ modules/exploits/linux/persistence/bash_profile.rb                   | 1 +
+ modules/exploits/linux/persistence/init_openrc.rb                    | 1 +
+ modules/exploits/linux/persistence/init_systemd.rb                   | 1 +
+ modules/exploits/linux/persistence/init_systemd_override.rb          | 1 +
+ modules/exploits/linux/persistence/init_sysvinit.rb                  | 1 +
+ modules/exploits/linux/persistence/init_upstart.rb                   | 1 +
+ modules/exploits/linux/persistence/motd.rb                           | 1 +
+ modules/exploits/linux/persistence/rc_local.rb                       | 1 +
+ modules/exploits/linux/persistence/udev.rb                           | 1 +
+ modules/exploits/linux/persistence/yum_package_manager.rb            | 5 ++++-
+ modules/exploits/multi/persistence/at.rb                             | 1 +
+ modules/exploits/multi/persistence/cron.rb                           | 1 +
+ modules/exploits/multi/persistence/periodic_script.rb                | 1 +
+ modules/exploits/multi/persistence/python_site_specific_hook.rb      | 1 +
+ .../exploits/windows/persistence/accessibility_features_debugger.rb  | 2 ++
+ modules/exploits/windows/persistence/assistive_technology.rb         | 2 +-
+ modules/exploits/windows/persistence/image_exec_options.rb           | 2 ++
+ modules/exploits/windows/persistence/linqpad_deserialization.rb      | 3 ++-
+ modules/exploits/windows/persistence/notepadpp_plugin_persistence.rb | 1 +
+ modules/exploits/windows/persistence/registry.rb                     | 2 ++
+ modules/exploits/windows/persistence/service.rb                      | 4 +++-
+ modules/exploits/windows/persistence/startup_folder.rb               | 2 ++
+ modules/exploits/windows/persistence/task_scheduler.rb               | 2 ++
+ modules/exploits/windows/persistence/wsl/registry.rb                 | 1 +
+ 27 files changed, 41 insertions(+), 6 deletions(-)
+
+commit 7b55f22afbfa394eab73bdf069ba34f0d0c29c88
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 13 15:37:12 2026 +0100
+
+    Fixes payload delivery and execution to support all vulnerable versions
+
+ .../multi/http/n8n_workflow_expression_rce.rb      | 43 +++++++++++++---------
+ 1 file changed, 26 insertions(+), 17 deletions(-)
+
+commit 7ad037accbe3ba4d8db47701a65a7e078e16cafe
+Merge: aa5d4d0504 dfc1adb40c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Jan 13 05:49:32 2026 -0500
+
+    Merge pull request #19990 from msutovsky-r7/feat/fetch_fileless_update
+    
+    Syscall execution method for fileless ELF execution
+
+ .../How-to-use-fetch-payloads.md                   |  12 +-
+ lib/msf/core/payload/adapter/fetch.rb              |  36 +--
+ lib/msf/core/payload/adapter/fetch/fileless.rb     | 279 +++++++++++++++++++++
+ .../core/payload/adapter/fetch/linux_options.rb    |   5 +-
+ 4 files changed, 297 insertions(+), 35 deletions(-)
+
+commit dfc1adb40c11b2f29d2780fa233dcdebe5c1f8df
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 13 08:36:28 2026 +0100
+
+    Dropping support for PPC archs
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 67 --------------------------
+ 1 file changed, 67 deletions(-)
+
+commit c925ffbfdf85a979165154367b527288c9c64d01
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jan 6 08:16:49 2026 +0100
+
+    Fixes the Mipsbe bug
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b1fc76c1c6ea151c282c3994827aaf7335ed2d45
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Dec 10 16:39:06 2025 +0100
+
+    Fixes MIPS64
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit e1f0c72e27103c0e7fcc16c53ab552a7924045f8
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Jun 24 15:33:55 2025 +0200
+
+    Adds documentation
+
+ docs/metasploit-framework.wiki/How-to-use-fetch-payloads.md | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+commit d057be11e5241be3c8d0a01e9bd48eda7f8ae59e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jun 19 16:17:33 2025 +0200
+
+    Adds more reliable splitting hex shellcode, more reliable shell spawning
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 8a7ed167aeba2c3b19a6e01c815ad402a61d350e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon May 5 07:54:16 2025 +0200
+
+    Adds x86/x64 loader shellcode
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit a302985f342c89682799a10b5f17b17b2592cda1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri May 2 16:37:53 2025 +0200
+
+    Adds POSIX support, more reliable process killing
+
+ lib/msf/core/payload/adapter/fetch.rb              |  4 +-
+ lib/msf/core/payload/adapter/fetch/fileless.rb     | 66 +++++++++++-----------
+ .../core/payload/adapter/fetch/linux_options.rb    |  2 +-
+ 3 files changed, 36 insertions(+), 36 deletions(-)
+
+commit f92c58151a29933e34e5a11abad27698f04fa21e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 28 05:26:45 2025 +0200
+
+    Removes unnecessary line
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b19f7d1f1b9cfd9c3f3827a75d71651dddaa0e0e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 28 05:25:52 2025 +0200
+
+    Removing teaser
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit 243c71b7a9f76c432efc804d6514e9ea0a33c1bc
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 28 05:23:49 2025 +0200
+
+    Adds killing memfd_create process to avoid having bash idly waiting; code refactor; comments
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+
+commit 596184d6360cca408d6b396432354b60ee0a8611
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Apr 25 17:02:57 2025 +0200
+
+    Option rename
+
+ lib/msf/core/payload/adapter/fetch.rb               | 2 +-
+ lib/msf/core/payload/adapter/fetch/fileless.rb      | 1 +
+ lib/msf/core/payload/adapter/fetch/linux_options.rb | 2 +-
+ 3 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 5857697edb8c9b9d24a3958efcadc0d7ac2278e6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Apr 24 13:09:18 2025 +0200
+
+    MIPS fix
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit bbe66eec786099e2174543cba5d7e171f1473303
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Apr 24 10:16:24 2025 +0200
+
+    MIPS64 fix
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 97 +++++++++++++-------------
+ 1 file changed, 50 insertions(+), 47 deletions(-)
+
+commit e3514dda3aeefc592691ef0e9fbf1168c6bca638
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 23 08:08:01 2025 +0200
+
+    Add ppc/ppc64 fix
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 34 +++++++++++++++++++++++---
+ 1 file changed, 30 insertions(+), 4 deletions(-)
+
+commit bc467503a020f7f5aa978b346c1b8b89fd7d24ea
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 21 22:44:16 2025 +0200
+
+    Add bash-search option
+
+ lib/msf/core/payload/adapter/fetch.rb              |  1 +
+ lib/msf/core/payload/adapter/fetch/fileless.rb     | 34 +++++++++++++++++++---
+ .../core/payload/adapter/fetch/linux_options.rb    |  5 ++--
+ 3 files changed, 34 insertions(+), 6 deletions(-)
+
+commit c93015a86d82db23f3d7e424c0831f8bcaf4451b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 21 22:12:16 2025 +0200
+
+    Add armbe/armle fix
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 50 +++++++++++++-------------
+ 1 file changed, 25 insertions(+), 25 deletions(-)
+
+commit cc3d10d2df858d87c83b6fe85959439a2c604991
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun Apr 6 13:44:31 2025 +0200
+
+    Code refactor
+
+ lib/msf/core/payload/adapter/fetch.rb          | 270 +-----------------------
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 280 +++++++++++++++++++++++++
+ 2 files changed, 283 insertions(+), 267 deletions(-)
+
+commit 66374f877ac0182535517224af64a6ac8656c2c9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Apr 2 16:37:14 2025 +0200
+
+    Update jump instruction armle/armbe
+
+ lib/msf/core/payload/adapter/fetch.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 8a9eeafd1c7b2d0e6ccc46378cdfd246ea4bf08e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 1 18:25:35 2025 +0200
+
+    armle/armbe shellcode update
+
+ lib/msf/core/payload/adapter/fetch.rb | 46 +++++++++++++++++------------------
+ 1 file changed, 22 insertions(+), 24 deletions(-)
+
+commit 8a4265038a1945589c5117caad24333e8a65eaf8
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 1 13:39:33 2025 +0200
+
+    armbe/armle jump instruction update
+
+ lib/msf/core/payload/adapter/fetch.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit dfc51fdcd936f6ea0bb672ac2e89deb2d5e39820
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 1 12:08:01 2025 +0200
+
+    Fix for lost zero byte in arm64, adding more reliable method for all archs
+
+ lib/msf/core/payload/adapter/fetch.rb | 36 ++++++++++++++++++-----------------
+ 1 file changed, 19 insertions(+), 17 deletions(-)
+
+commit 2ccbffe67ae70c6e7ad603b2295d4857493626dc
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 1 09:27:16 2025 +0200
+
+    Fixing jump instruction for aarch64
+
+ lib/msf/core/payload/adapter/fetch.rb | 33 +++++++++++++++++----------------
+ 1 file changed, 17 insertions(+), 16 deletions(-)
+
+commit 0821db9e9404a5c56f1ce5e1be6207162836c121
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Mar 31 14:40:47 2025 +0200
+
+    Adding remaining architectures, untested
+
+ lib/msf/core/payload/adapter/fetch.rb              | 102 ++++++++++++++++++++-
+ .../core/payload/adapter/fetch/linux_options.rb    |   1 -
+ 2 files changed, 97 insertions(+), 6 deletions(-)
+
+commit 7ab1e0dc1050732e9d94fbb90c9a69753602c0e1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Mar 28 15:07:37 2025 +0100
+
+    Fix sh option
+
+ lib/msf/core/payload/adapter/fetch/linux_options.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ff9fe421f5b6422b2facbcd3ea1543789fe5642d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Mar 28 15:06:36 2025 +0100
+
+    Rebase, adding sh option
+
+ lib/msf/core/payload/adapter/fetch.rb | 189 +++++++++++++++++++++++++++++-----
+ 1 file changed, 165 insertions(+), 24 deletions(-)
