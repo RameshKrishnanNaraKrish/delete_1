@@ -1,0 +1,218 @@
+commit d8bef9bd7b7298eb1aab27d3a86be38601e7e6a8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 14 22:53:30 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 ++++---------------------------------------
+ 1 file changed, 5 insertions(+), 48 deletions(-)
+
+commit bb473b6019579cc936ded9f75e294cab1c8093da
+Merge: 3077fd6011 f4a195b88a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 14 14:43:33 2026 -0800
+
+    Merge pull request #20797 from h00die/remove_persistence_exe
+    
+    persistence modules cleanup
+
+ ...p_plugin_persistence.md => notepadpp_plugin.md} |   0
+ ...p_plugin_persistence.rb => notepadpp_plugin.rb} |   0
+ modules/post/windows/manage/persistence_exe.rb     | 355 ---------------------
+ 3 files changed, 355 deletions(-)
+
+commit 3077fd60115eeb78471e87ee64ce12b639d75c17
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 14 21:13:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit af6ad7ee12ce4e04a9fd04a68b141b14fdb7b975
+Merge: c2295b13a8 d3f617bf08
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jan 14 16:04:14 2026 -0500
+
+    Merge pull request #20738 from Shubham0699/fix-bailiwicked-exceptions
+    
+    Fix Bailiwicked module exceptions and SRCPORT default
+
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb | 4 ++--
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb   | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit c2295b13a8776293c9299e7c5130d34c6977e848
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 14 20:53:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 62 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 61 insertions(+), 1 deletion(-)
+
+commit 658c251b66901d7bccf65e270ec119498a5300eb
+Merge: 480b1ddc22 aa7771809c
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jan 14 15:43:35 2026 -0500
+
+    Merge pull request #20472 from jheysel-r7/feat/mod/badsuccessor
+    
+    Add BadSuccessor dMSA Privilege Escalation in Windows 2025
+
+ .../modules/auxiliary/admin/ldap/bad_successor.md  | 240 ++++++++++++
+ .../exploit/remote/kerberos/client/tgs_request.rb  |  33 +-
+ .../remote/kerberos/service_authenticator/base.rb  |  51 ++-
+ .../core/exploit/remote/ldap/active_directory.rb   |   2 +
+ .../credential_cache/krb5_ccache_credential.rb     |  10 +
+ lib/rex/proto/kerberos/crypto.rb                   |   1 +
+ lib/rex/proto/kerberos/model.rb                    |  12 +
+ lib/rex/proto/kerberos/model/dmsa_key_package.rb   | 105 ++++++
+ lib/rex/proto/kerberos/model/kerberos_time.rb      |  21 ++
+ .../proto/kerberos/model/pre_auth_data_entry.rb    |   6 +
+ .../proto/kerberos/model/pre_auth_s4u_x509_user.rb |  99 +++++
+ lib/rex/proto/kerberos/model/s4u_user_id.rb        | 161 ++++++++
+ modules/auxiliary/admin/kerberos/get_ticket.rb     |  63 +++-
+ modules/auxiliary/admin/ldap/bad_successor.rb      | 419 +++++++++++++++++++++
+ 14 files changed, 1204 insertions(+), 19 deletions(-)
+
+commit aa7771809ce15ef44b9436802000c1f6dc274948
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Wed Jan 14 14:17:41 2026 -0500
+
+    Same error handling in #check.
+    
+    Last minute linting
+    
+    Minor author update
+    
+    Update author
+
+ modules/auxiliary/admin/ldap/bad_successor.rb | 24 +++++++++++-------------
+ 1 file changed, 11 insertions(+), 13 deletions(-)
+
+commit a7adf23a17f52697af40909f9feb4873f1e875cb
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Wed Jan 14 14:05:52 2026 -0500
+
+    Add some option validation
+
+ modules/auxiliary/admin/ldap/bad_successor.rb | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit b425559f47042540189b11cdb03eecbaa2d034cc
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Wed Jan 14 13:39:29 2026 -0500
+
+    Fix some names
+
+ modules/auxiliary/admin/ldap/bad_successor.rb | 30 ++++++++++++++++++++-------
+ 1 file changed, 22 insertions(+), 8 deletions(-)
+
+commit c1023fd62aed308eb9f98e65c4ab4db873777a26
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Jun 17 11:34:05 2025 -0400
+
+    Add BadSuccessor dMSA Privilege Escalation in Windows 2025
+
+ .../modules/auxiliary/admin/ldap/bad_successor.md  | 240 +++++++++++++
+ .../exploit/remote/kerberos/client/tgs_request.rb  |  33 +-
+ .../remote/kerberos/service_authenticator/base.rb  |  51 ++-
+ .../core/exploit/remote/ldap/active_directory.rb   |   2 +
+ .../credential_cache/krb5_ccache_credential.rb     |  10 +
+ lib/rex/proto/kerberos/crypto.rb                   |   1 +
+ lib/rex/proto/kerberos/model.rb                    |  12 +
+ lib/rex/proto/kerberos/model/dmsa_key_package.rb   | 105 ++++++
+ lib/rex/proto/kerberos/model/kerberos_time.rb      |  21 ++
+ .../proto/kerberos/model/pre_auth_data_entry.rb    |   6 +
+ .../proto/kerberos/model/pre_auth_s4u_x509_user.rb |  99 ++++++
+ lib/rex/proto/kerberos/model/s4u_user_id.rb        | 161 +++++++++
+ modules/auxiliary/admin/kerberos/get_ticket.rb     |  63 +++-
+ modules/auxiliary/admin/ldap/bad_successor.rb      | 389 +++++++++++++++++++++
+ 14 files changed, 1174 insertions(+), 19 deletions(-)
+
+commit f4a195b88a57db27f4100b49add643a3947b29d3
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sun Dec 21 08:00:03 2025 -0500
+
+    persistence modules cleanup
+
+ ...p_plugin_persistence.md => notepadpp_plugin.md} |   0
+ ...p_plugin_persistence.rb => notepadpp_plugin.rb} |   0
+ modules/post/windows/manage/persistence_exe.rb     | 355 ---------------------
+ 3 files changed, 355 deletions(-)
+
+commit 480b1ddc22742d113bfee3d1863ce3811ac15354
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 14 14:57:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 324 ++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 277 insertions(+), 47 deletions(-)
+
+commit 7b092aeedb3ee2d49b8814dcc4d1609d1beff991
+Merge: e4f8d4fb13 2809ff8235
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 14 15:44:25 2026 +0100
+
+    Land #20806, adds module for unauthenticated command injection in Control Web Panel API (CVE-2025-67888)
+    
+    Adds module for Control Web Panel API Command Injection (CVE-2025-67888)
+
+ .../linux/http/control_web_panel_api_cmd_exec.md   |  68 +++++++++++
+ .../linux/http/control_web_panel_api_cmd_exec.rb   | 131 +++++++++++++++++++++
+ 2 files changed, 199 insertions(+)
+
+commit e4f8d4fb139a4b3dcfc861c46f6b0cae0d697c70
+Merge: 6a74e2b829 6731992ddd
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Jan 14 09:37:20 2026 -0500
+
+    Merge pull request #20706 from h00die/windows_wmi_persistence
+    
+    Update windows wmi to persistence mixin
+
+ .../wmi/wmi_event_subscription_event_log.md        | 158 ++++++++++++++
+ .../wmi/wmi_event_subscription_interval.md         | 137 ++++++++++++
+ .../wmi/wmi_event_subscription_process.md          | 156 ++++++++++++++
+ .../wmi/wmi_event_subscription_uptime.md           | 134 ++++++++++++
+ modules/exploits/windows/local/wmi_persistence.rb  | 230 ---------------------
+ .../wmi/wmi_event_subscription_event_log.rb        | 132 ++++++++++++
+ .../wmi/wmi_event_subscription_interval.rb         | 138 +++++++++++++
+ .../wmi/wmi_event_subscription_process.rb          | 133 ++++++++++++
+ .../wmi/wmi_event_subscription_uptime.rb           | 155 ++++++++++++++
+ 9 files changed, 1143 insertions(+), 230 deletions(-)
+
+commit 6731992ddde02af48f83a1659e8f3b8ac1f089ca
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Jan 14 08:26:11 2026 -0500
+
+    fix ci pipeline
+
+ .../windows/persistence/wmi/wmi_event_subscription_process.rb       | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 6a74e2b8290cf8dd12797a4d79045f92649d4ab5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 14 11:14:41 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 296 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 296 insertions(+)
+
+commit e96c1e942ce8ec371a4fcf697bd6c2e4c93b6460
+Merge: 595dce8956 e245298fc2
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Jan 14 06:05:11 2026 -0500
+
+    Merge pull request #20845 from bcoles/linux-arm-chmod-payloads
+    
+    Add Linux ARM chmod payloads
+
+ modules/payloads/singles/linux/aarch64/chmod.rb | 73 +++++++++++++++++++++++++
+ modules/payloads/singles/linux/armle/chmod.rb   | 70 ++++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                   | 21 ++++++-
+ 3 files changed, 163 insertions(+), 1 deletion(-)
