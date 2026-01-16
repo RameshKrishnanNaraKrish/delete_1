@@ -1,0 +1,164 @@
+commit e0332096ed690d5db455a4fbb653f8979d338485
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 15 23:54:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit 8a129bfc92684bcb05bdbe3b3e429852b38a832d
+Merge: ade984aead 36827c486d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jan 15 23:44:05 2026 +0000
+
+    Merge pull request #20873 from zeroSteiner/fix/issue/socket-channels-udp-flakies
+    
+    Add more specific error messages
+
+ .github/workflows/shared_meterpreter_acceptance.yml           | 2 +-
+ lib/rex/post/meterpreter/extensions/stdapi/railgun/library.rb | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit ade984aead7ef615fc5ffda18c01f24569801127
+Merge: d084fd0799 b2abdb21de
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jan 15 17:36:07 2026 -0600
+
+    Merge pull request #20793 from Chocapikk/avideo-v2
+    
+    Add AVideo notify.ffmpeg.json.php unauthenticated RCE exploit (CVE-2025-34433)
+
+ .../multi/http/avideo_notify_ffmpeg_unauth_rce.md  | 312 ++++++++++++++
+ .../multi/http/avideo_notify_ffmpeg_unauth_rce.rb  | 455 +++++++++++++++++++++
+ 2 files changed, 767 insertions(+)
+
+commit 36827c486de4b12db033446b8e5ef5b2616f8bff
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Dec 8 09:47:37 2025 -0500
+
+    Add more specific error messages
+
+ .github/workflows/shared_meterpreter_acceptance.yml           | 2 +-
+ lib/rex/post/meterpreter/extensions/stdapi/railgun/library.rb | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit b466371b464603b053a28c27843d2616be362ffb
+Author: Raj Handa <rajya.vardhan01@gmail.com>
+Date:   Thu Jan 15 14:13:00 2026 -0800
+
+    Update DECT reference link to archive.org (dedected.org is offline)
+
+ documentation/modules/auxiliary/scanner/dect/call_scanner.md    | 2 +-
+ documentation/modules/auxiliary/scanner/dect/station_scanner.md | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d084fd07993c93a8c4f0002be33644be8c847ed7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 15 20:19:04 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6ae361b103d6be6ea01db30c6dbc2e5fe50e20a1
+Merge: 867ad79b83 67e279ef8c
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 15 15:09:26 2026 -0500
+
+    Merge pull request #20868 from adfoster-r7/fix-udp-sockets-for-php-meterpreter
+    
+    Fix UDP sockets for PHP meterpreter
+
+ Gemfile.lock                                            | 4 ++--
+ metasploit-framework.gemspec                            | 2 +-
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb | 2 +-
+ spec/support/acceptance/session/php.rb                  | 3 ++-
+ 4 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 867ad79b835ae6bf1ca7ed9bb0a892063ebba724
+Merge: 3ecd8005e4 7f90e1f6a0
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Jan 15 16:55:56 2026 +0000
+
+    Merge pull request #20870 from adfoster-r7/resolve-method-undefined-issue
+    
+    Resolve method undefined issue
+
+ spec/support/acceptance/session.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 7f90e1f6a05245fb4b0c737190bfde2c0f059fc4
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jan 15 16:32:46 2026 +0000
+
+    Resove method undefined issue
+
+ spec/support/acceptance/session.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 67e279ef8c24cdf231e8e4da1e8f4aaa4bc23144
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jan 15 10:55:03 2026 +0000
+
+    Fix UDP sockets for php meterpreter
+
+ Gemfile.lock                                            | 4 ++--
+ metasploit-framework.gemspec                            | 2 +-
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb | 2 +-
+ spec/support/acceptance/session/php.rb                  | 3 ++-
+ 4 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 3ecd8005e429ff545742274ded7768257a959e39
+Merge: 5058bcad18 eb7f60d6d4
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 15 10:48:28 2026 -0500
+
+    Merge pull request #20772 from rmtsixq/master
+    
+    Fix undefined variable in Host.normalize_host causing session failures when DB is connected
+
+ lib/msf/util/host.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5058bcad1838f0fdb84c859d75bf1e4f6bee51e4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 15 12:53:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5bfa0ff761f0a676542c3d83d7fd884443006483
+Merge: 9f591ad456 d1daf758ea
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jan 15 12:43:47 2026 +0000
+
+    Merge pull request #20869 from adfoster-r7/update-bad-successor-description
+    
+    Update bad successor description
+
+ modules/auxiliary/admin/ldap/bad_successor.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1daf758eaa6483a0dc2539415ecffd3cc370ae9
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Jan 15 12:26:12 2026 +0000
+
+    Update bad successor description
+
+ modules/auxiliary/admin/ldap/bad_successor.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f591ad456ee26b8351f6f8db8f5cbe5f8b39bdb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 15 03:35:45 2026 +0000
+
+    Bump version of framework to 6.4.108
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
