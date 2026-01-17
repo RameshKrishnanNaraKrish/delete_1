@@ -1,0 +1,65 @@
+commit a1eb2e224cecc727bd34d6f0d52965d45e2f847d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jan 16 23:18:09 2026 +0000
+
+    Bump version of framework to 6.4.109
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 0c2e390bd7d0d35de9c123736730a2f6e29f89be
+Merge: 1d9a1022ba 4b610957ce
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jan 16 22:44:19 2026 +0000
+
+    Merge pull request #20878 from jheysel-r7/fix/bad_successor_broke_kerberos_auth
+    
+    Fix Kerberos Base Service Authenticator
+
+ .../remote/kerberos/service_authenticator/base.rb    | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+
+commit 4b610957ceaee12bba7fdcc7c07ac97b6f8c2c71
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Fri Jan 16 12:31:34 2026 -0800
+
+    Fix Kerberos Base Service Authenticator
+
+ .../remote/kerberos/service_authenticator/base.rb    | 20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+
+commit 1d9a1022bad22c4786368c85adb2f8f7aaae6589
+Merge: 666c7ce362 858b25c063
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jan 16 10:43:23 2026 +0000
+
+    Merge pull request #20851 from bcoles/rex-arch
+    
+    Bump rex-arch gem from 0.1.18 to 0.1.19
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 858b25c063d087a332d8df36dab1bdf6f377a76d
+Author: bcoles <bcoles@github>
+Date:   Fri Jan 9 02:55:40 2026 +1100
+
+    Bump rex-arch gem from 0.1.18 to 0.1.19
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 666c7ce362c0c2aacd3a2817adbd923b1d0bdcde
+Merge: e0332096ed b466371b46
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jan 16 00:00:22 2026 +0000
+
+    Merge pull request #20865 from rajyavardhan01/docs/dect-scanner-documentation
+    
+    Add documentation for auxiliary/scanner/dect modules
+
+ .../modules/auxiliary/scanner/dect/call_scanner.md | 89 ++++++++++++++++++++++
+ .../auxiliary/scanner/dect/station_scanner.md      | 79 +++++++++++++++++++
+ 2 files changed, 168 insertions(+)
