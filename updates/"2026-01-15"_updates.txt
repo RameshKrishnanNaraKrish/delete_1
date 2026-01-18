@@ -1,0 +1,41 @@
+commit 73127bb8989609e84e2842f4e7d17e6887633b34
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Jan 17 19:47:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 36 ++++++++++++++++++------------------
+ 1 file changed, 18 insertions(+), 18 deletions(-)
+
+commit bb07207b9b58c39647e7069fb0f923b57984172f
+Merge: a1eb2e224c 350a39c274
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Jan 17 19:38:21 2026 +0000
+
+    Merge pull request #20861 from bcoles/post-linux-system-get_hostname
+    
+    Post::Linux::System.get_hostname: Use session sysinfo if available
+
+ Gemfile.lock                                       |  4 +--
+ lib/msf/core/post/linux/system.rb                  | 37 ++++++++++++++++++----
+ metasploit-framework.gemspec                       |  2 +-
+ .../linux/aarch64/meterpreter_reverse_http.rb      |  2 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |  2 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |  2 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |  2 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |  2 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |  2 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |  2 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |  2 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |  2 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |  2 +-
+ spec/lib/msf/core/post/linux/system_spec.rb        | 25 +++++++++++++--
+ 22 files changed, 74 insertions(+), 30 deletions(-)
