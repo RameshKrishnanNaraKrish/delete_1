@@ -1,0 +1,64 @@
+commit 4d593dc99b48f9bfd73dd415e7f84c2d9e4b579b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 20 20:45:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 120 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 120 insertions(+)
+
+commit c47a74d0dd33dc2351e4eb39dd3fe241b0653e6e
+Merge: b2db80de18 9e320dd168
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jan 20 12:36:51 2026 -0800
+
+    Merge pull request #20770 from vognik/Splunk_2022-43571_CVE-2024-36985
+    
+    Add Splunk RCE Exploits (CVE-2022-43571 & CVE-2024-36985)
+
+ .../linux/http/splunk_auth_rce_cve_2024_36985.md   |  71 +++++++++
+ .../multi/http/splunk_auth_rce_cve_2022_43571.md   | 119 +++++++++++++++
+ lib/msf/core/exploit/remote/http/splunk.rb         |   2 +
+ lib/msf/core/exploit/remote/http/splunk/apps.rb    |  62 ++++++++
+ .../core/exploit/remote/http/splunk/dashboards.rb  |  92 ++++++++++++
+ lib/msf/core/exploit/remote/http/splunk/helpers.rb |  57 +++++++
+ lib/msf/core/exploit/remote/http/splunk/login.rb   |   6 +-
+ lib/msf/core/exploit/remote/http/splunk/search.rb  |  33 +++++
+ lib/msf/core/exploit/remote/http/splunk/uris.rb    |  41 ++++++
+ lib/msf/core/exploit/remote/http/splunk/version.rb |  36 +++++
+ .../linux/http/splunk_auth_rce_cve_2024_36985.rb   | 149 +++++++++++++++++++
+ .../multi/http/splunk_auth_rce_cve_2022_43571.rb   | 164 +++++++++++++++++++++
+ 12 files changed, 829 insertions(+), 3 deletions(-)
+
+commit b2db80de18cc16d46e828818ea4b1af8a7fc8dc8
+Merge: 3d18f613ba 81bc7640f0
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jan 20 10:44:46 2026 -0800
+
+    Merge pull request #20887 from cdelafuente-r7/fix_specs
+    
+    Fix specs issue due to a missing `KrbClockSkew` option
+
+ spec/lib/msf/base/serializer/readable_text_spec.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 81bc7640f01f305b6f1134d0c9b63ceb84056886
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Jan 20 18:16:19 2026 +0100
+
+    Add missing option KrbClockSkew to specs
+
+ spec/lib/msf/base/serializer/readable_text_spec.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 9e320dd168ae86fe6e987c5986ffcf48c187e239
+Author: vognik <vognik@tuta.io>
+Date:   Mon Jan 19 18:45:01 2026 -0800
+
+    add suggestions from @jheysel-r7
+
+ lib/msf/core/exploit/remote/http/splunk/apps.rb           | 14 +++++++++++---
+ lib/msf/core/exploit/remote/http/splunk/version.rb        |  1 +
+ .../exploits/linux/http/splunk_auth_rce_cve_2024_36985.rb | 15 ++++++++-------
+ .../exploits/multi/http/splunk_auth_rce_cve_2022_43571.rb | 13 +++++++------
+ 4 files changed, 27 insertions(+), 16 deletions(-)
