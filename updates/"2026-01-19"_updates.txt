@@ -1,0 +1,119 @@
+commit 927f5330f4cb2c91cde4d3f19d6fe0d5d0cd5200
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jan 21 14:56:08 2026 -0800
+
+    Rubocop fixes
+
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  | 90 +++++++++++-----------
+ 1 file changed, 46 insertions(+), 44 deletions(-)
+
+commit 5ba95b5def44e17fa8a2b3f344ab3cfc8768b51b
+Merge: 8de1b4f37a e3e388d57d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jan 21 11:37:28 2026 +0000
+
+    Merge pull request #20888 from jheysel-r7/fix/bad_successor_service_auth_fix_2
+    
+    Fixes the base service authenticator for BadSuccessor
+
+ .../core/exploit/remote/kerberos/service_authenticator/base.rb    | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 8de1b4f37ae4885e8fae3af560b2560348c1fb23
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 21 10:52:14 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit e38c278d86abe304d818540d6685d6f21dfd16bf
+Merge: 4d593dc99b 9f626a0c39
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 21 11:42:55 2026 +0100
+
+    Land #20840, updates MongoBleed scanner module (CVE-2025-14847)
+    
+    Updated MongoDB memory disclosure module (CVE-2025-14847)
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   | 181 +++++++-
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 506 +++++++++++++++++++--
+ 2 files changed, 635 insertions(+), 52 deletions(-)
+
+commit 9f626a0c39027acae7c01e4a0093b5dba747ee8a
+Author: Alex <ah@primepage.de>
+Date:   Tue Jan 20 16:13:31 2026 +0100
+
+    Update cve_2025_14847_mongobleed.rb
+
+ modules/auxiliary/scanner/mongodb/cve_2025_14847_mongobleed.rb | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 464e15152a14a86ccd57df378069fe4b2f9c286a
+Author: Alex <ah@primepage.de>
+Date:   Wed Jan 14 20:39:56 2026 +0100
+
+    Update cve_2025_14847_mongobleed.rb
+
+ modules/auxiliary/scanner/mongodb/cve_2025_14847_mongobleed.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 087ab70a8ea272a52f288b36849aa61f000b624c
+Author: Alex <ah@primepage.de>
+Date:   Fri Jan 2 15:07:39 2026 +0100
+
+    Update cve_2025_14847_mongobleed.rb
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 25 ++++++++++++++--------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
+
+commit 99636be776299c8be4f76b01aa0a01648821063f
+Author: Alex <ah@primepage.de>
+Date:   Fri Jan 2 14:29:50 2026 +0100
+
+    Updated mongobleed
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   | 181 +++++++-
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 501 +++++++++++++++++++--
+ 2 files changed, 630 insertions(+), 52 deletions(-)
+
+commit b46649769ecbcda9766bb8c81e9e27e991c10395
+Author: MatDupas <26366683+MatDupas@users.noreply.github.com>
+Date:   Wed Jan 21 09:00:52 2026 +0100
+
+    Fix formatting issues in oracle_ebs exploit script
+
+ modules/exploits/multi/http/oracle_ebs_cve_2025_61882_exploit_rce.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a05863f6f6c4c90e5f91a9b9f99e3b4cfeb117f1
+Author: MatDupas <26366683+MatDupas@users.noreply.github.com>
+Date:   Wed Jan 21 08:57:10 2026 +0100
+
+    Clean up comment in generate_xsl_payload method
+    
+    Removed comment about generating XSLT payload.
+
+ modules/exploits/multi/http/oracle_ebs_cve_2025_61882_exploit_rce.rb | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit cb3df4b4de13b3f9add526c5c2c011886fd9b298
+Author: MatDupas <26366683+MatDupas@users.noreply.github.com>
+Date:   Wed Jan 21 08:56:01 2026 +0100
+
+    Refactor payload options in Oracle EBS exploit
+
+ modules/exploits/multi/http/oracle_ebs_cve_2025_61882_exploit_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c5df078b4152caff9fa241497c683177e229c786
+Author: MatDupas <26366683+MatDupas@users.noreply.github.com>
+Date:   Wed Jan 21 08:54:53 2026 +0100
+
+    Clarify payload option comment in exploit module
+    
+    Updated the comment for the payload option to clarify usage.
+
+ modules/exploits/multi/http/oracle_ebs_cve_2025_61882_exploit_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
