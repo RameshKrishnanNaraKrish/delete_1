@@ -1,0 +1,166 @@
+commit 591b3ea398b6773defb5a080700f6f78b0780f95
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 22 19:35:48 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit c0e9288ac52bfa99b7610261de578d767993ad95
+Merge: d54e6b6847 18a4cf8c00
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Jan 22 14:26:38 2026 -0500
+
+    Merge pull request #20799 from jheysel-r7/feat/cacti_graph_template_rce
+    
+    Cacti Graph Template Authenticated RCE [CVE-2025-24367]
+
+ .../exploit/multi/http/cacti_graph_template_rce.md | 282 ++++++++++++++++++
+ lib/msf/core/exploit/remote/http_server.rb         |   6 +-
+ .../multi/http/cacti_graph_template_rce.rb         | 316 +++++++++++++++++++++
+ 3 files changed, 599 insertions(+), 5 deletions(-)
+
+commit 18a4cf8c00a6e62287051ceb6fe3b9bfce4261ba
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Thu Jan 22 13:49:28 2026 -0500
+
+    Use the ssl setting for HttpServer#start_service
+
+ lib/msf/core/exploit/remote/http_server.rb              | 6 +-----
+ modules/exploits/multi/http/cacti_graph_template_rce.rb | 5 +----
+ 2 files changed, 2 insertions(+), 9 deletions(-)
+
+commit d54e6b684738597a9f5b27f0b720bda42ba2c420
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 22 16:42:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 120 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 120 insertions(+)
+
+commit b1b4020ea7498b0ab032ff3174286f41466c12d4
+Merge: 537a1c5395 34cebd1453
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jan 22 17:33:06 2026 +0100
+
+    Land #20866, adds module for unauthenticated file upload in SmarterTools SmarterMail (CVE-2025-52691)
+    
+    SmarterTools SmarterMail Unauth File Upload RCE [CVE-2025-52691]
+
+ .../multi/http/smartermail_guid_file_upload.md     | 124 ++++++++++++++++
+ lib/msf/core/exploit/remote/http/smartermail.rb    |  48 +++++++
+ .../multi/http/smartermail_guid_file_upload.rb     | 159 +++++++++++++++++++++
+ 3 files changed, 331 insertions(+)
+
+commit 34cebd1453828df9146e5521bf7c5adc79552111
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jan 21 13:47:56 2026 -0800
+
+    Update CheckCode messaging
+
+ lib/msf/core/exploit/remote/http/smartermail.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit e9a6a6fd45f2f3266cb06b92550364e6713c3f4c
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Jan 15 11:20:54 2026 -0800
+
+    Responded to comments
+
+ .../multi/http/smartermail_guid_file_upload.rb     | 23 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 12 deletions(-)
+
+commit 96b788e1e893d022e32575246deb9dbd6d79eb26
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Jan 15 07:25:18 2026 -0800
+
+    Increase length of cron job name
+
+ modules/exploits/multi/http/smartermail_guid_file_upload.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0e0a6cc9cd396bc259b6b84b3db5da08876770d0
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jan 14 07:59:33 2026 -0800
+
+    Removed duplicate platform
+
+ modules/exploits/multi/http/smartermail_guid_file_upload.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 2e484d552ec63fc1005d8f0e78bbe39ea4a39e24
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Jan 13 20:35:12 2026 -0800
+
+    Finishing touches
+
+ .../multi/http/smartermail_guid_file_upload.md        | 19 +++++++++++--------
+ .../multi/http/smartermail_guid_file_upload.rb        | 18 ++++++++++--------
+ 2 files changed, 21 insertions(+), 16 deletions(-)
+
+commit 99e032f4af98c6e961ac7b67d04ded331a67b346
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Jan 13 17:24:11 2026 -0800
+
+    SmarterTools SmarterMail Unauth File Upload RCE [CVE-2025-52691]
+
+ .../multi/http/smartermail_guid_file_upload.md     | 121 ++++++++++++++++
+ lib/msf/core/exploit/remote/http/smartermail.rb    |  48 +++++++
+ .../multi/http/smartermail_guid_file_upload.rb     | 157 +++++++++++++++++++++
+ 3 files changed, 326 insertions(+)
+
+commit 537a1c53953a9b1622d0d280c2bf79575a7a7d8a
+Merge: fd79b33758 ffb725f4da
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jan 22 11:03:08 2026 +0100
+
+    Land #19821, adds Burpsuite persistence module
+    
+    Burp extension persistence
+
+ .gitignore                                         |   3 +
+ data/exploits/burp_extension/README.md             |   9 +
+ data/exploits/burp_extension/build.gradle          |  27 ++
+ data/exploits/burp_extension/precompiled.class     | Bin 0 -> 6187 bytes
+ data/exploits/burp_extension/settings.gradle       |   1 +
+ .../burp_extension/src/main/java/BurpExtender.java |  96 ++++
+ .../burp_extension/src/main/resources/command.txt  |   1 +
+ .../burp_extension/src/main/resources/name.txt     |   1 +
+ .../exploit/multi/persistence/burp_extension.md    | 519 +++++++++++++++++++++
+ .../exploits/multi/persistence/burp_extension.rb   | 329 +++++++++++++
+ 10 files changed, 986 insertions(+)
+
+commit fd79b337580d55a28243f7ec9c8fbb38a28e4ad9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 22 03:35:53 2026 +0000
+
+    Bump version of framework to 6.4.111
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 7f598f66f5eb4b35f79f9a81580324798fd92b53
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 22 00:20:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 719874a7f42bbe38ee38d0e462af44649cd59ade
+Merge: 5ba95b5def 927f5330f4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 21 16:08:09 2026 -0800
+
+    Merge pull request #20750 from MatDupas/add-exploit-oracle-ebs-cve-2025-61882-module
+    
+    Add exploit oracle ebs CVE 2025 61882 module
+
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.md  | 110 ++++++
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  | 380 +++++++++++++++++++++
+ 2 files changed, 490 insertions(+)
