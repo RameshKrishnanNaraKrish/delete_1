@@ -1,0 +1,20 @@
+commit f6d0f4008ae70df284485c06e89c05b1f7794c93
+Merge: 591b3ea398 93b0c3004f
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Mon Jan 26 19:01:00 2026 +0100
+
+    Land #20896, ensured: MsTdsLogin7 UTF-18 fields use RubySMB String16
+
+ lib/msf/core/post/windows/file_system.rb | 10 ----------
+ lib/rex/proto/ms_tds/ms_tds_login7.rb    |  2 +-
+ 2 files changed, 1 insertion(+), 11 deletions(-)
+
+commit 93b0c3004f1f763e26b268d1aa056d09ee8e205e
+Author: Rudraditya Thakur <rudraditya.thakur21@gmail.com>
+Date:   Mon Jan 26 23:00:52 2026 +0530
+
+    removed: the mixin's String16 class to stop BinData registry collisions and reverted: MsTdsLogin7 to its original :string16
+
+ lib/msf/core/post/windows/file_system.rb | 10 ----------
+ lib/rex/proto/ms_tds/ms_tds_login7.rb    | 14 ++++++--------
+ 2 files changed, 6 insertions(+), 18 deletions(-)
