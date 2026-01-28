@@ -1,0 +1,46 @@
+commit 136a159f1cbb5e9522da4dee9f80459d0296e9d9
+Merge: 5d4aef621b 5ac9c8a2be
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jan 27 22:57:51 2026 +0000
+
+    Merge pull request #20905 from rapid7/smcintyre-r7/feat/act/add-to-project
+    
+    Add the action file to add the PRs to the project
+
+ .github/workflows/add_to_project.yml | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+commit 5ac9c8a2be12097f0f2197ed9508374107d13c12
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Tue Jan 27 11:32:26 2026 -0500
+
+    Switch to pull_request_target
+
+ .github/workflows/add_to_project.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d4aef621b5d05e99f0d02272042b57ca3f33936
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jan 27 14:48:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 136 +++++++++++++++++-------------------------
+ 1 file changed, 54 insertions(+), 82 deletions(-)
+
+commit f31776caf0a17edb069b682c10aba98ae4dc06d2
+Merge: f6d0f4008a 0b68476817
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jan 27 06:39:10 2026 -0800
+
+    Merge pull request #20778 from h00die/ssh_keys
+    
+    Update and combine ssh key persistence with mixin
+
+ .../modules/exploit/multi/persistence/ssh_key.md   | 379 ++++++++++++++
+ .../post/linux/manage/sshkey_persistence.md        | 543 ---------------------
+ .../post/windows/manage/sshkey_persistence.md      |  89 ----
+ modules/exploits/multi/persistence/ssh_key.rb      | 351 +++++++++++++
+ modules/post/linux/manage/sshkey_persistence.rb    | 144 ------
+ modules/post/windows/manage/sshkey_persistence.rb  | 202 --------
+ 6 files changed, 730 insertions(+), 978 deletions(-)
