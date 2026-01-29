@@ -1,0 +1,147 @@
+commit 724b2c08f022e51dcc731e66988caefe95a56587
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 28 15:27:41 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 751ceaaaf307f0028568b675b50179a61ef20bd2
+Merge: 23f64201b2 ea63e0df93
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jan 28 10:18:39 2026 -0500
+
+    Merge pull request #20902 from rudraditya21/fix/ssh-login-no-shell-success
+    
+    Handle SSH login success when shell creation fails
+
+ modules/auxiliary/scanner/ssh/ssh_login.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 23f64201b227b9d1d581749ffb7a2677ae9ca9bc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jan 28 14:53:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 116 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 116 insertions(+)
+
+commit be4a69ab1db11bbf5c1b6d520ee5449690c9525b
+Merge: 518d1c8538 7e92ef4811
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 28 06:39:47 2026 -0800
+
+    Merge pull request #20846 from msutovsky-r7/exploit/freepbx/injections_rce
+    
+    Adds auxiliary module for FreePBX (CVE-2025-66039, CVE-2025-61675)
+
+ .../gather/freepbx_custom_extension_injection.md   |  69 +++++++++++++
+ .../gather/freepbx_custom_extension_injection.rb   | 114 +++++++++++++++++++++
+ 2 files changed, 183 insertions(+)
+
+commit 518d1c8538674bbce48a033588199387b71b0bd1
+Merge: 7d931c960c f8c2c585fa
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jan 28 09:31:13 2026 -0500
+
+    Merge pull request #20897 from h00die/fix_john_cracker
+    
+    fix jtr cracking
+
+ .../framework/password_crackers/jtr/formatter.rb   |  20 +-
+ tools/dev/hash_cracker_validator.rb                | 590 +++++++++------------
+ 2 files changed, 253 insertions(+), 357 deletions(-)
+
+commit 7d931c960c6c3b6ac0634879fa36a1c5e2819025
+Merge: da7596b01b 147a94cee5
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 28 06:23:43 2026 -0800
+
+    Merge pull request #20858 from msutovsky-r7/exploit/freepbx/unrestricted_file_upload
+    
+    Adds exploit module for FreePBX (CVE-2025-66039, CVE-2025-61678)
+
+ .../unix/http/freepbx_firmware_file_upload.md      |  68 ++++++++++
+ .../unix/http/freepbx_firmware_file_upload.rb      | 138 +++++++++++++++++++++
+ 2 files changed, 206 insertions(+)
+
+commit f8c2c585fab580bd452668d165b9317b72091b5a
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Jan 28 09:18:42 2026 -0500
+
+    make hash_crack_validator executable
+
+ tools/dev/hash_cracker_validator.rb | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 147a94cee556678824a285bd3a2284f1c122a078
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 28 06:08:47 2026 -0800
+
+    Update freepbx_firmware_file_upload print statement
+
+ modules/exploits/unix/http/freepbx_firmware_file_upload.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit da7596b01b24c44b6d9deffca31abeb2dd457b65
+Merge: 494adbc831 c32e18cdc3
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jan 28 08:50:04 2026 -0500
+
+    Merge pull request #20908 from adfoster-r7/update-license-year
+    
+    Update license year
+
+ COPYING | 2 +-
+ LICENSE | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 04be22dc1a29faf0bea8d0febe227aa982e8fd00
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Jan 28 07:44:50 2026 -0500
+
+    john formatter review
+
+ lib/metasploit/framework/password_crackers/jtr/formatter.rb | 9 ++++-----
+ tools/dev/hash_cracker_validator.rb                         | 2 +-
+ 2 files changed, 5 insertions(+), 6 deletions(-)
+
+commit e6b97a79a40a3bef78cc70628f591a51a085961a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 28 11:33:54 2026 +0100
+
+    Addresses comments
+
+ .../unix/http/freepbx_firmware_file_upload.md      | 33 ++++++++++++++--------
+ .../unix/http/freepbx_firmware_file_upload.rb      | 10 +++----
+ 2 files changed, 27 insertions(+), 16 deletions(-)
+
+commit 7e92ef4811322782c79a3f316141df9b696c7937
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jan 28 11:14:24 2026 +0100
+
+    Addresses comments
+
+ .../gather/freepbx_custom_extension_injection.md    | 21 ++++++++++++---------
+ .../gather/freepbx_custom_extension_injection.rb    |  2 +-
+ 2 files changed, 13 insertions(+), 10 deletions(-)
+
+commit 494adbc8316ad35d13b03485964c0c413860c0a5
+Merge: 136a159f1c f4e67b6455
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Jan 28 09:43:42 2026 +0000
+
+    Merge pull request #20890 from adfoster-r7/mark-additional-flakey-socket-tests
+    
+    Mark additional flakey socket tests
+
+ spec/acceptance/meterpreter_spec.rb                    | 10 +++++-----
+ spec/support/acceptance/session/java.rb                | 13 +++++++++----
+ spec/support/acceptance/session/mettle.rb              | 13 +++++++++----
+ spec/support/acceptance/session/php.rb                 | 12 ++++++++----
+ spec/support/acceptance/session/python.rb              | 13 +++++++++----
+ spec/support/acceptance/session/shared.rb              |  7 +++++++
+ spec/support/acceptance/session/windows_meterpreter.rb | 15 +++++++++++----
+ 7 files changed, 58 insertions(+), 25 deletions(-)
