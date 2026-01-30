@@ -1,0 +1,111 @@
+commit 3e630ac7b9e89e92ee0ffa56e98517c41f702aa1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 29 15:50:00 2026 +0000
+
+    Bump version of framework to 6.4.112
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 155439ab970707a8c44f24994b65e6a2c52c5170
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 29 15:38:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+commit 6fedaeefc6389d56c53588714e7fef1e15c03170
+Merge: 38b3dad608 e70483b785
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jan 29 15:29:12 2026 +0000
+
+    Merge pull request #20909 from adfoster-r7/align-login-scanner-apis
+    
+    Align login scanner APIs
+
+ .../framework/login_scanner/advantech_webaccess.rb |  9 ++++++--
+ lib/metasploit/framework/login_scanner/caidao.rb   | 14 ++++++-----
+ .../framework/login_scanner/cisco_firepower.rb     |  4 ++--
+ .../framework/login_scanner/directadmin.rb         | 10 ++++----
+ .../login_scanner/manageengine_desktop_central.rb  | 12 ++++++----
+ lib/metasploit/framework/login_scanner/nessus.rb   | 10 ++++----
+ .../framework/login_scanner/phpmyadmin.rb          | 12 +++++-----
+ .../framework/login_scanner/softing_sis.rb         | 27 +++++++++++-----------
+ .../login_scanner/symantec_web_gateway.rb          | 10 ++++----
+ .../login_scanner/syncovery_file_sync_backup.rb    | 10 ++++----
+ .../wowza_streaming_engine_manager.rb              |  7 +++---
+ .../scanner/http/advantech_webaccess_login.rb      | 17 +++++++-------
+ .../scanner/http/caidao_bruteforce_login.rb        | 15 ++++++------
+ .../scanner/http/cisco_firepower_login.rb          | 17 +++++++-------
+ .../auxiliary/scanner/http/directadmin_login.rb    | 15 ++++++------
+ .../http/manageengine_desktop_central_login.rb     | 15 ++++++------
+ modules/auxiliary/scanner/http/phpmyadmin_login.rb | 14 +++++------
+ .../auxiliary/scanner/http/softing_sis_login.rb    |  9 +++-----
+ .../scanner/http/symantec_web_gateway_login.rb     | 17 +++++++-------
+ .../scanner/http/syncovery_linux_login.rb          |  9 ++++----
+ .../http/wowza_streaming_engine_manager_login.rb   |  7 +++---
+ .../auxiliary/scanner/nessus/nessus_rest_login.rb  | 18 ++++++++-------
+ .../framework/login_scanner/caidao_spec.rb         | 18 +++++++--------
+ .../manageengine_desktop_central_spec.rb           | 10 ++++----
+ .../framework/login_scanner/nessus_spec.rb         |  8 +++----
+ .../framework/login_scanner/phpmyadmin_spec.rb     | 20 ++++++++--------
+ .../login_scanner/symantec_web_gateway_spec.rb     | 10 ++++----
+ .../lib/metasploit/framework/login_scanner_spec.rb | 14 ++++++++++-
+ 28 files changed, 196 insertions(+), 162 deletions(-)
+
+commit e70483b78563ff94dbb70e928f0a146904609753
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jan 28 17:07:47 2026 +0000
+
+    Rubocop
+
+ lib/metasploit/framework/login_scanner/softing_sis.rb  |  2 +-
+ .../login_scanner/wowza_streaming_engine_manager.rb    |  2 +-
+ .../scanner/http/advantech_webaccess_login.rb          | 14 +++++++-------
+ .../auxiliary/scanner/http/caidao_bruteforce_login.rb  | 12 ++++++------
+ .../auxiliary/scanner/http/cisco_firepower_login.rb    | 14 +++++++-------
+ modules/auxiliary/scanner/http/directadmin_login.rb    | 18 +++++++++---------
+ .../scanner/http/manageengine_desktop_central_login.rb | 12 ++++++------
+ modules/auxiliary/scanner/http/phpmyadmin_login.rb     |  8 ++++----
+ .../scanner/http/symantec_web_gateway_login.rb         | 14 +++++++-------
+ .../http/wowza_streaming_engine_manager_login.rb       |  2 +-
+ modules/auxiliary/scanner/nessus/nessus_rest_login.rb  | 14 +++++++-------
+ .../metasploit/framework/login_scanner/caidao_spec.rb  |  6 +++---
+ .../metasploit/framework/login_scanner/nessus_spec.rb  |  4 ++--
+ 13 files changed, 61 insertions(+), 61 deletions(-)
+
+commit 38b3dad608742a0ae1a2c68ef587135bb83ec806
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jan 29 04:14:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 641ab527aa4b2f13d511df6f98c56d15aa430b83
+Merge: 724b2c08f0 63a66ee162
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jan 28 20:03:17 2026 -0800
+
+    Merge pull request #20857 from msutovsky-r7/exploit/freepbx/sql_to_rce_chain
+    
+    Adds exploit module for FreePBX (CVE-2025-66039, CVE-2025-61675)
+
+ .../unix/http/freepbx_custom_extension_rce.md      |  76 ++++++++++++
+ .../unix/http/freepbx_custom_extension_rce.rb      | 127 +++++++++++++++++++++
+ 2 files changed, 203 insertions(+)
+
+commit 63a66ee1623d2ad15f5c77aa6458fe464f260e8b
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jan 28 20:15:25 2026 -0700
+
+    Improved CVE version range info in description
+
+ .../exploit/unix/http/freepbx_custom_extension_rce.md   | 17 ++++++++---------
+ .../exploits/unix/http/freepbx_custom_extension_rce.rb  | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 10 deletions(-)
