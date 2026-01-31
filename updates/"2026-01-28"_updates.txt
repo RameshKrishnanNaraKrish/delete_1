@@ -1,0 +1,53 @@
+commit e7f8b0747635ac4fc95b962ff58e96ae6b7d6780
+Merge: 4674c86a65 2e1d688659
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Jan 30 15:56:58 2026 -0600
+
+    Merge pull request #20882 from karanabe/icpr_cert-rsa-keysize
+    
+    Add RSAKeySize option to satisfy AD CS template minimums
+
+ lib/msf/core/exploit/remote/ms_icpr.rb | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit 4674c86a656288e0f15e1249bfae5edb8b359dba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jan 30 15:57:30 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit adee4d223ae2ee9fc2d1898f20c3bfa4764e29a9
+Merge: bbc8f7d115 d5eb7ed233
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jan 30 07:46:54 2026 -0800
+
+    Merge pull request #20894 from jameskim200/issue-20893-fix-typos-in-icmp_exfil
+    
+    [ISSUE-20893] fix typos in the options descriptions of the `auxiliary/server/icmp_exfil` module
+
+ modules/auxiliary/server/icmp_exfil.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit bbc8f7d11508c0de39e9a99b029bffb96a817980
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jan 30 14:56:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c31a606cb48d22fae5e83353f3c5131dcd390d2e
+Merge: 3e630ac7b9 2f2fea7f6b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jan 30 06:47:30 2026 -0800
+
+    Merge pull request #20898 from raboof/exploit-continuum-add-cve-reference
+    
+    add CVE reference to Continuum exploit
+
+ modules/exploits/linux/http/apache_continuum_cmd_exec.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
