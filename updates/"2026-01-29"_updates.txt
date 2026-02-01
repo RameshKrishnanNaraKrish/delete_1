@@ -1,0 +1,12 @@
+commit e2d4a5f5bd2ea151010ac162f435efd1ee574eef
+Merge: e7f8b07476 343132b658
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Jan 31 23:50:48 2026 +0000
+
+    Merge pull request #20916 from Chepycou/master
+    
+    fix : updated printing to prevent crash in auxiliary/scanner/sap/sap_soap_rfc_system_info or sap_icf_public_info.rb
+
+ modules/auxiliary/scanner/sap/sap_icf_public_info.rb      | 2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_system_info.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
