@@ -1,0 +1,29 @@
+commit f5829a79502f81b2717b26dfa61339f6140c4210
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Feb 1 20:25:20 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 677fa6243ed60d26dba86a300fc3927516bdc8d3
+Merge: 0b210b6f70 b187466bb0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sun Feb 1 20:16:18 2026 +0000
+
+    Merge pull request #20883 from jheysel-r7/fix/impersonate_config_check
+    
+    Add validate_options check for IMPERSONATE and IMPERSONATE_TYPE in get_ticket
+
+ modules/auxiliary/admin/kerberos/get_ticket.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 0b210b6f70ed761b8840f15ebd9ec53e86787659
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Feb 1 00:00:09 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
