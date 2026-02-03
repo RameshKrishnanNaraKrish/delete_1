@@ -1,0 +1,31 @@
+commit ef20db76b982f8ab90d7c848ab77afe77f2dcf81
+Merge: f5829a7950 a65a013b2b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Feb 2 14:44:00 2026 -0500
+
+    Merge pull request #20910 from jheysel-r7/docs/gsoc-2026-wiki-update
+    
+    GSoC 2026 Wiki Updates
+
+ .../GSoC-2026-Project-Ideas.md                     | 64 ++++++++++++++++++++++
+ .../How-to-Apply-to-GSoC.md                        | 17 +++---
+ docs/navigation.rb                                 |  4 ++
+ 3 files changed, 75 insertions(+), 10 deletions(-)
+
+commit a65a013b2bdfc91ae01cf333e27cfe9fa3b7f2cf
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Feb 2 11:39:34 2026 -0800
+
+    Apply suggestions from code review
+
+ docs/metasploit-framework.wiki/GSoC-2026-Project-Ideas.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a047ff9e79becd440775f1b379deffba10b55b83
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Feb 2 08:25:25 2026 -0800
+
+    Update docs
+
+ .../GSoC-2026-Project-Ideas.md                      | 21 ++++++++++++++-------
+ 1 file changed, 14 insertions(+), 7 deletions(-)
