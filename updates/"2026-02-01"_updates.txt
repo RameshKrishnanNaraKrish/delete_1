@@ -1,0 +1,119 @@
+commit 5e43beca60ccb09533fe2776bd92e67a9a688cef
+Merge: 967b43ee2e a3dd697f6e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Feb 3 17:23:49 2026 -0500
+
+    Merge pull request #20920 from rudraditya21/fix/cracker-auto-action
+    
+    Handle ACTION=auto with CRACKER_PATH in password crackers
+
+ lib/msf/core/auxiliary/password_cracker.rb         | 32 ++++++++++-
+ .../msf/core/auxiliary/password_cracker_spec.rb    | 62 ++++++++++++++++++++++
+ 2 files changed, 93 insertions(+), 1 deletion(-)
+
+commit 967b43ee2eb4a15da4aa65dac18bef0d60709552
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 3 21:22:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 78 ++++++++++++++++++++++++++++---------------
+ 1 file changed, 52 insertions(+), 26 deletions(-)
+
+commit e55d22a7cd52a470d6a28df3caafb65f5af011ad
+Merge: 36a240a07e 0c0e290cc2
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Feb 3 16:11:37 2026 -0500
+
+    Merge pull request #20739 from cdelafuente-r7/add_mitre_tech_kerb_unconst_deleg
+    
+    Add MITRE ATT&CK techniques to Kerberos and unconstrained delegation modules
+
+ lib/msf/core/mitre/attack/technique.rb                    |  2 --
+ modules/auxiliary/admin/kerberos/forge_ticket.rb          |  4 +++-
+ modules/auxiliary/admin/kerberos/get_ticket.rb            |  6 +++++-
+ .../admin/kerberos/ms14_068_kerberos_checksum.rb          |  5 ++++-
+ modules/auxiliary/gather/kerberos_enumusers.rb            |  4 +++-
+ modules/auxiliary/gather/ldap_query.rb                    |  4 ++++
+ modules/auxiliary/gather/windows_secrets_dump.rb          |  4 +++-
+ modules/auxiliary/scanner/dcerpc/petitpotam.rb            |  4 +++-
+ modules/auxiliary/scanner/kerberos/kerberos_login.rb      |  4 ++++
+ modules/exploits/windows/smb/ms17_010_psexec.rb           |  3 ++-
+ modules/exploits/windows/smb/psexec.rb                    | 15 +++++++--------
+ modules/post/multi/gather/unix_kerberos_tickets.rb        |  6 +++++-
+ modules/post/windows/manage/kerberos_tickets.rb           |  4 +++-
+ 13 files changed, 46 insertions(+), 19 deletions(-)
+
+commit 36a240a07ecaf46eabf4095ffcdc16c0cd45d0d1
+Merge: 71924e29ab 89ebdeacef
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Feb 3 21:03:07 2026 +0000
+
+    Merge pull request #20926 from cgranleese-r7/renames-windows-file-system-methods
+    
+    Renames Windows File System namespaces
+
+ lib/msf/core/post/windows/file_system.rb | 44 ++++++++++++++++++++++----------
+ 1 file changed, 30 insertions(+), 14 deletions(-)
+
+commit 0c0e290cc2d1c60b5b16aa5eabe91444615effc6
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Feb 3 20:58:31 2026 +0100
+
+    Code review 2
+
+ modules/auxiliary/admin/kerberos/forge_ticket.rb               | 3 +--
+ modules/auxiliary/admin/kerberos/ms14_068_kerberos_checksum.rb | 1 +
+ modules/exploits/windows/smb/psexec.rb                         | 1 -
+ 3 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 71924e29abcdb7d330842810324408e9553be1dc
+Merge: b6e70417fe 9fde4e0a3e
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Feb 3 16:26:39 2026 +0000
+
+    Merge pull request #20928 from adfoster-r7/fix-label-check-bug
+    
+    Fix label check bug
+
+ .github/workflows/extended_tests.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9fde4e0a3e1bcf72820eaffe07c7c2de39c7d8dd
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Feb 3 16:24:00 2026 +0000
+
+    Fix label check bug
+
+ .github/workflows/extended_tests.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b6e70417fefd1bb9d2ad136c785300f623a2250c
+Merge: ef20db76b9 4c498a74f1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Feb 3 16:10:32 2026 +0000
+
+    Merge pull request #20927 from adfoster-r7/add-notice-about-extended-test-suite
+    
+    Add notice about extended test suite
+
+ .github/workflows/extended_tests.yml | 68 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 4c498a74f1420cb016ad8174e6ce0c13ee7bf8bb
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Feb 3 15:39:31 2026 +0000
+
+    Add notice about extended test suite
+
+ .github/workflows/extended_tests.yml | 68 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 89ebdeacefeb75c9f6b59d981849ef58888bc99d
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Feb 3 11:23:04 2026 +0000
+
+    Renames Windows file system namespaces
+
+ lib/msf/core/post/windows/file_system.rb | 44 ++++++++++++++++++++++----------
+ 1 file changed, 30 insertions(+), 14 deletions(-)
