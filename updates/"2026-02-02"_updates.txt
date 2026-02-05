@@ -1,0 +1,266 @@
+commit c72d5128cbe3939f3141920921be848dac343732
+Merge: e69d72dcc1 196dac6b6a
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Feb 4 14:20:14 2026 -0500
+
+    Merge pull request #20931 from jheysel-r7/fix/docs/gsoc-2026-ideas-spacing
+    
+    Fix spacing in GSoC 2026 ideas page
+
+ docs/metasploit-framework.wiki/GSoC-2026-Project-Ideas.md | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 196dac6b6adff0d265478b0d07745430cec30fb6
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Feb 4 09:17:40 2026 -0800
+
+    Fix spacing in GSoC 2026 ideas page
+
+ docs/metasploit-framework.wiki/GSoC-2026-Project-Ideas.md | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit e69d72dcc1e0e12dcf94ba8aa35edfe18a90e0c0
+Merge: 9462fd87ff a65e70c936
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Feb 4 16:18:39 2026 +0000
+
+    Merge pull request #20680 from cdelafuente-r7/fix_rpc
+    
+    A few fixes and enhancement for API RPC
+
+ lib/msf/core/rpc/v10/constants.rb  | 19 +++++++++++++++++--
+ lib/msf/core/rpc/v10/rpc_db.rb     | 11 +++++++----
+ lib/msf/core/rpc/v10/rpc_module.rb | 34 +++++++++++++++++++++++-----------
+ lib/msf/core/rpc/v10/service.rb    |  9 ++++++---
+ msfrpcd                            |  9 +++++++++
+ 5 files changed, 62 insertions(+), 20 deletions(-)
+
+commit 9462fd87ff28322d4bfd03695f5d34fa4a928d8f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 4 08:35:53 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 135 +++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 133 insertions(+), 2 deletions(-)
+
+commit 533a12dc163a6eef97dc1db88ed1648fce1beb11
+Merge: 7f5d4545ab 005fbb17a1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 4 09:26:55 2026 +0100
+
+    Land #20768, adds Gladinet CentreStack/Trifox aux modules, updates Gladinet exploit module
+    
+    Add Gladinet CentreStack/Triofox auxiliary modules and exploit
+
+ .../gather/gladinet_storage_access_ticket_forge.md | 346 +++++++++++++++++++++
+ ...adinet_storage_path_traversal_cve_2025_11371.md | 225 ++++++++++++++
+ ...net_viewstate_deserialization_cve_2025_30406.md |  94 ++++--
+ lib/msf/core/auxiliary/gladinet.rb                 | 131 ++++++++
+ .../gather/gladinet_storage_access_ticket_forge.rb | 252 +++++++++++++++
+ ...adinet_storage_path_traversal_cve_2025_11371.rb | 150 +++++++++
+ ...net_viewstate_deserialization_cve_2025_30406.rb |  68 ++--
+ 7 files changed, 1218 insertions(+), 48 deletions(-)
+
+commit 005fbb17a12f20332c558257e51992220c09b42a
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Mon Jan 26 18:43:16 2026 +0100
+
+    Address PR #20768 review feedback
+    
+    - Fix machineKey extraction regex to handle decryption attribute
+    - Replace Base64.strict_encode64 with Rex::Text.encode_base64
+    - Add READ_FILE and EXTRACT_MACHINEKEY actions
+    - Add PRODUCT option for CentreStack/Triofox support
+    - Use different storage endpoints per product type
+    - Update documentation with new options and actions
+
+ .../gather/gladinet_storage_access_ticket_forge.md |  34 ++++++-
+ lib/msf/core/auxiliary/gladinet.rb                 |   6 +-
+ .../gather/gladinet_storage_access_ticket_forge.rb | 100 +++++++++++++++++----
+ 3 files changed, 116 insertions(+), 24 deletions(-)
+
+commit 7776588577bbabe742fb65fe1b675f65633d9f2a
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Sun Jan 25 10:32:23 2026 +0100
+
+    Address PR #20768 review feedback
+    
+    - gladinet.rb: Fix machineKey regex to match decryptionKey then validationKey explicitly
+    - gladinet.rb: Remove DEFAULT_WEB_CONFIG_PATH constant, inline in each module's datastore option
+    - gladinet_storage_access_ticket_forge.rb: Inline version check
+    - gladinet_storage_access_ticket_forge.rb: Inline FILEPATH default value (with C:\ for absolute path)
+    - gladinet_storage_lfi_cve_2025_11371.rb: Inline version check
+    - gladinet_storage_lfi_cve_2025_11371.rb: Inline valid_response? method (removed)
+    - gladinet_storage_lfi_cve_2025_11371.rb: Inline FILEPATH default value (without C:\, stripped by build_lfi_path)
+    - gladinet_storage_lfi_cve_2025_11371.rb: Use vars_get with encode_params instead of manual URL building
+    - gladinet_viewstate_deserialization: Remove nil fallback (mandatory option with default)
+    - gladinet_viewstate_deserialization: Remove DEFAULT_MACHINE_KEY constant, inline in datastore option
+    - gladinet_viewstate_deserialization: Remove duplicate detect_app_type/extract_build_version (already in shared lib)
+    
+    Note: Suggestion to rename gladinet? to is_gladinet? was NOT applied.
+    msftidy enforces Naming/PredicatePrefix convention which requires predicate
+    methods to NOT have 'is_' prefix (gladinet? is correct, is_gladinet? is not).
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ ...dinet_storage_path_traversal_cve_2025_11371.md} | 67 +++++++++--------
+ lib/msf/core/auxiliary/gladinet.rb                 |  7 +-
+ .../gather/gladinet_storage_access_ticket_forge.rb |  6 +-
+ ...dinet_storage_path_traversal_cve_2025_11371.rb} | 85 ++++++++++++++--------
+ ...net_viewstate_deserialization_cve_2025_30406.rb | 27 ++-----
+ 5 files changed, 101 insertions(+), 91 deletions(-)
+
+commit b1adc514d13994daeeb3b227661d19301cf18546
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Dec 18 20:23:03 2025 +0100
+
+    Apply suggestions
+    
+    Co-authored-by: jheysel-r7 <jheysel-r7@users.noreply.github.com>
+
+ .../auxiliary/gather/gladinet_storage_lfi_cve_2025_11371.md    | 10 +++++++++-
+ lib/msf/core/auxiliary/gladinet.rb                             |  5 ++++-
+ .../auxiliary/gather/gladinet_storage_lfi_cve_2025_11371.rb    |  6 ++++--
+ 3 files changed, 17 insertions(+), 4 deletions(-)
+
+commit 232471ad4682c491e4e592e665a307297c910590
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Thu Dec 18 20:19:23 2025 +0100
+
+    Update modules/auxiliary/gather/gladinet_storage_access_ticket_forge.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/auxiliary/gather/gladinet_storage_access_ticket_forge.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3cffeda00ef3afb47f5feab6b5788abd76aaab3f
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Tue Dec 16 18:55:03 2025 +0100
+
+    Fix machineKey extraction regex and add reviewer credit
+    
+    - Fix regex in gladinet mixin to handle machineKey with decryption attribute
+    - Add Julien Voisin as reviewer in auxiliary modules
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ lib/msf/core/auxiliary/gladinet.rb                               | 7 ++++---
+ modules/auxiliary/gather/gladinet_storage_access_ticket_forge.rb | 3 ++-
+ modules/auxiliary/gather/gladinet_storage_lfi_cve_2025_11371.rb  | 3 ++-
+ 3 files changed, 8 insertions(+), 5 deletions(-)
+
+commit 6d25006e8d6cb46fd4f90178311507290cb64441
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Tue Dec 16 18:49:44 2025 +0100
+
+    Update documentation/modules/auxiliary/gather/gladinet_storage_access_ticket_forge.md
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ .../modules/auxiliary/gather/gladinet_storage_access_ticket_forge.md    | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1c929ae5b62c83cba319c066eb2b70d5a2c15056
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Tue Dec 16 18:49:38 2025 +0100
+
+    Update lib/msf/core/auxiliary/gladinet.rb
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ lib/msf/core/auxiliary/gladinet.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 677345975937b6123b2e860144c14d7b4ae0cb01
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Tue Dec 16 18:49:29 2025 +0100
+
+    Update documentation/modules/auxiliary/gather/gladinet_storage_access_ticket_forge.md
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ .../modules/auxiliary/gather/gladinet_storage_access_ticket_forge.md    | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 38efe8264ded6fec1965da0178d88db49a696bfb
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Fri Dec 12 19:12:23 2025 +0100
+
+    Improve Gladinet detection: check for y-glad cookies and branding in addition to ViewState
+
+ lib/msf/core/auxiliary/gladinet.rb | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit 628c5ee7af28b0e04bf7956cd69239182716802c
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Fri Dec 12 19:08:28 2025 +0100
+
+    Update Gladinet modules: fix AutoCheck in auxiliary modules and update documentation with real outputs
+
+ .../gather/gladinet_storage_access_ticket_forge.md | 12 ++--
+ .../gather/gladinet_storage_lfi_cve_2025_11371.md  | 23 ++++---
+ ...net_viewstate_deserialization_cve_2025_30406.md | 10 +++-
+ lib/msf/core/auxiliary/gladinet.rb                 | 35 +++++++++++
+ .../gather/gladinet_storage_access_ticket_forge.rb | 23 ++-----
+ .../gather/gladinet_storage_lfi_cve_2025_11371.rb  | 19 +++---
+ ...net_viewstate_deserialization_cve_2025_30406.rb | 70 ++++++++++++++++------
+ 7 files changed, 131 insertions(+), 61 deletions(-)
+
+commit 180527876b92df5f9953c4949bf7cb0dc2920d25
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Fri Dec 12 18:26:31 2025 +0100
+
+    Fix Rubocop offenses in gladinet_storage_lfi_cve_2025_11371
+
+ modules/auxiliary/gather/gladinet_storage_lfi_cve_2025_11371.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 478345506e600e7569d63658a2f54e99c69d2763
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Fri Dec 12 18:20:37 2025 +0100
+
+    Add Gladinet CentreStack/Triofox auxiliary modules and exploit
+
+ .../gather/gladinet_storage_access_ticket_forge.md | 320 +++++++++++++++++++++
+ .../gather/gladinet_storage_lfi_cve_2025_11371.md  | 201 +++++++++++++
+ ...net_viewstate_deserialization_cve_2025_30406.md |  88 ++++--
+ lib/msf/core/auxiliary/gladinet.rb                 |  82 ++++++
+ .../gather/gladinet_storage_access_ticket_forge.rb | 198 +++++++++++++
+ .../gather/gladinet_storage_lfi_cve_2025_11371.rb  | 124 ++++++++
+ ...net_viewstate_deserialization_cve_2025_30406.rb |  13 +-
+ 7 files changed, 998 insertions(+), 28 deletions(-)
+
+commit 7f5d4545ab65376ad2234b119e279aebd84cdac9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 4 07:18:40 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f90da27c8d17744dfb1c56c2565270e4bae68f4
+Merge: ded7535c80 14f10c73e4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 4 08:09:32 2026 +0100
+
+    Land #20834, fixes NoMethodError in teamviewer_password post module
+    
+    Fix teamviewer_password module NoMethodError
+
+ .../gather/credentials/teamviewer_passwords.rb     | 26 +++++++++++-----------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit ded7535c8042e8f0210fb47100ea456b792410bc
+Merge: 5e43beca60 1db87f1501
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 4 00:22:52 2026 +0000
+
+    Merge pull request #20368 from isaac-app-dev/fix-issue-19384
+    
+    Fixes MsfVenom not running outside framework dir
+
+ msfvenom | 3 +++
+ 1 file changed, 3 insertions(+)
