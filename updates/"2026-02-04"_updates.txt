@@ -1,0 +1,35 @@
+commit 2289e889be813d19505e4494bc2f95a6fad3ffd0
+Merge: db064a4f49 f4427a3c04
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Feb 6 14:34:40 2026 +0000
+
+    Merge pull request #20903 from jheysel-r7/fix/enum_user_directories
+    
+    Fix enum_user_directories Duplicate Directories
+
+ lib/msf/core/post/unix.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit db064a4f499fceae74031ed7b894091d23a250b8
+Merge: b92da7cc23 674934d6d9
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Fri Feb 6 13:15:57 2026 +0000
+
+    Merge pull request #20895 from rudraditya21/fixed/ldap-entry-cache-misses
+    
+    added: negative caching for LDAP lookup misses
+
+ .../core/exploit/remote/ldap/active_directory.rb   | 21 +++++++--
+ lib/msf/core/exploit/remote/ldap/entry_cache.rb    | 39 ++++++++++++++---
+ .../ldap/active_directory/entry_cache_spec.rb      | 36 ++++++++++++++++
+ .../core/exploit/remote/ldap/entry_cache_spec.rb   | 50 ++++++++++++++++++++++
+ 4 files changed, 138 insertions(+), 8 deletions(-)
+
+commit 674934d6d9b7d319701f690018bb5b902bd6da57
+Author: Rudraditya Thakur <rudraditya.thakur21@gmail.com>
+Date:   Fri Feb 6 17:11:09 2026 +0530
+
+    fixed: entry cache spec
+
+ spec/lib/msf/core/exploit/remote/ldap/entry_cache_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
