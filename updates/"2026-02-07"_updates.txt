@@ -1,0 +1,206 @@
+commit cfb84831887f282ac87e9ff1b01c09a13b7495b8
+Merge: 05aa0eb326 23291f2f5e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Feb 9 20:33:10 2026 +0000
+
+    Merge pull request #20775 from rmtsixq/fix/postgresql-15-schema-permissions
+    
+    Fix PostgreSQL 15+ public schema permission issue
+
+ lib/msfdb_helpers/standalone.rb | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 05aa0eb326d4b98f49139f24add8ee6219829f9d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 9 18:17:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 187 ++++++++++++++++++++++--------------------
+ 1 file changed, 96 insertions(+), 91 deletions(-)
+
+commit 71dd4dae1970f803fb94f348d8a480a455bc9543
+Merge: 44f0e89b72 f41eda1128
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Feb 9 18:08:22 2026 +0000
+
+    Merge pull request #20710 from Chocapikk/add-ghsa-reference-support
+    
+    Add GHSA and OSV reference type support
+
+ .../Module-Reference-Identifiers.md                |  1 +
+ lib/msf/core/module/module_info.rb                 | 76 +++++++++-------------
+ lib/msf/core/module/reference.rb                   | 29 ++++++++-
+ .../admin/http/pihole_domains_api_exec.rb          |  2 +-
+ .../auxiliary/gather/jetty_web_inf_disclosure.rb   |  4 +-
+ .../auxiliary/gather/listmonk_env_disclosure.rb    |  2 +-
+ .../gather/minio_bootstrap_verify_info_disc.rb     |  2 +-
+ .../mongodb_ops_manager_diagnostic_archive_info.rb |  2 +-
+ .../auxiliary/gather/onedev_arbitrary_file_read.rb |  2 +-
+ .../rancher_authenticated_api_cred_exposure.rb     |  2 +-
+ .../scanner/http/grafana_plugin_traversal.rb       |  2 +-
+ ...inga_static_library_file_directory_traversal.rb |  2 +-
+ .../scanner/misc/cups_browsed_info_disclosure.rb   |  2 +-
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       |  2 +-
+ .../bentoml_runner_server_rce_cve_2025_32375.rb    |  2 +-
+ .../http/cacti_unauthenticated_cmd_injection.rb    |  2 +-
+ .../http/craftcms_unauth_rce_cve_2023_41892.rb     |  2 +-
+ .../librenms_authenticated_rce_cve_2024_51092.rb   |  2 +-
+ .../http/lucee_admin_imgprocess_file_write.rb      |  2 +-
+ .../linux/http/opentsdb_key_cmd_injection.rb       |  2 +-
+ .../http/pandora_itsm_auth_rce_cve_2025_4653.rb    |  2 +-
+ .../linux/http/pyload_js2py_cve_2024_39205.rb      |  2 +-
+ .../raspberrymatic_unauth_rce_cve_2024_24578.rb    |  2 +-
+ modules/exploits/linux/http/roxy_wi_exec.rb        |  2 +-
+ modules/exploits/linux/http/traccar_rce_upload.rb  |  4 +-
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.rb    |  2 +-
+ .../exploits/linux/local/ndsudo_cve_2024_32019.rb  |  2 +-
+ .../linux/local/pihole_remove_commands_lpe.rb      |  2 +-
+ modules/exploits/linux/local/runc_cwd_priv_esc.rb  |  2 +-
+ .../linux/misc/asterisk_ami_originate_auth_rce.rb  |  2 +-
+ .../multi/http/cacti_package_import_rce.rb         |  2 +-
+ .../exploits/multi/http/cacti_pollers_sqli_rce.rb  |  4 +-
+ .../http/geoserver_unauth_rce_cve_2024_36401.rb    |  2 +-
+ .../exploits/multi/http/mybb_rce_cve_2022_24734.rb |  2 +-
+ .../openfire_auth_bypass_rce_cve_2023_32315.rb     |  2 +-
+ .../multi/http/subrion_cms_file_upload_rce.rb      |  2 +-
+ .../multi/http/torchserver_cve_2023_43654.rb       |  4 +-
+ .../multi/http/xwiki_unauth_rce_cve_2025_24893.rb  |  2 +-
+ .../multi/misc/cups_ipp_remote_code_execution.rb   |  8 +--
+ .../multi/misc/vscode_ipynb_remote_dev_exec.rb     |  2 +-
+ .../exploits/multi/persistence/periodic_script.rb  | 10 ++-
+ modules/exploits/unix/http/raspap_rce.rb           |  2 +-
+ .../unix/webapp/nextcloud_workflows_rce.rb         |  2 +-
+ .../exploits/unix/webapp/zoneminder_snapshots.rb   |  2 +-
+ .../post/linux/gather/rancher_audit_log_leak.rb    |  2 +-
+ spec/module_validation_spec.rb                     |  6 +-
+ spec/support/lib/module_validation.rb              |  4 +-
+ tools/dev/msftidy.rb                               | 18 ++++-
+ tools/modules/module_missing_reference.rb          |  2 +
+ tools/modules/module_reference.rb                  |  2 +
+ 50 files changed, 138 insertions(+), 106 deletions(-)
+
+commit 44f0e89b726dfe1dbf878531a43872ac8ba0e892
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 9 17:38:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+
+commit 5e9b563060c6becc8677cc42ef751a860ee2d13e
+Merge: c3e9652ccb 6e860953da
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Feb 9 17:29:28 2026 +0000
+
+    Merge pull request #20939 from cgranleese-r7/bump-metasploit-credential
+    
+    Bump metasploit-credential 6.0.20
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c3e9652ccb37c9e7585c19a4b6c2ce7241cb321d
+Merge: 8af6bae699 4c1a25198b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Feb 9 11:50:44 2026 -0500
+
+    Merge pull request #20937 from rudraditya21/attack-relay-sccm
+    
+    Add MITRE ATT&CK mappings for relay and SCCM credential modules
+
+ modules/auxiliary/admin/sccm/get_naa_credentials.rb         | 3 ++-
+ modules/auxiliary/server/relay/esc8.rb                      | 4 ++++
+ modules/auxiliary/server/relay/relay_get_naa_credentials.rb | 4 +++-
+ 3 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 6e860953da92638372b1d1a24a2462bb56f1019e
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Mon Feb 9 14:19:51 2026 +0000
+
+    Bump metasploit-credential 6.0.20
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f41eda112864c6485b4007724e4ca6021a9f873a
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Mon Feb 9 15:17:23 2026 +0100
+
+    Add GHSA and OSV reference type support
+    
+    Add support for GHSA (GitHub Security Advisories) and OSV (Open Source
+    Vulnerabilities) as structured reference types in Metasploit modules.
+    
+    Convert 49 hardcoded GHSA URLs to structured ['GHSA', 'GHSA-xxxx'] format
+    across existing modules, and add support for repository-specific GHSA
+    references with an optional third parameter ['GHSA', 'GHSA-xxxx', 'repo'].
+    
+    Update reference validation, module validator, and info_fixups to handle
+    the new reference types correctly.
+
+ .../Module-Reference-Identifiers.md                |  1 +
+ lib/msf/core/module/module_info.rb                 | 76 +++++++++-------------
+ lib/msf/core/module/reference.rb                   | 29 ++++++++-
+ .../admin/http/pihole_domains_api_exec.rb          |  2 +-
+ .../auxiliary/gather/jetty_web_inf_disclosure.rb   |  4 +-
+ .../auxiliary/gather/listmonk_env_disclosure.rb    |  2 +-
+ .../gather/minio_bootstrap_verify_info_disc.rb     |  2 +-
+ .../mongodb_ops_manager_diagnostic_archive_info.rb |  2 +-
+ .../auxiliary/gather/onedev_arbitrary_file_read.rb |  2 +-
+ .../rancher_authenticated_api_cred_exposure.rb     |  2 +-
+ .../scanner/http/grafana_plugin_traversal.rb       |  2 +-
+ ...inga_static_library_file_directory_traversal.rb |  2 +-
+ .../scanner/misc/cups_browsed_info_disclosure.rb   |  2 +-
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       |  2 +-
+ .../bentoml_runner_server_rce_cve_2025_32375.rb    |  2 +-
+ .../http/cacti_unauthenticated_cmd_injection.rb    |  2 +-
+ .../http/craftcms_unauth_rce_cve_2023_41892.rb     |  2 +-
+ .../librenms_authenticated_rce_cve_2024_51092.rb   |  2 +-
+ .../http/lucee_admin_imgprocess_file_write.rb      |  2 +-
+ .../linux/http/opentsdb_key_cmd_injection.rb       |  2 +-
+ .../http/pandora_itsm_auth_rce_cve_2025_4653.rb    |  2 +-
+ .../linux/http/pyload_js2py_cve_2024_39205.rb      |  2 +-
+ .../raspberrymatic_unauth_rce_cve_2024_24578.rb    |  2 +-
+ modules/exploits/linux/http/roxy_wi_exec.rb        |  2 +-
+ modules/exploits/linux/http/traccar_rce_upload.rb  |  4 +-
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.rb    |  2 +-
+ .../exploits/linux/local/ndsudo_cve_2024_32019.rb  |  2 +-
+ .../linux/local/pihole_remove_commands_lpe.rb      |  2 +-
+ modules/exploits/linux/local/runc_cwd_priv_esc.rb  |  2 +-
+ .../linux/misc/asterisk_ami_originate_auth_rce.rb  |  2 +-
+ .../multi/http/cacti_package_import_rce.rb         |  2 +-
+ .../exploits/multi/http/cacti_pollers_sqli_rce.rb  |  4 +-
+ .../http/geoserver_unauth_rce_cve_2024_36401.rb    |  2 +-
+ .../exploits/multi/http/mybb_rce_cve_2022_24734.rb |  2 +-
+ .../openfire_auth_bypass_rce_cve_2023_32315.rb     |  2 +-
+ .../multi/http/subrion_cms_file_upload_rce.rb      |  2 +-
+ .../multi/http/torchserver_cve_2023_43654.rb       |  4 +-
+ .../multi/http/xwiki_unauth_rce_cve_2025_24893.rb  |  2 +-
+ .../multi/misc/cups_ipp_remote_code_execution.rb   |  8 +--
+ .../multi/misc/vscode_ipynb_remote_dev_exec.rb     |  2 +-
+ .../exploits/multi/persistence/periodic_script.rb  | 10 ++-
+ modules/exploits/unix/http/raspap_rce.rb           |  2 +-
+ .../unix/webapp/nextcloud_workflows_rce.rb         |  2 +-
+ .../exploits/unix/webapp/zoneminder_snapshots.rb   |  2 +-
+ .../post/linux/gather/rancher_audit_log_leak.rb    |  2 +-
+ spec/module_validation_spec.rb                     |  6 +-
+ spec/support/lib/module_validation.rb              |  4 +-
+ tools/dev/msftidy.rb                               | 18 ++++-
+ tools/modules/module_missing_reference.rb          |  2 +
+ tools/modules/module_reference.rb                  |  2 +
+ 50 files changed, 138 insertions(+), 106 deletions(-)
+
+commit 8af6bae699edb615203ec4ccff8502c98a9edcb1
+Merge: 2289e889be 5f0ada0c64
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Feb 9 12:25:11 2026 +0000
+
+    Merge pull request #20906 from rudraditya21/fix/ssh-cmd-exec-trailing-newlines
+    
+    Fix SSH command shells dying on cmd_exec with trailing newline
+
+ .../core/session/provider/single_command_shell.rb  |  2 +-
+ .../session/provider/single_command_shell_spec.rb  | 49 ++++++++++++++++++++++
+ 2 files changed, 50 insertions(+), 1 deletion(-)
