@@ -1,0 +1,1167 @@
+commit 336a7710fb877a6854890fac76b0bd0246e34811
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 10 22:31:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 32 ++++++++++++++++++++------------
+ 1 file changed, 20 insertions(+), 12 deletions(-)
+
+commit b609d6de806ad00d37934ca33d2fd23afb33e096
+Merge: 498eefc881 70dd06ef67
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Feb 10 17:18:17 2026 -0500
+
+    Merge pull request #20935 from rudraditya21/attack-kerberos
+    
+    Add MITRE ATT&CK mappings for Kerberos roasting modules
+
+ modules/auxiliary/gather/kerberoast.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 498eefc88120110b7364ed38968fb207bc3333c3
+Merge: b21c5b5ff3 8263d4fa95
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Feb 10 17:11:56 2026 -0500
+
+    Merge pull request #20934 from rudraditya21/attack-ldap-adcs
+    
+    Add MITRE ATT&CK mappings for LDAP/AD CS modules
+
+ modules/auxiliary/admin/dcerpc/esc_update_ldap_object.rb    | 4 +++-
+ modules/auxiliary/admin/dcerpc/icpr_cert.rb                 | 3 ++-
+ modules/auxiliary/admin/ldap/rbcd.rb                        | 4 +++-
+ modules/auxiliary/admin/ldap/shadow_credentials.rb          | 3 ++-
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 4 +++-
+ 5 files changed, 13 insertions(+), 5 deletions(-)
+
+commit b21c5b5ff3e17cd4a69f149ad2cc1838498b103a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 10 17:16:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit d330de16c8f2fcac5858c252843422ae3ced47c7
+Merge: 19955be804 51d2a18ade
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Feb 10 11:07:39 2026 -0600
+
+    Merge pull request #20932 from sfewer-r7/ivanti-epmm-rce
+    
+    Add exploit module for Ivant EPMM/MobileIron (CVE-2026-1281)
+
+ .../modules/exploit/linux/http/ivanti_epmm_rce.md  |  90 +++++++++++++
+ modules/exploits/linux/http/ivanti_epmm_rce.rb     | 146 +++++++++++++++++++++
+ 2 files changed, 236 insertions(+)
+
+commit 19955be804da18b7eae267294047c6fb4c773db2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 10 11:56:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit a939e530f3c8f9800b3539da365f0edb1af424a5
+Merge: 9d41abd57e 3b64f761f3
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Feb 10 12:47:00 2026 +0100
+
+    Land #20817, fixes table print in SAP auxiliary modules
+    
+    SAP auxiliary modules bugfix
+
+ modules/auxiliary/scanner/sap/sap_soap_rfc_read_table.rb            | 2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_sxpg_call_system_exec.rb | 2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_sxpg_command_exec.rb     | 2 +-
+ modules/auxiliary/scanner/sap/sap_soap_rfc_system_info.rb           | 2 +-
+ modules/auxiliary/scanner/sap/sap_soap_th_saprel_disclosure.rb      | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 3b64f761f3ffde28d553199084fe293c7c2a9e4d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Feb 10 12:30:29 2026 +0100
+
+    Apply suggestion from @msutovsky-r7
+
+ modules/auxiliary/scanner/sap/sap_soap_rfc_system_info.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 0757ca7494b0a8de781d1925b9adb7d7400106ff
+Merge: 911f8e4f6e 9d41abd57e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Feb 10 12:29:55 2026 +0100
+
+    Merge branch 'master' into sap_auxiliary_modules_bugfix
+
+ .github/workflows/add_to_project.yml               |   19 +
+ .github/workflows/extended_tests.yml               |   68 +
+ .../workflows/shared_meterpreter_acceptance.yml    |    2 +-
+ .gitignore                                         |    3 +
+ CONTRIBUTING.md                                    |    2 +-
+ COPYING                                            |    2 +-
+ Gemfile.lock                                       |   21 +-
+ LICENSE                                            |    2 +-
+ LICENSE_GEMS                                       |    8 +-
+ data/exploits/burp_extension/README.md             |    9 +
+ data/exploits/burp_extension/build.gradle          |   27 +
+ data/exploits/burp_extension/precompiled.class     |  Bin 0 -> 6187 bytes
+ data/exploits/burp_extension/settings.gradle       |    1 +
+ .../burp_extension/src/main/java/BurpExtender.java |   96 +
+ .../burp_extension/src/main/resources/command.txt  |    1 +
+ .../burp_extension/src/main/resources/name.txt     |    1 +
+ data/templates/src/elf/exe/build.sh                |    8 +
+ data/templates/src/elf/exe/elf_aarch64_template.s  |    1 -
+ data/templates/src/elf/exe/elf_armbe_template.s    |   37 +
+ data/templates/src/elf/exe/elf_mips64_template.s   |   55 +
+ data/templates/src/elf/exe/elf_ppc64le_template.s  |   40 +
+ data/templates/src/elf/exe/elf_ppc_template.s      |   37 +
+ .../templates/src/elf/exe/elf_ppce500v2_template.s |   37 +
+ data/templates/src/elf/exe/elf_zarch_template.s    |   34 +
+ data/templates/template_armbe_linux.bin            |  Bin 0 -> 84 bytes
+ data/templates/template_mips64_linux.bin           |  Bin 0 -> 120 bytes
+ data/templates/template_ppc64le_linux.bin          |  Bin 0 -> 128 bytes
+ data/templates/template_ppc_linux.bin              |  Bin 0 -> 84 bytes
+ data/templates/template_ppce500v2_linux.bin        |  Bin 0 -> 84 bytes
+ data/templates/template_zarch_linux.bin            |  Bin 0 -> 120 bytes
+ db/modules_metadata_base.json                      | 6359 ++++++++++++++------
+ db/schema.rb                                       |   19 +-
+ .../GSoC-2026-Project-Ideas.md                     |   74 +
+ .../How-to-Apply-to-GSoC.md                        |   17 +-
+ .../How-to-use-fetch-payloads.md                   |   12 +-
+ .../Module-Reference-Identifiers.md                |    1 +
+ .../kerberos/service_authentication.md             |    1 +
+ docs/navigation.rb                                 |    4 +
+ .../modules/auxiliary/admin/ldap/bad_successor.md  |  240 +
+ .../gather/freepbx_custom_extension_injection.md   |   69 +
+ .../gather/geoserver_wms_getmap_xxe_file_read.md   |  111 +
+ .../gather/gladinet_storage_access_ticket_forge.md |  346 ++
+ ...adinet_storage_path_traversal_cve_2025_11371.md |  225 +
+ .../modules/auxiliary/scanner/dect/call_scanner.md |   89 +
+ .../auxiliary/scanner/dect/station_scanner.md      |   79 +
+ .../ipv6_neighbor_router_advertisement.md          |   48 +
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   |  335 ++
+ .../modules/auxiliary/scanner/ssh/ssh_login.md     |  203 +-
+ .../auxiliary/scanner/ssh/ssh_login_pubkey.md      |  236 -
+ .../linux/http/control_web_panel_api_cmd_exec.md   |   68 +
+ .../exploit/linux/http/prison_management_rce.md    |   91 +
+ .../linux/http/splunk_auth_rce_cve_2024_36985.md   |   71 +
+ .../exploit/linux/local/udev_persistence.md        |   43 -
+ .../modules/exploit/linux/persistence/udev.md      |  147 +
+ .../multi/http/avideo_notify_ffmpeg_unauth_rce.md  |  312 +
+ .../exploit/multi/http/cacti_graph_template_rce.md |  282 +
+ .../multi/http/n8n_workflow_expression_rce.md      |   81 +
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.md  |  110 +
+ .../http/react2shell_unauth_rce_cve_2025_55182.md  |  214 +-
+ .../multi/http/smartermail_guid_file_upload.md     |  124 +
+ .../multi/http/splunk_auth_rce_cve_2022_43571.md   |  119 +
+ .../exploit/multi/http/taiga_tribe_gig_unserial.md |  318 +
+ .../exploit/multi/http/web_check_screenshot_rce.md |  110 +
+ .../exploit/multi/persistence/burp_extension.md    |  519 ++
+ .../multi/persistence/python_site_specific_hook.md |   98 +
+ .../modules/exploit/multi/persistence/ssh_key.md   |  379 ++
+ .../unix/http/freepbx_custom_extension_rce.md      |   76 +
+ .../unix/http/freepbx_firmware_file_upload.md      |   68 +
+ ...net_viewstate_deserialization_cve_2025_30406.md |   94 +-
+ .../persistence/accessibility_features_debugger.md |  129 +
+ ...p_plugin_persistence.md => notepadpp_plugin.md} |    0
+ .../wmi/wmi_event_subscription_event_log.md        |  158 +
+ .../wmi/wmi_event_subscription_interval.md         |  137 +
+ .../wmi/wmi_event_subscription_process.md          |  156 +
+ .../wmi/wmi_event_subscription_uptime.md           |  134 +
+ .../post/linux/manage/sshkey_persistence.md        |  543 --
+ .../post/windows/manage/sshkey_persistence.md      |   89 -
+ .../windows/x64/src/migrate/poolparty.asm          |   75 +
+ .../windows/x86/src/migrate/poolparty.asm          |   81 +
+ lib/metasploit/framework/ldap/client.rb            |   11 +-
+ .../framework/login_scanner/advantech_webaccess.rb |    9 +-
+ lib/metasploit/framework/login_scanner/caidao.rb   |   14 +-
+ .../framework/login_scanner/cisco_firepower.rb     |    4 +-
+ .../framework/login_scanner/directadmin.rb         |   10 +-
+ lib/metasploit/framework/login_scanner/kerberos.rb |    2 +
+ .../login_scanner/manageengine_desktop_central.rb  |   12 +-
+ lib/metasploit/framework/login_scanner/nessus.rb   |   10 +-
+ .../framework/login_scanner/phpmyadmin.rb          |   12 +-
+ .../framework/login_scanner/softing_sis.rb         |   27 +-
+ .../login_scanner/symantec_web_gateway.rb          |   10 +-
+ .../login_scanner/syncovery_file_sync_backup.rb    |   10 +-
+ .../wowza_streaming_engine_manager.rb              |    7 +-
+ .../framework/password_crackers/jtr/formatter.rb   |   20 +-
+ lib/metasploit/framework/version.rb                |    2 +-
+ lib/msf/base/sessions/mettle_config.rb             |   20 +-
+ lib/msf/core/auxiliary/gladinet.rb                 |  131 +
+ lib/msf/core/auxiliary/password_cracker.rb         |   32 +-
+ lib/msf/core/db_manager/service.rb                 |   80 +-
+ lib/msf/core/db_manager/session.rb                 |   19 +-
+ lib/msf/core/db_manager/vuln.rb                    |   62 +-
+ lib/msf/core/exploit.rb                            |   10 +-
+ lib/msf/core/exploit/remote/http/smartermail.rb    |   48 +
+ lib/msf/core/exploit/remote/http/splunk.rb         |    2 +
+ lib/msf/core/exploit/remote/http/splunk/apps.rb    |   62 +
+ .../core/exploit/remote/http/splunk/dashboards.rb  |   92 +
+ lib/msf/core/exploit/remote/http/splunk/helpers.rb |   57 +
+ lib/msf/core/exploit/remote/http/splunk/login.rb   |    6 +-
+ lib/msf/core/exploit/remote/http/splunk/search.rb  |   33 +
+ lib/msf/core/exploit/remote/http/splunk/uris.rb    |   41 +
+ lib/msf/core/exploit/remote/http/splunk/version.rb |   36 +
+ lib/msf/core/exploit/remote/http_client.rb         |    3 +-
+ lib/msf/core/exploit/remote/http_server.rb         |    6 +-
+ lib/msf/core/exploit/remote/kerberos/auth_brute.rb |   23 +-
+ lib/msf/core/exploit/remote/kerberos/client.rb     |  114 +-
+ .../exploit/remote/kerberos/client/as_request.rb   |    2 +-
+ lib/msf/core/exploit/remote/kerberos/client/pac.rb |    2 +-
+ .../core/exploit/remote/kerberos/client/pkinit.rb  |    2 +-
+ .../exploit/remote/kerberos/client/tgs_request.rb  |   35 +-
+ lib/msf/core/exploit/remote/kerberos/clock_skew.rb |   46 +
+ .../remote/kerberos/service_authenticator/base.rb  |   65 +-
+ .../kerberos/service_authenticator/options.rb      |   15 +
+ .../remote/kerberos/ticket/storage/read_mixin.rb   |    2 +-
+ lib/msf/core/exploit/remote/ldap.rb                |    3 +-
+ .../core/exploit/remote/ldap/active_directory.rb   |   23 +-
+ lib/msf/core/exploit/remote/ldap/entry_cache.rb    |   39 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   23 +-
+ lib/msf/core/exploit/remote/smb/client.rb          |    3 +-
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |   13 +-
+ lib/msf/core/exploit/remote/winrm.rb               |    3 +-
+ lib/msf/core/mitre/attack/technique.rb             |    4 +-
+ lib/msf/core/module.rb                             |   20 +-
+ lib/msf/core/module/module_info.rb                 |   76 +-
+ lib/msf/core/module/reference.rb                   |   29 +-
+ lib/msf/core/payload/adapter/fetch.rb              |   36 +-
+ lib/msf/core/payload/adapter/fetch/fileless.rb     |  279 +
+ .../core/payload/adapter/fetch/linux_options.rb    |    5 +-
+ lib/msf/core/payload/linux/aarch64/elf_loader.rb   |   66 +
+ lib/msf/core/payload/linux/armbe/prepends.rb       |   22 +
+ lib/msf/core/payload/linux/armle/elf_loader.rb     |   71 +
+ lib/msf/core/payload/linux/mips64/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mips64/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/mipsbe/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mipsbe/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/mipsle/elf_loader.rb    |   76 +
+ lib/msf/core/payload/linux/mipsle/prepends.rb      |   22 +
+ lib/msf/core/payload/linux/ppc64le/prepends.rb     |   76 +
+ lib/msf/core/payload/linux/ppce500v2/prepends.rb   |   75 +
+ lib/msf/core/payload/linux/prepends.rb             |    4 +
+ lib/msf/core/payload/linux/x64/elf_loader.rb       |   57 +
+ lib/msf/core/payload/linux/x86/elf_loader.rb       |   56 +
+ lib/msf/core/payload/linux/zarch/prepends.rb       |   24 +
+ lib/msf/core/post/linux/system.rb                  |   37 +-
+ lib/msf/core/post/unix.rb                          |    4 +-
+ lib/msf/core/post/windows/file_system.rb           |   36 +-
+ lib/msf/core/rpc/v10/constants.rb                  |   19 +-
+ lib/msf/core/rpc/v10/rpc_db.rb                     |   11 +-
+ lib/msf/core/rpc/v10/rpc_module.rb                 |   34 +-
+ lib/msf/core/rpc/v10/service.rb                    |    9 +-
+ .../core/session/provider/single_command_shell.rb  |    2 +-
+ .../core/web_services/servlet/service_servlet.rb   |    4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |   33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |   21 +-
+ lib/msf/util/exe.rb                                | 3966 ++++++------
+ lib/msf/util/host.rb                               |    2 +-
+ lib/msfdb_helpers/standalone.rb                    |   12 +
+ .../extensions/stdapi/railgun/library.rb           |    4 +-
+ .../credential_cache/krb5_ccache_credential.rb     |   10 +
+ lib/rex/proto/kerberos/crypto.rb                   |    1 +
+ lib/rex/proto/kerberos/model.rb                    |   12 +
+ lib/rex/proto/kerberos/model/dmsa_key_package.rb   |  105 +
+ lib/rex/proto/kerberos/model/error.rb              |    2 +-
+ lib/rex/proto/kerberos/model/kerberos_time.rb      |   21 +
+ .../proto/kerberos/model/pre_auth_data_entry.rb    |    6 +
+ .../proto/kerberos/model/pre_auth_s4u_x509_user.rb |   99 +
+ lib/rex/proto/kerberos/model/s4u_user_id.rb        |  161 +
+ lib/rex/proto/ms_tds/ms_tds_login7.rb              |    2 +-
+ lib/rex/proto/mssql/client.rb                      |    4 +-
+ lib/rex/proto/smb/simple_client.rb                 |    8 +-
+ metasploit-framework.gemspec                       |    4 +-
+ .../admin/http/pihole_domains_api_exec.rb          |    2 +-
+ modules/auxiliary/admin/kerberos/forge_ticket.rb   |    4 +-
+ modules/auxiliary/admin/kerberos/get_ticket.rb     |   73 +-
+ .../admin/kerberos/ms14_068_kerberos_checksum.rb   |    5 +-
+ modules/auxiliary/admin/ldap/bad_successor.rb      |  419 ++
+ .../auxiliary/admin/sccm/get_naa_credentials.rb    |    3 +-
+ .../gather/freepbx_custom_extension_injection.rb   |  114 +
+ .../gather/geoserver_wms_getmap_xxe_file_read.rb   |  133 +
+ .../gather/gladinet_storage_access_ticket_forge.rb |  252 +
+ ...adinet_storage_path_traversal_cve_2025_11371.rb |  150 +
+ .../auxiliary/gather/jetty_web_inf_disclosure.rb   |    4 +-
+ modules/auxiliary/gather/kerberos_enumusers.rb     |    4 +-
+ modules/auxiliary/gather/ldap_query.rb             |    4 +
+ .../auxiliary/gather/listmonk_env_disclosure.rb    |    2 +-
+ .../gather/minio_bootstrap_verify_info_disc.rb     |    2 +-
+ .../mongodb_ops_manager_diagnostic_archive_info.rb |    2 +-
+ .../auxiliary/gather/onedev_arbitrary_file_read.rb |    2 +-
+ .../rancher_authenticated_api_cred_exposure.rb     |    2 +-
+ modules/auxiliary/gather/windows_secrets_dump.rb   |    4 +-
+ modules/auxiliary/scanner/dcerpc/petitpotam.rb     |    4 +-
+ .../scanner/http/advantech_webaccess_login.rb      |   17 +-
+ .../scanner/http/caidao_bruteforce_login.rb        |   15 +-
+ .../scanner/http/cisco_firepower_login.rb          |   17 +-
+ .../auxiliary/scanner/http/directadmin_login.rb    |   15 +-
+ .../scanner/http/grafana_plugin_traversal.rb       |    2 +-
+ ...inga_static_library_file_directory_traversal.rb |    2 +-
+ .../http/manageengine_desktop_central_login.rb     |   15 +-
+ modules/auxiliary/scanner/http/phpmyadmin_login.rb |   14 +-
+ .../auxiliary/scanner/http/softing_sis_login.rb    |    9 +-
+ .../scanner/http/symantec_web_gateway_login.rb     |   17 +-
+ .../scanner/http/syncovery_linux_login.rb          |    9 +-
+ .../http/wowza_streaming_engine_manager_login.rb   |    7 +-
+ .../auxiliary/scanner/kerberos/kerberos_login.rb   |    4 +
+ .../scanner/misc/cups_browsed_info_disclosure.rb   |    2 +-
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 1058 ++++
+ .../auxiliary/scanner/nessus/nessus_rest_login.rb  |   18 +-
+ .../auxiliary/scanner/sap/sap_icf_public_info.rb   |    2 +-
+ .../scanner/sap/sap_soap_rfc_system_info.rb        |    1 +
+ modules/auxiliary/scanner/smb/smb_login.rb         |    3 +-
+ modules/auxiliary/scanner/ssh/ssh_login.rb         |    9 +-
+ modules/auxiliary/scanner/winrm/winrm_cmd.rb       |    3 +-
+ modules/auxiliary/scanner/winrm/winrm_login.rb     |    3 +-
+ modules/auxiliary/server/icmp_exfil.rb             |    6 +-
+ modules/auxiliary/server/relay/esc8.rb             |    4 +
+ .../server/relay/relay_get_naa_credentials.rb      |    4 +-
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb  |    4 +-
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb    |    4 +-
+ modules/exploits/aix/rpc_cmsd_opcode21.rb          |    1 -
+ modules/exploits/aix/rpc_ttdbserverd_realpath.rb   |    1 -
+ modules/exploits/android/adb/adb_server_exec.rb    |    1 -
+ modules/exploits/android/local/su_exec.rb          |    1 -
+ .../exploits/apple_ios/browser/safari_libtiff.rb   |    1 -
+ .../exploits/apple_ios/email/mobilemail_libtiff.rb |    1 -
+ modules/exploits/example_linux_persistence.rb      |    2 +-
+ modules/exploits/firefox/local/exec_shellcode.rb   |    1 -
+ .../freebsd/http/citrix_dir_traversal_rce.rb       |    2 -
+ .../freebsd/http/junos_phprc_auto_prepend_file.rb  |    2 -
+ .../http/acronis_cyber_infra_cve_2023_45249.rb     |    2 -
+ .../exploits/linux/http/aitemi_m300_time_rce.rb    |    3 +-
+ .../linux/http/apache_continuum_cmd_exec.rb        |    3 +-
+ modules/exploits/linux/http/apache_druid_js_rce.rb |    2 -
+ .../linux/http/apache_ofbiz_deserialization.rb     |    2 -
+ .../http/apache_ofbiz_deserialization_soap.rb      |    2 -
+ .../linux/http/apache_solr_backup_restore.rb       |    2 -
+ .../linux/http/apache_spark_rce_cve_2022_33891.rb  |    2 -
+ .../linux/http/appsmith_rce_cve_2024_55964.rb      |    1 -
+ ...bypass_service_cmds_peform_command_injection.rb |    2 -
+ .../http/artica_proxy_unauth_rce_cve_2024_2054.rb  |    2 -
+ modules/exploits/linux/http/axis_app_install.rb    |    2 -
+ .../exploits/linux/http/axis_srv_parhand_rce.rb    |   42 +-
+ .../linux/http/bentoml_rce_cve_2025_27520.rb       |    2 +-
+ .../bentoml_runner_server_rce_cve_2025_32375.rb    |    2 +-
+ .../linux/http/bitbucket_git_cmd_injection.rb      |    2 -
+ .../http/cacti_unauthenticated_cmd_injection.rb    |    4 +-
+ .../linux/http/centreon_auth_rce_cve_2025_5946.rb  |    2 -
+ .../linux/http/centreon_pollers_auth_rce.rb        |    2 -
+ .../linux/http/chamilo_bigupload_webshell.rb       |    2 -
+ .../http/chamilo_unauth_rce_cve_2023_34960.rb      |    2 -
+ modules/exploits/linux/http/cisco_asax_sfr_rce.rb  |    2 -
+ .../linux/http/cisco_hyperflex_file_upload_rce.rb  |    2 -
+ .../cisco_hyperflex_hx_data_platform_cmd_exec.rb   |    2 -
+ modules/exploits/linux/http/cisco_rv340_lan.rb     |    2 -
+ .../http/cisco_rv_series_authbypass_and_rce.rb     |    2 -
+ .../linux/http/cisco_ucs_cloupia_script_rce.rb     |    2 -
+ .../linux/http/control_web_panel_api_cmd_exec.rb   |  131 +
+ .../linux/http/control_web_panel_login_cmd_exec.rb |    2 -
+ .../exploits/linux/http/craftcms_ftp_template.rb   |    2 -
+ .../http/craftcms_preauth_rce_cve_2025_32432.rb    |    2 -
+ .../http/craftcms_unauth_rce_cve_2023_41892.rb     |    4 +-
+ .../linux/http/cve_2019_1663_cisco_rmi_rce.rb      |  157 +-
+ .../linux/http/dlink_diagnostic_exec_noauth.rb     |   43 +-
+ .../exploits/linux/http/dlink_dir615_up_exec.rb    |   63 +-
+ .../linux/http/dlink_dwl_2600_command_injection.rb |    1 -
+ .../exploits/linux/http/dtale_rce_cve_2025_0655.rb |    1 -
+ modules/exploits/linux/http/efw_chpasswd_exec.rb   |   15 +-
+ .../linux/http/elfinder_archive_cmd_injection.rb   |    2 -
+ modules/exploits/linux/http/empire_skywalker.rb    |    1 -
+ modules/exploits/linux/http/eramba_rce.rb          |    2 -
+ .../linux/http/f5_bigip_tmui_rce_cve_2020_5902.rb  |    2 -
+ .../linux/http/f5_bigip_tmui_rce_cve_2023_46747.rb |    2 -
+ modules/exploits/linux/http/f5_icontrol_rce.rb     |    2 -
+ .../linux/http/f5_icontrol_rest_ssrf_rce.rb        |    2 -
+ .../http/flir_ax8_unauth_rce_cve_2022_37061.rb     |    2 -
+ .../linux/http/fortinac_keyupload_file_write.rb    |    2 -
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   |    1 -
+ .../exploits/linux/http/froxlor_log_path_rce.rb    |    3 +-
+ .../linux/http/glinet_unauth_rce_cve_2023_50445.rb |    2 -
+ .../linux/http/glpi_htmlawed_php_injection.rb      |    1 -
+ ...ndstream_gxv31xx_settimezone_unauth_cmd_exec.rb |    1 -
+ .../http/grandstream_ucm62xx_sendemail_rce.rb      |    2 -
+ .../linux/http/hikvision_cve_2021_36260_blind.rb   |    2 -
+ .../exploits/linux/http/hp_van_sdn_cmd_inject.rb   |   32 +-
+ .../exploits/linux/http/huawei_hg532n_cmdinject.rb |  100 +-
+ .../linux/http/ictbroadcast_unauth_cookie.rb       |    2 -
+ .../http/invoiceninja_unauth_rce_cve_2024_55555.rb |    2 -
+ .../http/invoiceshelf_unauth_rce_cve_2024_55556.rb |    2 -
+ .../linux/http/invokeai_rce_cve_2024_12029.rb      |    1 -
+ modules/exploits/linux/http/ipfire_pakfire_exec.rb |    2 -
+ .../http/ispconfig_lang_edit_php_code_injection.rb |    1 -
+ .../ivanti_connect_secure_rce_cve_2023_46805.rb    |    2 -
+ ...ect_secure_stack_overflow_rce_cve_2025_22457.rb |    1 -
+ .../http/ivanti_csa_unauth_rce_cve_2021_44529.rb   |    2 -
+ .../linux/http/ivanti_sentry_misc_log_service.rb   |    2 -
+ .../linux/http/jenkins_cli_deserialization.rb      |    1 -
+ .../http/judge0_sandbox_escape_cve_2024_28189.rb   |    1 -
+ .../http/kafka_ui_unauth_rce_cve_2023_52251.rb     |    2 -
+ ...r_authenticate_user_unauth_command_injection.rb |    1 -
+ .../linux/http/lexmark_faxtrace_settings.rb        |    2 -
+ .../librenms_authenticated_rce_cve_2024_51092.rb   |    3 +-
+ .../linux/http/librenms_collectd_cmd_inject.rb     |    7 +-
+ .../http/linear_emerge_unauth_rce_cve_2019_7256.rb |    2 -
+ .../linux/http/linksys_e1500_apply_exec.rb         |   59 +-
+ .../exploits/linux/http/linksys_themoon_exec.rb    |   47 +-
+ .../linux/http/linksys_wrt160nv2_apply_exec.rb     |   49 +-
+ .../linux/http/linksys_wrt54gl_apply_exec.rb       |  141 +-
+ modules/exploits/linux/http/linuxki_rce.rb         |    2 -
+ .../http/lucee_admin_imgprocess_file_write.rb      |    3 +-
+ .../http/magento_xxe_to_glibc_buf_overflow.rb      |    2 -
+ .../magnusbilling_unauth_rce_cve_2023_30258.rb     |    2 -
+ modules/exploits/linux/http/mailcleaner_exec.rb    |    6 +-
+ .../linux/http/mobileiron_mdm_hessian_rce.rb       |    2 -
+ modules/exploits/linux/http/moodle_rce.rb          |    2 -
+ .../http/motioneye_auth_rce_cve_2025_60787.rb      |    2 -
+ .../linux/http/nagios_xi_autodiscovery_webshell.rb |    4 +-
+ .../nagios_xi_configwizards_authenticated_rce.rb   |    2 -
+ .../linux/http/nagios_xi_mibs_authenticated_rce.rb |    2 -
+ ...nagios_xi_plugins_filename_authenticated_rce.rb |    2 -
+ .../http/nagios_xi_snmptrap_authenticated_rce.rb   |    2 -
+ .../linux/http/netalertx_rce_cve_2024_46506.rb     |    1 -
+ .../linux/http/netgear_dgn1000b_setup_exec.rb      |   63 +-
+ .../linux/http/netgear_dgn2200b_pppoe_exec.rb      |  139 +-
+ .../linux/http/netis_unauth_rce_cve_2024_22729.rb  |    2 -
+ .../netis_unauth_rce_cve_2024_48456_and_48457.rb   |    2 -
+ .../linux/http/openmetadata_auth_bypass_rce.rb     |    2 -
+ .../linux/http/opentsdb_key_cmd_injection.rb       |    2 +-
+ .../linux/http/opentsdb_yrange_cmd_injection.rb    |    2 -
+ .../http/optergy_bms_backdoor_rce_cve_2019_7276.rb |    2 -
+ .../linux/http/oracle_ebs_rce_cve_2022_21587.rb    |    1 -
+ .../exploits/linux/http/paloalto_expedition_rce.rb |    2 -
+ .../linux/http/pandora_fms_auth_netflow_rce.rb     |    2 -
+ .../http/pandora_fms_auth_rce_cve_2024_11320.rb    |    2 -
+ .../http/pandora_fms_auth_rce_cve_2024_12971.rb    |    2 -
+ .../exploits/linux/http/pandora_fms_events_exec.rb |    2 -
+ .../http/pandora_itsm_auth_rce_cve_2025_4653.rb    |    4 +-
+ .../linux/http/pretalx_rce_cve_2023_28458.rb       |    2 -
+ .../exploits/linux/http/prison_management_rce.rb   |  192 +
+ .../exploits/linux/http/pulse_secure_cmd_exec.rb   |   30 +-
+ .../exploits/linux/http/pulse_secure_gzip_rce.rb   |    2 -
+ .../linux/http/pyload_js2py_cve_2024_39205.rb      |    4 +-
+ modules/exploits/linux/http/pyload_js2py_exec.rb   |    2 -
+ .../raspberrymatic_unauth_rce_cve_2024_24578.rb    |    4 +-
+ modules/exploits/linux/http/ray_agent_job_rce.rb   |    1 -
+ .../ray_cpu_profile_cmd_injection_cve_2023_6019.rb |    1 -
+ modules/exploits/linux/http/roxy_wi_exec.rb        |    4 +-
+ .../linux/http/saltstack_salt_api_cmd_exec.rb      |    2 -
+ .../linux/http/saltstack_salt_wheel_async_rce.rb   |    4 +-
+ .../selenium_greed_chrome_rce_cve_2022_28108.rb    |    1 -
+ .../selenium_greed_firefox_rce_cve_2022_28108.rb   |    1 -
+ .../linux/http/skyvern_ssti_cve_2025_49619.rb      |    2 -
+ .../http/solarview_unauth_rce_cve_2023_23333.rb    |    2 -
+ .../linux/http/sonicwall_cve_2021_20039.rb         |    2 -
+ .../http/sophos_utm_webadmin_sid_cmd_injection.rb  |    2 -
+ .../linux/http/sourcegraph_gitserver_sshcmd.rb     |    2 -
+ .../linux/http/splunk_auth_rce_cve_2024_36985.rb   |  149 +
+ .../linux/http/spring_cloud_gateway_rce.rb         |    1 -
+ .../exploits/linux/http/suitecrm_log_file_rce.rb   |    2 -
+ .../http/terramaster_unauth_rce_cve_2020_35665.rb  |    2 -
+ .../http/terramaster_unauth_rce_cve_2021_45837.rb  |    2 -
+ .../http/terramaster_unauth_rce_cve_2022_24990.rb  |    2 -
+ .../http/totolink_unauth_rce_cve_2023_30013.rb     |    2 -
+ .../tp_link_ncxxx_bonjour_command_injection.rb     |    1 -
+ modules/exploits/linux/http/traccar_rce_upload.rb  |    6 +-
+ modules/exploits/linux/http/vcms_upload.rb         |   11 +-
+ .../vmware_nsxmgr_xstream_rce_cve_2021_39144.rb    |    2 -
+ .../http/vmware_vcenter_analytics_file_upload.rb   |    2 -
+ .../linux/http/vmware_vcenter_vsan_health_rce.rb   |    1 -
+ modules/exploits/linux/http/vmware_vrli_rce.rb     |    2 -
+ .../linux/http/vmware_vrni_rce_cve_2023_20887.rb   |    2 -
+ .../vmware_workspace_one_access_cve_2022_22954.rb  |    2 -
+ ...re_workspace_one_access_vmsa_2022_0011_chain.rb |    2 -
+ ...watchguard_firebox_unauth_rce_cve_2022_26318.rb |    2 -
+ .../linux/http/wazuh_auth_rce_cve_2025_24016.rb    |    4 +-
+ .../wd_mycloud_unauthenticated_cmd_injection.rb    |    2 -
+ modules/exploits/linux/http/webmin_backdoor.rb     |   37 +-
+ .../linux/http/webmin_package_updates_rce.rb       |    2 -
+ .../exploits/linux/http/wepresent_cmd_injection.rb |   34 +-
+ .../linux/http/xorcom_completepbx_scheduler.rb     |    2 -
+ .../linux/http/zyxel_lfi_unauth_ssh_rce.rb         |    2 -
+ modules/exploits/linux/http/zyxel_ztp_rce.rb       |    2 -
+ modules/exploits/linux/ids/snortbopre.rb           |    1 -
+ modules/exploits/linux/local/bpf_priv_esc.rb       |   11 +-
+ .../exploits/linux/local/cve_2021_38648_omigod.rb  |    2 -
+ .../linux/local/desktop_privilege_escalation.rb    |   15 +-
+ modules/exploits/linux/local/docker_runc_escape.rb |    4 +-
+ .../local/glibc_ld_audit_dso_load_priv_esc.rb      |    1 -
+ .../linux/local/glibc_origin_expansion_priv_esc.rb |    1 -
+ modules/exploits/linux/local/hp_smhstart.rb        |    9 +-
+ .../exploits/linux/local/hp_xglance_priv_esc.rb    |    1 -
+ .../exploits/linux/local/igel_network_priv_esc.rb  |    1 -
+ .../exploits/linux/local/ndsudo_cve_2024_32019.rb  |    2 +-
+ modules/exploits/linux/local/ntfs3g_priv_esc.rb    |   27 +-
+ .../linux/local/pihole_remove_commands_lpe.rb      |    2 +-
+ modules/exploits/linux/local/pkexec.rb             |   25 +-
+ modules/exploits/linux/local/runc_cwd_priv_esc.rb  |    2 +-
+ modules/exploits/linux/local/sock_sendpage.rb      |    9 +-
+ .../exploits/linux/local/sophos_wpa_clear_keys.rb  |   31 +-
+ modules/exploits/linux/local/su_login.rb           |    1 -
+ modules/exploits/linux/local/udev_netlink.rb       |   41 +-
+ modules/exploits/linux/local/udev_persistence.rb   |  100 -
+ .../vmware_workspace_one_access_cve_2022_22960.rb  |    8 +-
+ modules/exploits/linux/local/zpanel_zsudo.rb       |   23 +-
+ modules/exploits/linux/local/zyxel_suid_cp_lpe.rb  |    2 -
+ .../linux/misc/aerospike_database_udf_cmd_exec.rb  |    1 -
+ .../linux/misc/asterisk_ami_originate_auth_rce.rb  |    2 +-
+ modules/exploits/linux/misc/cisco_ios_xe_rce.rb    |    2 -
+ .../exploits/linux/misc/cve_2021_38647_omigod.rb   |    2 -
+ .../exploits/linux/misc/igel_command_injection.rb  |    2 -
+ .../misc/nimbus_gettopologyhistory_cmd_exec.rb     |    2 -
+ .../linux/misc/saltstack_salt_unauth_rce.rb        |    2 -
+ .../linux/misc/unidata_udadmin_auth_bypass.rb      |    2 -
+ .../unidata_udadmin_password_stack_overflow.rb     |    2 -
+ .../linux/persistence/apt_package_manager.rb       |    5 +-
+ modules/exploits/linux/persistence/autostart.rb    |    1 +
+ modules/exploits/linux/persistence/bash_profile.rb |    1 +
+ .../exploits/linux/persistence/igel_persistence.rb |    1 -
+ modules/exploits/linux/persistence/init_openrc.rb  |    1 +
+ modules/exploits/linux/persistence/init_systemd.rb |    9 +-
+ .../linux/persistence/init_systemd_override.rb     |    1 +
+ .../exploits/linux/persistence/init_sysvinit.rb    |    1 +
+ modules/exploits/linux/persistence/init_upstart.rb |    1 +
+ modules/exploits/linux/persistence/motd.rb         |    1 +
+ modules/exploits/linux/persistence/rc_local.rb     |    1 +
+ modules/exploits/linux/persistence/udev.rb         |  120 +
+ .../linux/persistence/yum_package_manager.rb       |    5 +-
+ .../linux/proxy/squid_ntlm_authenticate.rb         |    9 +-
+ .../linux/redis/redis_debian_sandbox_escape.rb     |    2 -
+ modules/exploits/linux/snmp/awind_snmp_exec.rb     |  118 +-
+ modules/exploits/linux/ssh/ssh_erlangotp_rce.rb    |    2 -
+ .../exploits/linux/upnp/belkin_wemo_upnp_exec.rb   |    2 -
+ .../exploits/linux/upnp/dlink_upnp_msearch_exec.rb |    2 -
+ modules/exploits/linux/upnp/miniupnpd_soap_bof.rb  |    1 -
+ .../multi/browser/adobe_flash_hacking_team_uaf.rb  |   19 +-
+ .../multi/browser/adobe_flash_nellymoser_bof.rb    |   19 +-
+ .../adobe_flash_net_connection_confusion.rb        |   19 +-
+ .../browser/adobe_flash_opaque_background_uaf.rb   |   19 +-
+ .../multi/browser/adobe_flash_pixel_bender_bof.rb  |   19 +-
+ .../browser/adobe_flash_shader_drawing_fill.rb     |   19 +-
+ .../browser/adobe_flash_shader_job_overflow.rb     |   19 +-
+ .../browser/adobe_flash_uncompress_zlib_uaf.rb     |   19 +-
+ .../exploits/multi/browser/chrome_object_create.rb |    2 -
+ .../multi/browser/firefox_escape_retval.rb         |   23 +-
+ .../multi/browser/firefox_queryinterface.rb        |   11 +-
+ modules/exploits/multi/browser/itms_overflow.rb    |   19 +-
+ .../multi/browser/java_atomicreferencearray.rb     |   59 +-
+ .../multi/browser/java_getsoundbank_bof.rb         |   44 +-
+ .../multi/browser/java_jre17_driver_manager.rb     |   79 +-
+ modules/exploits/multi/browser/java_jre17_exec.rb  |   29 +-
+ ...va_jre17_glassfish_averagerangestatisticimpl.rb |   57 +-
+ modules/exploits/multi/browser/java_jre17_jaxws.rb |   33 +-
+ .../exploits/multi/browser/java_jre17_jmxbean.rb   |   59 +-
+ .../exploits/multi/browser/java_jre17_jmxbean_2.rb |   35 +-
+ .../multi/browser/java_jre17_method_handle.rb      |   57 +-
+ .../multi/browser/java_jre17_provider_skeleton.rb  |   53 +-
+ .../multi/browser/java_jre17_reflection_types.rb   |   75 +-
+ modules/exploits/multi/browser/java_rhino.rb       |   33 +-
+ .../exploits/multi/browser/java_setdifficm_bof.rb  |   46 +-
+ .../exploits/multi/browser/java_signed_applet.rb   |   93 +-
+ .../exploits/multi/browser/java_storeimagearray.rb |   67 +-
+ .../exploits/multi/browser/java_trusted_chain.rb   |   35 +-
+ .../multi/browser/java_verifier_field_access.rb    |   51 +-
+ .../exploits/multi/browser/mozilla_compareto.rb    |   23 +-
+ .../multi/browser/mozilla_navigatorjava.rb         |   19 +-
+ .../multi/browser/opera_configoverwrite.rb         |   33 +-
+ .../exploits/multi/browser/opera_historysearch.rb  |   33 +-
+ modules/exploits/multi/browser/qtjava_pointer.rb   |   41 +-
+ .../multi/fileformat/adobe_u3d_meshcont.rb         |  105 +-
+ .../multi/fileformat/ghostscript_failed_restore.rb |   32 +-
+ .../ghostscript_format_string_cve_2024_29510.rb    |    2 -
+ .../multi/fileformat/libreoffice_macro_exec.rb     |   14 +-
+ modules/exploits/multi/fileformat/maple_maplet.rb  |   16 +-
+ .../multi/fileformat/swagger_param_inject.rb       |   10 +-
+ ...ronis_cyber_protect_unauth_rce_cve_2022_3405.rb |    2 -
+ .../http/adobe_coldfusion_rce_cve_2023_26360.rb    |    2 -
+ .../exploits/multi/http/agent_tesla_panel_rce.rb   |    2 -
+ .../multi/http/apache_activemq_upload_jsp.rb       |   10 +-
+ .../multi/http/apache_commons_text4shell.rb        |    1 -
+ .../multi/http/apache_couchdb_erlang_rce.rb        |    2 -
+ .../multi/http/apache_jetspeed_file_upload.rb      |    7 +-
+ .../multi/http/apache_nifi_processor_rce.rb        |    2 -
+ .../multi/http/apache_normalize_path_rce.rb        |    2 -
+ ...he_ofbiz_forgot_password_directory_traversal.rb |    2 -
+ .../multi/http/apache_rocketmq_update_config.rb    |    2 -
+ ...tlassian_confluence_namespace_ognl_injection.rb |    2 -
+ .../atlassian_confluence_rce_cve_2023_22527.rb     |    2 -
+ .../atlassian_confluence_webwork_ognl_injection.rb |    2 -
+ ...atlassian_crowd_pdkinstall_plugin_upload_rce.rb |    2 -
+ .../exploits/multi/http/atutor_upload_traversal.rb |    4 +-
+ .../exploits/multi/http/auxilium_upload_exec.rb    |   23 +-
+ .../multi/http/avideo_notify_ffmpeg_unauth_rce.rb  |  455 ++
+ .../multi/http/avideo_wwbnindex_unauth_rce.rb      |    2 -
+ modules/exploits/multi/http/baldr_upload_exec.rb   |    2 -
+ .../exploits/multi/http/bitbucket_env_var_rce.rb   |    2 -
+ .../multi/http/cacti_graph_template_rce.rb         |  316 +
+ .../multi/http/cacti_package_import_rce.rb         |    4 +-
+ .../exploits/multi/http/cacti_pollers_sqli_rce.rb  |    6 +-
+ .../exploits/multi/http/cleo_rce_cve_2024_55956.rb |    2 -
+ .../multi/http/coldfusion_ckeditor_file_upload.rb  |    6 +-
+ .../multi/http/coldfusion_rds_auth_bypass.rb       |  101 +-
+ .../connectwise_screenconnect_rce_cve_2024_1709.rb |    2 -
+ .../multi/http/crushftp_rce_cve_2023_43177.rb      |    2 -
+ .../multi/http/cve_2021_35464_forgerock_openam.rb  |    2 -
+ .../exploits/multi/http/dotcms_file_upload_rce.rb  |    1 -
+ modules/exploits/multi/http/eaton_nsm_code_exec.rb |   22 +-
+ .../exploits/multi/http/eventlog_file_upload.rb    |   99 +-
+ .../exploits/multi/http/flowise_custommcp_rce.rb   |    2 -
+ modules/exploits/multi/http/flowise_js_rce.rb      |    2 -
+ .../fortra_goanywhere_mft_rce_cve_2024_0204.rb     |    1 -
+ .../multi/http/gambio_unauth_rce_cve_2024_23759.rb |    2 -
+ .../http/geoserver_unauth_rce_cve_2024_36401.rb    |    4 +-
+ .../multi/http/gibbon_auth_rce_cve_2024_24725.rb   |    2 -
+ .../multi/http/git_lfs_clone_command_exec.rb       |    2 -
+ modules/exploits/multi/http/gitea_git_fetch_rce.rb |    2 -
+ modules/exploits/multi/http/gitea_git_hooks_rce.rb |    2 -
+ modules/exploits/multi/http/gitlab_exif_rce.rb     |    2 -
+ .../http/gitlab_github_import_rce_cve_2022_2992.rb |    2 -
+ modules/exploits/multi/http/glassfish_deployer.rb  |  354 +-
+ modules/exploits/multi/http/gogs_git_hooks_rce.rb  |    2 -
+ .../http/grav_twig_ssti_sandbox_bypass_rce.rb      |    2 -
+ .../exploits/multi/http/horizontcms_upload_exec.rb |    2 -
+ .../multi/http/hp_sitescope_issuesiebelcmd.rb      |   46 +-
+ .../multi/http/hp_sitescope_uploadfileshandler.rb  |  161 +-
+ modules/exploits/multi/http/hp_sys_mgmt_exec.rb    |   37 +-
+ .../exploits/multi/http/invision_customcss_rce.rb  |    2 -
+ modules/exploits/multi/http/jboss_bshdeployer.rb   |   51 +-
+ .../multi/http/jboss_deploymentfilerepository.rb   |   65 +-
+ modules/exploits/multi/http/jboss_invoke_deploy.rb |   57 +-
+ modules/exploits/multi/http/jboss_maindeployer.rb  |   67 +-
+ .../exploits/multi/http/jboss_seam_upload_exec.rb  |   80 +-
+ .../exploits/multi/http/jenkins_metaprogramming.rb |   29 +-
+ .../exploits/multi/http/jenkins_script_console.rb  |    1 -
+ .../multi/http/jenkins_xstream_deserialize.rb      |   66 +-
+ .../http/jetbrains_teamcity_rce_cve_2023_42793.rb  |    1 -
+ .../http/jetbrains_teamcity_rce_cve_2024_27198.rb  |    2 -
+ modules/exploits/multi/http/jira_plugin_upload.rb  |   11 +-
+ .../multi/http/kong_gateway_admin_api_rce.rb       |    2 -
+ .../http/langflow_unauth_rce_cve_2025_3248.rb      |    2 -
+ .../lighthouse_studio_unauth_rce_cve_2025_34300.rb |    2 -
+ .../exploits/multi/http/magento_sessionreaper.rb   |    2 -
+ .../multi/http/manage_engine_dc_pmp_sqli.rb        |  111 +-
+ ...e_adselfservice_plus_saml_rce_cve_2022_47966.rb |    1 -
+ .../multi/http/manageengine_search_sqli.rb         |   49 +-
+ ...ine_servicedesk_plus_saml_rce_cve_2022_47966.rb |    1 -
+ modules/exploits/multi/http/maracms_upload_exec.rb |    2 -
+ .../multi/http/microfocus_ucmdb_unauth_deser.rb    |    1 -
+ .../multi/http/mirth_connect_cve_2023_43208.rb     |    2 -
+ .../multi/http/mobilecartly_upload_exec.rb         |   23 +-
+ .../http/monitorr_webshell_rce_cve_2020_28871.rb   |    2 -
+ .../multi/http/monsta_ftp_downloadfile_rce.rb      |    2 -
+ .../exploits/multi/http/mutiny_subnetmask_exec.rb  |  107 +-
+ .../exploits/multi/http/mybb_rce_cve_2022_24734.rb |    4 +-
+ .../multi/http/n8n_workflow_expression_rce.rb      |  323 +
+ .../exploits/multi/http/netwin_surgeftp_exec.rb    |   77 +-
+ modules/exploits/multi/http/nostromo_code_exec.rb  |    9 +-
+ .../exploits/multi/http/novell_servicedesk_rce.rb  |  164 +-
+ .../exploits/multi/http/openfire_auth_bypass.rb    |   57 +-
+ .../openfire_auth_bypass_rce_cve_2023_32315.rb     |    4 +-
+ .../exploits/multi/http/openmrs_deserialization.rb |   12 +-
+ .../multi/http/opmanager_sumpdu_deserialization.rb |    2 -
+ .../oracle_access_manager_rce_cve_2021_35587.rb    |    2 -
+ .../exploits/multi/http/oracle_ats_file_upload.rb  |   13 +-
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  |  380 ++
+ modules/exploits/multi/http/oracle_reports_rce.rb  |  125 +-
+ .../oracle_weblogic_wsat_deserialization_rce.rb    |   16 +-
+ modules/exploits/multi/http/orientdb_exec.rb       |   43 +-
+ .../pentaho_business_server_authbypass_and_ssti.rb |    2 -
+ .../multi/http/pgadmin_query_tool_authenticated.rb |    2 -
+ modules/exploits/multi/http/phpfilemanager_rce.rb  |    9 +-
+ .../exploits/multi/http/phpwiki_ploticus_exec.rb   |    9 +-
+ .../exploits/multi/http/polarcms_upload_exec.rb    |   15 +-
+ .../exploits/multi/http/qdpm_authenticated_rce.rb  |    1 -
+ modules/exploits/multi/http/qdpm_upload_exec.rb    |   52 +-
+ .../http/react2shell_unauth_rce_cve_2025_55182.rb  |  187 +-
+ .../http/rocket_servergraph_file_requestor_rce.rb  |  116 +-
+ .../http/roundcube_auth_rce_cve_2025_49113.rb      |    1 -
+ .../exploits/multi/http/rudder_server_sqli_rce.rb  |    2 -
+ modules/exploits/multi/http/sflog_upload_exec.rb   |   27 +-
+ .../http/shiro_rememberme_v124_deserialize.rb      |    2 -
+ .../exploits/multi/http/simple_backdoors_exec.rb   |    3 +-
+ .../multi/http/smartermail_guid_file_upload.rb     |  159 +
+ modules/exploits/multi/http/solr_velocity_rce.rb   |    1 -
+ .../exploits/multi/http/sonicwall_gms_upload.rb    |  115 +-
+ .../sonicwall_scrutinizer_methoddetail_sqli.rb     |   22 +-
+ .../exploits/multi/http/spip_bigup_unauth_rce.rb   |    2 -
+ modules/exploits/multi/http/spip_connect_exec.rb   |    2 -
+ .../multi/http/spip_porte_plume_previsu_rce.rb     |    2 -
+ modules/exploits/multi/http/spip_rce_form.rb       |    2 -
+ .../multi/http/splunk_auth_rce_cve_2022_43571.rb   |  164 +
+ modules/exploits/multi/http/splunk_mappy_exec.rb   |   37 +-
+ .../splunk_privilege_escalation_cve_2023_32707.rb  |    1 -
+ .../http/spring_cloud_function_spel_injection.rb   |    2 -
+ .../http/spring_framework_rce_spring4shell.rb      |    1 -
+ .../exploits/multi/http/struts2_rest_xstream.rb    |   60 +-
+ modules/exploits/multi/http/struts_code_exec.rb    |   35 +-
+ .../multi/http/struts_code_exec_classloader.rb     |   63 +-
+ .../http/struts_code_exec_exception_delegator.rb   |   53 +-
+ .../multi/http/struts_code_exec_parameters.rb      |   25 +-
+ .../multi/http/struts_default_action_mapper.rb     |   69 +-
+ modules/exploits/multi/http/struts_dmi_exec.rb     |   24 +-
+ .../exploits/multi/http/struts_dmi_rest_exec.rb    |   28 +-
+ .../exploits/multi/http/struts_include_params.rb   |   39 +-
+ modules/exploits/multi/http/stunshell_exec.rb      |    5 +-
+ .../multi/http/subrion_cms_file_upload_rce.rb      |    3 +-
+ .../multi/http/sugarcrm_webshell_cve_2023_22952.rb |    2 -
+ .../exploits/multi/http/sun_jsws_dav_options.rb    |   15 +-
+ .../exploits/multi/http/sysaid_auth_file_upload.rb |   59 +-
+ .../multi/http/taiga_tribe_gig_unserial.rb         |  221 +
+ .../http/tomcat_partial_put_deserialization.rb     |    4 +-
+ .../multi/http/torchserver_cve_2023_43654.rb       |    4 +-
+ modules/exploits/multi/http/v0pcr3w_exec.rb        |    7 +-
+ .../http/vbulletin_replace_ad_template_rce.rb      |    2 -
+ .../multi/http/vbulletin_widget_template_rce.rb    |    2 -
+ .../multi/http/vbulletin_widgetconfig_rce.rb       |   52 +-
+ .../multi/http/vmware_vcenter_uploadova_rce.rb     |    1 -
+ .../multi/http/vvveb_auth_rce_cve_2025_8518.rb     |    2 -
+ .../multi/http/web_check_screenshot_rce.rb         |  137 +
+ .../multi/http/weblogic_admin_handle_rce.rb        |    2 -
+ .../exploits/multi/http/wingftp_null_byte_rce.rb   |    2 -
+ .../exploits/multi/http/wp_ai_engine_mcp_rce.rb    |    2 -
+ .../multi/http/wp_automatic_sqli_to_rce.rb         |    2 -
+ .../multi/http/wp_backup_migration_php_filter.rb   |    2 -
+ .../exploits/multi/http/wp_bricks_builder_rce.rb   |    2 -
+ modules/exploits/multi/http/wp_db_backup_rce.rb    |    4 +-
+ modules/exploits/multi/http/wp_givewp_rce.rb       |    2 -
+ modules/exploits/multi/http/wp_hash_form_rce.rb    |    2 -
+ .../http/wp_king_addons_privilege_escalation.rb    |    2 -
+ .../multi/http/wp_litespeed_cookie_theft.rb        |    2 -
+ .../http/wp_plugin_fma_shortcode_unauth_rce.rb     |    2 -
+ .../http/wp_reallysimplessl_2fa_bypass_rce.rb      |    2 -
+ .../multi/http/wp_suretriggers_auth_bypass.rb      |    2 -
+ modules/exploits/multi/http/wp_tatsu_rce.rb        |    2 -
+ .../multi/http/wp_time_capsule_file_upload_rce.rb  |    2 -
+ .../wp_user_registration_membership_escalation.rb  |    2 -
+ .../multi/http/xwiki_unauth_rce_cve_2025_24893.rb  |    4 +-
+ modules/exploits/multi/http/zabbix_script_exec.rb  |    2 -
+ modules/exploits/multi/http/zemra_panel_rce.rb     |    3 +-
+ .../multi/http/zenworks_control_center_upload.rb   |   19 +-
+ .../http/zpanel_information_disclosure_rce.rb      |   21 +-
+ modules/exploits/multi/ids/snort_dce_rpc.rb        |    7 +-
+ .../magnicomp_sysinfo_mcsiwrapper_priv_esc.rb      |    2 -
+ .../vagrant_synced_folder_vagrantfile_breakout.rb  |    2 -
+ .../exploits/multi/local/xorg_x11_suid_server.rb   |    2 -
+ .../multi/local/xorg_x11_suid_server_modulepath.rb |    2 -
+ .../misc/apache_activemq_rce_cve_2023_46604.rb     |    1 -
+ modules/exploits/multi/misc/batik_svg_java.rb      |   25 +-
+ modules/exploits/multi/misc/bmc_patrol_cmd_exec.rb |   79 +-
+ .../misc/bmc_server_automation_rscd_nsh_rce.rb     |   11 +-
+ modules/exploits/multi/misc/calibre_exec.rb        |    2 -
+ .../misc/claymore_dual_miner_remote_manager_rce.rb |   50 +-
+ .../multi/misc/cups_ipp_remote_code_execution.rb   |    8 +-
+ .../multi/misc/freeswitch_event_socket_cmd_exec.rb |   60 +-
+ .../exploits/multi/misc/indesign_server_soap.rb    |   57 +-
+ modules/exploits/multi/misc/java_jdwp_debugger.rb  |  289 +-
+ modules/exploits/multi/misc/java_rmi_server.rb     |   51 +-
+ .../misc/jboss_remoting_unified_invoker_rce.rb     |    2 -
+ modules/exploits/multi/misc/msf_rpc_console.rb     |    9 +-
+ modules/exploits/multi/misc/osgi_console_exec.rb   |   53 +-
+ .../multi/misc/persistent_hpca_radexec_exec.rb     |   17 +-
+ .../misc/qemu_monitor_hmp_migrate_cmd_exec.rb      |    2 -
+ modules/exploits/multi/misc/ra1nx_pubcall_exec.rb  |   13 +-
+ .../multi/misc/teamcity_agent_xmlrpc_exec.rb       |    5 +-
+ .../multi/misc/vscode_ipynb_remote_dev_exec.rb     |    2 +-
+ .../weblogic_deserialize_asyncresponseservice.rb   |    3 +-
+ .../misc/weblogic_deserialize_badattr_extcomp.rb   |    2 -
+ .../multi/misc/weblogic_deserialize_badattrval.rb  |    2 -
+ .../misc/weblogic_deserialize_marshalledobject.rb  |   39 +-
+ .../multi/misc/weblogic_deserialize_rawobject.rb   |   39 +-
+ .../multi/misc/weblogic_deserialize_unicastref.rb  |   43 +-
+ .../multi/misc/wireshark_lwres_getaddrbyname.rb    |   17 +-
+ .../misc/wireshark_lwres_getaddrbyname_loop.rb     |   21 +-
+ modules/exploits/multi/persistence/at.rb           |    1 +
+ .../exploits/multi/persistence/burp_extension.rb   |  329 +
+ modules/exploits/multi/persistence/cron.rb         |    1 +
+ .../exploits/multi/persistence/obsidian_plugin.rb  |    1 -
+ .../exploits/multi/persistence/periodic_script.rb  |   10 +-
+ .../multi/persistence/python_site_specific_hook.rb |  124 +
+ modules/exploits/multi/persistence/ssh_key.rb      |  351 ++
+ .../multi/php/ignition_laravel_debug_rce.rb        |    1 -
+ .../multi/php/php_unserialize_zval_cookie.rb       |   71 +-
+ .../postgres_copy_from_program_cmd_exec.rb         |   49 +-
+ modules/exploits/multi/realserver/describe.rb      |   13 +-
+ .../multi/sap/sap_mgmt_con_osexec_payload.rb       |   39 +-
+ .../sap/sap_soap_rfc_sxpg_call_system_exec.rb      |   45 +-
+ .../multi/sap/sap_soap_rfc_sxpg_command_exec.rb    |   31 +-
+ .../exploits/multi/scada/inductive_ignition_rce.rb |    1 -
+ modules/exploits/multi/script/web_delivery.rb      |   13 +-
+ modules/exploits/multi/ssh/sshexec.rb              |   17 +-
+ modules/exploits/multi/svn/svnserve_date.rb        |   25 +-
+ .../exploits/multi/veritas/beagent_sha_auth_rce.rb |    1 -
+ modules/exploits/multi/vnc/vnc_keyboard_exec.rb    |  135 +-
+ .../exploits/multi/wyse/hagent_untrusted_hsdata.rb |   87 +-
+ modules/exploits/osx/afp/loginext.rb               |    9 +-
+ modules/exploits/osx/arkeia/type77.rb              |   21 +-
+ .../osx/browser/adobe_flash_delete_range_tl_op.rb  |    1 -
+ .../osx/browser/safari_metadata_archive.rb         |   25 +-
+ .../browser/safari_proxy_object_type_confusion.rb  |   29 +-
+ modules/exploits/osx/email/mailapp_image_exec.rb   |   31 +-
+ modules/exploits/osx/ftp/webstar_ftp_user.rb       |    9 +-
+ .../exploits/osx/local/feedback_assistant_root.rb  |    9 +-
+ modules/exploits/osx/local/nfs_mount_root.rb       |   11 +-
+ modules/exploits/osx/local/setuid_tunnelblick.rb   |   17 +-
+ modules/exploits/osx/local/setuid_viscosity.rb     |   17 +-
+ modules/exploits/osx/local/sudo_password_bypass.rb |   53 +-
+ .../osx/local/vmware_bash_function_root.rb         |    5 +-
+ .../exploits/osx/misc/remote_for_mac_udp_rce.rb    |    1 -
+ modules/exploits/solaris/dialup/manyargs.rb        |   15 +-
+ .../solaris/sunrpc/sadmind_adm_build_path.rb       |    1 -
+ .../unix/http/freepbx_custom_extension_rce.rb      |  127 +
+ .../unix/http/freepbx_firmware_file_upload.rb      |  138 +
+ modules/exploits/unix/http/maltrail_rce.rb         |    2 -
+ .../unix/http/pfsense_diag_routes_webshell.rb      |    4 +-
+ .../unix/http/pfsense_pfblockerng_webshell.rb      |    1 -
+ modules/exploits/unix/http/raspap_rce.rb           |    4 +-
+ .../unix/http/vmturbo_vmtadmin_exec_noauth.rb      |   37 +-
+ modules/exploits/unix/local/setuid_nmap.rb         |    1 -
+ .../aerohive_netconfig_lfi_log_poison_rce.rb       |    2 -
+ .../exploits/unix/webapp/bolt_authenticated_rce.rb |    2 -
+ modules/exploits/unix/webapp/byob_unauth_rce.rb    |    2 -
+ .../webapp/cyberpanel_preauth_rce_multi_cve.rb     |    2 -
+ .../exploits/unix/webapp/drupal_drupalgeddon2.rb   |  118 +-
+ .../unix/webapp/drupal_restws_unserialize.rb       |   32 +-
+ .../unix/webapp/fusionpbx_exec_cmd_exec.rb         |   34 +-
+ .../fusionpbx_operator_panel_exec_cmd_exec.rb      |   26 +-
+ .../exploits/unix/webapp/havalite_upload_exec.rb   |   21 +-
+ modules/exploits/unix/webapp/jquery_file_upload.rb |   10 +-
+ .../exploits/unix/webapp/libretto_upload_exec.rb   |   21 +-
+ .../exploits/unix/webapp/nagios3_history_cgi.rb    |   47 +-
+ .../unix/webapp/nextcloud_workflows_rce.rb         |    3 +-
+ .../unix/webapp/openmediavault_auth_cron_rce.rb    |    2 -
+ .../exploits/unix/webapp/openmediavault_rpc_rce.rb |    2 -
+ .../unix/webapp/projectpier_upload_exec.rb         |   17 +-
+ .../unix/webapp/rconfig_install_cmd_exec.rb        |   26 +-
+ modules/exploits/unix/webapp/thinkphp_rce.rb       |    2 -
+ .../webapp/trixbox_ce_endpoint_devicemap_rce.rb    |    2 -
+ .../webapp/vicidial_agent_authenticated_rce.rb     |    2 -
+ .../unix/webapp/vicidial_manager_send_cmd_exec.rb  |   51 +-
+ .../unix/webapp/wp_reflexgallery_file_upload.rb    |   36 +-
+ modules/exploits/unix/webapp/zimbra_lfi.rb         |  110 +-
+ .../exploits/unix/webapp/zoneminder_snapshots.rb   |    3 +-
+ modules/exploits/windows/arkeia/type77.rb          |   19 +-
+ .../exploits/windows/backupexec/name_service.rb    |   11 +-
+ .../exploits/windows/backupexec/remote_agent.rb    |   17 +-
+ .../exploits/windows/brightstor/discovery_tcp.rb   |   17 +-
+ .../exploits/windows/brightstor/discovery_udp.rb   |   13 +-
+ modules/exploits/windows/brightstor/sql_agent.rb   |   11 +-
+ .../exploits/windows/brightstor/universal_agent.rb |   11 +-
+ modules/exploits/windows/browser/aim_goaway.rb     |   11 +-
+ .../windows/browser/java_basicservice_impl.rb      |   37 +-
+ modules/exploits/windows/browser/java_cmm.rb       |   61 +-
+ .../windows/browser/java_codebase_trust.rb         |   27 +-
+ .../windows/browser/mozilla_interleaved_write.rb   |   23 +-
+ .../exploits/windows/browser/mozilla_mchannel.rb   |   72 +-
+ .../windows/browser/mozilla_nstreerange.rb         |   63 +-
+ .../windows/browser/mozilla_reduceright.rb         |   38 +-
+ .../windows/browser/ms03_020_ie_objecttype.rb      |   21 +-
+ .../windows/browser/ms10_026_avi_nsamplespersec.rb |   44 +-
+ modules/exploits/windows/dcerpc/ms03_026_dcom.rb   |    1 -
+ modules/exploits/windows/dcerpc/ms05_017_msmq.rb   |   25 +-
+ modules/exploits/windows/dcerpc/ms07_065_msmq.rb   |   35 +-
+ .../windows/fileformat/aol_desktop_linktag.rb      |   26 +-
+ .../exploits/windows/fileformat/blazedvd_plf.rb    |    7 +-
+ .../windows/fileformat/cve_2017_8464_lnk_rce.rb    |   11 +-
+ modules/exploits/windows/ftp/3cdaemon_ftp_user.rb  |   13 +-
+ modules/exploits/windows/ftp/freeftpd_user.rb      |   11 +-
+ .../exploits/windows/ftp/oracle9i_xdb_ftp_pass.rb  |    7 +-
+ modules/exploits/windows/ftp/servu_mdtm.rb         |   41 +-
+ modules/exploits/windows/ftp/warftpd_165_pass.rb   |    3 +-
+ .../advantech_iview_networkservlet_cmd_inject.rb   |    1 -
+ .../windows/http/advantech_iview_unauth_rce.rb     |    1 -
+ .../windows/http/ajaxpro_deserialization_rce.rb    |    2 -
+ .../http/apache_activemq_traversal_upload.rb       |    1 -
+ .../windows/http/desktopcentral_deserialization.rb |    1 -
+ .../windows/http/dup_scout_enterprise_login_bof.rb |    6 +-
+ .../exchange_chainedserializationbinder_rce.rb     |    1 -
+ .../windows/http/exchange_proxylogon_rce.rb        |    2 -
+ .../windows/http/exchange_proxynotshell_rce.rb     |    2 -
+ .../windows/http/exchange_proxyshell_rce.rb        |    2 -
+ .../http/fortilogger_arbitrary_fileupload.rb       |    1 -
+ .../windows/http/generic_http_dll_injection.rb     |   15 +-
+ ...net_viewstate_deserialization_cve_2025_30406.rb |   68 +-
+ modules/exploits/windows/http/hp_nnm_toolbar_02.rb |   27 +-
+ .../http/lg_simple_editor_rce_uploadvideo.rb       |    1 -
+ .../exploits/windows/http/magicinfo_traversal.rb   |    2 -
+ .../manageengine_adaudit_plus_authenticated_rce.rb |    1 -
+ .../manageengine_adaudit_plus_cve_2022_28219.rb    |    1 -
+ ...nager_plus_cve_2023_29084_auth_cmd_injection.rb |    1 -
+ ...nageengine_adselfservice_plus_cve_2022_28810.rb |    1 -
+ ...ine_endpoint_central_saml_rce_cve_2022_47966.rb |    1 -
+ .../netmotion_mobility_mvcutil_deserialization.rb  |    1 -
+ .../windows/http/nscp_authenticated_rce.rb         |    1 -
+ .../windows/http/oracle_btm_writetofile.rb         |  161 +-
+ .../php_cgi_arg_injection_rce_cve_2024_4577.rb     |    2 -
+ .../windows/http/plesk_mylittleadmin_viewstate.rb  |    1 -
+ .../http/prtg_authenticated_rce_cve_2023_32781.rb  |    1 -
+ ...oint_dynamic_proxy_generator_auth_bypass_rce.rb |    1 -
+ .../windows/http/sharepoint_ssi_viewstate.rb       |    1 -
+ .../windows/http/sharepoint_unsafe_control.rb      |    1 -
+ .../windows/http/sitecore_xp_cve_2021_42237.rb     |    1 -
+ .../windows/http/sitecore_xp_cve_2025_27218.rb     |    1 -
+ .../windows/http/sitecore_xp_cve_2025_34510.rb     |    1 -
+ .../windows/http/sitecore_xp_cve_2025_34511.rb     |    1 -
+ modules/exploits/windows/http/smartermail_rce.rb   |    1 -
+ modules/exploits/windows/http/softing_sis_rce.rb   |    1 -
+ .../http/zenworks_assetmgmt_uploadservlet.rb       |   17 +-
+ .../windows/http/zenworks_uploadservlet.rb         |   13 +-
+ .../http/zoho_password_manager_pro_xml_rpc_rce.rb  |    1 -
+ .../ibm/ibm_was_dmgr_java_deserialization_rce.rb   |   31 +-
+ modules/exploits/windows/local/anyconnect_lpe.rb   |    1 -
+ .../exploits/windows/local/canon_driver_privesc.rb |    1 -
+ modules/exploits/windows/local/capcom_sys_exec.rb  |    1 -
+ .../windows/local/cve_2017_8464_lnk_lpe.rb         |    5 +-
+ .../cve_2020_0787_bits_arbitrary_file_move.rb      |    1 -
+ .../windows/local/cve_2020_0796_smbghost.rb        |    1 -
+ modules/exploits/windows/local/cve_2020_17136.rb   |    1 -
+ .../windows/local/cve_2021_21551_dbutil_memmove.rb |    1 -
+ modules/exploits/windows/local/cve_2021_40449.rb   |    1 -
+ .../windows/local/cve_2022_21882_win32k.rb         |    1 -
+ .../local/cve_2022_21999_spoolfool_privesc.rb      |    2 -
+ .../windows/local/cve_2022_26904_superprofile.rb   |    1 -
+ .../cve_2022_3699_lenovo_diagnostics_driver.rb     |    1 -
+ .../windows/local/cve_2023_21768_afd_lpe.rb        |    1 -
+ .../windows/local/cve_2023_28252_clfs_driver.rb    |    1 -
+ .../windows/local/cve_2024_30088_authz_basep.rb    |    1 -
+ .../windows/local/cve_2024_35250_ks_driver.rb      |    1 -
+ .../local/gog_galaxyclientservice_privesc.rb       |    2 -
+ .../windows/local/lexmark_driver_privesc.rb        |    1 -
+ .../exploits/windows/local/ms10_015_kitrap0d.rb    |    1 -
+ .../exploits/windows/local/ms10_092_schelevator.rb |    1 -
+ .../windows/local/ms14_058_track_popup_menu.rb     |    1 -
+ .../exploits/windows/local/ms15_004_tswbproxy.rb   |    1 -
+ .../windows/local/ms15_051_client_copy_image.rb    |    1 -
+ .../windows/local/ms16_014_wmi_recv_notif.rb       |    1 -
+ .../exploits/windows/local/ms16_075_reflection.rb  |   29 +-
+ modules/exploits/windows/local/nscp_pe.rb          |    1 -
+ modules/exploits/windows/local/panda_psevents.rb   |    8 +-
+ .../exploits/windows/local/ricoh_driver_privesc.rb |    9 +-
+ modules/exploits/windows/local/wmi_persistence.rb  |  230 -
+ ...delta_electronics_infrasuite_deserialization.rb |    1 -
+ modules/exploits/windows/misc/ncr_cmcagent_rce.rb  |    1 -
+ .../misc/veeam_one_agent_deserialization.rb        |    1 -
+ .../exploits/windows/nimsoft/nimcontroller_bof.rb  |    1 -
+ .../windows/novell/zenworks_desktop_agent.rb       |   21 +-
+ .../persistence/accessibility_features_debugger.rb |  158 +
+ .../windows/persistence/assistive_technology.rb    |    2 +-
+ .../windows/persistence/image_exec_options.rb      |    2 +
+ .../windows/persistence/linqpad_deserialization.rb |    3 +-
+ ...p_plugin_persistence.rb => notepadpp_plugin.rb} |    1 +
+ modules/exploits/windows/persistence/registry.rb   |    2 +
+ modules/exploits/windows/persistence/service.rb    |    4 +-
+ .../exploits/windows/persistence/startup_folder.rb |    2 +
+ .../exploits/windows/persistence/task_scheduler.rb |    2 +
+ .../wmi/wmi_event_subscription_event_log.rb        |  132 +
+ .../wmi/wmi_event_subscription_interval.rb         |  138 +
+ .../wmi/wmi_event_subscription_process.rb          |  133 +
+ .../wmi/wmi_event_subscription_uptime.rb           |  155 +
+ .../exploits/windows/persistence/wsl/registry.rb   |    1 +
+ .../windows/sage/x3_adxsrv_auth_bypass_cmd_exec.rb |    1 -
+ modules/exploits/windows/scada/diaenergie_sqli.rb  |    3 +-
+ modules/exploits/windows/scada/mypro_cmdexe.rb     |    1 -
+ modules/exploits/windows/scada/mypro_mgr_cmd.rb    |    1 -
+ .../windows/smb/generic_smb_dll_injection.rb       |    5 +-
+ .../exploits/windows/smb/group_policy_startup.rb   |    5 +-
+ modules/exploits/windows/smb/ms05_039_pnp.rb       |   52 +-
+ modules/exploits/windows/smb/ms17_010_psexec.rb    |    3 +-
+ modules/exploits/windows/smb/psexec.rb             |   15 +-
+ modules/exploits/windows/smb/smb_relay.rb          |    5 +-
+ .../exploits/windows/unicenter/cam_log_security.rb |    5 +-
+ modules/exploits/windows/wins/ms04_045_wins.rb     |   25 +-
+ .../payloads/adapters/cmd/linux/http/riscv32le.rb  |   25 +
+ .../payloads/adapters/cmd/linux/http/riscv64le.rb  |   25 +
+ .../payloads/adapters/cmd/linux/https/riscv32le.rb |   25 +
+ .../payloads/adapters/cmd/linux/https/riscv64le.rb |   25 +
+ .../payloads/adapters/cmd/linux/tftp/riscv32le.rb  |   25 +
+ .../payloads/adapters/cmd/linux/tftp/riscv64le.rb  |   25 +
+ modules/payloads/singles/linux/aarch64/chmod.rb    |   73 +
+ .../linux/aarch64/meterpreter_reverse_http.rb      |   29 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |   29 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |   28 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |   23 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |   23 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |   23 +-
+ modules/payloads/singles/linux/armle/chmod.rb      |   70 +
+ .../linux/armle/meterpreter_reverse_http.rb        |   29 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |   29 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |   29 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |   29 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |   29 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |   29 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |   29 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |   29 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |   29 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |   29 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |   29 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |   29 +-
+ .../singles/linux/riscv32le/shell_bind_tcp.rb      |  147 +
+ .../singles/linux/riscv64le/shell_bind_tcp.rb      |  186 +
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |   27 +-
+ .../singles/linux/x64/meterpreter_reverse_https.rb |   27 +-
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_https.rb |   27 +-
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |   27 +-
+ .../linux/zarch/meterpreter_reverse_http.rb        |   21 +-
+ .../linux/zarch/meterpreter_reverse_https.rb       |   21 +-
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |   21 +-
+ .../singles/php/meterpreter_reverse_tcp.rb         |    2 +-
+ .../singles/windows/meterpreter_bind_named_pipe.rb |    2 +-
+ .../singles/windows/meterpreter_bind_tcp.rb        |    2 +-
+ .../singles/windows/meterpreter_reverse_http.rb    |    2 +-
+ .../singles/windows/meterpreter_reverse_https.rb   |    2 +-
+ .../windows/meterpreter_reverse_ipv6_tcp.rb        |    2 +-
+ .../singles/windows/meterpreter_reverse_tcp.rb     |    2 +-
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |    2 +-
+ .../singles/windows/x64/meterpreter_bind_tcp.rb    |    2 +-
+ .../windows/x64/meterpreter_reverse_http.rb        |    2 +-
+ .../windows/x64/meterpreter_reverse_https.rb       |    2 +-
+ .../windows/x64/meterpreter_reverse_ipv6_tcp.rb    |    2 +-
+ .../singles/windows/x64/meterpreter_reverse_tcp.rb |    2 +-
+ modules/payloads/stages/linux/x86/meterpreter.rb   |   31 +-
+ .../post/linux/gather/rancher_audit_log_leak.rb    |    2 +-
+ modules/post/linux/manage/sshkey_persistence.rb    |  144 -
+ modules/post/multi/gather/unix_kerberos_tickets.rb |    6 +-
+ .../gather/credentials/teamviewer_passwords.rb     |   26 +-
+ modules/post/windows/manage/kerberos_tickets.rb    |    4 +-
+ modules/post/windows/manage/persistence_exe.rb     |  355 --
+ modules/post/windows/manage/sshkey_persistence.rb  |  202 -
+ modules/post/windows/manage/sticky_keys.rb         |  128 -
+ msfrpcd                                            |    9 +
+ msfvenom                                           |    3 +
+ spec/acceptance/meterpreter_spec.rb                |   10 +-
+ spec/api/json_rpc_spec.rb                          |    1 +
+ .../framework/login_scanner/caidao_spec.rb         |   18 +-
+ .../manageengine_desktop_central_spec.rb           |   10 +-
+ .../framework/login_scanner/nessus_spec.rb         |    8 +-
+ .../framework/login_scanner/phpmyadmin_spec.rb     |   20 +-
+ .../login_scanner/symantec_web_gateway_spec.rb     |   10 +-
+ .../lib/metasploit/framework/login_scanner_spec.rb |   14 +-
+ spec/lib/msf/base/serializer/readable_text_spec.rb |    2 +
+ .../msf/core/auxiliary/password_cracker_spec.rb    |   62 +
+ .../core/exploit/remote/kerberos/client_spec.rb    |   22 +
+ .../ldap/active_directory/entry_cache_spec.rb      |   36 +
+ .../core/exploit/remote/ldap/entry_cache_spec.rb   |   50 +
+ spec/lib/msf/core/post/linux/system_spec.rb        |   25 +-
+ .../session/provider/single_command_shell_spec.rb  |   49 +
+ .../msf/ui/console/command_dispatcher/db_spec.rb   |  324 +-
+ .../ui/console/command_dispatcher/exploit_spec.rb  |   79 +
+ spec/module_validation_spec.rb                     |    6 +-
+ spec/modules/payloads_spec.rb                      |   89 +-
+ spec/support/acceptance/session.rb                 |    6 +-
+ spec/support/acceptance/session/java.rb            |   13 +-
+ spec/support/acceptance/session/mettle.rb          |   13 +-
+ spec/support/acceptance/session/php.rb             |   13 +-
+ spec/support/acceptance/session/python.rb          |   13 +-
+ spec/support/acceptance/session/shared.rb          |    7 +
+ .../acceptance/session/windows_meterpreter.rb      |   15 +-
+ spec/support/lib/module_validation.rb              |    4 +-
+ .../shared/examples/msf/db_manager/service.rb      |  373 +-
+ .../shared/examples/msf/db_manager/session.rb      |   46 +
+ .../support/shared/examples/msf/db_manager/vuln.rb |  369 ++
+ tools/dev/hash_cracker_validator.rb                |  590 +-
+ tools/dev/msftidy.rb                               |   18 +-
+ tools/modules/meterpreter_reverse.erb              |   13 +-
+ tools/modules/module_missing_reference.rb          |    2 +
+ tools/modules/module_reference.rb                  |    2 +
+ 972 files changed, 30617 insertions(+), 12551 deletions(-)
+
+commit 9d41abd57eaf0d4f45f4e5379dba81c39a8c14f9
+Merge: cfb8483188 2ae7898d85
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Feb 10 10:27:39 2026 +0000
+
+    Merge pull request #20886 from cdelafuente-r7/enh/MS-9930/vuln_report_with_creds
+    
+    Reapply "Vulnerability Report Enhancement"
+
+ Gemfile.lock                                       |   7 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  80 ++++-
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +++-
+ lib/msf/core/exploit.rb                            |  10 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  16 +
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |  13 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 +
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 324 +++++++++++++++---
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 +++++
+ .../shared/examples/msf/db_manager/service.rb      | 373 ++++++++++++++++++++-
+ .../shared/examples/msf/db_manager/session.rb      |  46 +++
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 ++++++++++++++++++++
+ 17 files changed, 1374 insertions(+), 102 deletions(-)
+
+commit 2ae7898d85db80878380e0b08589948814720e2b
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Feb 10 10:07:40 2026 +0000
+
+    Bump metasploit_data_models 6.0.12
+
+ Gemfile.lock | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit b2fadbdf8d23b1c2883a1d3284501b05fd71ad9c
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Feb 10 09:47:00 2026 +0000
+
+    Removes code pointing at credential branch
+
+ Gemfile      | 3 ---
+ Gemfile.lock | 5 +----
+ 2 files changed, 1 insertion(+), 7 deletions(-)
+
+commit dc2ef2ed771844bf65e124fd3f7dcc0bfaea4f61
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Jan 22 19:02:24 2026 +0100
+
+    Update specs after code review
+
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 23 ++++++++++------------
+ 1 file changed, 10 insertions(+), 13 deletions(-)
+
+commit c02ac3920d53df45f98a2eccc606415da4fcc8f0
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Jan 20 15:44:37 2026 +0100
+
+    Reapply "Vulnerability Report Enhancement"
+    
+    This reverts commit c35537252f896f05c3f115fe5cd299a2c409712d.
+
+ Gemfile.lock                                       |   5 +-
+ db/schema.rb                                       |  19 +-
+ lib/msf/core/db_manager/service.rb                 |  80 ++++-
+ lib/msf/core/db_manager/session.rb                 |  19 +-
+ lib/msf/core/db_manager/vuln.rb                    |  62 +++-
+ lib/msf/core/exploit.rb                            |  10 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |  16 +
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      |  13 +-
+ .../core/web_services/servlet/service_servlet.rb   |   4 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |  33 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |  21 +-
+ spec/api/json_rpc_spec.rb                          |   1 +
+ .../msf/ui/console/command_dispatcher/db_spec.rb   | 327 +++++++++++++++---
+ .../ui/console/command_dispatcher/exploit_spec.rb  |  79 +++++
+ .../shared/examples/msf/db_manager/service.rb      | 373 ++++++++++++++++++++-
+ .../shared/examples/msf/db_manager/session.rb      |  46 +++
+ .../support/shared/examples/msf/db_manager/vuln.rb | 369 ++++++++++++++++++++
+ 17 files changed, 1376 insertions(+), 101 deletions(-)
+
+commit 6f04a389e07870da057ff329ca0cb82cb34e89aa
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Dec 31 14:06:25 2025 +0100
+
+    Bump the metasploit-credential gem
+    
+    This will bring the last fix related to the new Layered Services data model
+
+ Gemfile | 3 +++
+ 1 file changed, 3 insertions(+)
