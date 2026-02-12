@@ -1,0 +1,181 @@
+commit 965d181cee299cc6849ee49bc2cff2aaa8be96fc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 11 21:57:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
+
+commit f165eba6a99229388269817828a1fb1944aa04b7
+Merge: 2c7b7e8b5c 838ab7195f
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Feb 11 15:44:52 2026 -0600
+
+    Merge pull request #20941 from rudraditya21/attack-credential-access
+    
+    Add MITRE ATT&CK mapping for Windows password cracking
+
+ modules/auxiliary/analyze/crack_windows.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 2c7b7e8b5ce2e6da1384f486dcdef2f1f5ddeac6
+Merge: 61da63d11f 8d6f775ebe
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Feb 11 15:38:59 2026 -0600
+
+    Merge pull request #20942 from rudraditya21/attack-exploit-privesc
+    
+    Add MITRE ATT&CK mappings for exploit and privilege escalation modules
+
+ modules/auxiliary/admin/dcerpc/cve_2020_1472_zerologon.rb             | 4 +++-
+ .../exploits/multi/http/atlassian_confluence_rce_cve_2023_22527.rb    | 3 ++-
+ modules/post/windows/escalate/getsystem.rb                            | 4 ++++
+ 3 files changed, 9 insertions(+), 2 deletions(-)
+
+commit 61da63d11f7e9abee07ea416084c5cc926df49aa
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 11 20:06:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit c48622e134c1bc104f61c357b6ad96b9d8dfe974
+Merge: 86b09826e3 65570a1183
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Feb 11 14:57:22 2026 -0500
+
+    Merge pull request #20936 from rudraditya21/attack-smb-samr
+    
+    Add MITRE ATT&CK mappings for SMB/SAMR account operations
+
+ modules/auxiliary/admin/dcerpc/samr_account.rb | 1 +
+ modules/auxiliary/scanner/smb/smb_enumusers.rb | 3 +++
+ modules/auxiliary/scanner/smb/smb_login.rb     | 1 +
+ 3 files changed, 5 insertions(+)
+
+commit 86b09826e39abab972677fa9e6434e59dbe6e526
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 11 19:22:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 4adf87ac184012cce8b8fb985464b922a1890a5a
+Merge: 54906237a1 8f1e16d2a6
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Feb 11 11:12:29 2026 -0800
+
+    Merge pull request #20929 from jheysel-r7/feat/mod/cve-2026-24061
+    
+    GNU Inetutils Telnet Auth Bypass (CVE-2026-24061)
+
+ .../linux/telnet/gnu_inetutils_auth_bypass.md      | 139 ++++++++++++++++
+ lib/msf/core/exploit/remote/telnet.rb              |  84 ++++++++++
+ .../linux/telnet/gnu_inetutils_auth_bypass.rb      | 180 +++++++++++++++++++++
+ 3 files changed, 403 insertions(+)
+
+commit 8f1e16d2a6962edce358f596adcae22aed73d00b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Feb 11 08:54:09 2026 -0800
+
+    Update modules/exploits/linux/telnet/gnu_inetutils_auth_bypass.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/linux/telnet/gnu_inetutils_auth_bypass.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 54906237a1d3eec18644cda9f7c2be0b018b3b40
+Merge: c3c8aad4e6 6d2ec5d89d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 11 14:19:57 2026 +0000
+
+    Merge pull request #20955 from adfoster-r7/ensure-temp-rhost-files-are-cleaned-up
+    
+    Ensure temp rhost files are cleaned up
+
+ lib/msf/ui/console/command_dispatcher/common.rb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 6d2ec5d89da07273e350df035f79116a46ad1a0a
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Feb 11 13:18:45 2026 +0000
+
+    Ensure temp rhost files are cleaned up
+
+ lib/msf/ui/console/command_dispatcher/common.rb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit c3c8aad4e663ab89de8e1d4118c4533cc1fb9ad8
+Merge: fea33abe02 540ce8127b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 11 13:45:55 2026 +0000
+
+    Merge pull request #20599 from BenoitDePaoli/fix/userpass_password_persistence
+    
+    fix(console): prevent RHOSTS temp file deletion after services -R
+
+ lib/msf/ui/console/command_dispatcher/common.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fea33abe029e99ca82e1b232a3d9d63c2c092a48
+Merge: 877d2d81d0 b53467ebe4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 11 13:17:03 2026 +0000
+
+    Merge pull request #20954 from putku45/patch-1
+    
+    Improve clarity and grammar in docs README
+
+ docs/README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit b53467ebe41651da0fbcfbe727afb66c0967ef16
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 11 13:16:36 2026 +0000
+
+    Add new line
+
+ docs/README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 648218a43655c9251b305c88f816ab7db8072d3d
+Author: putku45 <putku2610@gmail.com>
+Date:   Wed Feb 11 18:42:25 2026 +0530
+
+    Improve clarity and grammar in docs README
+    
+    This PR improves the documentation README by adding a short explanation to the Architecture section and fixing a minor grammar issue.
+    
+    No functional changes.
+
+ docs/README.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 877d2d81d06016635a104d1bd91d90f7fcbfef3c
+Merge: 00abe36f9a d569fc552d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Feb 11 11:54:50 2026 +0000
+
+    Merge pull request #20953 from zeroSteiner/fix/ssh-socket-channels/1
+    
+    Fix SSH Socket Channels
+
+ lib/msf/base/sessions/ssh_command_shell_bind.rb | 31 ++++++++++++++-----------
+ 1 file changed, 17 insertions(+), 14 deletions(-)
+
+commit 00abe36f9a6f92b06d5e1f915e7983ca83ba645f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 11 09:32:52 2026 +0000
+
+    Bump version of framework to 6.4.114
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 6 +++---
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
