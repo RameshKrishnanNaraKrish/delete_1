@@ -1,0 +1,115 @@
+commit 85402611defcb442cdcfc8d43fb703d0fa649253
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 12 21:32:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 7a3f20a8956db4a73fbce113f6a004ccf0c58d3e
+Merge: 9bd71faf18 73808e9365
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Feb 12 15:21:11 2026 -0600
+
+    Merge pull request #20943 from g0tmi1k/twiki_maketext
+    
+    twiki_maketext: Add versions to description
+
+ modules/exploits/unix/webapp/twiki_maketext.rb | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 9bd71faf185183e653df6c0b1ef4b84a88d391f2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 12 20:13:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 172 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 172 insertions(+)
+
+commit 35b52df28aba1e6e51a195f26a5ba8259d0a2493
+Merge: 965d181cee 41414b896b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Feb 12 15:01:42 2026 -0500
+
+    Merge pull request #20849 from haicenhacks/haicen_xerte
+    
+    Add three modules for exploiting Xerte Online Toolkits
+
+ .../http/xerte_authenticated_rce_uploadimage.md    | 128 +++++++++++
+ .../http/xerte_unauthenticated_importlanguage.md   | 110 +++++++++
+ .../xerte_unauthenticated_template_import_rce.md   | 107 +++++++++
+ .../http/xerte_authenticated_rce_uploadimage.rb    | 249 +++++++++++++++++++++
+ .../http/xerte_unauthenticated_importlanguage.rb   | 121 ++++++++++
+ .../xerte_unauthenticated_template_import_rce.rb   | 157 +++++++++++++
+ 6 files changed, 872 insertions(+)
+
+commit 41414b896b267bc558cf5b0d8b0cea00fdcd5c4e
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Thu Feb 12 14:43:47 2026 -0500
+
+    Tweak whitespacing in the docs for the renderer
+
+ .../exploit/multi/http/xerte_authenticated_rce_uploadimage.md  | 10 ++++++----
+ .../exploit/multi/http/xerte_unauthenticated_importlanguage.md |  9 ++++++---
+ .../multi/http/xerte_unauthenticated_template_import_rce.md    |  9 ++++++---
+ 3 files changed, 18 insertions(+), 10 deletions(-)
+
+commit 803e6d3991856cdc632928ce0556ab0105e1bf36
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:58:01 2026 -0500
+
+    adds auto-check and fixes print statements
+
+ modules/exploits/multi/http/xerte_authenticated_rce_uploadimage.rb  | 6 ++++--
+ modules/exploits/multi/http/xerte_unauthenticated_importlanguage.rb | 1 +
+ .../multi/http/xerte_unauthenticated_template_import_rce.rb         | 1 +
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 0af126cba9211f494960b9a3daee5ec0852c7ecb
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:47:17 2026 -0500
+
+    adds ability to create a project if none exist.
+
+ .../http/xerte_authenticated_rce_uploadimage.rb    | 25 +++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+commit 930bb4fecd93d1be7296f207fc92cb91aa59b2b5
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:43:16 2026 -0500
+
+    fixes error in .htaccess policy generation
+
+ modules/exploits/multi/http/xerte_authenticated_rce_uploadimage.rb | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit b4f26d03299492c91d73b683b5ab6ad0ddf78648
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:42:33 2026 -0500
+
+    conform to uri normalization pattern
+
+ modules/exploits/multi/http/xerte_authenticated_rce_uploadimage.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f25fab7c407e6de94d2f7440949e24f15c95dfaa
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:41:28 2026 -0500
+
+    fixes error in .htaccess policy generation
+
+ .../exploits/multi/http/xerte_unauthenticated_template_import_rce.rb  | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 7204c64b6ba0de72b7c663617ccbd88cfd90ddf1
+Author: haicen <haicenhack@proton.me>
+Date:   Thu Feb 12 12:05:29 2026 -0500
+
+    Improves documentation
+
+ .../http/xerte_authenticated_rce_uploadimage.md    | 27 +++++++---------
+ .../http/xerte_unauthenticated_importlanguage.md   | 36 ++++++----------------
+ .../xerte_unauthenticated_template_import_rce.md   | 25 ++++++---------
+ 3 files changed, 29 insertions(+), 59 deletions(-)
