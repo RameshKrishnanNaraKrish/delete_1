@@ -1,0 +1,98 @@
+commit 7251d88419b8ac846c06a81ce7be0fa2f1b71036
+Merge: 8b58c62375 f741d568b4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Feb 13 15:26:40 2026 +0000
+
+    Merge pull request #20969 from sjanusz-r7/report-more-acunetix-vulns
+    
+    Report more vulns when importing acunetix XML file
+
+ lib/rex/parser/acunetix_document.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 8b58c62375a3f53e503a40b751485d15bca13466
+Merge: 473e801148 f111ccc5ec
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Fri Feb 13 15:25:54 2026 +0000
+
+    Merge pull request #20807 from webbsssss/fix/acunetix-vulnerability-import
+    
+    Fix #17932: Allow Acunetix vulnerabilities to be imported without complete web_page data
+
+ lib/rex/parser/acunetix_document.rb           |  51 ++++----
+ spec/lib/rex/parser/acunetix_document_spec.rb | 181 ++++++++++++++++++++++++++
+ 2 files changed, 209 insertions(+), 23 deletions(-)
+
+commit f741d568b44ed91b0090c30fce3154654c8ef70b
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri Feb 13 14:55:13 2026 +0000
+
+    Report more vulns when importing acunetix XML file
+
+ lib/rex/parser/acunetix_document.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit f111ccc5ec0c1023c4d2da97d1557c95254de972
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri Feb 13 11:56:06 2026 +0000
+
+    Add working Acunetix import tests
+
+ spec/lib/rex/parser/acunetix_document_spec.rb | 212 ++++++++++++++++++++------
+ 1 file changed, 166 insertions(+), 46 deletions(-)
+
+commit 473e801148e947cdd7a8a20d1594e5f626f4ff1b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 13 14:27:51 2026 +0000
+
+    Bump version of framework to 6.4.115
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 2d37b73a5bb2dd28be1b50f6741bbf7dab5bede6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 13 12:01:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit a4ec3cd40d022c14670c3caef1434ad6877ec1e8
+Merge: 66e9891857 5accca7907
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Feb 13 06:51:42 2026 -0500
+
+    Merge pull request #20917 from sfewer-r7/solarwinds-webhelpdesk-rce
+    
+    Add exploit module for SolarWinds Web Help Desk (CVE-2025-40536 + CVE-2025-40551)
+
+ .../multi/http/solarwinds_webhelpdesk_rce.md       | 216 +++++++++
+ .../multi/http/solarwinds_webhelpdesk_rce.rb       | 485 +++++++++++++++++++++
+ 2 files changed, 701 insertions(+)
+
+commit 66e9891857163c59eaa6ebab4f34ba5de0ecd7eb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 13 10:07:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 7e03a89304955a549fceef244255052116b102d5
+Merge: 85402611de 12b7a440fa
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Feb 13 10:57:03 2026 +0100
+
+    Land #20798, adds module for FreeBSD rtsold/rtsol command injection (CVE-2025-14558)
+    
+    Add module for rtsold/rtsol DNSSL Command Injection (CVE-2025-14558)
+
+ .../exploit/freebsd/misc/rtsold_dnssl_cmdinject.md |  88 ++++++++++++
+ lib/msf/core/exploit/remote/ipv6.rb                | 109 +++++++++++++-
+ .../freebsd/misc/rtsold_dnssl_cmdinject.rb         | 160 +++++++++++++++++++++
+ 3 files changed, 355 insertions(+), 2 deletions(-)
