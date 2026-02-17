@@ -1,0 +1,94 @@
+commit c0f73038f3fb4f76b4ed8a0c661be35639a9d1fc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 16 15:16:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 81e54d42e46e6c4abce0735bc9f25b654b4f8c7e
+Merge: 5ab3f0e7cd bc9c62a74b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Feb 16 10:06:14 2026 -0500
+
+    Merge pull request #20856 from msutovsky-r7/exploit/cve-2026-21858
+    
+    Adds module for Ni8mare (CVE-2026-21858)
+
+ .../auxiliary/gather/ni8mare_cve_2026_21858.md     | 122 +++++++
+ lib/msf/core/exploit/remote/http/jwt.rb            |  21 +-
+ modules/auxiliary/gather/ni8mare_cve_2026_21858.rb | 376 +++++++++++++++++++++
+ 3 files changed, 517 insertions(+), 2 deletions(-)
+
+commit bc9c62a74b88ded1051254fe18d21185e380a1c7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Feb 16 15:48:02 2026 +0100
+
+    Update modules/auxiliary/gather/ni8mare_cve_2026_21858.rb
+
+ modules/auxiliary/gather/ni8mare_cve_2026_21858.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fb7c6a823163e93a23fb3f6ee6a8cdfe396e1812
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Feb 16 14:58:40 2026 +0100
+
+    Adds rescue block for JSON parsing, adds check for incorrect username and empty files
+
+ modules/auxiliary/gather/ni8mare_cve_2026_21858.rb | 23 ++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+commit 5ab3f0e7cdc0b6fa248e3055c81a0254e9dae4b8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 16 12:54:44 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit c4ca44e4f9f31998eb2cdf966a1021b48f931162
+Merge: a29b2ccb92 65d37019ad
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Feb 16 12:45:20 2026 +0000
+
+    Merge pull request #20972 from adfoster-r7/fix-false-positives-on-lg-simple-editor-check-methods
+    
+    Fix false positives on lg simple editor check methods
+
+ modules/exploits/windows/http/lg_simple_editor_rce.rb             | 7 +++++--
+ modules/exploits/windows/http/lg_simple_editor_rce_uploadvideo.rb | 7 +++++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+commit 65d37019adae2840840f4f43655cedd2124b7f2b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Feb 13 22:46:39 2026 +0000
+
+    Fix false positives on lg simple editor check methods
+
+ modules/exploits/windows/http/lg_simple_editor_rce.rb             | 7 +++++--
+ modules/exploits/windows/http/lg_simple_editor_rce_uploadvideo.rb | 7 +++++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+commit a29b2ccb922c508af98c1957f2e83d6e07718747
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 16 07:33:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 7a0845dc6c2965cb8898462d0a99301bb2f97435
+Merge: 7251d88419 a39ed2beac
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Feb 16 08:20:15 2026 +0100
+
+    Land #20947, adds module for ChurchCRM unauthenticated RCE (CVE-2025-62521)
+    
+    Adds exploit module for ChurchCRM unauth RCE (CVE-2025-62521)
+
+ .../multi/http/churchcrm_install_unauth_rce.md     | 416 +++++++++++++++++++++
+ .../multi/http/churchcrm_install_unauth_rce.rb     | 212 +++++++++++
+ 2 files changed, 628 insertions(+)
