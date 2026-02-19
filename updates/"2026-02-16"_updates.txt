@@ -1,0 +1,84 @@
+commit 0e7613ea1e229b914693789855c711993a6f230b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 18 16:07:53 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit c6f7d03d031104d412dbf29a562cb7d48d12f02a
+Merge: 3e34388a82 f369cac6d7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 18 10:58:13 2026 -0500
+
+    Merge pull request #20919 from h00die/emacs
+    
+    emacs extension persistence
+
+ data/exploits/emacs_extension/template.el          |  15 +++
+ .../exploit/linux/persistence/emacs_extension.md   | 118 +++++++++++++++++++++
+ .../exploits/linux/persistence/emacs_extension.rb  | 107 +++++++++++++++++++
+ 3 files changed, 240 insertions(+)
+
+commit a48129b640648e7ff94496a983e0d0288575f05a
+Author: Nayeraneru <nayera.shafeeq@gmail.com>
+Date:   Wed Feb 18 16:58:51 2026 +0200
+
+    Updated doc after checking msftidy_docs
+
+ .../multi/http/wp_plugin_story_chef_file_upload.md | 249 ++++++---------------
+ 1 file changed, 73 insertions(+), 176 deletions(-)
+
+commit f369cac6d73043731f3da985a82768fe860f7072
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 18 12:24:09 2026 +0100
+
+    Apply suggestion from @jvoisin
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+
+ modules/exploits/linux/persistence/emacs_extension.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3e34388a8298eb5a9078de06924012d8e1371a3d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 18 11:14:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 8af82dc7eb5df72a9575094c33b24009cd8eb638
+Merge: c0f73038f3 9f301549e8
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 18 06:05:04 2026 -0500
+
+    Merge pull request #20844 from 6a6f656c/userinit
+    
+    Windows Userinit persistence
+
+ .../windows/persistence/registry_userinit.md       | 111 +++++++++++++++++++++
+ .../windows/persistence/registry_userinit.rb       |  92 +++++++++++++++++
+ 2 files changed, 203 insertions(+)
+
+commit 9f301549e8abcbe48f364895460d4672a16c9a76
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Feb 18 11:46:11 2026 +0100
+
+    Update documentation/modules/exploit/windows/persistence/registry_userinit.md
+    
+    Co-authored-by: h00die <h00die@users.noreply.github.com>
+
+ .../modules/exploit/windows/persistence/registry_userinit.md      | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 9c7347d6b5533eb7ed3651c943a917bb6d41d89f
+Author: Nayeraneru <nayera.shafeeq@gmail.com>
+Date:   Wed Feb 18 02:20:36 2026 +0200
+
+    Trriged failed_with and Removed unnecessary line
+
+ modules/exploits/multi/http/wp_plugin_story_chef_file_upload.rb | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
