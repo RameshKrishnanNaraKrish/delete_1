@@ -1,0 +1,32 @@
+commit 322df15b651af9a02132044273341e7a3038ea8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 19 16:10:44 2026 +0000
+
+    Bump version of framework to 6.4.116
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 83f789d1536eb19fbf32288a30a79a37e84dccd2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 19 09:16:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit b6f37bef11a48347669f2025cec0c997f8ba612e
+Merge: 0e7613ea1e a48129b640
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Feb 19 10:06:25 2026 +0100
+
+    Land #20976, adds module for StoryChief WP plugin (CVE-2025-7441)
+    
+    Add StoryChief WordPress 1.0.42 unauthenticated RCE module (CVE-2025-7441)
+
+ .../multi/http/wp_plugin_story_chef_file_upload.md | 207 +++++++++++++++++++++
+ .../multi/http/wp_plugin_story_chef_file_upload.rb | 206 ++++++++++++++++++++
+ 2 files changed, 413 insertions(+)
