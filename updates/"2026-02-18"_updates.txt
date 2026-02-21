@@ -1,0 +1,248 @@
+commit 31c5125a86bb2e21eede0a1eef8b8c2706a57a28
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 20 23:47:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7f8b18d7dc30d5aab4720e2bb1c60eb32b2a112c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Feb 20 17:45:14 2026 -0600
+
+    Update documentation/modules/exploit/linux/samba/chain_reply.md
+
+ documentation/modules/exploit/linux/samba/chain_reply.md | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit fcb41a22754303eac1cda901d83a3c2585206575
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Feb 20 17:42:34 2026 -0600
+
+    Update documentation/modules/exploit/linux/samba/chain_reply.md
+    
+    Update documentation to point to a specific wayback machine page since the original does not exist, and a few of the wayback machine links are also broken.
+
+ documentation/modules/exploit/linux/samba/chain_reply.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cf497a8d6e85821287b930686f45988c9a76c781
+Merge: c9a26319b0 3f6d228954
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Feb 20 17:38:40 2026 -0600
+
+    Merge pull request #20938 from Chocapikk/fix-beyondtrust-mech-list-fallback
+    
+    Fix BeyondTrust PRA/RS exploit failing on older instances
+
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 50 +++++++++++++---------
+ 1 file changed, 30 insertions(+), 20 deletions(-)
+
+commit c9a26319b0401e483dcc4acbb096e4501a0392e4
+Merge: 671ecf8f8f e6354f3452
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Feb 20 18:20:04 2026 +0000
+
+    Merge pull request #20995 from rapid7/revert-20969-report-more-acunetix-vulns
+    
+    Revert "Report more vulns when importing acunetix XML file"
+
+ lib/rex/parser/acunetix_document.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e6354f34526c8acf75263067145f52bd19bde413
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Fri Feb 20 17:32:42 2026 +0000
+
+    Revert "Report more vulns when importing acunetix XML file"
+
+ lib/rex/parser/acunetix_document.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 671ecf8f8fa38d1ab3f6ecefda945980a90baa5e
+Merge: 018a2d3fdd 37fc0383c6
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Feb 20 13:56:38 2026 +0000
+
+    Merge pull request #20993 from adfoster-r7/remove-encoding-issue-in-source-file
+    
+    Remove encoding issue in source file
+
+ external/source/exploits/CVE-2023-21768/exploit.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 018a2d3fdda85450deb5018e4d9a162276f36faf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 20 13:37:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 37fc0383c65cd4e4f3499268dd3b8b3e7f7d0c65
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Feb 20 13:33:50 2026 +0000
+
+    Remove encoding issue in source file
+
+ external/source/exploits/CVE-2023-21768/exploit.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 250ef3b2d816b8a1d003ed2f1f4640465561d841
+Merge: ea51c45bf5 577f6f662f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Feb 20 13:27:32 2026 +0000
+
+    Merge pull request #20992 from adfoster-r7/add-check-method-alias-to-ms17-010-scanner-module
+    
+    Add check method to ms17-010 scanner module
+
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 577f6f662f84d3bf90f2cf56c734eb67f982bedb
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Feb 20 13:12:39 2026 +0000
+
+    Add check method to ms17-010 scanner module
+
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit ea51c45bf5531ee0e748cae91c99038dd729b80a
+Merge: 667db874f5 fc0257bcad
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Feb 20 12:41:15 2026 +0100
+
+    Land #20859, breaks up utils/exe.rb into separated files
+    
+    utils/exe.rb break-up
+
+ lib/msf/core/exploit/exe.rb           |    2 +-
+ lib/msf/util/exe.rb                   | 2695 +++++----------------------------
+ lib/msf/util/exe/bsd.rb               |   40 +
+ lib/msf/util/exe/bsd/x64.rb           |   24 +
+ lib/msf/util/exe/bsd/x86.rb           |   25 +
+ lib/msf/util/exe/common.rb            |  289 ++++
+ lib/msf/util/exe/linux.rb             |  121 ++
+ lib/msf/util/exe/linux/aarch64.rb     |   39 +
+ lib/msf/util/exe/linux/armbe.rb       |   40 +
+ lib/msf/util/exe/linux/armle.rb       |   40 +
+ lib/msf/util/exe/linux/common.rb      |   13 +
+ lib/msf/util/exe/linux/loongarch64.rb |   38 +
+ lib/msf/util/exe/linux/mips64.rb      |   27 +
+ lib/msf/util/exe/linux/mipsbe.rb      |   27 +
+ lib/msf/util/exe/linux/mipsle.rb      |   28 +
+ lib/msf/util/exe/linux/ppc.rb         |   29 +
+ lib/msf/util/exe/linux/ppc64.rb       |   28 +
+ lib/msf/util/exe/linux/ppce500v2.rb   |   28 +
+ lib/msf/util/exe/linux/riscv32le.rb   |   39 +
+ lib/msf/util/exe/linux/riscv64le.rb   |   40 +
+ lib/msf/util/exe/linux/x64.rb         |   50 +
+ lib/msf/util/exe/linux/x86.rb         |   87 ++
+ lib/msf/util/exe/linux/zarch.rb       |   38 +
+ lib/msf/util/exe/osx.rb               |   57 +
+ lib/msf/util/exe/osx/aarch64.rb       |   29 +
+ lib/msf/util/exe/osx/app.rb           |   73 +
+ lib/msf/util/exe/osx/armle.rb         |   25 +
+ lib/msf/util/exe/osx/common.rb        |   21 +
+ lib/msf/util/exe/osx/ppc.rb           |   33 +
+ lib/msf/util/exe/osx/x64.rb           |   31 +
+ lib/msf/util/exe/osx/x86.rb           |   29 +
+ lib/msf/util/exe/solaris.rb           |   22 +
+ lib/msf/util/exe/solaris/x86.rb       |   27 +
+ lib/msf/util/exe/windows.rb           |   53 +
+ lib/msf/util/exe/windows/aarch64.rb   |   36 +
+ lib/msf/util/exe/windows/common.rb    |  831 ++++++++++
+ lib/msf/util/exe/windows/x64.rb       |  131 ++
+ lib/msf/util/exe/windows/x86.rb       |  383 +++++
+ 38 files changed, 3231 insertions(+), 2337 deletions(-)
+
+commit 667db874f5b5478ad8dba356ff879835551bb718
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Feb 20 09:56:41 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit f2262a84cc23f546302a88732378cc4cf0429664
+Merge: 322df15b65 993017d045
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Feb 20 10:46:45 2026 +0100
+
+    Land #20841, adds persistence module for Windows feature active setup
+    
+    active setup persistence
+
+ .../windows/persistence/registry_active_setup.md   | 121 +++++++++++++++++++++
+ .../windows/persistence/registry_active_setup.rb   | 110 +++++++++++++++++++
+ 2 files changed, 231 insertions(+)
+
+commit 993017d04595398afa471514b988633f2f97f857
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Feb 20 09:51:10 2026 +0100
+
+    Rubocopes
+
+ modules/exploits/windows/persistence/registry_active_setup.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bc81140d4f04d0a2cfa96165902b100d944d7bbc
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Fri Feb 20 08:27:06 2026 +0000
+
+    vsftpd_234_backdoor: Add Linux fetch payload support
+    
+    Fetch over CmdStager (& multiple targets)
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+
+commit 53ac84be038f4ce47413de5d00af450e523cd101
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Fri Feb 20 08:08:55 2026 +0000
+
+    vsftpd_234_backdoor: Reconfig default target
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 32 ++++++++++++++++++------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
+
+commit 5c29007f8532bf84a8df98737a6b0284ec20831c
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Feb 10 16:58:38 2026 +0000
+
+    vsftpd_234_backdoor: Add comments
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit dc2ec5ef39a94baf8040642aabf82a705f7878f2
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Feb 10 16:58:20 2026 +0000
+
+    vsftpd_234_backdoor: Be more verbose
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
+
+commit 7161c2cbe6c255194eee4ddfffdd43bf80479085
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Feb 10 16:56:46 2026 +0000
+
+    vsftpd_234_backdoor: Checks & raises for exploit
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 19 +++++++++++++++----
+ 1 file changed, 15 insertions(+), 4 deletions(-)
+
+commit 037826daf5fa0b589ee6a90aa97a41214c7c7652
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Feb 10 16:54:06 2026 +0000
+
+    vsftpd_234_backdoor: Add check
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 39 ++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
