@@ -1,0 +1,32 @@
+commit c249939bcdecddc9495173d4d30115292ef01304
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Feb 21 00:56:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit d2ed326b16ff5dc8f95633e287c19eb467c5ac6c
+Merge: 1f547f19fb bc81140d4f
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Feb 20 18:46:34 2026 -0600
+
+    Merge pull request #20950 from g0tmi1k/vsftpd_234_backdoor
+    
+    vsftpd_234_backdoor: Add check & targets
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 121 ++++++++++++++++++-----
+ 1 file changed, 99 insertions(+), 22 deletions(-)
+
+commit 1f547f19fb433cf001f7eb3e56f1f7f2668ceef6
+Merge: 31c5125a86 7f8b18d7dc
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Feb 20 18:12:05 2026 -0600
+
+    Merge pull request #20832 from DataExplorerX/doc-linux-samba-module
+    
+    Add documentation for linux/samba/chain_reply module (CVE-2004-0883)
+
+ .../modules/exploit/linux/samba/chain_reply.md     | 155 +++++++++++++++++++++
+ 1 file changed, 155 insertions(+)
