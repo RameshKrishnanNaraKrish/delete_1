@@ -1,0 +1,80 @@
+commit ae65d5d9dc8ff7f75522aed8e770e0690a9c0768
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Mon Feb 23 18:29:22 2026 -0500
+
+    linux wsl startup cleanup now with windows path
+
+ modules/exploits/linux/persistence/wsl/startup_folder.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 8a8dd7b3c148b3c5f5dbe48c06b57db4ca192a9f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Feb 23 16:19:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit dc38f6a9e59886ab13780cd8e3d60bc728041f48
+Merge: c1caf8ae33 03f28ebd7c
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Mon Feb 23 16:06:10 2026 +0000
+
+    Merge pull request #21012 from adfoster-r7/improve-graphql-introspection-detection-scanner
+    
+    Improve graphql introspection detection scanner
+
+ .../scanner/http/graphql_introspection_scanner.rb  | 58 +++++++++++++++++-----
+ 1 file changed, 45 insertions(+), 13 deletions(-)
+
+commit c1caf8ae3336c77e15598a3b2d2ae82b6ed0c268
+Merge: 14e06f54a9 70c1abfa27
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Feb 23 16:04:54 2026 +0000
+
+    Merge pull request #21011 from adfoster-r7/add-support-for-printing-module-name-prefix
+    
+    Add support for printing module name prefix
+
+ lib/msf/core/module/ui/message.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 14e06f54a951e7077b9211a46058f39d0e989624
+Merge: c249939bcd f00c5b244b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Feb 23 16:00:19 2026 +0000
+
+    Merge pull request #21014 from adfoster-r7/fix-crash-when-running-ldap-esc-vulnerable-cert-finder
+    
+    Fix crash when running ldap esc vulnerable cert finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit 03f28ebd7c84cf42b4ff02e9b38de871d79353fb
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Feb 23 10:43:35 2026 +0000
+
+    Improve graphql introspection detection scanner
+
+ .../scanner/http/graphql_introspection_scanner.rb  | 58 +++++++++++++++++-----
+ 1 file changed, 45 insertions(+), 13 deletions(-)
+
+commit f00c5b244bf048a737a213e114b35a15be7da283
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Feb 23 11:26:44 2026 +0000
+
+    Fix crash when running ldap esc vulnerable cert finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit 70c1abfa2792f56cbc0e613fa300b07d91896162
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Feb 23 10:23:30 2026 +0000
+
+    Add support for printing module name prefix
+
+ lib/msf/core/module/ui/message.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
