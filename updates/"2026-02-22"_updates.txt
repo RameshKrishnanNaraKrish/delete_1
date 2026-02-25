@@ -1,0 +1,122 @@
+commit f78941ce94a21dbb631a00682f0adceb3c16c934
+Merge: a9475342c7 68a7ae887b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Feb 24 16:03:18 2026 -0500
+
+    Merge pull request #20990 from jheysel-r7/doc/gsoc-ai-usage-policy
+    
+    Add AI Usage Policy to GSoC Ideas Page
+
+ docs/metasploit-framework.wiki/GSoC-2026-Project-Ideas.md | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit a9475342c703f9aec8b64cdf3c1d1902781abab7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 24 15:26:23 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 1e7b0083f7e9e895759c4da8e2686e60b045b08b
+Merge: 12032a3ff8 f65dca14c7
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Feb 24 09:13:52 2026 -0600
+
+    Merge pull request #20952 from g0tmi1k/unreal_ircd_3281_backdoor
+    
+    Unreal_ircd_3281_backdoor: Add checks & Targets
+
+ .../exploits/unix/irc/unreal_ircd_3281_backdoor.rb | 79 ++++++++++++++++------
+ 1 file changed, 57 insertions(+), 22 deletions(-)
+
+commit 12032a3ff8597b2b49600db17f64af4b7e3af99d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 24 15:01:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 166 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 166 insertions(+)
+
+commit 1ddee63f054706775fe860014abb67fea1777408
+Merge: 5eed30d88c 1f5ad66248
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Feb 24 08:50:42 2026 -0600
+
+    Merge pull request #20983 from sfewer-r7/0day-grandstream
+    
+    Add exploit (CVE-2026-2329) and auxiliary modules for the Grandstream GXP1600 series
+
+ .../linux/http/grandstream_gxp1600_unauth_rce.md   | 134 +++++++
+ .../post/linux/capture/grandstream_gxp1600_sip.md  | 119 ++++++
+ .../post/linux/gather/grandstream_gxp1600_creds.md |  62 +++
+ .../linux/http/grandstream_gxp1600_unauth_rce.rb   | 420 +++++++++++++++++++++
+ .../post/linux/capture/grandstream_gxp1600_sip.rb  | 295 +++++++++++++++
+ .../post/linux/gather/grandstream_gxp1600_creds.rb | 219 +++++++++++
+ 6 files changed, 1249 insertions(+)
+
+commit 5eed30d88ca54740fbdbb68f95839380047b23d1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 24 09:50:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1e4c184512e116f75d7dc14e4238353eabc28773
+Merge: 6a3d346746 2c7348ec50
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Feb 24 04:41:23 2026 -0500
+
+    Merge pull request #20988 from adfoster-r7/add-solarwinds-srvhost-defaults
+    
+    Add solarwinds srvhost defaults
+
+ .../multi/http/solarwinds_webhelpdesk_rce.rb       | 28 +++++++++++++++-------
+ 1 file changed, 20 insertions(+), 8 deletions(-)
+
+commit 6a3d3467461420217e845b0a72936808f31dc56a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Feb 24 07:12:14 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 62a466cbed80f359242c011ae2749d7bcb38a2f3
+Merge: 8a8dd7b3c1 ae65d5d9dc
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Feb 24 07:59:11 2026 +0100
+
+    Land #20819, adds WSL startup folder persistence module
+    
+    wsl startup folder persistence
+
+ .../linux/persistence/wsl/startup_folder.md        | 129 +++++++++++++++++++++
+ lib/msf/core/post/linux/wsl.rb                     |  17 +++
+ .../linux/persistence/wsl/startup_folder.rb        | 102 ++++++++++++++++
+ spec/lib/msf/core/post/linux/wsl_spec.rb           |  35 ++++++
+ 4 files changed, 283 insertions(+)
+
+commit 68a7ae887b01b83889e1b65029bfc7ef6350026d
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Feb 19 11:26:15 2026 -0800
+
+    Add AI Usage Policy to GSoC Ideas Page
+    
+    Markdown fix
+    
+    Apply suggestions from code review
+    
+    Co-authored-by: Julien Voisin <jvoisin@users.noreply.github.com>
+    
+    Apply suggestion from @jheysel-r7
+    
+    Apply suggestion from @jheysel-r7
+
+ docs/metasploit-framework.wiki/GSoC-2026-Project-Ideas.md | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
