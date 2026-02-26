@@ -1,0 +1,194 @@
+commit 4742ea32f00edd54286569a2306b47a5c0033046
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 25 16:15:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ccce3a7dca28bfff301940b03aea241c4262bada
+Merge: 45c058d6f1 701cb4fd2f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 17:06:30 2026 +0100
+
+    Land #20951, moves default payload into more consistent default options
+    
+    Moves default payload into default options in Remote for Mac module
+
+ modules/exploits/osx/misc/remote_for_mac_udp_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 45c058d6f1adf63f32d3d90a139c46435df48e14
+Merge: 24236f99da a24f53f2b6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 16:49:30 2026 +0100
+
+    Land #21005, adds gnu inetutils auth bypass module against a Synology NAS to documentation
+    
+    add dsm target exploitation to gnu telnetd docs
+
+ .../linux/telnet/gnu_inetutils_auth_bypass.md      | 122 +++++++++++++++++++++
+ 1 file changed, 122 insertions(+)
+
+commit 24236f99da55f0c3ea83ae675ac421c35b25d094
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 25 13:28:24 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 60 insertions(+), 1 deletion(-)
+
+commit fae76b2961603fa5938ea3db6a82588550ee8d6c
+Merge: 09c2d4c610 0c12becfcf
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 14:18:59 2026 +0100
+
+    Land #20978, adds module BeyondTrust unauth command injection (CVE-2026-1731)
+    
+    Add CVE-2026-1731 support and modernize targets for BeyondTrust PRA/R…
+
+ .../http/beyondtrust_pra_rs_command_injection.md   |  60 ++++++++
+ lib/msf/core/exploit/remote/http/beyondtrust.rb    | 153 +++++++++++++++++++
+ .../http/beyondtrust_pra_rs_command_injection.rb   | 164 ++++++++++++++++++++
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 168 +--------------------
+ 4 files changed, 381 insertions(+), 164 deletions(-)
+
+commit 0c12becfcf006873c6f86ec36dd32ff38fd27b59
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 13:56:13 2026 +0100
+
+    Separates modules
+
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 366 +++------------------
+ 1 file changed, 47 insertions(+), 319 deletions(-)
+
+commit 63c7bd4958f90149e6592c23663f0ced8b63ceda
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 13:53:20 2026 +0100
+
+    Temp rollback
+
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 158 ++++++++++++++++++++-
+ 1 file changed, 154 insertions(+), 4 deletions(-)
+
+commit 8288cb47136cc0cb4bea2e29eecfe110ccf9f6b8
+Merge: e77b1c00c6 c5303e2ac1
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Wed Feb 25 12:32:36 2026 +0000
+
+    Merge pull request #1 from msutovsky-r7/collab/exploit/beyondtrust/cve-2026-1731
+    
+    Moves the module for CVE-2026-1731 into separate module
+
+ .../http/beyondtrust_pra_rs_command_injection.md   |  60 ++++++++
+ lib/msf/core/exploit/remote/http/beyondtrust.rb    | 153 +++++++++++++++++++
+ .../http/beyondtrust_pra_rs_command_injection.rb   | 164 +++++++++++++++++++++
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 124 +---------------
+ 4 files changed, 384 insertions(+), 117 deletions(-)
+
+commit 09c2d4c610c3757b316ce4a30693c3cabb9f8a81
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Feb 25 12:16:21 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 7dcc036b6d74e672ecf12abbc1f6e54440e921f8
+Merge: f78941ce94 70dd190bc7
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 13:06:09 2026 +0100
+
+    Land #21006, adds module for Ollama path traversal RCE (CVE-2024-37032)
+    
+    Add Ollama path traversal RCE module (CVE-2024-37032)
+
+ .../linux/http/ollama_rce_cve_2024_37032.md        | 100 +++++++
+ .../linux/http/ollama_rce_cve_2024_37032.rb        | 329 +++++++++++++++++++++
+ 2 files changed, 429 insertions(+)
+
+commit c5303e2ac13f1dfd662668644c512e221d28af42
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 12:54:17 2026 +0100
+
+    Apply suggestion from @msutovsky-r7
+
+ modules/exploits/linux/http/beyondtrust_pra_rs_unauth_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 002daf8d7da1e3d93d828c231f7f74b61e7a3469
+Merge: 12e21e4c66 e77b1c00c6
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Feb 25 12:53:37 2026 +0100
+
+    Merge branch 'beyondtrust-rce-2026' into collab/exploit/beyondtrust/cve-2026-1731
+
+ db/modules_metadata_base.json                      | 176 ++++++++-
+ .../linux/http/grandstream_gxp1600_unauth_rce.md   | 134 +++++++
+ .../post/linux/capture/grandstream_gxp1600_sip.md  | 119 ++++++
+ .../post/linux/gather/grandstream_gxp1600_creds.md |  62 +++
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 208 +++++++---
+ .../linux/http/grandstream_gxp1600_unauth_rce.rb   | 420 +++++++++++++++++++++
+ .../multi/http/solarwinds_webhelpdesk_rce.rb       |  28 +-
+ .../exploits/unix/irc/unreal_ircd_3281_backdoor.rb |  79 ++--
+ .../post/linux/capture/grandstream_gxp1600_sip.rb  | 295 +++++++++++++++
+ .../post/linux/gather/grandstream_gxp1600_creds.rb | 219 +++++++++++
+ 10 files changed, 1662 insertions(+), 78 deletions(-)
+
+commit e77b1c00c61a53a76d2bd50015f323aca8e0b688
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Feb 17 10:19:40 2026 +0000
+
+    Add CVE-2026-1731 support and modernize targets for BeyondTrust PRA/RS RCE
+
+ modules/exploits/linux/http/beyondtrust_pra_rs_unauth_rce.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit fd92207119b8aefc9209c7afccd988387f2fa788
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Sun Feb 8 22:54:16 2026 +0100
+
+    Fix BeyondTrust exploit failing on older instances (22.x)
+    
+    The /get_mech_list?version=3 endpoint returns HTTP 500 on older
+    BeyondTrust versions that do not support the JSON API. Add a
+    fallback to version=2 which returns semicolon-separated key=value
+    pairs (e.g. "company=sewtest;product=ingredi").
+    
+    Also remove the "Thank you for using BeyondTrust" check in the
+    BRDF validation, as PRA instances do not contain this string,
+    causing the check method to incorrectly report Unknown for PRA
+    targets.
+
+ modules/exploits/linux/http/beyondtrust_pra_rs_unauth_rce.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 4f2eafda096038f536a0ded0fd7e727cc112e512
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Feb 17 11:33:11 2026 +0000
+
+    Changed error wording to remove patch specifics and loosen wording to 'may indicate' as there could be other reasons for the websocket exiting unexpectedly, e.g. using the cmd/unix/generic payload results in the error, even when target is vulnerable and the exploit succeeds
+
+ modules/exploits/linux/http/beyondtrust_pra_rs_unauth_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0b78ab319ed9a5eb3a54dbfa9f17567aaa77a8a3
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Feb 17 10:58:08 2026 +0000
+
+    improved version checking (i think)
+
+ modules/exploits/linux/http/beyondtrust_pra_rs_unauth_rce.rb | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+commit b43b20406035222637f923aee8705bff353316d7
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Feb 17 10:19:40 2026 +0000
+
+    Add CVE-2026-1731 support and modernize targets for BeyondTrust PRA/RS RCE
+
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    | 185 ++++++++++++++-------
+ 1 file changed, 127 insertions(+), 58 deletions(-)
