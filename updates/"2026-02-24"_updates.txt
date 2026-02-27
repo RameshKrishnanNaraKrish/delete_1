@@ -1,0 +1,99 @@
+commit 6a20b24d9cfe4b99dcc85dd1dd3f14928b5ede69
+Merge: 8475757bcb 44806b805f
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Feb 26 18:11:02 2026 +0100
+
+    Land #20740, Separate SSL and SRVSSL options for client and server connections
+
+ lib/msf/core/exploit/remote/http_server.rb   | 20 ++++++++++++++------
+ lib/msf/core/exploit/remote/socket_server.rb |  1 +
+ lib/msf/core/exploit/remote/tcp_server.rb    |  5 +++--
+ 3 files changed, 18 insertions(+), 8 deletions(-)
+
+commit 44806b805f4a325df198459466ccc23e25c51fac
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Feb 26 17:23:39 2026 +0100
+
+    Fix: Add http_server_ssl alias to resolve HttpClient/HttpServer mixin conflict
+
+ lib/msf/core/exploit/remote/http_server.rb | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+
+commit f2856c28b39d18a813d68d3773e4f75ac4c7e37f
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Thu Feb 26 17:21:17 2026 +0100
+
+    Update lib/msf/core/exploit/remote/socket_server.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ lib/msf/core/exploit/remote/socket_server.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3720803cdc71567bfd014bcd37bb69b26ab79c62
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Thu Feb 26 17:21:03 2026 +0100
+
+    Update lib/msf/core/exploit/remote/http_server.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ lib/msf/core/exploit/remote/http_server.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a26036ca7bf1c7ae65c80984cee8b5262a23a2cf
+Author: Valentin Lobstein <88535377+Chocapikk@users.noreply.github.com>
+Date:   Thu Feb 26 17:20:37 2026 +0100
+
+    Update lib/msf/core/exploit/remote/http_server.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ lib/msf/core/exploit/remote/http_server.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8475757bcb6cefdab65b90d09c10f500883d3d5c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 26 15:41:15 2026 +0000
+
+    Bump version of framework to 6.4.117
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 7e937b3d5a3b0f269b4ed90e23d944e2c5a06042
+Merge: 02c421c6a4 0e60332411
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Feb 26 16:14:35 2026 +0100
+
+    Land #21010, adds reporting the service to Gitlab mixin
+    
+    Update Gitlab mixin logs
+
+ lib/msf/core/exploit/remote/http/gitlab/version.rb | 40 +++++++++++++++++++---
+ 1 file changed, 36 insertions(+), 4 deletions(-)
+
+commit 02c421c6a40af738ef4ceafe561543ddf84c0c5c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Feb 26 14:21:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+commit 0d259baf5e0d2b3b57f14e257b12eb1580db2821
+Merge: 4742ea32f0 2dc807a2ce
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Feb 26 09:11:39 2026 -0500
+
+    Merge pull request #20964 from litemars/add_Linux_evasion_module-rc4_packer_arm64
+    
+    adding RC4 packer arm64, rc4 decrypt routine and sleep evasion routine
+
+ .../core/payload/linux/aarch64/rc4_decrypter.rb    | 110 +++++++++++++++++++++
+ .../core/payload/linux/aarch64/sleep_evasion.rb    |  21 ++++
+ modules/evasion/linux/aarch64/rc4_packer.rb        |  50 ++++++++++
+ 3 files changed, 181 insertions(+)
