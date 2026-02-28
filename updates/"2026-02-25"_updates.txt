@@ -1,0 +1,11 @@
+commit e60f77af99e72c8cfa005cf9ee0e97bd1d5450cf
+Merge: 6a20b24d9c b6d1b7cae6
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Feb 27 10:53:51 2026 +0100
+
+    Merge pull request #20830 from SilentSobs/fix-filestat-non-gnu
+    
+    Fix FileStat stat parsing on non-GNU systems
+
+ lib/msf/core/post/file.rb | 40 +++++++++++++++++++++++++---------------
+ 1 file changed, 25 insertions(+), 15 deletions(-)
