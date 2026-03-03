@@ -1,0 +1,189 @@
+commit 9ea5a54fe96647df4d1002227ccd09879d80474c
+Merge: b874f89425 218c8df3bd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Mar 2 17:55:50 2026 -0600
+
+    Merge pull request #20940 from g0tmi1k/twiki_search
+    
+    twiki_search: Fix exploit, more verbose, error handling, add fetch payload support
+
+ modules/exploits/unix/webapp/twiki_search.rb | 100 ++++++++++++++++-----------
+ 1 file changed, 59 insertions(+), 41 deletions(-)
+
+commit b874f89425532ad6941acf23ff5339169b8f1718
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 2 20:56:10 2026 +0000
+
+    Bump version of framework to 6.4.118
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 88216de58b292ec958c31d67f013d536eab7a7b9
+Merge: ffceb5b777 f1cbb90194
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Mar 2 20:45:09 2026 +0000
+
+    Merge pull request #21044 from adfoster-r7/fix-nessus-service-import-crash
+    
+    Fix nessus service import crash
+
+ lib/msf/core/db_manager/import/nessus/xml/v2.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit ffceb5b77777c2bbc24faf517f9f7c8a0d5fbdef
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 2 20:08:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 9664ab5191abb33ed1869d9482c0b2bc114e4f26
+Merge: 32e2ac84bc fd1d10ec28
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Mar 2 13:58:44 2026 -0600
+
+    Merge pull request #20946 from g0tmi1k/twiki_history
+    
+    twiki_history: Add revision+page options & Fetch payload support
+
+ modules/exploits/unix/webapp/twiki_history.rb | 111 +++++++++++++++-----------
+ 1 file changed, 64 insertions(+), 47 deletions(-)
+
+commit f1cbb901942eb7a521df356018cf38d650ed85a8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Mar 2 18:42:21 2026 +0000
+
+    Fix nessus service import crash
+
+ lib/msf/core/db_manager/import/nessus/xml/v2.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 32e2ac84bcd838abcedb0c1f2839f58885cadcea
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 2 16:29:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 6ad973588952b555214829eeb0951d52423701d4
+Merge: 449b072f77 ccc8367db5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Mar 2 16:19:29 2026 +0000
+
+    Merge pull request #20987 from sjanusz-r7/ldap-sessions-working-for-more-modules
+    
+    LDAP sessions working for Kerberoast and AS-REP modules
+
+ lib/msf/core/exploit/remote/kerberos/client.rb |  9 ++++--
+ lib/msf/core/exploit/remote/ldap/queries.rb    |  5 ++-
+ lib/rex/proto/ldap/client.rb                   | 12 +++++++
+ modules/auxiliary/gather/asrep.rb              | 44 ++++++++++++++++----------
+ modules/auxiliary/gather/kerberoast.rb         | 27 +++++++++++-----
+ 5 files changed, 70 insertions(+), 27 deletions(-)
+
+commit ccc8367db564328b7bb33a8a7d5b3b8f469403a8
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Feb 18 15:29:09 2026 +0000
+
+    Working Kerberoast and AS-REP modules with LDAP sessions
+
+ lib/msf/core/exploit/remote/kerberos/client.rb |  9 ++++--
+ lib/msf/core/exploit/remote/ldap/queries.rb    |  5 ++-
+ lib/rex/proto/ldap/client.rb                   | 12 +++++++
+ modules/auxiliary/gather/asrep.rb              | 44 ++++++++++++++++----------
+ modules/auxiliary/gather/kerberoast.rb         | 27 +++++++++++-----
+ 5 files changed, 70 insertions(+), 27 deletions(-)
+
+commit 449b072f7752adff4a484cfb935c2800e06da441
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 2 15:28:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit 9da70e511f484eefeef92bbe23fa12f2d69240e8
+Merge: b06d57d155 7545328be1
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Mar 2 15:19:01 2026 +0000
+
+    Merge pull request #21042 from adfoster-r7/fix-broken-module-url-references
+    
+    Fix broken module url references
+
+ modules/auxiliary/scanner/quake/server_info.rb     |  8 +--
+ .../linux/http/grandstream_gxp1600_unauth_rce.rb   |  2 +-
+ .../windows/browser/java_ws_double_quote.rb        | 60 +++++++++----------
+ .../windows/fileformat/foxit_reader_uaf.rb         |  8 +--
+ .../exploits/windows/fileformat/office_word_hta.rb | 68 +++++++++++-----------
+ .../exploits/windows/fileformat/word_mshtml_rce.rb |  6 +-
+ modules/post/windows/gather/bitlocker_fvek.rb      |  2 +-
+ spec/module_validation_spec.rb                     | 40 +++++++++++++
+ spec/support/lib/module_validation.rb              | 18 ++++++
+ 9 files changed, 135 insertions(+), 77 deletions(-)
+
+commit 7545328be1a61ca31ce97795342fed8d94f30e61
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Mar 2 14:45:14 2026 +0000
+
+    Linting
+
+ modules/auxiliary/scanner/quake/server_info.rb     |  6 +-
+ .../windows/browser/java_ws_double_quote.rb        | 56 +++++++++---------
+ .../windows/fileformat/foxit_reader_uaf.rb         |  6 +-
+ .../exploits/windows/fileformat/office_word_hta.rb | 66 +++++++++++-----------
+ .../exploits/windows/fileformat/word_mshtml_rce.rb |  4 +-
+ spec/module_validation_spec.rb                     |  4 +-
+ spec/support/lib/module_validation.rb              |  2 +-
+ 7 files changed, 72 insertions(+), 72 deletions(-)
+
+commit 1a4ae7bfa34a1dcc8815807ea7bbfd52e847c294
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Mar 2 14:35:48 2026 +0000
+
+    Fix broken module url references
+
+ modules/auxiliary/scanner/quake/server_info.rb     |  2 +-
+ .../linux/http/grandstream_gxp1600_unauth_rce.rb   |  2 +-
+ .../windows/browser/java_ws_double_quote.rb        |  4 +--
+ .../windows/fileformat/foxit_reader_uaf.rb         |  2 +-
+ .../exploits/windows/fileformat/office_word_hta.rb |  2 +-
+ .../exploits/windows/fileformat/word_mshtml_rce.rb |  2 +-
+ modules/post/windows/gather/bitlocker_fvek.rb      |  2 +-
+ spec/module_validation_spec.rb                     | 40 ++++++++++++++++++++++
+ spec/support/lib/module_validation.rb              | 18 ++++++++++
+ 9 files changed, 66 insertions(+), 8 deletions(-)
+
+commit b06d57d155f31552c36447859e032e9901d0267d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 2 10:29:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 180 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 180 insertions(+)
+
+commit 6f84c83135b9a2e6f313644b31fbbd22178538a5
+Merge: e60f77af99 615ca34e29
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Mar 2 05:20:22 2026 -0500
+
+    Merge pull request #21000 from Chocapikk/add-modules-majordomo-rce
+    
+    Add three MajorDoMo unauthenticated RCE modules
+
+ .../multi/http/majordomo_cmd_injection_rce.md      | 186 +++++++++++++++
+ .../multi/http/majordomo_console_eval_rce.md       | 205 ++++++++++++++++
+ .../multi/http/majordomo_supply_chain_rce.md       | 185 +++++++++++++++
+ .../multi/http/majordomo_cmd_injection_rce.rb      | 155 +++++++++++++
+ .../multi/http/majordomo_console_eval_rce.rb       | 133 +++++++++++
+ .../multi/http/majordomo_supply_chain_rce.rb       | 258 +++++++++++++++++++++
+ 6 files changed, 1122 insertions(+)
