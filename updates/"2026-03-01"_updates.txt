@@ -1,0 +1,54 @@
+commit 8e03b6e98a094c8d1d54fba9489069f93ecd0cd9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 3 10:47:34 2026 +0000
+
+    Bump version of framework to 6.4.119
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit e1617cb45353ade76243861b8bddac9d2e14ed87
+Merge: ce1fa5ef69 e05ab29729
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 3 10:40:21 2026 +0000
+
+    Merge pull request #21045 from adfoster-r7/ensure-nessus-icmp-vulns-are-registered
+    
+    Ensure nessus icmp vulns are registered
+
+ lib/msf/core/db_manager/import/nessus/xml/v2.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e05ab29729028789824fba372e7f25db89ee1eee
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 3 09:06:37 2026 +0000
+
+    Ensure nessus icmp vulns are registered
+
+ lib/msf/core/db_manager/import/nessus/xml/v2.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ce1fa5ef69b502249206e8525d3c298c06fc379d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 3 09:48:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 39 +++++++++++++++++++++++++++++++++++----
+ 1 file changed, 35 insertions(+), 4 deletions(-)
+
+commit 38dbefecfc695d66041485ebbfc44aeada46f18a
+Merge: 9ea5a54fe9 069dea2296
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Mar 3 04:36:51 2026 -0500
+
+    Merge pull request #20965 from litemars/add_Linux_evasion_module-rc4_packer_x86
+    
+    adding RC4 packer x86, rc4 decrypt routine and sleep evasion routine
+
+ lib/msf/core/payload/linux/x86/rc4_decrypter.rb | 129 ++++++++++++++++++++++++
+ lib/msf/core/payload/linux/x86/sleep_evasion.rb |  20 ++++
+ modules/evasion/linux/x86/rc4_packer.rb         |  55 ++++++++++
+ 3 files changed, 204 insertions(+)
