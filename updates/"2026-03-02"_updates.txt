@@ -1,0 +1,25 @@
+commit 16600d54398b5f525a271ad94dd2a2209b7f6270
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Mar 4 09:11:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 96958dedbbccb88d545356fed5950911f6160a4f
+Merge: 8e03b6e98a 6d19f5b0da
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Mar 4 10:01:29 2026 +0100
+
+    Land #20852, exposes encoder options for exploit and payloads
+    
+    Expose encoder options
+
+ lib/msf/core/payload.rb                          | 39 ++++++++++++++++++++++++
+ lib/msf/ui/console/command_dispatcher/common.rb  | 16 ++++++++++
+ lib/msf/ui/console/command_dispatcher/core.rb    | 19 ++++++++++++
+ lib/msf/ui/console/command_dispatcher/exploit.rb |  4 +++
+ lib/msf/ui/console/command_dispatcher/modules.rb | 26 ++++++++++++++++
+ modules/encoders/cmd/base64.rb                   |  2 +-
+ 6 files changed, 105 insertions(+), 1 deletion(-)
