@@ -1,0 +1,235 @@
+commit 440466e0570b6906b6f586b867b32bc652c32b6b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Mar 5 16:56:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 322 +++++++++++++++++++++---------------------
+ 1 file changed, 161 insertions(+), 161 deletions(-)
+
+commit 1ec87b586a90845a1878061d8bc93a31c6b62df8
+Merge: 401a46da2f 36ba1608af
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Mar 5 11:46:52 2026 -0500
+
+    Merge pull request #20989 from zeroSteiner/feat/lib/mod-address-opts
+    
+    This adjusts module options that need a routable address
+
+ .rubocop.yml                                       |  1 +
+ lib/msf/core/exploit/cmd_stager.rb                 |  7 +-
+ lib/msf/core/exploit/cmd_stager/http.rb            |  6 ++
+ lib/msf/core/exploit/format/webarchive.rb          |  6 +-
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    | 17 ++---
+ .../remote/http/sap_sol_man_eem_miss_auth.rb       |  4 +-
+ lib/msf/core/exploit/remote/http_server.rb         | 26 +------
+ lib/msf/core/exploit/remote/jndi_injection.rb      | 11 ++-
+ lib/msf/core/exploit/remote/smb/relay_server.rb    |  7 +-
+ lib/msf/core/exploit/remote/smb/server/share.rb    |  1 +
+ lib/msf/core/exploit/remote/socket_server.rb       | 32 +++++++-
+ lib/msf/core/opt_address_local.rb                  | 37 ++-------
+ lib/msf/core/opt_address_routable.rb               | 43 +++++++++++
+ lib/msf/util/payload_cached_size.rb                |  6 +-
+ lib/rubocop/cop/lint/datastore_srvhost_usage.rb    | 42 +++++++++++
+ .../android/google_play_store_uxss_xframe_rce.rb   |  5 +-
+ .../admin/sap/cve_2020_6207_solman_rce.rb          |  6 +-
+ modules/auxiliary/fileformat/specialfolder_leak.rb |  4 +-
+ .../auxiliary/gather/android_stock_browser_uxss.rb |  7 --
+ .../gather/apple_safari_ftp_url_cookie_theft.rb    | 29 ++------
+ .../gather/apple_safari_webarchive_uxss.rb         |  8 --
+ .../auxiliary/gather/firefox_pdfjs_file_theft.rb   |  7 +-
+ modules/auxiliary/gather/ie_sandbox_findfiles.rb   | 21 ++----
+ .../auxiliary/gather/magento_xxe_cve_2024_34102.rb |  8 +-
+ .../auxiliary/gather/safari_file_url_navigation.rb | 22 +-----
+ .../auxiliary/server/android_mercury_parseuri.rb   |  7 +-
+ modules/auxiliary/server/browser_autopwn.rb        |  2 +-
+ modules/auxiliary/server/capture/http.rb           |  2 +-
+ modules/auxiliary/server/capture/http_basic.rb     |  2 +-
+ modules/auxiliary/server/capture/pop3.rb           |  2 +-
+ .../auxiliary/server/capture/printjob_capture.rb   |  4 +-
+ modules/auxiliary/server/capture/sip.rb            |  4 +-
+ modules/auxiliary/server/capture/smtp.rb           |  2 +-
+ modules/auxiliary/server/dns/spoofhelper.rb        |  2 +-
+ modules/auxiliary/server/fakedns.rb                |  2 +-
+ .../auxiliary/server/jsse_skiptls_mitm_proxy.rb    |  2 +-
+ modules/auxiliary/server/netbios_spoof_nat.rb      |  2 +-
+ .../server/openssl_altchainsforgery_mitm_proxy.rb  |  2 +-
+ .../server/openssl_heartbeat_client_memory.rb      |  2 +-
+ modules/auxiliary/server/tftp.rb                   |  2 +-
+ .../freebsd/misc/citrix_netscaler_soap_bof.rb      |  9 +--
+ .../exploits/linux/http/chaos_rat_xss_to_rce.rb    |  5 +-
+ .../exploits/linux/http/craftcms_ftp_template.rb   |  4 +-
+ .../linux/http/dlink_diagnostic_exec_noauth.rb     | 14 +---
+ .../exploits/linux/http/dlink_dir615_up_exec.rb    | 11 +--
+ .../exploits/linux/http/dlink_hnap_login_bof.rb    | 10 +--
+ .../exploits/linux/http/huawei_hg532n_cmdinject.rb |  6 +-
+ .../exploits/linux/http/ibm_qradar_unauth_rce.rb   | 10 +--
+ .../linux/http/linksys_e1500_apply_exec.rb         | 13 +---
+ .../linux/http/linksys_wrt54gl_apply_exec.rb       | 13 +---
+ .../http/magento_xxe_to_glibc_buf_overflow.rb      |  8 +-
+ .../linux/http/netgear_dgn1000b_setup_exec.rb      | 13 +---
+ .../linux/http/netgear_dgn2200b_pppoe_exec.rb      | 13 +---
+ .../linux/http/ollama_rce_cve_2024_37032.rb        |  8 +-
+ modules/exploits/linux/http/railo_cfml_rfi.rb      | 10 +--
+ .../linux/http/symmetricom_syncserver_rce.rb       |  4 +-
+ .../linux/http/synology_dsm_smart_exec_auth.rb     | 64 ++++++++--------
+ modules/exploits/linux/http/vmware_vrli_rce.rb     |  5 +-
+ .../exploits/linux/misc/cve_2020_13160_anydesk.rb  |  2 +-
+ .../linux/misc/jenkins_ldap_deserialize.rb         |  2 +-
+ .../exploits/linux/misc/opennms_java_serialize.rb  | 11 +--
+ .../linux/misc/tplink_archer_a7_c7_lan_rce.rb      | 17 ++---
+ .../misc/zyxel_multiple_devices_zhttp_lan_rce.rb   | 12 +--
+ .../linux/redis/redis_replication_cmd_exec.rb      | 16 +---
+ modules/exploits/linux/smtp/exim4_dovecot_exec.rb  | 15 +---
+ .../http/adobe_coldfusion_rce_cve_2023_26360.rb    |  9 +--
+ .../exploits/multi/http/bassmaster_js_injection.rb | 10 +--
+ .../multi/http/cacti_graph_template_rce.rb         | 15 ++--
+ modules/exploits/multi/http/jboss_maindeployer.rb  |  6 +-
+ .../multi/http/log4shell_header_injection.rb       |  8 +-
+ .../multi/http/monsta_ftp_downloadfile_rce.rb      |  6 +-
+ .../exploits/multi/http/mutiny_subnetmask_exec.rb  | 13 +---
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  | 12 +--
+ .../multi/http/rails_dynamic_render_code_exec.rb   | 10 +--
+ .../multi/http/solarwinds_webhelpdesk_rce.rb       | 15 +---
+ modules/exploits/multi/http/struts_code_exec.rb    |  5 +-
+ .../http/struts_code_exec_exception_delegator.rb   |  5 +-
+ .../multi/http/struts_default_action_mapper.rb     | 11 +--
+ .../exploits/multi/http/totaljs_cms_widget_exec.rb |  4 +-
+ ...ndmicro_threat_discovery_admin_sys_time_cmdi.rb | 11 +--
+ modules/exploits/multi/http/wondercms_rce.rb       |  6 +-
+ .../exploits/multi/http/wp_popular_posts_rce.rb    |  1 -
+ .../multi/iiop/cve_2023_21839_weblogic_rce.rb      |  7 +-
+ .../multi/misc/cups_ipp_remote_code_execution.rb   |  9 +--
+ modules/exploits/multi/misc/ibm_tm1_unauth_rce.rb  |  7 +-
+ .../multi/sap/sap_mgmt_con_osexec_payload.rb       | 15 +---
+ modules/exploits/osx/browser/safari_file_policy.rb | 20 +----
+ .../exploits/unix/http/pihole_blocklist_exec.rb    |  6 +-
+ modules/exploits/unix/http/xdebug_unauth_exec.rb   |  4 +-
+ .../exploits/unix/local/opensmtpd_oob_read_lpe.rb  |  4 -
+ .../unix/webapp/google_proxystylesheet_exec.rb     |  4 +-
+ modules/exploits/windows/antivirus/ams_xfr.rb      |  3 +-
+ .../exploits/windows/browser/adobe_flash_sps.rb    |  3 +-
+ .../browser/adobe_flashplayer_arrayindexing.rb     |  4 +-
+ .../windows/browser/aol_icq_downloadagent.rb       |  4 +-
+ .../windows/browser/apple_quicktime_mime_type.rb   |  5 +-
+ .../windows/browser/apple_quicktime_rtsp.rb        |  5 +-
+ .../windows/browser/apple_quicktime_smil_debug.rb  |  5 +-
+ .../browser/apple_quicktime_texml_font_table.rb    |  5 +-
+ .../windows/browser/awingsoft_winds3d_sceneurl.rb  |  4 +-
+ .../browser/blackice_downloadimagefileurl.rb       |  5 +-
+ .../browser/c6_messenger_downloaderactivex.rb      |  4 +-
+ .../exploits/windows/browser/cisco_webex_ext.rb    |  2 +-
+ .../windows/browser/dxstudio_player_exec.rb        |  5 +-
+ .../windows/browser/enjoysapgui_comp_download.rb   |  4 +-
+ .../windows/browser/foxit_reader_plugin_url_bof.rb |  3 +-
+ .../browser/honeywell_hscremotedeploy_exec.rb      |  4 +-
+ .../windows/browser/java_ws_arginject_altjvm.rb    |  4 +-
+ .../windows/browser/java_ws_double_quote.rb        |  3 +-
+ modules/exploits/windows/browser/java_ws_vmargs.rb |  4 +-
+ .../windows/browser/keyhelp_launchtripane_exec.rb  |  2 +-
+ .../exploits/windows/browser/macrovision_unsafe.rb |  4 +-
+ .../browser/ms07_017_ani_loadimage_chunksize.rb    |  2 +-
+ .../windows/browser/ms08_041_snapshotviewer.rb     |  4 +-
+ .../browser/ms10_022_ie_vbscript_winhlp32.rb       |  3 +-
+ .../browser/ms10_042_helpctr_xss_cmd_exec.rb       |  2 +-
+ .../browser/ms10_046_shortcut_icon_dllloader.rb    |  9 +--
+ .../exploits/windows/browser/ms16_051_vbscript.rb  |  7 +-
+ modules/exploits/windows/browser/msvidctl_mpeg2.rb | 16 +---
+ .../windows/browser/notes_handler_cmdinject.rb     |  9 +--
+ .../windows/browser/persits_xupload_traversal.rb   |  3 +-
+ .../windows/browser/real_arcade_installerdlg.rb    |  3 +-
+ .../exploits/windows/browser/safari_xslt_output.rb |  5 +-
+ .../browser/samsung_security_manager_put.rb        |  4 +-
+ ...ymantec_altirisdeployment_downloadandinstall.rb |  4 +-
+ .../windows/browser/symantec_appstream_unsafe.rb   |  4 +-
+ .../browser/systemrequirementslab_unsafe.rb        |  4 +-
+ .../windows/browser/ubisoft_uplay_cmd_exec.rb      | 18 +----
+ .../windows/browser/webdav_dll_hijacker.rb         | 11 +--
+ .../browser/zenturiprogramchecker_unsafe.rb        |  4 +-
+ .../windows/browser/zenworks_helplauncher_exec.rb  |  3 +-
+ .../windows/dcerpc/cve_2021_1675_printnightmare.rb |  8 --
+ .../windows/email/ms10_045_outlook_ref_only.rb     |  9 +--
+ .../windows/email/ms10_045_outlook_ref_resolve.rb  |  9 +--
+ .../windows/fileformat/mcafee_showreport_exec.rb   |  4 -
+ modules/exploits/windows/fileformat/ms12_005.rb    |  8 +-
+ .../windows/fileformat/nitro_reader_jsapi.rb       | 11 +--
+ .../exploits/windows/fileformat/office_word_hta.rb |  3 +-
+ .../fileformat/theme_dll_hijack_cve_2023_38146.rb  |  2 +-
+ .../exploits/windows/fileformat/word_msdtjs_rce.rb |  9 +--
+ .../exploits/windows/fileformat/word_mshtml_rce.rb |  7 +-
+ modules/exploits/windows/ftp/ayukov_nftp.rb        | 16 +---
+ modules/exploits/windows/ftp/freefloatftp_wbem.rb  |  4 +-
+ modules/exploits/windows/ftp/ftpshell_cli_bof.rb   | 14 +---
+ modules/exploits/windows/ftp/labf_nfsaxe.rb        | 16 +---
+ modules/exploits/windows/ftp/open_ftpd_wbem.rb     |  4 +-
+ .../windows/ftp/quickshare_traversal_write.rb      |  4 +-
+ modules/exploits/windows/ftp/scriptftp_list.rb     |  8 +-
+ .../http/ca_totaldefense_regeneratereports.rb      |  5 +-
+ .../windows/http/cogent_datahub_command.rb         | 10 +--
+ .../manageengine_adaudit_plus_cve_2022_28219.rb    | 18 ++---
+ .../windows/http/northstar_c2_xss_to_agent_rce.rb  | 12 +--
+ modules/exploits/windows/http/osb_uname_jlist.rb   |  5 +-
+ .../windows/http/sap_host_control_cmd_exec.rb      |  4 +-
+ .../windows/http/solarwinds_storage_manager_sql.rb |  7 +-
+ modules/exploits/windows/iis/ms01_026_dbldecode.rb |  3 +-
+ modules/exploits/windows/iis/msadc.rb              |  3 +-
+ modules/exploits/windows/misc/altiris_ds_sqli.rb   |  3 +-
+ .../misc/hp_dataprotector_install_service.rb       |  2 +-
+ .../windows/misc/ibm_director_cim_dllinject.rb     |  3 +-
+ modules/exploits/windows/misc/mini_stream.rb       |  3 +-
+ modules/exploits/windows/misc/nvidia_mental_ray.rb |  9 +--
+ .../windows/misc/vmhgfs_webdav_dll_sideload.rb     | 12 +--
+ modules/exploits/windows/misc/webdav_delivery.rb   |  4 +-
+ modules/exploits/windows/mssql/mssql_payload.rb    |  3 +-
+ modules/exploits/windows/novell/netiq_pum_eval.rb  | 11 +--
+ .../windows/scada/ge_proficy_cimplicity_gefebt.rb  |  3 +-
+ .../windows/scada/rockwell_factorytalk_rce.rb      |  6 +-
+ modules/exploits/windows/scada/scadapro_cmdexe.rb  | 14 ++--
+ modules/payloads/singles/java/shell_reverse_tcp.rb |  2 +-
+ modules/payloads/stagers/java/bind_tcp.rb          |  2 +-
+ modules/payloads/stagers/java/reverse_tcp.rb       |  2 +-
+ modules/post/linux/busybox/set_dns.rb              |  6 +-
+ .../cop/lint/datastore_srvhost_usage_spec.rb       | 87 ++++++++++++++++++++++
+ 174 files changed, 538 insertions(+), 954 deletions(-)
+
+commit 401a46da2fad9455c3329e538048eeedd0de3cb1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Mar 5 15:35:59 2026 +0000
+
+    Bump version of framework to 6.4.120
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 3f4a6cca6c0426bcd4002e21268dea80824d53e1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Mar 5 14:49:28 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 59a199221498095ee66b737fe993912aa544cb76
+Merge: 16600d5439 bf41455bca
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Mar 5 15:38:32 2026 +0100
+
+    Land #21017, adds module for SSTI in Tactical RMM (CVE-2025-69516)
+    
+    Add Tactical RMM Jinja2 SSTI RCE module (CVE-2025-69516)
+
+ .../http/tacticalrmm_ssti_rce_cve_2025_69516.md    | 405 +++++++++++++++++++++
+ .../http/tacticalrmm_ssti_rce_cve_2025_69516.rb    | 229 ++++++++++++
+ 2 files changed, 634 insertions(+)
+
+commit bf41455bca4474da5bd743684e215066799cea7b
+Author: Valentin Lobstein <balgogan@protonmail.com>
+Date:   Thu Mar 5 14:01:12 2026 +0100
+
+    Fix: Address review feedback - remove dead execute_command, fix dropper race condition
+
+ modules/exploits/linux/http/tacticalrmm_ssti_rce_cve_2025_69516.rb | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
