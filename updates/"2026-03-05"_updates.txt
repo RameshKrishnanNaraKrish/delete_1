@@ -1,0 +1,24 @@
+commit ef7992713a7842162382281d97785cffa888a232
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Mar 7 19:27:42 2026 +0000
+
+    Bump version of framework to 6.4.121
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit f9b47d421f5dfe9730fb6bfb7b8e1aaad3b67206
+Merge: 440466e057 3de421f8f5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Mar 7 19:19:14 2026 +0000
+
+    Merge pull request #21070 from adfoster-r7/update-metasploit-data-models
+    
+    Update metasploit data models
+
+ Gemfile.lock                 | 4 ++--
+ db/schema.rb                 | 9 ++++++++-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 11 insertions(+), 4 deletions(-)
