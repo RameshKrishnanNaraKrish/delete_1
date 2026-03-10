@@ -1,0 +1,67 @@
+commit fef03d3bb7b7f686cf75fa910a766c147fff68bb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 9 15:50:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+commit b18611c1d9b099235807c199b1a5f5e54ab39691
+Merge: 9283a25efb c5c67fac56
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Mar 9 10:55:44 2026 -0400
+
+    Merge pull request #20966 from litemars/add_Linux_evasion_module-rc4_packer_x64
+    
+    adding RC4 packer x64, rc4 decrypt routine and sleep evasion routine
+
+ lib/msf/core/payload/linux/x64/rc4_decrypter.rb | 114 ++++++++++++++++++++++++
+ lib/msf/core/payload/linux/x64/sleep_evasion.rb |  20 +++++
+ modules/evasion/linux/x64/rc4_packer.rb         |  50 +++++++++++
+ 3 files changed, 184 insertions(+)
+
+commit 9283a25efb59d7c82e0744b6daf0004c9346c2d5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 9 14:44:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 80 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 80 insertions(+)
+
+commit 1af0a49729f1d860a1587ce722dcb6cff3a1fd74
+Merge: 4c87d1ac10 77df1f1e87
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Mar 9 10:34:43 2026 -0400
+
+    Merge pull request #21002 from Chocapikk/add-module-leakix-search
+    
+    Add LeakIX search module with 6 actions and bulk streaming
+
+ .../modules/auxiliary/gather/leakix_search.md      | 255 ++++++++++
+ modules/auxiliary/gather/leakix_search.rb          | 522 +++++++++++++++++++++
+ 2 files changed, 777 insertions(+)
+
+commit 4c87d1ac10b26cb8e9822ac06446c57ca8ef4129
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 9 09:47:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit c6aabc1c75a0fceb63e9b6be0b710592308b4495
+Merge: 5482e51832 3d38e9b27b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Mar 9 10:34:52 2026 +0100
+
+    Land #21001, adds module for SPIP Saisies plugin (CVE-2025-71243)
+    
+    Add SPIP Saisies plugin RCE module (CVE-2025-71243)
+
+ .../modules/exploit/multi/http/spip_saisies_rce.md | 222 +++++++++++++++++++
+ lib/msf/core/exploit/remote/http/spip.rb           |  22 ++
+ modules/exploits/multi/http/spip_saisies_rce.rb    | 241 +++++++++++++++++++++
+ 3 files changed, 485 insertions(+)
