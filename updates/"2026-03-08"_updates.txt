@@ -1,0 +1,121 @@
+commit 8ab51cfafce4049b88e70c07b94b582e79977981
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 10 21:40:43 2026 +0000
+
+    Bump version of framework to 6.4.123
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 777ce591190fc342e6fb5545104ea93a4ce438c7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 10 20:31:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 50fe3a53016f64fc6e6a9c019cf78ae9e2228e37
+Merge: 5092b21717 eba2c59f71
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 10 20:21:29 2026 +0000
+
+    Merge pull request #21094 from adfoster-r7/revert-choose-encoder-updates
+    
+    Revert choose encoder updates
+
+ lib/msf/core/payload.rb                          | 39 ------------------------
+ lib/msf/ui/console/command_dispatcher/common.rb  | 16 ----------
+ lib/msf/ui/console/command_dispatcher/core.rb    | 19 ------------
+ lib/msf/ui/console/command_dispatcher/exploit.rb |  4 ---
+ lib/msf/ui/console/command_dispatcher/modules.rb | 26 ----------------
+ modules/encoders/cmd/base64.rb                   |  2 +-
+ 6 files changed, 1 insertion(+), 105 deletions(-)
+
+commit eba2c59f71c9a86fbf11af3f48bc28894ebcc9b4
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 10 19:03:51 2026 +0000
+
+    Revert "Land #20852, exposes encoder options for exploit and payloads"
+    
+    This reverts commit 96958dedbbccb88d545356fed5950911f6160a4f, reversing
+    changes made to 8e03b6e98a094c8d1d54fba9489069f93ecd0cd9.
+
+ lib/msf/core/payload.rb                          | 39 ------------------------
+ lib/msf/ui/console/command_dispatcher/common.rb  | 16 ----------
+ lib/msf/ui/console/command_dispatcher/core.rb    | 19 ------------
+ lib/msf/ui/console/command_dispatcher/exploit.rb |  4 ---
+ lib/msf/ui/console/command_dispatcher/modules.rb | 26 ----------------
+ modules/encoders/cmd/base64.rb                   |  2 +-
+ 6 files changed, 1 insertion(+), 105 deletions(-)
+
+commit 4f9b9d5dac111982b4013ec5ae13759099810577
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 10 19:02:20 2026 +0000
+
+    Revert "Land #21088, Fix base64 encoder"
+    
+    This reverts commit 437f7387547cb6f310b09a62b59de5b3360dd718, reversing
+    changes made to e6ee6a7c94610e045fac6cddd5f5c391ea128c07.
+
+ modules/encoders/cmd/base64.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5092b2171753a9b983fc899f6ca0e497a84de4c8
+Merge: 04ff6f8767 73bc6ef118
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Mar 10 12:34:54 2026 -0500
+
+    Merge pull request #20885 from dledda-r7/feat/unix_bind_netcat_update
+    
+    Add support for short command execution in bind_netcat module
+
+ modules/payloads/singles/cmd/unix/bind_netcat.rb | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+
+commit 04ff6f8767d71170cafe1dcab10955f7d54d0dc5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 10 10:43:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 437f7387547cb6f310b09a62b59de5b3360dd718
+Merge: e6ee6a7c94 e341db58f7
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Mar 10 11:25:04 2026 +0100
+
+    Land #21088, Fix base64 encoder
+
+ modules/encoders/cmd/base64.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e341db58f780886aab482c13816dbde8fd61d9e3
+Author: jbx81-1337 <jbx81@protonmail.com>
+Date:   Tue Mar 10 10:18:07 2026 +0100
+
+    fix: default option for base64 encoder
+
+ modules/encoders/cmd/base64.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e6ee6a7c94610e045fac6cddd5f5c391ea128c07
+Merge: fef03d3bb7 4b363017ef
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 10 09:05:05 2026 +0100
+
+    Land #20961, adds service reporting to Wordpress mixin
+    
+    Update Wordpress Mixin to log services
+
+ lib/msf/core/exploit/remote/http/wordpress.rb      | 22 +++++++++++++
+ lib/msf/core/exploit/remote/http/wordpress/base.rb |  6 +++-
+ .../core/exploit/remote/http/wordpress/version.rb  |  2 ++
+ .../msf/core/exploit/http/wordpress/base_spec.rb   | 38 ++++++++++++++++++++++
+ .../core/exploit/http/wordpress/version_spec.rb    | 38 ++++++++++++++++++++++
+ 5 files changed, 105 insertions(+), 1 deletion(-)
