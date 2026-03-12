@@ -1,0 +1,24 @@
+commit 1ff23f106139e2842c7e152790cd31e3c73a29a6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Mar 11 15:46:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 31665e1b88434340bc9fbff7bfffbb0c17d4194f
+Merge: 8ab51cfafc 7dcec2e0cb
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Mar 11 16:36:35 2026 +0100
+
+    Land #20730, Allow toggling the SACL in LDAP queries
+    
+    # Release Notes
+    This update modifies the ldap_query module to skip querying the SACL (System Access Control List) on security descriptors by default. This behavior is now controlled by a new option, LDAP::QuerySacl. This change is necessary when using a non-privileged user to query security descriptors via LDAP; otherwise, querying the SACL will cause the entire query to be blocked, resulting in no security descriptors being returned.
+
+ documentation/modules/auxiliary/gather/ldap_query.md |  6 ++++++
+ lib/msf/core/exploit/remote/ldap/queries.rb          |  4 ++--
+ lib/msf/ui/tip.rb                                    |  3 ++-
+ modules/auxiliary/gather/ldap_query.rb               | 13 ++++++++++++-
+ 4 files changed, 22 insertions(+), 4 deletions(-)
