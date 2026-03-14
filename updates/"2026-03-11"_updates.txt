@@ -1,0 +1,110 @@
+commit fed897ae72b8ef5b53cdb7055817615acb2296a3
+Merge: 29d876e38c e369660d18
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 11:28:24 2026 +0000
+
+    Merge pull request #21074 from jeanmtr/pop3_login-doc
+    
+    Docs for pop3_login
+
+ .../modules/auxiliary/scanner/pop3/pop3_login.md   | 127 +++++++++++++++++++++
+ 1 file changed, 127 insertions(+)
+
+commit 29d876e38c55801e6413274fc6d6784f87b81c6c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Mar 13 10:10:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 66 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 63 insertions(+), 3 deletions(-)
+
+commit b3aa45fb09d322711f651ddd8e3a28b23e8208fb
+Merge: ee3d2da6e8 16b55848b4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Mar 13 11:00:43 2026 +0100
+
+    Land #20719, adds module for authenticated command injection in FreePBX filestore (CVE-2025-64328)
+    
+    Add authenticated RCE module for FreePBX filestore (CVE-2025-64328)
+
+ .../unix/http/freepbx_filestore_cmd_injection.md   | 215 +++++++++++++++++++++
+ .../{xorcom_complete_pbx.rb => complete_pbx.rb}    |   2 +-
+ lib/msf/core/exploit/remote/http/freepbx.rb        | 115 +++++++++++
+ lib/msf_autoload.rb                                |   2 +
+ .../xorcom_completepbx_diagnostics_file_read.rb    |   2 +-
+ .../http/xorcom_completepbx_file_disclosure.rb     |   2 +-
+ .../linux/http/xorcom_completepbx_scheduler.rb     |   2 +-
+ .../unix/http/freepbx_filestore_cmd_injection.rb   | 182 +++++++++++++++++
+ 8 files changed, 518 insertions(+), 4 deletions(-)
+
+commit ee3d2da6e86f4c1ce3e0c5334c82292d396c23f6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Mar 13 00:33:09 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 510ec29a634b7e4310115b47e19c99a249609e00
+Merge: fa75987326 9c7264b48f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 00:23:40 2026 +0000
+
+    Merge pull request #21046 from msutovsky-r7/exploit/beyondtrust/updates_description
+    
+    Updates description for BeyondTrust command injection
+
+ .../linux/http/beyondtrust_pra_rs_command_injection.rb         | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+commit fa7598732625fd4099b6652ee0f5589a0952d752
+Merge: efa1c8b1cd 2540a16062
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 00:13:27 2026 +0000
+
+    Merge pull request #21024 from Aaditya1273/fix-msfrpcd-json-rpc-ssl-check-21022
+    
+    Fix #21022: msfrpcd JSON-RPC SSL certificate check logic
+
+ msfrpcd | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit efa1c8b1cd5fd856549ca40ef1f91442d5e63911
+Merge: c882d91155 22b63ae79e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 00:10:00 2026 +0000
+
+    Merge pull request #21028 from SilentSobs/fix/reload-all-unknown-command
+    
+    Fix reload_all failing with unknown command reload
+
+ lib/msf/ui/console/command_dispatcher/modules.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c882d9115567be30b0f8acad54ee56e472b9e6ba
+Merge: 2bd9356044 bfbc425469
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 00:08:13 2026 +0000
+
+    Merge pull request #21025 from Hemang360/cookie-jar-doc-fix
+    
+    Fix HttpCookie integer conversion and cookie jar docs
+
+ .../How-to-Send-an-HTTP-Request-Using-HttpClient.md           | 11 +++++++----
+ lib/msf/core/exploit/remote/http/http_cookie.rb               |  2 +-
+ .../msf/core/exploit/remote/remote/http/http_cookie_spec.rb   |  9 ++++++++-
+ 3 files changed, 16 insertions(+), 6 deletions(-)
+
+commit 2bd9356044c408896f02099ba0d62a42054600d3
+Merge: 7a7db966c3 f09143998a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 13 00:07:29 2026 +0000
+
+    Merge pull request #21081 from Hemang360/fix-utf8-encoding
+    
+    Fix msfvenom UTF-8 encoding error
+
+ lib/msf/core/payload/windows/exec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
