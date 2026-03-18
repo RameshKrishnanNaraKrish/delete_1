@@ -1,0 +1,136 @@
+commit a1fa54e3d41668909f3214408de5b61109d3759a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 17 22:53:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 09bb0337d1bf93720c066127572d6721508cb59c
+Merge: 8b26a28c3e 01d88791d2
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Mar 17 18:41:42 2026 -0400
+
+    Merge pull request #20997 from Nayeraneru/OptTD
+    
+    Introduce OptTimedelta
+
+ lib/msf/core/exploit/remote/kerberos/client.rb     |  7 +--
+ lib/msf/core/exploit/remote/kerberos/clock_skew.rb | 46 ----------------
+ .../kerberos/service_authenticator/options.rb      |  7 +--
+ lib/msf/core/opt_timedelta.rb                      | 64 ++++++++++++++++++++++
+ lib/rex/proto/mssql/client.rb                      |  4 +-
+ .../core/exploit/remote/kerberos/client_spec.rb    |  7 +++
+ spec/lib/msf/core/opt_timedelta_spec.rb            | 30 ++++++++++
+ 7 files changed, 109 insertions(+), 56 deletions(-)
+
+commit 8b26a28c3ef38c532191ecb5fc9963148863abce
+Merge: bf13628b34 d47a41c732
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Mar 17 18:34:34 2026 -0400
+
+    Merge pull request #21139 from jheysel-r7/fix/ldap_esc_version_check
+    
+    Fix version check in ldap_esc_vulnerable_cert_finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 01d88791d2fa7fe18d7ed428ec374f308edc4324
+Author: Nayeraneru <nayera.shafeeq@gmail.com>
+Date:   Wed Mar 18 00:14:15 2026 +0200
+
+    Removed unnecessary code and module
+
+ lib/msf/core/exploit/remote/kerberos/clock_skew.rb | 46 ----------------------
+ .../kerberos/service_authenticator/options.rb      |  2 +-
+ lib/rex/proto/mssql/client.rb                      |  2 +-
+ 3 files changed, 2 insertions(+), 48 deletions(-)
+
+commit d47a41c73276a42a8bd287ddf5646045ae7ba6e0
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Mar 17 12:03:10 2026 -0700
+
+    Fix version check in ldap_esc_vulnerable_cert_finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit bf13628b3420788445393aabcacf9d591923a281
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 17 13:40:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 163 ++++++++++++++++--------------------------
+ 1 file changed, 63 insertions(+), 100 deletions(-)
+
+commit 789b29d4e7d268a0ca6655cc4d6c6689a4c4b695
+Merge: fed897ae72 3768efbacc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 17 13:31:04 2026 +0000
+
+    Merge pull request #21124 from adfoster-r7/improve-payload-size-generation-script
+    
+    Improve payload size generation script
+
+ lib/msf/core/payload.rb                            |  14 +-
+ lib/msf/core/payload/java.rb                       |   3 +
+ lib/msf/core/payload/java/reverse_http.rb          |   3 +
+ lib/msf/core/payload/python.rb                     |   2 +
+ lib/msf/core/payload/python/meterpreter_loader.rb  |   2 +
+ lib/msf/core/payload/windows/powershell.rb         |   2 +
+ lib/msf/util/payload_cached_size.rb                | 160 +++++-
+ .../payloads/singles/bsd/sparc/shell_bind_tcp.rb   |   2 +-
+ .../singles/bsd/sparc/shell_reverse_tcp.rb         |   2 +-
+ .../singles/cmd/mainframe/apf_privesc_jcl.rb       |   1 +
+ .../singles/cmd/mainframe/bind_shell_jcl.rb        |   1 +
+ .../singles/cmd/mainframe/reverse_shell_jcl.rb     |   1 +
+ modules/payloads/singles/cmd/unix/adduser.rb       |   2 +-
+ modules/payloads/singles/java/shell_reverse_tcp.rb |   2 +-
+ .../linux/aarch64/meterpreter_reverse_http.rb      |   1 -
+ .../linux/aarch64/meterpreter_reverse_https.rb     |   1 -
+ .../linux/armle/meterpreter_reverse_http.rb        |   1 -
+ .../linux/armle/meterpreter_reverse_https.rb       |   1 -
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |   1 -
+ .../linux/mips64/meterpreter_reverse_http.rb       |   1 -
+ .../linux/mips64/meterpreter_reverse_https.rb      |   1 -
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |   1 -
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |   1 -
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |   1 -
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |   1 -
+ .../linux/mipsle/meterpreter_reverse_http.rb       |   1 -
+ .../linux/mipsle/meterpreter_reverse_https.rb      |   1 -
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |   1 -
+ .../singles/linux/x64/meterpreter_reverse_http.rb  |   1 -
+ .../singles/linux/x64/meterpreter_reverse_https.rb |   1 -
+ .../singles/linux/x64/meterpreter_reverse_tcp.rb   |   1 -
+ .../singles/linux/x86/meterpreter_reverse_http.rb  |   1 -
+ .../singles/linux/x86/meterpreter_reverse_https.rb |   1 -
+ .../singles/linux/x86/meterpreter_reverse_tcp.rb   |   1 -
+ .../linux/zarch/meterpreter_reverse_http.rb        |   1 -
+ .../linux/zarch/meterpreter_reverse_https.rb       |   1 -
+ .../singles/linux/zarch/meterpreter_reverse_tcp.rb |   1 -
+ modules/payloads/singles/php/exec.rb               |   2 +-
+ modules/payloads/singles/python/exec.rb            |   2 +-
+ modules/payloads/singles/windows/aarch64/exec.rb   |   1 -
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |   2 +-
+ modules/payloads/stagers/java/bind_tcp.rb          |   2 +-
+ modules/payloads/stagers/java/reverse_tcp.rb       |   2 +-
+ modules/payloads/stagers/windows/reverse_http.rb   |   1 +
+ modules/payloads/stagers/windows/reverse_https.rb  |   1 +
+ .../payloads/stagers/windows/reverse_winhttp.rb    |   1 +
+ .../payloads/stagers/windows/reverse_winhttps.rb   |   1 +
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |   2 +-
+ .../payloads/stagers/windows/x64/reverse_http.rb   |   1 +
+ .../payloads/stagers/windows/x64/reverse_https.rb  |   1 +
+ .../stagers/windows/x64/reverse_winhttp.rb         |   1 +
+ .../stagers/windows/x64/reverse_winhttps.rb        |   1 +
+ spec/lib/msf/core/payload_spec.rb                  |  67 +++
+ spec/lib/msf/util/payload_cached_size_spec.rb      | 118 +++++
+ spec/modules/payloads_spec.rb                      | 583 +--------------------
+ .../examples/payload_cached_size_is_consistent.rb  |  41 +-
+ spec/support/shared/examples/payload_not_cached.rb |   4 +-
+ tools/modules/update_payload_cached_sizes.rb       | 122 ++++-
+ 58 files changed, 489 insertions(+), 687 deletions(-)
