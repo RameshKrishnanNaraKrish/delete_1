@@ -1,0 +1,21 @@
+commit b263ba78fa13e2802d73c602269c23ffa2f3d25b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Mar 18 23:56:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 5b5d1dbfaaaa506d9cf37e23bf089c1d7c31da41
+Merge: a1fa54e3d4 8ad5924bf1
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Mar 18 18:46:32 2026 -0500
+
+    Merge pull request #21076 from Chocapikk/avideo-encoder-getimage-cmd-injection
+    
+    Add AVideo Encoder getImage.php command injection (CVE-2026-29058)
+
+ .../http/avideo_encoder_getimage_cmd_injection.md  | 171 +++++++++++++++++++++
+ .../http/avideo_encoder_getimage_cmd_injection.rb  | 112 ++++++++++++++
+ 2 files changed, 283 insertions(+)
