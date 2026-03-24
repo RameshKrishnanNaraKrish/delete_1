@@ -1,0 +1,165 @@
+commit 061d193fc27c937e70bf990e11f52f5e4e507f71
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 23 20:29:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 81faae13ca109953ccb3d613f46ef9ee66465c5b
+Merge: f6bb859a7d f14b640de8
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Mar 23 13:18:34 2026 -0700
+
+    Merge pull request #21033 from Alpenlol/barracuda-esg-cve-2023-2868
+    
+    Add exploit for CVE-2023-2868 Barracuda ESG command injection
+
+ .../linux/smtp/barracuda_esg_tarfile_rce.md        | 113 +++++++++++++
+ .../linux/smtp/barracuda_esg_tarfile_rce.rb        | 176 +++++++++++++++++++++
+ 2 files changed, 289 insertions(+)
+
+commit f6bb859a7d29405cb2ba517ea04a911c138176cc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 23 19:50:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
+
+commit f14b640de8488ec2f70839d97c9d68a69e001e20
+Author: Curt Hyvarinen <5984478+Alpenlol@users.noreply.github.com>
+Date:   Mon Mar 23 12:40:48 2026 -0700
+
+    Fix rubocop spacing offenses in Author block
+
+ modules/exploits/linux/smtp/barracuda_esg_tarfile_rce.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit b89fb5aa62e23fab26bd75220e887e270959a4de
+Merge: a8e93d091e 7631b54c0f
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Mar 23 15:40:32 2026 -0400
+
+    Merge pull request #21049 from h00die/fix_persistence_directory
+    
+    better wriable_dir for windows persistence
+
+ lib/msf/core/exploit/local/persistence.rb                      |  4 ++--
+ modules/exploits/multi/persistence/burp_extension.rb           |  7 -------
+ .../windows/persistence/accessibility_features_debugger.rb     |  7 -------
+ modules/exploits/windows/persistence/assistive_technology.rb   |  9 +--------
+ modules/exploits/windows/persistence/image_exec_options.rb     |  9 +--------
+ modules/exploits/windows/persistence/registry_active_setup.rb  | 10 ++--------
+ modules/exploits/windows/persistence/registry_userinit.rb      |  9 +--------
+ modules/exploits/windows/persistence/service.rb                |  9 +--------
+ modules/exploits/windows/persistence/task_scheduler.rb         |  7 -------
+ 9 files changed, 8 insertions(+), 63 deletions(-)
+
+commit a8e93d091e478fa12799ff7d4c7c4a41beeeb39b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Mar 23 18:49:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++----------
+ 1 file changed, 51 insertions(+), 14 deletions(-)
+
+commit a863473046fc7f6149377ebe5ed09122bc7281f2
+Merge: d2a6526ce5 0c75717e21
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Mar 23 18:40:24 2026 +0000
+
+    Merge pull request #20980 from msutovsky-r7/fix/bump-payloads/2.0.243
+    
+    Updates metasploit-payloads to 2.0.242
+
+ Gemfile.lock                                                         | 4 ++--
+ LICENSE_GEMS                                                         | 2 +-
+ metasploit-framework.gemspec                                         | 2 +-
+ modules/payloads/singles/windows/encrypted_shell_reverse_tcp.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_http.rb         | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_https.rb        | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/encrypted_shell_reverse_tcp.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_http.rb     | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_https.rb    | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ modules/payloads/stagers/windows/encrypted_reverse_tcp.rb            | 2 +-
+ modules/payloads/stagers/windows/x64/encrypted_reverse_tcp.rb        | 2 +-
+ 19 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 5d7a154b197c85205ef181418c554fa6a3dd4118
+Author: Curt Hyvarinen <5984478+Alpenlol@users.noreply.github.com>
+Date:   Mon Mar 23 10:45:41 2026 -0700
+
+    Credit cfielding-r7 as original PoC author
+
+ modules/exploits/linux/smtp/barracuda_esg_tarfile_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d2a6526ce5b06e156085622a0f16c2c13650ae99
+Merge: dacc0a2939 5af9d70df4
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Mar 23 10:43:37 2026 -0400
+
+    Merge pull request #21167 from vatsalgargg/fix/typo-authentification-to-authentication
+    
+    fix: correct typo 'Authentification' to 'Authentication' in postgres and mssql files
+
+ lib/rex/proto/mssql/client.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dacc0a293990b4297244ac34176e082d7effbba9
+Merge: e836223760 d0551c397e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Mar 23 10:40:55 2026 -0400
+
+    Merge pull request #21166 from vatsalgargg/fix/typo-recieved-to-received
+    
+    fix: correct typo 'recieved' to 'received' in two files
+
+ lib/metasploit/framework/password_crackers/jtr/formatter.rb | 2 +-
+ lib/msf/core/exploit/smb/shadow_mitm_dispatcher.rb          | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 0c75717e218e11ea3504ddb10f659ced8f234b95
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Mar 23 15:22:00 2026 +0100
+
+    Fixes cached_size for payloads
+
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb              | 2 +-
+ modules/payloads/singles/windows/encrypted_shell_reverse_tcp.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_http.rb         | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_https.rb        | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_http.rb     | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_https.rb    | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ modules/payloads/stagers/windows/encrypted_reverse_tcp.rb            | 2 +-
+ 15 files changed, 15 insertions(+), 15 deletions(-)
+
+commit 5af9d70df48e2335676effa9f23ec41fc56c84a1
+Author: vatsalgargg <vatsalg80@gmail.com>
+Date:   Mon Mar 23 19:03:06 2026 +0530
+
+    revert: keep original API class names in message.rb
+
+ lib/postgres/postgres-pr/connection.rb | 10 +++++-----
+ lib/postgres/postgres-pr/message.rb    | 20 ++++++++++----------
+ 2 files changed, 15 insertions(+), 15 deletions(-)
