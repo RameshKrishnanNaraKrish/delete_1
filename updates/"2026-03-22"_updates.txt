@@ -1,0 +1,235 @@
+commit 50883dd7332b7e8d07b608826c1fbf0c83c9e1aa
+Merge: 77ecd1107f 86f65c3732
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Mar 24 14:16:32 2026 -0700
+
+    Merge pull request #21176 from zeroSteiner/fix/ci/setup-php/1
+    
+    Bump the setup-php version to 2.37.0
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit 86f65c3732113aeeed4ed56d17f3f6a74b2aa792
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Mar 24 15:20:26 2026 -0400
+
+    Bump the setup-php version
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit 77ecd1107f3c433e4f89af6008e36a9b55e242d8
+Merge: f02786ad9f 8f08b1f23a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 24 20:30:19 2026 +0000
+
+    Merge pull request #21173 from msutovsky-r7/fix/lib/exe/vbs-fileformat
+    
+    Fixes VBS payload format generating
+
+ lib/msf/util/exe/bsd.rb               | 1 +
+ lib/msf/util/exe/bsd/x64.rb           | 1 +
+ lib/msf/util/exe/bsd/x86.rb           | 1 +
+ lib/msf/util/exe/common.rb            | 1 +
+ lib/msf/util/exe/linux.rb             | 1 +
+ lib/msf/util/exe/linux/aarch64.rb     | 1 +
+ lib/msf/util/exe/linux/armbe.rb       | 1 +
+ lib/msf/util/exe/linux/armle.rb       | 1 +
+ lib/msf/util/exe/linux/common.rb      | 1 +
+ lib/msf/util/exe/linux/loongarch64.rb | 1 +
+ lib/msf/util/exe/linux/mips64.rb      | 1 +
+ lib/msf/util/exe/linux/mipsbe.rb      | 1 +
+ lib/msf/util/exe/linux/mipsle.rb      | 1 +
+ lib/msf/util/exe/linux/ppc.rb         | 1 +
+ lib/msf/util/exe/linux/ppc64.rb       | 1 +
+ lib/msf/util/exe/linux/ppce500v2.rb   | 1 +
+ lib/msf/util/exe/linux/riscv32le.rb   | 1 +
+ lib/msf/util/exe/linux/riscv64le.rb   | 1 +
+ lib/msf/util/exe/linux/x64.rb         | 1 +
+ lib/msf/util/exe/linux/x86.rb         | 1 +
+ lib/msf/util/exe/linux/zarch.rb       | 1 +
+ lib/msf/util/exe/osx.rb               | 1 +
+ lib/msf/util/exe/osx/aarch64.rb       | 1 +
+ lib/msf/util/exe/osx/app.rb           | 1 +
+ lib/msf/util/exe/osx/armle.rb         | 1 +
+ lib/msf/util/exe/osx/common.rb        | 1 +
+ lib/msf/util/exe/osx/ppc.rb           | 1 +
+ lib/msf/util/exe/osx/x64.rb           | 1 +
+ lib/msf/util/exe/osx/x86.rb           | 1 +
+ lib/msf/util/exe/solaris.rb           | 1 +
+ lib/msf/util/exe/solaris/x86.rb       | 1 +
+ lib/msf/util/exe/windows.rb           | 1 +
+ lib/msf/util/exe/windows/aarch64.rb   | 1 +
+ lib/msf/util/exe/windows/common.rb    | 1 +
+ lib/msf/util/exe/windows/x64.rb       | 1 +
+ lib/msf/util/exe/windows/x86.rb       | 1 +
+ 36 files changed, 36 insertions(+)
+
+commit f02786ad9f1320285a240beccb37531beba85d6d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 24 19:49:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 7ea60dd7d19429c6fb6f97726c42adb3d9cadc6c
+Merge: bf1a12301b 1f8dd57f79
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Mar 24 14:40:27 2026 -0500
+
+    Merge pull request #20478 from futileskills/escpos-injector-module
+    
+    Create escpos_tcp_command_injector.rb
+
+ .../admin/printer/escpos_tcp_command_injector.md   | 115 +++++++++++++++++++++
+ .../admin/printer/escpos_tcp_command_injector.rb   | 114 ++++++++++++++++++++
+ 2 files changed, 229 insertions(+)
+
+commit bf1a12301b4aafe5504c109c957cd74e39fe88c5
+Merge: 7b0275c42e ab07a71648
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Mar 24 18:12:45 2026 +0100
+
+    Merge pull request #20967 from jheysel-r7/fix/lib/smb_relay_ruby_client_support
+    
+    Add support for Ruby SMB Client and `smbclient` to be compatible with Msf::Exploit::Remote::SMB::RelayServer
+
+ Gemfile.lock                                       |  4 +-
+ .../remote/smb/client/kerberos_authentication.rb   |  1 +
+ .../exploit/remote/smb/relay/ntlm/server_client.rb | 91 ++++++++++++++++++----
+ lib/rex/proto/gss/spnego_neg_token_init.rb         | 42 ++++++++++
+ metasploit-framework.gemspec                       |  2 +-
+ .../rex/proto/gss/spnego_neg_token_init_spec.rb    | 15 ++++
+ 6 files changed, 135 insertions(+), 20 deletions(-)
+
+commit 8f08b1f23a7346d1b8b3dd581e3e3f0946229432
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 24 17:47:40 2026 +0100
+
+    Adds binary encoding to all files created in exe split
+
+ lib/msf/util/exe/bsd.rb     | 1 +
+ lib/msf/util/exe/common.rb  | 1 +
+ lib/msf/util/exe/linux.rb   | 1 +
+ lib/msf/util/exe/osx.rb     | 1 +
+ lib/msf/util/exe/solaris.rb | 1 +
+ lib/msf/util/exe/windows.rb | 1 +
+ 6 files changed, 6 insertions(+)
+
+commit ab07a716483b52a856078f2f308f1c22ca74a2d3
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Mar 24 08:25:06 2026 -0700
+
+    Gemfile bump
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 7170c778a8216740b74ff42bfb071b2f150d8106
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 24 16:13:05 2026 +0100
+
+    Prepends binary coding to all platform-specific files for payload generating
+
+ lib/msf/util/exe/bsd/x64.rb           | 1 +
+ lib/msf/util/exe/bsd/x86.rb           | 1 +
+ lib/msf/util/exe/linux/aarch64.rb     | 1 +
+ lib/msf/util/exe/linux/armbe.rb       | 1 +
+ lib/msf/util/exe/linux/armle.rb       | 1 +
+ lib/msf/util/exe/linux/common.rb      | 1 +
+ lib/msf/util/exe/linux/loongarch64.rb | 1 +
+ lib/msf/util/exe/linux/mips64.rb      | 1 +
+ lib/msf/util/exe/linux/mipsbe.rb      | 1 +
+ lib/msf/util/exe/linux/mipsle.rb      | 1 +
+ lib/msf/util/exe/linux/ppc.rb         | 1 +
+ lib/msf/util/exe/linux/ppc64.rb       | 1 +
+ lib/msf/util/exe/linux/ppce500v2.rb   | 1 +
+ lib/msf/util/exe/linux/riscv32le.rb   | 1 +
+ lib/msf/util/exe/linux/riscv64le.rb   | 1 +
+ lib/msf/util/exe/linux/x64.rb         | 1 +
+ lib/msf/util/exe/linux/x86.rb         | 1 +
+ lib/msf/util/exe/linux/zarch.rb       | 1 +
+ lib/msf/util/exe/osx/aarch64.rb       | 1 +
+ lib/msf/util/exe/osx/app.rb           | 1 +
+ lib/msf/util/exe/osx/armle.rb         | 1 +
+ lib/msf/util/exe/osx/common.rb        | 1 +
+ lib/msf/util/exe/osx/ppc.rb           | 1 +
+ lib/msf/util/exe/osx/x64.rb           | 1 +
+ lib/msf/util/exe/osx/x86.rb           | 1 +
+ lib/msf/util/exe/solaris/x86.rb       | 1 +
+ lib/msf/util/exe/windows/aarch64.rb   | 1 +
+ lib/msf/util/exe/windows/common.rb    | 1 +
+ lib/msf/util/exe/windows/x64.rb       | 1 +
+ lib/msf/util/exe/windows/x86.rb       | 5 +++--
+ 30 files changed, 32 insertions(+), 2 deletions(-)
+
+commit 7b0275c42e07243ffbe1635f6be9284faa1c5dcf
+Merge: 3785eedcf2 b18d271018
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 24 14:15:21 2026 +0000
+
+    Merge pull request #21171 from cgranleese-r7/add-option-to-overide-verbose-on-scanners
+    
+    Adds options to report summary to overide verbose output
+
+ lib/msf/core/auxiliary/report_summary.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 3785eedcf2be1fa1c631973c173276cfbd5e52f1
+Merge: f75541bd31 04e0ca642d
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Mar 24 10:09:08 2026 -0400
+
+    Merge pull request #21169 from SaiSakthidar/fix/macos-mettle-macho-detection
+    
+    Fix binary-safe Mach-O detection
+
+ lib/msf/util/exe/common.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit f75541bd31feb5afde117edb880541c7ae9d6f0d
+Merge: 061d193fc2 f9976dd8a2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 24 09:31:20 2026 +0000
+
+    Merge pull request #21148 from adfoster-r7/add-global-datastore-option-configuration
+    
+    Add global datastore option configuration
+
+ lib/msf/base/sessions/command_shell.rb             |  2 +-
+ lib/msf/core/data_store.rb                         | 42 ++++++-----
+ lib/msf/core/framework.rb                          |  1 +
+ lib/msf/core/opt_session_tlv_logging.rb            | 40 ++++++++++
+ lib/msf/core/option_container.rb                   |  1 +
+ lib/msf/ui/console/command_dispatcher/developer.rb | 14 ++--
+ lib/msf/ui/console/command_dispatcher/modules.rb   | 27 ++++---
+ lib/msf/ui/console/command_dispatcher/session.rb   |  2 +-
+ spec/lib/msf/core/data_store_spec.rb               | 88 +++++++++++++++++++++-
+ .../lib/msf/core/data_store_with_fallbacks_spec.rb |  8 +-
+ spec/lib/msf/core/framework_spec.rb                | 12 +++
+ .../msf/ui/console/command_dispatcher/core_spec.rb | 12 +++
+ 12 files changed, 201 insertions(+), 48 deletions(-)
+
+commit 8042f96fdeb6dd29fbd6bf2e8e943c7e94f2ce16
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 24 09:48:38 2026 +0100
+
+    Fixes VBS payload format generating
+
+ lib/msf/util/exe/windows/x86.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 45884fa0908146bd0f27b358ad3e100a1618fa37
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Mar 23 23:10:29 2026 -0700
+
+    Removed method parse override
+
+ .../exploit/remote/smb/relay/ntlm/server_client.rb | 22 ++++++++++++++++++----
+ lib/rex/proto/gss/spnego_neg_token_init.rb         |  8 --------
+ lib/rex/proto/gss/spnego_neg_token_targ.rb         |  8 --------
+ 3 files changed, 18 insertions(+), 20 deletions(-)
