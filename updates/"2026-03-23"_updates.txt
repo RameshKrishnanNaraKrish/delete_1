@@ -1,0 +1,43 @@
+commit 0c060b0265c72cad09ed8ddcad0ac56da8d66d5d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Mar 25 23:17:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+commit b3f985dd72b8c5d35bb33d955a47e84bcf92979b
+Merge: fa3c5cffdb b32c4a1dd9
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Mar 25 23:06:49 2026 +0000
+
+    Merge pull request #21178 from zeroSteiner/feat/mod/att&ck/1
+    
+    Add MITRE ATT&CK tags for two modules
+
+ modules/auxiliary/admin/ldap/ad_cs_cert_template.rb | 4 +++-
+ modules/auxiliary/scanner/ntp/timeroast.rb          | 3 ++-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit fa3c5cffdbe2ce79fd330718e72f40bc381648de
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Mar 25 13:48:24 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 0976f880580131d26828589058d315032f3a786f
+Merge: 50883dd733 1f55aa724a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Mar 25 14:39:01 2026 +0100
+
+    Land #20835, adds module unauthenticated command injection Eclipse Che machine-exec (CVE-2025-12548)
+    
+    Add Eclipse Che machine-exec unauthenticated RCE (CVE-2025-12548)
+
+ .../linux/http/eclipse_che_machine_exec_rce.md     | 254 +++++++++++++++++++
+ .../linux/http/eclipse_che_machine_exec_rce.rb     | 270 +++++++++++++++++++++
+ 2 files changed, 524 insertions(+)
