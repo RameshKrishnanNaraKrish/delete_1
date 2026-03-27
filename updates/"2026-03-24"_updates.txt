@@ -1,0 +1,87 @@
+commit eefd7c89ab8656ec5b0c4910c55d24ccdf90d4fb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Mar 26 14:40:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+
+commit 8107adf1a7903a5b8475d2ace554cf068baa9b1a
+Merge: 6562cb6b2d 8922255cc9
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Mar 26 14:31:36 2026 +0000
+
+    Merge pull request #21090 from g0tmi1k/report_service
+    
+    Add report_service()
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb   | 28 ++++++++++++++++++----
+ .../exploits/unix/irc/unreal_ircd_3281_backdoor.rb | 19 +++++++++++++--
+ modules/exploits/unix/webapp/twiki_history.rb      | 26 +++++++++++++++++++-
+ modules/exploits/unix/webapp/twiki_search.rb       | 26 +++++++++++++++++++-
+ 4 files changed, 91 insertions(+), 8 deletions(-)
+
+commit 6562cb6b2d898916e2d98e8fbc75dff39f3c9003
+Merge: de67e4341a df6c144598
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Mar 26 13:33:42 2026 +0000
+
+    Merge pull request #21175 from adfoster-r7/add-additional-markdown-notes
+    
+    Add additional markdown notes
+
+ .github/copilot-instructions.md |   3 ++
+ .kiro/steering/project.md       |  12 +++++
+ AGENTS.md                       | 112 ++++++++++++++++++++++++++++++++++++++++
+ CONTRIBUTING.md                 |   2 +-
+ 4 files changed, 128 insertions(+), 1 deletion(-)
+
+commit de67e4341a39a5b24770de224e0f9e4d3bbc67d6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Mar 26 12:41:59 2026 +0000
+
+    Bump version of framework to 6.4.125
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 266b87bfaadfbea9358e17d4b8a29ffff093ad6b
+Merge: cc64746df5 80c5c32048
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Mar 26 11:49:13 2026 +0000
+
+    Merge pull request #21174 from adfoster-r7/fix-command-parsing-option-from-msfconsole-cli
+    
+    Fix command parsing option from msfconsole cli
+
+ lib/metasploit/framework/parsed_options/console.rb |  42 ++++-
+ .../framework/parsed_options/console_spec.rb       | 177 +++++++++++++++++++++
+ 2 files changed, 218 insertions(+), 1 deletion(-)
+
+commit cc64746df5c5eee705ef7f28c809b2e24e4b7526
+Merge: 0c060b0265 1faa27f7e6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Mar 26 11:45:02 2026 +0000
+
+    Merge pull request #21179 from adfoster-r7/fix-encoding-issues-in-files
+    
+    Fix encoding issues in files
+
+ .github/workflows/lint.yml                         |  4 ++
+ data/logos/bofloader.txt                           | 11 +++++
+ lib/msf/core/exploit/format/php_payload_png.rb     |  8 ++--
+ lib/msf/core/exploit/remote/gdb.rb                 |  2 +-
+ lib/msf/core/exploit/remote/http/gitlab/helpers.rb |  2 -
+ .../windows/x64/reflective_pe_loader_x64.rb        |  2 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   |  2 +-
+ .../ui/console/command_dispatcher/bofloader.rb     | 13 +-----
+ lib/rex/proto/x11/window.rb                        |  6 +--
+ spec/lib/msf/core/modules/metadata/search_spec.rb  | 10 ++---
+ .../rex/parser/group_policy_preferences_spec.rb    |  2 -
+ .../rex/proto/kerberos/model/etype_info2_spec.rb   |  7 ++-
+ .../generate_mitre_attack_technique_constants.rb   |  6 ++-
+ tools/dev/verify_encoding.rb                       | 52 ++++++++++++++++++++++
+ 14 files changed, 89 insertions(+), 38 deletions(-)
