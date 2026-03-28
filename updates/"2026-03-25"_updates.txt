@@ -1,0 +1,119 @@
+commit 042cd310a0b55c3e0ae32b8fecb14a0e486f9d21
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Mar 27 16:47:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 62 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 60 insertions(+), 2 deletions(-)
+
+commit 20bb912515185758410b24217b11ffd18ed70816
+Merge: 2162a9df0b 17161c42e2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Mar 27 16:38:03 2026 +0000
+
+    Merge pull request #21023 from g0tmi1k/os_cmd_exec
+    
+    Add: exploits/multi/http/os_cmd_exec
+
+ .../modules/exploit/multi/http/os_cmd_exec.md      | 266 +++++++++++++++++++++
+ modules/exploits/multi/http/os_cmd_exec.rb         | 151 ++++++++++++
+ modules/exploits/unix/webapp/php_eval.rb           |  34 ++-
+ modules/exploits/unix/webapp/php_include.rb        | 108 +++++----
+ 4 files changed, 496 insertions(+), 63 deletions(-)
+
+commit 2162a9df0b4d47e0db09413ed1b84455ede0fa70
+Merge: 7770bd4475 ba51260609
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 11:52:21 2026 +0000
+
+    Merge pull request #21145 from Nayeraneru/docs/msf-auxiliary-auth_brute
+    
+    Enhance method documentation in auth_brute.rb
+
+ lib/msf/core/auxiliary/auth_brute.rb | 165 ++++++++++++++++++++++++++++++-----
+ 1 file changed, 144 insertions(+), 21 deletions(-)
+
+commit 7770bd4475eda5078da2759e374ab6ab63665823
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Mar 27 11:32:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 971cb93944de8424ee8ebbd0c431d9dc66fc0d27
+Merge: 655e21af7b 51451cd58d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 11:23:35 2026 +0000
+
+    Merge pull request #21097 from g0tmi1k/ftp
+    
+    auxiliary/scanner/ftp/anonymous: Add report_service()
+
+ modules/auxiliary/scanner/ftp/anonymous.rb         | 8 ++++++++
+ modules/exploits/unix/ftp/proftpd_133c_backdoor.rb | 2 +-
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb   | 2 +-
+ 3 files changed, 10 insertions(+), 2 deletions(-)
+
+commit 655e21af7b1b49423eb0bbdd9ab3ed527da12161
+Merge: ab4f24db5d bad8ddc605
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 11:07:02 2026 +0000
+
+    Merge pull request #21150 from Nayeraneru/docs/msf-core-payload-adapter-fetch.rb
+    
+    Enhance documentation for fetch adapter methods
+
+ lib/msf/core/payload/adapter/fetch.rb | 148 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 146 insertions(+), 2 deletions(-)
+
+commit ab4f24db5dfe2723ced2c4af8f64ff9a4f31f2d9
+Merge: e089cf28a4 6326f14768
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 11:02:43 2026 +0000
+
+    Merge pull request #21149 from Adithyadspawar/add-auxiliary-scanner-docs
+    
+    Add documentation for auxiliary scanner modules
+
+ .../auxiliary/scanner/ftp/bison_ftp_traversal.md   | 83 ++++++++++++++++++++++
+ .../scanner/http/apache_activemq_traversal.md      | 55 ++++++++++++++
+ .../auxiliary/scanner/http/coldfusion_version.md   | 57 +++++++++++++++
+ .../scanner/http/drupal_views_user_enum.md         | 54 ++++++++++++++
+ .../scanner/http/elasticsearch_traversal.md        | 55 ++++++++++++++
+ 5 files changed, 304 insertions(+)
+
+commit ba51260609afb3c298c9ec4376506cf12c100529
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 11:00:40 2026 +0000
+
+    Adds missing #
+
+ lib/msf/core/auxiliary/auth_brute.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e089cf28a4456d5ccb2eff34788a3f86d7b656d6
+Merge: 8c98721044 7aaaa6e12d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 10:53:43 2026 +0000
+
+    Merge pull request #21144 from Nayeraneru/docs/msf-auxiliary-web-http-yard
+    
+    Enhance documentation for HTTP module methods
+
+ lib/msf/core/auxiliary/web/http.rb | 125 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 124 insertions(+), 1 deletion(-)
+
+commit 8c98721044bc6e1e17d27831da9842a011afe82c
+Merge: eefd7c89ab 316c2868a5
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Mar 27 10:05:44 2026 +0000
+
+    Merge pull request #21185 from adfoster-r7/additional-agents-md-file-edits
+    
+    Additional agents md file edits
+
+ AGENTS.md | 22 ++++++++++++++++------
+ 1 file changed, 16 insertions(+), 6 deletions(-)
