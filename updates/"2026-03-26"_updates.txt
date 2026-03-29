@@ -1,0 +1,12 @@
+commit 15f84bc2163cdfca0126753f5822541ce3b31dc8
+Merge: 042cd310a0 e76c21d0db
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Sat Mar 28 13:22:39 2026 +0000
+
+    Merge pull request #21073 from Hemang360/fix-duplicate-job
+    
+    Fix duplicate handler jobs caused by stop_handler on repeated run
+
+ lib/msf/core/handler/reverse_http.rb           | 10 ++++++--
+ spec/lib/msf/core/handler/reverse_http_spec.rb | 34 ++++++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 2 deletions(-)
