@@ -1,0 +1,288 @@
+commit 24622613d28b10e8aab8616c0d42398b6f9f701b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 19:58:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit 839fc52011022896362e6f43610c463632fb215f
+Merge: 54afd312a8 320effe9a1
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Mar 31 15:49:09 2026 -0400
+
+    Merge pull request #21004 from EclipseAditya/fix/20899-registry-trailing-backslash
+    
+    Fix trailing backslash in shell registry operations
+
+ lib/msf/core/post/windows/registry.rb              |  5 +-
+ modules/exploits/windows/persistence/registry.rb   |  2 +-
+ .../windows/persistence/registry_active_setup.rb   |  2 +-
+ .../exploits/windows/persistence/wsl/registry.rb   |  2 +-
+ .../windows/gather/credentials/domain_hashdump.rb  |  2 +-
+ .../windows/gather/credentials/enum_picasa_pwds.rb |  8 +-
+ modules/post/windows/gather/credentials/gpp.rb     |  8 +-
+ modules/post/windows/gather/credentials/idm.rb     |  2 +-
+ modules/post/windows/gather/credentials/imvu.rb    |  6 +-
+ modules/post/windows/gather/credentials/nimbuzz.rb |  6 +-
+ modules/post/windows/gather/outlook.rb             |  2 +-
+ scripts/meterpreter/gettelnet.rb                   |  2 +-
+ spec/lib/msf/core/post/windows/registry_spec.rb    | 91 ++++++++++++++++++++++
+ 13 files changed, 116 insertions(+), 22 deletions(-)
+
+commit 54afd312a8b3831c95251d03941856db0c870424
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 16:18:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 80 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 80 insertions(+)
+
+commit 09a59af7895149de224d6235cce8a8c5d84d1495
+Merge: 8a6dd99db6 2a1ebdb996
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Mar 31 18:09:30 2026 +0200
+
+    Merge pull request #21069 from Chocapikk/add-module-freescout-htaccess-rce
+
+ .../exploit/multi/http/freescout_htaccess_rce.md   | 354 +++++++++++++++++++++
+ .../exploits/multi/http/freescout_htaccess_rce.rb  | 268 ++++++++++++++++
+ 2 files changed, 622 insertions(+)
+
+commit 8a6dd99db6af066fa36c1bef75b324af208ec281
+Merge: 95f0ea92f0 600a07d1dd
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Mar 31 11:06:51 2026 -0400
+
+    Merge pull request #21209 from dineshg0pal/fix/small-typo-fixes
+    
+    Fix: minor typos in Pivoting-in-Metasploit.md
+
+ docs/metasploit-framework.wiki/Pivoting-in-Metasploit.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 600a07d1dd421e6e48b3679a6aba837b2f476c5e
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Tue Mar 31 20:04:13 2026 +0530
+
+    Update docs/metasploit-framework.wiki/Pivoting-in-Metasploit.md
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ docs/metasploit-framework.wiki/Pivoting-in-Metasploit.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6554aa6416c4a891173d42dd642057307fe0e2f5
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Tue Mar 31 19:24:15 2026 +0530
+
+    fix: typo mistake "UPD" changed to "UDP"
+    
+    At the file "Pivoting-in-Metasploit.md" -----> typo mistake of "UPD" changed to correct "UDP"
+
+ docs/metasploit-framework.wiki/Pivoting-in-Metasploit.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7186a16647b442f2fa20c252f21d6a3d78e749f5
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Tue Mar 31 19:20:13 2026 +0530
+
+    fix: removing duplicate "final"
+    
+    At the "metasploit-framework/docs/metasploit-framework/Pivoting-in-Metasploit.md" --------> At the topic "proxychain-ng setup" ---> duplicate "final" word is removed
+
+ docs/metasploit-framework.wiki/Pivoting-in-Metasploit.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 95f0ea92f0dcb1b29a280a983a42f18d76657ab4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 13:41:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 6f770d0288ac6a01ed06c393c77535306f6c5703
+Merge: ad7a513407 3846b087ad
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Mar 31 14:32:46 2026 +0100
+
+    Merge pull request #21208 from adfoster-r7/update-report-note-calls
+    
+    Fix deprecation notices when reporting notes
+
+ modules/auxiliary/admin/oracle/oraenum.rb          | 44 +++++++++++-----------
+ .../admin/scada/modicon_password_recovery.rb       |  2 +-
+ .../auxiliary/scanner/misc/ib_service_mgr_info.rb  |  4 +-
+ .../auxiliary/scanner/oracle/isqlplus_sidbrute.rb  |  2 +-
+ .../gather/credentials/credential_collector.rb     |  4 +-
+ 5 files changed, 28 insertions(+), 28 deletions(-)
+
+commit ad7a513407b46feb2d8eb2086a89dfbba106c00e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 13:17:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 50 +++----------------------------------------
+ 1 file changed, 3 insertions(+), 47 deletions(-)
+
+commit a79c21535da956bb9722fa031e510371304d6358
+Merge: ba059417a3 d2860254eb
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 31 15:09:04 2026 +0200
+
+    Land #20999, removes older persistence module
+    
+    Remove obsolete windows/local/persistence in favor of windows/persistence/registry
+
+ modules/exploits/windows/local/persistence.rb    | 334 -----------------------
+ modules/exploits/windows/persistence/registry.rb |   1 +
+ 2 files changed, 1 insertion(+), 334 deletions(-)
+
+commit ba059417a39abebb6e2c3ee175f0db1f4c4539dc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 12:57:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 6d4b268f9fa65055e818bf8291af9565729f5f04
+Merge: e5e18383a2 d12e3945fe
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Mar 31 14:47:44 2026 +0200
+
+    Land #21029, adds module for Grav CMS (CVE-2025-50286)
+    
+    Adds exploit module for Grav CMS (CVE-2025-50286)
+
+ ...grav_admin_direct_install_rce_cve_2025_50286.md | 132 +++++++++
+ ...grav_admin_direct_install_rce_cve_2025_50286.rb | 310 +++++++++++++++++++++
+ 2 files changed, 442 insertions(+)
+
+commit e5e18383a204bda610e70d72824e27bbcc32615e
+Merge: 6fe38a377c d3a1bdaa88
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Mar 31 13:03:56 2026 +0100
+
+    Merge pull request #21187 from Devansh7006/patch-1
+    
+    Improve HTTP PUT module documentation
+
+ .../modules/auxiliary/scanner/http/http_put.md     | 65 ++++++++++++++--------
+ 1 file changed, 41 insertions(+), 24 deletions(-)
+
+commit 6fe38a377c03bf37754f5037c71ba0e0efd5fdf2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 11:44:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3846b087ad5c19da119d5319131a8adf721788f1
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 31 12:39:21 2026 +0100
+
+    Update report note calls
+
+ modules/auxiliary/admin/oracle/oraenum.rb          | 44 +++++++++++-----------
+ .../admin/scada/modicon_password_recovery.rb       |  2 +-
+ .../auxiliary/scanner/misc/ib_service_mgr_info.rb  |  4 +-
+ .../auxiliary/scanner/oracle/isqlplus_sidbrute.rb  |  2 +-
+ .../gather/credentials/credential_collector.rb     |  4 +-
+ 5 files changed, 28 insertions(+), 28 deletions(-)
+
+commit 80d01cd0c108ab6fbb562bbdbe787dc49823633b
+Merge: b41522b3f7 1c93bb4848
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 31 12:35:50 2026 +0100
+
+    Merge pull request #21207 from zeroSteiner/fix/mod/enum-protections/report-hash
+    
+    Fix a deprecation notice when reporting notes
+
+ modules/post/linux/gather/enum_protections.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit b41522b3f70410c3030d08c720559a2ed03ed578
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Mar 31 11:08:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b24b23fcbfc306059b0e04251a9fae547cf4c5ca
+Merge: 55152da83a c0a9794d7f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Mar 31 12:00:36 2026 +0100
+
+    Merge pull request #21138 from g0tmi1k/rhosts
+    
+    [Bug Fix] Auxiliary: Check if module is meant to have rhosts
+
+ lib/msf/ui/console/command_dispatcher/auxiliary.rb |   4 +-
+ .../auxiliary/scanner/oracle/isqlplus_sidbrute.rb  |   2 +-
+ .../console/command_dispatcher/auxiliary_spec.rb   | 134 ++++++++++++++++++++-
+ 3 files changed, 133 insertions(+), 7 deletions(-)
+
+commit 55152da83acd030976ba8d90ff40e0ca9e3cfac0
+Merge: 71d4faa26c b9666f5f0e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Mar 31 11:40:24 2026 +0100
+
+    Merge pull request #21186 from Devansh7006/add-wordpress-pingback-doc
+    
+    Add documentation for wordpress_pingback_access module
+
+ .../scanner/http/wordpress_pingback_access.md      | 44 ++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit c0a9794d7f075d692a429d746bf48cb9a4909e5a
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 31 11:35:34 2026 +0100
+
+    Update tests and module that needed the rhost option set
+
+ .../auxiliary/scanner/oracle/isqlplus_sidbrute.rb  |   2 +-
+ .../console/command_dispatcher/auxiliary_spec.rb   | 134 ++++++++++++++++++++-
+ 2 files changed, 130 insertions(+), 6 deletions(-)
+
+commit b9666f5f0ef7304b08026e9779a07dac64acac04
+Author: Devansh7006 <devanshgoyal1402@gmail.com>
+Date:   Tue Mar 31 12:40:19 2026 +0530
+
+    Improve formatting and clarity of WordPress pingback module
+    
+    Reformatted the verification steps and options for clarity. Removed redundant lines and added example usage.
+
+ .../scanner/http/wordpress_pingback_access.md      | 42 +++++++---------------
+ 1 file changed, 13 insertions(+), 29 deletions(-)
+
+commit d3a1bdaa88e8fedd91df6078f5b53b8389741c9d
+Author: Devansh7006 <devanshgoyal1402@gmail.com>
+Date:   Tue Mar 31 12:28:17 2026 +0530
+
+    Fix HTTP PUT module documentation formatting and structure
+    
+    Updated example usage and added details for the PUT action.
+
+ .../modules/auxiliary/scanner/http/http_put.md     | 38 +++++++++++++++-------
+ 1 file changed, 26 insertions(+), 12 deletions(-)
+
+commit 24ee2a9ce5ff1a4c2667c9ca5a436619e996e4e1
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Mar 17 10:35:39 2026 +0000
+
+    Auxiliary: Check if module is meant to have rhosts
+
+ lib/msf/ui/console/command_dispatcher/auxiliary.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
