@@ -1,0 +1,236 @@
+commit 0503bbd8b7b660401ccc636fe8e5df565bc81d8f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 1 21:05:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8786dab27ae7d40b444f663010cc430ade9e280e
+Merge: 6890d8d1de 63e54a9291
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 1 16:56:05 2026 -0400
+
+    Merge pull request #21218 from adfoster-r7/fix-crash-with-frozen-string-literals
+    
+    Fix crash with frozen string literals
+
+ lib/msf/core/author.rb                                         | 3 +--
+ modules/auxiliary/scanner/misc/cups_browsed_info_disclosure.rb | 2 ++
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 63e54a92914a23a8fa4fb4353cf510300b9d5727
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 1 20:34:46 2026 +0100
+
+    Fix crash with frozen string literals
+
+ lib/msf/core/author.rb                                         | 3 +--
+ modules/auxiliary/scanner/misc/cups_browsed_info_disclosure.rb | 2 ++
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 6890d8d1dec7fa91b61ef657f402b420b4671b7f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 1 19:18:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit 21fbe713ef2ca07699ca428207e374f39e07fea0
+Merge: 1d41776cf8 acefa87790
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 1 20:03:59 2026 +0100
+
+    Merge pull request #21214 from adfoster-r7/add-additional-validation-to-db-import
+    
+    Add additional validation to db_import
+
+ .../core/db_manager/import/marshal_validator.rb    | 219 +++++++++++++++++++++
+ .../core/db_manager/import/metasploit_framework.rb |  28 ++-
+ lib/rex/parser/burp_session_document.rb            |   2 +-
+ .../db_manager/import/marshal_validator_spec.rb    | 208 +++++++++++++++++++
+ 4 files changed, 453 insertions(+), 4 deletions(-)
+
+commit 1d41776cf874d67e3c53b9b9d1730d4cbe94c5c7
+Merge: 653c92254b 6a1c6437b9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 1 14:59:36 2026 -0400
+
+    Merge pull request #21032 from Nayeraneru/UserInitMprLogon
+    
+    windows persistence userinit_mpr_logon
+
+ .../persistence/userinit_mpr_logon_script.md       | 237 +++++++++++++++++++++
+ .../persistence/userinit_mpr_logon_script.rb       |  94 ++++++++
+ 2 files changed, 331 insertions(+)
+
+commit 653c92254bc4adea06b949d3a59184e09495aacd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 1 18:43:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 20114 +++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 18803 insertions(+), 1311 deletions(-)
+
+commit 3f757d9880f02534cdfd8d45e13f532dcf3a4c3e
+Merge: 34c7a18ef4 1f1ca87753
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 1 14:34:36 2026 -0400
+
+    Merge pull request #21172 from bwatters-r7/feature/x86_windows_fetch
+    
+    Add HTTP and HTTPS fetch payloads for Windows x86
+
+ lib/msf/core/payload/adapter/fetch.rb              |   1 -
+ .../core/payload/adapter/fetch/windows_options.rb  |   2 +-
+ modules/payloads/adapters/cmd/windows/http/x64.rb  |   3 +-
+ modules/payloads/adapters/cmd/windows/http/x86.rb  |  31 ++++
+ modules/payloads/adapters/cmd/windows/https/x64.rb |   7 +
+ modules/payloads/adapters/cmd/windows/https/x86.rb |  32 ++++
+ modules/payloads/adapters/cmd/windows/smb/x64.rb   |   2 +-
+ modules/payloads/adapters/cmd/windows/tftp/x64.rb  |   6 +
+ .../payloads/adapters/cmd/windows/http/x64_spec.rb | 182 +++++++++++++++++++++
+ .../payloads/adapters/cmd/windows/http/x86_spec.rb | 182 +++++++++++++++++++++
+ .../adapters/cmd/windows/https/x64_spec.rb         | 153 +++++++++++++++++
+ .../adapters/cmd/windows/https/x86_spec.rb         | 153 +++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  16 ++
+ 13 files changed, 765 insertions(+), 5 deletions(-)
+
+commit e88bc5d621dde54f22c896ff18e66d3983b1ece0
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Mar 31 11:39:58 2026 -0400
+
+    Update payload cached sizes
+
+ modules/payloads/singles/windows/x64/encrypted_shell_reverse_tcp.rb | 2 +-
+ modules/payloads/stagers/windows/x64/encrypted_reverse_tcp.rb       | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit cdb01c692f160782d1ee8bdaa6f09a5ce819bef2
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Mar 30 16:42:01 2026 -0400
+
+    Add tests
+
+ .../rex/proto/proxy/socks5/server_client_spec.rb   | 134 +++++++++++++++++++++
+ spec/lib/rex/proto/proxy/socks5/server_spec.rb     |  64 ++++++++++
+ 2 files changed, 198 insertions(+)
+
+commit 8083693105a4164f6b16bac019eb38d794aa956f
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Fri Mar 13 09:58:14 2026 -0400
+
+    Join the client thread in #stop
+
+ lib/rex/proto/proxy/socks5/server_client.rb | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 096913343d2356b90e415af52c68b5bb40888ed3
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Mar 3 17:13:20 2026 -0500
+
+    Switch to the fiber relay manager
+
+ lib/rex/proto/proxy/socks5/server.rb        |  3 ++
+ lib/rex/proto/proxy/socks5/server_client.rb | 70 +++--------------------------
+ 2 files changed, 8 insertions(+), 65 deletions(-)
+
+commit 24b8b730e9c6f5cddc480b9ec7a89466d497dd2a
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 1 12:44:46 2026 -0400
+
+    Update rex-core to 0.1.36
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 34c7a18ef40581dac2fdf89f937cb421595bce98
+Merge: 79ea88e2f9 b668069682
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 1 12:38:25 2026 -0400
+
+    Merge pull request #21217 from dineshg0pal/fix/small-typo-fixes
+    
+    Fix: small typo's in Documentation
+
+ documentation/modules/auxiliary/admin/mssql/mssql_exec.md             | 4 ++--
+ documentation/modules/auxiliary/admin/scada/phoenix_command.md        | 2 +-
+ .../modules/auxiliary/admin/vmware/vcenter_offline_mdb_extract.md     | 2 +-
+ documentation/modules/auxiliary/analyze/crack_osx.md                  | 2 +-
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+commit b66806968256ced177e08afc8ec9c23fb5a207d4
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Wed Apr 1 21:32:28 2026 +0530
+
+    fix: corrected SHA12 to SHA512
+
+ documentation/modules/auxiliary/analyze/crack_osx.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7bdfdf9703eade4c0a9425b1259a8a67b26e58d4
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Wed Apr 1 21:29:21 2026 +0530
+
+    fix: removed extra "use" in cmd lines
+
+ documentation/modules/auxiliary/admin/mssql/mssql_exec.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit fe0c7e4e97c3bf19f831aaf88ef850d7b0ccc60d
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Wed Apr 1 21:25:00 2026 +0530
+
+    fix: removed "are" duplicate
+
+ documentation/modules/auxiliary/admin/scada/phoenix_command.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2d4c3e748ee7925524382ca8db4db95b58e91f54
+Author: Dinesh <dineshpost0@gmail.com>
+Date:   Wed Apr 1 21:22:38 2026 +0530
+
+    fix: removed duplicate "which"
+
+ .../modules/auxiliary/admin/vmware/vcenter_offline_mdb_extract.md       | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1f1ca8775359c4c0c790fad923837f522b785196
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Apr 1 10:35:12 2026 -0500
+
+    Update specs to reflect the new constraints for FETCH_COMMAND values
+
+ .../payloads/adapters/cmd/windows/http/x64_spec.rb | 14 ++---------
+ .../payloads/adapters/cmd/windows/http/x86_spec.rb | 14 ++---------
+ .../adapters/cmd/windows/https/x64_spec.rb         | 27 ++++------------------
+ .../adapters/cmd/windows/https/x86_spec.rb         | 27 ++++------------------
+ 4 files changed, 12 insertions(+), 70 deletions(-)
+
+commit acefa87790273a984a626c2a7aee0ce568e399de
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Mar 31 18:28:18 2026 +0100
+
+    Add additional validation to db_import
+
+ .../core/db_manager/import/marshal_validator.rb    | 219 +++++++++++++++++++++
+ .../core/db_manager/import/metasploit_framework.rb |  28 ++-
+ lib/rex/parser/burp_session_document.rb            |   2 +-
+ .../db_manager/import/marshal_validator_spec.rb    | 208 +++++++++++++++++++
+ 4 files changed, 453 insertions(+), 4 deletions(-)
+
+commit 79ea88e2f9c909c5505ae95bd7e152c15c686fa3
+Merge: 24622613d2 cc143fa463
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 1 10:46:23 2026 +0100
+
+    Merge pull request #21188 from adfoster-r7/fix-crash-on-older-ruby-versions
+    
+    Fix crash on older Ruby versions
+
+ Gemfile.lock | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
