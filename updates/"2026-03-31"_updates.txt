@@ -1,0 +1,155 @@
+commit 7b54e35a2f389fc36782aecee4efa13f1df345e5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 18:57:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9dc1690b642b06b0863ba13c71aee03b82ef7ee3
+Merge: 2038b133de 696739f32f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Apr 2 11:48:25 2026 -0700
+
+    Merge pull request #21226 from zeroSteiner/fix/mod/payload-cached-sizes-2026-04-02
+    
+    Update the cached payload size
+
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 696739f32f03a732e2b3ceac6a8f3c8bafa8f896
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 2 14:31:06 2026 -0400
+
+    Update the cached payload size
+
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2038b133de7eb86dfdc443106c007427d0124a93
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 16:58:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 45 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+
+commit 0f156364ebd867b37b7161fbdd9300538133fa85
+Merge: aee4762d46 aa84007608
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Apr 2 09:50:22 2026 -0700
+
+    Merge pull request #21158 from sfewer-r7/CVE-2026-20127
+    
+    Add auxiliary module for Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability (CVE-2026-20127)
+
+ .../admin/networking/cisco_sdwan_auth_bypass.md    | 207 ++++++
+ .../admin/networking/cisco_sdwan_auth_bypass.rb    | 724 +++++++++++++++++++++
+ 2 files changed, 931 insertions(+)
+
+commit aee4762d464cd00c8742a176c6b8793e8dd5be6d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 13:22:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d11e41ddfb35f904d63fe530b1a51dff6344ecc2
+Merge: 8858537ade 75f94fd508
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Apr 2 09:12:37 2026 -0400
+
+    Merge pull request #21143 from SaiSakthidar/php-meterpreter-tcp-server-tests
+    
+    Php meterpreter tcp server tests
+
+ Gemfile.lock                                       |  4 +-
+ LICENSE_GEMS                                       |  2 +-
+ metasploit-framework.gemspec                       |  2 +-
+ .../singles/php/meterpreter_reverse_tcp.rb         |  2 +-
+ spec/support/acceptance/session/php.rb             | 48 ----------------------
+ 5 files changed, 5 insertions(+), 53 deletions(-)
+
+commit 8858537adea6c99e47440251dfff7ceafc740ff5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 10:55:06 2026 +0000
+
+    Bump version of framework to 6.4.126
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 8 ++++----
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 3f83860a9b85b4191b9eec48bb7125b8557eaf6d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 10:24:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f877a6e9bdfad9a9ad352ac2df373c90e744947a
+Merge: a36144b278 9a8457585e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 2 11:14:55 2026 +0100
+
+    Merge pull request #21199 from Hemang360/fix-wordpress-module-scanner
+    
+    Fix LocalJumpError in wordpress module scanner
+
+ modules/auxiliary/scanner/http/wp_perfect_survey_sqli.rb | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit a36144b27831ec6d08d00dcd0197a553d90561a8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 2 09:57:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 41 ++---------------------------------------
+ 1 file changed, 2 insertions(+), 39 deletions(-)
+
+commit 9a8457585ecedf20175c5b50ec68698ab3bb3dcd
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 2 10:52:57 2026 +0100
+
+    Additional check for html_content
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+ modules/auxiliary/scanner/http/wp_perfect_survey_sqli.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e3789d16a9d952685d2af3d0cf1811f2ecea6e6
+Merge: 0503bbd8b7 e88bc5d621
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Apr 2 05:48:06 2026 -0400
+
+    Merge pull request #21048 from zeroSteiner/feat/mod/socks-proxy/fiber-update
+    
+    Update the SOCKS proxy to use the new RelayManager
+
+ Gemfile.lock                                       |   2 +-
+ lib/rex/proto/proxy/socks5/server.rb               |   3 +
+ lib/rex/proto/proxy/socks5/server_client.rb        |  75 ++----------
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |   2 +-
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |   2 +-
+ .../rex/proto/proxy/socks5/server_client_spec.rb   | 134 +++++++++++++++++++++
+ spec/lib/rex/proto/proxy/socks5/server_spec.rb     |  64 ++++++++++
+ 7 files changed, 214 insertions(+), 68 deletions(-)
+
+commit 75f94fd5087911e152a8f1388adccd3cc6008271
+Author: SaiSakthidar <3.youth.sai@gmail.com>
+Date:   Thu Apr 2 09:34:04 2026 +0530
+
+    Revert temporary fork/branch references in acceptance workflow
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
