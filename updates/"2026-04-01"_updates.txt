@@ -1,0 +1,76 @@
+commit 0acd6fbc36e40188a32bf1f93ace213427a17ae7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 3 21:20:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+commit 45942c8d5e61ee0f19f1428f48e4421726a6d62f
+Merge: cbd6b11d48 5111f9eb52
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Apr 3 17:10:56 2026 -0400
+
+    Merge pull request #21180 from jheysel-r7/feat/lib/relay_functionality_refactor
+    
+    Refactor reusable relay classes out of the SMB directory
+
+ .../{smb/server => relay/ntlm}/hash_capture.rb     | 31 +++++++++++++---------
+ .../exploit/remote/{smb => }/relay/ntlm/target.rb  |  2 +-
+ .../{smb => }/relay/ntlm/target/http/client.rb     | 10 +++----
+ .../{smb => }/relay/ntlm/target/ldap/client.rb     | 12 ++++-----
+ .../{smb => }/relay/ntlm/target/mssql/client.rb    | 10 +++----
+ .../{smb => }/relay/ntlm/target/smb/client.rb      | 13 +++++----
+ .../exploit/remote/{smb => }/relay/target_list.rb  |  2 +-
+ .../core/exploit/remote/smb/relay/ntlm/server.rb   |  4 +--
+ .../exploit/remote/smb/relay/ntlm/server_client.rb | 13 ++++-----
+ lib/msf/core/exploit/remote/smb/relay_server.rb    |  4 +--
+ lib/msf/core/exploit/remote/smb/server/share.rb    |  7 ++---
+ lib/msf/core/payload/adapter/fetch/server/smb.rb   |  7 ++---
+ .../environment_variable_datablock_leak.rb         |  2 +-
+ .../fileformat/icon_environment_datablock_leak.rb  |  2 +-
+ modules/auxiliary/fileformat/specialfolder_leak.rb |  2 +-
+ modules/auxiliary/server/capture/smb.rb            |  7 ++---
+ modules/auxiliary/server/relay/esc8.rb             |  2 +-
+ .../server/relay/relay_get_naa_credentials.rb      |  2 +-
+ modules/auxiliary/server/relay/smb_to_ldap.rb      |  4 +--
+ modules/auxiliary/server/relay/smb_to_mssql.rb     |  4 +--
+ .../windows/fileformat/unc_url_cve_2025_33053.rb   |  2 +-
+ modules/exploits/windows/smb/smb_relay.rb          |  2 +-
+ .../exploit/remote/smb/relay/target_list_spec.rb   |  4 +--
+ 23 files changed, 78 insertions(+), 70 deletions(-)
+
+commit cbd6b11d48d2e236ed99873f7c8a1323864db7fa
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 3 20:37:51 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 789bcb13ac8fb3c37811f792a1d2ff85368b2468
+Merge: aced72809e 806c889225
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Apr 3 16:29:19 2026 -0400
+
+    Merge pull request #20979 from g0tmi1k/php_include
+    
+    php_include: Improve check & Clean up
+
+ data/exploits/php/rfi-locations.dat         | 4493 ++++++++++++++-------------
+ modules/exploits/unix/webapp/php_include.rb |  158 +-
+ 2 files changed, 2332 insertions(+), 2319 deletions(-)
+
+commit aced72809e8857fb1bd036e0c40727467eb795ed
+Merge: 7b54e35a2f e26330a4fb
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Apr 3 17:53:16 2026 +0200
+
+    Merge pull request #21153 from Nayeraneru/fixed/datastore_AdvancedOptions
+
+ lib/msf/core/option_container.rb                    |  4 +++-
+ spec/lib/msf/core/data_store_with_fallbacks_spec.rb |  2 +-
+ spec/lib/msf/core/option_container_spec.rb          | 21 +++++++++++++++++++++
+ 3 files changed, 25 insertions(+), 2 deletions(-)
