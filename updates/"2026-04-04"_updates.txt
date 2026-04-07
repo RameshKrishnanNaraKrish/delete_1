@@ -1,0 +1,92 @@
+commit 4bacaee3e707a12fd7904ced6e3ca1c417abbc52
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 6 19:36:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 47 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 46 insertions(+), 1 deletion(-)
+
+commit a0852387fc60c50481f52ca72d1cc5d84a6b6d2d
+Merge: fee008a507 06edc3d08f
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Apr 6 15:27:28 2026 -0400
+
+    Merge pull request #20752 from bwatters-r7/feature/certificate-web-enrollment
+    
+    Add Authenticating Web Enrollment module for AD/CS
+
+ .../auxiliary/admin/http/web_enrollment_cert.md    | 485 +++++++++++++
+ .../modules/auxiliary/server/relay/esc8.md         | 207 +++++-
+ lib/msf/core/exploit/remote/cert_request.rb        |  66 ++
+ lib/msf/core/exploit/remote/http/web_enrollment.rb | 126 ++++
+ lib/msf/core/exploit/remote/http_client.rb         |   2 +-
+ .../remote/ldap/active_directory/ad_cs_opts.rb     |  59 ++
+ lib/msf/core/exploit/remote/ms_icpr.rb             | 217 +-----
+ lib/rex/proto/kerberos/model.rb                    |   2 +
+ lib/rex/proto/x509/request.rb                      | 145 ++++
+ .../auxiliary/admin/http/web_enrollment_cert.rb    | 160 +++++
+ modules/auxiliary/server/relay/esc8.rb             | 121 +---
+ .../msf/core/exploit/remote/cert_request_spec.rb   | 366 ++++++++++
+ .../exploit/remote/http/web_enrollment_spec.rb     | 342 +++++++++
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb   | 774 ++++++++++++---------
+ spec/lib/rex/proto/x509/request_spec.rb            | 606 ++++++++++++++++
+ .../auxiliary/admin/dcerpc/icpr_cert_spec.rb       | 371 ----------
+ 16 files changed, 3045 insertions(+), 1004 deletions(-)
+
+commit fee008a5079eab8bbde2577c05824efe742aaacc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 6 18:43:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+commit 46456c2a08ce3da3c87d87806598e079f6e63db2
+Merge: 93506acce2 b338c774cd
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Apr 6 14:34:37 2026 -0400
+
+    Merge pull request #20977 from g0tmi1k/php_eval
+    
+    php_eval: Improve check, fix exploit, add POST support & more verbose
+
+ modules/exploits/multi/http/os_cmd_exec.rb  |   4 +-
+ modules/exploits/unix/webapp/php_eval.rb    | 104 +++++++++++++++++++---------
+ modules/exploits/unix/webapp/php_include.rb |   4 +-
+ 3 files changed, 74 insertions(+), 38 deletions(-)
+
+commit 06edc3d08fd6ce120c3176ea5e8b48d18d953a53
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Apr 6 13:12:47 2026 -0500
+
+    change minor syntax and raise exception for rsa keylength mismatch
+
+ lib/msf/core/exploit/remote/cert_request.rb           |  4 ++--
+ lib/msf/core/exploit/remote/ms_icpr.rb                |  2 +-
+ modules/auxiliary/admin/http/web_enrollment_cert.rb   |  2 +-
+ spec/lib/msf/core/exploit/remote/cert_request_spec.rb | 16 ++++++++--------
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb      | 10 +++++-----
+ 5 files changed, 17 insertions(+), 17 deletions(-)
+
+commit 93506acce27275e4531b498a757ea3f19b11c686
+Merge: 0acd6fbc36 9ecd34c988
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Apr 6 14:00:19 2026 -0400
+
+    Merge pull request #21229 from bcoles/msfvenom-cache
+    
+    msfvenom: Use metadata cache for --list, add --refresh-cache
+
+ msfvenom | 102 ++++++++++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 68 insertions(+), 34 deletions(-)
+
+commit 9ecd34c9885416fe1422b2c674e96f2c5d091973
+Author: bcoles <bcoles@github>
+Date:   Tue Apr 7 01:23:47 2026 +1000
+
+    msfvenom: Use metadata cache for --list, add --refresh-cache
+
+ msfvenom | 102 ++++++++++++++++++++++++++++++++++++++++++---------------------
+ 1 file changed, 68 insertions(+), 34 deletions(-)
