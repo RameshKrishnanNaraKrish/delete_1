@@ -1,0 +1,95 @@
+commit e4c7508b09a0652246da8bc3afc5e0dde7c92e8c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 7 16:48:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 94ccd8bd20a3950279add2a0b7bda9ed2d2d4b49
+Merge: 8b3241ba19 50624c69d0
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Apr 7 09:39:01 2026 -0700
+
+    Merge pull request #20948 from ArkaprabhaChakraborty/osticket
+    
+    Add initial osticket arbitraray file read auxiliary module
+
+ .../gather/osticket_arbitrary_file_read.md         | 1030 +++++++++++++
+ lib/msf/core/auxiliary/osticket.rb                 | 1581 ++++++++++++++++++++
+ .../core/exploit/remote/http/php_filter_chain.rb   |  152 +-
+ .../gather/osticket_arbitrary_file_read.rb         |  269 ++++
+ 4 files changed, 2955 insertions(+), 77 deletions(-)
+
+commit 50624c69d08adc8f8748958de3a9074a8f583eb4
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Apr 7 08:48:21 2026 -0700
+
+    Fix linting issues in lib
+
+ lib/msf/core/auxiliary/osticket.rb | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit 8b3241ba19be883e9ff7516022d90a8ee360fd0d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 7 14:30:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit a77841049834c65c202054d5f15868de195b64a2
+Merge: e4b89158ba f46f41147f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 7 10:20:37 2026 -0400
+
+    Merge pull request #21240 from bwatters-r7/bump/metasploit-payloads_2.0.245
+    
+    Update metasploit-payloads to 2.0.245
+
+ Gemfile.lock                                                         | 4 ++--
+ LICENSE_GEMS                                                         | 2 +-
+ metasploit-framework.gemspec                                         | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_http.rb         | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_https.rb        | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_http.rb     | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_https.rb    | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ 15 files changed, 16 insertions(+), 16 deletions(-)
+
+commit e4b89158babfaff6c3aa70c571582f9991b8fb28
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 7 09:31:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 276 ++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 228 insertions(+), 48 deletions(-)
+
+commit 08e29e833ddbcddd4b459fc1d0d8f27be7e231a2
+Merge: 4bacaee3e7 31d7e424c0
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 7 05:22:01 2026 -0400
+
+    Merge pull request #20814 from h00die/s4u
+    
+    s4u persistence updates
+
+ .../windows/persistence/service_for_user/event.md  | 183 ++++++++++++
+ .../persistence/service_for_user/lock_unlock.md    | 126 ++++++++
+ .../windows/persistence/service_for_user/logon.md  | 120 ++++++++
+ .../persistence/service_for_user/schedule.md       | 139 +++++++++
+ .../windows/persistence/service_for_user/event.rb  | 321 +++++++++++++++++++++
+ .../service_for_user/lock_unlock.rb}               | 220 +++++---------
+ .../windows/persistence/service_for_user/logon.rb  | 303 +++++++++++++++++++
+ .../persistence/service_for_user/schedule.rb       | 288 ++++++++++++++++++
+ 8 files changed, 1553 insertions(+), 147 deletions(-)
