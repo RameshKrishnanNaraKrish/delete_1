@@ -1,0 +1,72 @@
+commit 6c359bfa00598fe25f8ad4bbce323242f7ff6c21
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 8 15:01:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1fc1552fc4fc33d0274a270adb8a63f91ab1d4aa
+Merge: 3de026b88c b9fee17018
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Apr 8 07:52:14 2026 -0700
+
+    Merge pull request #20973 from bitstr3m-48/feature/hwbridge-sessions-c-and-json-errors
+    
+    HWBridge: support sessions -c execution and preserve non-200 JSON errors
+
+ lib/msf/ui/console/command_dispatcher/core.rb |  6 ++++++
+ modules/auxiliary/client/hwbridge/connect.rb  | 14 ++++++++++++--
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+
+commit 3de026b88cb529813228044981a9877c22f4f699
+Merge: 23156732b0 db9f98e704
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 8 10:51:49 2026 +0100
+
+    Merge pull request #21221 from cgranleese-r7/update-module-doc-template-with-example
+    
+    Adds examples to module template markdown
+
+ documentation/modules/module_doc_template.md | 82 ++++++++++++++++++++++++++--
+ 1 file changed, 77 insertions(+), 5 deletions(-)
+
+commit 23156732b0db70ad5a65fc7b66c820687d89d3b2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 8 09:48:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 6c24a059ae11f618cd20af2e290bd039f715651b
+Merge: e4c7508b09 308b7277a1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 8 10:39:17 2026 +0100
+
+    Merge pull request #21031 from zeroSteiner/fix/issue/20959
+    
+    LDAP Reporting Improvements
+
+ lib/msf/core/db_manager/service.rb                 | 59 ++++++++++---------
+ lib/msf/core/exploit/remote/ldap.rb                | 24 +++++++-
+ lib/msf/core/exploit/remote/ms_icpr.rb             | 38 +++++++-----
+ lib/msf/core/exploit/remote/smb/client/ipc.rb      | 16 ++++-
+ modules/auxiliary/admin/ldap/rbcd.rb               | 10 +++-
+ modules/auxiliary/admin/ldap/shadow_credentials.rb | 10 +++-
+ .../gather/ldap_esc_vulnerable_cert_finder.rb      | 59 +++++++++++++------
+ modules/auxiliary/gather/ldap_passwords.rb         | 68 ++++++++++++++++++++--
+ .../shared/examples/msf/db_manager/service.rb      |  6 +-
+ .../support/shared/examples/msf/db_manager/vuln.rb |  1 -
+ 10 files changed, 215 insertions(+), 76 deletions(-)
+
+commit db9f98e704bbb9e5492e2f4cf6331a753333b976
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Thu Apr 2 15:37:51 2026 +0100
+
+    Adds examples to module template markdown
+
+ documentation/modules/module_doc_template.md | 82 ++++++++++++++++++++++++++--
+ 1 file changed, 77 insertions(+), 5 deletions(-)
