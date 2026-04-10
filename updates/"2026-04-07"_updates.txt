@@ -1,0 +1,140 @@
+commit bd73d983ea1e9c1b7766d1414dc0a7c2293c1f84
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 9 21:31:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit a90ec1071ca1bd70f62f414393c0881a003429f2
+Merge: e310740868 222e1a28ab
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Apr 9 16:22:45 2026 -0500
+
+    Merge pull request #21075 from Chocapikk/avideo-catname-sqli
+    
+    Add AVideo catName blind SQLi credential dump (CVE-2026-28501)
+
+ .../auxiliary/gather/avideo_catname_sqli.md        | 148 +++++++++++++++++
+ lib/msf/core/exploit/sqli/common.rb                |   6 +-
+ .../exploit/sqli/mysqli/benchmark_based_blind.rb   |  78 +++++++++
+ lib/msf/core/exploit/sqli/mysqli/common.rb         | 147 ++++++++++-------
+ .../core/exploit/sqli/mysqli/time_based_blind.rb   |  11 --
+ .../core/exploit/sqli/time_based_blind_mixin.rb    |  15 +-
+ modules/auxiliary/gather/avideo_catname_sqli.rb    | 144 ++++++++++++++++
+ .../mysqli/mysqli_benchmark_based_blind_spec.rb    |  67 ++++++++
+ .../core/exploit/sqli/mysqli/mysqli_common_spec.rb | 181 +++++++++++++++++++++
+ .../exploit/sqli/mysqli/mysqli_time_based_spec.rb  |  45 +++++
+ 10 files changed, 764 insertions(+), 78 deletions(-)
+
+commit e3107408689f0749cf75e0c33eab62efa307aaf2
+Merge: 92b200e430 536b34a0e4
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Apr 9 16:36:28 2026 +0100
+
+    Merge pull request #21265 from adfoster-r7/fix-flakey-rspec-test
+    
+    Fix flakey rspec tests
+
+ spec/lib/msf/core/payload_spec.rb | 22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+commit 536b34a0e45050b6f1f471a14acd08a21c10c138
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Apr 9 15:08:23 2026 +0100
+
+    Update cache sizes for bash payloads
+
+ spec/lib/msf/core/payload_spec.rb | 22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+commit 92b200e43090b8bc870f74f07fe67edcf2c9f8b5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 9 14:46:28 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 56 insertions(+), 8 deletions(-)
+
+commit d84f6f9f8aed7c1509b7f9babc5fc7240df27a99
+Merge: 33a2e0216d 887137d615
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Apr 9 10:33:16 2026 -0400
+
+    Merge pull request #21262 from adfoster-r7/update-cache-sizes-for-bash-payloads
+    
+    Update cache sizes for bash payloads
+
+ lib/msf/util/payload_cached_size.rb                   | 3 ++-
+ modules/payloads/singles/cmd/unix/reverse_bash.rb     | 5 +++--
+ modules/payloads/singles/cmd/unix/reverse_bash_udp.rb | 5 +++--
+ 3 files changed, 8 insertions(+), 5 deletions(-)
+
+commit 33a2e0216d432dfc1ed954f6c2d04389cbef6a90
+Merge: 24e2124ebd 9960ec2355
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Apr 9 16:29:01 2026 +0200
+
+    Land #20843, adds Windows telemetry persistence module
+    
+    windows telemetry persistence
+
+ .../exploit/windows/persistence/telemetry.md       | 148 +++++++++++++++++++++
+ .../windows/persistence/assistive_technology.rb    |   2 +-
+ .../exploits/windows/persistence/task_scheduler.rb |   2 +-
+ modules/exploits/windows/persistence/telemetry.rb  | 122 +++++++++++++++++
+ 4 files changed, 272 insertions(+), 2 deletions(-)
+
+commit 887137d6154a979ea6319a7c4912453889bdc69c
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Apr 9 15:08:23 2026 +0100
+
+    Update cache sizes for bash payloads
+
+ lib/msf/util/payload_cached_size.rb                   | 3 ++-
+ modules/payloads/singles/cmd/unix/reverse_bash.rb     | 5 +++--
+ modules/payloads/singles/cmd/unix/reverse_bash_udp.rb | 5 +++--
+ 3 files changed, 8 insertions(+), 5 deletions(-)
+
+commit 9960ec23558941608201e7a93a9bf59288816908
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Feb 17 16:32:34 2026 -0500
+
+    fix compatibility with session.sys on windows persistence modules
+
+ modules/exploits/windows/persistence/assistive_technology.rb | 2 +-
+ modules/exploits/windows/persistence/task_scheduler.rb       | 2 +-
+ modules/exploits/windows/persistence/telemetry.rb            | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8f441aca9a8572f9fed5c3cd277d9ced471b64b6
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sun Jan 11 07:47:43 2026 -0500
+
+    add attck ref
+
+ modules/exploits/windows/persistence/telemetry.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 475f2037604edacd49435fa1a27243592c8b6028
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Jan 3 14:49:39 2026 -0500
+
+    windows telemetry persistence
+
+ .../exploit/windows/persistence/telemetry.md       | 148 +++++++++++++++++++++
+ modules/exploits/windows/persistence/telemetry.rb  | 121 +++++++++++++++++
+ 2 files changed, 269 insertions(+)
+
+commit 24e2124ebde165510e01e6b39cfba752d4d07ae9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 9 12:14:30 2026 +0000
+
+    Bump version of framework to 6.4.127
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
