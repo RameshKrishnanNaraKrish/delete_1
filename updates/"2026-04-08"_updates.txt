@@ -1,0 +1,28 @@
+commit 8b81b0daa37eca883e0bac7dcee603d6d7fcff47
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 10 13:08:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 36 ++++++++++++++++++------------------
+ 1 file changed, 18 insertions(+), 18 deletions(-)
+
+commit 800614101d25adac1335033f5cd700325bff4f1b
+Merge: bd73d983ea 338db0cabd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Apr 10 07:58:34 2026 -0500
+
+    Merge pull request #21233 from bcoles/exploit-linux-local-riscv
+    
+    Add RISC-V arch support to Linux local exploit modules
+
+ modules/exploits/linux/local/abrt_sosreport_priv_esc.rb                 | 2 ++
+ modules/exploits/linux/local/asan_suid_executable_priv_esc.rb           | 2 ++
+ modules/exploits/linux/local/blueman_set_dhcp_handler_dbus_priv_esc.rb  | 2 ++
+ modules/exploits/linux/local/docker_daemon_privilege_escalation.rb      | 2 +-
+ modules/exploits/linux/local/docker_privileged_container_escape.rb      | 2 +-
+ modules/exploits/linux/local/ktsuss_suid_priv_esc.rb                    | 2 ++
+ modules/exploits/linux/local/ptrace_sudo_token_priv_esc.rb              | 2 ++
+ .../linux/local/servu_ftp_server_prepareinstallation_priv_esc.rb        | 2 ++
+ modules/exploits/linux/local/systemtap_modprobe_options_priv_esc.rb     | 2 ++
+ 9 files changed, 16 insertions(+), 2 deletions(-)
