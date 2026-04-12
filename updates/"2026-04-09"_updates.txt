@@ -1,0 +1,14 @@
+commit e79b3cf8a23118060c68ed6088e01b3da60f9a7e
+Merge: 8b81b0daa3 53df5b989a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sat Apr 11 12:20:32 2026 +0200
+
+    Land #21027, fixes alignment of ELF shared object templates
+    
+    Fixes alignment in ELF shared object templates
+
+ data/templates/src/elf/dll/elf_dll_armle_template.s     |   2 ++
+ data/templates/src/elf/dll/elf_dll_riscv32le_template.s |   1 +
+ data/templates/template_armle_linux_dll.bin             | Bin 246 -> 248 bytes
+ data/templates/template_riscv32le_linux_dll.bin         | Bin 246 -> 248 bytes
+ 4 files changed, 3 insertions(+)
