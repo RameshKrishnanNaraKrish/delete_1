@@ -1,0 +1,10 @@
+commit 5f52ad082f17686c3ce047bab2d4b6a0f0a62090
+Author: Ekzorcist <infosecurity@ya.ru>
+Date:   Sun Apr 12 21:12:33 2026 +0200
+
+    Update shell_bind_tcp_random_port.rb
+    
+    Removed my email and shorten the full surname. I got too much spam recently.
+
+ modules/payloads/singles/linux/x86/shell_bind_tcp_random_port.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
