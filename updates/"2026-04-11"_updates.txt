@@ -1,0 +1,177 @@
+commit 57f5fa35593137a45e1da5e38a404b66e4cb57ee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 22:35:50 2026 +0000
+
+    Bump version of framework to 6.4.128
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 4ae7af2e65fbc670db8503070ac498be4cf4a788
+Merge: e9491f8a7e d931762916
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Apr 13 16:51:14 2026 -0500
+
+    Merge pull request #21236 from bcoles/riscv-fileless
+    
+    Add RISC-V fileless fetch payload support
+
+ lib/msf/core/payload/adapter/fetch/fileless.rb | 58 ++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit e9491f8a7edef6cfdae994fe5b91477ebcb50510
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 21:02:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 1113a5e1091ca68054e676e1986e7afe45a59f50
+Merge: e2958ab915 18b0cbc212
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Apr 13 15:52:55 2026 -0500
+
+    Merge pull request #21252 from zeroSteiner/feat/adcs/api-consolidation
+    
+    Feat/adcs/api consolidation
+
+ Gemfile.lock                                       |   4 +-
+ lib/msf/core/exploit/remote/cert_request.rb        | 268 +++++++++++++++++++-
+ lib/msf/core/exploit/remote/http/web_enrollment.rb |  99 +++++---
+ lib/msf/core/exploit/remote/http_client.rb         |  15 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             | 274 ++-------------------
+ metasploit-framework.gemspec                       |   2 +-
+ .../admin/dcerpc/cve_2022_26923_certifried.rb      |   2 +-
+ .../admin/dcerpc/esc_update_ldap_object.rb         |   2 +-
+ modules/auxiliary/admin/dcerpc/icpr_cert.rb        |   2 +-
+ .../auxiliary/admin/http/web_enrollment_cert.rb    |  45 ++--
+ modules/auxiliary/server/relay/esc8.rb             |   7 +-
+ .../msf/core/exploit/remote/cert_request_spec.rb   | 106 ++++++--
+ .../exploit/remote/http/web_enrollment_spec.rb     | 112 ++++-----
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb   | 228 +++++++----------
+ 14 files changed, 607 insertions(+), 559 deletions(-)
+
+commit e2958ab91577d2f6fdcbca9a7aab30cfdb0b4cca
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 15:25:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 10140d42b4cc2732290ba6e8bdbe0ce906d9a272
+Merge: 117196c830 cb6c6492cd
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Apr 13 11:16:29 2026 -0400
+
+    Merge pull request #21284 from Ekzorcist/patch-2
+    
+    Update shell_bind_tcp_random_port.rb
+
+ modules/payloads/singles/linux/x86/shell_bind_tcp_random_port.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb6c6492cd454110f60104bfb49646ac50615aeb
+Author: Ekzorcist <infosecurity@ya.ru>
+Date:   Mon Apr 13 16:10:37 2026 +0200
+
+    Update shell_bind_tcp_random_port.rb
+    
+    changing my name to a nickname due to some irrelevant and confusing occurances on the Internet for my name and the surname first letter.
+
+ modules/payloads/singles/linux/x86/shell_bind_tcp_random_port.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 18b0cbc212f7a825b9953cf0a898b3e3ab5af239
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Apr 13 09:20:26 2026 -0400
+
+    Require the newer version of metasploit-credential
+
+ Gemfile.lock                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 117196c830e2ca8668b3f7a177ca44252dfd1451
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 11:01:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit 4ce14e6696221ebc97607a49916aeda75fe7c9ce
+Merge: e3fe7e1da8 3aa019470e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 13 11:50:02 2026 +0100
+
+    Merge pull request #21268 from adfoster-r7/update-checkcode-usage-in-aux-modules
+    
+    Update checkcode usage in aux modules
+
+ .rubocop.yml                                       |  12 ++
+ .../cop/lint/bare_check_code_in_non_exploit.rb     |  94 +++++++++++
+ .../admin/dcerpc/cve_2020_1472_zerologon.rb        |   6 +-
+ .../admin/http/fortinet_fortiweb_create_admin.rb   |   2 +-
+ .../auxiliary/admin/http/idsecure_auth_bypass.rb   |  10 +-
+ modules/auxiliary/admin/http/whatsup_gold_sqli.rb  |   4 +-
+ modules/auxiliary/admin/scada/mypro_mgr_creds.rb   |   8 +-
+ .../gitlab_authenticated_subgroups_file_read.rb    |   2 +-
+ .../gather/glpi_inventory_plugin_unauth_sqli.rb    |   2 +-
+ .../auxiliary/gather/magento_xxe_cve_2024_34102.rb |   6 +-
+ .../auxiliary/gather/onedev_arbitrary_file_read.rb |  14 +-
+ modules/auxiliary/gather/pacsserver_traversal.rb   |   6 +-
+ .../gather/solarwinds_webhelpdesk_backdoor.rb      |   8 +-
+ modules/auxiliary/gather/upsmon_traversal.rb       |   8 +-
+ .../http/elasticsearch_memory_disclosure.rb        |   2 +-
+ .../lint/bare_check_code_in_non_exploit_spec.rb    | 180 +++++++++++++++++++++
+ 16 files changed, 325 insertions(+), 39 deletions(-)
+
+commit e3fe7e1da8606384dba696fff6a12d2bb6aa9fec
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 09:45:24 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+commit 44a6da0e53fcf0c3c41d7937ef5a63d6a24d407c
+Merge: 9562402c87 a66a8788d9
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 13 10:36:18 2026 +0100
+
+    Merge pull request #21078 from Chocapikk/fix-churchcrm
+    
+    Fix ChurchCRM unauthenticated RCE module
+
+ .../Module-Reference-Identifiers.md                |  39 ++--
+ .../multi/http/churchcrm_install_unauth_rce.rb     | 209 ++++++++-------------
+ 2 files changed, 105 insertions(+), 143 deletions(-)
+
+commit 9562402c87507ddcca5f491dec18022fa4ea2e43
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 13 08:00:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 659a6cfc9b168e8182fb171670814342aaf1296f
+Merge: e79b3cf8a2 5f52ad082f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Apr 13 09:39:55 2026 +0200
+
+    Land #21274, updates shell_bind_tcp_random_port.rb
+    
+    Update shell_bind_tcp_random_port.rb
+
+ modules/payloads/singles/linux/x86/shell_bind_tcp_random_port.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
