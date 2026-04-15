@@ -1,0 +1,492 @@
+commit d2f350f62712ab3c9727e4899b8752c60fd487b6
+Merge: e2dff5cc50 b13b669aaa
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 14 22:58:19 2026 +0100
+
+    Merge pull request #21290 from dledda-r7/fix/payload-cached-size-debug
+    
+    Fix annoying bug for payload cached size
+
+ lib/msf/util/payload_cached_size.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit e2dff5cc50b67e227df8cea79d7829e2e95b1702
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 14 20:15:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 473 ++++++++++++++++++++++++++++--------------
+ 1 file changed, 319 insertions(+), 154 deletions(-)
+
+commit 1d5eae0f5b62a292538b6f998d160bc85f5f208e
+Merge: addcd69205 ee2ee34b9e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 16:04:13 2026 -0400
+
+    Merge pull request #21034 from Chocapikk/add-module-opendcim-sqli-rce
+    
+    Add openDCIM install.php SQLi to RCE module
+
+ .../linux/http/opendcim_install_sqli_rce.md        | 231 +++++++++++++++++++++
+ .../linux/http/opendcim_install_sqli_rce.rb        | 203 ++++++++++++++++++
+ 2 files changed, 434 insertions(+)
+
+commit b13b669aaaad3fe0eb0ad51a5c256eaea3228ea9
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 21:46:21 2026 +0200
+
+    Add MeterpreterDebugBuild option to payload options
+    
+    Added 'MeterpreterDebugBuild' option to payload options.
+
+ lib/msf/util/payload_cached_size.rb | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+commit addcd69205d5634ffd1813ba31c54c4750211a64
+Merge: 31a2de9562 1b195b1406
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 15:43:06 2026 -0400
+
+    Merge pull request #20933 from madefourit/persis_pwrshell_profile
+    
+    Windows Persistence: Powershell Profile
+
+ .../windows/persistence/powershell_profile.md      | 129 ++++++++++++++++
+ .../windows/persistence/powershell_profile.rb      | 169 +++++++++++++++++++++
+ 2 files changed, 298 insertions(+)
+
+commit 31a2de956208635e289f1bb7af93deb7d6ca6292
+Merge: b3d367f1bf 7ea55d86d9
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 15:42:55 2026 -0400
+
+    Merge pull request #20839 from h00die/bits
+    
+    New persistence module: Microsoft Bits
+
+ .../modules/exploit/windows/persistence/bits.md    | 165 ++++++++++++++
+ modules/exploits/windows/persistence/bits.rb       | 240 +++++++++++++++++++++
+ 2 files changed, 405 insertions(+)
+
+commit b3d367f1bf5d4844457140913c7ff96d76d4272f
+Merge: 53f8053b77 7f0b8c83a1
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Apr 14 15:35:10 2026 -0400
+
+    Merge pull request #21085 from dledda-r7/issue-19309
+    
+    Update block-api to prepare for a random IV
+
+ Gemfile.lock                                       |   2 +-
+ LICENSE_GEMS                                       |   2 +-
+ data/shellcode/block_api.x64.graphml               | 323 +++++++------
+ data/shellcode/block_api.x86.graphml               | 503 ++++++++++-----------
+ .../shellcode/windows/x64/src/block/block_api.asm  |   7 +-
+ .../shellcode/windows/x86/src/block/block_api.asm  |   9 +-
+ external/source/shellcode/windows/x86/src/hash.py  |   5 +-
+ .../payload/windows/x64/reverse_named_pipe_x64.rb  |   2 +-
+ .../core/payload/windows/x64/reverse_tcp_x64.rb    |   2 +-
+ .../payloads/singles/windows/dns_txt_query_exec.rb |   2 +-
+ modules/payloads/singles/windows/download_exec.rb  |   2 +-
+ .../singles/windows/encrypted_shell_reverse_tcp.rb |   2 +-
+ modules/payloads/singles/windows/messagebox.rb     |   2 +-
+ .../payloads/singles/windows/pingback_bind_tcp.rb  |   2 +-
+ .../singles/windows/pingback_reverse_tcp.rb        |   2 +-
+ modules/payloads/stagers/windows/bind_ipv6_tcp.rb  |   2 +-
+ .../payloads/stagers/windows/bind_ipv6_tcp_uuid.rb |   2 +-
+ .../payloads/stagers/windows/bind_named_pipe.rb    |   2 +-
+ modules/payloads/stagers/windows/bind_tcp.rb       |   2 +-
+ modules/payloads/stagers/windows/bind_tcp_rc4.rb   |   2 +-
+ modules/payloads/stagers/windows/bind_tcp_uuid.rb  |   2 +-
+ .../stagers/windows/encrypted_reverse_tcp.rb       |   2 +-
+ modules/payloads/stagers/windows/reverse_http.rb   |   4 +-
+ modules/payloads/stagers/windows/reverse_https.rb  |   4 +-
+ .../payloads/stagers/windows/reverse_named_pipe.rb |   2 +-
+ modules/payloads/stagers/windows/reverse_tcp.rb    |   2 +-
+ .../payloads/stagers/windows/reverse_tcp_dns.rb    |   2 +-
+ .../payloads/stagers/windows/reverse_tcp_rc4.rb    |   2 +-
+ .../stagers/windows/reverse_tcp_rc4_dns.rb         |   2 +-
+ .../payloads/stagers/windows/reverse_tcp_uuid.rb   |   2 +-
+ modules/payloads/stagers/windows/reverse_udp.rb    |   2 +-
+ .../payloads/stagers/windows/reverse_winhttp.rb    |   4 +-
+ .../payloads/stagers/windows/reverse_winhttps.rb   |   4 +-
+ .../payloads/stagers/windows/x64/reverse_http.rb   |   4 +-
+ .../payloads/stagers/windows/x64/reverse_https.rb  |   4 +-
+ .../stagers/windows/x64/reverse_named_pipe.rb      |   2 +-
+ .../payloads/stagers/windows/x64/reverse_tcp.rb    |   2 +-
+ .../stagers/windows/x64/reverse_tcp_rc4.rb         |   2 +-
+ .../stagers/windows/x64/reverse_tcp_uuid.rb        |   2 +-
+ .../stagers/windows/x64/reverse_winhttp.rb         |   4 +-
+ .../stagers/windows/x64/reverse_winhttps.rb        |   4 +-
+ 41 files changed, 460 insertions(+), 475 deletions(-)
+
+commit 53f8053b7769372441aed6d14b0a9e1476b7ee44
+Merge: 43ffa96f34 2f8d66bc6c
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Apr 14 15:25:09 2026 -0400
+
+    Merge pull request #21255 from mxnvel/payloads-multi-python-support
+    
+    multi python support for cmd/unix/reverse_python and cmd/unix/reverse_python_ssl
+
+ modules/payloads/singles/cmd/unix/reverse_python.rb     | 8 ++++++--
+ modules/payloads/singles/cmd/unix/reverse_python_ssl.rb | 8 ++++++--
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+commit 43ffa96f3407d08bcb4345e72120fd184277905e
+Merge: 9f1dc3d9f9 b4084eaaa6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 14 20:14:09 2026 +0100
+
+    Merge pull request #21298 from bwatters-r7/fix/marshal_validator
+    
+    Fix sign-extension formula in marshal validator
+
+ lib/msf/core/db_manager/import/marshal_validator.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b4084eaaa6e8a9b8089ede5595529bc5ca8a8e68
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Apr 14 12:56:32 2026 -0500
+
+    Fix sign-extension formula
+
+ lib/msf/core/db_manager/import/marshal_validator.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f1dc3d9f91cff066fd4f7e9c3033f6d09787b2c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 14 15:19:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 7ea55d86d9d38467ead9ebce924e4bb967e2e6e9
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 17:16:54 2026 +0200
+
+    fix: update from srvhost to srvhost_addr
+
+ modules/exploits/windows/persistence/bits.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 976f5a8e66164f4bff0f6cfde0eff39c5dc8e93e
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 17:14:51 2026 +0200
+
+    fix: remove unecessary srvhost check
+
+ modules/exploits/windows/persistence/bits.rb | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit ee5ba948d7879d27b8f04fd911439ca177a06f77
+Merge: 4c421532d6 e0c3ecfd74
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Apr 14 10:10:09 2026 -0500
+
+    Merge pull request #21286 from Hemang360/add-def_mkdir-toggle
+    
+    Add cleanup toggle to file mixin mkdir method
+
+ lib/msf/core/post/file.rb           |  4 ++--
+ spec/lib/msf/core/post/file_spec.rb | 32 ++++++++++++++++++++++++++++++++
+ 2 files changed, 34 insertions(+), 2 deletions(-)
+
+commit 4c421532d63bb26b523f0932092a92d13099a47f
+Merge: dbcb702e1d 10fd6b9ef8
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Apr 14 09:59:25 2026 -0500
+
+    Merge pull request #21288 from g0tmi1k/AutoCheck
+    
+    Add AutoCheck to various exploit modules
+
+ modules/exploits/multi/http/os_cmd_exec.rb             | 1 +
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb       | 1 +
+ modules/exploits/unix/irc/unreal_ircd_3281_backdoor.rb | 1 +
+ modules/exploits/unix/webapp/php_eval.rb               | 1 +
+ modules/exploits/unix/webapp/php_include.rb            | 1 +
+ modules/exploits/unix/webapp/twiki_history.rb          | 1 +
+ modules/exploits/unix/webapp/twiki_search.rb           | 1 +
+ 7 files changed, 7 insertions(+)
+
+commit dbcb702e1df5c6c369d0c6725e4a11fd7c9d6615
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 14 14:41:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 101 ++++++++++--------------------------------
+ 1 file changed, 24 insertions(+), 77 deletions(-)
+
+commit 5b6c2be9d1355f2733842579bd0e6d54010f9d07
+Merge: d8687d43dd 62e2c336d0
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 14 16:32:06 2026 +0200
+
+    Land #21003, unifies Selenium Firefox and Chrome modules
+    
+    Unified Selenium Grid/Selenoid RCE with Firefox + Chrome auto-detection
+
+ .../exploit/linux/http/selenium_greed_rce.md       | 197 +++++++++++++
+ .../selenium_greed_chrome_rce_cve_2022_28108.rb    | 132 ---------
+ .../selenium_greed_firefox_rce_cve_2022_28108.rb   | 177 ------------
+ modules/exploits/linux/http/selenium_greed_rce.rb  | 306 +++++++++++++++++++++
+ 4 files changed, 503 insertions(+), 309 deletions(-)
+
+commit 1b195b140646f8f9f1f390d9e1caaa49dad8b5cb
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Apr 13 14:56:04 2026 +0200
+
+    fix: removing ARCH_AARCH64 from powershell_profile persistence
+
+ modules/exploits/windows/persistence/powershell_profile.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 943341316646a500c86d18a01cf43a18ba4d5b84
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Fri Feb 6 06:45:51 2026 -0500
+
+    final module fixes
+
+ modules/exploits/windows/persistence/powershell_profile.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a94dd324924336b9b7fc35020d5941bd05d192d8
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Thu Feb 5 16:27:14 2026 -0500
+
+    final module
+
+ modules/exploits/windows/persistence/powershell_profile.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 05914feb4dc333a4d307da9234fefb514a0ff2ec
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Thu Feb 5 16:25:40 2026 -0500
+
+    module docs and description_formatted
+
+ .../modules/exploit/windows/persistence/powershell_profile.md         | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 0ba93b6ae317cbb7ff77b5ab1ae973542e80daab
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Thu Feb 5 10:18:37 2026 -0500
+
+    module docs and description
+
+ .../modules/exploit/windows/persistence/powershell_profile.md         | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 14cd7fad47338dece127c39a7bfdeae8c362f732
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Feb 4 17:16:36 2026 -0500
+
+    module docs
+
+ .../windows/persistence/powershell_profile.md      | 125 +++++++++++++++++----
+ .../windows/persistence/powershell_profile.rb      |  20 ++--
+ 2 files changed, 118 insertions(+), 27 deletions(-)
+
+commit 4474c77ca34b311d44db87feab7b62322a146ddc
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Jan 31 13:03:42 2026 -0500
+
+    update pshell module
+
+ modules/exploits/windows/persistence/powershell_profile.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9e506cc5a0ed4cc7898b6a03245a746bf18a7552
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Sat Jan 31 12:58:53 2026 -0500
+
+    update pshell module
+
+ .../windows/persistence/powershell_profile.md      | 44 ++++++++++++++++++++++
+ .../windows/persistence/powershell_profile.rb      | 39 +++++++------------
+ 2 files changed, 58 insertions(+), 25 deletions(-)
+
+commit 9189436a428d6a218de91e28fda7c8e83e082e11
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Wed Jan 28 06:36:11 2026 -0500
+
+    payload debugging
+
+ .../windows/persistence/powershell_profile.rb      | 102 ++++++++++++++++-----
+ 1 file changed, 78 insertions(+), 24 deletions(-)
+
+commit 3c341e3b724e920a6a87feec2c3964cf6901cdf8
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue Jan 27 12:35:24 2026 -0500
+
+    update pshell module
+
+ .../windows/persistence/powershell_profile.rb      | 83 ++++++++++++----------
+ 1 file changed, 44 insertions(+), 39 deletions(-)
+
+commit c03a9a5ce299be9fe7305830bf0e82ba34dbbb8b
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Tue Jan 27 10:02:49 2026 -0500
+
+    update  modules_2
+
+ .../windows/persistence/powershell_profile.rb      | 33 ++++++++++------------
+ 1 file changed, 15 insertions(+), 18 deletions(-)
+
+commit f255fe398dc9ff62109f6584a213fb501ec521cd
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Tue Jan 27 09:42:36 2026 -0500
+
+    update  modules
+
+ .../windows/persistence/powershell_profile.rb      | 46 ++++++++++++++--------
+ 1 file changed, 29 insertions(+), 17 deletions(-)
+
+commit 17a5daabf1d99dd7af87251bd0924c03820d554f
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Tue Jan 27 08:46:55 2026 -0500
+
+    inital modules
+
+ .../windows/persistence/powershell_profile.rb      | 68 ++++++++++++----------
+ 1 file changed, 36 insertions(+), 32 deletions(-)
+
+commit e2810a791b7d2cd366fd3bc265e781f82ad9712d
+Author: madefourit <96498047+madefourit@users.noreply.github.com>
+Date:   Fri Jan 23 15:06:08 2026 -0500
+
+    Add Profile and initial skeleton
+
+ .../windows/persistence/powershell_profile.rb      | 101 +++++++++++++++++++++
+ 1 file changed, 101 insertions(+)
+
+commit 18c11b17a9220617b5ef5f0775291001a1cc7a24
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 14:34:00 2026 +0200
+
+    Update modules/exploits/windows/persistence/bits.rb
+
+ modules/exploits/windows/persistence/bits.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d8687d43ddfd0dec20a474218a698b864a0612c5
+Merge: 61cb83943a 7dcb339a16
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Apr 14 13:26:06 2026 +0100
+
+    Merge pull request #21295 from adfoster-r7/remove-ip-requirements-from-markdown-files
+    
+    Remove IP requirements from markdown files
+
+ AGENTS.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7dcb339a167862833c449683fc67a31a7dfe8580
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Apr 14 13:19:17 2026 +0100
+
+    Remove IP requirements from markdown files
+
+ AGENTS.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 61cb83943a0263fa7383c955ee60897ce3ffc80c
+Merge: 0d54137862 9f4a68895a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 14 12:43:33 2026 +0100
+
+    Merge pull request #21293 from dwelch-r7/remove-old-postgres-version
+    
+    bump postgres from 9.6 to 14.19 for gem tests
+
+ .github/workflows/shared_gem_verify_rails.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f4a68895ae13cf7ca1f747de8915ff0cfc0613c
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Apr 14 12:42:21 2026 +0100
+
+    bump postgres from 9.6 to 14.19 for gem tests
+
+ .github/workflows/shared_gem_verify_rails.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 62e2c336d0eb009fa1dd885f4ecaa215bf5391ab
+Author: Chocapikk <balgogan@protonmail.com>
+Date:   Tue Apr 14 12:32:51 2026 +0200
+
+    Remove old Selenium modules replaced by unified selenium_greed_rce
+
+ .../selenium_greed_chrome_rce_cve_2022_28108.rb    | 132 ---------------
+ .../selenium_greed_firefox_rce_cve_2022_28108.rb   | 177 ---------------------
+ 2 files changed, 309 deletions(-)
+
+commit 0d541378629bb064ec50d846014c4709c5a58181
+Merge: 57f5fa3559 65271019f3
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Apr 14 11:18:12 2026 +0100
+
+    Merge pull request #21276 from dwelch-r7/rails-8-gem-ci-test
+    
+    Add rails 8 to shared gem ci run
+
+ .github/workflows/shared_gem_verify_rails.yml | 34 +++++++++++++++++++++++----
+ 1 file changed, 30 insertions(+), 4 deletions(-)
+
+commit 65271019f34d23c3df2ab0644e096038d39b7911
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Apr 14 11:12:31 2026 +0100
+
+    expose rails version env variable in shared tests
+
+ .github/workflows/shared_gem_verify_rails.yml | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 70f470c537c8919746c4af1e730b5fd985c738f8
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 06:11:03 2026 -0400
+
+    fix: set MeterpreterDebugBuild to false for stageless meterpreter payloads  in PayloadCachedSize class
+
+ lib/msf/util/payload_cached_size.rb | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 7f0b8c83a1ce20ce5adad524eef7da77d4ee4607
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 14 06:06:47 2026 -0400
+
+    fix: update CachedSize
+
+ modules/payloads/singles/windows/x64/pingback_reverse_tcp.rb | 2 +-
+ modules/payloads/stagers/windows/x64/reverse_http.rb         | 4 ++--
+ modules/payloads/stagers/windows/x64/reverse_https.rb        | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit db0fe4aaef53d4a9d12a38f22cd1840d59db4364
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Apr 14 10:17:04 2026 +0200
+
+    Fixes Python payload delivery for Firefox profile
+
+ modules/exploits/linux/http/selenium_greed_rce.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 10fd6b9ef8b708846563d8907f146f814d062c59
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 14 06:21:15 2026 +0100
+
+    Add AutoCheck to various exploit modules
+
+ modules/exploits/multi/http/os_cmd_exec.rb             | 1 +
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb       | 1 +
+ modules/exploits/unix/irc/unreal_ircd_3281_backdoor.rb | 1 +
+ modules/exploits/unix/webapp/php_eval.rb               | 1 +
+ modules/exploits/unix/webapp/php_include.rb            | 1 +
+ modules/exploits/unix/webapp/twiki_history.rb          | 1 +
+ modules/exploits/unix/webapp/twiki_search.rb           | 1 +
+ 7 files changed, 7 insertions(+)
