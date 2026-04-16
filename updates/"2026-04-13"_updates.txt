@@ -1,0 +1,150 @@
+commit 796ffb63313b9538ca603b97e776e40aa8c72fcd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 15 19:31:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit c17c301e36c18a6a6fe4737faf0dd86ed1f19d12
+Merge: aad2c79603 0ba59a1254
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Apr 15 14:22:56 2026 -0500
+
+    Merge pull request #21095 from LucasCsmt/multi/http/churchcrm_db_restore_rce
+    
+    Adds exploit module for ChurchCRM authenticated RCE (CVE-2025-68109)
+
+ .../exploit/multi/http/churchcrm_db_restore_rce.md | 516 +++++++++++++++++++++
+ .../multi/http/churchcrm_db_restore_rce.rb         | 234 ++++++++++
+ 2 files changed, 750 insertions(+)
+
+commit aad2c79603d4cc6f2d17da83a9d2e55019807241
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 15 17:39:53 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb45c37eea91efcc00d6c0e85e8ba49e1ec062ec
+Merge: c81a2ee9e3 ad1dac2a5b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 15 18:31:03 2026 +0100
+
+    Merge pull request #21309 from sfewer-r7/fortiweb-fix1
+    
+    Improve the fortinet_fortiweb_create_admin aux module check method
+
+ modules/auxiliary/admin/http/fortinet_fortiweb_create_admin.rb | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit 91633fdad7e9474debefbfd044d2b8bc7652deee
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 15 12:43:29 2026 -0400
+
+    Remove the encrypted shell payload and libs
+
+ data/utilities/encrypted_payload/AdjustStack.asm   |  48 --
+ data/utilities/encrypted_payload/func_order.ld     |   9 -
+ data/utilities/encrypted_payload/func_order64.ld   |  11 -
+ lib/metasploit/framework/compiler/mingw.rb         |   1 -
+ lib/msf/base/sessions/command_shell.rb             |   7 -
+ lib/msf/base/sessions/encrypted_shell.rb           | 113 ----
+ .../core/payload/windows/encrypted_payload_opts.rb |  30 -
+ .../core/payload/windows/encrypted_reverse_tcp.rb  | 621 ---------------------
+ lib/msf/core/payload/windows/payload_db_conf.rb    |  62 --
+ lib/msf/core/payload_generator.rb                  |   7 -
+ lib/msf_autoload.rb                                |   1 -
+ .../singles/windows/encrypted_shell_reverse_tcp.rb |  35 --
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |  35 --
+ .../stagers/windows/encrypted_reverse_tcp.rb       |  34 --
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |  34 --
+ modules/payloads/stages/windows/encrypted_shell.rb |  30 -
+ .../payloads/stages/windows/x64/encrypted_shell.rb |  31 -
+ spec/modules/payloads_spec.rb                      |  34 --
+ 18 files changed, 1143 deletions(-)
+
+commit ad1dac2a5b1a9ad5aa19d012bfe74e45eaa54256
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Apr 15 17:37:29 2026 +0100
+
+    fix false posatives in the check method by implementing the same check logic as modules/exploits/linux/http/fortinet_fortiweb_rce.rb
+
+ modules/auxiliary/admin/http/fortinet_fortiweb_create_admin.rb | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit c81a2ee9e39ebd27f9bf57d20d8f1712b287915f
+Merge: 7f413ef68f 862b1e1aaa
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Apr 15 11:30:34 2026 -0400
+
+    Merge pull request #21287 from zeroSteiner/fix/exe-compat
+    
+    Fix EXE template compatibility with Windows Server 2000
+
+ Gemfile.lock                                       |   2 +-
+ LICENSE_GEMS                                       |   2 +-
+ data/templates/src/pe/README.md                    |  21 +-
+ data/templates/src/pe/build_all.bat                |  17 --
+ data/templates/src/pe/build_all.ps1                | 230 +++++++++++++++++++++
+ data/templates/src/pe/dll/build.bat                |  15 --
+ data/templates/src/pe/dll_gdiplus/build.bat        |  15 --
+ data/templates/src/pe/dll_mixed_mode/build.bat     |  15 --
+ data/templates/src/pe/exe/build.bat                |  13 --
+ data/templates/src/pe/exe_service/build.bat        |  13 --
+ data/templates/template_x64_windows.256kib.dll     | Bin 267264 -> 267264 bytes
+ data/templates/template_x64_windows.dll            | Bin 9216 -> 9216 bytes
+ data/templates/template_x64_windows.exe            | Bin 6656 -> 6656 bytes
+ .../template_x64_windows_dccw_gdiplus.256kib.dll   | Bin 270848 -> 270848 bytes
+ .../template_x64_windows_dccw_gdiplus.dll          | Bin 12800 -> 12800 bytes
+ .../template_x64_windows_mixed_mode.256kib.dll     | Bin 291840 -> 291840 bytes
+ data/templates/template_x64_windows_mixed_mode.dll | Bin 33792 -> 33792 bytes
+ data/templates/template_x64_windows_svc.exe        | Bin 12288 -> 12288 bytes
+ data/templates/template_x86_windows.256kib.dll     | Bin 267264 -> 267264 bytes
+ data/templates/template_x86_windows.dll            | Bin 9216 -> 9216 bytes
+ data/templates/template_x86_windows.exe            | Bin 6656 -> 6656 bytes
+ .../template_x86_windows_dccw_gdiplus.256kib.dll   | Bin 270848 -> 270848 bytes
+ .../template_x86_windows_dccw_gdiplus.dll          | Bin 12800 -> 12800 bytes
+ .../template_x86_windows_mixed_mode.256kib.dll     | Bin 289280 -> 289280 bytes
+ data/templates/template_x86_windows_mixed_mode.dll | Bin 31232 -> 31232 bytes
+ data/templates/template_x86_windows_svc.exe        | Bin 12288 -> 12288 bytes
+ spec/data/templates/pe_headers_spec.rb             |  64 ++++++
+ 27 files changed, 311 insertions(+), 96 deletions(-)
+
+commit 0ba59a125492aed892980e0e6f1ed99b18798b29
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 15 16:07:43 2026 +0100
+
+    Update documentation/modules/exploit/multi/http/churchcrm_db_restore_rce.md
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ documentation/modules/exploit/multi/http/churchcrm_db_restore_rce.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7f413ef68f9925d814a34a3829819850d04aa28d
+Merge: c3cc091a2f 6b174c1022
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 15 14:33:30 2026 +0100
+
+    Merge pull request #21291 from sjanusz-r7/add-notes-to-module-info-over-rpc
+    
+    Return notes for module over RPC
+
+ lib/msf/core/rpc/v10/rpc_module.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit c3cc091a2f414d59e1cdbf29e0f43d06cdce40ab
+Merge: d2f350f627 4383ad6673
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 15 14:31:35 2026 +0100
+
+    Merge pull request #21289 from sjanusz-r7/rpc-hosts-returns-comments
+    
+    Return comments for hosts over RPC
+
+ lib/msf/core/rpc/v10/rpc_db.rb | 2 ++
+ 1 file changed, 2 insertions(+)
