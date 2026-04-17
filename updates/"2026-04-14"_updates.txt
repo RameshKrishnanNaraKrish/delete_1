@@ -1,0 +1,279 @@
+commit 37ff9f85303c769bc556772edf7295818ef2bb2e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 16 16:00:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 ++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 37 insertions(+), 12 deletions(-)
+
+commit e7c5e0e4a32c981d81b4e96762a36159c53e7cbf
+Merge: 2b37cbe35e 0644f27cb6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Apr 16 16:51:00 2026 +0100
+
+    Merge pull request #21238 from bcoles/loongarch64-chmod
+    
+    Add Linux LoongArch64 chmod payload
+
+ .../modules/payload/linux/loongarch64/chmod.md     | 69 ++++++++++++++++++++
+ .../payloads/singles/linux/loongarch64/chmod.rb    | 74 ++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  9 +++
+ 3 files changed, 152 insertions(+)
+
+commit 0644f27cb66f04ad1fdef37d4d91903f1e44df70
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Apr 16 16:05:42 2026 +0100
+
+    Add module documentation, tests, and misc feedback
+
+ .../modules/payload/linux/loongarch64/chmod.md     | 69 ++++++++++++++++++++++
+ .../payloads/singles/linux/loongarch64/chmod.rb    |  8 +--
+ spec/modules/payloads_spec.rb                      |  9 +++
+ 3 files changed, 81 insertions(+), 5 deletions(-)
+
+commit 2b37cbe35ed0d3f84decfd24bc488722de0c7623
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 16 13:29:17 2026 +0000
+
+    Bump version of framework to 6.4.129
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit c887384546f53263e9fab08c55885cb9a57a6106
+Merge: 03e8567559 89d0115185
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Apr 16 14:22:51 2026 +0100
+
+    Merge pull request #21275 from adfoster-r7/improve-mongobleed-checks
+    
+    Improve mongobleed checks
+
+ .../scanner/mongodb/cve_2025_14847_mongobleed.md   | 199 +++++++-------
+ .../scanner/mongodb/cve_2025_14847_mongobleed.rb   | 298 ++++++++++++---------
+ 2 files changed, 269 insertions(+), 228 deletions(-)
+
+commit 03e856755988bcec19eb5d966cbad9c2233fb5a8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 16 11:11:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 156 +++++++++++++++++++++---------------------
+ 1 file changed, 78 insertions(+), 78 deletions(-)
+
+commit 5b58f289e57901c192ae566570c9f317c02db204
+Merge: 3106aef203 31ef5e03b5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Apr 16 12:02:42 2026 +0100
+
+    Merge pull request #21304 from adfoster-r7/improve-auxiliary-check-code-messages
+    
+    Improve auxiliary check code messages
+
+ modules/auxiliary/admin/dcerpc/cve_2020_1472_zerologon.rb  |  4 ++--
+ modules/auxiliary/admin/hp/hp_ilo_create_admin_account.rb  |  6 +++---
+ modules/auxiliary/admin/http/cisco_ssm_onprem_account.rb   |  2 +-
+ .../auxiliary/admin/http/fortinet_fortiweb_create_admin.rb |  2 +-
+ .../admin/http/hikvision_unauth_pwd_reset_cve_2017_7921.rb |  4 ++--
+ modules/auxiliary/admin/http/ibm_drm_download.rb           |  4 ++--
+ modules/auxiliary/admin/http/idsecure_auth_bypass.rb       | 10 +++++-----
+ modules/auxiliary/admin/http/intersil_pass_reset.rb        |  8 ++++----
+ modules/auxiliary/admin/http/ivanti_vtm_admin.rb           |  4 ++--
+ .../auxiliary/admin/http/joomla_registration_privesc.rb    | 10 +++++-----
+ modules/auxiliary/admin/http/manageengine_pmp_privesc.rb   |  6 +++---
+ modules/auxiliary/admin/http/mantisbt_password_reset.rb    |  6 +++---
+ .../http/netgear_pnpx_getsharefolderlist_auth_bypass.rb    |  8 ++++----
+ modules/auxiliary/admin/http/netgear_r6700_pass_reset.rb   |  4 ++--
+ .../http/netgear_r7000_backup_cgi_heap_overflow_rce.rb     |  4 ++--
+ .../auxiliary/admin/http/pfadmin_set_protected_alias.rb    | 14 +++++++-------
+ modules/auxiliary/admin/http/pihole_domains_api_exec.rb    | 10 +++++-----
+ modules/auxiliary/admin/http/tomcat_ghostcat.rb            |  2 +-
+ modules/auxiliary/admin/http/whatsup_gold_sqli.rb          |  6 +++---
+ .../auxiliary/admin/http/wp_automatic_plugin_privesc.rb    |  4 ++--
+ modules/auxiliary/admin/http/wp_google_maps_sqli.rb        |  4 ++--
+ modules/auxiliary/admin/ldap/bad_successor.rb              |  4 ++--
+ modules/auxiliary/admin/networking/cisco_asa_extrabacon.rb |  6 +++---
+ .../auxiliary/admin/networking/cisco_dcnm_auth_bypass.rb   |  6 +++---
+ .../admin/networking/thinmanager_traversal_delete.rb       |  6 +++---
+ .../admin/networking/thinmanager_traversal_upload.rb       |  6 +++---
+ .../admin/networking/thinmanager_traversal_upload2.rb      |  6 +++---
+ modules/auxiliary/admin/sap/cve_2020_6287_ws_add_user.rb   | 11 ++++++-----
+ .../admin/scada/advantech_webaccess_dbvisitor_sqli.rb      |  4 ++--
+ modules/auxiliary/admin/scada/modicon_password_recovery.rb |  6 +++---
+ modules/auxiliary/admin/scada/moxa_credentials_recovery.rb |  6 +++---
+ modules/auxiliary/admin/scada/mypro_mgr_creds.rb           |  8 ++++----
+ modules/auxiliary/admin/wemo/crockpot.rb                   |  2 +-
+ modules/auxiliary/dos/ftp/vsftpd_232.rb                    | 12 ++++++------
+ modules/auxiliary/dos/http/flexense_http_server_dos.rb     |  8 ++++----
+ modules/auxiliary/dos/http/ms15_034_ulonglongadd.rb        |  6 +++---
+ modules/auxiliary/dos/http/nodejs_pipelining.rb            |  6 +++---
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb          | 12 ++++++------
+ modules/auxiliary/gather/cisco_pvc2300_download_config.rb  |  2 +-
+ modules/auxiliary/gather/coldfusion_pwd_props.rb           |  4 ++--
+ .../gather/cve_2021_27850_apache_tapestry_hmac_key.rb      |  8 ++++----
+ modules/auxiliary/gather/drupal_openid_xxe.rb              |  8 ++++----
+ .../auxiliary/gather/flash_rosetta_jsonp_url_disclosure.rb |  4 ++--
+ .../gather/hikvision_info_disclosure_cve_2017_7921.rb      |  6 +++---
+ modules/auxiliary/gather/jenkins_cred_recovery.rb          |  4 ++--
+ modules/auxiliary/gather/jetty_web_inf_disclosure.rb       |  4 ++--
+ modules/auxiliary/gather/joomla_contenthistory_sqli.rb     |  4 ++--
+ modules/auxiliary/gather/joomla_weblinks_sqli.rb           |  8 ++++----
+ modules/auxiliary/gather/microweber_lfi.rb                 | 10 +++++-----
+ modules/auxiliary/gather/mybb_db_fingerprint.rb            |  8 ++++----
+ modules/auxiliary/gather/netgear_password_disclosure.rb    |  4 ++--
+ modules/auxiliary/gather/oats_downloadservlet_traversal.rb |  4 ++--
+ modules/auxiliary/gather/pacsserver_traversal.rb           |  2 +-
+ modules/auxiliary/gather/peplink_bauth_sqli.rb             |  4 ++--
+ modules/auxiliary/gather/qnap_backtrace_admin_hash.rb      |  6 +++---
+ modules/auxiliary/gather/qnap_lfi.rb                       |  6 +++---
+ modules/auxiliary/gather/rails_doubletap_file_read.rb      |  8 ++++----
+ modules/auxiliary/gather/ray_lfi_cve_2023_6020.rb          | 10 +++++-----
+ modules/auxiliary/gather/redis_extractor.rb                |  2 +-
+ modules/auxiliary/gather/saltstack_salt_root_key.rb        |  4 ++--
+ .../gather/solarwinds_servu_fileread_cve_2024_28995.rb     |  2 +-
+ .../auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb    |  6 +++---
+ modules/auxiliary/gather/suite_crm_export_sqli.rb          |  2 +-
+ modules/auxiliary/gather/thinmanager_traversal_download.rb |  4 ++--
+ modules/auxiliary/gather/upsmon_traversal.rb               |  4 ++--
+ modules/auxiliary/gather/vbulletin_vote_sqli.rb            |  6 +++---
+ modules/auxiliary/gather/vmware_vcenter_vmdir_ldap.rb      |  2 +-
+ .../gather/wp_bookingpress_category_services_sqli.rb       |  2 +-
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb |  2 +-
+ modules/auxiliary/gather/wp_photo_gallery_sqli.rb          |  2 +-
+ modules/auxiliary/gather/zabbix_toggleids_sqli.rb          |  6 +++---
+ modules/auxiliary/scanner/http/exchange_proxylogon.rb      |  8 ++++----
+ modules/auxiliary/scanner/ssh/libssh_auth_bypass.rb        |  8 ++++----
+ .../auxiliary/server/relay/relay_get_naa_credentials.rb    |  4 ++--
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb          |  8 ++++----
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb            |  8 ++++----
+ .../auxiliary/sqli/dlink/dlink_central_wifimanager_sqli.rb |  4 ++--
+ modules/auxiliary/sqli/openemr/openemr_sqli_dump.rb        |  6 +++---
+ 78 files changed, 221 insertions(+), 220 deletions(-)
+
+commit 31ef5e03b5897a1e32f6d1425e297fde3fa5becb
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 15 11:57:01 2026 +0100
+
+    Improve auxiliary check code messages
+
+ modules/auxiliary/admin/dcerpc/cve_2020_1472_zerologon.rb  |  4 ++--
+ modules/auxiliary/admin/hp/hp_ilo_create_admin_account.rb  |  6 +++---
+ modules/auxiliary/admin/http/cisco_ssm_onprem_account.rb   |  2 +-
+ .../auxiliary/admin/http/fortinet_fortiweb_create_admin.rb |  2 +-
+ .../admin/http/hikvision_unauth_pwd_reset_cve_2017_7921.rb |  4 ++--
+ modules/auxiliary/admin/http/ibm_drm_download.rb           |  4 ++--
+ modules/auxiliary/admin/http/idsecure_auth_bypass.rb       | 10 +++++-----
+ modules/auxiliary/admin/http/intersil_pass_reset.rb        |  8 ++++----
+ modules/auxiliary/admin/http/ivanti_vtm_admin.rb           |  4 ++--
+ .../auxiliary/admin/http/joomla_registration_privesc.rb    | 10 +++++-----
+ modules/auxiliary/admin/http/manageengine_pmp_privesc.rb   |  6 +++---
+ modules/auxiliary/admin/http/mantisbt_password_reset.rb    |  6 +++---
+ .../http/netgear_pnpx_getsharefolderlist_auth_bypass.rb    |  8 ++++----
+ modules/auxiliary/admin/http/netgear_r6700_pass_reset.rb   |  4 ++--
+ .../http/netgear_r7000_backup_cgi_heap_overflow_rce.rb     |  4 ++--
+ .../auxiliary/admin/http/pfadmin_set_protected_alias.rb    | 14 +++++++-------
+ modules/auxiliary/admin/http/pihole_domains_api_exec.rb    | 10 +++++-----
+ modules/auxiliary/admin/http/tomcat_ghostcat.rb            |  2 +-
+ modules/auxiliary/admin/http/whatsup_gold_sqli.rb          |  6 +++---
+ .../auxiliary/admin/http/wp_automatic_plugin_privesc.rb    |  4 ++--
+ modules/auxiliary/admin/http/wp_google_maps_sqli.rb        |  4 ++--
+ modules/auxiliary/admin/ldap/bad_successor.rb              |  4 ++--
+ modules/auxiliary/admin/networking/cisco_asa_extrabacon.rb |  6 +++---
+ .../auxiliary/admin/networking/cisco_dcnm_auth_bypass.rb   |  6 +++---
+ .../admin/networking/thinmanager_traversal_delete.rb       |  6 +++---
+ .../admin/networking/thinmanager_traversal_upload.rb       |  6 +++---
+ .../admin/networking/thinmanager_traversal_upload2.rb      |  6 +++---
+ modules/auxiliary/admin/sap/cve_2020_6287_ws_add_user.rb   | 11 ++++++-----
+ .../admin/scada/advantech_webaccess_dbvisitor_sqli.rb      |  4 ++--
+ modules/auxiliary/admin/scada/modicon_password_recovery.rb |  6 +++---
+ modules/auxiliary/admin/scada/moxa_credentials_recovery.rb |  6 +++---
+ modules/auxiliary/admin/scada/mypro_mgr_creds.rb           |  8 ++++----
+ modules/auxiliary/admin/wemo/crockpot.rb                   |  2 +-
+ modules/auxiliary/dos/ftp/vsftpd_232.rb                    | 12 ++++++------
+ modules/auxiliary/dos/http/flexense_http_server_dos.rb     |  8 ++++----
+ modules/auxiliary/dos/http/ms15_034_ulonglongadd.rb        |  6 +++---
+ modules/auxiliary/dos/http/nodejs_pipelining.rb            |  6 +++---
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb          | 12 ++++++------
+ modules/auxiliary/gather/cisco_pvc2300_download_config.rb  |  2 +-
+ modules/auxiliary/gather/coldfusion_pwd_props.rb           |  4 ++--
+ .../gather/cve_2021_27850_apache_tapestry_hmac_key.rb      |  8 ++++----
+ modules/auxiliary/gather/drupal_openid_xxe.rb              |  8 ++++----
+ .../auxiliary/gather/flash_rosetta_jsonp_url_disclosure.rb |  4 ++--
+ .../gather/hikvision_info_disclosure_cve_2017_7921.rb      |  6 +++---
+ modules/auxiliary/gather/jenkins_cred_recovery.rb          |  4 ++--
+ modules/auxiliary/gather/jetty_web_inf_disclosure.rb       |  4 ++--
+ modules/auxiliary/gather/joomla_contenthistory_sqli.rb     |  4 ++--
+ modules/auxiliary/gather/joomla_weblinks_sqli.rb           |  8 ++++----
+ modules/auxiliary/gather/microweber_lfi.rb                 | 10 +++++-----
+ modules/auxiliary/gather/mybb_db_fingerprint.rb            |  8 ++++----
+ modules/auxiliary/gather/netgear_password_disclosure.rb    |  4 ++--
+ modules/auxiliary/gather/oats_downloadservlet_traversal.rb |  4 ++--
+ modules/auxiliary/gather/pacsserver_traversal.rb           |  2 +-
+ modules/auxiliary/gather/peplink_bauth_sqli.rb             |  4 ++--
+ modules/auxiliary/gather/qnap_backtrace_admin_hash.rb      |  6 +++---
+ modules/auxiliary/gather/qnap_lfi.rb                       |  6 +++---
+ modules/auxiliary/gather/rails_doubletap_file_read.rb      |  8 ++++----
+ modules/auxiliary/gather/ray_lfi_cve_2023_6020.rb          | 10 +++++-----
+ modules/auxiliary/gather/redis_extractor.rb                |  2 +-
+ modules/auxiliary/gather/saltstack_salt_root_key.rb        |  4 ++--
+ .../gather/solarwinds_servu_fileread_cve_2024_28995.rb     |  2 +-
+ .../auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb    |  6 +++---
+ modules/auxiliary/gather/suite_crm_export_sqli.rb          |  2 +-
+ modules/auxiliary/gather/thinmanager_traversal_download.rb |  4 ++--
+ modules/auxiliary/gather/upsmon_traversal.rb               |  4 ++--
+ modules/auxiliary/gather/vbulletin_vote_sqli.rb            |  6 +++---
+ modules/auxiliary/gather/vmware_vcenter_vmdir_ldap.rb      |  2 +-
+ .../gather/wp_bookingpress_category_services_sqli.rb       |  2 +-
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb |  2 +-
+ modules/auxiliary/gather/wp_photo_gallery_sqli.rb          |  2 +-
+ modules/auxiliary/gather/zabbix_toggleids_sqli.rb          |  6 +++---
+ modules/auxiliary/scanner/http/exchange_proxylogon.rb      |  8 ++++----
+ modules/auxiliary/scanner/ssh/libssh_auth_bypass.rb        |  8 ++++----
+ .../auxiliary/server/relay/relay_get_naa_credentials.rb    |  4 ++--
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb          |  8 ++++----
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb            |  8 ++++----
+ .../auxiliary/sqli/dlink/dlink_central_wifimanager_sqli.rb |  4 ++--
+ modules/auxiliary/sqli/openemr/openemr_sqli_dump.rb        |  6 +++---
+ 78 files changed, 221 insertions(+), 220 deletions(-)
+
+commit 3106aef20320aa8cbfc5b18786968bbf3259007a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 16 08:21:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 354 ------------------------------------------
+ 1 file changed, 354 deletions(-)
+
+commit 214256ffe89bfbe1d12073895b2c7eaf56712408
+Merge: 796ffb6331 91633fdad7
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Apr 16 04:13:02 2026 -0400
+
+    Merge pull request #21310 from zeroSteiner/fix/remove-eshell-payloads
+    
+    Remove the encrypted shell payload and libs
+
+ data/utilities/encrypted_payload/AdjustStack.asm   |  48 --
+ data/utilities/encrypted_payload/func_order.ld     |   9 -
+ data/utilities/encrypted_payload/func_order64.ld   |  11 -
+ lib/metasploit/framework/compiler/mingw.rb         |   1 -
+ lib/msf/base/sessions/command_shell.rb             |   7 -
+ lib/msf/base/sessions/encrypted_shell.rb           | 113 ----
+ .../core/payload/windows/encrypted_payload_opts.rb |  30 -
+ .../core/payload/windows/encrypted_reverse_tcp.rb  | 621 ---------------------
+ lib/msf/core/payload/windows/payload_db_conf.rb    |  62 --
+ lib/msf/core/payload_generator.rb                  |   7 -
+ lib/msf_autoload.rb                                |   1 -
+ .../singles/windows/encrypted_shell_reverse_tcp.rb |  35 --
+ .../windows/x64/encrypted_shell_reverse_tcp.rb     |  35 --
+ .../stagers/windows/encrypted_reverse_tcp.rb       |  34 --
+ .../stagers/windows/x64/encrypted_reverse_tcp.rb   |  34 --
+ modules/payloads/stages/windows/encrypted_shell.rb |  30 -
+ .../payloads/stages/windows/x64/encrypted_shell.rb |  31 -
+ spec/modules/payloads_spec.rb                      |  34 --
+ 18 files changed, 1143 deletions(-)
