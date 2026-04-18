@@ -1,0 +1,58 @@
+commit 046ba861b3b064db14980f9ae6c1c144e0a8eb6c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Apr 17 16:21:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 08f6dc20a5df2ca39453d5d961fd617d19f545d6
+Merge: 92af54c885 d530230b5f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Apr 17 09:13:07 2026 -0700
+
+    Merge pull request #21122 from bootstrapbool/camaleon_cms_cve_2024_46987
+    
+    Camaleon CMS CVE 2024 46987
+
+ .../gather/camaleon_download_private_file.md       | 216 +++++++++++++++++++
+ .../gather/camaleon_download_private_file.rb       | 239 +++++++++++++++++++++
+ 2 files changed, 455 insertions(+)
+
+commit 92af54c885c8b71498b6cdf7cc86427e41642f21
+Merge: 19112a0212 235da57b97
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 17 12:33:23 2026 +0100
+
+    Merge pull request #21230 from bcoles/obj-dedup-cache
+    
+    Reduce memory footprint of module metadata Obj instances
+
+ lib/msf/core/modules/metadata/obj.rb | 72 ++++++++++++++++++++++++++----------
+ 1 file changed, 53 insertions(+), 19 deletions(-)
+
+commit 19112a0212d68696da15c15182f9b62d7cdbb128
+Merge: 37ff9f8530 785307f55e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 17 11:25:44 2026 +0100
+
+    Merge pull request #21231 from bcoles/msf-module-cache
+    
+    Module metadata: Fix stale module detection and add per-type metadata index
+
+ lib/msf/core/module_manager/cache.rb             |   2 +-
+ lib/msf/core/modules/metadata/cache.rb           |  46 ++++--
+ spec/lib/msf/core/modules/metadata/cache_spec.rb | 202 +++++++++++++++++++++++
+ 3 files changed, 239 insertions(+), 11 deletions(-)
+
+commit 785307f55e8a90dfcb2af0f480a8d641b72d1d2a
+Author: bcoles <bcoles@github>
+Date:   Fri Apr 17 19:41:18 2026 +1000
+
+    Module metadata: Fix stale module detection and add per-type metadata index
+
+ lib/msf/core/module_manager/cache.rb             |   2 +-
+ lib/msf/core/modules/metadata/cache.rb           |  46 ++++--
+ spec/lib/msf/core/modules/metadata/cache_spec.rb | 202 +++++++++++++++++++++++
+ 3 files changed, 239 insertions(+), 11 deletions(-)
