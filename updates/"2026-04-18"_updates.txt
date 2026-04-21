@@ -1,0 +1,170 @@
+commit 2dbfcfb918377507fe4ae6236ea62dba834e493f
+Merge: ae63cb9b1d 6821066217
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Apr 20 16:33:53 2026 -0500
+
+    Merge pull request #21232 from bcoles/file-find_writable_directories
+    
+    Add find_writable_directories to Msf::Post::File
+
+ lib/msf/core/post/file.rb           |  46 ++++++++++++++++
+ spec/lib/msf/core/post/file_spec.rb | 101 +++++++++++++++++++++++++++++++++++-
+ 2 files changed, 146 insertions(+), 1 deletion(-)
+
+commit ae63cb9b1dd76e976ceff4afe2b7c8963432ae2b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 20 20:41:14 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 121 ++++++++++++++++++++++--------------------
+ 1 file changed, 62 insertions(+), 59 deletions(-)
+
+commit 6b57b4c66faf1905244d4cadde0f63ccf1851616
+Merge: bd2e11ad55 94b4f577e0
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Apr 20 15:30:43 2026 -0500
+
+    Merge pull request #21256 from g0tmi1k/webdav
+    
+    WebDAV improvements
+
+ modules/auxiliary/scanner/http/http_login.rb       |  13 +-
+ modules/exploits/multi/http/webdav_upload_php.rb   | 268 +++++++++++++++++++++
+ .../windows/http/xampp_webdav_upload_php.rb        |  81 -------
+ 3 files changed, 277 insertions(+), 85 deletions(-)
+
+commit bd2e11ad555e65fcac86ad22543de8f11233d244
+Merge: 6acac8e120 09bb98d13e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 20 16:55:33 2026 +0100
+
+    Merge pull request #21331 from bcoles/metadata-obj
+    
+    Metadata::Obj: Deduplicate notes hash strings and memoize `Obj#path` to reduce retained memory in the module metadata cache
+
+ lib/msf/core/modules/metadata/obj.rb | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+
+commit 6acac8e120b86d43066b0984b40a4457f62dd6a7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 20 13:31:53 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a53d0a027bafce2d99dc42c5ddf8dbbd6a19e7a7
+Merge: e09a38085c f060acd1e9
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Apr 20 14:22:23 2026 +0100
+
+    Merge pull request #21332 from adfoster-r7/remove-false-positive-from-nodejs-pipelining-check
+    
+    Remove false positive from nodejs pipelining check
+
+ modules/auxiliary/dos/http/nodejs_pipelining.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit f060acd1e9355ab3d82fe275b728025ac66aaa1b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Apr 20 13:56:24 2026 +0100
+
+    Remove false positive from nodejs pipelining check
+
+ modules/auxiliary/dos/http/nodejs_pipelining.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 09bb98d13e4f3293db65af75f8c953c10177b4e0
+Author: bcoles <bcoles@github>
+Date:   Mon Apr 20 22:19:55 2026 +1000
+
+    Memoize Obj#path to avoid repeated File.join
+    
+    The install_root path is immutable at runtime, so cache the computed
+    full path on first access instead of calling File.join on every call.
+
+ lib/msf/core/modules/metadata/obj.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 76a7f614652fdb5fef5951e9e54e7e3b9f4afbf1
+Author: bcoles <bcoles@github>
+Date:   Mon Apr 20 22:17:40 2026 +1000
+
+    Deduplicate notes hash keys and values in metadata Obj
+    
+    Notes keys ("Stability", "SideEffects", "Reliability") and values
+    ("crash-safe", "ioc-in-logs", etc.) are repeated across thousands of
+    modules. Use frozen string dedup (-str) to share a single object per
+    unique string, reducing ~24K string allocations to ~185 shared objects.
+
+ lib/msf/core/modules/metadata/obj.rb | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+commit e09a38085c15efeece0c81a56773ff9da2c959f5
+Merge: fe1aeb9279 b1c4fd3f39
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 20 11:45:33 2026 +0100
+
+    Merge pull request #21330 from bcoles/modules-loader
+    
+    Replace Pathname with string prefix removal in directory module loader
+
+ lib/msf/core/modules/loader/directory.rb | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit fe1aeb9279545eee3f9da62735261618cf80b126
+Merge: 9b985dc1ef a8ccdfc1e4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 20 11:30:04 2026 +0100
+
+    Merge pull request #21329 from bcoles/modulemanager-cache
+    
+    Simplify get_parent_path with rindex instead of split/join
+
+ lib/msf/core/module_manager/cache.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 9b985dc1ef445cfe3995ddb507acfe9f048416b1
+Merge: 046ba861b3 4607741a16
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 20 10:39:02 2026 +0100
+
+    Merge pull request #21327 from tair-m/master
+    
+    Fix uninitialized constant HTTP::CookieJar by correcting load order in http_cookie_jar.rb
+
+ lib/msf/core/exploit/remote/http/http_cookie_jar.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a8ccdfc1e4f6e974046409f39a729e7e06196b79
+Author: bcoles <bcoles@github>
+Date:   Mon Apr 20 18:22:53 2026 +1000
+
+    Simplify get_parent_path with rindex instead of split/join
+    
+    Replace File.join + String#split + array slice + Array#join with a
+    single String#rindex lookup. This avoids allocating intermediate arrays
+    and strings on every call (once per cached module during startup).
+
+ lib/msf/core/module_manager/cache.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit b1c4fd3f399bc64154cf55aaf4b78e28f930dbd9
+Author: bcoles <bcoles@github>
+Date:   Mon Apr 20 18:14:54 2026 +1000
+
+    Replace Pathname with string prefix removal in directory module loader
+    
+    Msf::Modules::Loader::Directory#each_module_reference_name created two
+    Pathname objects per module file and called relative_path_from to derive
+    the module reference name. With ~5,000 module files this produced
+    ~170,000 calls to Pathname#chop_basename internally.
+    
+    Since Rex::Find.find always yields absolute paths rooted at
+    full_entry_path, simple String#delete_prefix achieves the same result
+    without allocating Pathname objects.
+
+ lib/msf/core/modules/loader/directory.rb | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
