@@ -1,0 +1,160 @@
+commit 9efc72746282d4ff40a509d7f82cf6498644e425
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 21 17:21:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 27 ++++++++++++++++-----------
+ 1 file changed, 16 insertions(+), 11 deletions(-)
+
+commit 4c0f2c29bc19fa5d3ec68f73ef80cdf4a7a588ca
+Merge: 9692b8865f 946d1a44b5
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Apr 21 19:13:04 2026 +0200
+
+    Merge pull request #21019 from g0tmi1k/phpmyadmin_config
+
+ modules/exploits/unix/webapp/phpmyadmin_config.rb | 348 ++++++++++++++++++----
+ 1 file changed, 291 insertions(+), 57 deletions(-)
+
+commit 9692b8865fc7f7922c778e56df4c4a5370ad4bcd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 21 17:08:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 70 +++++++++++++++++++++----------------------
+ 1 file changed, 35 insertions(+), 35 deletions(-)
+
+commit 6a00ea38c6dd1a5df6fe0a39cb76e6644afc47a9
+Merge: cca7166eb4 e40422845b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Apr 21 12:58:30 2026 -0400
+
+    Merge pull request #21306 from dledda-r7/feat/block-api-randomization
+    
+    Block Api ROR13 IV randomization
+
+ lib/msf/core/payload/windows.rb                    | 14 ++++++-
+ lib/msf/core/payload/windows/bind_named_pipe.rb    | 26 ++++++-------
+ lib/msf/core/payload/windows/bind_tcp.rb           | 22 +++++------
+ lib/msf/core/payload/windows/bind_tcp_rc4.rb       |  8 ++--
+ lib/msf/core/payload/windows/block_api.rb          | 22 ++++++++++-
+ lib/msf/core/payload/windows/exitfunk.rb           | 12 +++---
+ lib/msf/core/payload/windows/migrate_common.rb     |  2 +-
+ lib/msf/core/payload/windows/migrate_named_pipe.rb |  2 +-
+ lib/msf/core/payload/windows/migrate_tcp.rb        |  6 +--
+ lib/msf/core/payload/windows/prepend_migrate.rb    | 36 +++++++++---------
+ .../core/payload/windows/reflective_pe_loader.rb   |  7 ++--
+ lib/msf/core/payload/windows/reverse_http.rb       | 30 +++++++--------
+ lib/msf/core/payload/windows/reverse_named_pipe.rb | 14 +++----
+ lib/msf/core/payload/windows/reverse_tcp.rb        | 22 +++++------
+ lib/msf/core/payload/windows/reverse_tcp_dns.rb    | 12 +++---
+ lib/msf/core/payload/windows/reverse_tcp_rc4.rb    | 10 ++---
+ lib/msf/core/payload/windows/reverse_udp.rb        | 12 +++---
+ lib/msf/core/payload/windows/reverse_win_http.rb   | 44 +++++++++++-----------
+ lib/msf/core/payload/windows/send_uuid.rb          |  2 +-
+ lib/msf/core/payload/windows/x64/addr_loader.rb    |  2 +-
+ .../payload/windows/x64/bind_named_pipe_x64.rb     | 26 ++++++-------
+ .../core/payload/windows/x64/bind_tcp_rc4_x64.rb   |  6 +--
+ lib/msf/core/payload/windows/x64/bind_tcp_x64.rb   | 20 +++++-----
+ lib/msf/core/payload/windows/x64/block_api_x64.rb  | 21 ++++++++++-
+ lib/msf/core/payload/windows/x64/exitfunk_x64.rb   |  8 ++--
+ .../core/payload/windows/x64/migrate_common_x64.rb |  2 +-
+ .../payload/windows/x64/migrate_named_pipe_x64.rb  |  2 +-
+ .../core/payload/windows/x64/migrate_tcp_x64.rb    |  6 +--
+ .../windows/x64/reflective_pe_loader_x64.rb        |  9 ++---
+ .../core/payload/windows/x64/reverse_http_x64.rb   | 30 +++++++--------
+ .../payload/windows/x64/reverse_named_pipe_x64.rb  | 14 +++----
+ .../payload/windows/x64/reverse_tcp_rc4_x64.rb     | 10 ++---
+ .../core/payload/windows/x64/reverse_tcp_x64.rb    | 20 +++++-----
+ .../payload/windows/x64/reverse_win_http_x64.rb    | 42 ++++++++++-----------
+ lib/msf/core/payload/windows/x64/send_uuid_x64.rb  |  2 +-
+ lib/msf/util/exe/windows/common.rb                 |  1 +
+ .../payloads/singles/windows/dns_txt_query_exec.rb |  6 +--
+ modules/payloads/singles/windows/download_exec.rb  | 26 ++++++-------
+ modules/payloads/singles/windows/messagebox.rb     | 12 +++---
+ .../payloads/singles/windows/pingback_bind_tcp.rb  | 20 +++++-----
+ .../singles/windows/pingback_reverse_tcp.rb        | 14 +++----
+ .../payloads/singles/windows/x64/download_exec.rb  | 10 ++---
+ modules/payloads/singles/windows/x64/messagebox.rb | 12 +++---
+ .../singles/windows/x64/pingback_reverse_tcp.rb    | 16 ++++----
+ .../stagers/windows/x64/bind_ipv6_tcp_uuid.rb      |  2 +-
+ .../payloads/stagers/windows/x64/bind_tcp_uuid.rb  |  2 +-
+ .../payloads/stagers/windows/x64/reverse_http.rb   |  4 +-
+ .../payloads/stagers/windows/x64/reverse_https.rb  |  4 +-
+ .../stagers/windows/x64/reverse_tcp_uuid.rb        |  2 +-
+ .../stagers/windows/x64/reverse_winhttp.rb         |  4 +-
+ .../stagers/windows/x64/reverse_winhttps.rb        |  4 +-
+ 51 files changed, 356 insertions(+), 306 deletions(-)
+
+commit 946d1a44b535bd4ed828fa315bdb833bbd1f3f35
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Apr 21 18:43:54 2026 +0200
+
+    Fix Notes format (array)
+
+ modules/exploits/unix/webapp/phpmyadmin_config.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit cca7166eb488a46799fab91a8fbfaa2cfc5ac8a0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Apr 21 15:05:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a91818441681ffb5c2cdeb0cd307d97c3f1d1d7c
+Merge: 97ab01cddd 81f1a7c86a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 21 15:57:26 2026 +0100
+
+    Merge pull request #21344 from adfoster-r7/fix-elasticsearch-traversal-check-support
+    
+    Fix elasticsearch traversal check support
+
+ lib/msf/core/auxiliary/multiple_target_hosts.rb       |  8 +++-----
+ .../auxiliary/scanner/http/elasticsearch_traversal.rb | 19 ++++++++++++++-----
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+commit 81f1a7c86a776ac1ab4631b784d2c0953c6218e2
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Apr 21 15:18:58 2026 +0100
+
+    Fix elasticsearch traversal check support
+
+ lib/msf/core/auxiliary/multiple_target_hosts.rb       |  8 +++-----
+ .../auxiliary/scanner/http/elasticsearch_traversal.rb | 19 ++++++++++++++-----
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+commit 97ab01cddd91e8bb0c1cedad7ca891dac11a9458
+Merge: 2dbfcfb918 b9573fa0ce
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Apr 21 15:01:35 2026 +0100
+
+    Merge pull request #21340 from dledda-r7/ci/disable-meterpreter-ci
+    
+    Disable Windows Server 2022 CI
+
+ .../workflows/shared_meterpreter_acceptance.yml    | 30 +++++++++++-----------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit b9573fa0ce0e33a77304aa3bd943551f7ec985ee
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 21 05:54:41 2026 -0400
+
+    ops(meterpreter): disable windows server 2022 build until 141_xp dependency is removed
+
+ .../workflows/shared_meterpreter_acceptance.yml    | 30 +++++++++++-----------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit e40422845be3e9b903f62d734e559f390bcb36b2
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Apr 21 05:43:34 2026 -0400
+
+    fix: block_api.rb update
+
+ lib/msf/core/payload/windows/block_api.rb | 19 ++++++++-----------
+ 1 file changed, 8 insertions(+), 11 deletions(-)
