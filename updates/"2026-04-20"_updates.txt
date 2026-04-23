@@ -1,0 +1,442 @@
+commit e5bdc50a4ffc1a0e220ba04dc0f2adf51897cd31
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 22 20:35:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 44d60c086535fdaf3d1f724462e071ec755aaf3c
+Merge: aaf536d189 b7f136077e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 22 16:27:08 2026 -0400
+
+    Merge pull request #21347 from g0tmi1k/smb_version
+    
+    smb_version: Make SMBv1 happy
+
+ lib/msf/core/exploit/remote/smb/client.rb    |  2 +-
+ modules/auxiliary/scanner/smb/smb_version.rb | 22 ++++++++++++----------
+ 2 files changed, 13 insertions(+), 11 deletions(-)
+
+commit aaf536d18924c0b8a8a0176faf11cd88aa721a28
+Merge: 7851cda71d 8587d1c211
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Apr 22 17:13:23 2026 +0100
+
+    Merge pull request #21361 from sjanusz-r7/payload-cache-size-changes
+    
+    Comment out payload size cache tests
+
+ spec/support/shared/examples/payload_cached_size_is_consistent.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8587d1c2115745f3fbae57f3981e078f5d0563b2
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Apr 22 15:41:25 2026 +0100
+
+    Skip payload cached size specs
+
+ spec/support/shared/examples/payload_cached_size_is_consistent.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7851cda71d462c6b252948d6ab9b739e8a11823e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 22 13:49:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 319 +++++++++++++++++++++---------------------
+ 1 file changed, 161 insertions(+), 158 deletions(-)
+
+commit 380911db97282ab6ea56c5c9619e664ebcf98c3f
+Merge: de636c1457 2cbb3942b6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Apr 22 14:32:05 2026 +0100
+
+    Merge pull request #21349 from adfoster-r7/improve-checkcode-messages-2
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../linux/http/accellion_fta_getstatus_oauth.rb    |  6 ++---
+ .../linux/http/advantech_switch_bash_env_exec.rb   |  8 +++----
+ .../exploits/linux/http/airties_login_cgi_bof.rb   |  6 ++---
+ modules/exploits/linux/http/alienvault_exec.rb     |  4 ++--
+ .../exploits/linux/http/alienvault_sqli_exec.rb    |  4 ++--
+ .../exploits/linux/http/apache_airflow_dag_rce.rb  |  4 ++--
+ .../linux/http/apache_continuum_cmd_exec.rb        |  6 ++---
+ .../exploits/linux/http/apache_couchdb_cmd_exec.rb |  8 +++----
+ modules/exploits/linux/http/apache_druid_js_rce.rb |  4 ++--
+ ...bypass_service_cmds_peform_command_injection.rb |  4 ++--
+ .../http/artica_proxy_unauth_rce_cve_2024_2054.rb  |  2 +-
+ modules/exploits/linux/http/astium_sqli_upload.rb  |  4 ++--
+ .../linux/http/atutor_filemanager_traversal.rb     |  6 ++---
+ modules/exploits/linux/http/axis_app_install.rb    |  6 ++---
+ .../exploits/linux/http/axis_srv_parhand_rce.rb    |  4 ++--
+ modules/exploits/linux/http/belkin_login_bof.rb    |  6 ++---
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    |  4 ++--
+ .../linux/http/bitbucket_git_cmd_injection.rb      | 18 +++++++-------
+ .../linux/http/bludit_upload_images_exec.rb        | 10 ++++----
+ modules/exploits/linux/http/cayin_cms_ntp.rb       |  4 ++--
+ modules/exploits/linux/http/centreon_sqli_exec.rb  |  8 +++----
+ .../exploits/linux/http/centreon_useralias_exec.rb |  4 ++--
+ .../linux/http/cfme_manageiq_evm_upload_exec.rb    |  4 ++--
+ .../http/chamilo_unauth_rce_cve_2023_34960.rb      |  2 +-
+ .../exploits/linux/http/cisco_firepower_useradd.rb |  6 ++---
+ .../linux/http/cisco_hyperflex_file_upload_rce.rb  |  8 +++----
+ .../cisco_hyperflex_hx_data_platform_cmd_exec.rb   |  4 ++--
+ modules/exploits/linux/http/cisco_prime_inf_rce.rb |  6 ++---
+ modules/exploits/linux/http/cisco_rv32x_rce.rb     |  8 +++----
+ modules/exploits/linux/http/cisco_ucs_rce.rb       |  4 ++--
+ .../exploits/linux/http/cpi_tararchive_upload.rb   |  6 ++---
+ .../exploits/linux/http/craftcms_ftp_template.rb   |  4 ++--
+ .../http/craftcms_unauth_rce_cve_2023_41892.rb     |  4 ++--
+ .../linux/http/crypttech_cryptolog_login_exec.rb   |  4 ++--
+ .../linux/http/cve_2019_1663_cisco_rmi_rce.rb      | 28 +++++++++++-----------
+ modules/exploits/linux/http/dcos_marathon.rb       |  4 ++--
+ modules/exploits/linux/http/denyall_waf_exec.rb    |  4 ++--
+ .../linux/http/dlink_authentication_cgi_bof.rb     |  6 ++---
+ .../exploits/linux/http/dlink_dcs931l_upload.rb    | 10 ++++----
+ .../linux/http/dlink_dir605l_captcha_bof.rb        |  4 ++--
+ .../linux/http/dlink_dir850l_unauth_exec.rb        |  8 +++----
+ .../linux/http/dlink_dsl2750b_exec_noauth.rb       | 10 ++++----
+ .../linux/http/dlink_dspw110_cookie_noauth_exec.rb |  6 ++---
+ .../linux/http/dlink_dspw215_info_cgi_bof.rb       |  8 +++----
+ .../exploits/linux/http/dlink_hedwig_cgi_bof.rb    |  6 ++---
+ modules/exploits/linux/http/dlink_hnap_bof.rb      | 12 +++++-----
+ .../linux/http/dlink_hnap_header_exec_noauth.rb    |  6 ++---
+ .../exploits/linux/http/dlink_hnap_login_bof.rb    |  6 ++---
+ .../exploits/linux/http/dlink_upnp_exec_noauth.rb  |  6 ++---
+ modules/exploits/linux/http/dnalims_admin_exec.rb  |  6 ++---
+ modules/exploits/linux/http/docker_daemon_tcp.rb   |  6 ++---
+ modules/exploits/linux/http/dolibarr_cmd_exec.rb   |  4 ++--
+ .../exploits/linux/http/dtale_rce_cve_2025_0655.rb |  2 +-
+ modules/exploits/linux/http/empire_skywalker.rb    |  4 ++--
+ modules/exploits/linux/http/eramba_rce.rb          |  4 ++--
+ modules/exploits/linux/http/esva_exec.rb           |  4 ++--
+ modules/exploits/linux/http/f5_icall_cmd.rb        |  6 ++---
+ modules/exploits/linux/http/f5_icontrol_exec.rb    |  4 ++--
+ modules/exploits/linux/http/f5_icontrol_rce.rb     | 12 +++++-----
+ .../linux/http/f5_icontrol_rest_ssrf_rce.rb        |  2 +-
+ ...ortinet_authentication_bypass_cve_2022_40684.rb |  2 +-
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   |  2 +-
+ modules/exploits/linux/http/fritzbox_echo_exec.rb  |  6 ++---
+ .../http/geutebruck_cmdinject_cve_2021_335xx.rb    |  4 ++--
+ .../linux/http/geutebruck_testaction_exec.rb       |  4 ++--
+ .../linux/http/github_enterprise_secret.rb         |  8 +++----
+ modules/exploits/linux/http/gitlist_exec.rb        |  8 +++----
+ .../linux/http/glpi_htmlawed_php_injection.rb      |  2 +-
+ modules/exploits/linux/http/goahead_ldpreload.rb   |  4 ++--
+ .../http/goautodial_3_rce_command_injection.rb     |  8 +++----
+ ...ndstream_gxv31xx_settimezone_unauth_cmd_exec.rb |  2 +-
+ modules/exploits/linux/http/gravcms_exec.rb        |  4 ++--
+ .../linux/http/groundwork_monarch_cmd_exec.rb      |  6 ++---
+ modules/exploits/linux/http/hadoop_unauth_exec.rb  |  6 ++---
+ .../exploits/linux/http/hp_system_management.rb    |  6 ++---
+ .../exploits/linux/http/hp_van_sdn_cmd_inject.rb   |  8 +++----
+ .../exploits/linux/http/huawei_hg532n_cmdinject.rb |  6 ++---
+ modules/exploits/linux/http/ibm_drm_rce.rb         |  4 ++--
+ .../exploits/linux/http/ibm_qradar_unauth_rce.rb   |  8 +++----
+ .../linux/http/ictbroadcast_unauth_cookie.rb       |  2 +-
+ .../linux/http/imperva_securesphere_exec.rb        |  6 ++---
+ .../linux/http/invokeai_rce_cve_2024_12029.rb      |  2 +-
+ modules/exploits/linux/http/ipfire_bashbug_exec.rb |  4 ++--
+ .../exploits/linux/http/ipfire_oinkcode_exec.rb    |  8 +++----
+ modules/exploits/linux/http/ipfire_proxy_exec.rb   |  4 ++--
+ .../http/ispconfig_lang_edit_php_code_injection.rb |  2 +-
+ .../ivanti_connect_secure_rce_cve_2023_46805.rb    |  2 +-
+ .../ivanti_connect_secure_rce_cve_2024_21893.rb    |  6 ++---
+ .../ivanti_connect_secure_rce_cve_2024_37404.rb    |  2 +-
+ .../http/ivanti_csa_unauth_rce_cve_2021_44529.rb   |  2 +-
+ .../linux/http/ivanti_sentry_misc_log_service.rb   |  2 +-
+ .../linux/http/jenkins_cli_deserialization.rb      |  2 +-
+ .../http/judge0_sandbox_escape_cve_2024_28189.rb   |  6 ++---
+ .../http/kafka_ui_unauth_rce_cve_2023_52251.rb     |  2 +-
+ .../linux/http/kaltura_unserialize_cookie_rce.rb   |  8 +++----
+ .../exploits/linux/http/kaltura_unserialize_rce.rb |  4 ++--
+ modules/exploits/linux/http/kloxo_sqli.rb          |  8 +++----
+ .../linux/http/librenms_collectd_cmd_inject.rb     | 10 ++++----
+ .../exploits/linux/http/linksys_themoon_exec.rb    |  6 ++---
+ .../exploits/linux/http/linksys_wrt110_cmd_exec.rb |  6 ++---
+ .../http/linksys_wvbr0_user_agent_exec_noauth.rb   |  6 ++---
+ modules/exploits/linux/http/linuxki_rce.rb         |  4 ++--
+ modules/exploits/linux/http/logsign_exec.rb        |  4 ++--
+ .../http/lucee_admin_imgprocess_file_write.rb      |  4 ++--
+ .../http/magento_xxe_to_glibc_buf_overflow.rb      |  2 +-
+ .../linux/http/microfocus_obr_cmd_injection.rb     |  4 ++--
+ .../http/microfocus_secure_messaging_gateway.rb    |  6 ++---
+ .../http/mida_solutions_eframework_ajaxreq_rce.rb  |  2 +-
+ 108 files changed, 297 insertions(+), 295 deletions(-)
+
+commit de636c145767b819aed823154b913129880c5b50
+Merge: 25d7c25ad8 f3b07d5a49
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Apr 22 14:30:48 2026 +0100
+
+    Merge pull request #21348 from adfoster-r7/improve-checkcode-messages-1
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../admin/http/atlassian_confluence_auth_bypass.rb         |  6 +++---
+ modules/auxiliary/admin/http/wp_google_maps_sqli.rb        |  2 +-
+ modules/auxiliary/gather/camaleon_download_private_file.rb |  6 +++---
+ modules/auxiliary/gather/doliwamp_traversal_creds.rb       |  2 +-
+ modules/auxiliary/gather/jetty_web_inf_disclosure.rb       |  2 +-
+ .../auxiliary/gather/joomla_com_realestatemanager_sqli.rb  |  4 ++--
+ modules/auxiliary/gather/suite_crm_export_sqli.rb          |  2 +-
+ modules/auxiliary/gather/thinmanager_traversal_download.rb |  2 +-
+ modules/auxiliary/gather/tplink_archer_c7_traversal.rb     |  2 +-
+ .../gather/wp_bookingpress_category_services_sqli.rb       |  2 +-
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb |  2 +-
+ modules/auxiliary/scanner/couchdb/couchdb_enum.rb          |  8 ++++----
+ modules/auxiliary/scanner/dlsw/dlsw_leak_capture.rb        |  6 +++---
+ modules/auxiliary/scanner/ftp/bison_ftp_traversal.rb       |  4 ++--
+ modules/auxiliary/scanner/ftp/colorado_ftp_traversal.rb    |  4 ++--
+ modules/auxiliary/scanner/ftp/easy_file_sharing_ftp.rb     |  4 ++--
+ modules/auxiliary/scanner/ftp/konica_ftp_traversal.rb      |  4 ++--
+ modules/auxiliary/scanner/ftp/pcman_ftp_traversal.rb       |  4 ++--
+ modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb  | 10 +++++-----
+ modules/auxiliary/scanner/http/bmc_trackit_passwd_reset.rb |  8 ++++----
+ modules/auxiliary/scanner/http/dolibarr_16_contact_dump.rb |  2 +-
+ modules/auxiliary/scanner/http/drupal_views_user_enum.rb   |  8 ++++----
+ modules/auxiliary/scanner/http/grafana_plugin_traversal.rb |  8 ++++----
+ modules/auxiliary/scanner/http/iis_shortname_scanner.rb    |  3 ++-
+ .../scanner/http/manageengine_deviceexpert_user_creds.rb   |  2 +-
+ .../scanner/http/ms15_034_http_sys_memory_dump.rb          |  6 +++---
+ modules/auxiliary/scanner/http/netalertx_file_read.rb      |  2 +-
+ .../scanner/http/pretalx_file_read_cve_2023_28459.rb       |  2 +-
+ modules/auxiliary/scanner/http/strapi_3_password_reset.rb  |  2 +-
+ modules/auxiliary/scanner/http/surgenews_user_creds.rb     |  4 ++--
+ .../scanner/http/syncovery_linux_token_cve_2022_36536.rb   | 10 +++++-----
+ modules/auxiliary/scanner/http/totaljs_traversal.rb        |  8 ++++----
+ .../auxiliary/scanner/http/wordpress_content_injection.rb  |  6 +++---
+ modules/auxiliary/scanner/http/wp_chopslider_id_sqli.rb    |  4 ++--
+ modules/auxiliary/scanner/http/wp_perfect_survey_sqli.rb   |  4 ++--
+ .../scanner/misc/freeswitch_event_socket_login.rb          |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_nak_to_the_future.rb     |  4 ++--
+ modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb    |  4 ++--
+ modules/auxiliary/scanner/rdp/ms12_020_check.rb            |  2 +-
+ modules/auxiliary/scanner/redis/file_upload.rb             |  4 ++--
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb              |  3 ++-
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb           | 10 +++++-----
+ modules/auxiliary/scanner/smb/smb_version.rb               | 14 +++++++++-----
+ modules/auxiliary/scanner/ssh/ssh_version.rb               | 14 +++++++++-----
+ modules/auxiliary/scanner/ssl/openssl_heartbleed.rb        |  4 ++--
+ modules/auxiliary/server/relay/esc8.rb                     |  2 +-
+ modules/post/osx/escalate/tccbypass.rb                     |  8 ++++----
+ modules/post/osx/gather/apfs_encrypted_volume_passwd.rb    |  4 ++--
+ modules/post/windows/gather/credentials/pulse_secure.rb    | 10 +++++-----
+ 49 files changed, 125 insertions(+), 115 deletions(-)
+
+commit f3b07d5a494f339c6e10d1ad9b5b5e3413537d77
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 11:52:36 2026 +0100
+
+    Add human-readable descriptions to CheckCode returns in auxiliary and post modules
+
+ .../admin/http/atlassian_confluence_auth_bypass.rb         |  6 +++---
+ modules/auxiliary/admin/http/wp_google_maps_sqli.rb        |  2 +-
+ modules/auxiliary/gather/camaleon_download_private_file.rb |  6 +++---
+ modules/auxiliary/gather/doliwamp_traversal_creds.rb       |  2 +-
+ modules/auxiliary/gather/jetty_web_inf_disclosure.rb       |  2 +-
+ .../auxiliary/gather/joomla_com_realestatemanager_sqli.rb  |  4 ++--
+ modules/auxiliary/gather/suite_crm_export_sqli.rb          |  2 +-
+ modules/auxiliary/gather/thinmanager_traversal_download.rb |  2 +-
+ modules/auxiliary/gather/tplink_archer_c7_traversal.rb     |  2 +-
+ .../gather/wp_bookingpress_category_services_sqli.rb       |  2 +-
+ modules/auxiliary/gather/wp_depicter_sqli_cve_2025_2011.rb |  2 +-
+ modules/auxiliary/scanner/couchdb/couchdb_enum.rb          |  8 ++++----
+ modules/auxiliary/scanner/dlsw/dlsw_leak_capture.rb        |  6 +++---
+ modules/auxiliary/scanner/ftp/bison_ftp_traversal.rb       |  4 ++--
+ modules/auxiliary/scanner/ftp/colorado_ftp_traversal.rb    |  4 ++--
+ modules/auxiliary/scanner/ftp/easy_file_sharing_ftp.rb     |  4 ++--
+ modules/auxiliary/scanner/ftp/konica_ftp_traversal.rb      |  4 ++--
+ modules/auxiliary/scanner/ftp/pcman_ftp_traversal.rb       |  4 ++--
+ modules/auxiliary/scanner/http/apache_mod_cgi_bash_env.rb  | 10 +++++-----
+ modules/auxiliary/scanner/http/bmc_trackit_passwd_reset.rb |  8 ++++----
+ modules/auxiliary/scanner/http/dolibarr_16_contact_dump.rb |  2 +-
+ modules/auxiliary/scanner/http/drupal_views_user_enum.rb   |  8 ++++----
+ modules/auxiliary/scanner/http/grafana_plugin_traversal.rb |  8 ++++----
+ modules/auxiliary/scanner/http/iis_shortname_scanner.rb    |  3 ++-
+ .../scanner/http/manageengine_deviceexpert_user_creds.rb   |  2 +-
+ .../scanner/http/ms15_034_http_sys_memory_dump.rb          |  6 +++---
+ modules/auxiliary/scanner/http/netalertx_file_read.rb      |  2 +-
+ .../scanner/http/pretalx_file_read_cve_2023_28459.rb       |  2 +-
+ modules/auxiliary/scanner/http/strapi_3_password_reset.rb  |  2 +-
+ modules/auxiliary/scanner/http/surgenews_user_creds.rb     |  4 ++--
+ .../scanner/http/syncovery_linux_token_cve_2022_36536.rb   | 10 +++++-----
+ modules/auxiliary/scanner/http/totaljs_traversal.rb        |  8 ++++----
+ .../auxiliary/scanner/http/wordpress_content_injection.rb  |  6 +++---
+ modules/auxiliary/scanner/http/wp_chopslider_id_sqli.rb    |  4 ++--
+ modules/auxiliary/scanner/http/wp_perfect_survey_sqli.rb   |  4 ++--
+ .../scanner/misc/freeswitch_event_socket_login.rb          |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_nak_to_the_future.rb     |  4 ++--
+ modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb    |  4 ++--
+ modules/auxiliary/scanner/rdp/ms12_020_check.rb            |  2 +-
+ modules/auxiliary/scanner/redis/file_upload.rb             |  4 ++--
+ modules/auxiliary/scanner/smb/smb_ms17_010.rb              |  3 ++-
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb           | 10 +++++-----
+ modules/auxiliary/scanner/smb/smb_version.rb               | 14 +++++++++-----
+ modules/auxiliary/scanner/ssh/ssh_version.rb               | 14 +++++++++-----
+ modules/auxiliary/scanner/ssl/openssl_heartbleed.rb        |  4 ++--
+ modules/auxiliary/server/relay/esc8.rb                     |  2 +-
+ modules/post/osx/escalate/tccbypass.rb                     |  8 ++++----
+ modules/post/osx/gather/apfs_encrypted_volume_passwd.rb    |  4 ++--
+ modules/post/windows/gather/credentials/pulse_secure.rb    | 10 +++++-----
+ 49 files changed, 125 insertions(+), 115 deletions(-)
+
+commit 2cbb3942b65a8ca15a851aa6c842c2976e73a24e
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 11:54:55 2026 +0100
+
+    Add human-readable descriptions to CheckCode returns in linux/http exploit modules (A-M)
+
+ .../linux/http/accellion_fta_getstatus_oauth.rb    |  6 ++---
+ .../linux/http/advantech_switch_bash_env_exec.rb   |  8 +++----
+ .../exploits/linux/http/airties_login_cgi_bof.rb   |  6 ++---
+ modules/exploits/linux/http/alienvault_exec.rb     |  4 ++--
+ .../exploits/linux/http/alienvault_sqli_exec.rb    |  4 ++--
+ .../exploits/linux/http/apache_airflow_dag_rce.rb  |  4 ++--
+ .../linux/http/apache_continuum_cmd_exec.rb        |  6 ++---
+ .../exploits/linux/http/apache_couchdb_cmd_exec.rb |  8 +++----
+ modules/exploits/linux/http/apache_druid_js_rce.rb |  4 ++--
+ ...bypass_service_cmds_peform_command_injection.rb |  4 ++--
+ .../http/artica_proxy_unauth_rce_cve_2024_2054.rb  |  2 +-
+ modules/exploits/linux/http/astium_sqli_upload.rb  |  4 ++--
+ .../linux/http/atutor_filemanager_traversal.rb     |  6 ++---
+ modules/exploits/linux/http/axis_app_install.rb    |  6 ++---
+ .../exploits/linux/http/axis_srv_parhand_rce.rb    |  4 ++--
+ modules/exploits/linux/http/belkin_login_bof.rb    |  6 ++---
+ .../linux/http/beyondtrust_pra_rs_unauth_rce.rb    |  4 ++--
+ .../linux/http/bitbucket_git_cmd_injection.rb      | 18 +++++++-------
+ .../linux/http/bludit_upload_images_exec.rb        | 10 ++++----
+ modules/exploits/linux/http/cayin_cms_ntp.rb       |  4 ++--
+ modules/exploits/linux/http/centreon_sqli_exec.rb  |  8 +++----
+ .../exploits/linux/http/centreon_useralias_exec.rb |  4 ++--
+ .../linux/http/cfme_manageiq_evm_upload_exec.rb    |  4 ++--
+ .../http/chamilo_unauth_rce_cve_2023_34960.rb      |  2 +-
+ .../exploits/linux/http/cisco_firepower_useradd.rb |  6 ++---
+ .../linux/http/cisco_hyperflex_file_upload_rce.rb  |  8 +++----
+ .../cisco_hyperflex_hx_data_platform_cmd_exec.rb   |  4 ++--
+ modules/exploits/linux/http/cisco_prime_inf_rce.rb |  6 ++---
+ modules/exploits/linux/http/cisco_rv32x_rce.rb     |  8 +++----
+ modules/exploits/linux/http/cisco_ucs_rce.rb       |  4 ++--
+ .../exploits/linux/http/cpi_tararchive_upload.rb   |  6 ++---
+ .../exploits/linux/http/craftcms_ftp_template.rb   |  4 ++--
+ .../http/craftcms_unauth_rce_cve_2023_41892.rb     |  4 ++--
+ .../linux/http/crypttech_cryptolog_login_exec.rb   |  4 ++--
+ .../linux/http/cve_2019_1663_cisco_rmi_rce.rb      | 28 +++++++++++-----------
+ modules/exploits/linux/http/dcos_marathon.rb       |  4 ++--
+ modules/exploits/linux/http/denyall_waf_exec.rb    |  4 ++--
+ .../linux/http/dlink_authentication_cgi_bof.rb     |  6 ++---
+ .../exploits/linux/http/dlink_dcs931l_upload.rb    | 10 ++++----
+ .../linux/http/dlink_dir605l_captcha_bof.rb        |  4 ++--
+ .../linux/http/dlink_dir850l_unauth_exec.rb        |  8 +++----
+ .../linux/http/dlink_dsl2750b_exec_noauth.rb       | 10 ++++----
+ .../linux/http/dlink_dspw110_cookie_noauth_exec.rb |  6 ++---
+ .../linux/http/dlink_dspw215_info_cgi_bof.rb       |  8 +++----
+ .../exploits/linux/http/dlink_hedwig_cgi_bof.rb    |  6 ++---
+ modules/exploits/linux/http/dlink_hnap_bof.rb      | 12 +++++-----
+ .../linux/http/dlink_hnap_header_exec_noauth.rb    |  6 ++---
+ .../exploits/linux/http/dlink_hnap_login_bof.rb    |  6 ++---
+ .../exploits/linux/http/dlink_upnp_exec_noauth.rb  |  6 ++---
+ modules/exploits/linux/http/dnalims_admin_exec.rb  |  6 ++---
+ modules/exploits/linux/http/docker_daemon_tcp.rb   |  6 ++---
+ modules/exploits/linux/http/dolibarr_cmd_exec.rb   |  4 ++--
+ .../exploits/linux/http/dtale_rce_cve_2025_0655.rb |  2 +-
+ modules/exploits/linux/http/empire_skywalker.rb    |  4 ++--
+ modules/exploits/linux/http/eramba_rce.rb          |  4 ++--
+ modules/exploits/linux/http/esva_exec.rb           |  4 ++--
+ modules/exploits/linux/http/f5_icall_cmd.rb        |  6 ++---
+ modules/exploits/linux/http/f5_icontrol_exec.rb    |  4 ++--
+ modules/exploits/linux/http/f5_icontrol_rce.rb     | 12 +++++-----
+ .../linux/http/f5_icontrol_rest_ssrf_rce.rb        |  2 +-
+ ...ortinet_authentication_bypass_cve_2022_40684.rb |  2 +-
+ .../exploits/linux/http/fortinet_fortiweb_rce.rb   |  2 +-
+ modules/exploits/linux/http/fritzbox_echo_exec.rb  |  6 ++---
+ .../http/geutebruck_cmdinject_cve_2021_335xx.rb    |  4 ++--
+ .../linux/http/geutebruck_testaction_exec.rb       |  4 ++--
+ .../linux/http/github_enterprise_secret.rb         |  8 +++----
+ modules/exploits/linux/http/gitlist_exec.rb        |  8 +++----
+ .../linux/http/glpi_htmlawed_php_injection.rb      |  2 +-
+ modules/exploits/linux/http/goahead_ldpreload.rb   |  4 ++--
+ .../http/goautodial_3_rce_command_injection.rb     |  8 +++----
+ ...ndstream_gxv31xx_settimezone_unauth_cmd_exec.rb |  2 +-
+ modules/exploits/linux/http/gravcms_exec.rb        |  4 ++--
+ .../linux/http/groundwork_monarch_cmd_exec.rb      |  6 ++---
+ modules/exploits/linux/http/hadoop_unauth_exec.rb  |  6 ++---
+ .../exploits/linux/http/hp_system_management.rb    |  6 ++---
+ .../exploits/linux/http/hp_van_sdn_cmd_inject.rb   |  8 +++----
+ .../exploits/linux/http/huawei_hg532n_cmdinject.rb |  6 ++---
+ modules/exploits/linux/http/ibm_drm_rce.rb         |  4 ++--
+ .../exploits/linux/http/ibm_qradar_unauth_rce.rb   |  8 +++----
+ .../linux/http/ictbroadcast_unauth_cookie.rb       |  2 +-
+ .../linux/http/imperva_securesphere_exec.rb        |  6 ++---
+ .../linux/http/invokeai_rce_cve_2024_12029.rb      |  2 +-
+ modules/exploits/linux/http/ipfire_bashbug_exec.rb |  4 ++--
+ .../exploits/linux/http/ipfire_oinkcode_exec.rb    |  8 +++----
+ modules/exploits/linux/http/ipfire_proxy_exec.rb   |  4 ++--
+ .../http/ispconfig_lang_edit_php_code_injection.rb |  2 +-
+ .../ivanti_connect_secure_rce_cve_2023_46805.rb    |  2 +-
+ .../ivanti_connect_secure_rce_cve_2024_21893.rb    |  6 ++---
+ .../ivanti_connect_secure_rce_cve_2024_37404.rb    |  2 +-
+ .../http/ivanti_csa_unauth_rce_cve_2021_44529.rb   |  2 +-
+ .../linux/http/ivanti_sentry_misc_log_service.rb   |  2 +-
+ .../linux/http/jenkins_cli_deserialization.rb      |  2 +-
+ .../http/judge0_sandbox_escape_cve_2024_28189.rb   |  6 ++---
+ .../http/kafka_ui_unauth_rce_cve_2023_52251.rb     |  2 +-
+ .../linux/http/kaltura_unserialize_cookie_rce.rb   |  8 +++----
+ .../exploits/linux/http/kaltura_unserialize_rce.rb |  4 ++--
+ modules/exploits/linux/http/kloxo_sqli.rb          |  8 +++----
+ .../linux/http/librenms_collectd_cmd_inject.rb     | 10 ++++----
+ .../exploits/linux/http/linksys_themoon_exec.rb    |  6 ++---
+ .../exploits/linux/http/linksys_wrt110_cmd_exec.rb |  6 ++---
+ .../http/linksys_wvbr0_user_agent_exec_noauth.rb   |  6 ++---
+ modules/exploits/linux/http/linuxki_rce.rb         |  4 ++--
+ modules/exploits/linux/http/logsign_exec.rb        |  4 ++--
+ .../http/lucee_admin_imgprocess_file_write.rb      |  4 ++--
+ .../http/magento_xxe_to_glibc_buf_overflow.rb      |  2 +-
+ .../linux/http/microfocus_obr_cmd_injection.rb     |  4 ++--
+ .../http/microfocus_secure_messaging_gateway.rb    |  6 ++---
+ .../http/mida_solutions_eframework_ajaxreq_rce.rb  |  2 +-
+ 108 files changed, 297 insertions(+), 295 deletions(-)
+
+commit b7f136077e7baec760a48374373cf0f9d152deb6
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 05:51:05 2026 +0100
+
+    smb_version: Be more verbose - show smb1 if possible
+
+ modules/auxiliary/scanner/smb/smb_version.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 0474c0ce24ab14c86205187a5a9a7cc2d40bd590
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 16:33:38 2026 +0100
+
+    smb_version: Add spacing between :
+
+ modules/auxiliary/scanner/smb/smb_version.rb | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 1d9c9224887b04621f539765fe94a803dc998dfd
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 16:36:09 2026 +0100
+
+    Make smb_version happy with smbv1
+
+ lib/msf/core/exploit/remote/smb/client.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 25d7c25ad85a705f2d8d8ae251644222692faa40
+Merge: 9efc727462 6e992aa6ed
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Apr 22 12:38:47 2026 +0100
+
+    Merge pull request #21346 from adfoster-r7/fix-false-positive-on-couchdb-enum-check
+    
+    Fix false positive on couchdb enum check
+
+ modules/auxiliary/scanner/couchdb/couchdb_enum.rb | 25 ++++++++++++++---------
+ 1 file changed, 15 insertions(+), 10 deletions(-)
