@@ -1,0 +1,592 @@
+commit 17f7f4d718323faf7cba9187d17c4032b2e5ace7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 15:02:38 2026 +0000
+
+    Bump version of framework to 6.4.130
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 74468290c967d9256387e781b7f6df9096de4ddc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 14:54:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 540139cd4a5eef0bf250e0f6bb9ca5f5ddf0639e
+Merge: cb1cfbbe98 76cae04e91
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Apr 23 10:45:58 2026 -0400
+
+    Merge pull request #21341 from g0tmi1k/smb
+    
+    Fix various smb/samba issues
+
+ lib/msf/core/exploit/remote/ms_samr.rb             |  2 +-
+ .../auxiliary/scanner/smb/psexec_loggedin_users.rb |  1 +
+ modules/auxiliary/scanner/smb/smb_enumshares.rb    |  4 ++-
+ modules/auxiliary/scanner/smb/smb_enumusers.rb     | 13 +++++++--
+ modules/auxiliary/scanner/smb/smb_login.rb         | 12 +++++---
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb     |  7 +++--
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb   | 34 +++++++++++++++-------
+ modules/auxiliary/scanner/smb/smb_version.rb       | 21 ++++++-------
+ 8 files changed, 63 insertions(+), 31 deletions(-)
+
+commit cb1cfbbe9881fa0b728a7786f3a4272beb96d75d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 14:21:28 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 2289fc07ceca55f0909950b4864b9da510da0745
+Merge: 107edff1cb f54374eaff
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Apr 23 09:12:12 2026 -0500
+
+    Merge pull request #21260 from Takahiro-Yoko/langflow_rce_cve_2026_27966
+    
+    Add Langflow RCE module (CVE-2026-27966)
+
+ data/exploits/CVE-2026-27966/cve_2026_27966.json   | 1285 ++++++++++++++++++++
+ .../multi/http/langflow_rce_cve_2026_27966.md      |  186 +++
+ .../multi/http/langflow_rce_cve_2026_27966.rb      |  209 ++++
+ 3 files changed, 1680 insertions(+)
+
+commit 107edff1cbd7ac07ce718ed8616901b17003df99
+Merge: 4521c9f3d3 9dbea3d5e2
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 23 13:23:55 2026 +0100
+
+    Merge pull request #21278 from adfoster-r7/fix-msftidy-heading-in-codeblock-edgecase
+    
+    Fix msftidy heading in codeblock edgecase
+
+ tools/dev/msftidy_docs.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4521c9f3d3022fa65b27f54ca17d38d14da99a26
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 12:03:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 114 +++++++++++++++++++++---------------------
+ 1 file changed, 57 insertions(+), 57 deletions(-)
+
+commit 76cae04e916707ad5c40c416755f2f8130109b72
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 06:32:00 2026 +0100
+
+    smb_login: Add report_service (regardless of RECORD_GUEST)
+    
+    RECORD_GUEST = creds, not service
+
+ modules/auxiliary/scanner/smb/smb_enumshares.rb |  4 +++-
+ modules/auxiliary/scanner/smb/smb_login.rb      | 12 ++++++++----
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+commit 4f77df25baa1e272dcc0e7067afba38f8e70baa9
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 06:12:33 2026 +0100
+
+    smb_uninit_cred: Add report_service
+
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb | 29 ++++++++++++++++--------
+ 1 file changed, 19 insertions(+), 10 deletions(-)
+
+commit 792a4254acddcb00068cd2937e50ac3244ad95ae
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 05:36:31 2026 +0100
+
+    smb_uninit_cred: Print correct port
+
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit eb5b5a12775cf1bacd46ef7ca97066233348a209
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 05:28:50 2026 +0100
+
+    smb_uninit_cred: Rex::Proto::DCERPC::Exceptions::Fault DCERPC FAULT => nca_op_rng_error
+
+ modules/auxiliary/scanner/smb/smb_uninit_cred.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 950fb9def63bb481717c20a3f86900b78283906a
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 05:23:34 2026 +0100
+
+    smb_lookupsid: Hide table if results empty
+
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 2e58eb1207aa67a5e62a5a259357fc9a1bd0bb78
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Apr 22 05:16:08 2026 +0100
+
+    psexec_loggedin_users: NoMethodError. undefined method `each_line' for false
+
+ modules/auxiliary/scanner/smb/psexec_loggedin_users.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit a173ea15fa4b51d0bef6c6455e30de9fd8116018
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 11:20:54 2026 +0100
+
+    smb_version: Remove duplicated report_service
+
+ modules/auxiliary/scanner/smb/smb_version.rb | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
+
+commit 3c1b24575104f1319bd3126e5f7fdb09f250eba4
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 11:00:04 2026 +0100
+
+    Fix #21339: NoMethodError undefined method `each' for an instance of String
+
+ modules/auxiliary/scanner/smb/smb_lookupsid.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ca2773128512bd44c4616d2dcb45d4f576f2225a
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 10:53:10 2026 +0100
+
+    Fix #21338: NoMethodError undefined method `domain_handle' for nil
+
+ lib/msf/core/exploit/remote/ms_samr.rb         |  2 +-
+ modules/auxiliary/scanner/smb/smb_enumusers.rb | 13 ++++++++++---
+ 2 files changed, 11 insertions(+), 4 deletions(-)
+
+commit 2d93669f56adbe72eed0ca5a95242b735e8aa244
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 10:48:34 2026 +0100
+
+    Fix #21337: NoMethodError' 'undefined method `empty?' for nil
+
+ modules/auxiliary/scanner/smb/smb_enumshares.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1142d4e15d5ff1be6fd6cf4becbfedf56a55ab25
+Merge: f1778187b8 05befe18b1
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 23 12:54:31 2026 +0100
+
+    Merge pull request #21351 from adfoster-r7/improve-checkcode-messages-4
+    
+    Add human-readable descriptions to CheckCode returns modules
+
+ .../exploits/linux/local/abrt_raceabrt_priv_esc.rb | 12 ++++----
+ .../linux/local/abrt_sosreport_priv_esc.rb         | 12 ++++----
+ .../linux/local/af_packet_chocobo_root_priv_esc.rb |  2 +-
+ .../local/af_packet_packet_set_ring_priv_esc.rb    | 18 ++++++------
+ .../linux/local/apport_abrt_chroot_priv_esc.rb     | 12 ++++----
+ .../linux/local/asan_suid_executable_priv_esc.rb   |  8 +++---
+ .../blueman_set_dhcp_handler_dbus_priv_esc.rb      |  8 +++---
+ modules/exploits/linux/local/bpf_priv_esc.rb       | 16 +++++------
+ .../linux/local/bpf_sign_extension_priv_esc.rb     |  2 +-
+ .../cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb   |  2 +-
+ .../linux/local/cve_2021_3493_overlayfs.rb         |  2 +-
+ .../linux/local/cve_2021_4034_pwnkit_lpe_pkexec.rb |  2 +-
+ .../linux/local/cve_2022_0995_watch_queue.rb       |  2 +-
+ .../linux/local/cve_2022_1043_io_uring_priv_esc.rb |  2 +-
+ .../linux/local/desktop_privilege_escalation.rb    |  4 +--
+ .../local/docker_daemon_privilege_escalation.rb    |  4 +--
+ .../linux/local/exim4_deliver_message_priv_esc.rb  | 10 +++----
+ .../exploits/linux/local/gameoverlay_privesc.rb    | 10 +++----
+ .../local/glibc_ld_audit_dso_load_priv_esc.rb      |  8 +++---
+ .../linux/local/glibc_origin_expansion_priv_esc.rb |  2 +-
+ .../linux/local/glibc_realpath_priv_esc.rb         | 32 +++++++++++-----------
+ .../exploits/linux/local/hp_xglance_priv_esc.rb    |  4 +--
+ .../linux/local/juju_run_agent_priv_esc.rb         |  4 +--
+ .../exploits/linux/local/ktsuss_suid_priv_esc.rb   |  4 +--
+ .../linux/local/lastore_daemon_dbus_priv_esc.rb    |  6 ++--
+ .../linux/local/libuser_roothelper_priv_esc.rb     | 10 +++----
+ .../local/nested_namespace_idmap_limit_priv_esc.rb | 10 +++----
+ .../local/netfilter_nft_set_elem_init_privesc.rb   |  4 +--
+ .../linux/local/netfilter_priv_esc_ipv4.rb         | 10 +++----
+ .../network_manager_vpnc_username_priv_esc.rb      |  4 +--
+ modules/exploits/linux/local/ntfs3g_priv_esc.rb    | 18 ++++++------
+ .../linux/local/omniresolve_suid_priv_esc.rb       |  6 ++--
+ modules/exploits/linux/local/overlayfs_priv_esc.rb |  4 +--
+ modules/exploits/linux/local/pkexec.rb             |  6 ++--
+ .../local/progress_flowmon_sudo_privesc_2024.rb    |  4 +--
+ .../linux/local/ptrace_sudo_token_priv_esc.rb      | 10 +++----
+ .../linux/local/ptrace_traceme_pkexec_helper.rb    | 10 +++----
+ ...s_atomic_free_op_null_pointer_deref_priv_esc.rb |  2 +-
+ .../linux/local/rds_rds_page_copy_user_priv_esc.rb |  2 +-
+ modules/exploits/linux/local/recvmmsg_priv_esc.rb  | 10 +++----
+ .../local/reptile_rootkit_reptile_cmd_priv_esc.rb  |  8 +++---
+ ...ervu_ftp_server_prepareinstallation_priv_esc.rb |  2 +-
+ modules/exploits/linux/local/sock_sendpage.rb      | 12 ++++----
+ .../exploits/linux/local/sophos_wpa_clear_keys.rb  |  4 +--
+ modules/exploits/linux/local/su_login.rb           | 12 ++++----
+ .../linux/local/sudo_chroot_cve_2025_32463.rb      |  2 +-
+ .../local/systemtap_modprobe_options_priv_esc.rb   |  2 +-
+ .../local/ubuntu_enlightenment_mount_priv_esc.rb   |  2 +-
+ .../linux/local/ufo_privilege_escalation.rb        | 16 +++++------
+ modules/exploits/linux/local/vmware_alsa_config.rb | 10 +++----
+ modules/exploits/linux/local/vmware_mount.rb       |  2 +-
+ .../vmware_workspace_one_access_certproxy_lpe.rb   |  2 +-
+ .../vmware_workspace_one_access_cve_2022_22960.rb  |  2 +-
+ .../linux/local/zimbra_postfix_priv_esc.rb         | 12 ++++----
+ .../linux/local/zimbra_slapper_priv_esc.rb         | 12 ++++----
+ modules/exploits/linux/local/zpanel_zsudo.rb       |  4 +--
+ 56 files changed, 200 insertions(+), 202 deletions(-)
+
+commit f00bbe645149960fd5b80797631e3d4b9fd3a4a7
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Thu Apr 23 12:06:09 2026 +0100
+
+    Update payload cached sizes when creating new module metadata cache
+
+ tools/automation/cache/build_new_cache.sh | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit f1778187b86592f9b181d8ac6c1069d472ed80fb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 11:04:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 148 +++++++++++++++++++++---------------------
+ 1 file changed, 74 insertions(+), 74 deletions(-)
+
+commit 9ad8b7ac32182de650dbc9d9b7b7d76d6e3d3265
+Merge: 8a5d7be47a 3e61396ec2
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 23 11:55:46 2026 +0100
+
+    Merge pull request #21360 from adfoster-r7/improve-checkcode-messages-13
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ modules/exploits/aix/local/xorg_x11_server.rb            |  8 ++++----
+ modules/exploits/android/adb/adb_server_exec.rb          |  4 ++--
+ modules/exploits/android/local/futex_requeue.rb          |  4 ++--
+ modules/exploits/bsd/finger/morris_fingerd_bof.rb        |  8 ++++----
+ modules/exploits/example.rb                              |  2 +-
+ modules/exploits/example_webapp.rb                       |  2 +-
+ modules/exploits/freebsd/ftp/proftp_telnet_iac.rb        |  8 ++++----
+ .../exploits/freebsd/http/citrix_formssso_target_rce.rb  | 10 +++++-----
+ modules/exploits/freebsd/http/watchguard_cmd_exec.rb     |  4 ++--
+ modules/exploits/freebsd/local/intel_sysret_priv_esc.rb  |  2 +-
+ .../exploits/freebsd/local/ip6_setpktopt_uaf_priv_esc.rb |  2 +-
+ modules/exploits/freebsd/local/mmap.rb                   |  4 ++--
+ modules/exploits/freebsd/local/rtld_execl_priv_esc.rb    |  2 +-
+ .../freebsd/local/watchguard_fix_corrupt_mail.rb         |  4 ++--
+ .../exploits/freebsd/misc/citrix_netscaler_soap_bof.rb   |  6 ++++--
+ modules/exploits/freebsd/webapp/spamtitan_unauth_rce.rb  |  2 +-
+ modules/exploits/irix/lpd/tagprinter_exec.rb             |  4 ++--
+ modules/exploits/osx/arkeia/type77.rb                    |  8 ++++----
+ modules/exploits/osx/http/remote_for_mac_rce.rb          |  2 +-
+ .../exploits/osx/local/acronis_trueimage_xpc_privesc.rb  |  2 +-
+ modules/exploits/osx/local/cfprefsd_race_condition.rb    |  6 +++---
+ modules/exploits/osx/local/dyld_print_to_file_root.rb    |  2 +-
+ modules/exploits/osx/local/iokit_keyboard_root.rb        |  4 ++--
+ modules/exploits/osx/local/libxpc_mitm_ssudo.rb          |  4 ++--
+ modules/exploits/osx/local/mac_dirty_cow.rb              |  8 ++++----
+ modules/exploits/osx/local/nfs_mount_root.rb             |  4 ++--
+ modules/exploits/osx/local/rootpipe.rb                   |  2 +-
+ modules/exploits/osx/local/rootpipe_entitlements.rb      |  4 ++--
+ modules/exploits/osx/local/setuid_tunnelblick.rb         |  6 +++---
+ modules/exploits/osx/local/setuid_viscosity.rb           |  6 +++---
+ modules/exploits/osx/local/sudo_password_bypass.rb       |  8 ++++----
+ modules/exploits/osx/local/timemachine_cmd_injection.rb  |  4 ++--
+ modules/exploits/osx/local/tpwn.rb                       |  2 +-
+ modules/exploits/osx/local/vmware_bash_function_root.rb  |  4 ++--
+ modules/exploits/osx/local/vmware_fusion_lpe.rb          |  6 +++---
+ modules/exploits/osx/mdns/upnp_location.rb               |  4 ++--
+ modules/exploits/qnx/qconn/qconn_exec.rb                 | 13 +++++++------
+ modules/exploits/solaris/dtspcd/heap_noir.rb             |  2 +-
+ .../solaris/local/extremeparr_dtappgather_priv_esc.rb    | 10 +++++-----
+ .../solaris/local/libnspr_nspr_log_file_priv_esc.rb      | 16 ++++++++--------
+ .../exploits/solaris/local/xscreensaver_log_priv_esc.rb  | 10 +++++-----
+ .../exploits/solaris/sunrpc/sadmind_adm_build_path.rb    |  2 +-
+ modules/exploits/solaris/sunrpc/sadmind_exec.rb          |  2 +-
+ modules/exploits/unix/ftp/proftpd_modcopy_exec.rb        |  2 +-
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb         | 12 +++++++-----
+ modules/exploits/unix/http/cacti_filter_sqli_rce.rb      |  2 +-
+ modules/exploits/unix/http/contentkeeperweb_mimencode.rb |  4 ++--
+ modules/exploits/unix/http/dell_kace_k1000_upload.rb     | 14 +++++++-------
+ .../exploits/unix/http/epmp1000_get_chart_cmd_shell.rb   |  4 ++--
+ modules/exploits/unix/http/epmp1000_ping_cmd_shell.rb    |  4 ++--
+ .../exploits/unix/http/laravel_token_unserialize_exec.rb | 12 ++++++------
+ modules/exploits/unix/http/pfsense_group_member_exec.rb  |  4 ++--
+ .../exploits/unix/http/pfsense_pfblockerng_webshell.rb   |  2 +-
+ modules/exploits/unix/http/pihole_blocklist_exec.rb      |  9 ++++-----
+ modules/exploits/unix/http/pihole_dhcp_mac_exec.rb       |  9 ++++-----
+ modules/exploits/unix/http/pihole_whitelist_exec.rb      |  9 ++++-----
+ .../unix/http/quest_kace_systems_management_rce.rb       | 10 +++++-----
+ modules/exploits/unix/http/raspap_rce.rb                 |  4 ++--
+ .../unix/http/schneider_electric_net55xx_encoder.rb      |  4 ++--
+ .../exploits/unix/http/syncovery_linux_rce_2022_36534.rb | 10 +++++-----
+ modules/exploits/unix/http/twiki_debug_plugins.rb        |  4 ++--
+ .../exploits/unix/http/vmturbo_vmtadmin_exec_noauth.rb   |  8 ++++----
+ modules/exploits/unix/http/xdebug_unauth_exec.rb         |  6 +++---
+ modules/exploits/unix/http/zivif_ipcheck_exec.rb         |  6 +++---
+ modules/exploits/unix/irc/unreal_ircd_3281_backdoor.rb   |  8 ++++----
+ modules/exploits/unix/local/chkrootkit.rb                |  4 ++--
+ modules/exploits/unix/local/emacs_movemail.rb            |  6 +++---
+ modules/exploits/unix/local/exim_perl_startup.rb         |  4 ++--
+ modules/exploits/unix/misc/distcc_exec.rb                |  6 ++++--
+ modules/exploits/unix/misc/polycom_hdx_auth_bypass.rb    |  8 ++++----
+ .../exploits/unix/misc/polycom_hdx_traceroute_exec.rb    |  8 ++++----
+ modules/exploits/unix/smtp/morris_sendmail_debug.rb      | 10 +++++-----
+ modules/exploits/unix/smtp/opensmtpd_mail_from_rce.rb    |  8 ++++----
+ modules/exploits/unix/sonicwall/sonicwall_xmlrpc_rce.rb  |  8 ++++----
+ modules/exploits/unix/ssh/arista_tacplus_shell.rb        | 12 ++++++------
+ modules/exploits/unix/ssh/tectia_passwd_changereq.rb     | 14 +++++++-------
+ 76 files changed, 228 insertions(+), 224 deletions(-)
+
+commit 8a5d7be47a99d6fae9a5f1b3a700aa8c0ad631b7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 23 10:45:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 216 +++++++++++++++++++++---------------------
+ 1 file changed, 108 insertions(+), 108 deletions(-)
+
+commit 591dbdd8215f2c13c3a648946c29cb7a4f25e630
+Merge: e5bdc50a4f c38f6b4858
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 23 11:33:27 2026 +0100
+
+    Merge pull request #21350 from adfoster-r7/improve-checkcode-messages-3
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ modules/exploits/linux/http/mobileiron_core_log4shell.rb |  2 +-
+ modules/exploits/linux/http/multi_ncc_ping_exec.rb       |  6 +++---
+ modules/exploits/linux/http/mutiny_frontend_upload.rb    |  6 +++---
+ modules/exploits/linux/http/mvpower_dvr_shell_exec.rb    |  6 +++---
+ modules/exploits/linux/http/nagios_xi_chained_rce.rb     |  4 ++--
+ .../http/nagios_xi_chained_rce_2_electric_boogaloo.rb    |  4 ++--
+ .../http/nagios_xi_configwizards_authenticated_rce.rb    |  4 ++--
+ modules/exploits/linux/http/nagios_xi_magpie_debug.rb    |  2 +-
+ .../linux/http/nagios_xi_mibs_authenticated_rce.rb       |  4 ++--
+ .../nagios_xi_plugins_check_plugin_authenticated_rce.rb  |  4 ++--
+ .../http/nagios_xi_plugins_filename_authenticated_rce.rb |  4 ++--
+ .../linux/http/nagios_xi_snmptrap_authenticated_rce.rb   |  4 ++--
+ .../exploits/linux/http/netalertx_rce_cve_2024_46506.rb  |  2 +-
+ .../linux/http/netgear_dgn1000_setup_unauth_exec.rb      |  6 +++---
+ .../exploits/linux/http/netgear_dnslookup_cmd_exec.rb    |  6 +++---
+ modules/exploits/linux/http/netgear_r7000_cgibin_exec.rb |  6 +++---
+ modules/exploits/linux/http/netgear_readynas_exec.rb     |  4 ++--
+ modules/exploits/linux/http/netgear_unauth_exec.rb       |  8 ++++----
+ modules/exploits/linux/http/netgear_wnr2000_rce.rb       |  6 +++---
+ .../linux/http/netis_unauth_rce_cve_2024_22729.rb        |  2 +-
+ .../http/netis_unauth_rce_cve_2024_48456_and_48457.rb    |  2 +-
+ modules/exploits/linux/http/nginx_chunked_size.rb        |  8 ++++----
+ modules/exploits/linux/http/nuuo_nvrmini_unauth_rce.rb   |  4 ++--
+ modules/exploits/linux/http/op5_config_exec.rb           |  4 ++--
+ .../exploits/linux/http/openfiler_networkcard_exec.rb    |  8 ++++----
+ .../linux/http/optergy_bms_backdoor_rce_cve_2019_7276.rb |  4 ++--
+ .../exploits/linux/http/oracle_ebs_rce_cve_2022_21587.rb |  4 ++--
+ modules/exploits/linux/http/paloalto_expedition_rce.rb   | 12 ++++++------
+ modules/exploits/linux/http/pandora_fms_exec.rb          |  4 ++--
+ modules/exploits/linux/http/pandora_fms_sqli.rb          |  8 +++++---
+ modules/exploits/linux/http/pandora_ping_cmd_exec.rb     |  8 ++++----
+ .../exploits/linux/http/panos_management_unauth_rce.rb   |  8 ++++----
+ modules/exploits/linux/http/panos_op_cmd_exec.rb         |  4 ++--
+ modules/exploits/linux/http/php_imap_open_rce.rb         | 14 +++++++-------
+ modules/exploits/linux/http/pineapp_ldapsyncnow_exec.rb  |  4 ++--
+ modules/exploits/linux/http/pineapp_livelog_exec.rb      |  4 ++--
+ modules/exploits/linux/http/pineapp_test_li_conn_exec.rb |  4 ++--
+ .../exploits/linux/http/pineapple_bypass_cmdinject.rb    |  4 ++--
+ .../exploits/linux/http/pineapple_preconfig_cmdinject.rb |  8 ++++----
+ .../exploits/linux/http/pretalx_rce_cve_2023_28458.rb    |  2 +-
+ .../progress_kemp_loadmaster_unauth_cmd_injection.rb     |  6 +++---
+ modules/exploits/linux/http/projectsend_unauth_rce.rb    |  4 ++--
+ modules/exploits/linux/http/pulse_secure_gzip_rce.rb     |  8 ++++----
+ .../linux/http/qnap_qcenter_change_passwd_exec.rb        | 10 +++++-----
+ .../exploits/linux/http/qnap_qts_rce_cve_2023_47218.rb   |  4 ++--
+ modules/exploits/linux/http/railo_cfml_rfi.rb            |  4 ++--
+ modules/exploits/linux/http/rancher_server.rb            | 12 ++++++------
+ modules/exploits/linux/http/ray_agent_job_rce.rb         | 10 +++++-----
+ .../http/ray_cpu_profile_cmd_injection_cve_2023_6019.rb  | 10 +++++-----
+ .../exploits/linux/http/rconfig_ajaxarchivefiles_rce.rb  | 10 ++++++----
+ .../linux/http/realtek_miniigd_upnp_exec_noauth.rb       |  6 +++---
+ .../linux/http/riverbed_netprofiler_netexpress_exec.rb   |  4 ++--
+ .../exploits/linux/http/samsung_srv_1670d_upload_exec.rb | 12 ++++++++----
+ .../exploits/linux/http/seagate_nas_php_exec_noauth.rb   |  4 ++--
+ modules/exploits/linux/http/smt_ipmi_close_window_bof.rb |  6 +++---
+ modules/exploits/linux/http/sonicwall_cve_2021_20039.rb  | 12 ++++++------
+ .../linux/http/sophos_utm_webadmin_sid_cmd_injection.rb  |  2 +-
+ .../exploits/linux/http/sophos_wpa_sblistpack_exec.rb    |  4 ++--
+ .../exploits/linux/http/sourcegraph_gitserver_sshcmd.rb  |  8 ++++----
+ modules/exploits/linux/http/spark_unauth_rce.rb          |  4 ++--
+ modules/exploits/linux/http/spring_cloud_gateway_rce.rb  |  4 ++--
+ modules/exploits/linux/http/suitecrm_log_file_rce.rb     |  2 +-
+ modules/exploits/linux/http/supervisor_xmlrpc_exec.rb    | 12 ++++++------
+ modules/exploits/linux/http/symantec_web_gateway_exec.rb |  4 ++--
+ .../linux/http/symantec_web_gateway_file_upload.rb       |  4 ++--
+ modules/exploits/linux/http/symantec_web_gateway_lfi.rb  |  4 ++--
+ .../linux/http/symantec_web_gateway_pbcontrol.rb         |  4 ++--
+ .../exploits/linux/http/symantec_web_gateway_restore.rb  |  4 ++--
+ .../exploits/linux/http/symmetricom_syncserver_rce.rb    |  4 ++--
+ .../linux/http/synology_dsm_sliceupload_exec_noauth.rb   | 14 +++++++-------
+ .../exploits/linux/http/synology_dsm_smart_exec_auth.rb  |  8 ++++----
+ .../linux/http/terramaster_unauth_rce_cve_2020_35665.rb  |  2 +-
+ .../linux/http/terramaster_unauth_rce_cve_2021_45837.rb  |  2 +-
+ .../linux/http/terramaster_unauth_rce_cve_2022_24990.rb  |  2 +-
+ modules/exploits/linux/http/tiki_calendar_exec.rb        |  4 ++--
+ modules/exploits/linux/http/tr064_ntpserver_cmdinject.rb |  6 +++---
+ modules/exploits/linux/http/traccar_rce_upload.rb        |  8 ++++----
+ .../exploits/linux/http/trendmicro_imsva_widget_exec.rb  |  6 +++---
+ modules/exploits/linux/http/trendmicro_sps_exec.rb       |  6 +++---
+ .../exploits/linux/http/trendmicro_websecurity_exec.rb   |  4 ++--
+ modules/exploits/linux/http/trueonline_p660hn_v1_rce.rb  |  4 ++--
+ modules/exploits/linux/http/trueonline_p660hn_v2_rce.rb  |  4 ++--
+ modules/exploits/linux/http/ueb_api_rce.rb               |  4 ++--
+ modules/exploits/linux/http/unraid_auth_bypass_exec.rb   |  2 +-
+ .../exploits/linux/http/vap2500_tools_command_exec.rb    |  6 +++---
+ modules/exploits/linux/http/vcms_upload.rb               |  4 ++--
+ .../linux/http/vinchin_backup_recovery_cmd_inject.rb     |  4 ++--
+ .../linux/http/vmware_vcenter_analytics_file_upload.rb   |  2 +-
+ .../linux/http/vmware_vcenter_vsan_health_rce.rb         |  4 ++--
+ modules/exploits/linux/http/vmware_vrli_rce.rb           |  4 ++--
+ modules/exploits/linux/http/vmware_vrops_mgr_ssrf_rce.rb |  2 +-
+ .../http/vmware_workspace_one_access_cve_2022_22954.rb   |  6 +++---
+ modules/exploits/linux/http/wanem_exec.rb                |  6 +++---
+ .../http/watchguard_firebox_unauth_rce_cve_2022_26318.rb |  4 ++--
+ .../exploits/linux/http/wd_mycloud_multiupload_upload.rb |  6 +++---
+ modules/exploits/linux/http/webcalendar_settings_exec.rb |  4 ++--
+ modules/exploits/linux/http/webid_converter.rb           |  6 +++---
+ modules/exploits/linux/http/webmin_backdoor.rb           | 16 ++++++++--------
+ .../exploits/linux/http/webmin_package_updates_rce.rb    |  2 +-
+ modules/exploits/linux/http/webmin_packageup_rce.rb      | 10 +++++-----
+ modules/exploits/linux/http/wepresent_cmd_injection.rb   |  4 ++--
+ modules/exploits/linux/http/wipg1000_cmd_injection.rb    |  4 ++--
+ modules/exploits/linux/http/xplico_exec.rb               |  4 ++--
+ modules/exploits/linux/http/zabbix_sqli.rb               |  8 ++++----
+ modules/exploits/linux/http/zen_load_balancer_exec.rb    |  8 ++++----
+ .../linux/http/zenoss_showdaemonxmlconfig_exec.rb        | 11 +++++------
+ modules/exploits/linux/http/zimbra_xxe_rce.rb            |  6 +++---
+ modules/exploits/linux/http/zyxel_lfi_unauth_ssh_rce.rb  |  4 ++--
+ 108 files changed, 304 insertions(+), 297 deletions(-)
+
+commit c38f6b4858a92de35d0b5985ecf7fd73de5f00ae
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 13:20:20 2026 +0100
+
+    Update checkcodes and bug fixes
+
+ modules/exploits/linux/http/mutiny_frontend_upload.rb             | 2 +-
+ .../linux/http/nagios_xi_chained_rce_2_electric_boogaloo.rb       | 4 ++--
+ modules/exploits/linux/http/nagios_xi_mibs_authenticated_rce.rb   | 4 ++--
+ .../http/nagios_xi_plugins_check_plugin_authenticated_rce.rb      | 4 ++--
+ .../linux/http/nagios_xi_plugins_filename_authenticated_rce.rb    | 4 ++--
+ modules/exploits/linux/http/netgear_dnslookup_cmd_exec.rb         | 6 +++---
+ modules/exploits/linux/http/netgear_r7000_cgibin_exec.rb          | 6 +++---
+ modules/exploits/linux/http/netis_unauth_rce_cve_2024_22729.rb    | 2 +-
+ .../linux/http/netis_unauth_rce_cve_2024_48456_and_48457.rb       | 2 +-
+ modules/exploits/linux/http/oracle_ebs_rce_cve_2022_21587.rb      | 2 +-
+ modules/exploits/linux/http/pandora_fms_sqli.rb                   | 4 +++-
+ modules/exploits/linux/http/php_imap_open_rce.rb                  | 6 +++---
+ modules/exploits/linux/http/pineapple_preconfig_cmdinject.rb      | 4 ++--
+ modules/exploits/linux/http/pretalx_rce_cve_2023_28458.rb         | 2 +-
+ modules/exploits/linux/http/qnap_qcenter_change_passwd_exec.rb    | 2 +-
+ modules/exploits/linux/http/qnap_qts_rce_cve_2023_47218.rb        | 2 +-
+ modules/exploits/linux/http/rconfig_ajaxarchivefiles_rce.rb       | 6 ++++--
+ modules/exploits/linux/http/samsung_srv_1670d_upload_exec.rb      | 8 ++++++--
+ modules/exploits/linux/http/supervisor_xmlrpc_exec.rb             | 2 +-
+ modules/exploits/linux/http/webmin_packageup_rce.rb               | 2 +-
+ modules/exploits/linux/http/zabbix_sqli.rb                        | 2 +-
+ modules/exploits/linux/http/zen_load_balancer_exec.rb             | 6 +++---
+ modules/exploits/linux/http/zenoss_showdaemonxmlconfig_exec.rb    | 3 +--
+ modules/exploits/linux/http/zyxel_lfi_unauth_ssh_rce.rb           | 2 +-
+ 24 files changed, 47 insertions(+), 40 deletions(-)
+
+commit 3e61396ec2d70abc652e029223f93fa0f8bb7c54
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 11:59:31 2026 +0100
+
+    Add human-readable descriptions to CheckCode returns in unix, freebsd, osx, and other exploit modules
+
+ modules/exploits/aix/local/xorg_x11_server.rb            |  8 ++++----
+ modules/exploits/android/adb/adb_server_exec.rb          |  4 ++--
+ modules/exploits/android/local/futex_requeue.rb          |  4 ++--
+ modules/exploits/bsd/finger/morris_fingerd_bof.rb        |  8 ++++----
+ modules/exploits/example.rb                              |  2 +-
+ modules/exploits/example_webapp.rb                       |  2 +-
+ modules/exploits/freebsd/ftp/proftp_telnet_iac.rb        |  8 ++++----
+ .../exploits/freebsd/http/citrix_formssso_target_rce.rb  | 10 +++++-----
+ modules/exploits/freebsd/http/watchguard_cmd_exec.rb     |  4 ++--
+ modules/exploits/freebsd/local/intel_sysret_priv_esc.rb  |  2 +-
+ .../exploits/freebsd/local/ip6_setpktopt_uaf_priv_esc.rb |  2 +-
+ modules/exploits/freebsd/local/mmap.rb                   |  4 ++--
+ modules/exploits/freebsd/local/rtld_execl_priv_esc.rb    |  2 +-
+ .../freebsd/local/watchguard_fix_corrupt_mail.rb         |  4 ++--
+ .../exploits/freebsd/misc/citrix_netscaler_soap_bof.rb   |  6 ++++--
+ modules/exploits/freebsd/webapp/spamtitan_unauth_rce.rb  |  2 +-
+ modules/exploits/irix/lpd/tagprinter_exec.rb             |  4 ++--
+ modules/exploits/osx/arkeia/type77.rb                    |  8 ++++----
+ modules/exploits/osx/http/remote_for_mac_rce.rb          |  2 +-
+ .../exploits/osx/local/acronis_trueimage_xpc_privesc.rb  |  2 +-
+ modules/exploits/osx/local/cfprefsd_race_condition.rb    |  6 +++---
+ modules/exploits/osx/local/dyld_print_to_file_root.rb    |  2 +-
+ modules/exploits/osx/local/iokit_keyboard_root.rb        |  4 ++--
+ modules/exploits/osx/local/libxpc_mitm_ssudo.rb          |  4 ++--
+ modules/exploits/osx/local/mac_dirty_cow.rb              |  8 ++++----
+ modules/exploits/osx/local/nfs_mount_root.rb             |  4 ++--
+ modules/exploits/osx/local/rootpipe.rb                   |  2 +-
+ modules/exploits/osx/local/rootpipe_entitlements.rb      |  4 ++--
+ modules/exploits/osx/local/setuid_tunnelblick.rb         |  6 +++---
+ modules/exploits/osx/local/setuid_viscosity.rb           |  6 +++---
+ modules/exploits/osx/local/sudo_password_bypass.rb       |  8 ++++----
+ modules/exploits/osx/local/timemachine_cmd_injection.rb  |  4 ++--
+ modules/exploits/osx/local/tpwn.rb                       |  2 +-
+ modules/exploits/osx/local/vmware_bash_function_root.rb  |  4 ++--
+ modules/exploits/osx/local/vmware_fusion_lpe.rb          |  6 +++---
+ modules/exploits/osx/mdns/upnp_location.rb               |  4 ++--
+ modules/exploits/qnx/qconn/qconn_exec.rb                 | 13 +++++++------
+ modules/exploits/solaris/dtspcd/heap_noir.rb             |  2 +-
+ .../solaris/local/extremeparr_dtappgather_priv_esc.rb    | 10 +++++-----
+ .../solaris/local/libnspr_nspr_log_file_priv_esc.rb      | 16 ++++++++--------
+ .../exploits/solaris/local/xscreensaver_log_priv_esc.rb  | 10 +++++-----
+ .../exploits/solaris/sunrpc/sadmind_adm_build_path.rb    |  2 +-
+ modules/exploits/solaris/sunrpc/sadmind_exec.rb          |  2 +-
+ modules/exploits/unix/ftp/proftpd_modcopy_exec.rb        |  2 +-
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb         | 12 +++++++-----
+ modules/exploits/unix/http/cacti_filter_sqli_rce.rb      |  2 +-
+ modules/exploits/unix/http/contentkeeperweb_mimencode.rb |  4 ++--
+ modules/exploits/unix/http/dell_kace_k1000_upload.rb     | 14 +++++++-------
+ .../exploits/unix/http/epmp1000_get_chart_cmd_shell.rb   |  4 ++--
+ modules/exploits/unix/http/epmp1000_ping_cmd_shell.rb    |  4 ++--
+ .../exploits/unix/http/laravel_token_unserialize_exec.rb | 12 ++++++------
+ modules/exploits/unix/http/pfsense_group_member_exec.rb  |  4 ++--
+ .../exploits/unix/http/pfsense_pfblockerng_webshell.rb   |  2 +-
+ modules/exploits/unix/http/pihole_blocklist_exec.rb      |  9 ++++-----
+ modules/exploits/unix/http/pihole_dhcp_mac_exec.rb       |  9 ++++-----
+ modules/exploits/unix/http/pihole_whitelist_exec.rb      |  9 ++++-----
+ .../unix/http/quest_kace_systems_management_rce.rb       | 10 +++++-----
+ modules/exploits/unix/http/raspap_rce.rb                 |  4 ++--
+ .../unix/http/schneider_electric_net55xx_encoder.rb      |  4 ++--
+ .../exploits/unix/http/syncovery_linux_rce_2022_36534.rb | 10 +++++-----
+ modules/exploits/unix/http/twiki_debug_plugins.rb        |  4 ++--
+ .../exploits/unix/http/vmturbo_vmtadmin_exec_noauth.rb   |  8 ++++----
+ modules/exploits/unix/http/xdebug_unauth_exec.rb         |  6 +++---
+ modules/exploits/unix/http/zivif_ipcheck_exec.rb         |  6 +++---
+ modules/exploits/unix/irc/unreal_ircd_3281_backdoor.rb   |  8 ++++----
+ modules/exploits/unix/local/chkrootkit.rb                |  4 ++--
+ modules/exploits/unix/local/emacs_movemail.rb            |  6 +++---
+ modules/exploits/unix/local/exim_perl_startup.rb         |  4 ++--
+ modules/exploits/unix/misc/distcc_exec.rb                |  6 ++++--
+ modules/exploits/unix/misc/polycom_hdx_auth_bypass.rb    |  8 ++++----
+ .../exploits/unix/misc/polycom_hdx_traceroute_exec.rb    |  8 ++++----
+ modules/exploits/unix/smtp/morris_sendmail_debug.rb      | 10 +++++-----
+ modules/exploits/unix/smtp/opensmtpd_mail_from_rce.rb    |  8 ++++----
+ modules/exploits/unix/sonicwall/sonicwall_xmlrpc_rce.rb  |  8 ++++----
+ modules/exploits/unix/ssh/arista_tacplus_shell.rb        | 12 ++++++------
+ modules/exploits/unix/ssh/tectia_passwd_changereq.rb     | 14 +++++++-------
+ 76 files changed, 228 insertions(+), 224 deletions(-)
