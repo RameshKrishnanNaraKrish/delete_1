@@ -1,0 +1,595 @@
+commit d121ff6a62fdf02cbd8e261447939cdaa80dec43
+Merge: 7c4f15a024 e00515c172
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 24 18:36:28 2026 +0100
+
+    Merge pull request #21307 from adfoster-r7/improve-vuln-and-vuln-attempt-tracking
+    
+    Improve vuln and vuln attempt tracking
+
+ Gemfile.lock                                       |   10 +-
+ db/schema.rb                                       |    4 +-
+ lib/msf/base/simple/auxiliary.rb                   |    4 +
+ lib/msf/core/auxiliary.rb                          |   12 +
+ lib/msf/core/auxiliary/multiple_target_hosts.rb    |   12 +-
+ lib/msf/core/auxiliary/report.rb                   |   24 +-
+ lib/msf/core/auxiliary/scanner.rb                  |   15 +
+ lib/msf/core/db_manager/exploit_attempt.rb         |   50 +-
+ lib/msf/core/exploit.rb                            |    7 +
+ lib/msf/core/exploit/remote/auto_check.rb          |    3 +-
+ lib/msf/core/module/failure.rb                     |  129 ++-
+ lib/msf/ui/console/command_dispatcher/db.rb        |    2 +
+ lib/msf/ui/console/module_command_dispatcher.rb    |   21 +-
+ modules/auxiliary/scanner/rdp/ms12_020_check.rb    |   15 +-
+ .../exploits/multi/http/phpmyadmin_preg_replace.rb |    8 +-
+ .../lib/msf/core/exploit/remote/auto_check_spec.rb |    6 +-
+ spec/lib/msf/core/module/failure_spec.rb           |   58 +-
+ .../lib/msf/core/vuln_attempt_registration_spec.rb | 1126 ++++++++++++++++++++
+ .../msf/ui/console/command_dispatcher/db_spec.rb   |    2 +
+ .../ui/console/command_dispatcher/exploit_spec.rb  |   29 +
+ 20 files changed, 1499 insertions(+), 38 deletions(-)
+
+commit e00515c172c52f9e0d99f57d7972b5ec67df29c2
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Apr 23 22:02:22 2026 +0100
+
+    Update logic for aux modules having called report_vuln already
+
+ Gemfile.lock                                       | 10 ++--
+ lib/msf/base/simple/auxiliary.rb                   |  2 +-
+ lib/msf/core/auxiliary.rb                          |  7 ++-
+ lib/msf/core/auxiliary/multiple_target_hosts.rb    | 12 ++--
+ lib/msf/core/auxiliary/report.rb                   | 12 ++--
+ lib/msf/core/auxiliary/scanner.rb                  |  5 +-
+ lib/msf/core/db_manager/exploit_attempt.rb         | 42 ++++++++------
+ lib/msf/core/exploit.rb                            |  7 ++-
+ lib/msf/core/module/failure.rb                     | 65 +++++++++++++++-------
+ lib/msf/ui/console/module_command_dispatcher.rb    | 12 +++-
+ modules/auxiliary/scanner/rdp/ms12_020_check.rb    |  5 +-
+ .../exploits/multi/http/phpmyadmin_preg_replace.rb |  8 +--
+ .../lib/msf/core/vuln_attempt_registration_spec.rb | 54 +++++++++++++++++-
+ 13 files changed, 165 insertions(+), 76 deletions(-)
+
+commit 3ecbadd032e4f664b2d9f8f33bcd51d6bb751773
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 15 13:29:24 2026 +0100
+
+    Improve vuln and vuln attempt tracking
+
+ db/schema.rb                                       |    4 +-
+ lib/msf/base/simple/auxiliary.rb                   |    4 +
+ lib/msf/core/auxiliary.rb                          |   11 +
+ lib/msf/core/auxiliary/multiple_target_hosts.rb    |   12 +-
+ lib/msf/core/auxiliary/report.rb                   |   20 +-
+ lib/msf/core/auxiliary/scanner.rb                  |   16 +
+ lib/msf/core/db_manager/exploit_attempt.rb         |   44 +-
+ lib/msf/core/exploit.rb                            |    6 +
+ lib/msf/core/exploit/remote/auto_check.rb          |    3 +-
+ lib/msf/core/module/failure.rb                     |  104 +-
+ lib/msf/ui/console/command_dispatcher/db.rb        |    2 +
+ lib/msf/ui/console/module_command_dispatcher.rb    |    9 +-
+ modules/auxiliary/scanner/rdp/ms12_020_check.rb    |   14 +-
+ .../lib/msf/core/exploit/remote/auto_check_spec.rb |    6 +-
+ spec/lib/msf/core/module/failure_spec.rb           |   58 +-
+ .../lib/msf/core/vuln_attempt_registration_spec.rb | 1076 ++++++++++++++++++++
+ .../msf/ui/console/command_dispatcher/db_spec.rb   |    2 +
+ .../ui/console/command_dispatcher/exploit_spec.rb  |   29 +
+ 18 files changed, 1396 insertions(+), 24 deletions(-)
+
+commit 7c4f15a02467fc17fe44fb64130f7ef0763e6c31
+Merge: 7479078bf1 96a37da14a
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Apr 24 16:13:19 2026 +0100
+
+    Merge pull request #21354 from adfoster-r7/improve-checkcode-messages-7
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ modules/exploits/multi/http/pandora_upload_exec.rb |  8 ++++----
+ .../exploits/multi/http/papercut_ng_auth_bypass.rb |  4 ++--
+ .../pentaho_business_server_authbypass_and_ssti.rb |  6 +++---
+ modules/exploits/multi/http/phoenix_exec.rb        |  4 ++--
+ .../exploits/multi/http/php_cgi_arg_injection.rb   |  2 +-
+ modules/exploits/multi/http/php_fpm_rce.rb         |  2 +-
+ .../exploits/multi/http/php_utility_belt_rce.rb    |  4 ++--
+ modules/exploits/multi/http/phpfilemanager_rce.rb  |  4 ++--
+ .../multi/http/phpldapadmin_query_engine.rb        |  4 ++--
+ modules/exploits/multi/http/phpmoadmin_exec.rb     |  4 ++--
+ modules/exploits/multi/http/phpmyadmin_lfi_rce.rb  | 10 +++++-----
+ .../multi/http/phpmyadmin_null_termination_exec.rb | 14 ++++++-------
+ .../exploits/multi/http/phpmyadmin_preg_replace.rb | 23 ++++++++++++----------
+ .../multi/http/phpscheduleit_start_date.rb         |  4 ++--
+ .../exploits/multi/http/phpstudy_backdoor_rce.rb   |  4 ++--
+ modules/exploits/multi/http/phptax_exec.rb         |  4 ++--
+ .../exploits/multi/http/pimcore_unserialize_rce.rb |  6 +++---
+ .../exploits/multi/http/playsms_filename_exec.rb   |  6 +++---
+ .../multi/http/playsms_template_injection.rb       |  6 +++---
+ .../exploits/multi/http/playsms_uploadcsv_exec.rb  |  6 +++---
+ modules/exploits/multi/http/plone_popen2.rb        |  4 ++--
+ modules/exploits/multi/http/pmwiki_pagelist.rb     |  4 ++--
+ .../exploits/multi/http/polarcms_upload_exec.rb    |  4 ++--
+ modules/exploits/multi/http/processmaker_exec.rb   | 10 +++++-----
+ .../exploits/multi/http/qdpm_authenticated_rce.rb  |  8 ++++----
+ modules/exploits/multi/http/qdpm_upload_exec.rb    |  4 ++--
+ modules/exploits/multi/http/rails_double_tap.rb    |  8 ++++----
+ .../multi/http/rails_dynamic_render_code_exec.rb   |  6 +++---
+ .../http/rocket_servergraph_file_requestor_rce.rb  |  4 ++--
+ .../http/roundcube_auth_rce_cve_2025_49113.rb      |  6 +++---
+ .../exploits/multi/http/rudder_server_sqli_rce.rb  |  4 ++--
+ modules/exploits/multi/http/sflog_upload_exec.rb   |  6 +++---
+ ...hopware_createinstancefromnamedarguments_rce.rb |  8 ++++----
+ .../exploits/multi/http/simple_backdoors_exec.rb   |  6 +++---
+ modules/exploits/multi/http/sit_file_upload.rb     |  6 +++---
+ .../http/solarwinds_store_manager_auth_filter.rb   |  4 ++--
+ modules/exploits/multi/http/solr_velocity_rce.rb   |  2 +-
+ .../exploits/multi/http/sonicwall_gms_upload.rb    |  4 ++--
+ .../sonicwall_scrutinizer_methoddetail_sqli.rb     |  6 +++---
+ modules/exploits/multi/http/spip_connect_exec.rb   |  4 ++--
+ modules/exploits/multi/http/splunk_mappy_exec.rb   |  4 ++--
+ .../exploits/multi/http/splunk_upload_app_exec.rb  |  4 ++--
+ .../http/spring_cloud_function_spel_injection.rb   |  8 ++++----
+ .../http/spring_framework_rce_spring4shell.rb      |  2 +-
+ .../multi/http/struts2_code_exec_showcase.rb       |  6 +++---
+ .../multi/http/struts2_content_type_ognl.rb        |  6 +++---
+ .../exploits/multi/http/struts2_multi_eval_ognl.rb |  6 +++---
+ .../exploits/multi/http/struts2_namespace_ognl.rb  | 10 +++++-----
+ .../exploits/multi/http/struts2_rest_xstream.rb    |  4 ++--
+ .../multi/http/struts_code_exec_parameters.rb      |  6 +++---
+ .../multi/http/struts_default_action_mapper.rb     |  6 +++---
+ modules/exploits/multi/http/struts_dev_mode.rb     |  6 +++---
+ modules/exploits/multi/http/struts_dmi_exec.rb     |  6 +++---
+ .../exploits/multi/http/struts_dmi_rest_exec.rb    |  6 +++---
+ .../exploits/multi/http/struts_include_params.rb   |  6 +++---
+ modules/exploits/multi/http/stunshell_eval.rb      |  4 ++--
+ modules/exploits/multi/http/stunshell_exec.rb      |  4 ++--
+ .../multi/http/subrion_cms_file_upload_rce.rb      |  2 +-
+ .../exploits/multi/http/sun_jsws_dav_options.rb    |  4 ++--
+ .../exploits/multi/http/sysaid_auth_file_upload.rb |  6 +++---
+ .../multi/http/sysaid_rdslogs_file_upload.rb       |  4 ++--
+ .../exploits/multi/http/testlink_upload_exec.rb    | 12 +++++------
+ .../multi/http/tomcat_jsp_upload_bypass.rb         |  4 ++--
+ modules/exploits/multi/http/tomcat_mgr_deploy.rb   |  6 +++---
+ modules/exploits/multi/http/tomcat_mgr_upload.rb   | 12 +++++------
+ .../http/tomcat_partial_put_deserialization.rb     |  6 +++---
+ .../multi/http/torchserver_cve_2023_43654.rb       |  6 +++---
+ .../exploits/multi/http/totaljs_cms_widget_exec.rb | 10 +++++-----
+ modules/exploits/multi/http/traq_plugin_exec.rb    |  4 ++--
+ ...ndmicro_threat_discovery_admin_sys_time_cmdi.rb |  4 ++--
+ .../multi/http/ubiquiti_unifi_log4shell.rb         |  2 +-
+ .../exploits/multi/http/uptime_file_upload_1.rb    |  4 ++--
+ .../exploits/multi/http/uptime_file_upload_2.rb    |  6 +++---
+ modules/exploits/multi/http/v0pcr3w_exec.rb        |  4 ++--
+ modules/exploits/multi/http/vbseo_proc_deutf.rb    |  4 ++--
+ .../multi/http/vbulletin_getindexablecontent.rb    | 12 +++++------
+ .../http/vbulletin_replace_ad_template_rce.rb      |  2 +-
+ .../exploits/multi/http/vbulletin_unserialize.rb   |  8 ++++----
+ .../multi/http/vbulletin_widget_template_rce.rb    |  4 ++--
+ .../multi/http/vbulletin_widgetconfig_rce.rb       |  4 ++--
+ .../multi/http/visual_mining_netcharts_upload.rb   |  4 ++--
+ .../multi/http/vmware_vcenter_log4shell.rb         |  2 +-
+ .../exploits/multi/http/vtiger_logo_upload_exec.rb | 10 +++++-----
+ modules/exploits/multi/http/vtiger_php_exec.rb     | 10 +++++-----
+ modules/exploits/multi/http/vtiger_soap_upload.rb  |  6 +++---
+ modules/exploits/multi/http/webdav_upload_php.rb   | 16 +++++++--------
+ modules/exploits/multi/http/webnms_file_upload.rb  |  4 ++--
+ .../exploits/multi/http/webpagetest_upload_exec.rb |  4 ++--
+ modules/exploits/multi/http/wikka_spam_exec.rb     |  4 ++--
+ modules/exploits/multi/http/wp_acf_extended_rce.rb |  4 ++--
+ .../exploits/multi/http/wp_ai_engine_mcp_rce.rb    |  4 ++--
+ modules/exploits/multi/http/wp_ait_csv_rce.rb      |  2 +-
+ .../multi/http/wp_automatic_sqli_to_rce.rb         |  2 +-
+ .../multi/http/wp_backup_migration_php_filter.rb   |  6 +++---
+ .../exploits/multi/http/wp_bricks_builder_rce.rb   |  2 +-
+ modules/exploits/multi/http/wp_crop_rce.rb         |  5 ++---
+ modules/exploits/multi/http/wp_db_backup_rce.rb    |  8 ++++----
+ modules/exploits/multi/http/wp_dnd_mul_file_rce.rb |  4 ++--
+ modules/exploits/multi/http/wp_file_manager_rce.rb |  2 +-
+ modules/exploits/multi/http/wp_givewp_rce.rb       | 10 +++++-----
+ modules/exploits/multi/http/wp_hash_form_rce.rb    |  2 +-
+ .../http/wp_king_addons_privilege_escalation.rb    |  4 ++--
+ .../http/wp_responsive_thumbnail_slider_upload.rb  |  6 +++---
+ .../multi/http/wp_royal_elementor_addons_rce.rb    |  6 +++---
+ .../exploits/multi/http/wp_simple_file_list_rce.rb |  2 +-
+ .../wp_user_registration_membership_escalation.rb  |  4 ++--
+ .../multi/http/wso2_api_manager_file_upload_rce.rb |  4 ++--
+ .../exploits/multi/http/wso2_file_upload_rce.rb    |  4 ++--
+ modules/exploits/multi/http/x7chat2_php_exec.rb    |  4 ++--
+ .../http/xerte_authenticated_rce_uploadimage.rb    |  6 +++---
+ .../http/xerte_unauthenticated_importlanguage.rb   |  6 +++---
+ .../xerte_unauthenticated_template_import_rce.rb   |  6 +++---
+ modules/exploits/multi/http/zabbix_script_exec.rb  |  4 ++--
+ modules/exploits/multi/http/zemra_panel_rce.rb     |  6 +++---
+ .../zenworks_configuration_management_upload.rb    |  4 ++--
+ .../multi/http/zenworks_control_center_upload.rb   |  8 +++++---
+ 116 files changed, 323 insertions(+), 319 deletions(-)
+
+commit 7479078bf15640ffbb1f6ede8884f8882a335bae
+Merge: b09686efaf 370c35c1e2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 24 15:25:45 2026 +0100
+
+    Merge pull request #21356 from adfoster-r7/improve-checkcode-messages-9
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../http/advantech_iview_networkservlet_cmd_inject.rb    |  2 +-
+ .../exploits/windows/http/advantech_iview_unauth_rce.rb  |  8 ++++----
+ modules/exploits/windows/http/altn_securitygateway.rb    |  4 ++--
+ .../exploits/windows/http/amlibweb_webquerydll_app.rb    |  4 ++--
+ .../windows/http/apache_activemq_traversal_upload.rb     |  4 ++--
+ modules/exploits/windows/http/apache_chunked.rb          |  8 ++++----
+ modules/exploits/windows/http/apache_mod_rewrite_ldap.rb |  4 ++--
+ modules/exploits/windows/http/apache_modjk_overflow.rb   |  4 ++--
+ modules/exploits/windows/http/apache_tika_jp2_jscript.rb |  8 ++++----
+ modules/exploits/windows/http/badblue_ext_overflow.rb    |  4 ++--
+ modules/exploits/windows/http/bea_weblogic_post_bof.rb   |  8 ++++----
+ modules/exploits/windows/http/ca_igateway_debug.rb       |  4 ++--
+ modules/exploits/windows/http/cayin_xpost_sql_rce.rb     |  6 +++---
+ modules/exploits/windows/http/cogent_datahub_command.rb  |  4 ++--
+ .../windows/http/cogent_datahub_request_headers_bof.rb   |  4 ++--
+ modules/exploits/windows/http/cyclope_ess_sqli.rb        |  5 +++--
+ .../exploits/windows/http/desktopcentral_file_upload.rb  |  8 ++++----
+ .../windows/http/desktopcentral_statusupdate_upload.rb   |  8 ++++----
+ .../exploits/windows/http/disk_pulse_enterprise_bof.rb   |  4 ++--
+ .../exploits/windows/http/disk_pulse_enterprise_get.rb   |  4 ++--
+ modules/exploits/windows/http/diskboss_get_bof.rb        |  8 ++++----
+ modules/exploits/windows/http/disksavvy_get_bof.rb       |  8 ++++----
+ modules/exploits/windows/http/disksorter_bof.rb          |  8 ++++----
+ .../windows/http/dlink_central_wifimanager_rce.rb        |  4 ++--
+ .../windows/http/dnn_cookie_deserialization_rce.rb       |  4 ++--
+ modules/exploits/windows/http/easyftp_list.rb            |  4 ++--
+ .../exploits/windows/http/efs_easychatserver_username.rb |  8 ++++----
+ modules/exploits/windows/http/efs_fmws_userid_bof.rb     |  8 ++++----
+ modules/exploits/windows/http/ektron_xslt_exec.rb        |  4 ++--
+ modules/exploits/windows/http/ektron_xslt_exec_ws.rb     |  4 ++--
+ modules/exploits/windows/http/ericom_access_now_bof.rb   |  8 ++++----
+ modules/exploits/windows/http/exchange_ecp_viewstate.rb  |  6 +++---
+ .../exploits/windows/http/exchange_proxynotshell_rce.rb  |  8 ++++----
+ modules/exploits/windows/http/exchange_proxyshell_rce.rb |  6 +++---
+ modules/exploits/windows/http/file_sharing_wizard_seh.rb |  4 ++--
+ .../windows/http/hp_autopass_license_traversal.rb        |  6 +++---
+ modules/exploits/windows/http/hp_imc_bims_upload.rb      |  8 ++++----
+ modules/exploits/windows/http/hp_imc_java_deserialize.rb | 10 +++++-----
+ modules/exploits/windows/http/hp_imc_mibfileupload.rb    |  4 ++--
+ .../windows/http/hp_loadrunner_copyfiletoserver.rb       |  8 ++++----
+ modules/exploits/windows/http/hp_mpa_job_acct.rb         |  6 +++---
+ modules/exploits/windows/http/hp_nnm_ovas.rb             |  6 +++---
+ .../windows/http/hp_pcm_snac_update_certificates.rb      |  6 +++---
+ .../exploits/windows/http/hp_pcm_snac_update_domain.rb   |  6 +++---
+ .../windows/http/hp_sitescope_runomagentcommand.rb       |  4 ++--
+ modules/exploits/windows/http/httpdx_handlepeer.rb       |  4 ++--
+ modules/exploits/windows/http/httpdx_tolog_format.rb     |  4 ++--
+ modules/exploits/windows/http/intrasrv_bof.rb            |  6 +++---
+ .../exploits/windows/http/jira_collector_traversal.rb    |  6 +++---
+ modules/exploits/windows/http/kaseya_uploader.rb         |  4 ++--
+ .../windows/http/kaseya_uploadimage_file_upload.rb       |  4 ++--
+ .../exploits/windows/http/kentico_staging_syncserver.rb  |  4 ++--
+ modules/exploits/windows/http/kolibri_http.rb            |  4 ++--
+ .../windows/http/lexmark_markvision_gfd_upload.rb        |  6 +++---
+ modules/exploits/windows/http/lg_simple_editor_rce.rb    |  6 +++---
+ .../windows/http/lg_simple_editor_rce_uploadvideo.rb     |  6 +++---
+ modules/exploits/windows/http/magicinfo_traversal.rb     |  8 ++++----
+ modules/exploits/windows/http/mailenable_auth_header.rb  |  4 ++--
+ .../exploits/windows/http/manage_engine_opmanager_rce.rb | 10 +++++-----
+ .../windows/http/manageengine_adshacluster_rce.rb        | 10 +++++-----
+ .../windows/http/manageengine_appmanager_exec.rb         |  4 ++--
+ .../windows/http/manageengine_connectionid_write.rb      |  8 ++++----
+ ...ageengine_endpoint_central_saml_rce_cve_2022_47966.rb |  2 +-
+ modules/exploits/windows/http/mcafee_epolicy_source.rb   |  4 ++--
+ .../windows/http/mdaemon_worldclient_form2raw.rb         |  4 ++--
+ modules/exploits/windows/http/miniweb_upload_wbem.rb     |  8 ++++----
+ modules/exploits/windows/http/moveit_cve_2023_34362.rb   | 16 ++++++++--------
+ modules/exploits/windows/http/navicopa_get_overflow.rb   |  4 ++--
+ modules/exploits/windows/http/netdecision_http_bof.rb    |  4 ++--
+ modules/exploits/windows/http/netgear_nms_rce.rb         |  4 ++--
+ modules/exploits/windows/http/novell_mdm_lfi.rb          |  6 +++---
+ modules/exploits/windows/http/oats_weblogic_console.rb   |  4 ++--
+ modules/exploits/windows/http/octopusdeploy_deploy.rb    |  8 ++++----
+ modules/exploits/windows/http/oracle9i_xdb_pass.rb       |  4 ++--
+ .../exploits/windows/http/oracle_beehive_evaluation.rb   |  4 ++--
+ .../windows/http/oracle_beehive_prepareaudiotoplay.rb    |  6 +++---
+ modules/exploits/windows/http/oracle_endeca_exec.rb      |  8 ++++----
+ .../windows/http/oracle_event_processing_upload.rb       |  6 +++---
+ modules/exploits/windows/http/plex_unpickle_dict_rce.rb  |  2 +-
+ modules/exploits/windows/http/prtg_authenticated_rce.rb  | 10 +++++-----
+ .../http/prtg_authenticated_rce_cve_2023_32781.rb        |  9 ++++-----
+ modules/exploits/windows/http/psoproxy91_overflow.rb     |  4 ++--
+ modules/exploits/windows/http/rabidhamster_r4_log.rb     |  4 ++--
+ modules/exploits/windows/http/rejetto_hfs_exec.rb        |  6 +++---
+ .../windows/http/rejetto_hfs_rce_cve_2024_23692.rb       |  2 +-
+ modules/exploits/windows/http/sambar6_search_results.rb  |  4 ++--
+ .../windows/http/sap_configservlet_exec_noauth.rb        |  8 ++++----
+ .../exploits/windows/http/sap_host_control_cmd_exec.rb   |  4 ++--
+ modules/exploits/windows/http/savant_31_overflow.rb      |  4 ++--
+ .../windows/http/serviio_checkstreamurl_cmd_exec.rb      | 12 ++++++------
+ modules/exploits/windows/http/servu_session_cookie.rb    |  6 +++---
+ .../windows/http/sharepoint_data_deserialization.rb      |  2 +-
+ .../exploits/windows/http/sharepoint_workflows_xoml.rb   |  4 ++--
+ modules/exploits/windows/http/shoutcast_format.rb        | 10 +++++-----
+ modules/exploits/windows/http/smartermail_rce.rb         |  6 +++---
+ modules/exploits/windows/http/softing_sis_rce.rb         |  6 +++---
+ .../exploits/windows/http/solarwinds_fsm_userlogin.rb    |  4 ++--
+ .../windows/http/solarwinds_storage_manager_sql.rb       |  4 ++--
+ .../exploits/windows/http/sonicwall_scrutinizer_sqli.rb  |  4 ++--
+ .../exploits/windows/http/ssrs_navcorrector_viewstate.rb |  4 ++--
+ modules/exploits/windows/http/steamcast_useragent.rb     |  4 ++--
+ modules/exploits/windows/http/sws_connection_bof.rb      |  4 ++--
+ modules/exploits/windows/http/syncbreeze_bof.rb          |  8 ++++----
+ .../exploits/windows/http/telerik_rau_deserialization.rb |  8 ++++----
+ modules/exploits/windows/http/tomcat_cgi_cmdlineargs.rb  |  6 +++---
+ .../exploits/windows/http/trackercam_phparg_overflow.rb  |  4 ++--
+ modules/exploits/windows/http/trackit_file_upload.rb     |  6 +++---
+ .../windows/http/trendmicro_officescan_widget_exec.rb    |  6 +++---
+ .../windows/http/vmware_vcenter_chargeback_upload.rb     |  4 ++--
+ modules/exploits/windows/http/vxsrchs_bof.rb             |  8 ++++----
+ .../exploits/windows/http/ws_ftp_rce_cve_2023_40044.rb   |  4 ++--
+ modules/exploits/windows/http/xitami_if_mod_since.rb     |  4 ++--
+ 112 files changed, 318 insertions(+), 318 deletions(-)
+
+commit b09686efafefe2cf3f6769b3225fcf90d723153e
+Merge: b765db798e 45bc95a876
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 24 15:25:19 2026 +0100
+
+    Merge pull request #21357 from adfoster-r7/improve-checkcode-messages-10
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../windows/local/adobe_sandbox_adobecollabsync.rb |  6 +++---
+ .../exploits/windows/local/agnitum_outpost_acs.rb  |  4 ++--
+ .../windows/local/always_install_elevated.rb       | 10 ++++-----
+ .../windows/local/appxsvc_hard_link_privesc.rb     |  6 +++---
+ .../windows/local/bits_ntlm_token_impersonation.rb | 12 +++++------
+ modules/exploits/windows/local/bthpan.rb           |  8 ++++----
+ .../exploits/windows/local/bypassuac_comhijack.rb  |  4 ++--
+ .../windows/local/bypassuac_dotnet_profiler.rb     |  4 ++--
+ .../exploits/windows/local/bypassuac_eventvwr.rb   |  4 ++--
+ .../exploits/windows/local/bypassuac_fodhelper.rb  |  4 ++--
+ modules/exploits/windows/local/bypassuac_sdclt.rb  |  4 ++--
+ .../exploits/windows/local/bypassuac_sluihijack.rb |  4 ++--
+ .../local/bypassuac_windows_store_filesys.rb       |  4 ++--
+ .../windows/local/bypassuac_windows_store_reg.rb   |  4 ++--
+ modules/exploits/windows/local/capcom_sys_exec.rb  | 10 ++++-----
+ .../windows/local/cve_2017_8464_lnk_lpe.rb         |  4 ++--
+ .../windows/local/cve_2019_1458_wizardopium.rb     | 18 ++++++++--------
+ .../windows/local/cve_2020_0796_smbghost.rb        |  8 ++++----
+ .../windows/local/cve_2020_1048_printerdemon.rb    |  4 ++--
+ .../windows/local/cve_2020_1054_drawiconex_lpe.rb  |  6 +++---
+ .../local/cve_2020_1313_system_orchestrator.rb     |  4 ++--
+ .../windows/local/cve_2020_1337_printerdemon.rb    |  4 ++--
+ .../windows/local/cve_2021_21551_dbutil_memmove.rb |  6 +++---
+ .../windows/local/cve_2022_21882_win32k.rb         |  6 +++---
+ .../local/cve_2022_21999_spoolfool_privesc.rb      |  4 ++--
+ .../cve_2022_3699_lenovo_diagnostics_driver.rb     |  6 +++---
+ .../windows/local/cve_2023_21768_afd_lpe.rb        |  2 +-
+ .../windows/local/cve_2023_28252_clfs_driver.rb    |  4 ++--
+ .../windows/local/cve_2024_30085_cloud_files.rb    |  4 ++--
+ .../windows/local/dnsadmin_serverlevelplugindll.rb | 16 +++++++--------
+ .../windows/local/docker_credential_wincred.rb     |  4 ++--
+ modules/exploits/windows/local/ikeext_service.rb   | 10 ++++-----
+ modules/exploits/windows/local/ipass_launch_app.rb |  8 ++++----
+ .../exploits/windows/local/lenovo_systemupdate.rb  |  6 +++---
+ modules/exploits/windows/local/mqac_write.rb       |  8 ++++----
+ .../exploits/windows/local/ms10_015_kitrap0d.rb    |  6 +++---
+ .../exploits/windows/local/ms10_092_schelevator.rb |  2 +-
+ .../exploits/windows/local/ms13_053_schlamperei.rb | 10 ++++-----
+ .../windows/local/ms13_081_track_popup_menu.rb     | 10 ++++-----
+ .../exploits/windows/local/ms14_009_ie_dfsvc.rb    | 10 ++++-----
+ .../windows/local/ms14_058_track_popup_menu.rb     | 10 ++++-----
+ .../exploits/windows/local/ms14_070_tcpip_ioctl.rb | 10 ++++-----
+ .../exploits/windows/local/ms15_004_tswbproxy.rb   |  6 +++---
+ .../windows/local/ms15_051_client_copy_image.rb    |  6 +++---
+ .../exploits/windows/local/ms15_078_atmfd_bof.rb   | 12 +++++------
+ .../windows/local/ms16_014_wmi_recv_notif.rb       |  6 +++---
+ modules/exploits/windows/local/ms16_016_webdav.rb  |  4 ++--
+ .../ms16_032_secondary_logon_handle_privesc.rb     |  6 +++---
+ .../exploits/windows/local/ms16_075_reflection.rb  |  4 ++--
+ .../windows/local/ms16_075_reflection_juicy.rb     |  6 +++---
+ modules/exploits/windows/local/ms_ndproxy.rb       | 10 ++++-----
+ .../exploits/windows/local/novell_client_nicm.rb   |  4 ++--
+ .../windows/local/ntapphelpcachecontrol.rb         |  4 ++--
+ modules/exploits/windows/local/ntusermndragover.rb |  8 ++++----
+ modules/exploits/windows/local/nvidia_nvsvc.rb     | 10 ++++-----
+ modules/exploits/windows/local/panda_psevents.rb   |  4 ++--
+ .../plantronics_hub_spokesupdateservice_privesc.rb |  2 +-
+ modules/exploits/windows/local/ppr_flatten_rec.rb  | 24 +++++++++++-----------
+ .../exploits/windows/local/razer_zwopenprocess.rb  |  6 +++---
+ .../windows/local/srclient_dll_hijacking.rb        |  2 +-
+ modules/exploits/windows/local/tokenmagic.rb       |  6 +++---
+ .../windows/local/unquoted_service_path.rb         |  2 +-
+ .../windows/local/virtual_box_guest_additions.rb   | 20 +++++++++---------
+ .../windows/local/virtual_box_opengl_escape.rb     |  4 ++--
+ modules/exploits/windows/local/webexec.rb          | 10 ++++-----
+ .../windows/local/win_error_cve_2023_36874.rb      |  4 ++--
+ .../local/windscribe_windscribeservice_priv_esc.rb |  2 +-
+ 67 files changed, 225 insertions(+), 225 deletions(-)
+
+commit b765db798e40414a622372e8a9dc991ac9605a96
+Merge: aa14df9b6c 2ae936473e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 24 15:25:00 2026 +0100
+
+    Merge pull request #21358 from adfoster-r7/improve-checkcode-messages-11
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../antivirus/symantec_endpoint_manager_rce.rb     |  4 ++--
+ .../antivirus/symantec_workspace_streaming_exec.rb |  6 +++---
+ modules/exploits/windows/arkeia/type77.rb          |  8 ++++----
+ .../exploits/windows/backupexec/remote_agent.rb    |  4 ++--
+ modules/exploits/windows/backupexec/ssl_uaf.rb     | 12 ++++++------
+ .../exploits/windows/brightstor/discovery_tcp.rb   |  4 ++--
+ .../exploits/windows/brightstor/discovery_udp.rb   |  4 ++--
+ .../exploits/windows/brightstor/lgserver_multi.rb  |  4 ++--
+ .../windows/brightstor/lgserver_rxrlogin.rb        |  4 ++--
+ .../lgserver_rxssetdatagrowthscheduleandfilter.rb  |  4 ++--
+ .../brightstor/lgserver_rxsuselicenseini.rb        |  4 ++--
+ modules/exploits/windows/dcerpc/ms03_026_dcom.rb   |  2 +-
+ .../windows/emc/alphastor_device_manager_exec.rb   |  4 ++--
+ modules/exploits/windows/ftp/3cdaemon_ftp_user.rb  |  4 ++--
+ .../exploits/windows/ftp/ability_server_stor.rb    |  6 +++---
+ modules/exploits/windows/ftp/bison_ftp_bof.rb      |  4 ++--
+ modules/exploits/windows/ftp/cesarftp_mkd.rb       |  4 ++--
+ modules/exploits/windows/ftp/comsnd_ftpd_fmtstr.rb |  4 ++--
+ modules/exploits/windows/ftp/dreamftp_format.rb    |  4 ++--
+ .../exploits/windows/ftp/easyfilesharing_pass.rb   |  4 ++--
+ modules/exploits/windows/ftp/easyftp_cwd_fixret.rb |  4 ++--
+ .../exploits/windows/ftp/easyftp_list_fixret.rb    |  4 ++--
+ modules/exploits/windows/ftp/easyftp_mkd_fixret.rb |  4 ++--
+ modules/exploits/windows/ftp/freefloatftp_user.rb  |  4 ++--
+ modules/exploits/windows/ftp/freefloatftp_wbem.rb  |  4 ++--
+ modules/exploits/windows/ftp/freeftpd_pass.rb      |  4 ++--
+ modules/exploits/windows/ftp/freeftpd_user.rb      |  4 ++--
+ modules/exploits/windows/ftp/goldenftp_pass_bof.rb |  4 ++--
+ .../exploits/windows/ftp/httpdx_tolog_format.rb    |  4 ++--
+ modules/exploits/windows/ftp/kmftp_utility_cwd.rb  |  4 ++--
+ .../exploits/windows/ftp/netterm_netftpd_user.rb   |  4 ++--
+ modules/exploits/windows/ftp/open_ftpd_wbem.rb     |  4 ++--
+ .../exploits/windows/ftp/oracle9i_xdb_ftp_pass.rb  |  4 ++--
+ .../windows/ftp/oracle9i_xdb_ftp_unlock.rb         |  4 ++--
+ modules/exploits/windows/ftp/pcman_put.rb          |  4 ++--
+ modules/exploits/windows/ftp/pcman_stor.rb         |  6 +++---
+ .../windows/ftp/quickshare_traversal_write.rb      |  4 ++--
+ modules/exploits/windows/ftp/ricoh_dl_bof.rb       |  4 ++--
+ modules/exploits/windows/ftp/sami_ftpd_user.rb     |  2 +-
+ modules/exploits/windows/ftp/servu_chmod.rb        |  4 ++--
+ modules/exploits/windows/ftp/servu_mdtm.rb         | 14 +++++++-------
+ modules/exploits/windows/ftp/turboftp_port.rb      |  6 +++---
+ .../exploits/windows/ftp/vermillion_ftpd_port.rb   |  4 ++--
+ .../exploits/windows/ftp/wing_ftp_admin_exec.rb    | 12 ++++++------
+ .../exploits/windows/ftp/wsftp_server_503_mkd.rb   |  4 ++--
+ .../exploits/windows/ftp/wsftp_server_505_xmd5.rb  |  4 ++--
+ modules/exploits/windows/ftp/xlink_server.rb       |  4 ++--
+ modules/exploits/windows/games/ut2004_secure.rb    |  6 +++---
+ .../windows/iis/iis_webdav_scstoragepathfromurl.rb |  8 ++++----
+ modules/exploits/windows/iis/ms01_023_printer.rb   | 10 +++++-----
+ modules/exploits/windows/iis/ms01_026_dbldecode.rb |  2 +-
+ modules/exploits/windows/iis/ms02_065_msadc.rb     |  2 +-
+ .../exploits/windows/iis/ms03_007_ntdll_webdav.rb  |  2 +-
+ modules/exploits/windows/iis/msadc.rb              |  4 ++--
+ modules/exploits/windows/imap/eudora_list.rb       |  4 ++--
+ .../exploits/windows/imap/mailenable_w3c_select.rb |  4 ++--
+ modules/exploits/windows/imap/mdaemon_fetch.rb     |  4 ++--
+ modules/exploits/windows/imap/mercury_login.rb     |  4 ++--
+ modules/exploits/windows/imap/mercury_rename.rb    |  4 ++--
+ .../exploits/windows/isapi/ms00_094_pbserver.rb    |  4 ++--
+ .../windows/isapi/ms03_022_nsiislog_post.rb        |  4 ++--
+ .../windows/isapi/ms03_051_fp30reg_chunked.rb      |  4 ++--
+ .../windows/isapi/rsa_webagent_redirect.rb         |  4 ++--
+ modules/exploits/windows/isapi/w3who_query.rb      |  4 ++--
+ .../windows/license/calicserv_getconfig.rb         |  4 ++--
+ .../exploits/windows/license/sentinel_lm7_udp.rb   |  4 ++--
+ .../windows/lotus/domino_icalendar_organizer.rb    |  4 ++--
+ .../windows/lotus/domino_sametime_stmux.rb         |  4 ++--
+ .../windows/misc/ahsay_backup_fileupload.rb        | 12 ++++++------
+ .../exploits/windows/misc/ais_esel_server_rce.rb   |  4 ++--
+ modules/exploits/windows/misc/altiris_ds_sqli.rb   | 12 ++++++------
+ .../exploits/windows/misc/bakbone_netvault_heap.rb |  4 ++--
+ ...delta_electronics_infrasuite_deserialization.rb |  6 +++---
+ modules/exploits/windows/misc/fb_cnct_group.rb     |  6 +++---
+ modules/exploits/windows/misc/gh0st.rb             |  4 ++--
+ .../windows/misc/hp_dataprotector_cmd_exec.rb      |  8 ++++----
+ .../exploits/windows/misc/hp_dataprotector_crs.rb  | 16 ++++++++--------
+ .../windows/misc/hp_dataprotector_dtbclslogin.rb   |  4 ++--
+ .../misc/hp_dataprotector_encrypted_comms.rb       |  6 +++---
+ .../windows/misc/hp_dataprotector_exec_bar.rb      | 10 +++++-----
+ .../misc/hp_dataprotector_install_service.rb       |  8 +++-----
+ .../windows/misc/hp_dataprotector_traversal.rb     | 10 +++++-----
+ .../misc/hp_imc_dbman_restartdb_unauth_rce.rb      |  4 ++--
+ .../misc/hp_imc_dbman_restoredbase_unauth_rce.rb   |  4 ++--
+ modules/exploits/windows/misc/hp_omniinet_1.rb     |  8 ++++----
+ modules/exploits/windows/misc/hp_omniinet_2.rb     |  8 ++++----
+ modules/exploits/windows/misc/hp_omniinet_3.rb     |  8 ++++----
+ .../windows/misc/hp_operations_agent_coda_34.rb    | 10 +++++-----
+ .../windows/misc/hp_operations_agent_coda_8c.rb    | 12 ++++++------
+ .../windows/misc/ibm_director_cim_dllinject.rb     |  4 ++--
+ .../windows/misc/ivanti_avalanche_mdm_bof.rb       |  6 +++---
+ modules/exploits/windows/misc/lianja_db_net.rb     |  6 +++---
+ .../misc/manageengine_eventlog_analyzer_rce.rb     |  4 ++--
+ .../exploits/windows/misc/ms10_104_sharepoint.rb   |  4 ++--
+ modules/exploits/windows/misc/plugx.rb             |  4 ++--
+ modules/exploits/windows/misc/poisonivy_21x_bof.rb |  6 +++---
+ modules/exploits/windows/misc/poisonivy_bof.rb     |  6 +++---
+ .../windows/misc/remote_control_collection_rce.rb  |  4 ++--
+ .../solidworks_workgroup_pdmwservice_file_write.rb |  6 +++---
+ modules/exploits/windows/mssql/ms02_039_slammer.rb |  4 ++--
+ modules/exploits/windows/mssql/ms02_056_hello.rb   |  4 ++--
+ .../windows/mssql/ms09_004_sp_replwritetovarbin.rb | 22 +++++++++++-----------
+ .../mssql/ms09_004_sp_replwritetovarbin_sqli.rb    | 22 +++++++++++-----------
+ .../exploits/windows/mssql/mssql_clr_payload.rb    |  8 ++++----
+ modules/exploits/windows/mssql/mssql_payload.rb    |  6 +++---
+ modules/exploits/windows/mysql/mysql_mof.rb        |  6 +++---
+ modules/exploits/windows/mysql/mysql_start_up.rb   |  6 +++---
+ .../windows/mysql/scrutinizer_upload_exec.rb       |  4 ++--
+ .../exploits/windows/nimsoft/nimcontroller_bof.rb  |  4 ++--
+ modules/exploits/windows/novell/netiq_pum_eval.rb  |  6 +++---
+ .../oracle/client_system_analyzer_upload.rb        |  6 +++---
+ modules/exploits/windows/oracle/extjob.rb          |  6 +++---
+ modules/exploits/windows/oracle/tns_arguments.rb   |  4 ++--
+ .../exploits/windows/oracle/tns_auth_sesskey.rb    |  8 ++++----
+ .../exploits/windows/oracle/tns_service_name.rb    |  4 ++--
+ .../exploits/windows/postgres/postgres_payload.rb  |  4 ++--
+ .../exploits/windows/proxy/ccproxy_telnet_ping.rb  |  4 ++--
+ .../windows/proxy/qbik_wingate_wwwproxy.rb         |  4 ++--
+ .../exploits/windows/rdp/rdp_doublepulsar_rce.rb   |  4 ++--
+ .../windows/sage/x3_adxsrv_auth_bypass_cmd_exec.rb |  8 ++++----
+ modules/exploits/windows/scada/abb_wserver_exec.rb |  4 ++--
+ .../advantech_webaccess_dashboard_file_upload.rb   |  4 ++--
+ .../exploits/windows/scada/codesys_web_server.rb   |  4 ++--
+ modules/exploits/windows/scada/diaenergie_sqli.rb  | 14 +++++++-------
+ .../windows/scada/ge_proficy_cimplicity_gefebt.rb  |  4 ++--
+ .../windows/scada/indusoft_webstudio_exec.rb       |  6 +++---
+ modules/exploits/windows/scada/mypro_cmdexe.rb     | 10 +++++-----
+ modules/exploits/windows/scada/mypro_mgr_cmd.rb    |  8 ++++----
+ .../exploits/windows/scada/procyon_core_server.rb  |  4 ++--
+ .../windows/scada/rockwell_factorytalk_rce.rb      | 10 +++++-----
+ .../windows/scada/yokogawa_bkbcopyd_bof.rb         |  4 ++--
+ .../windows/scada/yokogawa_bkesimmgr_bof.rb        |  6 +++---
+ .../exploits/windows/scada/yokogawa_bkhodeq_bof.rb |  4 ++--
+ .../exploits/windows/smb/cve_2020_0796_smbghost.rb | 14 +++++++-------
+ modules/exploits/windows/smb/ipass_pipe_exec.rb    | 10 +++++-----
+ modules/exploits/windows/smb/ms05_039_pnp.rb       |  4 ++--
+ modules/exploits/windows/smb/ms08_067_netapi.rb    | 10 +++++-----
+ .../exploits/windows/smb/smb_doublepulsar_rce.rb   |  6 +++---
+ .../exploits/windows/smtp/mailcarrier_smtp_ehlo.rb |  4 ++--
+ .../windows/smtp/ms03_046_exchange2000_xexch50.rb  |  8 ++++----
+ modules/exploits/windows/smtp/njstar_smtp_bof.rb   |  4 ++--
+ modules/exploits/windows/smtp/ypops_overflow1.rb   |  4 ++--
+ .../exploits/windows/ssh/freesshd_authbypass.rb    |  6 +++---
+ modules/exploits/windows/ssh/sysax_ssh_username.rb |  6 +++---
+ .../windows/telnet/gamsoft_telsrv_username.rb      |  4 ++--
+ .../exploits/windows/unicenter/cam_log_security.rb |  2 +-
+ 146 files changed, 416 insertions(+), 418 deletions(-)
+
+commit aa14df9b6c7100b70bfdbf82be2da0b5bb9b77a7
+Merge: 1d1c284619 a153814b0f
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Fri Apr 24 13:47:19 2026 +0100
+
+    Merge pull request #21368 from sjanusz-r7/change-php-payload-size
+    
+    Change PHP payload die func message
+
+ lib/msf/core/payload/php/reverse_tcp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1d1c284619577a4fffaeffb0943d33d1fc18d4dc
+Merge: 17f7f4d718 f00bbe6451
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Apr 24 11:15:55 2026 +0100
+
+    Merge pull request #21364 from sjanusz-r7/update-payload-cached-sizes-on-new-metadata-cache
+    
+    Update payload cached sizes when creating new module metadata cache
+
+ tools/automation/cache/build_new_cache.sh | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit a153814b0f0fd53b47404950fc595be55f386d06
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri Apr 24 11:08:38 2026 +0100
+
+    Change PHP payload die func message
+
+ lib/msf/core/payload/php/reverse_tcp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
