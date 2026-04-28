@@ -1,0 +1,22 @@
+commit 41a937c70c2ed7acb4a89ca2c0d3a7da3108d974
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Apr 27 11:20:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                    | 886 +++++++++++------------
+ modules/payloads/stagers/php/reverse_tcp.rb      |   2 +-
+ modules/payloads/stagers/php/reverse_tcp_uuid.rb |   2 +-
+ 3 files changed, 445 insertions(+), 445 deletions(-)
+
+commit 63f4f358c7566d1d5425f336ff74638f20c9f419
+Merge: e909b9218b 4281e713a0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Apr 27 12:09:19 2026 +0100
+
+    Merge pull request #21092 from sjanusz-r7/fix-macos-mingw-syscall_inject-compilation
+    
+    Fix syscall_inject compilation errors on MacOS with MinGW 15
+
+ modules/evasion/windows/syscall_inject.rb | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
