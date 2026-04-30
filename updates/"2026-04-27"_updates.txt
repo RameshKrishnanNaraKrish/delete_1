@@ -1,0 +1,352 @@
+commit b59ced50579d051c5051683e071a457e63f2fd92
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 11:57:58 2026 +0100
+
+    Add human-readable descriptions to CheckCode returns in multi/http exploit modules (A-O)
+
+ modules/exploits/multi/http/activecollab_chat.rb   |  4 ++--
+ .../http/adobe_coldfusion_rce_cve_2023_26360.rb    |  2 +-
+ .../exploits/multi/http/agent_tesla_panel_rce.rb   |  6 +++---
+ .../multi/http/ajaxplorer_checkinstall_exec.rb     |  4 ++--
+ .../http/apache_apisix_api_default_token_rce.rb    |  4 ++--
+ .../multi/http/apache_druid_cve_2023_25194.rb      |  2 +-
+ .../multi/http/apache_flink_jar_upload_exec.rb     |  2 +-
+ .../multi/http/apache_mod_cgi_bash_env_exec.rb     | 10 ++++-----
+ .../multi/http/apache_roller_ognl_injection.rb     |  4 ++--
+ modules/exploits/multi/http/apprain_upload_exec.rb |  4 ++--
+ .../atlassian_confluence_rce_cve_2023_22515.rb     |  2 +-
+ .../atlassian_confluence_webwork_ognl_injection.rb |  2 +-
+ modules/exploits/multi/http/atutor_sqli.rb         |  4 ++--
+ .../exploits/multi/http/auxilium_upload_exec.rb    |  4 ++--
+ modules/exploits/multi/http/baldr_upload_exec.rb   |  2 +-
+ .../exploits/multi/http/bassmaster_js_injection.rb |  6 +++---
+ .../exploits/multi/http/bitbucket_env_var_rce.rb   | 24 +++++++++++-----------
+ modules/exploits/multi/http/bolt_file_upload.rb    |  6 +++---
+ .../multi/http/builderengine_upload_exec.rb        |  4 ++--
+ .../multi/http/cacti_graph_template_rce.rb         |  2 +-
+ .../multi/http/cacti_package_import_rce.rb         |  2 +-
+ .../exploits/multi/http/cacti_pollers_sqli_rce.rb  |  2 +-
+ .../multi/http/caidao_php_backdoor_exec.rb         |  4 ++--
+ modules/exploits/multi/http/cisco_dcnm_upload.rb   | 10 ++++-----
+ .../exploits/multi/http/cisco_dcnm_upload_2019.rb  |  4 ++--
+ .../exploits/multi/http/cleo_rce_cve_2024_55956.rb |  2 +-
+ .../multi/http/clinic_pms_fileupload_rce.rb        | 10 ++++-----
+ .../multi/http/clipbucket_fileupload_exec.rb       | 10 ++++-----
+ .../multi/http/cmsms_file_manager_auth_rce.rb      |  8 ++++----
+ .../multi/http/cmsms_object_injection_rce.rb       |  8 ++++----
+ modules/exploits/multi/http/cmsms_showtime2_rce.rb |  6 +++---
+ .../exploits/multi/http/cmsms_upload_rename_rce.rb |  8 ++++----
+ modules/exploits/multi/http/cockpit_cms_rce.rb     |  4 ++--
+ .../multi/http/coldfusion_rds_auth_bypass.rb       |  8 ++++----
+ .../multi/http/confluence_widget_connector.rb      |  6 +++---
+ .../connectwise_screenconnect_rce_cve_2024_1709.rb |  2 +-
+ .../multi/http/crushftp_rce_cve_2023_43177.rb      |  2 +-
+ modules/exploits/multi/http/cups_bash_env_exec.rb  |  6 +++---
+ .../exploits/multi/http/cuteflow_upload_exec.rb    |  6 +++---
+ .../multi/http/cve_2021_35464_forgerock_openam.rb  |  4 ++--
+ .../multi/http/dexter_casinoloader_exec.rb         |  4 ++--
+ .../exploits/multi/http/dotcms_file_upload_rce.rb  |  4 ++--
+ modules/exploits/multi/http/eaton_nsm_code_exec.rb |  6 +++---
+ .../exploits/multi/http/eventlog_file_upload.rb    |  8 ++++----
+ .../exploits/multi/http/extplorer_upload_exec.rb   | 10 ++++-----
+ modules/exploits/multi/http/familycms_less_exec.rb |  4 ++--
+ .../multi/http/gambio_unauth_rce_cve_2024_23759.rb |  2 +-
+ .../multi/http/getsimplecms_unauth_code_exec.rb    |  6 +++---
+ .../multi/http/gibbon_auth_rce_cve_2024_24725.rb   |  2 +-
+ modules/exploits/multi/http/gitlab_exif_rce.rb     |  2 +-
+ modules/exploits/multi/http/gitlab_shell_exec.rb   |  6 ++++--
+ .../exploits/multi/http/gitlist_arg_injection.rb   |  4 ++--
+ .../exploits/multi/http/glossword_upload_exec.rb   |  6 +++---
+ modules/exploits/multi/http/glpi_install_rce.rb    |  6 +++---
+ .../multi/http/hp_sitescope_issuesiebelcmd.rb      |  4 ++--
+ modules/exploits/multi/http/hp_sys_mgmt_exec.rb    |  6 +++---
+ .../multi/http/hyperic_hq_script_console.rb        |  8 ++++----
+ .../ibm_openadmin_tool_soap_welcomeserver_exec.rb  |  6 +++---
+ modules/exploits/multi/http/jboss_invoke_deploy.rb | 14 ++++++-------
+ .../exploits/multi/http/jboss_seam_upload_exec.rb  |  9 +++-----
+ .../exploits/multi/http/jenkins_metaprogramming.rb | 10 ++++-----
+ .../exploits/multi/http/jenkins_script_console.rb  |  4 ++--
+ .../multi/http/jenkins_xstream_deserialize.rb      |  4 ++--
+ .../http/jetbrains_teamcity_rce_cve_2023_42793.rb  |  2 +-
+ .../http/jetbrains_teamcity_rce_cve_2024_27198.rb  |  2 +-
+ .../exploits/multi/http/jira_hipchat_template.rb   | 14 ++++++-------
+ modules/exploits/multi/http/jira_plugin_upload.rb  | 12 +++++------
+ .../exploits/multi/http/joomla_http_header_rce.rb  | 14 ++++++-------
+ .../multi/http/kong_gateway_admin_api_rce.rb       | 10 ++++-----
+ .../exploits/multi/http/kordil_edms_upload_exec.rb |  8 ++++----
+ modules/exploits/multi/http/lcms_php_exec.rb       |  4 ++--
+ .../lighthouse_studio_unauth_rce_cve_2025_34300.rb |  6 +++---
+ .../multi/http/log1cms_ajax_create_folder.rb       |  4 ++--
+ modules/exploits/multi/http/magento_unserialize.rb |  8 ++++----
+ modules/exploits/multi/http/makoserver_cmd_exec.rb | 12 +++++------
+ .../multi/http/manage_engine_dc_pmp_sqli.rb        | 22 ++++++++++----------
+ ...e_adselfservice_plus_saml_rce_cve_2022_47966.rb |  6 +++---
+ .../multi/http/manageengine_auth_upload.rb         |  6 +++---
+ .../multi/http/manageengine_sd_uploader.rb         |  4 ++--
+ .../multi/http/manageengine_search_sqli.rb         |  4 ++--
+ ...ine_servicedesk_plus_saml_rce_cve_2022_47966.rb |  8 ++++----
+ .../multi/http/mantisbt_manage_proj_page_rce.rb    |  8 ++++----
+ modules/exploits/multi/http/mantisbt_php_exec.rb   |  6 +++---
+ .../multi/http/mediawiki_syntaxhighlight.rb        |  6 +++---
+ modules/exploits/multi/http/mediawiki_thumb.rb     | 18 ++++++++--------
+ .../http/metasploit_static_secret_key_base.rb      | 10 ++++-----
+ .../exploits/multi/http/microfocus_obm_auth_rce.rb |  4 ++--
+ .../multi/http/microfocus_ucmdb_unauth_deser.rb    | 12 +++++++----
+ modules/exploits/multi/http/mma_backdoor_upload.rb |  4 ++--
+ .../multi/http/mobilecartly_upload_exec.rb         |  4 ++--
+ .../http/monitorr_webshell_rce_cve_2020_28871.rb   |  2 +-
+ .../exploits/multi/http/monstra_fileupload_exec.rb | 10 ++++-----
+ .../multi/http/movabletype_upgrade_exec.rb         | 10 ++++-----
+ .../exploits/multi/http/mutiny_subnetmask_exec.rb  |  4 ++--
+ .../exploits/multi/http/mybb_rce_cve_2022_24734.rb |  2 +-
+ modules/exploits/multi/http/navigate_cms_rce.rb    |  4 ++--
+ .../exploits/multi/http/netwin_surgeftp_exec.rb    |  4 ++--
+ .../exploits/multi/http/nibbleblog_file_upload.rb  |  6 +++---
+ modules/exploits/multi/http/nostromo_code_exec.rb  |  6 +++---
+ .../exploits/multi/http/novell_servicedesk_rce.rb  |  6 +++---
+ .../multi/http/nuuo_nvrmini_upgrade_rce.rb         |  6 +++---
+ .../multi/http/october_upload_bypass_exec.rb       |  6 +++---
+ modules/exploits/multi/http/op5_license.rb         |  4 ++--
+ modules/exploits/multi/http/op5_welcome.rb         |  4 ++--
+ .../exploits/multi/http/open_web_analytics_rce.rb  |  2 +-
+ .../exploits/multi/http/openfire_auth_bypass.rb    | 10 ++++-----
+ .../openfire_auth_bypass_rce_cve_2023_32315.rb     |  2 +-
+ .../exploits/multi/http/openmrs_deserialization.rb |  2 +-
+ modules/exploits/multi/http/openx_backdoor_php.rb  |  6 +++---
+ .../multi/http/opmanager_socialit_file_upload.rb   |  4 ++--
+ .../multi/http/opmanager_sumpdu_deserialization.rb |  6 +++---
+ .../oracle_access_manager_rce_cve_2021_35587.rb    |  2 +-
+ .../exploits/multi/http/oracle_ats_file_upload.rb  |  4 ++--
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  |  8 ++++----
+ modules/exploits/multi/http/oracle_reports_rce.rb  |  8 +++-----
+ modules/exploits/multi/http/orientdb_exec.rb       |  8 +++++---
+ modules/exploits/multi/http/os_cmd_exec.rb         |  8 ++++----
+ 117 files changed, 355 insertions(+), 352 deletions(-)
+
+commit 0bf595c2ecba4ee10763fa6cd96dd13dbedf77e9
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 11:59:12 2026 +0100
+
+    Add human-readable descriptions to CheckCode returns in unix/webapp exploit modules
+
+ .../unix/webapp/actualanalyzer_ant_cookie_exec.rb    | 16 ++++++++--------
+ .../webapp/ajenti_auth_username_cmd_injection.rb     |  8 ++++----
+ modules/exploits/unix/webapp/arkeia_upload_exec.rb   |  8 ++++----
+ .../exploits/unix/webapp/awstats_configdir_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/awstats_migrate_exec.rb |  4 ++--
+ .../exploits/unix/webapp/awstatstotals_multisort.rb  |  4 ++--
+ modules/exploits/unix/webapp/barracuda_img_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/basilic_diff_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/byob_unauth_rce.rb      |  4 ++--
+ .../exploits/unix/webapp/carberp_backdoor_exec.rb    |  4 ++--
+ .../unix/webapp/citrix_access_gateway_exec.rb        |  4 ++--
+ .../exploits/unix/webapp/clipbucket_upload_exec.rb   |  8 ++++----
+ modules/exploits/unix/webapp/coppermine_piceditor.rb |  4 ++--
+ .../exploits/unix/webapp/datalife_preview_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/dogfood_spell_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/drupal_coder_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/drupal_drupalgeddon2.rb | 10 +++++-----
+ modules/exploits/unix/webapp/drupal_restws_exec.rb   |  4 ++--
+ .../unix/webapp/drupal_restws_unserialize.rb         | 12 ++++++------
+ modules/exploits/unix/webapp/egallery_upload_exec.rb |  4 ++--
+ .../elfinder_php_connector_exiftran_cmd_injection.rb |  8 ++++----
+ .../exploits/unix/webapp/flashchat_upload_exec.rb    | 10 +++++-----
+ modules/exploits/unix/webapp/foswiki_maketext.rb     |  8 ++++----
+ modules/exploits/unix/webapp/freepbx_config_exec.rb  |  6 +++---
+ .../exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb  |  6 +++---
+ .../webapp/fusionpbx_operator_panel_exec_cmd_exec.rb |  6 +++---
+ .../unix/webapp/get_simple_cms_upload_exec.rb        |  6 +++---
+ .../unix/webapp/google_proxystylesheet_exec.rb       |  4 ++--
+ modules/exploits/unix/webapp/graphite_pickle_exec.rb |  4 ++--
+ modules/exploits/unix/webapp/hastymail_exec.rb       |  6 +++---
+ modules/exploits/unix/webapp/havalite_upload_exec.rb |  6 +++---
+ .../exploits/unix/webapp/horde_unserialize_exec.rb   |  4 ++--
+ .../unix/webapp/hybridauth_install_php_exec.rb       |  6 +++---
+ modules/exploits/unix/webapp/instantcms_exec.rb      |  4 ++--
+ .../unix/webapp/invision_pboard_unserialize_exec.rb  |  8 ++++----
+ .../unix/webapp/joomla_akeeba_unserialize.rb         |  4 ++--
+ .../unix/webapp/joomla_comfields_sqli_rce.rb         |  4 ++--
+ .../exploits/unix/webapp/joomla_comjce_imgmanager.rb |  4 ++--
+ .../unix/webapp/joomla_contenthistory_sqli_rce.rb    |  4 ++--
+ .../exploits/unix/webapp/joomla_media_upload_exec.rb |  6 +++---
+ modules/exploits/unix/webapp/joomla_tinybrowser.rb   |  4 ++--
+ modules/exploits/unix/webapp/jquery_file_upload.rb   |  6 +++---
+ modules/exploits/unix/webapp/kimai_sqli.rb           |  6 +++---
+ modules/exploits/unix/webapp/libretto_upload_exec.rb |  6 +++---
+ .../unix/webapp/maarch_letterbox_file_upload.rb      |  6 +++---
+ modules/exploits/unix/webapp/moinmoin_twikidraw.rb   |  6 +++---
+ modules/exploits/unix/webapp/mybb_backdoor.rb        |  4 ++--
+ modules/exploits/unix/webapp/nagios3_history_cgi.rb  |  6 +++---
+ .../exploits/unix/webapp/nagios_graph_explorer.rb    |  4 ++--
+ .../exploits/unix/webapp/narcissus_backend_exec.rb   |  4 ++--
+ .../exploits/unix/webapp/nextcloud_workflows_rce.rb  |  4 ++--
+ .../unix/webapp/open_flash_chart_upload_exec.rb      |  6 +++---
+ .../unix/webapp/openemr_sqli_privesc_upload.rb       |  6 +++---
+ modules/exploits/unix/webapp/openemr_upload_exec.rb  |  8 ++++----
+ .../exploits/unix/webapp/openmediavault_rpc_rce.rb   | 10 +++++-----
+ .../unix/webapp/opennetadmin_ping_cmd_injection.rb   |  8 ++++----
+ modules/exploits/unix/webapp/opensis_chain_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/opensis_modname_exec.rb |  8 ++++----
+ modules/exploits/unix/webapp/openx_banner_edit.rb    | 10 +++++-----
+ modules/exploits/unix/webapp/oracle_vm_agent_utl.rb  |  4 ++--
+ modules/exploits/unix/webapp/php_charts_exec.rb      |  6 +++---
+ modules/exploits/unix/webapp/php_eval.rb             |  8 ++++----
+ modules/exploits/unix/webapp/php_include.rb          |  6 +++---
+ .../exploits/unix/webapp/php_vbulletin_template.rb   |  4 ++--
+ modules/exploits/unix/webapp/php_xmlrpc_eval.rb      |  4 ++--
+ .../exploits/unix/webapp/phpcollab_upload_exec.rb    |  6 +++---
+ modules/exploits/unix/webapp/phpmyadmin_config.rb    |  5 ++---
+ .../exploits/unix/webapp/projectpier_upload_exec.rb  |  4 ++--
+ .../exploits/unix/webapp/projectsend_upload_exec.rb  | 20 ++++++++++----------
+ .../exploits/unix/webapp/rconfig_install_cmd_exec.rb | 10 +++++-----
+ modules/exploits/unix/webapp/seportal_sqli_exec.rb   |  6 +++---
+ .../unix/webapp/simple_e_document_upload_exec.rb     |  8 ++++----
+ .../webapp/sixapart_movabletype_storable_exec.rb     |  4 ++--
+ modules/exploits/unix/webapp/skybluecanvas_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/sphpblog_file_upload.rb |  6 +++---
+ modules/exploits/unix/webapp/squash_yaml_exec.rb     |  4 ++--
+ .../unix/webapp/tikiwiki_graph_formula_exec.rb       | 12 ++++++------
+ modules/exploits/unix/webapp/tikiwiki_jhot_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/tikiwiki_upload_exec.rb |  4 ++--
+ .../unix/webapp/trixbox_ce_endpoint_devicemap_rce.rb | 12 ++++++------
+ modules/exploits/unix/webapp/trixbox_langchoice.rb   | 14 +++++++-------
+ .../unix/webapp/tuleap_rest_unserialize_exec.rb      |  6 +++---
+ .../exploits/unix/webapp/tuleap_unserialize_exec.rb  |  4 ++--
+ modules/exploits/unix/webapp/twiki_history.rb        | 16 ++++++++--------
+ modules/exploits/unix/webapp/twiki_maketext.rb       |  8 ++++----
+ modules/exploits/unix/webapp/twiki_search.rb         | 16 ++++++++--------
+ .../exploits/unix/webapp/vbulletin_vote_sqli_exec.rb |  6 +++---
+ .../unix/webapp/vicidial_agent_authenticated_rce.rb  |  8 ++++----
+ .../unix/webapp/vicidial_manager_send_cmd_exec.rb    |  8 ++++----
+ .../vicidial_user_authorization_unauth_cmd_exec.rb   | 10 +++++-----
+ modules/exploits/unix/webapp/webmin_show_cgi_exec.rb |  6 +++---
+ modules/exploits/unix/webapp/webmin_upload_exec.rb   |  8 ++++----
+ modules/exploits/unix/webapp/webtester_exec.rb       | 10 +++++-----
+ .../exploits/unix/webapp/wp_admin_shell_upload.rb    |  4 ++--
+ .../unix/webapp/wp_advanced_custom_fields_exec.rb    |  4 ++--
+ .../unix/webapp/wp_asset_manager_upload_exec.rb      |  4 ++--
+ modules/exploits/unix/webapp/wp_foxypress_upload.rb  |  4 ++--
+ .../unix/webapp/wp_google_document_embedder_exec.rb  |  4 ++--
+ .../exploits/unix/webapp/wp_infusionsoft_upload.rb   |  4 ++--
+ .../exploits/unix/webapp/wp_optimizepress_upload.rb  |  4 ++--
+ .../exploits/unix/webapp/wp_phpmailer_host_header.rb |  6 +++---
+ .../exploits/unix/webapp/wp_pixabay_images_upload.rb |  6 +++---
+ .../unix/webapp/wp_plainview_activity_monitor_rce.rb |  2 +-
+ .../exploits/unix/webapp/wp_property_upload_exec.rb  |  4 ++--
+ modules/exploits/unix/webapp/wp_total_cache_exec.rb  | 10 +++++-----
+ modules/exploits/unix/webapp/xoda_file_upload.rb     |  4 ++--
+ .../exploits/unix/webapp/xymon_useradm_cmd_exec.rb   | 14 +++++++-------
+ modules/exploits/unix/webapp/zeroshell_exec.rb       |  4 ++--
+ modules/exploits/unix/webapp/zimbra_lfi.rb           |  6 +++---
+ .../unix/webapp/zoneminder_packagecontrol_exec.rb    | 12 ++++++------
+ modules/exploits/unix/webapp/zoneminder_snapshots.rb |  2 +-
+ modules/exploits/unix/webapp/zpanel_username_exec.rb |  6 +++---
+ 112 files changed, 356 insertions(+), 357 deletions(-)
+
+commit 15a0f6eefdd7746d42dd9cb0e0f26729be8691f7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 29 19:30:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 2634142f0d42993ebd7fc27ad19fe46a55c20ff0
+Merge: 788aa2abc5 2153daad7b
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 29 15:20:10 2026 -0400
+
+    Merge pull request #21323 from jheysel-r7/feat/http_to_ldap
+    
+    HTTP to LDAP Relay Module
+
+ .../modules/auxiliary/server/relay/http_to_ldap.md | 108 ++++++
+ lib/msf/core/exploit/remote/http_server/relay.rb   | 109 ++++++
+ .../remote/http_server/relay/ntlm/server_client.rb | 374 +++++++++++++++++++++
+ .../remote/relay/ntlm/target/ldap/client.rb        |  12 +-
+ modules/auxiliary/server/relay/http_to_ldap.rb     | 121 +++++++
+ .../lib/msf/core/exploit/remote/relay/http_spec.rb | 198 +++++++++++
+ 6 files changed, 921 insertions(+), 1 deletion(-)
+
+commit 2153daad7be5adb83d84c9804bde987f7670114b
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Wed Apr 29 14:38:29 2026 -0400
+
+    Update the specs
+
+ spec/lib/msf/core/exploit/remote/relay/http_spec.rb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 4847d8844134cf255a7a71316ff7f7864d2c2831
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Apr 2 13:39:02 2026 -0700
+
+    HTTP to LDAP Relay Module and Supporting Libraries
+    
+    Remove unnecessary code
+    
+    Remove commented out code
+    
+    Added documentation
+    
+    Responded to Spencer and Copilot
+    
+    Add anonymous identity check
+    
+    Doc update
+    
+    Warning surpression
+    
+    Renamed ldap_client to relayed_connection
+    
+    Comments
+
+ .../modules/auxiliary/server/relay/http_to_ldap.md | 108 ++++++
+ lib/msf/core/exploit/remote/http_server/relay.rb   | 109 ++++++
+ .../remote/http_server/relay/ntlm/server_client.rb | 374 +++++++++++++++++++++
+ .../remote/relay/ntlm/target/ldap/client.rb        |  12 +-
+ modules/auxiliary/server/relay/http_to_ldap.rb     | 121 +++++++
+ .../lib/msf/core/exploit/remote/relay/http_spec.rb | 195 +++++++++++
+ 6 files changed, 918 insertions(+), 1 deletion(-)
+
+commit 788aa2abc5ead003ce01297e5f0520f607f5048c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Apr 29 13:18:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 2cfdfcba60d33f61d72ba323df418477ec0a63f0
+Merge: 41a937c70c bcae34ee4f
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Apr 29 09:08:03 2026 -0400
+
+    Merge pull request #21392 from dwelch-r7/skip-windows-test-on-non-windows-system
+    
+    skip Windows-specific tests on non-Windows platforms
+
+ test/modules/post/test/cmd_exec.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit bcae34ee4f536328f775574e3f3808df4bbe2fdd
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Apr 29 13:11:06 2026 +0100
+
+    Update test/modules/post/test/cmd_exec.rb
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+ test/modules/post/test/cmd_exec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6df54a639e5ebd60ca76b5e3a19ecc482f935090
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Apr 29 13:05:17 2026 +0100
+
+    skip Windows-specific tests on non-Windows platforms
+
+ test/modules/post/test/cmd_exec.rb | 1 +
+ 1 file changed, 1 insertion(+)
