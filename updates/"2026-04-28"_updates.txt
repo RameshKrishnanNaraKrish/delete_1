@@ -1,0 +1,686 @@
+commit 5a2e7bb301258c83e84e62791877aef682ff8a1d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 30 23:06:36 2026 +0000
+
+    Bump version of framework to 6.4.132
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 7 ++++++-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e8bb3cd5fbaaba8b6c3f022e8c7e0416d0f841e1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 30 22:30:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 187 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 187 insertions(+)
+
+commit dc97d1e97ed4011b29b17fa81684958815e0ff93
+Merge: a0c5b9a6bc 66995d3987
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Apr 30 17:19:08 2026 -0500
+
+    Merge pull request #21395 from zeroSteiner/feat/cve-2026-31431
+    
+    Add exploit for CVE-2026-31431 (Copy Fail)
+
+ .../CVE-2026-31431/CVE-2026-31431-check.py         |  33 +++++
+ .../CVE-2026-31431/CVE-2026-31431-cleanup.py       |   9 ++
+ data/exploits/CVE-2026-31431/CVE-2026-31431.py     |  56 ++++++++
+ .../linux/local/cve_2026_31431_copy_fail.md        |  80 +++++++++++
+ lib/msf/core/post/architecture.rb                  |  23 +--
+ .../linux/local/cve_2026_31431_copy_fail.rb        | 157 +++++++++++++++++++++
+ modules/payloads/singles/linux/aarch64/exec.rb     |  68 +++++++++
+ spec/modules/payloads_spec.rb                      |   9 ++
+ 8 files changed, 419 insertions(+), 16 deletions(-)
+
+commit 66995d39873a4bb337d6f3cc059c04c43a393a9f
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 17:51:30 2026 -0400
+
+    Only allow x64 and AARCH64 for now
+
+ modules/exploits/linux/local/cve_2026_31431_copy_fail.rb | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit cdcdb5fe88ade88f11b218f3e678c995163616ed
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 16:54:13 2026 -0400
+
+    Normalize reported ARMLE architectures from Meterpreter
+
+ lib/msf/core/post/architecture.rb                  | 23 +++++++---------------
+ .../linux/local/cve_2026_31431_copy_fail.rb        |  7 ++++---
+ 2 files changed, 11 insertions(+), 19 deletions(-)
+
+commit bc0f7602c2b5e0ee35113998cd37bd0ad7b33a79
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 16:25:07 2026 -0400
+
+    Only bind the socket once
+
+ data/exploits/CVE-2026-31431/CVE-2026-31431.py | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+commit 0e02f10078ebe7a3bc727b272d2655da7f04a5c2
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 15:56:26 2026 -0400
+
+    Add support for more architectures
+
+ modules/exploits/linux/local/cve_2026_31431_copy_fail.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c0e5ceb531197c216eda6dd17fb8ebebce2c9858
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 15:55:14 2026 -0400
+
+    Add an AARCH64 exec payload
+
+ modules/payloads/singles/linux/aarch64/exec.rb | 68 ++++++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                  |  9 ++++
+ 2 files changed, 77 insertions(+)
+
+commit a0c5b9a6bc734fdeea6b96f107f3c1f95677a69d
+Merge: e2e210d038 6f3884e832
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu Apr 30 16:33:18 2026 -0400
+
+    Merge pull request #21315 from cdelafuente-r7/mcp-server
+    
+    MCP Server, specs and documentation
+
+ Gemfile                                            |    2 +
+ Gemfile.lock                                       |   15 +
+ config/mcp_config.yaml.example                     |   33 +
+ config/mcp_config_jsonrpc.yaml.example             |   32 +
+ .../How-to-use-Metasploit-MCP-Server.md            |  366 +++++++
+ docs/navigation.rb                                 |    3 +
+ lib/msf/core/mcp.rb                                |   75 ++
+ lib/msf/core/mcp/application.rb                    |  334 +++++++
+ lib/msf/core/mcp/config/loader.rb                  |  123 +++
+ lib/msf/core/mcp/config/validator.rb               |  202 ++++
+ lib/msf/core/mcp/errors.rb                         |   69 ++
+ lib/msf/core/mcp/logging/sinks/json_flatfile.rb    |   24 +
+ lib/msf/core/mcp/logging/sinks/json_stream.rb      |  123 +++
+ lib/msf/core/mcp/logging/sinks/sanitizing.rb       |  111 +++
+ lib/msf/core/mcp/metasploit/client.rb              |   64 ++
+ lib/msf/core/mcp/metasploit/jsonrpc_client.rb      |  199 ++++
+ lib/msf/core/mcp/metasploit/messagepack_client.rb  |  262 +++++
+ .../core/mcp/metasploit/response_transformer.rb    |  216 ++++
+ lib/msf/core/mcp/middleware/request_logger.rb      |  187 ++++
+ lib/msf/core/mcp/rpc_manager.rb                    |  302 ++++++
+ lib/msf/core/mcp/security/input_validator.rb       |  197 ++++
+ lib/msf/core/mcp/security/rate_limiter.rb          |   58 ++
+ lib/msf/core/mcp/server.rb                         |  242 +++++
+ lib/msf/core/mcp/tools/credential_info.rb          |  159 +++
+ lib/msf/core/mcp/tools/host_info.rb                |  177 ++++
+ lib/msf/core/mcp/tools/loot_info.rb                |  161 +++
+ lib/msf/core/mcp/tools/module_info.rb              |  147 +++
+ lib/msf/core/mcp/tools/note_info.rb                |  185 ++++
+ lib/msf/core/mcp/tools/search_modules.rb           |  158 +++
+ lib/msf/core/mcp/tools/service_info.rb             |  197 ++++
+ lib/msf/core/mcp/tools/tool_helper.rb              |   27 +
+ lib/msf/core/mcp/tools/vulnerability_info.rb       |  189 ++++
+ lib/msf_autoload.rb                                |    4 +-
+ lib/rex/logging.rb                                 |    4 +-
+ metasploit-framework.gemspec                       |    2 +
+ msfmcpd                                            |   53 +
+ msfrpcd                                            |    5 +
+ .../config_files/msfmcpd/valid_jsonrpc.yaml        |   24 +
+ .../config_files/msfmcpd/valid_messagepack.yaml    |   25 +
+ spec/integration/msfmcpd/config_loading_spec.rb    |  323 ++++++
+ spec/integration/msfmcpd/error_handling_spec.rb    |  185 ++++
+ spec/integration/msfmcpd/jsonrpc_auth_flow_spec.rb |   70 ++
+ spec/integration/msfmcpd/logging_pipeline_spec.rb  |  143 +++
+ .../msfmcpd/messagepack_auth_flow_spec.rb          |   81 ++
+ .../msfmcpd/messagepack_reauth_flow_spec.rb        |  157 +++
+ spec/integration/msfmcpd/rate_limiting_spec.rb     |  151 +++
+ spec/integration/msfmcpd/rpc_availability_spec.rb  |  165 ++++
+ spec/integration/msfmcpd/tool_execution_db_spec.rb |  313 ++++++
+ .../msfmcpd/tool_execution_module_info_spec.rb     |  128 +++
+ .../msfmcpd/tool_execution_search_spec.rb          |  217 ++++
+ spec/lib/msf/core/mcp/application_spec.rb          |  873 ++++++++++++++++
+ spec/lib/msf/core/mcp/config/loader_spec.rb        |  841 ++++++++++++++++
+ spec/lib/msf/core/mcp/config/validator_spec.rb     | 1030 +++++++++++++++++++
+ spec/lib/msf/core/mcp/errors_spec.rb               |  120 +++
+ .../lib/msf/core/mcp/logging/log_constants_spec.rb |   72 ++
+ .../core/mcp/logging/sinks/json_flatfile_spec.rb   |  134 +++
+ .../msf/core/mcp/logging/sinks/json_stream_spec.rb |  246 +++++
+ .../msf/core/mcp/logging/sinks/sanitizing_spec.rb  |  313 ++++++
+ spec/lib/msf/core/mcp/metasploit/client_spec.rb    |  179 ++++
+ .../msf/core/mcp/metasploit/jsonrpc_client_spec.rb |  318 ++++++
+ .../core/mcp/metasploit/messagepack_client_spec.rb |  406 ++++++++
+ .../mcp/metasploit/response_transformer_spec.rb    |  545 ++++++++++
+ .../msf/core/mcp/middleware/request_logger_spec.rb |  305 ++++++
+ spec/lib/msf/core/mcp/rpc_manager_spec.rb          | 1038 ++++++++++++++++++++
+ .../msf/core/mcp/security/input_validator_spec.rb  |  698 +++++++++++++
+ .../lib/msf/core/mcp/security/rate_limiter_spec.rb |  187 ++++
+ spec/lib/msf/core/mcp/server_spec.rb               |  509 ++++++++++
+ .../lib/msf/core/mcp/tools/credential_info_spec.rb |  185 ++++
+ spec/lib/msf/core/mcp/tools/host_info_spec.rb      |  232 +++++
+ spec/lib/msf/core/mcp/tools/loot_info_spec.rb      |  200 ++++
+ spec/lib/msf/core/mcp/tools/module_info_spec.rb    |  175 ++++
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb      |  227 +++++
+ spec/lib/msf/core/mcp/tools/search_modules_spec.rb |  250 +++++
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb   |  241 +++++
+ spec/lib/msf/core/mcp/tools/tool_helper_spec.rb    |   51 +
+ .../msf/core/mcp/tools/vulnerability_info_spec.rb  |  224 +++++
+ 76 files changed, 16286 insertions(+), 2 deletions(-)
+
+commit e14ce079bb6851c88bd10cfe6774c4c005468388
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 15:18:18 2026 -0400
+
+    Appease rubocop
+
+ modules/exploits/linux/local/cve_2026_31431_copy_fail.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 22a9dc452211a1fc2df02c6e710e91fa01623beb
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 14:54:09 2026 -0400
+
+    Add docs
+
+ .../linux/local/cve_2026_31431_copy_fail.md        | 80 ++++++++++++++++++++++
+ .../linux/local/cve_2026_31431_copy_fail.rb        | 16 ++++-
+ 2 files changed, 93 insertions(+), 3 deletions(-)
+
+commit 55f921669889990cf3e223be29b278f93ba40b3c
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 14:39:46 2026 -0400
+
+    Finish the exploit check and cleanup methods
+
+ .../CVE-2026-31431/CVE-2026-31431-check.py         |  8 ++--
+ .../CVE-2026-31431/CVE-2026-31431-cleanup.py       |  9 ++++
+ data/exploits/CVE-2026-31431/CVE-2026-31431-x64.py | 34 ---------------
+ data/exploits/CVE-2026-31431/CVE-2026-31431.py     | 51 ++++++++++++++++++++++
+ .../linux/local/cve_2026_31431_copy_fail.rb        | 44 +++++++++++++++----
+ 5 files changed, 99 insertions(+), 47 deletions(-)
+
+commit e2e210d038c4d61a817e99dddcaa5355b91b87e9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 30 15:40:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+commit a2b57ae998ffe997f5317a86038e65a35c50e23e
+Merge: 5942122b9a 3bee31ff5e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 30 16:29:07 2026 +0100
+
+    Merge pull request #21352 from adfoster-r7/improve-checkcode-messages-5
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ modules/exploits/linux/http/nagios_xi_chained_rce.rb      |  5 ++++-
+ modules/exploits/linux/http/netgear_dnslookup_cmd_exec.rb |  4 +++-
+ modules/exploits/linux/http/netgear_r7000_cgibin_exec.rb  |  2 ++
+ .../exploits/linux/http/oracle_ebs_rce_cve_2022_21587.rb  |  2 +-
+ modules/exploits/linux/http/pretalx_rce_cve_2023_28458.rb |  4 ++--
+ .../exploits/linux/http/rconfig_ajaxarchivefiles_rce.rb   | 15 +++++++++------
+ .../exploits/linux/http/samsung_srv_1670d_upload_exec.rb  |  2 +-
+ modules/exploits/linux/http/vmware_vrops_mgr_ssrf_rce.rb  |  2 +-
+ modules/exploits/linux/http/webmin_packageup_rce.rb       |  2 +-
+ .../linux/http/zenoss_showdaemonxmlconfig_exec.rb         |  1 +
+ modules/exploits/linux/http/zyxel_lfi_unauth_ssh_rce.rb   |  3 ++-
+ .../exploits/linux/ids/alienvault_centerd_soap_exec.rb    |  2 +-
+ .../misc/hid_discoveryd_command_blink_on_unauth_rce.rb    |  7 ++++++-
+ modules/exploits/linux/misc/qnap_transcode_server.rb      |  2 +-
+ modules/exploits/linux/misc/ueb9_bpserverd.rb             |  6 ++++--
+ modules/exploits/linux/misc/zabbix_server_exec.rb         |  2 +-
+ modules/exploits/linux/samba/lsa_transnames_heap.rb       |  4 ++--
+ modules/exploits/linux/snmp/awind_snmp_exec.rb            |  4 +++-
+ .../exploits/linux/ssh/vyos_restricted_shell_privesc.rb   | 10 +++++-----
+ modules/exploits/linux/upnp/miniupnpd_soap_bof.rb         |  2 +-
+ 20 files changed, 51 insertions(+), 30 deletions(-)
+
+commit 12e08fb451895d4a50ac9f062e1c72db35e711e2
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Apr 30 10:45:42 2026 -0400
+
+    Add an expanded check
+
+ .../CVE-2026-31431/CVE-2026-31431-check.py         | 33 +++++++++++++
+ .../CVE-2026-31431-x64.py}                         |  0
+ .../linux/local/cve_2026_31431_copy_fail.rb        | 56 ++++++++++++++++++----
+ 3 files changed, 80 insertions(+), 9 deletions(-)
+
+commit 3bee31ff5e3f53d66612628abaae1377045e6e7e
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Apr 22 13:20:20 2026 +0100
+
+    Update checkcodes and bug fixes
+
+ modules/exploits/linux/http/nagios_xi_chained_rce.rb      |  5 ++++-
+ modules/exploits/linux/http/netgear_dnslookup_cmd_exec.rb |  4 +++-
+ modules/exploits/linux/http/netgear_r7000_cgibin_exec.rb  |  2 ++
+ .../exploits/linux/http/oracle_ebs_rce_cve_2022_21587.rb  |  2 +-
+ modules/exploits/linux/http/pretalx_rce_cve_2023_28458.rb |  4 ++--
+ .../exploits/linux/http/rconfig_ajaxarchivefiles_rce.rb   | 15 +++++++++------
+ .../exploits/linux/http/samsung_srv_1670d_upload_exec.rb  |  2 +-
+ modules/exploits/linux/http/vmware_vrops_mgr_ssrf_rce.rb  |  2 +-
+ modules/exploits/linux/http/webmin_packageup_rce.rb       |  2 +-
+ .../linux/http/zenoss_showdaemonxmlconfig_exec.rb         |  1 +
+ modules/exploits/linux/http/zyxel_lfi_unauth_ssh_rce.rb   |  3 ++-
+ .../exploits/linux/ids/alienvault_centerd_soap_exec.rb    |  2 +-
+ .../misc/hid_discoveryd_command_blink_on_unauth_rce.rb    |  7 ++++++-
+ modules/exploits/linux/misc/qnap_transcode_server.rb      |  2 +-
+ modules/exploits/linux/misc/ueb9_bpserverd.rb             |  6 ++++--
+ modules/exploits/linux/misc/zabbix_server_exec.rb         |  2 +-
+ modules/exploits/linux/samba/lsa_transnames_heap.rb       |  4 ++--
+ modules/exploits/linux/snmp/awind_snmp_exec.rb            |  4 +++-
+ .../exploits/linux/ssh/vyos_restricted_shell_privesc.rb   | 10 +++++-----
+ modules/exploits/linux/upnp/miniupnpd_soap_bof.rb         |  2 +-
+ 20 files changed, 51 insertions(+), 30 deletions(-)
+
+commit d0a205f7760a23ee3ea678d8b9c96e906725e28e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 29 21:16:42 2026 -0400
+
+    Add the initial LPE exploit
+
+ .../linux/local/cve_2026_31431_copy_fail.rb        | 73 ++++++++++++++++++++++
+ 1 file changed, 73 insertions(+)
+
+commit 9f6349de7ddb5498be04d4b34d1810a5caa378ba
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Apr 29 20:48:55 2026 -0400
+
+    Initial commit of updated stub
+    
+    Stub has been updated to forward arguments to /bin/sh
+
+ data/exploits/CVE-2026-31431.py | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+commit 5942122b9aaa31e2c4c1e53787ae5e6e971ce319
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Apr 30 10:06:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 562 +++++++++++++++++++++---------------------
+ 1 file changed, 281 insertions(+), 281 deletions(-)
+
+commit 49ea1a33913615a75f09579a77c8382d862a1912
+Merge: b3fbeced43 0bf595c2ec
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 30 10:46:41 2026 +0100
+
+    Merge pull request #21359 from adfoster-r7/improve-checkcode-messages-12
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../unix/webapp/actualanalyzer_ant_cookie_exec.rb    | 16 ++++++++--------
+ .../webapp/ajenti_auth_username_cmd_injection.rb     |  8 ++++----
+ modules/exploits/unix/webapp/arkeia_upload_exec.rb   |  8 ++++----
+ .../exploits/unix/webapp/awstats_configdir_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/awstats_migrate_exec.rb |  4 ++--
+ .../exploits/unix/webapp/awstatstotals_multisort.rb  |  4 ++--
+ modules/exploits/unix/webapp/barracuda_img_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/basilic_diff_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/byob_unauth_rce.rb      |  4 ++--
+ .../exploits/unix/webapp/carberp_backdoor_exec.rb    |  4 ++--
+ .../unix/webapp/citrix_access_gateway_exec.rb        |  4 ++--
+ .../exploits/unix/webapp/clipbucket_upload_exec.rb   |  8 ++++----
+ modules/exploits/unix/webapp/coppermine_piceditor.rb |  4 ++--
+ .../exploits/unix/webapp/datalife_preview_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/dogfood_spell_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/drupal_coder_exec.rb    |  4 ++--
+ modules/exploits/unix/webapp/drupal_drupalgeddon2.rb | 10 +++++-----
+ modules/exploits/unix/webapp/drupal_restws_exec.rb   |  4 ++--
+ .../unix/webapp/drupal_restws_unserialize.rb         | 12 ++++++------
+ modules/exploits/unix/webapp/egallery_upload_exec.rb |  4 ++--
+ .../elfinder_php_connector_exiftran_cmd_injection.rb |  8 ++++----
+ .../exploits/unix/webapp/flashchat_upload_exec.rb    | 10 +++++-----
+ modules/exploits/unix/webapp/foswiki_maketext.rb     |  8 ++++----
+ modules/exploits/unix/webapp/freepbx_config_exec.rb  |  6 +++---
+ .../exploits/unix/webapp/fusionpbx_exec_cmd_exec.rb  |  6 +++---
+ .../webapp/fusionpbx_operator_panel_exec_cmd_exec.rb |  6 +++---
+ .../unix/webapp/get_simple_cms_upload_exec.rb        |  6 +++---
+ .../unix/webapp/google_proxystylesheet_exec.rb       |  4 ++--
+ modules/exploits/unix/webapp/graphite_pickle_exec.rb |  4 ++--
+ modules/exploits/unix/webapp/hastymail_exec.rb       |  6 +++---
+ modules/exploits/unix/webapp/havalite_upload_exec.rb |  6 +++---
+ .../exploits/unix/webapp/horde_unserialize_exec.rb   |  4 ++--
+ .../unix/webapp/hybridauth_install_php_exec.rb       |  6 +++---
+ modules/exploits/unix/webapp/instantcms_exec.rb      |  4 ++--
+ .../unix/webapp/invision_pboard_unserialize_exec.rb  |  8 ++++----
+ .../unix/webapp/joomla_akeeba_unserialize.rb         |  4 ++--
+ .../unix/webapp/joomla_comfields_sqli_rce.rb         |  4 ++--
+ .../exploits/unix/webapp/joomla_comjce_imgmanager.rb |  4 ++--
+ .../unix/webapp/joomla_contenthistory_sqli_rce.rb    |  4 ++--
+ .../exploits/unix/webapp/joomla_media_upload_exec.rb |  6 +++---
+ modules/exploits/unix/webapp/joomla_tinybrowser.rb   |  4 ++--
+ modules/exploits/unix/webapp/jquery_file_upload.rb   |  6 +++---
+ modules/exploits/unix/webapp/kimai_sqli.rb           |  6 +++---
+ modules/exploits/unix/webapp/libretto_upload_exec.rb |  6 +++---
+ .../unix/webapp/maarch_letterbox_file_upload.rb      |  6 +++---
+ modules/exploits/unix/webapp/moinmoin_twikidraw.rb   |  6 +++---
+ modules/exploits/unix/webapp/mybb_backdoor.rb        |  4 ++--
+ modules/exploits/unix/webapp/nagios3_history_cgi.rb  |  6 +++---
+ .../exploits/unix/webapp/nagios_graph_explorer.rb    |  4 ++--
+ .../exploits/unix/webapp/narcissus_backend_exec.rb   |  4 ++--
+ .../exploits/unix/webapp/nextcloud_workflows_rce.rb  |  4 ++--
+ .../unix/webapp/open_flash_chart_upload_exec.rb      |  6 +++---
+ .../unix/webapp/openemr_sqli_privesc_upload.rb       |  6 +++---
+ modules/exploits/unix/webapp/openemr_upload_exec.rb  |  8 ++++----
+ .../exploits/unix/webapp/openmediavault_rpc_rce.rb   | 10 +++++-----
+ .../unix/webapp/opennetadmin_ping_cmd_injection.rb   |  8 ++++----
+ modules/exploits/unix/webapp/opensis_chain_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/opensis_modname_exec.rb |  8 ++++----
+ modules/exploits/unix/webapp/openx_banner_edit.rb    | 10 +++++-----
+ modules/exploits/unix/webapp/oracle_vm_agent_utl.rb  |  4 ++--
+ modules/exploits/unix/webapp/php_charts_exec.rb      |  6 +++---
+ modules/exploits/unix/webapp/php_eval.rb             |  8 ++++----
+ modules/exploits/unix/webapp/php_include.rb          |  6 +++---
+ .../exploits/unix/webapp/php_vbulletin_template.rb   |  4 ++--
+ modules/exploits/unix/webapp/php_xmlrpc_eval.rb      |  4 ++--
+ .../exploits/unix/webapp/phpcollab_upload_exec.rb    |  6 +++---
+ modules/exploits/unix/webapp/phpmyadmin_config.rb    |  5 ++---
+ .../exploits/unix/webapp/projectpier_upload_exec.rb  |  4 ++--
+ .../exploits/unix/webapp/projectsend_upload_exec.rb  | 20 ++++++++++----------
+ .../exploits/unix/webapp/rconfig_install_cmd_exec.rb | 10 +++++-----
+ modules/exploits/unix/webapp/seportal_sqli_exec.rb   |  6 +++---
+ .../unix/webapp/simple_e_document_upload_exec.rb     |  8 ++++----
+ .../webapp/sixapart_movabletype_storable_exec.rb     |  4 ++--
+ modules/exploits/unix/webapp/skybluecanvas_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/sphpblog_file_upload.rb |  6 +++---
+ modules/exploits/unix/webapp/squash_yaml_exec.rb     |  4 ++--
+ .../unix/webapp/tikiwiki_graph_formula_exec.rb       | 12 ++++++------
+ modules/exploits/unix/webapp/tikiwiki_jhot_exec.rb   |  4 ++--
+ modules/exploits/unix/webapp/tikiwiki_upload_exec.rb |  4 ++--
+ .../unix/webapp/trixbox_ce_endpoint_devicemap_rce.rb | 12 ++++++------
+ modules/exploits/unix/webapp/trixbox_langchoice.rb   | 14 +++++++-------
+ .../unix/webapp/tuleap_rest_unserialize_exec.rb      |  6 +++---
+ .../exploits/unix/webapp/tuleap_unserialize_exec.rb  |  4 ++--
+ modules/exploits/unix/webapp/twiki_history.rb        | 16 ++++++++--------
+ modules/exploits/unix/webapp/twiki_maketext.rb       |  8 ++++----
+ modules/exploits/unix/webapp/twiki_search.rb         | 16 ++++++++--------
+ .../exploits/unix/webapp/vbulletin_vote_sqli_exec.rb |  6 +++---
+ .../unix/webapp/vicidial_agent_authenticated_rce.rb  |  8 ++++----
+ .../unix/webapp/vicidial_manager_send_cmd_exec.rb    |  8 ++++----
+ .../vicidial_user_authorization_unauth_cmd_exec.rb   | 10 +++++-----
+ modules/exploits/unix/webapp/webmin_show_cgi_exec.rb |  6 +++---
+ modules/exploits/unix/webapp/webmin_upload_exec.rb   |  8 ++++----
+ modules/exploits/unix/webapp/webtester_exec.rb       | 10 +++++-----
+ .../exploits/unix/webapp/wp_admin_shell_upload.rb    |  4 ++--
+ .../unix/webapp/wp_advanced_custom_fields_exec.rb    |  4 ++--
+ .../unix/webapp/wp_asset_manager_upload_exec.rb      |  4 ++--
+ modules/exploits/unix/webapp/wp_foxypress_upload.rb  |  4 ++--
+ .../unix/webapp/wp_google_document_embedder_exec.rb  |  4 ++--
+ .../exploits/unix/webapp/wp_infusionsoft_upload.rb   |  4 ++--
+ .../exploits/unix/webapp/wp_optimizepress_upload.rb  |  4 ++--
+ .../exploits/unix/webapp/wp_phpmailer_host_header.rb |  6 +++---
+ .../exploits/unix/webapp/wp_pixabay_images_upload.rb |  6 +++---
+ .../unix/webapp/wp_plainview_activity_monitor_rce.rb |  2 +-
+ .../exploits/unix/webapp/wp_property_upload_exec.rb  |  4 ++--
+ modules/exploits/unix/webapp/wp_total_cache_exec.rb  | 10 +++++-----
+ modules/exploits/unix/webapp/xoda_file_upload.rb     |  4 ++--
+ .../exploits/unix/webapp/xymon_useradm_cmd_exec.rb   | 14 +++++++-------
+ modules/exploits/unix/webapp/zeroshell_exec.rb       |  4 ++--
+ modules/exploits/unix/webapp/zimbra_lfi.rb           |  6 +++---
+ .../unix/webapp/zoneminder_packagecontrol_exec.rb    | 12 ++++++------
+ modules/exploits/unix/webapp/zoneminder_snapshots.rb |  2 +-
+ modules/exploits/unix/webapp/zpanel_username_exec.rb |  6 +++---
+ 112 files changed, 356 insertions(+), 357 deletions(-)
+
+commit b3fbeced436ad66f43dd5eed9acefc1533addfff
+Merge: 7b3aef8ede 1e3727ba87
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 30 10:44:04 2026 +0100
+
+    Merge pull request #21355 from adfoster-r7/improve-checkcode-messages-8
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ .../multi/elasticsearch/script_mvel_rce.rb         |  4 +-
+ .../multi/elasticsearch/search_groovy_script.rb    |  4 +-
+ .../exploits/multi/ftp/pureftpd_bash_env_exec.rb   |  6 +--
+ .../exploits/multi/ftp/wuftpd_site_exec_format.rb  | 10 ++--
+ .../exploits/multi/local/xorg_x11_suid_server.rb   | 14 +++---
+ .../multi/local/xorg_x11_suid_server_modulepath.rb | 10 ++--
+ .../misc/apache_activemq_rce_cve_2023_46604.rb     | 12 ++---
+ modules/exploits/multi/misc/arkeia_agent_exec.rb   | 54 +++++++++++-----------
+ .../misc/bmc_server_automation_rscd_nsh_rce.rb     |  6 +--
+ modules/exploits/multi/misc/calibre_exec.rb        | 21 +++++----
+ .../misc/claymore_dual_miner_remote_manager_rce.rb |  8 ++--
+ modules/exploits/multi/misc/consul_rexec_exec.rb   |  8 ++--
+ modules/exploits/multi/misc/consul_service_exec.rb | 10 ++--
+ .../multi/misc/freeswitch_event_socket_cmd_exec.rb |  6 +--
+ .../multi/misc/hp_data_protector_exec_integutil.rb | 10 ++--
+ .../exploits/multi/misc/indesign_server_soap.rb    |  4 +-
+ modules/exploits/multi/misc/java_jdwp_debugger.rb  |  6 +--
+ modules/exploits/multi/misc/java_jmx_server.rb     | 11 +++--
+ .../misc/jboss_remoting_unified_invoker_rce.rb     |  6 +--
+ modules/exploits/multi/misc/legend_bot_exec.rb     | 12 ++---
+ modules/exploits/multi/misc/msfd_rce_remote.rb     |  8 +++-
+ modules/exploits/multi/misc/nodejs_v8_debugger.rb  |  6 ++-
+ modules/exploits/multi/misc/nomad_exec.rb          | 16 +++----
+ .../exploits/multi/misc/openview_omniback_exec.rb  | 12 ++---
+ modules/exploits/multi/misc/osgi_console_exec.rb   |  4 +-
+ modules/exploits/multi/misc/pbot_exec.rb           |  8 ++--
+ .../multi/misc/persistent_hpca_radexec_exec.rb     |  4 +-
+ modules/exploits/multi/misc/ra1nx_pubcall_exec.rb  |  6 +--
+ .../multi/misc/teamcity_agent_xmlrpc_exec.rb       |  4 +-
+ .../multi/misc/veritas_netbackup_cmdexec.rb        |  4 +-
+ modules/exploits/multi/misc/w3tw0rk_exec.rb        | 12 ++---
+ .../exploits/multi/misc/weblogic_deserialize.rb    | 12 ++---
+ .../weblogic_deserialize_asyncresponseservice.rb   |  8 ++--
+ .../misc/weblogic_deserialize_badattr_extcomp.rb   |  4 +-
+ .../multi/misc/weblogic_deserialize_badattrval.rb  |  4 +-
+ .../misc/weblogic_deserialize_marshalledobject.rb  | 14 +++---
+ .../multi/misc/weblogic_deserialize_rawobject.rb   | 16 +++----
+ .../multi/misc/weblogic_deserialize_unicastref.rb  | 14 +++---
+ modules/exploits/multi/misc/xdh_x_exec.rb          | 12 ++---
+ .../exploits/multi/persistence/periodic_script.rb  |  4 +-
+ .../multi/php/ignition_laravel_debug_rce.rb        |  4 +-
+ modules/exploits/multi/php/jorani_path_trav.rb     |  8 ++--
+ .../multi/php/php_unserialize_zval_cookie.rb       |  8 ++--
+ .../multi/php/wp_duplicator_code_inject.rb         | 15 ++++--
+ .../postgres_copy_from_program_cmd_exec.rb         |  2 +-
+ .../exploits/multi/postgres/postgres_createlang.rb |  2 +-
+ modules/exploits/multi/realserver/describe.rb      |  4 +-
+ .../exploits/multi/sap/cve_2020_6207_solman_rs.rb  |  4 +-
+ .../multi/sap/sap_mgmt_con_osexec_payload.rb       | 10 ++--
+ .../sap/sap_soap_rfc_sxpg_call_system_exec.rb      |  4 +-
+ .../multi/sap/sap_soap_rfc_sxpg_command_exec.rb    |  4 +-
+ .../exploits/multi/scada/inductive_ignition_rce.rb |  4 +-
+ 52 files changed, 237 insertions(+), 226 deletions(-)
+
+commit 7b3aef8edeb6598f220e1ec831afeb03dc66898a
+Merge: 15a0f6eefd b59ced5057
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Apr 30 10:43:21 2026 +0100
+
+    Merge pull request #21353 from adfoster-r7/improve-checkcode-messages-6
+    
+    Add human-readable descriptions to CheckCode returns in modules
+
+ modules/exploits/multi/http/activecollab_chat.rb   |  4 ++--
+ .../http/adobe_coldfusion_rce_cve_2023_26360.rb    |  2 +-
+ .../exploits/multi/http/agent_tesla_panel_rce.rb   |  6 +++---
+ .../multi/http/ajaxplorer_checkinstall_exec.rb     |  4 ++--
+ .../http/apache_apisix_api_default_token_rce.rb    |  4 ++--
+ .../multi/http/apache_druid_cve_2023_25194.rb      |  2 +-
+ .../multi/http/apache_flink_jar_upload_exec.rb     |  2 +-
+ .../multi/http/apache_mod_cgi_bash_env_exec.rb     | 10 ++++-----
+ .../multi/http/apache_roller_ognl_injection.rb     |  4 ++--
+ modules/exploits/multi/http/apprain_upload_exec.rb |  4 ++--
+ .../atlassian_confluence_rce_cve_2023_22515.rb     |  2 +-
+ .../atlassian_confluence_webwork_ognl_injection.rb |  2 +-
+ modules/exploits/multi/http/atutor_sqli.rb         |  4 ++--
+ .../exploits/multi/http/auxilium_upload_exec.rb    |  4 ++--
+ modules/exploits/multi/http/baldr_upload_exec.rb   |  2 +-
+ .../exploits/multi/http/bassmaster_js_injection.rb |  6 +++---
+ .../exploits/multi/http/bitbucket_env_var_rce.rb   | 24 +++++++++++-----------
+ modules/exploits/multi/http/bolt_file_upload.rb    |  6 +++---
+ .../multi/http/builderengine_upload_exec.rb        |  4 ++--
+ .../multi/http/cacti_graph_template_rce.rb         |  2 +-
+ .../multi/http/cacti_package_import_rce.rb         |  2 +-
+ .../exploits/multi/http/cacti_pollers_sqli_rce.rb  |  2 +-
+ .../multi/http/caidao_php_backdoor_exec.rb         |  4 ++--
+ modules/exploits/multi/http/cisco_dcnm_upload.rb   | 10 ++++-----
+ .../exploits/multi/http/cisco_dcnm_upload_2019.rb  |  4 ++--
+ .../exploits/multi/http/cleo_rce_cve_2024_55956.rb |  2 +-
+ .../multi/http/clinic_pms_fileupload_rce.rb        | 10 ++++-----
+ .../multi/http/clipbucket_fileupload_exec.rb       | 10 ++++-----
+ .../multi/http/cmsms_file_manager_auth_rce.rb      |  8 ++++----
+ .../multi/http/cmsms_object_injection_rce.rb       |  8 ++++----
+ modules/exploits/multi/http/cmsms_showtime2_rce.rb |  6 +++---
+ .../exploits/multi/http/cmsms_upload_rename_rce.rb |  8 ++++----
+ modules/exploits/multi/http/cockpit_cms_rce.rb     |  4 ++--
+ .../multi/http/coldfusion_rds_auth_bypass.rb       |  8 ++++----
+ .../multi/http/confluence_widget_connector.rb      |  6 +++---
+ .../connectwise_screenconnect_rce_cve_2024_1709.rb |  2 +-
+ .../multi/http/crushftp_rce_cve_2023_43177.rb      |  2 +-
+ modules/exploits/multi/http/cups_bash_env_exec.rb  |  6 +++---
+ .../exploits/multi/http/cuteflow_upload_exec.rb    |  6 +++---
+ .../multi/http/cve_2021_35464_forgerock_openam.rb  |  4 ++--
+ .../multi/http/dexter_casinoloader_exec.rb         |  4 ++--
+ .../exploits/multi/http/dotcms_file_upload_rce.rb  |  4 ++--
+ modules/exploits/multi/http/eaton_nsm_code_exec.rb |  6 +++---
+ .../exploits/multi/http/eventlog_file_upload.rb    |  8 ++++----
+ .../exploits/multi/http/extplorer_upload_exec.rb   | 10 ++++-----
+ modules/exploits/multi/http/familycms_less_exec.rb |  4 ++--
+ .../multi/http/gambio_unauth_rce_cve_2024_23759.rb |  2 +-
+ .../multi/http/getsimplecms_unauth_code_exec.rb    |  6 +++---
+ .../multi/http/gibbon_auth_rce_cve_2024_24725.rb   |  2 +-
+ modules/exploits/multi/http/gitlab_exif_rce.rb     |  2 +-
+ modules/exploits/multi/http/gitlab_shell_exec.rb   |  6 ++++--
+ .../exploits/multi/http/gitlist_arg_injection.rb   |  4 ++--
+ .../exploits/multi/http/glossword_upload_exec.rb   |  6 +++---
+ modules/exploits/multi/http/glpi_install_rce.rb    |  6 +++---
+ .../multi/http/hp_sitescope_issuesiebelcmd.rb      |  4 ++--
+ modules/exploits/multi/http/hp_sys_mgmt_exec.rb    |  6 +++---
+ .../multi/http/hyperic_hq_script_console.rb        |  8 ++++----
+ .../ibm_openadmin_tool_soap_welcomeserver_exec.rb  |  6 +++---
+ modules/exploits/multi/http/jboss_invoke_deploy.rb | 14 ++++++-------
+ .../exploits/multi/http/jboss_seam_upload_exec.rb  |  9 +++-----
+ .../exploits/multi/http/jenkins_metaprogramming.rb | 10 ++++-----
+ .../exploits/multi/http/jenkins_script_console.rb  |  4 ++--
+ .../multi/http/jenkins_xstream_deserialize.rb      |  4 ++--
+ .../http/jetbrains_teamcity_rce_cve_2023_42793.rb  |  2 +-
+ .../http/jetbrains_teamcity_rce_cve_2024_27198.rb  |  2 +-
+ .../exploits/multi/http/jira_hipchat_template.rb   | 14 ++++++-------
+ modules/exploits/multi/http/jira_plugin_upload.rb  | 12 +++++------
+ .../exploits/multi/http/joomla_http_header_rce.rb  | 14 ++++++-------
+ .../multi/http/kong_gateway_admin_api_rce.rb       | 10 ++++-----
+ .../exploits/multi/http/kordil_edms_upload_exec.rb |  8 ++++----
+ modules/exploits/multi/http/lcms_php_exec.rb       |  4 ++--
+ .../lighthouse_studio_unauth_rce_cve_2025_34300.rb |  6 +++---
+ .../multi/http/log1cms_ajax_create_folder.rb       |  4 ++--
+ modules/exploits/multi/http/magento_unserialize.rb |  8 ++++----
+ modules/exploits/multi/http/makoserver_cmd_exec.rb | 12 +++++------
+ .../multi/http/manage_engine_dc_pmp_sqli.rb        | 22 ++++++++++----------
+ ...e_adselfservice_plus_saml_rce_cve_2022_47966.rb |  6 +++---
+ .../multi/http/manageengine_auth_upload.rb         |  6 +++---
+ .../multi/http/manageengine_sd_uploader.rb         |  4 ++--
+ .../multi/http/manageengine_search_sqli.rb         |  4 ++--
+ ...ine_servicedesk_plus_saml_rce_cve_2022_47966.rb |  8 ++++----
+ .../multi/http/mantisbt_manage_proj_page_rce.rb    |  8 ++++----
+ modules/exploits/multi/http/mantisbt_php_exec.rb   |  6 +++---
+ .../multi/http/mediawiki_syntaxhighlight.rb        |  6 +++---
+ modules/exploits/multi/http/mediawiki_thumb.rb     | 18 ++++++++--------
+ .../http/metasploit_static_secret_key_base.rb      | 10 ++++-----
+ .../exploits/multi/http/microfocus_obm_auth_rce.rb |  4 ++--
+ .../multi/http/microfocus_ucmdb_unauth_deser.rb    | 12 +++++++----
+ modules/exploits/multi/http/mma_backdoor_upload.rb |  4 ++--
+ .../multi/http/mobilecartly_upload_exec.rb         |  4 ++--
+ .../http/monitorr_webshell_rce_cve_2020_28871.rb   |  2 +-
+ .../exploits/multi/http/monstra_fileupload_exec.rb | 10 ++++-----
+ .../multi/http/movabletype_upgrade_exec.rb         | 10 ++++-----
+ .../exploits/multi/http/mutiny_subnetmask_exec.rb  |  4 ++--
+ .../exploits/multi/http/mybb_rce_cve_2022_24734.rb |  2 +-
+ modules/exploits/multi/http/navigate_cms_rce.rb    |  4 ++--
+ .../exploits/multi/http/netwin_surgeftp_exec.rb    |  4 ++--
+ .../exploits/multi/http/nibbleblog_file_upload.rb  |  6 +++---
+ modules/exploits/multi/http/nostromo_code_exec.rb  |  6 +++---
+ .../exploits/multi/http/novell_servicedesk_rce.rb  |  6 +++---
+ .../multi/http/nuuo_nvrmini_upgrade_rce.rb         |  6 +++---
+ .../multi/http/october_upload_bypass_exec.rb       |  6 +++---
+ modules/exploits/multi/http/op5_license.rb         |  4 ++--
+ modules/exploits/multi/http/op5_welcome.rb         |  4 ++--
+ .../exploits/multi/http/open_web_analytics_rce.rb  |  2 +-
+ .../exploits/multi/http/openfire_auth_bypass.rb    | 10 ++++-----
+ .../openfire_auth_bypass_rce_cve_2023_32315.rb     |  2 +-
+ .../exploits/multi/http/openmrs_deserialization.rb |  2 +-
+ modules/exploits/multi/http/openx_backdoor_php.rb  |  6 +++---
+ .../multi/http/opmanager_socialit_file_upload.rb   |  4 ++--
+ .../multi/http/opmanager_sumpdu_deserialization.rb |  6 +++---
+ .../oracle_access_manager_rce_cve_2021_35587.rb    |  2 +-
+ .../exploits/multi/http/oracle_ats_file_upload.rb  |  4 ++--
+ .../http/oracle_ebs_cve_2025_61882_exploit_rce.rb  |  8 ++++----
+ modules/exploits/multi/http/oracle_reports_rce.rb  |  8 +++-----
+ modules/exploits/multi/http/orientdb_exec.rb       |  8 +++++---
+ modules/exploits/multi/http/os_cmd_exec.rb         |  8 ++++----
+ 117 files changed, 355 insertions(+), 352 deletions(-)
+
+commit 6f3884e8328d773ba7c88772d489af2cf18cbeae
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Apr 30 11:10:09 2026 +0200
+
+    Redesign the logging capability using Rex::Logging and Rake middleware
+    
+    - remove the original Logger
+    - use Rex::Logging with helper methods (dlog, ilog, etc.)
+    - add `sanitize` configuration option
+    - create Sanitizing, JsonFlatfile and JsonStream sinks for JSON logging format
+    - minor updates in apply_default (Loader)
+    - update the re-authentication logic (fix a specific usecase)
+    - add a Rack middleware that logs MCP HTTP request/response
+    - use Rex::Socket::Tcp instead of TcpSocket
+    - update the ensure_rpc_available for better validation
+    - use around_request instead of the deprecated SDK instrumentation for logging
+    - update and add specs
+
+ config/mcp_config.yaml.example                     |   5 +-
+ config/mcp_config_jsonrpc.yaml.example             |   5 +-
+ lib/msf/core/mcp.rb                                |  44 ++-
+ lib/msf/core/mcp/application.rb                    |  58 ++--
+ lib/msf/core/mcp/config/loader.rb                  |  37 +--
+ lib/msf/core/mcp/config/validator.rb               |   6 +-
+ lib/msf/core/mcp/logging/sinks/json_flatfile.rb    |  24 ++
+ lib/msf/core/mcp/logging/sinks/json_stream.rb      | 123 ++++++++
+ lib/msf/core/mcp/logging/sinks/sanitizing.rb       |  60 +++-
+ lib/msf/core/mcp/metasploit/jsonrpc_client.rb      |  18 +-
+ lib/msf/core/mcp/metasploit/messagepack_client.rb  |  58 +++-
+ .../core/mcp/metasploit/response_transformer.rb    |   3 +-
+ lib/msf/core/mcp/middleware/request_logger.rb      | 187 ++++++++++++
+ lib/msf/core/mcp/rpc_manager.rb                    |  92 ++++--
+ lib/msf/core/mcp/server.rb                         | 156 ++++------
+ lib/msf/core/mcp/tools/credential_info.rb          |   4 +-
+ lib/msf/core/mcp/tools/host_info.rb                |   4 +-
+ lib/msf/core/mcp/tools/loot_info.rb                |   4 +-
+ lib/msf/core/mcp/tools/module_info.rb              |   4 +-
+ lib/msf/core/mcp/tools/note_info.rb                |   4 +-
+ lib/msf/core/mcp/tools/search_modules.rb           |   4 +-
+ lib/msf/core/mcp/tools/service_info.rb             |   4 +-
+ lib/msf/core/mcp/tools/vulnerability_info.rb       |   4 +-
+ spec/integration/msfmcpd/logging_pipeline_spec.rb  | 143 +++++++++
+ .../msfmcpd/messagepack_reauth_flow_spec.rb        | 157 ++++++++++
+ spec/integration/msfmcpd/rpc_availability_spec.rb  | 165 ++++++++++
+ .../msfmcpd/tool_execution_module_info_spec.rb     | 128 ++++++++
+ spec/lib/msf/core/mcp/application_spec.rb          | 130 +++++++-
+ spec/lib/msf/core/mcp/config/loader_spec.rb        |  36 ++-
+ spec/lib/msf/core/mcp/config/validator_spec.rb     |  26 +-
+ .../lib/msf/core/mcp/logging/log_constants_spec.rb |  72 +++++
+ .../core/mcp/logging/sinks/json_flatfile_spec.rb   | 134 +++++++++
+ .../msf/core/mcp/logging/sinks/json_stream_spec.rb | 246 +++++++++++++++
+ .../msf/core/mcp/logging/sinks/sanitizing_spec.rb  | 312 +++++++++++++++++--
+ .../msf/core/mcp/metasploit/jsonrpc_client_spec.rb |  32 +-
+ .../core/mcp/metasploit/messagepack_client_spec.rb |  87 ++++--
+ .../mcp/metasploit/response_transformer_spec.rb    |  30 +-
+ .../msf/core/mcp/middleware/request_logger_spec.rb | 305 +++++++++++++++++++
+ spec/lib/msf/core/mcp/rpc_manager_spec.rb          | 188 ++++++++++--
+ spec/lib/msf/core/mcp/server_spec.rb               | 333 +++++++--------------
+ 40 files changed, 2852 insertions(+), 580 deletions(-)
