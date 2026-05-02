@@ -1,0 +1,39 @@
+commit 909c8df2cf9b39efc314020f45a1fda16339f3e9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 1 13:50:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                  | 2 +-
+ modules/payloads/singles/linux/aarch64/exec.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit bbb2452063e30c42772ed9082950a6d341557b8e
+Merge: 5a2e7bb301 557ff0d068
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 1 14:37:27 2026 +0100
+
+    Merge pull request #21342 from adfoster-r7/defer-loading-dependencies
+    
+    Defer loading rex/metasm/octokit/etc dependencies
+
+ Gemfile.lock                                       |  6 ++--
+ lib/metasploit/framework.rb                        |  6 ----
+ lib/msf/core/db_manager/user.rb                    |  1 -
+ lib/msf/core/exe/segment_appender.rb               |  2 --
+ lib/msf/core/exe/segment_injector.rb               |  2 --
+ lib/msf/core/exploit/remote/smb/client.rb          |  1 -
+ lib/msf/core/framework.rb                          |  1 -
+ lib/msf/core/payload.rb                            |  1 -
+ .../util/document_generator/pull_request_finder.rb |  3 +-
+ lib/msf/util/exe/common.rb                         |  1 -
+ lib/msf_autoload.rb                                |  5 ++++
+ lib/rex.rb                                         | 32 ++++++++++++++--------
+ lib/rex/proto/dns/packet.rb                        |  1 -
+ lib/rex/proto/dns/resolver.rb                      |  1 -
+ lib/rex/proto/dns/static_hostnames.rb              | 17 ++++++++----
+ lib/rex/proto/http/response.rb                     |  5 ++--
+ modules/payloads/stagers/netware/reverse_tcp.rb    |  2 --
+ modules/payloads/stages/netware/shell.rb           |  2 --
+ spec/lib/rex/proto/dns/static_hostnames_spec.rb    | 12 ++++++++
+ 19 files changed, 56 insertions(+), 45 deletions(-)
