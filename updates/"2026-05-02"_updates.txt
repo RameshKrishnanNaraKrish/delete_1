@@ -1,0 +1,22 @@
+commit bc5347f4649b27899953e6bc6150b432e964d300
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 4 13:49:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                | 17 +++++++++--------
+ modules/payloads/singles/linux/armle/exec.rb |  2 +-
+ 2 files changed, 10 insertions(+), 9 deletions(-)
+
+commit edb6844c8f015ae287ec87fc082d4efff6510b30
+Merge: 909c8df2cf 0c81638fff
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 4 09:37:28 2026 -0400
+
+    Merge pull request #21404 from zeroSteiner/feat/cve-2026-31431
+    
+    Fix ARMLE exec and add to Copy Fail
+
+ .../linux/local/cve_2026_31431_copy_fail.rb        |  7 +--
+ modules/payloads/singles/linux/armle/exec.rb       | 63 +++++++++++++++-------
+ 2 files changed, 49 insertions(+), 21 deletions(-)
