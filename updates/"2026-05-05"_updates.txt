@@ -1,0 +1,72 @@
+commit 963eaef4227241dac6f0da401cbb8dcbc36d7c97
+Merge: 2b42d779a1 6e659caf23
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu May 7 11:11:40 2026 -0400
+
+    Merge pull request #21411 from zeroSteiner/fix/linux-x64-exec
+    
+    Escape strings embedded into the assembly of multiple payloads
+
+ modules/payloads/singles/linux/x64/exec.rb            | 17 ++++++++++-------
+ modules/payloads/singles/linux/x64/set_hostname.rb    |  3 ++-
+ modules/payloads/singles/linux/x86/exec.rb            | 17 ++++++++++-------
+ modules/payloads/singles/linux/x86/read_file.rb       |  3 ++-
+ modules/payloads/singles/osx/x64/shell_reverse_tcp.rb |  3 ++-
+ modules/payloads/singles/windows/download_exec.rb     | 10 +++++++---
+ modules/payloads/singles/windows/messagebox.rb        |  6 ++++--
+ modules/payloads/singles/windows/x64/download_exec.rb | 16 ++++++++++------
+ modules/payloads/singles/windows/x64/messagebox.rb    |  6 ++++--
+ 9 files changed, 51 insertions(+), 30 deletions(-)
+
+commit 2b42d779a18ec902e9ddb68ac7fc5c844e8370b5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 7 12:16:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 817d3642c352db517d43082c5eaf6b10e5fa8542
+Merge: dc1976058c 9435bee69f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 7 13:06:25 2026 +0100
+
+    Merge pull request #21421 from adfoster-r7/update-validation-for-report-vuln
+    
+    Update validation for report_vuln
+
+ lib/msf/core/db_manager/vuln.rb          | 9 +++++----
+ modules/auxiliary/scanner/dns/dns_amp.rb | 3 ++-
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+commit 9435bee69f74fc39f6528d0c896f14a3b9159b27
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 7 11:29:41 2026 +0100
+
+    Update validation for report_vuln
+
+ lib/msf/core/db_manager/vuln.rb          | 9 +++++----
+ modules/auxiliary/scanner/dns/dns_amp.rb | 3 ++-
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+commit dc1976058c2137db88ef7c4cc5e721e222ccbede
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 7 10:40:58 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 97fba49fee7b7d389a8cb467a66790f8f38f7d55
+Merge: 81a7646f0a e30b6e81ad
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 7 11:28:49 2026 +0100
+
+    Merge pull request #21314 from g0tmi1k/report_vuln
+    
+    Fix #21296 - Add Msf::Auxiliary::Report
+
+ modules/auxiliary/scanner/http/trace.rb | 2 ++
+ 1 file changed, 2 insertions(+)
