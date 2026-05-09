@@ -1,0 +1,208 @@
+commit febac5f7be8f79fb6ad4738bf12ac88c340eeca2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 8 23:41:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6e418e1e563dc4f8745c6160f1e1099b2d1f3857
+Merge: 1ef3717849 cf1f4dad24
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri May 8 16:31:33 2026 -0700
+
+    Merge pull request #20617 from Aaditya1273/add-opt-array-datastore-option
+    
+    Add OptArray datastore option type
+
+ lib/msf/base/sessions/meterpreter.rb               |   6 +-
+ .../base/sessions/meterpreter_options/android.rb   |   4 +-
+ .../base/sessions/meterpreter_options/apple_ios.rb |   4 +-
+ lib/msf/base/sessions/meterpreter_options/bsd.rb   |   4 +-
+ lib/msf/base/sessions/meterpreter_options/java.rb  |   4 +-
+ lib/msf/base/sessions/meterpreter_options/linux.rb |   4 +-
+ lib/msf/base/sessions/meterpreter_options/osx.rb   |   4 +-
+ lib/msf/base/sessions/meterpreter_options/php.rb   |   4 +-
+ .../base/sessions/meterpreter_options/python.rb    |   4 +-
+ .../base/sessions/meterpreter_options/windows.rb   |   4 +-
+ lib/msf/core/opt_array.rb                          | 146 ++++++++++++
+ spec/lib/msf/core/opt_array_spec.rb                | 263 +++++++++++++++++++++
+ 12 files changed, 432 insertions(+), 19 deletions(-)
+
+commit 1ef371784993301b15d1d18453beeb6370c59369
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 8 16:35:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                      | 84 +++++++++++++++++-----
+ .../payloads/singles/osx/x64/shell_reverse_tcp.rb  |  2 +-
+ 2 files changed, 68 insertions(+), 18 deletions(-)
+
+commit 5814c147812448db22686f58a2a4b6282dddf889
+Merge: 0037e42756 4da2554a2a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 8 12:24:22 2026 -0400
+
+    Merge pull request #21206 from h00die/vim_plugin
+    
+    vim plugin persistence
+
+ data/exploits/vim_plugin/plugin.vim                | 11 +++
+ .../exploit/linux/persistence/vim_plugin.md        | 99 ++++++++++++++++++++++
+ modules/exploits/linux/persistence/autostart.rb    |  2 +-
+ .../exploits/linux/persistence/emacs_extension.rb  |  4 +-
+ modules/exploits/linux/persistence/init_systemd.rb |  4 +-
+ modules/exploits/linux/persistence/vim_plugin.rb   | 81 ++++++++++++++++++
+ .../exploits/multi/persistence/obsidian_plugin.rb  |  6 +-
+ .../multi/persistence/python_site_specific_hook.rb |  2 +-
+ modules/exploits/osx/persistence/launch_plist.rb   |  4 +-
+ .../windows/persistence/notepadpp_plugin.rb        |  2 +-
+ .../windows/persistence/powershell_profile.rb      |  3 +-
+ 11 files changed, 203 insertions(+), 15 deletions(-)
+
+commit 0037e427565e5af6b620cedf3898e0c55eb18cee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 8 16:12:09 2026 +0000
+
+    Bump version of framework to 6.4.133
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 12 ++++++------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 33754fd7e824958b773f8e9fb9b014945fe6cba8
+Merge: 50e5a85521 79b0fd6edc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 8 17:05:58 2026 +0100
+
+    Merge pull request #21424 from sjanusz-r7/fix-exec-payload-size-crash
+    
+    Fix exec payload size crash
+
+ Gemfile                                                    |  1 -
+ Gemfile.lock                                               |  2 +-
+ lib/msf/util/payload_cached_size.rb                        |  6 +++---
+ modules/payloads/singles/linux/x64/exec.rb                 | 11 +++++++----
+ modules/payloads/singles/linux/x64/set_hostname.rb         |  2 +-
+ modules/payloads/singles/linux/x86/exec.rb                 | 11 +++++++----
+ modules/payloads/singles/linux/x86/read_file.rb            |  4 ++--
+ modules/payloads/singles/osx/x64/shell_reverse_tcp.rb      |  5 ++---
+ modules/payloads/singles/windows/download_exec.rb          | 12 ++++++------
+ modules/payloads/singles/windows/messagebox.rb             |  8 ++++----
+ modules/payloads/singles/windows/x64/download_exec.rb      |  4 ++--
+ modules/payloads/singles/windows/x64/messagebox.rb         |  8 ++++----
+ .../shared/examples/payload_cached_size_is_consistent.rb   | 14 +++++++++-----
+ 13 files changed, 48 insertions(+), 40 deletions(-)
+
+commit 79b0fd6edc4f82e99ae36a3c5dd92e5e8f3be6d9
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri May 8 11:48:34 2026 +0100
+
+    Use rex-text hex string helper, fix module assembly null-terminated string usage
+    
+    Use rex-text to_hex_cstring keyword arg
+
+ lib/msf/util/payload_cached_size.rb                          |  6 +++---
+ modules/payloads/singles/linux/x64/exec.rb                   | 11 +++++++----
+ modules/payloads/singles/linux/x64/set_hostname.rb           |  2 +-
+ modules/payloads/singles/linux/x86/exec.rb                   | 11 +++++++----
+ modules/payloads/singles/linux/x86/read_file.rb              |  4 ++--
+ modules/payloads/singles/osx/x64/shell_reverse_tcp.rb        |  5 ++---
+ modules/payloads/singles/windows/download_exec.rb            | 12 ++++++------
+ modules/payloads/singles/windows/messagebox.rb               |  8 ++++----
+ modules/payloads/singles/windows/x64/download_exec.rb        |  4 ++--
+ modules/payloads/singles/windows/x64/messagebox.rb           |  8 ++++----
+ .../shared/examples/payload_cached_size_is_consistent.rb     |  7 +++----
+ 11 files changed, 41 insertions(+), 37 deletions(-)
+
+commit 8e432f69ca01f5f80ffa6743f1f4d8dc4db047e0
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri May 8 16:35:34 2026 +0100
+
+    Bump rex-text
+
+ Gemfile      | 1 -
+ Gemfile.lock | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit d33c2f66006f61cab8b17d68979a3598a8d34eb9
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Thu May 7 18:05:50 2026 +0100
+
+    Re-enabled payload cache size CI specs
+
+ .../shared/examples/payload_cached_size_is_consistent.rb  | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+commit 50e5a855213098bd9419cf81e91d3486991ca56a
+Merge: 550a8cbdc3 bea8eca0c6
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri May 8 09:33:45 2026 -0400
+
+    Merge pull request #21418 from kx7m2qd/fix-get-os-architecture
+    
+    Fix get_os_architecture for Linux/BSD shell sessions
+
+ Gemfile.lock                      | 2 +-
+ lib/msf/core/post/architecture.rb | 6 +++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit bea8eca0c6a08570f5d419e57b5f20508ee62d78
+Author: karan <mkarandeep.1111@gmail.com>
+Date:   Fri May 8 15:26:29 2026 +0530
+
+    Update rex-arch to 0.1.20
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1f9a0fd3be8c9a91d5508ca74eee71d6bb979f9
+Author: karan <mkarandeep.1111@gmail.com>
+Date:   Wed May 6 22:38:21 2026 +0530
+
+    Fix get_os_architecture for Linux/BSD shell sessions
+    
+    Uses Rex::Arch.from_uname to map uname -m output to ARCH_ constants
+    for non-meterpreter Linux/BSD shell sessions.
+    
+    References rapid7/rex-arch#13
+    Fixes #21403
+
+ lib/msf/core/post/architecture.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 550a8cbdc39e7f8d06eabe2f0c580df9f13a2bdb
+Merge: 963eaef422 89b10aa3fe
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 8 09:28:59 2026 +0100
+
+    Merge pull request #21425 from g0tmi1k/ftp_stat
+    
+    ftp: Fix STAT due to unexpected response
+
+ lib/msf/core/exploit/remote/ftp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 89b10aa3feee58a8e140da57721ec9cf5b81b9c4
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Thu May 7 16:34:30 2026 +0100
+
+    ftp: Fix STAT due to unexpected response
+
+ lib/msf/core/exploit/remote/ftp.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4da2554a2aeab2df2a05e05dbdf6b7991074076a
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Thu May 7 20:06:32 2026 -0400
+
+    cleanup vim plugin
+
+ .../exploit/linux/persistence/vim_persistence.md   |  99 ----------
+ .../exploit/linux/persistence/vim_plugin.md        |  99 ++++++++++
+ .../exploits/linux/persistence/emacs_extension.rb  |   2 +-
+ .../persistence/ollama_update_etag_traversal.rb    | 211 ---------------------
+ 4 files changed, 100 insertions(+), 311 deletions(-)
