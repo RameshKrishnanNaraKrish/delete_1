@@ -1,0 +1,87 @@
+commit 3c97796735fd7c30bb609eb5087fe290276f4947
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 11 10:40:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 93b700aab16752df4bca22031903f5fb9e5f13d5
+Merge: d67f11badf 423438ab56
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Mon May 11 12:31:54 2026 +0200
+
+    Merge pull request #21439 from dledda-r7/fix/persistence/vim-plugin
+    
+    Fix VIM Persistence plugin error
+
+ modules/exploits/linux/persistence/vim_plugin.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 423438ab56b9544e2935f30355616ab28b8de33d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 05:56:45 2026 -0400
+
+    fix: update vim_persistence plugin_name method to use blank? instead of empty?
+
+ modules/exploits/linux/persistence/vim_plugin.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d67f11badf3e5b2742b9a78a11b3adbfbd860569
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 11 07:47:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 7d62e9fd7114c3e91653aafe8d623ef8ddb196d1
+Merge: febac5f7be c317aa8221
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 03:36:08 2026 -0400
+
+    Merge pull request #21322 from h4x-x0r/CVE-2025-6793
+    
+    Marvell QConvergeConsole Path Traversal (CVE-2025-6793) Module
+
+ .../auxiliary/gather/qconvergeconsole_traversal.md |  72 +++++++++++
+ .../auxiliary/gather/qconvergeconsole_traversal.rb | 131 +++++++++++++++++++++
+ 2 files changed, 203 insertions(+)
+
+commit c317aa82216ff2c45f7b68b7873bdf6aafe977d3
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 09:00:24 2026 +0200
+
+    Update modules/auxiliary/gather/qconvergeconsole_traversal.rb
+
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4da5e43b4cb4237b347234c0664008ebfb8a7f56
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 09:00:09 2026 +0200
+
+    Update modules/auxiliary/gather/qconvergeconsole_traversal.rb
+
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c8afcceb95278d317081a4edae26df855e15d479
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 08:59:59 2026 +0200
+
+    Update modules/auxiliary/gather/qconvergeconsole_traversal.rb
+
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cb6f92ec1542b90f1f4f7f2c955963740c62e26c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon May 11 08:59:47 2026 +0200
+
+    Update modules/auxiliary/gather/qconvergeconsole_traversal.rb
+
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
