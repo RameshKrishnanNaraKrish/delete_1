@@ -1,0 +1,39 @@
+commit 57fee324733bc0f50dcb1d24844360f0ce95fdc4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 12 10:02:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e5800794612e2468533f0b826328f07af98542b5
+Merge: 3c97796735 db522f9625
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 12 11:54:16 2026 +0200
+
+    Land #21444, adds DefangedMode for QConvergeConsole module
+    
+    add DefangedMode option to QConvergeConsole module
+
+ .../auxiliary/gather/qconvergeconsole_traversal.md | 26 +++++++++++++++++-----
+ .../auxiliary/gather/qconvergeconsole_traversal.rb | 18 ++++++++++++++-
+ 2 files changed, 37 insertions(+), 7 deletions(-)
+
+commit db522f962513115f547b656a1be5c68389f613ba
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue May 12 05:19:38 2026 -0400
+
+    docs: update qconvergeconsole documentation
+
+ .../auxiliary/gather/qconvergeconsole_traversal.md | 26 +++++++++++++++++-----
+ 1 file changed, 20 insertions(+), 6 deletions(-)
+
+commit 7b5d87a25801e2b895d2e0d4cbfa586473270b68
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue May 12 05:14:21 2026 -0400
+
+    fix: add DefangedMode option to QConvergeConsole module
+
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
