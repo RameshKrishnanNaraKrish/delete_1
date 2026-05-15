@@ -1,0 +1,157 @@
+commit fe768b45e2f87397b0d8e5b1a2bbf70202b29fcc
+Merge: 987af73220 fb6689dc20
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 14 17:19:00 2026 -0400
+
+    Merge pull request #21459 from adfoster-r7/fix-frozen-string-crash
+    
+    Fix frozen string crash
+
+ lib/msf/core/exploit.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 987af732200e71a463deb7cf900692bf9508aaa5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 14 21:12:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 72671b623bc8be508058750c722eedfaca20be20
+Merge: a03cad544a c3b2b83614
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu May 14 13:59:52 2026 -0700
+
+    Merge pull request #21165 from oxagast/hustoj_problem_import_qduoj
+    
+    Repull of HUSTOJ CVE-2026-24479 exploit
+
+ .../linux/http/hustoj_problem_import_rce.md        |  99 ++++++++
+ .../linux/http/hustoj_problem_import_rce.rb        | 250 +++++++++++++++++++++
+ 2 files changed, 349 insertions(+)
+
+commit a03cad544a5fd9c37c724b7d880c8c4a30530e85
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 14 18:16:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 02e90eb5432409b8f2c83453f230990d9ce81170
+Merge: 0eb2040cb6 74326487e9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 14 14:06:47 2026 -0400
+
+    Merge pull request #21345 from g0tmi1k/smb_enumshares
+    
+    smb_enumshares: Allow for SMB1 ruby_smb
+
+ Gemfile.lock                                    |  4 ++--
+ metasploit-framework.gemspec                    |  2 +-
+ modules/auxiliary/scanner/smb/smb_enumshares.rb | 31 +++++++++++--------------
+ 3 files changed, 16 insertions(+), 21 deletions(-)
+
+commit 74326487e9616ba70576c68dcd126d3908ae9c3e
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Thu May 14 13:51:03 2026 +0100
+
+    Bump ruby_smb 3.3.17 -> 3.3.19
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 9899cf2f0c7d5dfc1606d78cff62fa06f75cee0b
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Tue Apr 21 16:23:44 2026 +0100
+
+    smb_enumshares: Able to be more verbose
+
+ modules/auxiliary/scanner/smb/smb_enumshares.rb | 31 +++++++++++--------------
+ 1 file changed, 13 insertions(+), 18 deletions(-)
+
+commit 0eb2040cb696d30580e3de234796d7d22c417a92
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 14 14:44:18 2026 +0000
+
+    Bump version of framework to 6.4.134
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit fb6689dc20798a3e9e7f692b688be2dfcc877f54
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 14 14:53:54 2026 +0100
+
+    Fix frozen string crash
+
+ lib/msf/core/exploit.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4813131be2e914919aedeaf8979bd3b98d71e35f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 14 12:44:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit e258e9b0f06e73996c7135de7792f636cb91a9bc
+Merge: 2f7cca8f98 05547a48a0
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 14 14:34:21 2026 +0200
+
+    Land #21362, adds module for Dolibarr ERP/CRM authenticated RCE (CVE-2023-30253)
+    
+    Add Dolibarr ERP/CRM authenticated RCE module (CVE-2023-30253)
+
+ .../unix/http/dolibarr_cms_rce_cve_2023_30253.md   |  86 +++++
+ .../unix/http/dolibarr_cms_rce_cve_2023_30253.rb   | 345 +++++++++++++++++++++
+ 2 files changed, 431 insertions(+)
+
+commit 2f7cca8f98ac428d4eb9ea09c66e263a0373d955
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 14 10:39:36 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 4e8a3e18335f5e56bc2ab7c88d1b130be6044743
+Merge: 57fee32473 038a06fa3b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 14 11:40:13 2026 +0200
+
+    Land #21041, adds module for Gestioip RCE (CVE 2024-48760)
+    
+    Add exploit module for Gestioip3.5.7 RCE (CVE 2024-48760)
+
+ .../modules/exploit/multi/http/gestioip_rce.md     | 180 ++++++++++++
+ modules/exploits/multi/http/gestioip_rce.rb        | 314 +++++++++++++++++++++
+ 2 files changed, 494 insertions(+)
+
+commit 038a06fa3b69b1b448248410c6197e2addc1869e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 14 11:24:01 2026 +0200
+
+    Fix docs
+
+ documentation/modules/exploit/multi/http/gestioip_rce.md | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+commit 6304d9973de8645c37a580929e83d9642f676174
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 14 10:47:45 2026 +0200
+
+    Code refactor, session cleaning based on type of session
+
+ modules/exploits/multi/http/gestioip_rce.rb | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
