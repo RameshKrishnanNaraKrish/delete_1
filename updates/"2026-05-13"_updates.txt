@@ -1,0 +1,118 @@
+commit c6ae1bdac6b85f49dbfa9647169ffa02282e0bd1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 15 18:12:51 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 45 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+
+commit 72e60b6ebd944178dc17e53fd066acd28ec17233
+Merge: c5e737a0a1 074b032989
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri May 15 11:03:07 2026 -0700
+
+    Merge pull request #21463 from jburgess-r7/add-cisco-sdwan-vhub-auth-bypass
+    
+    Add Cisco Catalyst SD-WAN Controller vHub authentication bypass module (CVE-2026-20182)
+
+ .../networking/cisco_sdwan_vhub_auth_bypass.md     | 161 +++++
+ .../networking/cisco_sdwan_vhub_auth_bypass.rb     | 758 +++++++++++++++++++++
+ 2 files changed, 919 insertions(+)
+
+commit c5e737a0a110693d6b5bed0e35209e58cbe35a4d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 15 14:27:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 41 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+commit cef2625fbe092d02fb10e006370402d0bef7b79c
+Merge: f45b13d69c 67ce715e4b
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri May 15 10:17:51 2026 -0400
+
+    Merge pull request #21177 from h00die/security_center
+    
+    Tenable Security Center post gather module
+
+ .../tenable/security_center/dump_crack_hashes.php  | 138 ++++++
+ .../pull_encrypted_database_fields.php             | 107 +++++
+ .../post/linux/gather/tenable_security_center.md   | 145 ++++++
+ .../post/linux/gather/tenable_security_center.rb   | 494 +++++++++++++++++++++
+ 4 files changed, 884 insertions(+)
+
+commit f45b13d69c20cb78fd15273fa3264a84781f3314
+Merge: 2c07ad3a36 47023b4dfd
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 15 12:50:44 2026 +0100
+
+    Merge pull request #21458 from dwelch-r7/bump-sinatra-version
+    
+    update dependencies for Sinatra, Rack, and Thin to support rails 8 upgrade
+
+ Gemfile.lock                                       | 38 ++++++++++---------
+ .../core/web_services/http_db_manager_service.rb   |  4 +-
+ lib/msf/core/web_services/json_rpc_app.rb          |  4 ++
+ lib/msf/core/web_services/metasploit_api_app.rb    |  3 ++
+ metasploit-framework.gemspec                       | 12 +++---
+ spec/api/json_rpc_spec.rb                          |  2 +
+ spec/api/metasploit_api_app_spec.rb                | 43 ++++++++++++++++++++++
+ 7 files changed, 82 insertions(+), 24 deletions(-)
+
+commit 2c07ad3a36959823a2d6ba1041e80ff4b04fb2b2
+Merge: 1af6e29026 b327f29077
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 15 11:41:44 2026 +0100
+
+    Merge pull request #21305 from sjanusz-r7/db-vulns-and-services-rpc-new-report-approach
+    
+    RPC vulns and services reports resources and parents (service only)
+
+ lib/msf/core/rpc/v10/rpc_db.rb | 47 +++++++++++++++++++++++++++++++-----------
+ 1 file changed, 35 insertions(+), 12 deletions(-)
+
+commit b327f29077e3552c9d5f9a8c884ee12bf49c856f
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Fri May 15 11:34:09 2026 +0100
+
+    Raise an exception instead of returning a hash object in parent service
+
+ lib/msf/core/rpc/v10/rpc_db.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 1af6e29026ad22fd46a10bb45f09c327972f3116
+Merge: 560580f04e 0446c0d4c4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 15 11:16:02 2026 +0100
+
+    Merge pull request #21292 from sjanusz-r7/db-notes-rpc-return-notes-json-data
+    
+    Notes returned as valid json instead of inspected string over RPC
+
+ lib/msf/core/rpc/v10/rpc_db.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 560580f04e9f374470b6f813cec5b606a2b9e055
+Merge: fe768b45e2 b91d6a55cd
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 15 11:14:54 2026 +0100
+
+    Merge pull request #21285 from sjanusz-r7/rpc-creds-reports-domain
+    
+    Rpc creds reports domain
+
+ lib/msf/core/rpc/v10/rpc_db.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 074b0329899ac3a41b04996f0b12dbbeaa240ed3
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Fri May 15 09:43:25 2026 +0100
+
+    Added module for CVE-2026-20182
+
+ .../networking/cisco_sdwan_vhub_auth_bypass.md     | 161 +++++
+ .../networking/cisco_sdwan_vhub_auth_bypass.rb     | 758 +++++++++++++++++++++
+ 2 files changed, 919 insertions(+)
