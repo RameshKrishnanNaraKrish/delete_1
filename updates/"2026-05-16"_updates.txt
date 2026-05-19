@@ -1,0 +1,74 @@
+commit 8e1ba4abbd8c099831b898590e116f1df867e8c7
+Merge: 8dcab01176 dbca860836
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon May 18 13:58:07 2026 +0100
+
+    Merge pull request #21475 from adfoster-r7/fix-msfdb-installation-error-on-windows
+    
+    Fix msfdb installation error on windows
+
+ lib/msfdb_helpers/db_interface.rb | 4 ++--
+ lib/msfdb_helpers/pg_ctl.rb       | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8dcab01176d50a49486461fe68f8ef8e47c1ed35
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon May 18 12:22:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit 996dbefe9b201c3b9a1041eda67639315ca6ba08
+Merge: 12338ac27d c9b2bde46a
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Mon May 18 14:12:05 2026 +0200
+
+    Merge pull request #21417 from jburgess-r7/add-cpanel-whm-auth-bypass-rce
+
+ .../multi/http/cpanel_whm_auth_bypass_rce.md       | 155 +++++++++
+ .../multi/http/cpanel_whm_auth_bypass_rce.rb       | 371 +++++++++++++++++++++
+ 2 files changed, 526 insertions(+)
+
+commit dbca8608366ab452cc04720b938015973e2087e2
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon May 18 12:49:20 2026 +0100
+
+    Fix msfdb installation error on windows
+
+ lib/msfdb_helpers/db_interface.rb | 4 ++--
+ lib/msfdb_helpers/pg_ctl.rb       | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit c9b2bde46a440964938ae6fe294bef359e934bc7
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Mon May 18 10:52:42 2026 +0100
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/exploits/multi/http/cpanel_whm_auth_bypass_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 12338ac27de65f861fb29ef29a1047393a703c3d
+Merge: c6ae1bdac6 86016e30c7
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon May 18 10:04:08 2026 +0100
+
+    Merge pull request #21474 from adfoster-r7/fix-msfdb-crash-on-windows
+    
+    Fix msfdb crash on windows
+
+ lib/msfdb_helpers/pg_ctl.rb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 86016e30c75d0be78049a55e2a201ac6af353086
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon May 18 09:25:38 2026 +0100
+
+    Fix msfdb crash on windows
+
+ lib/msfdb_helpers/pg_ctl.rb | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
