@@ -1,0 +1,216 @@
+commit 0567ed7bc59f94e4092e01920d157e14e79d634f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 19 23:45:14 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+commit 66f1097cab8c244e1b45977cdb1bd6e23991bcc5
+Merge: 57b074a4e2 02b7f46b17
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 19 16:36:50 2026 -0700
+
+    Merge pull request #21101 from g0tmi1k/tftp_brute
+    
+    Rename *brute modules in favour of *_brute
+
+ modules/auxiliary/scanner/oracle/isqlplus_sidbrute.rb | 2 ++
+ modules/auxiliary/scanner/tftp/tftpbrute.rb           | 2 ++
+ 2 files changed, 4 insertions(+)
+
+commit 57b074a4e2346ae72fab59da06bb498ff1c6d213
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 19 19:53:58 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 723507bfc620f8972f577c701dd7a08283889769
+Merge: 6d4e7aae98 8cde2fa41f
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue May 19 15:41:22 2026 -0400
+
+    Merge pull request #21447 from jheysel-r7/fix/kerberoasting_realm_reporting
+    
+    Kerberoasting Improvements - Doc Update + Realm Fix
+
+ .../kerberos/kerberoasting.md                      | 405 ++++-----------------
+ lib/msf/core/exploit/remote/ldap/queries.rb        |  46 ++-
+ modules/auxiliary/gather/kerberoast.rb             |  87 +++--
+ 3 files changed, 156 insertions(+), 382 deletions(-)
+
+commit 6d4e7aae98368bf4de13fe755528f2d32eeff606
+Merge: b770f64aac 7c81362910
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 19 12:32:50 2026 -0700
+
+    Merge pull request #21127 from g0tmi1k/def_initialize
+    
+    sysgauge_client_bof: Updated initialize()
+
+ .../exploits/windows/smtp/sysgauge_client_bof.rb   | 90 +++++++++++-----------
+ 1 file changed, 47 insertions(+), 43 deletions(-)
+
+commit 8cde2fa41f1ed2a2a2fb43ee1c11702976a129ed
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue May 19 12:26:56 2026 -0700
+
+    Hash reporting fix
+
+ modules/auxiliary/gather/kerberoast.rb | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+commit 02b7f46b17a5452287c8f8dd2cf3e244ffdc2aa1
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 19 12:19:12 2026 -0700
+
+    Update modules/auxiliary/scanner/oracle/isqlplus_sidbrute.rb
+
+ modules/auxiliary/scanner/oracle/isqlplus_sidbrute.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b770f64aac3a76143d4aadb3e95b3b58aeb695f5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 19 17:10:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 62 insertions(+), 1 deletion(-)
+
+commit 05e925c6d622bd93d30140b7297d37f3315d44b2
+Merge: addb6da653 25af9353f2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 19 19:00:54 2026 +0200
+
+    Land #21035, adds module for arbitrary code execution in Barracuda ESG (CVE-2023-7102)
+    
+    Add Barracuda ESG Spreadsheet::ParseExcel RCE exploit (CVE-2023-7102)
+
+ .../linux/smtp/barracuda_esg_spreadsheet_rce.md    | 158 +++++++
+ .../linux/smtp/barracuda_esg_spreadsheet_rce.rb    | 463 +++++++++++++++++++++
+ 2 files changed, 621 insertions(+)
+
+commit 25af9353f2544cd0d352c27497d8f21ca0a23509
+Merge: 6b58b372b3 966c0b625b
+Author: Curt H <5984478+Alpenlol@users.noreply.github.com>
+Date:   Tue May 19 09:18:13 2026 -0700
+
+    Merge pull request #1 from msutovsky-r7/collab/exploit/cve-2023-7102
+    
+    Module code cleanup
+
+ .../linux/smtp/barracuda_esg_spreadsheet_rce.rb     | 21 ++++++++++++---------
+ 1 file changed, 12 insertions(+), 9 deletions(-)
+
+commit addb6da6539e38cf896ca44edf428794fc8fcea9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 19 16:08:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json               | 88 +++++++++--------------------
+ modules/payloads/singles/windows/adduser.rb |  2 +-
+ 2 files changed, 29 insertions(+), 61 deletions(-)
+
+commit 142bca2cc6bbafb429ee898439347da1bb445969
+Merge: 0d718a42ab cf847720ce
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue May 19 11:58:34 2026 -0400
+
+    Merge pull request #21460 from bhaskarbhar/mixin
+    
+    Refactor Windows exec payload CMD handling into shared mixin
+
+ lib/msf/core/payload/cmd/options.rb          |  29 +++++++
+ lib/msf/core/payload/windows/exec.rb         |  96 ++++++++---------------
+ lib/msf/core/payload/windows/exec_x64.rb     | 110 ++++++++++++---------------
+ lib/msf/core/payload/windows/exec_x86.rb     |  53 +++++++++++++
+ lib/msf_autoload.rb                          |   1 +
+ modules/payloads/singles/windows/exec.rb     |   2 +-
+ modules/payloads/singles/windows/x64/exec.rb |  54 +------------
+ 7 files changed, 165 insertions(+), 180 deletions(-)
+
+commit e430e7816bfe06018ec38fe1d432b4661f1a0c75
+Merge: affd274fea 4804ece774
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 19 08:27:17 2026 -0700
+
+    Merge pull request #9 from smcintyre-r7/pr/collab/21447
+    
+    Pr/collab/21447
+
+ lib/msf/core/exploit/remote/ldap/queries.rb | 46 +++++++++++--------
+ modules/auxiliary/gather/kerberoast.rb      | 70 ++++++++++++++++-------------
+ 2 files changed, 65 insertions(+), 51 deletions(-)
+
+commit 907960d499ec6f3941d43a06a063911e4aa88050
+Author: g0tmi1k <g0tmi1k@github>
+Date:   Wed Mar 11 20:45:09 2026 +0000
+
+    Move *brute.rb in favour of *_brute.rb
+
+ modules/auxiliary/scanner/oracle/isqlplus_sidbrute.rb | 4 +++-
+ modules/auxiliary/scanner/tftp/tftpbrute.rb           | 2 ++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 0d718a42aba300ffdb1bf8ce8fc47404721732f6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 19 13:13:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 778678ffd9d8d7a302c53a12c437d77baa855410
+Merge: 8e1ba4abbd b03edcae6d
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue May 19 09:04:09 2026 -0400
+
+    Merge pull request #21414 from dledda-r7/feat/copyfail/python2.7
+    
+    Copy Fail python2.7 support
+
+ .../CVE-2026-31431/CVE-2026-31431-check.py         |  37 ++-
+ .../CVE-2026-31431/CVE-2026-31431-cleanup.py       |  22 +-
+ data/exploits/CVE-2026-31431/CVE-2026-31431.py     | 286 +++++++++++++++++++--
+ .../linux/local/cve_2026_31431_copy_fail.rb        |   5 +-
+ 4 files changed, 312 insertions(+), 38 deletions(-)
+
+commit 966c0b625b6e7b84d6bd9f63da8cefe38e6501f4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 19 10:12:39 2026 +0200
+
+    Removes re-definition of datastore option
+
+ modules/exploits/linux/smtp/barracuda_esg_spreadsheet_rce.rb | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit a516c8a57c5e26eb27a07f7545f046e72c51ad0f
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue May 19 10:09:30 2026 +0200
+
+    Fixes uninitialized datastore option
+
+ modules/exploits/linux/smtp/barracuda_esg_spreadsheet_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cf847720ce2015f1d7b7c68e89d71a9606a42fd5
+Author: bhaskarbhar <126053496+bhaskarbhar@users.noreply.github.com>
+Date:   Tue May 19 10:26:42 2026 +0530
+
+    Refactor based on review
+
+ lib/msf/core/payload/cmd.rb                  | 26 --------------
+ lib/msf/core/payload/windows/exec.rb         | 53 +++++++--------------------
+ lib/msf/core/payload/windows/exec_x64.rb     |  4 ---
+ lib/msf/core/payload/windows/exec_x86.rb     | 11 ------
+ lib/msf_autoload.rb                          |  1 +
+ modules/payloads/singles/windows/exec.rb     |  2 +-
+ modules/payloads/singles/windows/x64/exec.rb | 54 +---------------------------
+ 7 files changed, 15 insertions(+), 136 deletions(-)
