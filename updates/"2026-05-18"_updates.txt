@@ -1,0 +1,183 @@
+commit 60a59a94631726971ed66b9c44d89d0ee208e1a9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 20 20:27:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 5f7aac8c7e6d4e40d4e75d38f0e409fd6803046e
+Merge: a6b20a682c 05256aaa67
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed May 20 15:16:41 2026 -0500
+
+    Merge pull request #21271 from h00die/ollama_enum
+    
+    Ollama Enum
+
+ .../modules/auxiliary/scanner/http/ollama_info.md  |  76 +++++++++
+ modules/auxiliary/scanner/http/ollama_info.rb      | 189 +++++++++++++++++++++
+ 2 files changed, 265 insertions(+)
+
+commit a6b20a682c02877ff26edb91c9ee4eaed637ed3f
+Merge: 11c6cafcda 621ace33a9
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed May 20 10:11:12 2026 -0700
+
+    Merge pull request #21390 from zeroSteiner/fix/skip-anonymous-relay
+    
+    Don't report anonymous as a  success when relaying
+
+ lib/msf/core/exploit/remote/smb/relay/ntlm/server_client.rb | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+commit 11c6cafcdae051ae621bd637983586b32eee76e3
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 20 17:09:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit 4a8bcefecfa0c00b9257f8f35eaf34097a6c1ae2
+Merge: c76a3c88a5 5882042f72
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed May 20 11:52:16 2026 -0500
+
+    Merge pull request #21204 from sfewer-r7/CVE-2026-3055
+    
+    Add auxiliary scanner module for Citrix NetScaler memory leak (CVE-2026-3055)
+
+ .../scanner/http/citrix_netscaler_cve_2026_3055.md | 155 +++++++++++++++
+ .../scanner/http/citrix_netscaler_cve_2026_3055.rb | 219 +++++++++++++++++++++
+ 2 files changed, 374 insertions(+)
+
+commit c76a3c88a57d48dcdcc7e76b6a92a538ee80e069
+Merge: c3a4fe8823 f4716468ab
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed May 20 12:46:09 2026 -0400
+
+    Merge pull request #21443 from jheysel-r7/gem/bump/metasploit-credential/6_0_24
+    
+    Bump metasploit-credential to 6.0.24
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c3a4fe882331015f53af99df77096f4ee4e778e0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 20 15:47:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 0befde590a8ba1bdcb90f0b8c2f4e75f84d0d84d
+Merge: 2dcfb985ea 2bbf6b6816
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed May 20 16:38:04 2026 +0100
+
+    Merge pull request #21451 from zeroSteiner/feat/replace-to-hex-cstring-with-metasm
+    
+    Use Metasm::Shellcode.define_data/define_cstring for payload assembly
+
+ Gemfile.lock                                          |  2 +-
+ modules/payloads/singles/linux/x64/exec.rb            |  8 ++++----
+ modules/payloads/singles/linux/x64/set_hostname.rb    |  4 ++--
+ modules/payloads/singles/linux/x86/exec.rb            |  8 ++++----
+ modules/payloads/singles/linux/x86/read_file.rb       |  4 ++--
+ modules/payloads/singles/osx/x64/shell_reverse_tcp.rb |  4 ++--
+ modules/payloads/singles/windows/download_exec.rb     | 12 ++++++------
+ modules/payloads/singles/windows/messagebox.rb        |  8 ++++----
+ modules/payloads/singles/windows/x64/download_exec.rb | 14 +++++++++-----
+ modules/payloads/singles/windows/x64/messagebox.rb    |  8 ++++----
+ 10 files changed, 38 insertions(+), 34 deletions(-)
+
+commit 2bbf6b68164f00e4bfa5defaa0080cb848deffcf
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed May 20 10:44:07 2026 -0400
+
+    Bump the version of metasm
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 75f7563c5a508480e27d435371a353c795da8e09
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 15:50:16 2026 +0200
+
+    Adds JSON payload delivery
+
+ modules/exploits/multi/http/dompdf_rce_cve_2022_28368.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit 281a4d42896f9e124300052339da4533885b1a03
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 15:45:48 2026 +0200
+
+    Updates post request payload delivery
+
+ modules/exploits/multi/http/dompdf_rce_cve_2022_28368.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d71cb64cb4ef18e8f8cfd6371eb2604ebf539960
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 15:31:06 2026 +0200
+
+    Updates docs, adds payload cleanup, removes time delay
+
+ .../modules/exploit/multi/http/dompdf_rce_cve_2022_28368.md  | 12 ++++++------
+ modules/exploits/multi/http/dompdf_rce_cve_2022_28368.rb     | 11 ++++++-----
+ 2 files changed, 12 insertions(+), 11 deletions(-)
+
+commit 2dcfb985ea68ba2384f5309afdc9ec1a17cb80b9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 20 13:11:06 2026 +0000
+
+    Bump version of framework to 6.4.135
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 18 +++++++++---------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 11 insertions(+), 11 deletions(-)
+
+commit 5882042f72529fda8774d5f45b9ad53d468b345c
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed May 20 10:03:51 2026 +0100
+
+    improve check routine to account for some responses containing a 200 response with 'Undefined SAML error', this is indicitive of a vulnerable system so we loop and check again. This matches teh run routine, and this 200 error is non determanistic so both the check and the run should match the same logic
+
+ .../scanner/http/citrix_netscaler_cve_2026_3055.md | 10 ++--
+ .../scanner/http/citrix_netscaler_cve_2026_3055.rb | 54 +++++++++++++---------
+ 2 files changed, 39 insertions(+), 25 deletions(-)
+
+commit ad04063c5f95146dc533abd9190db39aa84b75fa
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 09:34:30 2026 +0200
+
+    Removes redundant documentation
+
+ .../multi/http/dompdf_rce_cve_2022_28368.md        | 104 ---------------------
+ 1 file changed, 104 deletions(-)
+
+commit 304e6395de0110c816cc6e2b6b0590baf69ee48b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 09:32:37 2026 +0200
+
+    Updates docs, fixes issues in module
+
+ .../multi/http/dompdf_rce_cve_2022_28368.md        |  65 +++++++++++
+ .../multi/http/dompdf_rce_cve_2022_28368.rb        | 123 ++++++++++++---------
+ 2 files changed, 134 insertions(+), 54 deletions(-)
+
+commit 8d3a56aefc6d742b4364ce96c6daf12d4348c298
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 20 07:10:09 2026 +0200
+
+    Updates the module
+
+ .../multi/http/dompdf_rce_cve_2022_28368.rb        | 285 ++++++---------------
+ 1 file changed, 82 insertions(+), 203 deletions(-)
