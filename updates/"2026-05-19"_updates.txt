@@ -1,0 +1,121 @@
+commit ba71087220535af939015eb01a78463196f02fb3
+Merge: af83872945 9949cf27f3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 21 23:12:48 2026 +0100
+
+    Merge pull request #21486 from adfoster-r7/remove-ldap-monkey-patches
+    
+    Remove LDAP monkey patches
+
+ Gemfile.lock                 |   4 +-
+ lib/rex/proto/ldap.rb        | 292 -------------------------------------------
+ lib/rex/proto/ldap/client.rb |   3 -
+ 3 files changed, 3 insertions(+), 296 deletions(-)
+
+commit 9949cf27f3e916347053b9ad024a3c73220e5526
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 21 14:23:11 2026 +0100
+
+    Remove LDAP monkey patches
+
+ Gemfile.lock                 |   4 +-
+ lib/rex/proto/ldap.rb        | 292 -------------------------------------------
+ lib/rex/proto/ldap/client.rb |   3 -
+ 3 files changed, 3 insertions(+), 296 deletions(-)
+
+commit af83872945cfc1bb8158eefc864d242142449f94
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 21 10:50:23 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 99 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 99 insertions(+)
+
+commit c7684e262524ea3bd39c912813fcb6fcae1b253c
+Merge: e7ed485c18 f432ecaea1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 21 12:41:54 2026 +0200
+
+    Land #21434, adds Dirtyfrag privilege escalation modules (CVE-2026-43284, CVE-2026-43500)
+    
+    Dirty Frag Linux Local Privilege Escalation (CVE-2026-43284)(CVE-2026-43500)
+
+ data/exploits/CVE-2026-43284/CVE_2026_43284.c      |  311 ++++++
+ .../exploits/CVE-2026-43284/CVE_2026_43284_aarch64 |  Bin 0 -> 662672 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_armel  |  Bin 0 -> 601412 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_x64    |  Bin 0 -> 940136 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_x86    |  Bin 0 -> 785904 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500.c      | 1159 ++++++++++++++++++++
+ .../exploits/CVE-2026-43500/CVE_2026_43500_aarch64 |  Bin 0 -> 694712 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_armel  |  Bin 0 -> 643016 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_x64    |  Bin 0 -> 942048 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_x86    |  Bin 0 -> 804480 bytes
+ .../linux/local/cve_2026_43284_dirty_frag.md       |   55 +
+ .../linux/local/cve_2026_43500_dirty_frag.md       |   45 +
+ .../linux/local/cve_2026_43284_dirty_frag.rb       |  133 +++
+ .../linux/local/cve_2026_43500_dirty_frag.rb       |  121 ++
+ 14 files changed, 1824 insertions(+)
+
+commit e7ed485c187d307dcee7a6503573145c5a828a2f
+Merge: d59c2e08fc c31b6cb6a6
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu May 21 10:58:16 2026 +0100
+
+    Merge pull request #21485 from adfoster-r7/fix-mcp-server-test-failure
+    
+    Fix mcp server test failure
+
+ lib/msf/core/mcp/server.rb           | 12 ++----------
+ spec/lib/msf/core/mcp/server_spec.rb | 18 +++++++-----------
+ 2 files changed, 9 insertions(+), 21 deletions(-)
+
+commit f432ecaea118a20fb75a343a5076c1f4c637eba4
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 21 11:49:08 2026 +0200
+
+    Makes precompiled exploits static
+
+ .../exploits/CVE-2026-43284/CVE_2026_43284_aarch64 | Bin 18864 -> 662672 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_armel  | Bin 17652 -> 601412 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_x64    | Bin 21832 -> 940136 bytes
+ data/exploits/CVE-2026-43284/CVE_2026_43284_x86    | Bin 21832 -> 785904 bytes
+ .../exploits/CVE-2026-43500/CVE_2026_43500_aarch64 | Bin 41400 -> 694712 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_armel  | Bin 45128 -> 643016 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_x64    | Bin 48448 -> 942048 bytes
+ data/exploits/CVE-2026-43500/CVE_2026_43500_x86    | Bin 48448 -> 804480 bytes
+ .../linux/local/cve_2026_43284_dirty_frag.rb       |   2 +-
+ .../linux/local/cve_2026_43500_dirty_frag.rb       |   2 +-
+ 10 files changed, 2 insertions(+), 2 deletions(-)
+
+commit c31b6cb6a66d67e0a67796a327815dbb4a678bd1
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 21 10:34:50 2026 +0100
+
+    Fix mcp server test failure
+
+ lib/msf/core/mcp/server.rb           | 12 ++----------
+ spec/lib/msf/core/mcp/server_spec.rb | 18 +++++++-----------
+ 2 files changed, 9 insertions(+), 21 deletions(-)
+
+commit d59c2e08fc8e308b6cf29cb039e2ce8c94f282bc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 21 04:46:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit c2fa49a9d0e67cef4d170cefa409cc7a73446966
+Merge: 60a59a9463 75f7563c5a
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu May 21 06:37:38 2026 +0200
+
+    Land #21155, adds exploit module for Dompdf (CVE-2022-28368)
+    
+    Add exploit module for Dompdf RCE (CVE-2022-28368)
+
+ .../multi/http/dompdf_rce_cve_2022_28368.md        |  65 ++++++
+ .../multi/http/dompdf_rce_cve_2022_28368.rb        | 224 +++++++++++++++++++++
+ 2 files changed, 289 insertions(+)
