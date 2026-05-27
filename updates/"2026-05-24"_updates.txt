@@ -1,0 +1,168 @@
+commit 901352320c9f9f2ef9251c7d12b32b1e08ab6dbd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 26 22:42:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 2dbc6a0447af08d99088a0102ab563befd1fb033
+Merge: 5003379684 cac87e4e46
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue May 26 15:33:50 2026 -0700
+
+    Merge pull request #20881 from h00die/krb5tgs_rc4
+    
+    Add Kerberos type hashes to cracking
+
+ .../Hashes-and-Password-Cracking.md                | 197 ++---
+ .../modules/auxiliary/gather/kerberoast.md         |   2 +-
+ lib/metasploit/framework/hashes.rb                 |  11 +-
+ .../framework/password_crackers/cracker.rb         |  34 +-
+ .../password_crackers/hashcat/formatter.rb         |  22 +-
+ .../framework/password_crackers/jtr/formatter.rb   |   7 +-
+ modules/auxiliary/analyze/apply_pot.rb             |  20 +
+ modules/auxiliary/analyze/crack_mobile.rb          |   6 +-
+ modules/auxiliary/analyze/crack_webapps.rb         |  11 +-
+ modules/auxiliary/analyze/crack_windows.rb         |  32 +-
+ .../metasploit/framework/hashes/identify_spec.rb   |  43 ++
+ tools/dev/hash_cracker_validator.rb                | 815 +++++++++------------
+ 12 files changed, 586 insertions(+), 614 deletions(-)
+
+commit 464ca4f5528a4b0d68c8096857c2235ae16bf8b7
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Tue May 26 15:36:36 2026 -0400
+
+    guard wsl startup_folder persistence
+
+ modules/exploits/linux/persistence/wsl/startup_folder.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 5003379684053eceaaa073aef11a08eb5b6fdeb6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 26 17:00:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5e87a482400e6b41d02e77037ec6da6c42bee4cd
+Merge: 17cd9f541c 36efa28a7d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue May 26 17:50:51 2026 +0100
+
+    Merge pull request #21502 from h00die/fix_snmp_no_system_date
+    
+    fix snmp enum bug/crash in null system_date
+
+ modules/auxiliary/scanner/snmp/snmp_enum.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 36efa28a7d560d7b7fc8d03a02e058f120830329
+Author: h00die <h00die@github>
+Date:   Tue May 26 11:28:37 2026 -0400
+
+    fix snmp enum bug
+
+ modules/auxiliary/scanner/snmp/snmp_enum.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 17cd9f541c144cddba4dc56402932fa44d53ed46
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 26 15:16:38 2026 +0000
+
+    Bump version of framework to 6.4.136
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 3 ++-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+commit cc5507ef12ca31e6fcef505c6f86cda43fa84105
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 26 12:02:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5f16dc7d573fda84a9d556eefc46d907aea39187
+Merge: 72fb241cbe 071f2b6611
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue May 26 12:53:01 2026 +0100
+
+    Merge pull request #21500 from adfoster-r7/update-licensefinder
+    
+    Update LicenseFinder
+
+ Gemfile                          | 2 +-
+ Gemfile.lock                     | 4 ++--
+ LICENSE_GEMS                     | 4 ++--
+ tools/dev/update_gem_licenses.sh | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 071f2b661121b1be70ab11941cc8a72b7e097a10
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue May 26 12:37:47 2026 +0100
+
+    Update LicenseFinder
+
+ Gemfile                          | 2 +-
+ Gemfile.lock                     | 4 ++--
+ LICENSE_GEMS                     | 4 ++--
+ tools/dev/update_gem_licenses.sh | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 72fb241cbee5796d7f831d1f736df9da1eaf75cb
+Merge: ea5bf147e4 6281eda0f3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue May 26 11:18:00 2026 +0100
+
+    Merge pull request #21487 from adfoster-r7/update-licensefinder-dependency
+    
+    Update RubyZip version - including licensefinder and metasploit-credential
+
+ Gemfile                                            |  4 +-
+ Gemfile.lock                                       | 37 +++++----
+ LICENSE_GEMS                                       | 92 +++++++++++-----------
+ .../windows/fileformat/winrar_cve_2023_38831.rb    |  2 +-
+ modules/exploits/windows/http/softing_sis_rce.rb   |  2 +-
+ 5 files changed, 70 insertions(+), 67 deletions(-)
+
+commit 6281eda0f38edf025414d700d7caca9fd78810ad
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu May 21 15:22:58 2026 +0100
+
+    Update LicenseFinder dependency
+
+ Gemfile                                            |  4 +-
+ Gemfile.lock                                       | 37 +++++----
+ LICENSE_GEMS                                       | 92 +++++++++++-----------
+ .../windows/fileformat/winrar_cve_2023_38831.rb    |  2 +-
+ modules/exploits/windows/http/softing_sis_rce.rb   |  2 +-
+ 5 files changed, 70 insertions(+), 67 deletions(-)
+
+commit ea5bf147e4a4ff168045e048a9e8652953347520
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue May 26 00:19:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit a8d7a5f325d71fa0e548630657dcee9c094e8b41
+Merge: ba71087220 d812038267
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon May 25 17:10:02 2026 -0700
+
+    Merge pull request #21267 from bootstrapbool/supsystic_contact_form_cve_2026_4257
+    
+    Contact Form by Supsystic Wordpress Plugin exploit CVE-2026-4257
+
+ .../http/wp_plugin_supsystic_contact_form_rce.md   | 191 +++++++++++++++++++++
+ .../http/wp_plugin_supsystic_contact_form_rce.rb   | 178 +++++++++++++++++++
+ 2 files changed, 369 insertions(+)
