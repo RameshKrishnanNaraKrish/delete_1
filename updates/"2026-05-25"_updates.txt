@@ -1,0 +1,104 @@
+commit 533e5547818cdaa7dbcb66ed5a448ef7303f774d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 27 15:39:51 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit f5dd9b40eb6325e886c62eb29dc808d52e559061
+Merge: 19d077afce 29b59c6a65
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed May 27 10:29:39 2026 -0500
+
+    Merge pull request #21484 from zeroSteiner/fix/issue/21301
+    
+    Fix Python SSL Command Shell Payloads
+
+ .github/workflows/command_shell_acceptance.yml     | 25 ++++---
+ lib/msf/core/payload/python.rb                     | 27 ++++++++
+ lib/msf/core/payload/python/reverse_tcp_ssl.rb     |  6 +-
+ modules/auxiliary/dos/http/slowloris.py            |  8 ++-
+ .../singles/cmd/unix/reverse_python_ssl.rb         | 12 ++--
+ .../singles/python/shell_reverse_tcp_ssl.rb        | 26 +++-----
+ spec/acceptance/command_shell_spec.rb              | 12 ++--
+ spec/lib/msf/core/payload/python_spec.rb           | 54 +++++++++++++++
+ .../support/acceptance/command_shell/python_ssl.rb | 77 ++++++++++++++++++++++
+ 9 files changed, 208 insertions(+), 39 deletions(-)
+
+commit 19d077afce9cde82e9cbdb9ecc4caf9688ab62ee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed May 27 07:36:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 31 +++++++++++++++++++++----------
+ 1 file changed, 21 insertions(+), 10 deletions(-)
+
+commit 89f8a091f0bfd2382f777f73b79a3c2b492983cc
+Merge: 428ff504e7 bd566bd331
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 27 09:16:12 2026 +0200
+
+    Land #21504, adds CVE numbers to modules
+    
+    add CVEs to modules
+
+ modules/auxiliary/gather/gladinet_storage_access_ticket_forge.rb   | 1 +
+ modules/auxiliary/scanner/http/cassandra_web_file_read.rb          | 3 ++-
+ modules/auxiliary/scanner/http/pretalx_file_read_cve_2023_28459.rb | 7 +++++++
+ modules/exploits/linux/http/centreon_pollers_auth_rce.rb           | 1 +
+ .../exploits/multi/http/wp_responsive_thumbnail_slider_upload.rb   | 1 +
+ .../multi/http/xerte_unauthenticated_template_import_rce.rb        | 1 +
+ modules/exploits/windows/http/solarwinds_storage_manager_sql.rb    | 1 +
+ 7 files changed, 14 insertions(+), 1 deletion(-)
+
+commit 428ff504e7703d05f86704b62951bc8b169bd4df
+Merge: f80be5a647 464ca4f552
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 27 08:50:15 2026 +0200
+
+    Land #21506, adds guard for wsl_startup_folder persistence
+    
+    guard wsl startup_folder persistence
+
+ modules/exploits/linux/persistence/wsl/startup_folder.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit bd566bd33139d300ef321bd955dd3a7c8d0260cc
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 27 08:49:48 2026 +0200
+
+    Rubocopes cassandra_web_file_read module
+
+ modules/auxiliary/scanner/http/cassandra_web_file_read.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit aefbe062379124b9047f75d5b06750917fc7bf3d
+Author: h00die <h00die@github>
+Date:   Tue May 26 13:05:42 2026 -0400
+
+    add CVEs to modules
+
+ modules/auxiliary/gather/gladinet_storage_access_ticket_forge.rb   | 1 +
+ modules/auxiliary/scanner/http/cassandra_web_file_read.rb          | 1 +
+ modules/auxiliary/scanner/http/pretalx_file_read_cve_2023_28459.rb | 7 +++++++
+ modules/exploits/linux/http/centreon_pollers_auth_rce.rb           | 1 +
+ .../exploits/multi/http/wp_responsive_thumbnail_slider_upload.rb   | 1 +
+ .../multi/http/xerte_unauthenticated_template_import_rce.rb        | 1 +
+ modules/exploits/windows/http/solarwinds_storage_manager_sql.rb    | 1 +
+ 7 files changed, 13 insertions(+)
+
+commit f80be5a6474c8028a884e5990cceb424e9bc4361
+Merge: 901352320c e3bdeadf0d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed May 27 08:23:35 2026 +0200
+
+    Land #21087, adds payload manager plugin
+    
+    Payloads Manager Plugin
+
+ .../How-To-Use-Plugins.md                          |  87 +++-
+ plugins/payloads_manager.rb                        | 570 +++++++++++++++++++++
+ 2 files changed, 655 insertions(+), 2 deletions(-)
