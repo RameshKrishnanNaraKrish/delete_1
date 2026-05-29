@@ -1,0 +1,136 @@
+commit eda55c6063d3125f01c3e48a2fda37bda507c60c
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon May 18 14:28:23 2026 +0100
+
+    Add service hierarchy reporting to HTTP login scanners
+
+ .../framework/login_scanner/advantech_webaccess.rb |  9 ++-
+ lib/metasploit/framework/login_scanner/axis2.rb    | 13 ++--
+ lib/metasploit/framework/login_scanner/base.rb     |  4 ++
+ .../framework/login_scanner/bavision_cameras.rb    | 10 ++-
+ lib/metasploit/framework/login_scanner/buffalo.rb  | 13 ++--
+ lib/metasploit/framework/login_scanner/caidao.rb   | 14 ++--
+ .../framework/login_scanner/chef_webui.rb          | 10 ++-
+ .../framework/login_scanner/cisco_firepower.rb     |  9 ++-
+ .../framework/login_scanner/directadmin.rb         | 10 +--
+ lib/metasploit/framework/login_scanner/gitlab.rb   |  9 +--
+ .../framework/login_scanner/glassfish.rb           | 10 ++-
+ lib/metasploit/framework/login_scanner/http.rb     | 83 +++++++++++++++++++---
+ lib/metasploit/framework/login_scanner/ipboard.rb  | 13 ++--
+ .../framework/login_scanner/ivanti_login.rb        | 10 +--
+ lib/metasploit/framework/login_scanner/jenkins.rb  | 19 ++---
+ lib/metasploit/framework/login_scanner/jupyter.rb  |  9 +--
+ .../login_scanner/manageengine_desktop_central.rb  | 10 +--
+ .../framework/login_scanner/mybook_live.rb         | 13 ++--
+ lib/metasploit/framework/login_scanner/nessus.rb   |  9 ++-
+ .../framework/login_scanner/octopusdeploy.rb       | 13 ++--
+ lib/metasploit/framework/login_scanner/opnsense.rb | 10 +--
+ lib/metasploit/framework/login_scanner/pfsense.rb  | 10 +--
+ .../framework/login_scanner/phpmyadmin.rb          |  9 ++-
+ lib/metasploit/framework/login_scanner/result.rb   | 10 ++-
+ lib/metasploit/framework/login_scanner/smh.rb      |  7 +-
+ .../framework/login_scanner/softing_sis.rb         |  9 ++-
+ .../framework/login_scanner/sonicwall.rb           | 10 +--
+ .../login_scanner/symantec_web_gateway.rb          |  9 ++-
+ .../login_scanner/syncovery_file_sync_backup.rb    |  9 ++-
+ lib/metasploit/framework/login_scanner/teamcity.rb | 10 +--
+ .../framework/login_scanner/wordpress_multicall.rb | 12 ++--
+ .../framework/login_scanner/wordpress_rpc.rb       | 13 ++--
+ .../wowza_streaming_engine_manager.rb              |  9 ++-
+ lib/metasploit/framework/login_scanner/zabbix.rb   | 11 ++-
+ .../manageengine_desktop_central_spec.rb           |  2 +
+ .../framework/login_scanner/nessus_spec.rb         |  2 +
+ .../framework/login_scanner/phpmyadmin_spec.rb     |  2 +
+ .../login_scanner/symantec_web_gateway_spec.rb     |  2 +
+ 38 files changed, 284 insertions(+), 152 deletions(-)
+
+commit f912adfcf23665adaaea09391520408cbed1374e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu May 28 22:21:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit cf76707069501fa32b2cb5c43db38b61135c59d7
+Merge: f997e51388 fd0d8fc13e
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 28 18:07:06 2026 -0400
+
+    Merge pull request #21432 from 4ravind-b/fix-check-simple-api
+    
+    Use #check_simple and #run_simple for datastore option validation
+
+ .../auxiliary/admin/http/netgear_pnpx_getsharefolderlist_auth_bypass.rb | 2 +-
+ modules/post/multi/recon/local_exploit_suggester.rb                     | 2 +-
+ modules/post/multi/recon/persistence_suggester.rb                       | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit f997e513883ee40a1f22362cfe781a9ca00f0c9c
+Merge: 4e0891fd8d 4ac854ccea
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu May 28 15:27:23 2026 -0500
+
+    Merge pull request #21429 from zeroSteiner/fix/redundant-kernel-version
+    
+    Replace kernel_arch with get_os_architecture
+
+ lib/msf/core/post/linux/kernel.rb           | 26 ++------------------------
+ spec/lib/msf/core/post/linux/kernel_spec.rb | 16 ++++++++++++----
+ 2 files changed, 14 insertions(+), 28 deletions(-)
+
+commit 228f0aa845b89af0f1f37b1be6ff7db0f3e639ea
+Author: h00die <h00die@github>
+Date:   Thu May 28 12:56:10 2026 -0400
+
+    peer review
+
+ .../multi/http/apache_activemq_jolokia_rce.rb      | 59 +++++++++++-----------
+ 1 file changed, 29 insertions(+), 30 deletions(-)
+
+commit 4e0891fd8ddbc1737e741b51a3df59ef84405080
+Merge: 9ccb1efd30 b1a4c71b31
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu May 28 15:35:16 2026 +0100
+
+    Merge pull request #21498 from h00die/add_docs_to_agents
+    
+    add more info for documentation in AGENTS.md
+
+ AGENTS.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 9ccb1efd30916c9f0d1eee434b57cfa2d0abb702
+Merge: 533e554781 14f03d3905
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Thu May 28 09:04:16 2026 -0400
+
+    Merge pull request #21514 from orbit-bot/fix/msfvenom-help-formats-flag
+    
+    Update --help-formats and --payload-options flags in Docs
+
+ docs/metasploit-framework.wiki/How-to-use-msfvenom.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit afcffddae8cb1e805e27c84e2dba5ac2731167be
+Author: h00die <h00die@github>
+Date:   Thu May 28 07:39:21 2026 -0400
+
+    Update modules/exploits/multi/http/apache_activemq_jolokia_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/multi/http/apache_activemq_jolokia_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3cd90e06ad9ccd12a79cecae0609874e8b219ff7
+Author: h00die <h00die@github>
+Date:   Thu May 28 07:39:12 2026 -0400
+
+    Update modules/exploits/multi/http/apache_activemq_jolokia_rce.rb
+    
+    Co-authored-by: msutovsky-r7 <martin_sutovsky@rapid7.com>
+
+ modules/exploits/multi/http/apache_activemq_jolokia_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
