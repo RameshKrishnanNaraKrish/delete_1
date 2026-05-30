@@ -1,0 +1,83 @@
+commit 749e8763b0ff305e76d73448aab211eda22a0472
+Merge: 6926ad5f2e 84b54ddb60
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri May 29 12:04:34 2026 -0400
+
+    Merge pull request #21517 from jheysel-r7/docs/update_attic_definition
+    
+    Update the Attic label definition
+
+ .github/workflows/labels.yml                       |  5 +++--
+ docs/metasploit-framework.wiki/Assigning-Labels.md | 10 +++++++++-
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+commit 6926ad5f2e88471a7c2fa216dc45c73ae0ab570d
+Merge: b3b3e35d10 eda55c6063
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri May 29 09:05:54 2026 +0100
+
+    Merge pull request #21488 from sjanusz-r7/add-service-hierarchy-to-login-scanner-subset
+    
+    Add service hierarchy reporting to HTTP & modify Jenkins login scanner
+
+ .../framework/login_scanner/advantech_webaccess.rb |  9 ++-
+ lib/metasploit/framework/login_scanner/axis2.rb    | 13 ++--
+ lib/metasploit/framework/login_scanner/base.rb     |  4 ++
+ .../framework/login_scanner/bavision_cameras.rb    | 10 ++-
+ lib/metasploit/framework/login_scanner/buffalo.rb  | 13 ++--
+ lib/metasploit/framework/login_scanner/caidao.rb   | 14 ++--
+ .../framework/login_scanner/chef_webui.rb          | 10 ++-
+ .../framework/login_scanner/cisco_firepower.rb     |  9 ++-
+ .../framework/login_scanner/directadmin.rb         | 10 +--
+ lib/metasploit/framework/login_scanner/gitlab.rb   |  9 +--
+ .../framework/login_scanner/glassfish.rb           | 10 ++-
+ lib/metasploit/framework/login_scanner/http.rb     | 83 +++++++++++++++++++---
+ lib/metasploit/framework/login_scanner/ipboard.rb  | 13 ++--
+ .../framework/login_scanner/ivanti_login.rb        | 10 +--
+ lib/metasploit/framework/login_scanner/jenkins.rb  | 19 ++---
+ lib/metasploit/framework/login_scanner/jupyter.rb  |  9 +--
+ .../login_scanner/manageengine_desktop_central.rb  | 10 +--
+ .../framework/login_scanner/mybook_live.rb         | 13 ++--
+ lib/metasploit/framework/login_scanner/nessus.rb   |  9 ++-
+ .../framework/login_scanner/octopusdeploy.rb       | 13 ++--
+ lib/metasploit/framework/login_scanner/opnsense.rb | 10 +--
+ lib/metasploit/framework/login_scanner/pfsense.rb  | 10 +--
+ .../framework/login_scanner/phpmyadmin.rb          |  9 ++-
+ lib/metasploit/framework/login_scanner/result.rb   | 10 ++-
+ lib/metasploit/framework/login_scanner/smh.rb      |  7 +-
+ .../framework/login_scanner/softing_sis.rb         |  9 ++-
+ .../framework/login_scanner/sonicwall.rb           | 10 +--
+ .../login_scanner/symantec_web_gateway.rb          |  9 ++-
+ .../login_scanner/syncovery_file_sync_backup.rb    |  9 ++-
+ lib/metasploit/framework/login_scanner/teamcity.rb | 10 +--
+ .../framework/login_scanner/wordpress_multicall.rb | 12 ++--
+ .../framework/login_scanner/wordpress_rpc.rb       | 13 ++--
+ .../wowza_streaming_engine_manager.rb              |  9 ++-
+ lib/metasploit/framework/login_scanner/zabbix.rb   | 11 ++-
+ .../manageengine_desktop_central_spec.rb           |  2 +
+ .../framework/login_scanner/nessus_spec.rb         |  2 +
+ .../framework/login_scanner/phpmyadmin_spec.rb     |  2 +
+ .../login_scanner/symantec_web_gateway_spec.rb     |  2 +
+ 38 files changed, 284 insertions(+), 152 deletions(-)
+
+commit b3b3e35d1087b3d96d69fc977619c3d06b64be9a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri May 29 08:03:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 53f32187b9fdb4828bef2167002a900922772839
+Merge: f912adfcf2 228f0aa845
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri May 29 09:53:36 2026 +0200
+
+    Land #21497, adds authenticated arbitrary OS command injection in Activemq jolokia (CVE-2026-34197)
+    
+    Activemq jolokia exploit (CVE-2026-34197)
+
+ .../multi/http/apache_activemq_jolokia_rce.md      | 169 +++++++++++++++
+ .../multi/http/apache_activemq_jolokia_rce.rb      | 234 +++++++++++++++++++++
+ 2 files changed, 403 insertions(+)
