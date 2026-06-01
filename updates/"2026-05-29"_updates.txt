@@ -1,0 +1,22 @@
+commit 8b5f5233261d4ed56a573b36adc5466c044f0923
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun May 31 17:07:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 38 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+
+commit 92ca20475d17a8b07357f965992f63c8e68efc0a
+Merge: 749e8763b0 919c0dd7c3
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Sun May 31 18:48:31 2026 +0200
+
+    Land #21039, adds post module for Windows kernel pointer enumerator
+    
+    Add Windows Kernel Pointer Exposure Enumerator (Info Gathering)
+
+ .../gather/forensics/windows_kernel_pointer.md     | 173 +++++++++++++++++++++
+ .../exploit/local/windows_kernel/handle_enum.rb    | 173 +++++++++++++++++++++
+ .../windows/gather/windows_kernel_pointer_enum.rb  | 167 ++++++++++++++++++++
+ 3 files changed, 513 insertions(+)
