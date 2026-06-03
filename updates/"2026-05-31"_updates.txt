@@ -1,0 +1,10 @@
+commit 5f926ffc7fd8277030f71681e709fdb7b2477aef
+Merge: 8b5f523326 90c9e96910
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Jun 2 12:08:32 2026 +0200
+
+    Merge pull request #21448 from kx7m2qd/fix/msf-host-info-cidr-filtering
+
+ lib/msf/core/rpc/v10/rpc_db.rb           | 60 +++++++++++++++++++++---------
+ spec/lib/msf/core/rpc/v10/rpc_db_spec.rb | 64 ++++++++++++++++++++++++++++++++
+ 2 files changed, 107 insertions(+), 17 deletions(-)
