@@ -1,0 +1,129 @@
+commit 8d30819ce8bd576a2cd4f32eae37d5623c6459bb
+Merge: 5075c2975d e07b1b38a6
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jun 3 21:58:20 2026 +0100
+
+    Merge pull request #21412 from zeroSteiner/feat/default-session-id
+    
+    Default to the most recent session
+
+ lib/msf/core/post_mixin.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5075c2975d9257e9c9c999bd39501e2ac84b5544
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 3 19:18:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5d0731213a6dd749014ebf82549472e5d8ff4669
+Merge: 1b13d2d57d c3c3e235f9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jun 3 15:07:02 2026 -0400
+
+    Merge pull request #21489 from h00die/fix_gitlab_errors
+    
+    fix gitlab version errors
+
+ data/gitlab_versions.json                          | 444 ++++++++++++
+ lib/msf/core/exploit/remote/http/gitlab/error.rb   |   4 +-
+ .../exploit/remote/http/gitlab/rest/v4/version.rb  |   6 +-
+ lib/msf/core/exploit/remote/http/gitlab/version.rb | 455 +-----------
+ modules/auxiliary/scanner/http/gitlab_version.rb   |   2 +-
+ tools/dev/update_gitlab_versions.rb                | 772 +++++++++++++++++++++
+ 6 files changed, 1253 insertions(+), 430 deletions(-)
+
+commit 1b13d2d57d129115ddf2fb61437f2674965f7785
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 3 16:25:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit c74a80ff0a1fae4a0acbd7140c64fde608935c17
+Merge: 5f926ffc7f 2602f8b953
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Jun 3 18:15:10 2026 +0200
+
+    Merge pull request #21515 from jburgess-r7/add-gogs-rebase-rce
+
+ .../modules/exploits/multi/http/gogs_rebase_rce.md | 259 +++++++
+ modules/exploits/multi/http/gogs_rebase_rce.rb     | 761 +++++++++++++++++++++
+ 2 files changed, 1020 insertions(+)
+
+commit 2602f8b953cdabc9c6c6d8b6dc2dd8b8c3e1fcbc
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Jun 3 16:27:03 2026 +0100
+
+    fixed default writeable dir for fetch command on unix, should resolve previous issues
+
+ modules/exploits/multi/http/gogs_rebase_rce.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 8b22aa93b3a48c71579dee55b343e908fe3da7bc
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Jun 3 16:10:16 2026 +0100
+
+    restructured service check to use layered services
+
+ modules/exploits/multi/http/gogs_rebase_rce.rb | 36 ++++++++------------------
+ 1 file changed, 11 insertions(+), 25 deletions(-)
+
+commit 6f9e2a2310f21896837780494eeb089b91e585e9
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Jun 3 13:05:58 2026 +0100
+
+    Fix Unix payload delivery and address PR review feedback
+    
+    - Switch Unix targets from file-based payload to base64-encoded inline
+      in the branch name (--exec=echo${IFS}<b64>|base64${IFS}-d|sh).
+      File-based delivery broke fetch payloads because colons and special
+      characters in the staged command are invalid in git ref names.
+      Windows targets keep the file-based approach since NTFS forbids pipes.
+    
+    - Re-pad base64 output to avoid '//' sequences (forbidden in git refs).
+    
+    - Remove unused include_malicious param from setup_branches_via_git.
+    
+    - Add report_gogs_service helper for report_vuln service linking.
+    
+    - Add NOTE comment above version check threshold for maintainers.
+    
+    - Update module description to reflect Unix (inline b64) vs Windows
+      (committed script file) delivery methods.
+    
+    - Update docs: cache-clearing guidance for existing_repo re-exploitation,
+      fix check output in existing_repo scenario.
+
+ .../modules/exploits/multi/http/gogs_rebase_rce.md |   7 +-
+ modules/exploits/multi/http/gogs_rebase_rce.rb     | 120 ++++++++++++---------
+ 2 files changed, 76 insertions(+), 51 deletions(-)
+
+commit c3c3e235f986ba01e9d0e22c7899b61de9bb5a3d
+Author: h00die <h00die@github>
+Date:   Wed Jun 3 07:44:55 2026 -0400
+
+    move gitlab_versions file to data folder
+
+ .../remote/http/gitlab/version.json => data/gitlab_versions.json    | 0
+ lib/msf/core/exploit/remote/http/gitlab/version.rb                  | 6 +++---
+ tools/dev/update_gitlab_versions.rb                                 | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit ad7c055a5a42ccc5b3be6412189716f20fcfada1
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Wed Jun 3 12:15:36 2026 +0100
+
+    Apply suggestions from code review
+    
+    applied 4 of the changes, will look at the other suggestions manually
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/exploits/multi/http/gogs_rebase_rce.rb | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
