@@ -1,0 +1,107 @@
+commit 5eb34bbddeb91263da8428228fe8268f70437d7c
+Merge: 7849690614 43ba79ab1f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jun 5 00:53:47 2026 +0100
+
+    Merge pull request #21212 from h00die/clickfix
+    
+    clickfix server
+
+ data/exploits/clickfix/browser_update.html         | 628 +++++++++++++++++++++
+ .../modules/exploit/multi/misc/clickfix_server.md  | 219 +++++++
+ modules/exploits/multi/misc/clickfix_server.rb     | 117 ++++
+ 3 files changed, 964 insertions(+)
+
+commit 7849690614f1394c2e0d8722cad93b076c51a93d
+Merge: 12fc9bdfbb 8fba6e33c3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 4 23:41:50 2026 +0100
+
+    Merge pull request #20618 from Aaditya1273/issue-20607-mssql-token-169-fix
+    
+     fixes the "unsupported token: 169" error that occurs when executing stored procedures against Microsoft SQL
+
+ lib/rex/proto/mssql/client_mixin.rb           | 271 ++++++++++++++++++++++++++
+ spec/lib/rex/proto/mssql/client_mixin_spec.rb |  96 +++++++++
+ 2 files changed, 367 insertions(+)
+
+commit 12fc9bdfbb7e2a5908f715e69c65df68e06b4dcd
+Merge: 5082648e4d 499043f966
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 4 08:28:13 2026 -0700
+
+    Merge pull request #21466 from eve0805/feature/kerberos-ticket-trace-as-tgs-ap
+    
+    Kerberos-trace
+
+ lib/msf/core/exploit/remote/kerberos/client.rb     |  19 +-
+ .../remote/kerberos/service_authenticator/base.rb  |  14 +-
+ .../kerberos/service_authenticator/options.rb      |  10 +
+ lib/rex/proto/kerberos/client.rb                   |   7 +
+ .../proto/kerberos/kerberos_logger_subscriber.rb   | 298 +++++++++
+ .../kerberos/kerberos_readable_text_presenter.rb   |  98 +++
+ lib/rex/proto/kerberos/kerberos_subscriber.rb      |  26 +
+ spec/lib/msf/base/serializer/readable_text_spec.rb |   4 +
+ spec/lib/rex/proto/kerberos/client_spec.rb         |   5 +
+ .../kerberos/kerberos_logger_subscriber_spec.rb    | 740 +++++++++++++++++++++
+ 10 files changed, 1216 insertions(+), 5 deletions(-)
+
+commit 5082648e4d595fc65c6e5c9332cadf8d62b60edf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 4 15:23:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 464c808ecd7a167765a6113019963c2da6d137e7
+Merge: 51bb5b3f85 d458b7b4b8
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jun 4 17:14:20 2026 +0200
+
+    Merge pull request #21519 from bwatters-r7/fix/riscv-single-shells
+    
+    Fixes two bugs in the single shell riscv payloads
+
+ .../singles/linux/riscv32le/shell_reverse_tcp.rb   | 17 +++--
+ .../singles/linux/riscv64le/shell_reverse_tcp.rb   | 37 +++++++----
+ .../linux/riscv32le/shell_reverse_tcp_spec.rb      | 61 +++++++++++++++++
+ .../linux/riscv64le/shell_reverse_tcp_spec.rb      | 76 ++++++++++++++++++++++
+ 4 files changed, 173 insertions(+), 18 deletions(-)
+
+commit 51bb5b3f856fc6e32219e76debbd84df4a75a3fb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 4 13:26:48 2026 +0000
+
+    Bump version of framework to 6.4.137
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit fce4cf3454454b4e63b41398b856dd2c00107cba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 4 12:43:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 628f66a5910f8f8182f3d259e09720d1f9734d48
+Merge: 8d30819ce8 1d8f78e90a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 4 13:31:32 2026 +0100
+
+    Merge pull request #21526 from zeroSteiner/fix/ipmi/scanner-multi
+    
+    IPMI Scanner Bug Fixes
+
+ modules/auxiliary/scanner/ipmi/ipmi_cipher_zero.rb | 16 +++++--
+ modules/auxiliary/scanner/ipmi/ipmi_dumphashes.rb  | 28 +++++++++---
+ modules/auxiliary/scanner/ipmi/ipmi_version.rb     |  6 +--
+ .../scanner/ipmi/ipmi_cipher_zero_spec.rb          | 49 ++++++++++++++++++++
+ .../auxiliary/scanner/ipmi/ipmi_dumphashes_spec.rb | 52 ++++++++++++++++++++++
+ 5 files changed, 140 insertions(+), 11 deletions(-)
