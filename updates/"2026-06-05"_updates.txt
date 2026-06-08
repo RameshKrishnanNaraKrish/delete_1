@@ -1,0 +1,37 @@
+commit 572b2ce1a07de3d1e8d2ffd6716d6ff1308a3b31
+Author: sucloudflare <cloudflare.ddos21@gmail.com>
+Date:   Sat Jun 6 23:18:17 2026 -0300
+
+    docs: replace deprecated msfpayload/msfencode references with msfvenom
+    
+    - How-to-use-a-reverse-shell-in-Metasploit.md: replace all msfpayload
+      commands and references with msfvenom equivalents
+    - Guidelines-for-Accepting-Modules-and-Enhancements.md: remove msfpayload
+      from list of external tools (no longer exists)
+    - reverse_tcp.md: clarify msfvenom replaced msfpayload and msfencode
+    
+    Closes #21530
+
+ ...delines-for-Accepting-Modules-and-Enhancements.md |  2 +-
+ .../How-to-use-a-reverse-shell-in-Metasploit.md      | 20 +++++++++++---------
+ .../payload/windows/meterpreter/reverse_tcp.md       |  2 +-
+ 3 files changed, 13 insertions(+), 11 deletions(-)
+
+commit b9ef0a60011f4ce4e154aab489bc8523a390b92f
+Author: sucloudflare <cloudflare.ddos21@gmail.com>
+Date:   Sat Jun 6 22:48:55 2026 -0300
+
+    Fix typos in module comments and error messages
+    
+    - occured -> occurred (consul_rexec_exec, consul_service_exec, nomad_exec, enum_software_versions)
+    - teh -> the (jetbrains_teamcity comment)
+    - recieve/recieved -> receive/received (samsung_security_manager_put, tokenmagic)
+
+ .../exploits/multi/http/jetbrains_teamcity_rce_cve_2023_42793.rb  | 2 +-
+ modules/exploits/multi/misc/consul_rexec_exec.rb                  | 8 ++++----
+ modules/exploits/multi/misc/consul_service_exec.rb                | 4 ++--
+ modules/exploits/multi/misc/nomad_exec.rb                         | 2 +-
+ modules/exploits/windows/browser/samsung_security_manager_put.rb  | 2 +-
+ modules/exploits/windows/local/tokenmagic.rb                      | 2 +-
+ modules/post/multi/gather/enum_software_versions.rb               | 6 +++---
+ 7 files changed, 13 insertions(+), 13 deletions(-)
