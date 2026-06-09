@@ -1,0 +1,83 @@
+commit 2b3cf666ece55372b341265408528d71bcfaa8a5
+Merge: ba58eda22d f3baacd158
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Jun 8 12:19:59 2026 -0700
+
+    Merge pull request #21266 from zeroSteiner/feat/log-smb-services
+    
+    Log SMB services
+
+ lib/msf/core/exploit/remote/smb/client.rb     | 68 +++++++++++++++++++++------
+ lib/msf/core/exploit/remote/smb/client/ipc.rb | 14 +-----
+ 2 files changed, 54 insertions(+), 28 deletions(-)
+
+commit ba58eda22db2240c85a32ca43f395be73a009f3f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 8 15:12:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c22cd7d7c58d3b2d014971f68144f2cc6d1d549f
+Merge: 7b2b973015 ffcef19416
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jun 8 16:02:43 2026 +0100
+
+    Merge pull request #21543 from sjanusz-r7/fix-webdav-upload-php-false-positive
+    
+    Fix webdav upload php false positive
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+commit ffcef1941616b9e1c1df540a7a9eee90bb7a46ee
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Jun 8 15:55:57 2026 +0100
+
+    Split header and message check in webdav upload php check
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+commit 7b2b97301553c9d8c4acb7c2f900c38685669d28
+Merge: 3cc0025400 572b2ce1a0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 8 09:57:57 2026 +0100
+
+    Merge pull request #21546 from sucloudflare/fix-deprecated-msfpayload-docs
+    
+    docs: replace deprecated msfpayload/msfencode references with msfvenom
+
+ ...delines-for-Accepting-Modules-and-Enhancements.md |  2 +-
+ .../How-to-use-a-reverse-shell-in-Metasploit.md      | 20 +++++++++++---------
+ .../payload/windows/meterpreter/reverse_tcp.md       |  2 +-
+ 3 files changed, 13 insertions(+), 11 deletions(-)
+
+commit 3cc0025400ffdf3f64f7ad65b5f43ad49dfe6c12
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 8 08:54:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 61b448193089af7cdd3bde2092a546564b0a192c
+Merge: f073ad6260 b9ef0a6001
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 8 09:44:09 2026 +0100
+
+    Merge pull request #21545 from sucloudflare/minha-primeira-contribuicao
+    
+    Fix typos in module comments and error messages
+
+ .../exploits/multi/http/jetbrains_teamcity_rce_cve_2023_42793.rb  | 2 +-
+ modules/exploits/multi/misc/consul_rexec_exec.rb                  | 8 ++++----
+ modules/exploits/multi/misc/consul_service_exec.rb                | 4 ++--
+ modules/exploits/multi/misc/nomad_exec.rb                         | 2 +-
+ modules/exploits/windows/browser/samsung_security_manager_put.rb  | 2 +-
+ modules/exploits/windows/local/tokenmagic.rb                      | 2 +-
+ modules/post/multi/gather/enum_software_versions.rb               | 6 +++---
+ 7 files changed, 13 insertions(+), 13 deletions(-)
