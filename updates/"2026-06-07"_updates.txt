@@ -1,0 +1,117 @@
+commit cd0eed79e92aedfc1e6c268c14d329ce633a34c4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 9 23:49:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 67166dca1af84a4ced37db4bf4af122a009b0c20
+Merge: 08c430df07 3e17e328f8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jun 10 00:05:06 2026 +0100
+
+    Merge pull request #21540 from adfoster-r7/add-additional-mssql-tests-and-nil-handling
+    
+    Add additional mssql tests and nil handling
+
+ lib/msf/core/exploit/remote/ldap.rb                | 10 ++-
+ lib/rex/proto/mssql/client_mixin.rb                | 48 ++++++------
+ .../auxiliary/admin/ldap/ad_cs_cert_template.rb    |  2 +-
+ modules/auxiliary/admin/ldap/bad_successor.rb      |  4 +-
+ modules/auxiliary/admin/ldap/shadow_credentials.rb |  6 +-
+ modules/auxiliary/gather/ldap_passwords.rb         |  8 +-
+ .../auxiliary/gather/vmware_vcenter_vmdir_ldap.rb  |  6 +-
+ spec/acceptance/ldap_spec.rb                       |  2 +-
+ spec/acceptance/mssql_spec.rb                      | 19 ++++-
+ spec/lib/rex/proto/mssql/client_mixin_spec.rb      | 88 ++++++++++++++++++++++
+ spec/support/acceptance/child_process.rb           |  9 +--
+ spec/support/acceptance/datastore_formatting.rb    | 23 ++++++
+ .../acceptance/datastore_formatting_spec.rb        | 38 ++++++++++
+ spec/support/acceptance/target.rb                  | 10 +--
+ test/modules/post/test/mssql.rb                    | 41 ++++++++++
+ 15 files changed, 262 insertions(+), 52 deletions(-)
+
+commit 08c430df07a3203fdf5438106cd0b986b9e0eeb6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 9 15:54:20 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 15e948a2d204a37dae1108ab7c2eb65269f080f2
+Merge: 04d714cd59 8d00e8df58
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Jun 9 16:42:32 2026 +0100
+
+    Merge pull request #21549 from 4ravind-b/fix/add-cve-smtp-relay
+    
+    fix: add CVE-1999-0512 reference to smtp_relay module
+
+ modules/auxiliary/scanner/smtp/smtp_relay.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 04d714cd59a4a83c25360d6d163c35bc318e80f6
+Merge: 5b3a2cde26 196202c90a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jun 9 08:30:34 2026 -0700
+
+    Merge pull request #21383 from zeroSteiner/feat/smb/symlink-rubysmb
+    
+    Update samba_symlink_traversal to use RubySMB
+
+ Gemfile.lock                                           |  2 +-
+ lib/rex/proto/smb/simple_client.rb                     |  2 +-
+ modules/auxiliary/admin/smb/samba_symlink_traversal.rb | 10 ++++++----
+ 3 files changed, 8 insertions(+), 6 deletions(-)
+
+commit 5b3a2cde268e3b870425c5d27b0671ee27f773db
+Merge: 2b3cf666ec 419e45cedc
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Jun 9 16:25:19 2026 +0100
+
+    Merge pull request #21554 from sjanusz-r7/make-webdav-checks-less-strict
+    
+    Make WebDAV upload PHP exploit checks less strict
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 23 +++++++++++++++--------
+ 1 file changed, 15 insertions(+), 8 deletions(-)
+
+commit 419e45cedce58ad838299c6a26c7fc2b5acb6578
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Jun 9 14:36:18 2026 +0100
+
+    Fix Rubocop regex warning on WebDAV PHP Upload
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a03932b39bad8ddcd6d32defc5d92ec2e03eec32
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Jun 9 14:32:57 2026 +0100
+
+    Make WebDAV PROPFIND request to follow RFC spec
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+commit 196202c90a614e1b60e73c0dad444b66824f9208
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Jun 8 09:23:10 2026 -0400
+
+    Bump RubySMB
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee938a0082ee64655c65ea581c877b46a2f0e569
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Jun 9 13:46:44 2026 +0100
+
+    Make WebDAV upload PHP exploit checks less strict
+
+ modules/exploits/multi/http/webdav_upload_php.rb | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
