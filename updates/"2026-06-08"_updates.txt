@@ -1,0 +1,30 @@
+commit cf67b7f144008b42058651d10e24976000f0530b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jun 10 11:22:50 2026 +0100
+
+    Add additional import tests
+
+ lib/metasploit/framework/spec/threads/logger.rb    | 48 ++++++-----
+ lib/metasploit/framework/spec/threads/suite.rb     | 52 ++++++++----
+ .../db_manager/import/metasploit_framework/zip.rb  | 11 ++-
+ spec/spec_helper.rb                                |  5 ++
+ .../db_manager/import/metasploit_framework/zip.rb  | 95 ++++++++++++++++++++++
+ 5 files changed, 169 insertions(+), 42 deletions(-)
+
+commit 6c4eba09860531941e9a88cda29aa3bb4214f58a
+Author: golem445 <25466672+golem445@users.noreply.github.com>
+Date:   Wed Jun 10 15:48:03 2026 -0400
+
+    Bugfix
+
+ lib/rex/parser/nmap_document.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit dd2475b3c422c8ff0878b931f3062bb5eb9c4c36
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Jun 10 17:07:04 2026 +0100
+
+    enforce authentication in API tests and improve error handling for unauthenticated requests
+
+ spec/api/metasploit_api_app_spec.rb | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
