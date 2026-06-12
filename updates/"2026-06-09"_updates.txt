@@ -1,0 +1,192 @@
+commit 57f89b594be42be14119e0b0e38999ca88b7dab9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 11 19:07:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit f677044adbf64ed35e52f13821fc2c7f1e31d26c
+Merge: ac549e9a18 69df9d732b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 11 11:57:20 2026 -0700
+
+    Merge pull request #21547 from h00die-gr3y/paperclip-cve-2026-41679
+    
+    Paperclip unauthenticated RCE [CVE-2026-41679]
+
+ .../http/paperclipai_unauth_rce_cve_2026_41679.md  |  92 +++++++
+ .../http/paperclipai_unauth_rce_cve_2026_41679.rb  | 284 +++++++++++++++++++++
+ 2 files changed, 376 insertions(+)
+
+commit ac549e9a18f635f01085809a45a16394cfe8c781
+Merge: 5a00201422 dca33365e4
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Jun 11 14:34:04 2026 +0100
+
+    Merge pull request #21481 from dwelch-r7/improved-pr-template
+    
+    Enhance pull request template with detailed contribution guidelines and verification steps
+
+ .github/PULL_REQUEST_TEMPLATE.md | 105 +++++++++++++++++++++++++++++----------
+ 1 file changed, 80 insertions(+), 25 deletions(-)
+
+commit 5a00201422e0df050fdc1dafc1f762a65dfdc937
+Merge: d17bf83cd1 6c4eba0986
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jun 11 13:15:20 2026 +0100
+
+    Merge pull request #21254 from golem445/fix-nmap-import-logic
+    
+    Update nmap_document to properly import hostnames from nmap scans
+
+ lib/rex/parser/nmap_document.rb | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+
+commit d17bf83cd1ddd96e0cf6f1dd0a9eb5b4810149c2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 11 11:44:49 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 9c8e55519c555bb15179d06e2b58d4038629e9ab
+Merge: 0332a350e9 c3387ee410
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jun 11 13:35:49 2026 +0200
+
+    Land #21465, adds VSCode extension persistence module
+    
+    VS Code extension persistence
+
+ .../vscode_extension/extension.js.template         |   1 +
+ .../exploit/multi/persistence/vscode_extension.md  | 232 +++++++++++++++++
+ .../exploits/multi/persistence/vscode_extension.rb | 285 +++++++++++++++++++++
+ 3 files changed, 518 insertions(+)
+
+commit 0332a350e90159e1edd94a742bd656d651dda0cf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 11 10:09:24 2026 +0000
+
+    Bump version of framework to 6.4.138
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 17d31f2a50eaf2b706a364a9681688667e8a6092
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 11 10:00:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
+
+commit 7d4d33ad940cd5a0d275207bad48acf8f21b95af
+Merge: 02b6ebe39b dd2475b3c4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 11 10:43:48 2026 +0100
+
+    Merge pull request #21558 from dwelch-r7/fix-api-app-test-stacktrace
+    
+    enforce authentication in API tests and improve error handling for unauthenticated requests
+
+ spec/api/metasploit_api_app_spec.rb | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
+
+commit 02b6ebe39b8697c9981ebbf9f8f8f38f6a2d677a
+Merge: 3e8e87e2fc ae08631814
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 11 10:41:26 2026 +0100
+
+    Merge pull request #21535 from adfoster-r7/update-check-setup-methods-on-http-scanners
+    
+    Update check setup methods on http scanners
+
+ .../modules/auxiliary/scanner/http/axis_login.md   |  9 ++++++
+ .../auxiliary/scanner/http/tomcat_mgr_login.md     |  9 ++++++
+ lib/metasploit/framework/login_scanner/axis2.rb    | 18 ++++++++++++
+ lib/metasploit/framework/login_scanner/buffalo.rb  | 22 +++++++++++++-
+ lib/metasploit/framework/login_scanner/gitlab.rb   | 31 +++++++++++++++++++-
+ lib/metasploit/framework/login_scanner/ipboard.rb  | 22 ++++++++++++++
+ lib/metasploit/framework/login_scanner/jupyter.rb  | 22 ++++++++++++++
+ .../framework/login_scanner/mybook_live.rb         | 22 ++++++++++++++
+ .../framework/login_scanner/octopusdeploy.rb       | 22 ++++++++++++++
+ lib/metasploit/framework/login_scanner/smh.rb      | 21 +++++++++++++
+ lib/metasploit/framework/login_scanner/tomcat.rb   | 23 +++++++++++++++
+ .../framework/login_scanner/wordpress_multicall.rb | 24 +++++++++++++++
+ .../framework/login_scanner/wordpress_rpc.rb       | 22 ++++++++++++++
+ modules/auxiliary/scanner/http/appletv_login.rb    | 15 ++++++++++
+ modules/auxiliary/scanner/http/axis_login.rb       | 22 +++++---------
+ modules/auxiliary/scanner/http/buffalo_login.rb    | 10 +++++--
+ modules/auxiliary/scanner/http/dolibarr_login.rb   | 15 ++++++++++
+ modules/auxiliary/scanner/http/gitlab_login.rb     | 24 +++++----------
+ modules/auxiliary/scanner/http/ipboard_login.rb    |  6 ++++
+ .../auxiliary/scanner/http/mybook_live_login.rb    | 10 +++++--
+ .../auxiliary/scanner/http/octopusdeploy_login.rb  | 10 +++++--
+ modules/auxiliary/scanner/http/opnsense_login.rb   |  7 +++++
+ modules/auxiliary/scanner/http/pfsense_login.rb    |  7 +++++
+ modules/auxiliary/scanner/http/tomcat_mgr_login.rb | 34 ++++++----------------
+ modules/auxiliary/scanner/http/vcms_login.rb       | 15 ++++++++++
+ .../scanner/http/wordpress_xmlrpc_login.rb         | 18 +++++-------
+ test/axis2/Dockerfile                              | 17 +++++++++++
+ test/tomcat/Dockerfile                             | 11 +++++++
+ 28 files changed, 415 insertions(+), 73 deletions(-)
+
+commit 3e8e87e2fc5c4e1d6f13c6743843384ac63f232a
+Merge: 31f5308a20 cf67b7f144
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jun 11 09:56:07 2026 +0100
+
+    Merge pull request #21557 from adfoster-r7/add-additional-import-tests
+    
+    Fix db_import crash
+
+ lib/metasploit/framework/spec/threads/logger.rb    | 48 ++++++-----
+ lib/metasploit/framework/spec/threads/suite.rb     | 52 ++++++++----
+ .../db_manager/import/metasploit_framework/zip.rb  | 11 ++-
+ spec/spec_helper.rb                                |  5 ++
+ .../db_manager/import/metasploit_framework/zip.rb  | 95 ++++++++++++++++++++++
+ 5 files changed, 169 insertions(+), 42 deletions(-)
+
+commit 31f5308a20620078e4b2889ae7ca5cce857a1b8b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 11 06:24:21 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+commit fd95bbe6c83f6e05ae0f1157928b4404b6393677
+Merge: cd0eed79e9 80a4d9fa31
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jun 11 07:53:52 2026 +0200
+
+    Land #21008, adds kernel_rex_version for parsing kernel version to Rex format
+    
+    Add kernel_rex_version for kernel parsing
+
+ lib/msf/core/post/linux/kernel.rb                  | 20 ++++++++
+ modules/exploits/example_linux_priv_esc.rb         | 17 +++----
+ .../linux/local/apport_abrt_chroot_priv_esc.rb     |  4 +-
+ modules/exploits/linux/local/bpf_priv_esc.rb       | 18 ++++---
+ .../linux/local/bpf_sign_extension_priv_esc.rb     | 10 ++--
+ .../cve_2021_3490_ebpf_alu32_bounds_check_lpe.rb   | 44 ++++++-----------
+ .../linux/local/cve_2022_0847_dirtypipe.rb         | 17 ++++---
+ .../linux/local/cve_2022_1043_io_uring_priv_esc.rb | 14 +++---
+ .../local/cve_2023_0386_overlayfs_priv_esc.rb      | 15 +++---
+ .../exploits/linux/local/docker_cgroup_escape.rb   | 27 +++++-----
+ .../linux/local/glibc_realpath_priv_esc.rb         | 12 +++--
+ .../local/nested_namespace_idmap_limit_priv_esc.rb | 20 ++++----
+ .../linux/local/ptrace_traceme_pkexec_helper.rb    |  9 ++--
+ .../linux/local/rds_rds_page_copy_user_priv_esc.rb | 17 ++++---
+ modules/exploits/linux/local/sock_sendpage.rb      | 24 ++++-----
+ modules/exploits/linux/local/vmwgfx_fd_priv_esc.rb | 17 +++----
+ spec/lib/msf/core/post/linux/kernel_spec.rb        | 57 ++++++++++++++++++++++
+ 17 files changed, 211 insertions(+), 131 deletions(-)
