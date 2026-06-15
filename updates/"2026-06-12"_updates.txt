@@ -1,0 +1,33 @@
+commit 061ae117a0eaeb2e6c3b649e3455bf9287bd4921
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sun Jun 14 15:32:46 2026 +0000
+
+    Bump version of framework to 6.4.139
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit ef3d393f59dcf4bd293b1540363bd44d82f46f49
+Merge: 57f89b594b c7dba6283d
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Sun Jun 14 11:32:44 2026 +0100
+
+    Merge pull request #21564 from adfoster-r7/fix-smb-version-crash
+    
+    Fix SMB version crash on smb1
+
+ lib/msf/core/exploit/remote/smb/client.rb | 14 +++++++---
+ spec/acceptance/smb_spec.rb               | 44 +++++++++++++++++++++++++++++--
+ 2 files changed, 52 insertions(+), 6 deletions(-)
+
+commit c7dba6283d710f24099ae1daa94286e6f5f5ac8b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Sat Jun 13 10:26:17 2026 +0100
+
+    Fix SMB version crash on smb1
+
+ lib/msf/core/exploit/remote/smb/client.rb | 14 +++++++---
+ spec/acceptance/smb_spec.rb               | 44 +++++++++++++++++++++++++++++--
+ 2 files changed, 52 insertions(+), 6 deletions(-)
