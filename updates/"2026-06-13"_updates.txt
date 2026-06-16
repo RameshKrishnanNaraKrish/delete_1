@@ -1,0 +1,89 @@
+commit bcfbd3231b122ac27ec454e7819806d26093e0d1
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 15 19:08:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 51 insertions(+), 1 deletion(-)
+
+commit 52706bec71487190e77ac623eed98c22778fa3ca
+Merge: 13f33c9f33 ff0b1eeba5
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Jun 15 14:59:31 2026 -0400
+
+    Merge pull request #21472 from bhaskarbhar/cve_2026_46333
+    
+    ptrace Exit-Race
+
+ .../post/linux/gather/cve_2026_46333_chage.md      | 100 ++++++
+ lib/msf/core/post/linux.rb                         |  66 ++++
+ modules/post/linux/gather/cve_2026_46333_chage.rb  | 341 +++++++++++++++++++++
+ modules/post/linux/gather/hashdump.rb              |  60 +---
+ 4 files changed, 509 insertions(+), 58 deletions(-)
+
+commit 13f33c9f338ac77cd76ce85b381da19fc25f8634
+Merge: 3ac608e4e5 4519abfbac
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jun 15 17:19:08 2026 +0200
+
+    Merge pull request #21570 from sjanusz-r7/fix-undefined-arm-linux-call
+    
+    Fix undefined call to ArmBE to_linux_armbe_elf
+
+ lib/msf/util/exe.rb             | 1 +
+ lib/msf/util/exe/linux/armbe.rb | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 3ac608e4e53d00c3f7a8c67ae3cf3cd7aeffe55f
+Merge: db58d312c1 17124cd2ae
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Mon Jun 15 10:50:13 2026 -0400
+
+    Merge pull request #21537 from dwelch-r7/start-mcp-server-within-console
+    
+    Add MCP plugin to manage Metasploit MCP server lifecycle within msfconsole
+
+ lib/msf/core/mcp.rb                             |   5 +
+ lib/msf/core/mcp/config/defaults.rb             |  27 +
+ lib/msf/core/mcp/config/loader.rb               |  12 +-
+ plugins/mcp.rb                                  | 551 +++++++++++++++++++
+ plugins/msgrpc.rb                               |   4 +-
+ spec/integration/msfmcpd/config_loading_spec.rb |   4 +-
+ spec/lib/msf/core/mcp/config/loader_spec.rb     |   4 +-
+ spec/plugins/mcp/console_dispatcher_spec.rb     | 321 +++++++++++
+ spec/plugins/mcp/option_validator_spec.rb       | 288 ++++++++++
+ spec/plugins/mcp/rpc_resolver_spec.rb           | 283 ++++++++++
+ spec/plugins/mcp_spec.rb                        | 673 ++++++++++++++++++++++++
+ 11 files changed, 2160 insertions(+), 12 deletions(-)
+
+commit 4519abfbac239878cef042402ad969c0c6b33a4e
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Jun 15 13:52:54 2026 +0100
+
+    Fix undefined call to ArmBE to_linux_armbe_elf
+
+ lib/msf/util/exe.rb             | 1 +
+ lib/msf/util/exe/linux/armbe.rb | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit db58d312c10992337ace7949e1ef3d004df41990
+Merge: 061ae117a0 7821fbf89e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Jun 15 15:42:29 2026 +0100
+
+    Merge pull request #21571 from dwelch-r7/ignore-deleted-files-reload-lib
+    
+    Exclude deleted files from modified files list
+
+ lib/msf/ui/console/command_dispatcher/developer.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 7821fbf89e27f31d983f5966e551de1c736eeb09
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jun 15 14:01:30 2026 +0100
+
+    Exclude deleted files from modified files list
+
+ lib/msf/ui/console/command_dispatcher/developer.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
