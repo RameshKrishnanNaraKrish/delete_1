@@ -1,0 +1,151 @@
+commit d6b3ad0e94e75b10a3c0acb5bb847a79d316b800
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 16 19:11:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 45 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+
+commit 901171749c8a499ddb9535c564306c41d6cd19be
+Merge: 4268199dc5 7b37f7b6da
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Jun 16 14:02:12 2026 -0500
+
+    Merge pull request #21430 from jheysel-r7/feat/ntlm_relay_2_self
+    
+    NTLMRelay2Self - HTTP to LDAP Relay
+
+ .../exploit/windows/local/ntlm_relay_2_self.md     | 298 ++++++++++
+ lib/msf/core/exploit/remote/smb/client.rb          |  14 +-
+ lib/msf/core/exploit/remote/tcp.rb                 |   1 +
+ .../exploits/windows/local/ntlm_relay_2_self.rb    | 617 +++++++++++++++++++++
+ 4 files changed, 928 insertions(+), 2 deletions(-)
+
+commit 4268199dc51cf49fc426946470c42dc41527c4a6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 16 15:57:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 0ead4a45adf170e21d324aed3bc060f9832f9a76
+Merge: 7e2c5e5e11 6d7c49e52d
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jun 16 08:47:39 2026 -0700
+
+    Merge pull request #21371 from bootstrapbool/xerte_unauthenticated_mediaupload
+    
+    Adds xerte online toolkits media upload exploit
+
+ .../http/xerte_unauthenticated_mediaupload.md      | 161 +++++++++++++
+ .../http/xerte_unauthenticated_mediaupload.rb      | 258 +++++++++++++++++++++
+ 2 files changed, 419 insertions(+)
+
+commit 7b37f7b6da20508584dd6733c7ce1f4fc0ba8d78
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jun 16 08:11:29 2026 -0700
+
+    Update documentation/modules/exploit/windows/local/ntlm_relay_2_self.md
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ documentation/modules/exploit/windows/local/ntlm_relay_2_self.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7e2c5e5e112a98bdb519433ba3e4f50ca63f8969
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 16 14:55:30 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f39dff30110b90df1aad7a76fc2214cf4151f7c6
+Merge: 77ea90e9df f7e606277d
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Jun 16 16:46:16 2026 +0200
+
+    Merge pull request #21441 from dwelch-r7/puma-graceful-shutdown
+    
+    implement graceful shutdown for Puma server
+
+ config/mcp_config.yaml.example                 |   4 +
+ config/mcp_config_jsonrpc.yaml.example         |   4 +
+ lib/msf/core/mcp/application.rb                |  31 ++++--
+ lib/msf/core/mcp/config/loader.rb              |   8 ++
+ lib/msf/core/mcp/config/validator.rb           |  28 +++++
+ lib/msf/core/mcp/server.rb                     |  64 ++++++++++--
+ spec/lib/msf/core/mcp/application_spec.rb      |  39 ++++---
+ spec/lib/msf/core/mcp/config/loader_spec.rb    |  43 ++++++++
+ spec/lib/msf/core/mcp/config/validator_spec.rb |  74 +++++++++++++
+ spec/lib/msf/core/mcp/server_spec.rb           | 138 ++++++++++++++++++++-----
+ 10 files changed, 374 insertions(+), 59 deletions(-)
+
+commit 77ea90e9df51a28d1b339165347c017acf3018ec
+Merge: 3d67f35cd0 97c448d639
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 16 15:45:57 2026 +0100
+
+    Merge pull request #21555 from LoganM26/LoganM26-patch-1
+    
+    Remove unused imports in wmiexec.py
+
+ modules/auxiliary/scanner/smb/impacket/wmiexec.py | 3 ---
+ 1 file changed, 3 deletions(-)
+
+commit 3d67f35cd0f4ebc8a508929ca48bfa3d72632a42
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 16 13:05:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f603d6a1c5041582d9a21b60e1e09f1721e1ef89
+Merge: bcfbd3231b 8379ec2d8d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 16 13:55:13 2026 +0100
+
+    Merge pull request #21542 from h00die/reds_output
+    
+    cleanup redis output
+
+ .../auxiliary/scanner/redis/redis_server.md        | 287 ++++++++++++++++++++-
+ modules/auxiliary/scanner/redis/redis_server.rb    |  52 +++-
+ 2 files changed, 330 insertions(+), 9 deletions(-)
+
+commit 8379ec2d8de7547ac0bf9630f592b77fed0bc728
+Author: h00die <h00die@github>
+Date:   Tue Jun 16 08:27:50 2026 -0400
+
+    redis review
+
+ documentation/modules/auxiliary/scanner/redis/redis_server.md | 2 ++
+ modules/auxiliary/scanner/redis/redis_server.rb               | 6 +++---
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit cea0c8355d917847e765bf779caf64600316fa07
+Author: h00die <h00die@github>
+Date:   Tue Jun 16 08:02:03 2026 -0400
+
+    Potential fix for pull request finding
+    
+    Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@users.noreply.github.com>
+
+ modules/auxiliary/scanner/redis/redis_server.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit f7e606277dde3cecd46ce44cb5849ffc6b746f5d
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Jun 10 16:17:43 2026 +0100
+
+    refactor shutdown method to remove signal parameter and simplify exit handling
+
+ lib/msf/core/mcp/application.rb           | 14 ++++++--------
+ spec/lib/msf/core/mcp/application_spec.rb | 16 ++++++++--------
+ 2 files changed, 14 insertions(+), 16 deletions(-)
