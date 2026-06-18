@@ -1,0 +1,344 @@
+commit fcfa5c2a86f2c5c787c535ae9a90a2038989b1d3
+Merge: 9513936932 39e0c286a7
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jun 17 15:23:48 2026 -0700
+
+    Merge pull request #21259 from g0tmi1k/search
+    
+    Various search improvements
+
+ lib/msf/ui/console/command_dispatcher/modules.rb | 48 +++++++++++++++++-------
+ 1 file changed, 34 insertions(+), 14 deletions(-)
+
+commit 95139369322b8195857809fd101918f35eecd110
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 17 21:31:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit efec008f744df284ec101474f042298704530f83
+Merge: dcdc6af1db 70f5451325
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jun 17 14:22:16 2026 -0700
+
+    Merge pull request #21367 from g0tmi1k/rexec
+    
+    rexec_login improvements
+
+ modules/auxiliary/scanner/rservices/rexec_login.rb | 118 +++++++++++----------
+ 1 file changed, 63 insertions(+), 55 deletions(-)
+
+commit 39e0c286a7212fc82203eb6354c129b5a0de67d2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jun 17 11:10:15 2026 -0700
+
+    Update lib/msf/ui/console/command_dispatcher/modules.rb
+
+ lib/msf/ui/console/command_dispatcher/modules.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dcdc6af1dbaab4bebbce65a304422264359bdd3d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 17 13:26:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 110 +++++++++++++++++++++---------------------
+ 1 file changed, 55 insertions(+), 55 deletions(-)
+
+commit a3ec0beeaec2cc9b9bbec0e77d88292c4de2dc15
+Merge: dfda8c925e 4d55ca9092
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Wed Jun 17 09:16:11 2026 -0400
+
+    Merge pull request #21454 from adfoster-r7/add-additional-checkcode-requirements
+    
+    Add additional checkcode requirements
+
+ .rubocop.yml                                       |   5 +
+ AGENTS.md                                          |   1 +
+ lib/rubocop/cop/lint/check_code_missing_reason.rb  | 157 +++++++++++++
+ .../detect_metadata_trailing_leading_whitespace.rb |   3 +-
+ .../auxiliary/admin/http/wp_masterstudy_privesc.rb |   2 +-
+ .../http/wp_woocommerce_payments_add_user.rb       |   4 +-
+ .../linux/antivirus/escan_password_exec.rb         |   4 +-
+ modules/exploits/linux/ftp/proftp_sreplace.rb      |  10 +-
+ modules/exploits/linux/ftp/proftp_telnet_iac.rb    |   8 +-
+ modules/exploits/linux/imap/imap_uw_lsub.rb        |   2 +-
+ modules/exploits/linux/local/bpf_priv_esc.rb       |   4 +-
+ .../linux/local/cve_2022_1043_io_uring_priv_esc.rb |   2 +-
+ .../linux/local/cve_2026_31431_copy_fail.rb        |   2 +-
+ .../linux/local/glibc_realpath_priv_esc.rb         |   2 +-
+ .../local/nested_namespace_idmap_limit_priv_esc.rb |   2 +-
+ modules/exploits/linux/local/sock_sendpage.rb      |   2 +-
+ .../linux/misc/aerospike_database_udf_cmd_exec.rb  |   6 +-
+ modules/exploits/linux/misc/cisco_ios_xe_rce.rb    |   2 +-
+ modules/exploits/linux/misc/cisco_rv340_sslvpn.rb  |   4 +-
+ .../exploits/linux/misc/cve_2020_13160_anydesk.rb  |   2 +-
+ .../exploits/linux/misc/cve_2021_38647_omigod.rb   |   6 +-
+ .../linux/misc/fortimanager_rce_cve_2024_47575.rb  |   2 +-
+ .../hid_discoveryd_command_blink_on_unauth_rce.rb  |   8 +-
+ modules/exploits/linux/misc/hp_nnmi_pmd_bof.rb     |   6 +-
+ modules/exploits/linux/misc/hp_vsa_login_bof.rb    |   6 +-
+ .../exploits/linux/misc/igel_command_injection.rb  |  12 +-
+ .../linux/misc/jenkins_java_deserialize.rb         |   6 +-
+ .../linux/misc/jenkins_ldap_deserialize.rb         |   6 +-
+ .../exploits/linux/misc/nagios_nrpe_arguments.rb   |  10 +-
+ .../linux/misc/netcore_udp_53413_backdoor.rb       |   6 +-
+ .../linux/misc/novell_edirectory_ncp_bof.rb        |   4 +-
+ .../exploits/linux/misc/qnap_transcode_server.rb   |   6 +-
+ modules/exploits/linux/misc/sercomm_exec.rb        |   6 +-
+ .../linux/misc/tplink_archer_a7_c7_lan_rce.rb      |   6 +-
+ .../linux/misc/unidata_udadmin_auth_bypass.rb      |   2 +-
+ .../unidata_udadmin_password_stack_overflow.rb     |   2 +-
+ modules/exploits/linux/misc/zabbix_server_exec.rb  |   8 +-
+ .../misc/zyxel_ike_decoder_rce_cve_2023_28771.rb   |   2 +-
+ .../misc/zyxel_multiple_devices_zhttp_lan_rce.rb   |   4 +-
+ .../exploits/linux/postgres/postgres_payload.rb    |   2 +-
+ .../exploits/linux/pptp/poptop_negative_read.rb    |   4 +-
+ .../linux/redis/redis_replication_cmd_exec.rb      |   4 +-
+ modules/exploits/linux/samba/is_known_pipename.rb  |  10 +-
+ .../exploits/linux/samba/lsa_transnames_heap.rb    |   4 +-
+ modules/exploits/linux/samba/setinfopolicy_heap.rb |  10 +-
+ modules/exploits/linux/smtp/apache_james_exec.rb   |   5 +-
+ .../exploits/linux/smtp/exim_gethostbyname_bof.rb  |  10 +-
+ modules/exploits/linux/snmp/awind_snmp_exec.rb     |   4 +-
+ modules/exploits/linux/ssh/ssh_erlangotp_rce.rb    |   2 +-
+ .../exploits/linux/telnet/netgear_telnetenable.rb  |   4 +-
+ .../exploits/linux/upnp/belkin_wemo_upnp_exec.rb   |   8 +-
+ .../exploits/linux/upnp/dlink_upnp_msearch_exec.rb |   2 +-
+ modules/exploits/linux/upnp/miniupnpd_soap_bof.rb  |   4 +-
+ .../multi/http/manage_engine_dc_pmp_sqli.rb        |   2 +-
+ .../http/oscommerce_installer_unauth_code_exec.rb  |   8 +-
+ .../http/wp_plugin_supsystic_contact_form_rce.rb   |   4 +-
+ .../multi/misc/vscode_ipynb_remote_dev_exec.rb     |   2 +-
+ .../unix/http/pfsense_diag_routes_webshell.rb      |   2 +-
+ .../windows/sage/x3_adxsrv_auth_bypass_cmd_exec.rb |   2 +-
+ .../cop/lint/check_code_missing_reason_spec.rb     | 246 +++++++++++++++++++++
+ ...ct_metadata_trailing_leading_whitespace_spec.rb |  12 +
+ 61 files changed, 552 insertions(+), 131 deletions(-)
+
+commit dfda8c925e556acc0b2c9e1394d32c60eafc6761
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 17 10:52:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 162 +++++++++++++++++++++---------------------
+ 1 file changed, 81 insertions(+), 81 deletions(-)
+
+commit fd670aa3c04776923d9bffd81be4dd2d894448b5
+Merge: d6b3ad0e94 a62e92f1b2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jun 17 11:42:43 2026 +0100
+
+    Merge pull request #21505 from h00die/fix_module_disclosure_dates_because_its_an_easy_win_and_i_like_easy_wins_and_also_consistency
+    
+    convert module dates to newer standard
+
+ .../cop/lint/module_disclosure_date_format.rb      | 13 +++++++--
+ .../admin/http/cfme_manageiq_evm_pass_reset.rb     |  2 +-
+ .../http/foreman_openstack_satellite_priv_esc.rb   |  2 +-
+ .../admin/http/katello_satellite_priv_esc.rb       |  2 +-
+ .../admin/http/netgear_soap_password_extractor.rb  |  2 +-
+ .../auxiliary/admin/http/tomcat_utf8_traversal.rb  |  2 +-
+ .../admin/http/trendmicro_dlp_traversal.rb         |  2 +-
+ modules/auxiliary/admin/http/typo3_sa_2009_001.rb  |  2 +-
+ .../admin/sunrpc/solaris_kcms_readfile.rb          |  2 +-
+ modules/auxiliary/dos/mdns/avahi_portzero.rb       |  2 +-
+ modules/auxiliary/dos/syslog/rsyslog_long_tag.rb   |  2 +-
+ .../auxiliary/dos/windows/llmnr/ms11_030_dnsapi.rb |  2 +-
+ modules/auxiliary/dos/wireshark/ldap.rb            |  2 +-
+ modules/auxiliary/fileformat/odt_badodt.rb         |  2 +-
+ .../gather/c2s_dvr_password_disclosure.rb          |  2 +-
+ .../gather/cerberus_helpdesk_hash_disclosure.rb    |  2 +-
+ .../gather/ipcamera_password_disclosure.rb         |  2 +-
+ modules/auxiliary/scanner/chargen/chargen_probe.rb |  2 +-
+ .../auxiliary/scanner/dlsw/dlsw_leak_capture.rb    |  2 +-
+ modules/auxiliary/scanner/etcd/open_key_scanner.rb |  2 +-
+ modules/auxiliary/scanner/etcd/version.rb          |  2 +-
+ .../scanner/ftp/titanftp_xcrc_traversal.rb         |  2 +-
+ .../scanner/http/barracuda_directory_traversal.rb  |  2 +-
+ .../scanner/http/dlink_user_agent_backdoor.rb      |  2 +-
+ .../scanner/http/es_file_explorer_open_port.rb     |  2 +-
+ .../scanner/http/intel_amt_digest_bypass.rb        |  2 +-
+ .../scanner/http/majordomo2_directory_traversal.rb |  2 +-
+ .../http/novell_file_reporter_fsfui_fileaccess.rb  |  2 +-
+ .../http/novell_file_reporter_srs_fileaccess.rb    |  2 +-
+ .../auxiliary/scanner/http/owa_iis_internal_ip.rb  |  2 +-
+ .../http/riverbed_steelhead_vcx_file_read.rb       |  2 +-
+ .../scanner/http/smt_ipmi_static_cert_scanner.rb   |  2 +-
+ modules/auxiliary/scanner/ipmi/ipmi_cipher_zero.rb |  2 +-
+ modules/auxiliary/scanner/ipmi/ipmi_dumphashes.rb  |  2 +-
+ .../auxiliary/scanner/memcached/memcached_amp.rb   |  2 +-
+ .../scanner/memcached/memcached_udp_version.rb     |  2 +-
+ modules/auxiliary/scanner/misc/java_jmx_server.rb  |  2 +-
+ modules/auxiliary/scanner/misc/java_rmi_server.rb  |  2 +-
+ .../scanner/mysql/mysql_authbypass_hashdump.rb     |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_peer_list_dos.rb |  2 +-
+ .../auxiliary/scanner/ntp/ntp_peer_list_sum_dos.rb |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_req_nonce_dos.rb |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_reslist_dos.rb   |  2 +-
+ modules/auxiliary/scanner/ntp/ntp_unsettrap_dos.rb |  2 +-
+ modules/auxiliary/scanner/scada/koyo_login.rb      |  2 +-
+ modules/auxiliary/scanner/scada/modbusdetect.rb    |  2 +-
+ modules/auxiliary/scanner/ssl/openssl_ccs.rb       |  2 +-
+ modules/auxiliary/scanner/ssl/ssl_version.rb       |  2 +-
+ modules/auxiliary/server/dhclient_bash_env.rb      |  2 +-
+ .../auxiliary/server/jsse_skiptls_mitm_proxy.rb    |  2 +-
+ modules/auxiliary/server/netbios_spoof_nat.rb      |  2 +-
+ .../server/openssl_altchainsforgery_mitm_proxy.rb  |  2 +-
+ .../server/openssl_heartbeat_client_memory.rb      |  2 +-
+ .../auxiliary/server/wget_symlink_file_write.rb    |  2 +-
+ modules/auxiliary/spoof/arp/arp_poisoning.rb       |  2 +-
+ .../linux/http/cfme_manageiq_evm_upload_exec.rb    |  2 +-
+ .../http/foreman_openstack_satellite_code_exec.rb  |  2 +-
+ modules/exploits/linux/misc/zabbix_server_exec.rb  |  2 +-
+ .../exploits/multi/ftp/wuftpd_site_exec_format.rb  |  2 +-
+ modules/exploits/multi/misc/java_jdwp_debugger.rb  |  2 +-
+ .../sap/sap_soap_rfc_sxpg_call_system_exec.rb      |  2 +-
+ .../multi/sap/sap_soap_rfc_sxpg_command_exec.rb    |  2 +-
+ modules/exploits/multi/ssh/sshexec.rb              |  2 +-
+ .../fileformat/erdas_er_viewer_rf_report_error.rb  |  2 +-
+ .../windows/http/avaya_ccr_imageupload_exec.rb     |  2 +-
+ .../windows/http/cogent_datahub_command.rb         |  2 +-
+ modules/exploits/windows/http/hp_mpa_job_acct.rb   |  2 +-
+ .../http/landesk_thinkmanagement_upload_asp.rb     |  2 +-
+ .../windows/http/manageengine_apps_mngr.rb         |  2 +-
+ modules/exploits/windows/http/novell_mdm_lfi.rb    |  2 +-
+ .../exploits/windows/http/oracle_endeca_exec.rb    |  2 +-
+ .../windows/http/sap_host_control_cmd_exec.rb      |  2 +-
+ .../exploits/windows/http/umbraco_upload_aspx.rb   |  2 +-
+ .../exploits/windows/iis/iis_webdav_upload_asp.rb  |  2 +-
+ modules/exploits/windows/iis/msadc.rb              |  2 +-
+ modules/exploits/windows/local/pxeexploit.rb       |  2 +-
+ modules/exploits/windows/misc/fb_cnct_group.rb     |  2 +-
+ .../windows/misc/hp_operations_agent_coda_34.rb    |  2 +-
+ .../windows/misc/hp_operations_agent_coda_8c.rb    |  2 +-
+ .../windows/misc/ibm_director_cim_dllinject.rb     |  2 +-
+ .../exploits/windows/misc/ms10_104_sharepoint.rb   |  2 +-
+ .../windows/scada/ge_proficy_cimplicity_gefebt.rb  |  2 +-
+ spec/lib/msf/core/exploit/browser_autopwn2_spec.rb |  8 +++---
+ .../cop/lint/module_disclosure_date_format_spec.rb | 31 ++++++++++++++++++++++
+ tools/dev/msftidy.rb                               | 14 ++--------
+ 85 files changed, 129 insertions(+), 99 deletions(-)
+
+commit a62e92f1b2e18075e0648f355b05366a031a3dff
+Author: h00die <h00die@github>
+Date:   Tue May 26 13:26:37 2026 -0400
+
+    Update spec
+
+ spec/lib/msf/core/exploit/browser_autopwn2_spec.rb | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 42eb5e7f902914832ca0bcc55d5590ae1154ce0c
+Author: h00die <h00die@github>
+Date:   Tue May 26 13:20:32 2026 -0400
+
+    remove old format from msftidy
+
+ tools/dev/msftidy.rb | 14 ++------------
+ 1 file changed, 2 insertions(+), 12 deletions(-)
+
+commit e5e8a6578f702dc6e2cfacaa0762db48978d0714
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jun 17 11:11:50 2026 +0100
+
+    Update module disclosure dates
+
+ modules/auxiliary/admin/http/cfme_manageiq_evm_pass_reset.rb            | 2 +-
+ modules/auxiliary/admin/http/foreman_openstack_satellite_priv_esc.rb    | 2 +-
+ modules/auxiliary/admin/http/katello_satellite_priv_esc.rb              | 2 +-
+ modules/auxiliary/admin/http/netgear_soap_password_extractor.rb         | 2 +-
+ modules/auxiliary/admin/http/tomcat_utf8_traversal.rb                   | 2 +-
+ modules/auxiliary/admin/http/trendmicro_dlp_traversal.rb                | 2 +-
+ modules/auxiliary/admin/http/typo3_sa_2009_001.rb                       | 2 +-
+ modules/auxiliary/admin/sunrpc/solaris_kcms_readfile.rb                 | 2 +-
+ modules/auxiliary/dos/mdns/avahi_portzero.rb                            | 2 +-
+ modules/auxiliary/dos/syslog/rsyslog_long_tag.rb                        | 2 +-
+ modules/auxiliary/dos/windows/llmnr/ms11_030_dnsapi.rb                  | 2 +-
+ modules/auxiliary/dos/wireshark/ldap.rb                                 | 2 +-
+ modules/auxiliary/fileformat/odt_badodt.rb                              | 2 +-
+ modules/auxiliary/gather/c2s_dvr_password_disclosure.rb                 | 2 +-
+ modules/auxiliary/gather/cerberus_helpdesk_hash_disclosure.rb           | 2 +-
+ modules/auxiliary/gather/ipcamera_password_disclosure.rb                | 2 +-
+ modules/auxiliary/scanner/chargen/chargen_probe.rb                      | 2 +-
+ modules/auxiliary/scanner/dlsw/dlsw_leak_capture.rb                     | 2 +-
+ modules/auxiliary/scanner/etcd/open_key_scanner.rb                      | 2 +-
+ modules/auxiliary/scanner/etcd/version.rb                               | 2 +-
+ modules/auxiliary/scanner/ftp/titanftp_xcrc_traversal.rb                | 2 +-
+ modules/auxiliary/scanner/http/barracuda_directory_traversal.rb         | 2 +-
+ modules/auxiliary/scanner/http/dlink_user_agent_backdoor.rb             | 2 +-
+ modules/auxiliary/scanner/http/es_file_explorer_open_port.rb            | 2 +-
+ modules/auxiliary/scanner/http/intel_amt_digest_bypass.rb               | 2 +-
+ modules/auxiliary/scanner/http/majordomo2_directory_traversal.rb        | 2 +-
+ modules/auxiliary/scanner/http/novell_file_reporter_fsfui_fileaccess.rb | 2 +-
+ modules/auxiliary/scanner/http/novell_file_reporter_srs_fileaccess.rb   | 2 +-
+ modules/auxiliary/scanner/http/owa_iis_internal_ip.rb                   | 2 +-
+ modules/auxiliary/scanner/http/riverbed_steelhead_vcx_file_read.rb      | 2 +-
+ modules/auxiliary/scanner/http/smt_ipmi_static_cert_scanner.rb          | 2 +-
+ modules/auxiliary/scanner/ipmi/ipmi_cipher_zero.rb                      | 2 +-
+ modules/auxiliary/scanner/ipmi/ipmi_dumphashes.rb                       | 2 +-
+ modules/auxiliary/scanner/memcached/memcached_amp.rb                    | 2 +-
+ modules/auxiliary/scanner/memcached/memcached_udp_version.rb            | 2 +-
+ modules/auxiliary/scanner/misc/java_jmx_server.rb                       | 2 +-
+ modules/auxiliary/scanner/misc/java_rmi_server.rb                       | 2 +-
+ modules/auxiliary/scanner/mysql/mysql_authbypass_hashdump.rb            | 2 +-
+ modules/auxiliary/scanner/ntp/ntp_peer_list_dos.rb                      | 2 +-
+ modules/auxiliary/scanner/ntp/ntp_peer_list_sum_dos.rb                  | 2 +-
+ modules/auxiliary/scanner/ntp/ntp_req_nonce_dos.rb                      | 2 +-
+ modules/auxiliary/scanner/ntp/ntp_reslist_dos.rb                        | 2 +-
+ modules/auxiliary/scanner/ntp/ntp_unsettrap_dos.rb                      | 2 +-
+ modules/auxiliary/scanner/scada/koyo_login.rb                           | 2 +-
+ modules/auxiliary/scanner/scada/modbusdetect.rb                         | 2 +-
+ modules/auxiliary/scanner/ssl/openssl_ccs.rb                            | 2 +-
+ modules/auxiliary/scanner/ssl/ssl_version.rb                            | 2 +-
+ modules/auxiliary/server/dhclient_bash_env.rb                           | 2 +-
+ modules/auxiliary/server/jsse_skiptls_mitm_proxy.rb                     | 2 +-
+ modules/auxiliary/server/netbios_spoof_nat.rb                           | 2 +-
+ modules/auxiliary/server/openssl_altchainsforgery_mitm_proxy.rb         | 2 +-
+ modules/auxiliary/server/openssl_heartbeat_client_memory.rb             | 2 +-
+ modules/auxiliary/server/wget_symlink_file_write.rb                     | 2 +-
+ modules/auxiliary/spoof/arp/arp_poisoning.rb                            | 2 +-
+ modules/exploits/linux/http/cfme_manageiq_evm_upload_exec.rb            | 2 +-
+ modules/exploits/linux/http/foreman_openstack_satellite_code_exec.rb    | 2 +-
+ modules/exploits/linux/misc/zabbix_server_exec.rb                       | 2 +-
+ modules/exploits/multi/ftp/wuftpd_site_exec_format.rb                   | 2 +-
+ modules/exploits/multi/misc/java_jdwp_debugger.rb                       | 2 +-
+ modules/exploits/multi/sap/sap_soap_rfc_sxpg_call_system_exec.rb        | 2 +-
+ modules/exploits/multi/sap/sap_soap_rfc_sxpg_command_exec.rb            | 2 +-
+ modules/exploits/multi/ssh/sshexec.rb                                   | 2 +-
+ modules/exploits/windows/fileformat/erdas_er_viewer_rf_report_error.rb  | 2 +-
+ modules/exploits/windows/http/avaya_ccr_imageupload_exec.rb             | 2 +-
+ modules/exploits/windows/http/cogent_datahub_command.rb                 | 2 +-
+ modules/exploits/windows/http/hp_mpa_job_acct.rb                        | 2 +-
+ modules/exploits/windows/http/landesk_thinkmanagement_upload_asp.rb     | 2 +-
+ modules/exploits/windows/http/manageengine_apps_mngr.rb                 | 2 +-
+ modules/exploits/windows/http/novell_mdm_lfi.rb                         | 2 +-
+ modules/exploits/windows/http/oracle_endeca_exec.rb                     | 2 +-
+ modules/exploits/windows/http/sap_host_control_cmd_exec.rb              | 2 +-
+ modules/exploits/windows/http/umbraco_upload_aspx.rb                    | 2 +-
+ modules/exploits/windows/iis/iis_webdav_upload_asp.rb                   | 2 +-
+ modules/exploits/windows/iis/msadc.rb                                   | 2 +-
+ modules/exploits/windows/local/pxeexploit.rb                            | 2 +-
+ modules/exploits/windows/misc/fb_cnct_group.rb                          | 2 +-
+ modules/exploits/windows/misc/hp_operations_agent_coda_34.rb            | 2 +-
+ modules/exploits/windows/misc/hp_operations_agent_coda_8c.rb            | 2 +-
+ modules/exploits/windows/misc/ibm_director_cim_dllinject.rb             | 2 +-
+ modules/exploits/windows/misc/ms10_104_sharepoint.rb                    | 2 +-
+ modules/exploits/windows/scada/ge_proficy_cimplicity_gefebt.rb          | 2 +-
+ 81 files changed, 81 insertions(+), 81 deletions(-)
+
+commit fdfeb7b4334ca1b6b9d0873d4fb306a8feb1a8dd
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Jun 17 10:27:45 2026 +0100
+
+    Update linting logic to detect all module dates
+
+ .../cop/lint/module_disclosure_date_format.rb      | 13 +++++++--
+ .../cop/lint/module_disclosure_date_format_spec.rb | 31 ++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 2 deletions(-)
