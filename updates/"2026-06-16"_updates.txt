@@ -1,0 +1,125 @@
+commit 8c32e9bdfa989a1809bcdc0450995a0ccc91847f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 18 20:58:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                      | 35 ++++++++++++++++++++++
+ .../payloads/singles/cmd/unix/bind_socat_tcp.rb    |  2 +-
+ 2 files changed, 36 insertions(+), 1 deletion(-)
+
+commit 1a41a30895da90ff5356681939ef3be23ef4d2f0
+Merge: beb8ee61af 245d3d9979
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jun 18 15:48:52 2026 -0500
+
+    Merge pull request #21523 from zeroSteiner/feat/mod/cell-socks
+    
+    Add a module for pivoting over a Quectel Modem
+
+ .../modules/auxiliary/server/quectel_modem.md      |  72 ++
+ lib/msf/base/sessions/modem.rb                     | 470 +++++++++++
+ lib/msf/base/sessions/modem/quectel.rb             | 867 +++++++++++++++++++++
+ lib/msf/core/db_manager/route.rb                   |   4 +
+ lib/rex/proto/dns/resolver.rb                      |   3 +
+ modules/auxiliary/server/quectel_modem.rb          | 174 +++++
+ spec/lib/msf/base/sessions/modem/quectel_spec.rb   | 304 ++++++++
+ spec/lib/msf/base/sessions/modem_spec.rb           | 351 +++++++++
+ spec/lib/rex/proto/dns/resolver_spec.rb            |  40 +
+ 9 files changed, 2285 insertions(+)
+
+commit 245d3d997932fd8282b4f39e46181c9882ce0f9b
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 18 16:23:02 2026 -0400
+
+    Add the scenario details back
+
+ .../modules/auxiliary/server/quectel_modem.md         | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+commit beb8ee61af0b92a47d155417b6b8c3b74515174e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 18 17:57:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 119 ++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 115 insertions(+), 4 deletions(-)
+
+commit 4ecda5ec51f454acafc4b816d53673f6e4ced099
+Merge: 4883d70cd4 b61ee9c1c4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 18 10:47:29 2026 -0700
+
+    Merge pull request #21525 from sfewer-r7/CVE-2026-0826
+    
+    Exploit module for HP Poly VVX (CVE-2026-0826)
+
+ .../linux/misc/poly_unauth_rce_cve_2026_0826.md    |  87 +++++++
+ .../linux/misc/poly_unauth_rce_cve_2026_0826.rb    | 253 +++++++++++++++++++++
+ .../payloads/singles/cmd/unix/bind_socat_tcp.rb    |  64 ++++++
+ spec/modules/payloads_spec.rb                      |   9 +
+ 4 files changed, 413 insertions(+)
+
+commit 4883d70cd47661e6eead7ddb4b273e70c00645a2
+Merge: bceb184ec1 affe575b36
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 18 10:42:42 2026 -0700
+
+    Merge pull request #21469 from Pushpenderrathore/feature/ldap-schannel-trace-staging
+    
+    Add CertificateTrace support to LDAP Schannel authentication
+
+ lib/msf/core/exploit/remote/ldap.rb           |  18 +++-
+ spec/lib/msf/core/exploit/remote/ldap_spec.rb | 122 ++++++++++++++++++++++++++
+ 2 files changed, 137 insertions(+), 3 deletions(-)
+
+commit bceb184ec121305f4410ebf1f9ffb16a882acabd
+Merge: 2a895e0b1c eebbdeb08b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 18 10:40:28 2026 -0700
+
+    Merge pull request #21369 from g0tmi1k/vsftpd_232
+    
+    vsftpd_232: Misc fix ups
+
+ modules/auxiliary/dos/ftp/vsftpd_232.rb | 109 +++++++++++++++++++++++---------
+ 1 file changed, 80 insertions(+), 29 deletions(-)
+
+commit b61ee9c1c4dc27e087eef5576d223e3dd75795ef
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Jun 18 15:17:36 2026 +0100
+
+    add in payload spec for the new bind_socat_tcp
+
+ spec/modules/payloads_spec.rb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 2a895e0b1cd008a6cb2c66d3498e61a4495db1d4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 18 12:34:48 2026 +0000
+
+    Bump version of framework to 6.4.140
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit e9439c4b363d8b7373aea48b7387c9b8d555ce38
+Merge: fcfa5c2a86 8aae5fb859
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jun 18 10:42:18 2026 +0100
+
+    Merge pull request #21512 from adfoster-r7/add-mcp-module-notes-and-comments-for-hosts
+    
+    Add MCP module notes and comments for hosts
+
+ config/mcp_config.yaml.example                                     | 4 ++--
+ docs/metasploit-framework.wiki/How-to-use-Metasploit-MCP-Server.md | 3 +++
+ lib/msf/core/mcp/metasploit/response_transformer.rb                | 4 +++-
+ lib/msf/core/mcp/rpc_manager.rb                                    | 2 +-
+ lib/msf/core/mcp/tools/host_info.rb                                | 3 ++-
+ lib/msf/core/mcp/tools/module_info.rb                              | 1 +
+ spec/lib/msf/core/mcp/metasploit/response_transformer_spec.rb      | 6 +++++-
+ 7 files changed, 17 insertions(+), 6 deletions(-)
