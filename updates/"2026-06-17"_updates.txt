@@ -1,0 +1,47 @@
+commit 49be11f65620825bf312369dcaf1f7a2fafe40d9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jun 19 17:49:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+
+commit be2d45699a9b7479f1e562dd479577d839c85eab
+Merge: 47eb7a1127 ceaac36119
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jun 19 10:39:32 2026 -0700
+
+    Merge pull request #21381 from g0tmi1k/proftpd_133c_backdoor
+    
+    proftpd_133c_backdoor: Various improvements
+
+ modules/exploits/unix/ftp/proftpd_133c_backdoor.rb | 81 +++++++++++++++++-----
+ 1 file changed, 62 insertions(+), 19 deletions(-)
+
+commit 47eb7a1127edc06e46391cd33459693e0ed371d9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jun 19 13:29:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 73 +++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 64 insertions(+), 9 deletions(-)
+
+commit 2466c6f66991e3e89c48037191a23b2f2a057fa9
+Merge: 8c32e9bdfa 7f02d1da16
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 19 15:19:40 2026 +0200
+
+    Land #21449, adds Joplin persistence module
+    
+    Joplin plugin Persistence
+
+ data/exploits/joplin_plugin/index.js.template      |   1 +
+ .../exploit/multi/persistence/joplin_plugin.md     | 233 ++++++++++++
+ .../exploits/linux/persistence/emacs_extension.rb  |   3 +-
+ modules/exploits/linux/persistence/vim_plugin.rb   |   1 +
+ .../exploits/multi/persistence/burp_extension.rb   |   3 +-
+ .../exploits/multi/persistence/joplin_plugin.rb    | 410 +++++++++++++++++++++
+ .../exploits/multi/persistence/obsidian_plugin.rb  |   3 +-
+ 7 files changed, 651 insertions(+), 3 deletions(-)
