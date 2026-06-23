@@ -1,0 +1,73 @@
+commit 81648e60715389554f3d394955a3d68786569467
+Merge: cf12a23639 2efc17c970
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Jun 22 13:59:37 2026 -0700
+
+    Merge pull request #21396 from g0tmi1k/auth_brute_mixin
+    
+    Auth_Brute mixin: Add report_host/report_service & remove dup IP:PORT
+
+ lib/metasploit/framework/login_scanner/base.rb | 38 ++++++++++++++++++++++++++
+ lib/metasploit/framework/login_scanner/ftp.rb  |  3 +-
+ lib/msf/core/auxiliary/auth_brute.rb           | 23 ++++++++++++++--
+ 3 files changed, 60 insertions(+), 4 deletions(-)
+
+commit cf12a23639afc09ab306df871085e068bf88e87d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 22 20:46:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 3fb8a3e8d8d1f60d6e80440f0b0c95472378acc8
+Merge: 0cbfa05dcf 44bce6e598
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Jun 22 13:36:57 2026 -0700
+
+    Merge pull request #21565 from kenlacroix/audiobookshelf-cve-2025-25205
+    
+    Add Audiobookshelf authentication bypass scanner (CVE-2025-25205)
+
+ .../scanner/http/audiobookshelf_auth_bypass.md     |  97 ++++++++++++++
+ .../scanner/http/audiobookshelf_auth_bypass.rb     | 145 +++++++++++++++++++++
+ 2 files changed, 242 insertions(+)
+
+commit 0cbfa05dcf12a77c139054af67eef0949b343a56
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 22 14:53:01 2026 +0000
+
+    Bump version of framework to 6.4.141
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 23 ++++++++++++-----------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 14 insertions(+), 13 deletions(-)
+
+commit d9877a6d29e42b36755e38798273d7ab822e95b4
+Merge: 49be11f656 62c2d3ec4a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 22 13:23:28 2026 +0100
+
+    Merge pull request #21308 from dwelch-r7/rails-8.0-upgrade
+    
+    Upgrade framework to rails 8.0
+
+ Gemfile.lock                                       | 70 +++++++++++-----------
+ config/application.rb                              | 25 ++++----
+ db/schema.rb                                       |  4 +-
+ .../framework/rails_version_constraint.rb          |  2 +-
+ metasploit-framework.gemspec                       |  8 +--
+ 5 files changed, 55 insertions(+), 54 deletions(-)
+
+commit 62c2d3ec4a2db54da93850c9bdf5c605f38c2511
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jun 22 12:58:24 2026 +0100
+
+    Update Rails dependencies to version 8.0.5 in Gemfile.lock and adjust gemspec for railties
+
+ Gemfile.lock                                         | 8 ++++----
+ lib/metasploit/framework/rails_version_constraint.rb | 2 +-
+ metasploit-framework.gemspec                         | 2 +-
+ 3 files changed, 6 insertions(+), 6 deletions(-)
