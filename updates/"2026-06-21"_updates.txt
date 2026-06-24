@@ -1,0 +1,64 @@
+commit 4b6d1125b62910c98c240406b4cf94f210a85f91
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 23 19:48:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 4131f0efc78f93a4a6c4e42d22f532185474cb70
+Merge: 02ab83f4b9 11203246de
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jun 23 12:40:26 2026 -0700
+
+    Merge pull request #21567 from kenlacroix/litellm-cve-2026-42208
+    
+    Add LiteLLM proxy pre-auth SQL injection scanner (CVE-2026-42208)
+
+ .../auxiliary/scanner/http/litellm_proxy_sqli.md   | 175 +++++++++++++++++++++
+ .../auxiliary/scanner/http/litellm_proxy_sqli.rb   | 152 ++++++++++++++++++
+ 2 files changed, 327 insertions(+)
+
+commit 02ab83f4b93fc946eda01ac1183199bd6907594b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jun 23 19:04:44 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 0ec58da7a38e80067efc8f7ed84b1cea20d6a5da
+Merge: 5cdf5c6e3a 8bca59164e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jun 23 11:54:34 2026 -0700
+
+    Merge pull request #21566 from kenlacroix/nextjs-cve-2025-29927
+    
+    Add Next.js middleware authorization bypass scanner (CVE-2025-29927)
+
+ .../scanner/http/nextjs_middleware_auth_bypass.md  | 129 ++++++++++++++++
+ .../scanner/http/nextjs_middleware_auth_bypass.rb  | 167 +++++++++++++++++++++
+ 2 files changed, 296 insertions(+)
+
+commit 5cdf5c6e3a3eaf6910f1690374e1c8c09d14cf2f
+Merge: 81648e6071 29251d822c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jun 23 18:32:48 2026 +0100
+
+    Merge pull request #21598 from jheysel-r7/fix/agents_md_scenarios
+    
+    Change AGENTS.md Wording for Scenarios Section
+
+ AGENTS.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 29251d822c016753ba6df33def7cec22e78c3cd1
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue Jun 23 10:19:53 2026 -0700
+
+    Change AGENTS.md wording for Scenario section
+
+ AGENTS.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
