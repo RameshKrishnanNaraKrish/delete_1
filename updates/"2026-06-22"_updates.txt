@@ -1,0 +1,251 @@
+commit 5b62f207d8a04367492040349a54c9f59fa0e8ef
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 24 23:18:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 308ef0d39da9f41fa01e59993f9c7f10f51034e7
+Merge: 3a9e0d9433 63c4f08254
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jun 24 16:08:53 2026 -0700
+
+    Merge pull request #21493 from Takahiro-Yoko/dalfox_server_rce_cve_2026_45087
+    
+    Add Dalfox Unauthenticated RCE module (CVE-2026-45087)
+
+ .../linux/http/dalfox_server_rce_cve_2026_45087.md | 120 +++++++++++++++++++++
+ .../linux/http/dalfox_server_rce_cve_2026_45087.rb | 104 ++++++++++++++++++
+ 2 files changed, 224 insertions(+)
+
+commit 63c4f08254902a094812055953c517fa2604647f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jun 24 15:49:53 2026 -0700
+
+    Update Name metadata to be more descriptive
+
+ modules/exploits/linux/http/dalfox_server_rce_cve_2026_45087.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 75ceaf3915cb9bd5009bb6f97c4195c3292de612
+Author: Takahiro Yokoyama <tkhr.y0k0yama@gmail.com>
+Date:   Thu Jun 25 06:42:54 2026 +0900
+
+    Apply suggestions from code review
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ .../exploits/linux/http/dalfox_server_rce_cve_2026_45087.rb    | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+commit 3a9e0d943357cc57929bfca8a3da39b5d4cbf192
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jun 24 14:34:28 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 74 +++++++++++++++++++++----------------------
+ 1 file changed, 37 insertions(+), 37 deletions(-)
+
+commit 34db7e9a91054503136d6f1595e164f941d7f4b7
+Merge: 4b6d1125b6 b1ced41659
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Jun 24 15:24:25 2026 +0100
+
+    Merge pull request #21562 from zeroSteiner/fix/udp/recvfrom-stdlib
+    
+    Align UDP #recvfrom usage with the stdlib
+
+ Gemfile.lock                                       |  2 +-
+ lib/metasploit/framework/login_scanner/snmp.rb     |  3 +-
+ lib/msf/core/auxiliary/udp_scanner.rb              | 12 ++++--
+ lib/msf/core/exploit/remote/mssql.rb               |  2 +-
+ lib/msf/core/exploit/remote/wdbrpc_client.rb       | 24 +++++------
+ lib/msf/core/handler/reverse_udp.rb                |  3 +-
+ lib/rex/post/meterpreter/channels/datagram.rb      |  5 ++-
+ lib/rex/proto/dhcp/server.rb                       |  3 +-
+ lib/rex/proto/dns/resolver.rb                      |  2 +-
+ lib/rex/proto/dns/server.rb                        |  3 +-
+ lib/rex/proto/iax2/client.rb                       |  2 +-
+ lib/rex/proto/ldap/server.rb                       |  3 +-
+ lib/rex/proto/natpmp/packet.rb                     |  4 +-
+ lib/rex/proto/tftp/client.rb                       | 12 ++++--
+ lib/rex/proto/tftp/server.rb                       |  3 +-
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb  |  2 +-
+ modules/auxiliary/dos/upnp/miniupnpd_dos.rb        |  2 +-
+ modules/auxiliary/dos/windows/games/kaillera.rb    |  4 +-
+ modules/auxiliary/fuzzers/dns/dns_fuzzer.rb        |  8 ++--
+ .../auxiliary/fuzzers/ntp/ntp_protocol_fuzzer.rb   |  4 +-
+ modules/auxiliary/scanner/chargen/chargen_probe.rb |  2 +-
+ modules/auxiliary/scanner/discovery/udp_probe.rb   |  4 +-
+ modules/auxiliary/scanner/ipmi/ipmi_dumphashes.rb  |  6 ++-
+ .../scanner/jenkins/jenkins_udp_broadcast_enum.rb  |  4 +-
+ .../scanner/misc/rosewill_rxs3211_passwords.rb     |  4 +-
+ .../auxiliary/scanner/natpmp/natpmp_portscan.rb    |  4 +-
+ modules/auxiliary/scanner/ntp/timeroast.rb         |  4 +-
+ modules/auxiliary/scanner/scada/bacnet_l3.rb       | 16 +++----
+ modules/auxiliary/scanner/scada/koyo_login.rb      |  2 +-
+ modules/auxiliary/scanner/sip/enumerator.rb        |  8 ++--
+ modules/auxiliary/scanner/sip/sipdroid_ext_enum.rb |  3 +-
+ .../scanner/telnet/lantronix_telnet_password.rb    |  4 +-
+ .../scanner/tftp/ipswitch_whatsupgold_tftp.rb      |  3 +-
+ modules/auxiliary/scanner/tftp/netdecision_tftp.rb |  3 +-
+ .../auxiliary/scanner/vxworks/wdbrpc_bootline.rb   |  8 ++--
+ .../auxiliary/scanner/vxworks/wdbrpc_version.rb    |  8 ++--
+ modules/auxiliary/server/capture/sip.rb            | 10 +++--
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb  | 10 ++---
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb    | 10 ++---
+ modules/auxiliary/spoof/dns/compare_results.rb     |  4 +-
+ modules/auxiliary/spoof/llmnr/llmnr_response.rb    |  4 +-
+ modules/auxiliary/spoof/mdns/mdns_response.rb      |  4 +-
+ modules/auxiliary/spoof/nbns/nbns_response.rb      |  4 +-
+ modules/auxiliary/voip/sip_deregister.rb           |  4 +-
+ modules/exploits/linux/games/ut2004_secure.rb      |  2 +-
+ .../exploits/linux/misc/cve_2020_13160_anydesk.rb  |  5 ++-
+ .../exploits/linux/misc/igel_command_injection.rb  |  2 +-
+ .../exploits/multi/upnp/libupnp_ssdp_overflow.rb   |  2 +-
+ .../exploits/windows/brightstor/discovery_udp.rb   |  2 +-
+ modules/exploits/windows/games/ut2004_secure.rb    |  2 +-
+ .../exploits/windows/license/sentinel_lm7_udp.rb   |  4 +-
+ .../exploits/windows/misc/crosschex_device_bof.rb  |  4 +-
+ spec/lib/msf/base/sessions/modem_spec.rb           | 10 ++---
+ spec/lib/msf/core/auxiliary/udp_scanner_spec.rb    | 50 ++++++++++++++++++++++
+ .../rex/post/meterpreter/channels/datagram_spec.rb | 33 ++++++++++++++
+ spec/lib/rex/proto/dns/resolver_spec.rb            |  8 ++--
+ .../auxiliary/scanner/ipmi/ipmi_dumphashes_spec.rb |  2 +-
+ spec/support/acceptance/session/java.rb            |  3 --
+ spec/support/acceptance/session/mettle.rb          |  3 --
+ spec/support/acceptance/session/php.rb             | 17 +++++---
+ spec/support/acceptance/session/python.rb          |  3 --
+ .../acceptance/session/windows_meterpreter.rb      |  1 -
+ test/modules/post/test/socket_channels.rb          |  1 -
+ 63 files changed, 244 insertions(+), 146 deletions(-)
+
+commit b1ced41659ddafcbc98be0f7381cb8a52ff14679
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jun 24 10:01:42 2026 -0400
+
+    Update more specs now that #recvfrom is consistent
+
+ spec/lib/msf/base/sessions/modem_spec.rb | 10 ++++------
+ spec/lib/rex/proto/dns/resolver_spec.rb  |  8 +++++---
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+commit 9dcb4a704cb84b4206ef3a6821095eb318425ab6
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 18 09:18:39 2026 -0400
+
+    Catch exceptions in #recvfrom when scanning with UDP
+
+ lib/msf/core/auxiliary/udp_scanner.rb           |  8 +++-
+ spec/lib/msf/core/auxiliary/udp_scanner_spec.rb | 50 +++++++++++++++++++++++++
+ 2 files changed, 57 insertions(+), 1 deletion(-)
+
+commit c041141fe7cb4bd3fd9bc0965d6fe10fbb7d1f41
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 11 17:02:08 2026 -0400
+
+    Fix a couple of specs
+
+ spec/lib/rex/post/meterpreter/channels/datagram_spec.rb     | 5 ++---
+ spec/modules/auxiliary/scanner/ipmi/ipmi_dumphashes_spec.rb | 2 +-
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+
+commit 2174ef278f2bf7295fdc9d747363baa282ac5909
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 11 10:40:07 2026 -0400
+
+    Update the Meterpreter channel failures
+
+ spec/support/acceptance/session/java.rb                |  3 ---
+ spec/support/acceptance/session/mettle.rb              |  3 ---
+ spec/support/acceptance/session/php.rb                 | 17 ++++++++++-------
+ spec/support/acceptance/session/python.rb              |  3 ---
+ spec/support/acceptance/session/windows_meterpreter.rb |  1 -
+ 5 files changed, 10 insertions(+), 17 deletions(-)
+
+commit 79b4c7d52d07cdc7726279ee56ff97fbce3b3007
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 11 10:10:30 2026 -0400
+
+    Align on UDPSocket#recvfrom
+    
+    This pulls in changes from rapid7/rex-socket#83 which aligns #recvfrom
+    to match the signature and behavior of the standard library in regards
+    to it's arguments, return type and how it handles timeouts. The
+    historical usage of #recvfrom was a timed read and can now be replaced
+    with #timed_recvfrom.
+
+ lib/metasploit/framework/login_scanner/snmp.rb     |  3 ++-
+ lib/msf/core/auxiliary/udp_scanner.rb              |  6 +++---
+ lib/msf/core/exploit/remote/mssql.rb               |  2 +-
+ lib/msf/core/exploit/remote/wdbrpc_client.rb       | 24 +++++++++-------------
+ lib/msf/core/handler/reverse_udp.rb                |  3 ++-
+ lib/rex/proto/dhcp/server.rb                       |  3 ++-
+ lib/rex/proto/dns/resolver.rb                      |  2 +-
+ lib/rex/proto/dns/server.rb                        |  3 ++-
+ lib/rex/proto/iax2/client.rb                       |  2 +-
+ lib/rex/proto/ldap/server.rb                       |  3 ++-
+ lib/rex/proto/natpmp/packet.rb                     |  4 ++--
+ lib/rex/proto/tftp/client.rb                       | 12 +++++++----
+ lib/rex/proto/tftp/server.rb                       |  3 ++-
+ modules/auxiliary/dos/scada/allen_bradley_pccc.rb  |  2 +-
+ modules/auxiliary/dos/upnp/miniupnpd_dos.rb        |  2 +-
+ modules/auxiliary/dos/windows/games/kaillera.rb    |  4 ++--
+ modules/auxiliary/fuzzers/dns/dns_fuzzer.rb        |  8 ++++----
+ .../auxiliary/fuzzers/ntp/ntp_protocol_fuzzer.rb   |  4 ++--
+ modules/auxiliary/scanner/chargen/chargen_probe.rb |  2 +-
+ modules/auxiliary/scanner/discovery/udp_probe.rb   |  4 ++--
+ modules/auxiliary/scanner/ipmi/ipmi_dumphashes.rb  |  6 ++++--
+ .../scanner/jenkins/jenkins_udp_broadcast_enum.rb  |  4 ++--
+ .../scanner/misc/rosewill_rxs3211_passwords.rb     |  4 ++--
+ .../auxiliary/scanner/natpmp/natpmp_portscan.rb    |  4 ++--
+ modules/auxiliary/scanner/ntp/timeroast.rb         |  4 ++--
+ modules/auxiliary/scanner/scada/bacnet_l3.rb       | 16 +++++++--------
+ modules/auxiliary/scanner/scada/koyo_login.rb      |  2 +-
+ modules/auxiliary/scanner/sip/enumerator.rb        |  8 ++++----
+ modules/auxiliary/scanner/sip/sipdroid_ext_enum.rb |  3 ++-
+ .../scanner/telnet/lantronix_telnet_password.rb    |  4 ++--
+ .../scanner/tftp/ipswitch_whatsupgold_tftp.rb      |  3 ++-
+ modules/auxiliary/scanner/tftp/netdecision_tftp.rb |  3 ++-
+ .../auxiliary/scanner/vxworks/wdbrpc_bootline.rb   |  8 ++++----
+ .../auxiliary/scanner/vxworks/wdbrpc_version.rb    |  8 ++++----
+ modules/auxiliary/server/capture/sip.rb            | 10 +++++----
+ modules/auxiliary/spoof/dns/bailiwicked_domain.rb  | 10 ++++-----
+ modules/auxiliary/spoof/dns/bailiwicked_host.rb    | 10 ++++-----
+ modules/auxiliary/spoof/dns/compare_results.rb     |  4 ++--
+ modules/auxiliary/spoof/llmnr/llmnr_response.rb    |  4 ++--
+ modules/auxiliary/spoof/mdns/mdns_response.rb      |  4 ++--
+ modules/auxiliary/spoof/nbns/nbns_response.rb      |  4 ++--
+ modules/auxiliary/voip/sip_deregister.rb           |  4 ++--
+ modules/exploits/linux/games/ut2004_secure.rb      |  2 +-
+ .../exploits/linux/misc/cve_2020_13160_anydesk.rb  |  5 +++--
+ .../exploits/linux/misc/igel_command_injection.rb  |  2 +-
+ .../exploits/multi/upnp/libupnp_ssdp_overflow.rb   |  2 +-
+ .../exploits/windows/brightstor/discovery_udp.rb   |  2 +-
+ modules/exploits/windows/games/ut2004_secure.rb    |  2 +-
+ .../exploits/windows/license/sentinel_lm7_udp.rb   |  4 ++--
+ .../exploits/windows/misc/crosschex_device_bof.rb  |  4 ++--
+ test/modules/post/test/socket_channels.rb          |  1 -
+ 51 files changed, 130 insertions(+), 117 deletions(-)
+
+commit 710bca22b249143959ad66e2493cd30ca76d220e
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jun 23 16:58:28 2026 -0400
+
+    Bump rex-socket
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6f7d02361875bade0d6c455d277d0dbde31c9806
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jun 10 09:16:54 2026 -0400
+
+    Fix Meterpreter UDP recvfrom sockaddr reads
+
+ lib/rex/post/meterpreter/channels/datagram.rb      |  5 +++-
+ .../rex/post/meterpreter/channels/datagram_spec.rb | 34 ++++++++++++++++++++++
+ 2 files changed, 38 insertions(+), 1 deletion(-)
