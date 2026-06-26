@@ -1,0 +1,71 @@
+commit 15c7d1b383d6105e284e144be426c8cc6f25e8ee
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 25 16:22:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 41 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+commit 19024250ed8d1bfad0c433d4f66eac1a23f0e767
+Merge: e8cb3cb552 3f406b1cd4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Jun 25 09:12:45 2026 -0700
+
+    Merge pull request #21581 from dwelch-r7/smb-meterpreter-upgrade
+    
+    Smb meterpreter upgrade
+
+ .../post/windows/manage/smb_to_meterpreter.md      | 141 ++++++
+ lib/msf/core/exploit/retry.rb                      |  25 ++
+ lib/msf/core/post/session_upgrade.rb               | 190 ++++++++
+ lib/msf/ui/console/command_dispatcher/core.rb      |  28 +-
+ modules/post/windows/manage/smb_to_meterpreter.rb  | 311 +++++++++++++
+ spec/lib/msf/core/exploit/retry_spec.rb            | 122 ++++++
+ spec/lib/msf/core/post/session_upgrade_spec.rb     | 408 +++++++++++++++++
+ .../core_sessions_upgrade_spec.rb                  | 123 ++++++
+ .../post/windows/manage/smb_to_meterpreter_spec.rb | 484 +++++++++++++++++++++
+ 9 files changed, 1829 insertions(+), 3 deletions(-)
+
+commit e8cb3cb55282d84d0c92ab70963d165177f11203
+Merge: 736c015b92 cecff592cc
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jun 25 14:47:20 2026 +0100
+
+    Merge pull request #21605 from zeroSteiner/patch-2
+    
+    PR Template Suggestions
+
+ .github/PULL_REQUEST_TEMPLATE.md | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+commit cecff592cc661244bf4f2f9b3ea4daff0f209ac7
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 25 09:46:20 2026 -0400
+
+    Enhance PR template with hardware guidance
+    
+    Added guidance for hardware and complex software modules in PR template.
+
+ .github/PULL_REQUEST_TEMPLATE.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 17d4220d81896fc0e7acc83a9550ddabb9c90c3c
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Thu Jun 25 08:55:05 2026 -0400
+
+    PR Template Suggestions
+
+ .github/PULL_REQUEST_TEMPLATE.md | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+commit 736c015b92f30de1a447efc3c25685de7093c491
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jun 25 10:47:42 2026 +0000
+
+    Bump version of framework to 6.4.142
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
