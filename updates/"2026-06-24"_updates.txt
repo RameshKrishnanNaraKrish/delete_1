@@ -1,0 +1,30 @@
+commit 32000a9a9a0c66e5ead9c4b4783d7428270d67a7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jun 26 13:06:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 5549f0e00fb3ba373fad775387b6bfed4825478e
+Merge: 15c7d1b383 6b19663daf
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 26 14:56:03 2026 +0200
+
+    Land #21491, adds module for Peyara Remote Code Execution
+    
+    Add Peyara Remote Mouse RCE  Module
+
+ .../windows/misc/peyara_remote_mouse_rce.md        |  64 ++++++
+ .../windows/misc/peyara_remote_mouse_rce.rb        | 225 +++++++++++++++++++++
+ 2 files changed, 289 insertions(+)
+
+commit 6b19663dafa63b45ec17802d084a8d96f8e80e5e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jun 26 14:11:39 2026 +0200
+
+    Updates modules & docs
+
+ .../modules/exploit/windows/misc/peyara_remote_mouse_rce.md   | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
