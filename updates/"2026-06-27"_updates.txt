@@ -1,0 +1,66 @@
+commit 5a8211076f568bf932af9382c99157b6f1a75e5a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jun 29 16:21:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
+
+commit d7c0d37f7705b94ab70543eb05953312f26dacb7
+Merge: 055eb0aa9b 6f4b2c8b85
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Mon Jun 29 17:12:23 2026 +0100
+
+    Merge pull request #21527 from zeroSteiner/feat/mcp/add-bearer-auth
+    
+    Add Authentication to the MCP server's HTTP transport
+
+ .gitignore                                         |  3 +
+ config/mcp_config.yaml.example                     |  1 +
+ .../How-to-use-Metasploit-MCP-Server.md            | 48 +++++++++++
+ lib/msf/core/mcp.rb                                |  1 +
+ lib/msf/core/mcp/application.rb                    | 48 ++++++++++-
+ lib/msf/core/mcp/config/loader.rb                  | 20 ++++-
+ lib/msf/core/mcp/middleware/bearer_auth.rb         | 43 ++++++++++
+ lib/msf/core/mcp/server.rb                         |  8 +-
+ spec/lib/msf/core/mcp/application_spec.rb          |  2 +
+ .../msf/core/mcp/middleware/bearer_auth_spec.rb    | 99 ++++++++++++++++++++++
+ spec/lib/msf/core/mcp/server_spec.rb               | 87 +++++++++++++++++++
+ 11 files changed, 352 insertions(+), 8 deletions(-)
+
+commit 055eb0aa9bd6229eb50c979d6709aecc2c083e7c
+Merge: 32000a9a9a 84b4a433ef
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jun 29 17:12:07 2026 +0100
+
+    Merge pull request #21239 from bcoles/loongarch64-exec
+    
+    Add Linux LoongArch64 execute command payload
+
+ .../modules/payload/linux/loongarch64/exec.md      | 61 ++++++++++++++++++
+ modules/payloads/singles/linux/loongarch64/exec.rb | 75 ++++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  9 +++
+ 3 files changed, 145 insertions(+)
+
+commit 84b4a433ef555d6df4bfc2e980a62714730fc66c
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Jun 29 16:52:24 2026 +0100
+
+    Add boilerplate
+
+ .../modules/payload/linux/loongarch64/exec.md      | 61 ++++++++++++++++++++++
+ modules/payloads/singles/linux/loongarch64/exec.rb |  4 +-
+ spec/modules/payloads_spec.rb                      |  9 ++++
+ 3 files changed, 72 insertions(+), 2 deletions(-)
+
+commit 6f4b2c8b85e2da283f90b7fc5c7bb76c75ee38e4
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jun 2 16:07:38 2026 -0400
+
+    Add specs
+
+ spec/lib/msf/core/mcp/application_spec.rb          |  2 +
+ .../msf/core/mcp/middleware/bearer_auth_spec.rb    | 99 ++++++++++++++++++++++
+ spec/lib/msf/core/mcp/server_spec.rb               | 87 +++++++++++++++++++
+ 3 files changed, 188 insertions(+)
