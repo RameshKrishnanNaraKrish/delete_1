@@ -1,0 +1,23 @@
+commit 6ac855573d053eac6c90d275af911aa288848ed1
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jun 30 15:20:24 2026 -0400
+
+    Bump rex-socket to 0.1.70
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dfec2fc61d98cf6f319d0b8667fd814dab20e234
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Tue Jun 30 14:15:16 2026 -0400
+
+    Also catch ECONNRESET where ECONNREFUSED is caught
+
+ lib/msf/core/handler/bind_udp.rb                                   | 2 +-
+ modules/auxiliary/admin/netbios/netbios_spoof.rb                   | 2 +-
+ modules/auxiliary/admin/networking/cisco_sdwan_auth_bypass.rb      | 2 +-
+ modules/auxiliary/admin/networking/cisco_sdwan_vhub_auth_bypass.rb | 2 +-
+ modules/auxiliary/dos/rpc/rpcbomb.rb                               | 2 +-
+ modules/auxiliary/scanner/snmp/snmp_enum_hp_laserjet.rb            | 2 +-
+ modules/auxiliary/server/netbios_spoof_nat.rb                      | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
