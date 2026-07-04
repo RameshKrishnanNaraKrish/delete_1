@@ -1,0 +1,69 @@
+commit 704e6e227b5a629cf919561f74e973231ced078c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 3 09:19:24 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit 7946facc4df9fc2297aa4719daea559d2b4727f0
+Merge: 4c6ac2b1ad af209d92f2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jul 3 11:09:33 2026 +0200
+
+    Land #21473, adds .htaccess persistence module
+    
+    Add Apache .htaccess Persistence Module
+
+ .../exploit/linux/persistence/apache_htaccess.md   |  70 ++++++++++
+ .../exploits/linux/persistence/apache_htaccess.rb  | 143 +++++++++++++++++++++
+ 2 files changed, 213 insertions(+)
+
+commit af209d92f2414e6ee7222b25d202aea0be28c6f5
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jul 3 08:16:38 2026 +0200
+
+    Code formatting
+
+ modules/exploits/linux/persistence/apache_htaccess.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit b86c0a041435ea58c9ca160de1c6639020ac9d14
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Jul 3 08:07:13 2026 +0200
+
+    Fixed the module, updates the docs
+
+ .../exploit/linux/persistence/apache_htaccess.md   | 120 +++++++++------------
+ .../exploits/linux/persistence/apache_htaccess.rb  |  97 ++++++++++-------
+ 2 files changed, 104 insertions(+), 113 deletions(-)
+
+commit 954bc4c8cbdf157cbb42c3d4898f569965714cc1
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Thu Jul 2 10:36:12 2026 +0200
+
+    Updates module
+
+ .../modules/exploit/linux/persistence/apache_htaccess.md          | 1 +
+ modules/exploits/linux/persistence/apache_htaccess.rb             | 8 ++++----
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+commit 76c7438da6bbe407d88682132c619ab7808222fd
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jul 1 18:13:24 2026 +0200
+
+    Fixes names, updates module
+
+ ..._htaccess_persistence.md => apache_htaccess.md} |  0
+ .../exploits/linux/persistence/apache_htaccess.rb  | 67 +++++++++++-----------
+ 2 files changed, 33 insertions(+), 34 deletions(-)
+
+commit 0015cc3aca921e1ac3553f56d4ca61970a4a80e2
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jul 1 16:09:45 2026 +0200
+
+    Moves documentation to correct folder
+
+ .../manage => exploit/linux/persistence}/apache_htaccess_persistence.md   | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
