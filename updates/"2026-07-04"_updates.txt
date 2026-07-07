@@ -1,0 +1,44 @@
+commit c0b85059dde124aa880517cb7fbbfeda243d3e2d
+Merge: b7ca013659 67865ed97b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jul 6 13:56:45 2026 +0100
+
+    Merge pull request #21436 from g0tmi1k/reload_all_real
+    
+    reload_lib: Misc improvements
+
+ lib/msf/ui/console/command_dispatcher/developer.rb | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+commit c59ccbb93b031b6c06f3b0cd57c778f459db2942
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Jul 6 11:34:54 2026 +0100
+
+    Suppress Pry history loading only if Pry is already defined
+
+ lib/rex/ui/text/shell.rb | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit b7ca01365991c9a0882b9d7c1ad3beddd4ccc211
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 6 08:13:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 52 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit 1e0760fa2823265c0ce95ed76f914da88d6954c9
+Merge: 704e6e227b 9b81eef708
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Jul 6 10:05:21 2026 +0200
+
+    Land #21499, adds osx privilege escalation module (CVE-2024-27822)
+    
+    osx priv-esc cve-2024-27822
+
+ data/exploits/CVE-2024-27822/generate_template.sh  |  23 +++
+ data/exploits/CVE-2024-27822/template.pkg          | Bin 0 -> 1720 bytes
+ .../exploit/osx/local/packagekit_zshenv_privesc.md | 138 ++++++++++++++++++
+ .../osx/local/packagekit_zshenv_privesc.rb         | 156 +++++++++++++++++++++
+ 4 files changed, 317 insertions(+)
