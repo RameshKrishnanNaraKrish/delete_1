@@ -1,0 +1,86 @@
+commit 1edcf5a73e55ae2b838978b8a579fb5d8eccd066
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Jul 7 21:24:00 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5a117a1863d046694dc17de8d8becab75b8d3d1d
+Merge: dd081abc75 9e81ad2a49
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Tue Jul 7 17:14:21 2026 -0400
+
+    Merge pull request #21651 from jheysel-r7/fix/rbcd/remove_action
+    
+    Fix ACE SID comparion in RBCD module
+
+ modules/auxiliary/admin/ldap/rbcd.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit dd081abc753ba36a12e182e0fc73c9e33425158b
+Merge: 050265a1d8 6a951c5a76
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Jul 7 11:57:47 2026 +0100
+
+    Merge pull request #21633 from sjanusz-r7/rubocop-redundant-module-info-keys
+    
+    Rubocop redundant module info keys
+
+ .rubocop.yml                                       |   6 +
+ .../cop/lint/module_redundant_arch_platform.rb     | 162 +++++++++
+ .../lint/module_redundant_arch_platform_spec.rb    | 400 +++++++++++++++++++++
+ 3 files changed, 568 insertions(+)
+
+commit 050265a1d8a57789b7f5d942cfe88caaa103b11d
+Merge: 957a055ba7 c59ccbb93b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 7 11:38:54 2026 +0100
+
+    Merge pull request #21648 from dwelch-r7/remove-pry-require
+    
+    Suppress Pry history loading only if Pry is already defined
+
+ lib/rex/ui/text/shell.rb | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+commit 957a055ba7599fe12950a0c3169b411de940f667
+Merge: 94a923ef2b 6589e57a0d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 7 11:29:34 2026 +0100
+
+    Merge pull request #21643 from dwelch-r7/lazy-load-stats
+    
+    Defer statistics update until first access to improve performance
+
+ lib/msf/base/simple/statistics.rb           | 17 +++++++-
+ spec/lib/msf/base/simple/statistics_spec.rb | 67 +++++++++++++++++++++++++++++
+ 2 files changed, 83 insertions(+), 1 deletion(-)
+
+commit 94a923ef2bd897be0f3f8bd2db7515ca503beb28
+Merge: 6975248714 3653b92e47
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 7 11:23:39 2026 +0100
+
+    Merge pull request #21645 from dwelch-r7/skip-checksum-option
+    
+    Add feature flag to skip checksum validation for faster development boot
+
+ lib/msf/core/feature_manager.rb                      |  8 ++++++++
+ lib/msf/ui/console/driver.rb                         | 20 ++++++++++++--------
+ spec/lib/msf/ui/console/driver_skip_checksum_spec.rb | 20 ++++++++++++++++++++
+ 3 files changed, 40 insertions(+), 8 deletions(-)
+
+commit 6975248714d8ee41c8b69822edcf4b2927694412
+Merge: c0b85059dd 09dd4540db
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 7 11:21:32 2026 +0100
+
+    Merge pull request #21639 from dwelch-r7/exclude-lib-checksum
+    
+    Refactor file collection logic to exclude lib/ directory
+
+ lib/msf/core/modules/metadata/store.rb           |  7 +-
+ spec/lib/msf/core/modules/metadata/store_spec.rb | 88 ++++++++++++++++++++++++
+ 2 files changed, 90 insertions(+), 5 deletions(-)
