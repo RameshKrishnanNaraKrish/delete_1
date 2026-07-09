@@ -1,0 +1,76 @@
+commit 08018df905e450df8322e293fe3ac84b0939c433
+Merge: 1ad73a8b6c 6c7181838b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 8 13:32:18 2026 -0700
+
+    Merge pull request #21637 from eve0805/feature/kerberos-ticket-trace-enum
+    
+    Update KerberosTicketTrace to use enum modes
+
+ lib/msf/core/exploit/remote/kerberos/client.rb     |   2 +-
+ .../kerberos/service_authenticator/options.rb      |   7 +-
+ .../proto/kerberos/kerberos_logger_subscriber.rb   | 113 +++++++++---
+ spec/lib/msf/base/serializer/readable_text_spec.rb |   4 +-
+ .../core/exploit/remote/kerberos/client_spec.rb    |   8 +
+ .../kerberos/kerberos_logger_subscriber_spec.rb    | 205 ++++++++++++++++++++-
+ 6 files changed, 303 insertions(+), 36 deletions(-)
+
+commit 1ad73a8b6cfbd2565f73c2f970fb68f746a803db
+Merge: 0293806f52 179a66473b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 8 13:27:10 2026 -0700
+
+    Merge pull request #21580 from Pushpenderrathore/feature/csr-certificate-trace
+    
+    Add CSR tracing to CertificateTrace for AD CS enrollment
+
+ lib/msf/core/exploit/remote/cert_request.rb        |   4 +
+ lib/msf/core/exploit/remote/certificate_trace.rb   |  29 +++++
+ lib/msf/core/trace/certificate_trace_presenter.rb  | 135 ++++++++++++++++++++-
+ .../core/exploit/remote/certificate_trace_spec.rb  |  53 ++++++++
+ .../core/trace/certificate_trace_presenter_spec.rb | 124 ++++++++++++++++++-
+ 5 files changed, 339 insertions(+), 6 deletions(-)
+
+commit 0293806f52b9b17fad547561b96692c017c7d61a
+Merge: 1181d3ff9f f6ceaf0aa5
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Jul 8 19:46:54 2026 +0200
+
+    Merge pull request #21416 from g0tmi1k/ftp_mixin
+
+ lib/msf/core/exploit/remote/ftp.rb           | 149 ++++++++++-
+ spec/lib/msf/core/exploit/remote/ftp_spec.rb | 354 +++++++++++++++++++++++++++
+ 2 files changed, 500 insertions(+), 3 deletions(-)
+
+commit 1181d3ff9fdf1b0a8c1972da4ce3b781d8e38c9a
+Merge: cdd24485b0 5ee689bf62
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Jul 8 17:35:35 2026 +0200
+
+    Merge pull request #21579 from zeroSteiner/feat/mcp/add-extra-fields
+    
+    Add extra fields to MCP tools
+
+ .../core/mcp/metasploit/response_transformer.rb    | 38 +++++++----
+ lib/msf/core/mcp/tools/credential_info.rb          |  4 +-
+ lib/msf/core/mcp/tools/note_info.rb                |  2 +-
+ lib/msf/core/mcp/tools/service_info.rb             |  4 +-
+ lib/msf/core/mcp/tools/vulnerability_info.rb       |  3 +-
+ .../mcp/metasploit/response_transformer_spec.rb    | 75 ++++++++++++++++++++--
+ .../lib/msf/core/mcp/tools/credential_info_spec.rb |  2 +
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb      |  2 +-
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb   |  2 +
+ .../msf/core/mcp/tools/vulnerability_info_spec.rb  |  1 +
+ 10 files changed, 110 insertions(+), 23 deletions(-)
+
+commit cdd24485b070b05ef476d329a7a53fc54bdc59f4
+Merge: 1edcf5a73e 8ece67966a
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 8 10:01:21 2026 -0500
+
+    Merge pull request #21588 from vinicius-batistella/fix/exe-aarch64-dispatch
+    
+    Wire ARCH_AARCH64 into to_executable_fmt for exe and exe-only
+
+ lib/msf/util/exe.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
