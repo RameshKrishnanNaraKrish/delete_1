@@ -1,0 +1,65 @@
+commit 3eb0e3990ed7d6240df0574749d5ee22bfb81e59
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 9 19:11:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 808 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 808 insertions(+)
+
+commit f58f27799d25279ca40631fbfd73a0f5f67fffa6
+Merge: 6df80e4f18 6405f185c0
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jul 9 14:02:34 2026 -0500
+
+    Merge pull request #21235 from bcoles/riscv-encoders
+    
+    Add RISC-V XOR encoders for riscv32le and riscv64le
+
+ modules/encoders/riscv32le/byte_xori.rb            | 156 ++++++++++
+ modules/encoders/riscv32le/longxor.rb              | 128 ++++++++
+ modules/encoders/riscv32le/longxor_feedback.rb     | 171 +++++++++++
+ modules/encoders/riscv32le/longxor_tag.rb          | 145 +++++++++
+ modules/encoders/riscv64le/byte_xori.rb            | 156 ++++++++++
+ modules/encoders/riscv64le/longxor.rb              | 128 ++++++++
+ modules/encoders/riscv64le/longxor_feedback.rb     | 171 +++++++++++
+ modules/encoders/riscv64le/longxor_tag.rb          | 145 +++++++++
+ spec/modules/encoders/riscv32le/byte_xori_spec.rb  |   6 +
+ .../encoders/riscv32le/longxor_feedback_spec.rb    |   6 +
+ spec/modules/encoders/riscv32le/longxor_spec.rb    |   6 +
+ .../modules/encoders/riscv32le/longxor_tag_spec.rb |   6 +
+ spec/modules/encoders/riscv64le/byte_xori_spec.rb  |   6 +
+ .../encoders/riscv64le/longxor_feedback_spec.rb    |   6 +
+ spec/modules/encoders/riscv64le/longxor_spec.rb    |   6 +
+ .../modules/encoders/riscv64le/longxor_tag_spec.rb |   6 +
+ .../modules/encoders/riscv_xor_encoder_examples.rb | 328 +++++++++++++++++++++
+ 17 files changed, 1576 insertions(+)
+
+commit 6df80e4f184462997cd9c18d3c90539fc7a8b745
+Merge: 64009fc220 d2cd2e4fbc
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jul 9 14:01:15 2026 -0500
+
+    Merge pull request #21237 from bcoles/riscv-staged-payloads
+    
+    Add staged RISC-V (riscv64le/riscv32le) Linux payloads
+
+ .../payloads/stagers/linux/riscv32le/bind_tcp.rb   | 140 +++++++++++++++++++++
+ .../stagers/linux/riscv32le/reverse_tcp.rb         | 129 +++++++++++++++++++
+ .../payloads/stagers/linux/riscv64le/bind_tcp.rb   | 136 ++++++++++++++++++++
+ .../stagers/linux/riscv64le/reverse_tcp.rb         | 125 ++++++++++++++++++
+ modules/payloads/stages/linux/riscv32le/shell.rb   |  87 +++++++++++++
+ modules/payloads/stages/linux/riscv64le/shell.rb   |  87 +++++++++++++
+ spec/modules/payloads_spec.rb                      |  40 ++++++
+ 7 files changed, 744 insertions(+)
+
+commit 64009fc2207feaa965076d3666f1af2432735a8a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 9 11:54:58 2026 +0000
+
+    Bump version of framework to 6.4.144
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
