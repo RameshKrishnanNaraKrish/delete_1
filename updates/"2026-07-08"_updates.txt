@@ -1,0 +1,61 @@
+commit dd425255fa3918bdb2cc3c23ae14453e95ea0b5d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 10 14:39:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24297 +++++++++++++++++++++++++++++++++-------
+ 1 file changed, 20307 insertions(+), 3990 deletions(-)
+
+commit 5714cb81a1e6bb2ea92fb1ef0fdab9fe68a8bf54
+Merge: 3eb0e3990e 67af82ec4a
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Jul 10 16:30:00 2026 +0200
+
+    Merge pull request #21384 from bwatters-r7/feature/fetch-multi-3
+    
+    Fetch Multi Part 2: The Fetchening
+
+ .../How-to-use-fetch-payloads.md                   |  14 +
+ lib/msf/base/sessions/meterpreter_multi_linux.rb   |  26 +
+ lib/msf/core/payload/adapter/fetch.rb              | 260 ++++------
+ lib/msf/core/payload/adapter/fetch/ftp.rb          |  30 ++
+ lib/msf/core/payload/adapter/fetch/http.rb         |   9 +-
+ lib/msf/core/payload/adapter/fetch/https.rb        |  10 +-
+ .../core/payload/adapter/fetch/linux_options.rb    |   6 +-
+ lib/msf/core/payload/adapter/fetch/pipe.rb         |  76 +++
+ lib/msf/core/payload/adapter/fetch/server/ftp.rb   |  48 ++
+ lib/msf/core/payload/adapter/fetch/server/http.rb  | 201 ++++---
+ lib/msf/core/payload/adapter/fetch/server/smb.rb   |   2 +-
+ lib/msf/core/payload/adapter/fetch/server/tftp.rb  |  34 +-
+ lib/msf/core/payload/adapter/fetch/smb.rb          |  10 +-
+ lib/msf/core/payload/adapter/fetch/tftp.rb         |  10 +-
+ lib/msf/core/payload/linux/multi_arch.rb           |  92 ++++
+ lib/msf_autoload.rb                                |   5 +
+ lib/rex/proto/ftp/server.rb                        | 291 +++++++++++
+ lib/rex/proto/tftp/server.rb                       |  16 +
+ modules/payloads/adapters/cmd/linux/ftp/aarch64.rb |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/armbe.rb   |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/armle.rb   |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/mips64.rb  |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/mipsbe.rb  |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/mipsle.rb  |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/ppc.rb     |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/ppc64.rb   |  25 +
+ .../payloads/adapters/cmd/linux/ftp/riscv32le.rb   |  25 +
+ .../payloads/adapters/cmd/linux/ftp/riscv64le.rb   |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/x64.rb     |  25 +
+ modules/payloads/adapters/cmd/linux/ftp/x86.rb     |  25 +
+ modules/payloads/adapters/cmd/linux/http/multi.rb  |  25 +
+ modules/payloads/adapters/cmd/linux/https/multi.rb |  25 +
+ modules/payloads/adapters/cmd/windows/ftp/x64.rb   |  31 ++
+ modules/payloads/adapters/cmd/windows/ftp/x86.rb   |  31 ++
+ modules/payloads/adapters/cmd/windows/smb/x64.rb   |   4 +-
+ .../singles/linux/multi/meterpreter_reverse_tcp.rb |  39 ++
+ spec/lib/rex/proto/ftp/server_spec.rb              | 577 +++++++++++++++++++++
+ .../payloads/adapters/cmd/linux/ftp/x64_spec.rb    | 160 ++++++
+ .../payloads/adapters/cmd/linux/http/x64_spec.rb   | 243 +++++++++
+ .../payloads/adapters/cmd/linux/https/x64_spec.rb  | 217 ++++++++
+ .../payloads/adapters/cmd/windows/smb/x64_spec.rb  | 136 +++++
+ spec/modules/payloads_spec.rb                      | 136 +++++
+ 42 files changed, 2790 insertions(+), 274 deletions(-)
