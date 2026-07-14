@@ -1,0 +1,13 @@
+commit 972b893250311fe1061d82f40c38225f113e2631
+Merge: dd425255fa 1e762bb9c2
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Jul 13 12:26:31 2026 -0500
+
+    Merge pull request #21670 from zeroSteiner/fix/xor-dynamic-register-preservation
+    
+    Fix/xor dynamic register preservation
+
+ modules/encoders/x64/xor_dynamic.rb                |  6 +-
+ modules/encoders/x86/xor_dynamic.rb                |  6 +-
+ .../core/encoded_payload/stage_encoding_spec.rb    | 66 ++++++++++++++++++++++
+ 3 files changed, 68 insertions(+), 10 deletions(-)
