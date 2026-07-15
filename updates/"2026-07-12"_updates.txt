@@ -1,0 +1,24 @@
+commit b1915aa7999e4e6bd81b3ca311650a2dd39bfee1
+Merge: 972b893250 3ffbbe59e9
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Jul 14 15:57:31 2026 -0500
+
+    Merge pull request #21602 from zeroSteiner/feat/mod/psexec-stageless
+    
+    Update Windows service PE template for stageless payloads
+
+ data/templates/src/pe/exe_service/template.c   |  66 +++++-
+ data/templates/template_x64_windows_svc.exe    | Bin 12288 -> 4608 bytes
+ data/templates/template_x86_windows_svc.exe    | Bin 12288 -> 4096 bytes
+ lib/msf/core/exe/segment_appender.rb           | 123 ++++++++----
+ lib/msf/core/exe/segment_hijacker.rb           |  30 +++
+ lib/msf/core/exe/segment_injector.rb           | 265 +++++++++++--------------
+ lib/msf/util/exe/windows/common.rb             |  55 +++--
+ lib/msf/util/exe/windows/x64.rb                |  66 ++----
+ lib/msf/util/exe/windows/x86.rb                |  56 ++----
+ modules/exploits/windows/smb/psexec.rb         |   5 +-
+ spec/lib/msf/core/exe/segment_appender_spec.rb | 149 ++++++++++----
+ spec/lib/msf/core/exe/segment_hijacker_spec.rb |  91 +++++++++
+ spec/lib/msf/core/exe/segment_injector_spec.rb | 105 ++++++++--
+ spec/lib/msf/util/exe/windows/common_spec.rb   |  63 ++++++
+ 14 files changed, 723 insertions(+), 351 deletions(-)
