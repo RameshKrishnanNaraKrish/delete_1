@@ -1,0 +1,121 @@
+commit c0cb225b06341a1b590979dff51e8a2039e05e80
+Merge: c9447ac603 399b302801
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 15 15:48:48 2026 -0700
+
+    Merge pull request #21677 from bwatters-r7/fix/http_relay_uripath
+    
+    Fix bug where relay server failed to work if the attacker used the UR…
+
+ lib/msf/core/exploit/remote/http_server/relay.rb   | 19 ++++++++++-----
+ .../lib/msf/core/exploit/remote/relay/http_spec.rb | 27 ++++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 6 deletions(-)
+
+commit c9447ac603d5e2fc14af09f8317a8ad33f04f178
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 15 22:30:40 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 50 insertions(+), 4 deletions(-)
+
+commit 7e65f9742a3d05beddf7c1a6e781ed009aa564cf
+Merge: 6fa8a3772f 160e8de5bf
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 15 17:21:34 2026 -0500
+
+    Merge pull request #21675 from sjanusz-r7/skip-multi-payloads-from-cache-generation
+    
+    Fix search_cache job cache generation by skipping multi arch payloads
+
+ modules/payloads/singles/linux/multi/meterpreter_reverse_tcp.rb | 2 --
+ tools/modules/update_payload_cached_sizes.rb                    | 4 ++++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 399b30280164b5a257bdcca9ccb8de4e4426775b
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 15 16:07:58 2026 -0500
+
+    Fix bug where relay server failed to work if the attacker used the URIPATH
+
+ lib/msf/core/exploit/remote/http_server/relay.rb   | 19 ++++++++++-----
+ .../lib/msf/core/exploit/remote/relay/http_spec.rb | 27 ++++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 6 deletions(-)
+
+commit 6fa8a3772f564076826bfa85c11ca3d94ec2af2d
+Merge: 67c44789ee f132b52b3e
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 15 15:19:10 2026 -0500
+
+    Merge pull request #21620 from jheysel-r7/feat/mod/relay/http_to_smb
+    
+    HTTP to SMB Relay Server
+
+ .../modules/auxiliary/server/relay/http_to_smb.md  | 128 +++++++++++++++++++++
+ .../remote/http_server/relay/ntlm/server_client.rb |   6 +-
+ modules/auxiliary/server/relay/http_to_smb.rb      | 111 ++++++++++++++++++
+ 3 files changed, 243 insertions(+), 2 deletions(-)
+
+commit 67c44789ee883953711eb9d20e71a546ef132619
+Merge: 3a064e427d bdf5bac071
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 15 12:01:16 2026 -0700
+
+    Merge pull request #21599 from Pushpenderrathore/feature/ssl-peer-cert-trace
+    
+    Add HTTP TLS peer cert tracing via CertificateTrace (Phase 1)
+
+ lib/msf/core/exploit/remote/certificate_trace.rb   |  54 ++++++
+ lib/msf/core/exploit/remote/http_client.rb         |   6 +
+ lib/msf/core/trace/certificate_trace_presenter.rb  |  11 +-
+ .../core/exploit/remote/certificate_trace_spec.rb  | 191 +++++++++++++++++++++
+ 4 files changed, 258 insertions(+), 4 deletions(-)
+
+commit bdf5bac071596d72748f256ad43c3bbfddb1f920
+Author: enp7s0d <75983347+Pushpenderrathore@users.noreply.github.com>
+Date:   Wed Jul 15 23:58:33 2026 +0530
+
+    Handle unknown CertificateTrace mode in certificate_peer_cert_trace
+    
+    Mirror the metadata/full/else dispatch used by certificate_trace and
+    certificate_csr_trace so an unrecognized CertificateTrace value warns
+    via vprint_warning and produces no output instead of silently falling
+    through the metadata branch. Add matching unknown-mode spec coverage.
+
+ lib/msf/core/exploit/remote/certificate_trace.rb           | 10 +++++++++-
+ spec/lib/msf/core/exploit/remote/certificate_trace_spec.rb |  9 +++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+commit f132b52b3ef91ef6a60d89bc20b7aa12d6c9b285
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Jul 15 10:00:36 2026 -0700
+
+    Fix doc martkdown nit
+
+ documentation/modules/auxiliary/server/relay/http_to_smb.md | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit 160e8de5bf034718c93a5f19e54b819f892e49cd
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Jul 15 11:03:05 2026 +0100
+
+    Fix search_cache job cache generation by skipping multi arch payloads
+
+ modules/payloads/singles/linux/multi/meterpreter_reverse_tcp.rb | 2 --
+ tools/modules/update_payload_cached_sizes.rb                    | 4 ++++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 3a064e427d0289f014c04f47dc2bfb9c13ea7e81
+Merge: b1915aa799 e682588adb
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Jul 15 11:05:37 2026 +0200
+
+    Merge pull request #21621 from eipoverflow/fix/payloads/osx/x64/stager/tcp_bug_workaround
+    
+    Workaround for staged TCP osx meterpreter
+
+ data/meterpreter/aarch64_osx_stage          | Bin 34062 -> 34064 bytes
+ data/meterpreter/x64_osx_stage              | Bin 33640 -> 29648 bytes
+ external/source/shellcode/osx/stager/main.c |   2 +-
+ 3 files changed, 1 insertion(+), 1 deletion(-)
