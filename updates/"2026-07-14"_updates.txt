@@ -1,0 +1,82 @@
+commit 55c089d2a295310b84afb8b920e3b7b375b530fa
+Merge: b4df54bb67 7209a4663b
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Jul 16 22:29:26 2026 +0100
+
+    Merge pull request #21622 from zeroSteiner/feat/mcp/plugin-auth
+    
+    Add Bearer Authentication to the MCP server plugin
+
+ lib/msf/core/mcp/application.rb                | 31 +++++++-----
+ lib/msf/core/mcp/config/validator.rb           | 16 ++++++
+ lib/msf/core/mcp/server.rb                     |  6 +++
+ plugins/mcp.rb                                 | 31 +++++++++---
+ spec/lib/msf/core/mcp/application_spec.rb      |  6 ++-
+ spec/lib/msf/core/mcp/config/validator_spec.rb | 46 ++++++++++++++++++
+ spec/plugins/mcp/console_dispatcher_spec.rb    |  6 ++-
+ spec/plugins/mcp_spec.rb                       | 67 +++++++++++++++++++++++++-
+ 8 files changed, 188 insertions(+), 21 deletions(-)
+
+commit b4df54bb678d0c9f144c57731e467d1aa39e127e
+Merge: d1fb6963f1 82d6e7be15
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Jul 16 15:20:44 2026 -0500
+
+    Merge pull request #21578 from arpan-pramanik/master
+    
+    Fixed issue #21572, rescued ActiveRecord::NoDatabaseError
+
+ lib/msf/core/db_manager/connection.rb | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+
+commit d1fb6963f1ee616cdbb6350c1ac16ea2e2c16473
+Merge: 3cef4c6935 a7aaa49dc6
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 16 18:37:04 2026 +0100
+
+    Merge pull request #21552 from stzifkas/fix/lhost-hostname-validation-dns-fallback
+    
+    Fix LHOST validation rejecting tunnel hostnames when DNS lookup fails
+
+ lib/msf/core/handler/reverse.rb                    |  37 ++++---
+ lib/msf/core/handler/reverse_http.rb               |   2 +-
+ lib/msf/core/handler/reverse_udp.rb                |  36 ++++---
+ lib/msf/core/opt_address_or_hostname.rb            |  68 ++++++++++++
+ lib/msf/core/option_container.rb                   |   1 +
+ lib/msf/ui/console/module_option_tab_completion.rb |   4 +-
+ spec/lib/msf/core/opt_address_or_hostname_spec.rb  | 117 +++++++++++++++++++++
+ spec/lib/msf/core/opt_spec.rb                      |   4 +-
+ 8 files changed, 233 insertions(+), 36 deletions(-)
+
+commit 3cef4c6935c5877552df36e2f59e86caca00c38b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 16 16:58:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4e0012f69ed5156ddd29b1a43bb658807097a384
+Merge: ad6773dcf6 38675fea59
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Jul 16 18:49:27 2026 +0200
+
+    Merge pull request #21647 from jheysel-r7/fix/ntlmrelay2self/add_rbcd
+    
+    NtlmRelay2Self module fix check for self delegation via rbcd module
+
+ modules/auxiliary/admin/ldap/shadow_credentials.rb |   2 +-
+ .../exploits/windows/local/ntlm_relay_2_self.rb    | 103 +++++++++++++++++++++
+ 2 files changed, 104 insertions(+), 1 deletion(-)
+
+commit ad6773dcf66c1aecd837a387b70af4c50a8cbc8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 16 11:00:45 2026 +0000
+
+    Bump version of framework to 6.4.145
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
