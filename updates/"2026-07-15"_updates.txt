@@ -1,0 +1,134 @@
+commit fcd24bcde44c83907fc2e965d2d0edd0cb92051b
+Merge: a7836897ea bb9c01d36b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jul 17 16:12:24 2026 -0700
+
+    Merge pull request #21607 from Pushpenderrathore/feature/ssl-peer-cert-trace-phase2
+    
+    Add LDAP and RDP TLS peer cert tracing via CertificateTrace (Phase 2)
+
+ lib/msf/core/exploit/remote/certificate_trace.rb   |   8 +-
+ lib/msf/core/exploit/remote/ldap.rb                |  37 +++++-
+ lib/msf/core/exploit/remote/rdp.rb                 |   3 +
+ .../core/exploit/remote/certificate_trace_spec.rb  |  18 ++-
+ spec/lib/msf/core/exploit/remote/ldap_spec.rb      | 146 ++++++++++++++++++++-
+ spec/lib/msf/core/exploit/remote/rdp_spec.rb       |  76 +++++++++++
+ 6 files changed, 271 insertions(+), 17 deletions(-)
+
+commit a7836897ea9c72c8361ed72e08ed5159036e7578
+Merge: 4dca1c1b0d b84c5e214f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jul 17 15:28:12 2026 -0700
+
+    Merge pull request #21653 from cdelafuente-r7/feature/msf-job-tracking-rpc
+    
+    RPC: Add job tracking for all module types
+
+ lib/msf/base/sessions/scriptable.rb                |   8 +-
+ lib/msf/base/simple/auxiliary.rb                   |  11 +-
+ lib/msf/base/simple/evasion.rb                     |  10 +-
+ lib/msf/base/simple/exploit.rb                     |  14 +-
+ lib/msf/base/simple/post.rb                        |  28 ++-
+ lib/msf/core/evasion_driver.rb                     |  38 +++-
+ lib/msf/core/exploit/local.rb                      |   4 +-
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    |   8 +-
+ lib/msf/core/exploit/remote/check_module.rb        |   4 +-
+ lib/msf/core/exploit_driver.rb                     |  38 +++-
+ lib/msf/core/module.rb                             |   8 +
+ lib/msf/core/post/session_upgrade.rb               |   4 +-
+ lib/msf/core/rpc/v10/rpc_job_status_tracker.rb     |  32 +++-
+ lib/msf/core/rpc/v10/rpc_module.rb                 |  58 ++++--
+ lib/msf/core/rpc/v10/rpc_session.rb                |  31 +++-
+ lib/msf/core/rpc/v10/service.rb                    |   4 +-
+ lib/msf/ui/console/command_dispatcher/auxiliary.rb |   8 +-
+ lib/msf/ui/console/command_dispatcher/core.rb      |   4 +-
+ lib/msf/ui/console/command_dispatcher/post.rb      |   4 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |   4 +-
+ .../hwbridge/ui/console/command_dispatcher/core.rb |   4 +-
+ .../ui/console/command_dispatcher/core.rb          |   4 +-
+ .../msf/base/simple/auxiliary_job_tracking_spec.rb |  80 +++++++++
+ .../msf/base/simple/evasion_job_tracking_spec.rb   |  65 +++++++
+ .../msf/base/simple/exploit_job_tracking_spec.rb   | 158 +++++++++++++++++
+ spec/lib/msf/base/simple/post_job_tracking_spec.rb | 117 +++++++++++++
+ .../core/rpc/v10/rpc_job_status_tracker_spec.rb    | 194 +++++++++++++++++++++
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb |  78 +++++++++
+ .../msf/core/rpc/v10/rpc_module_execute_spec.rb    | 180 +++++++++++++++++++
+ spec/lib/msf/core/rpc/v10/rpc_session_spec.rb      | 127 +++++++++++---
+ spec/lib/msf/exploit/local_spec.rb                 |  22 +++
+ 31 files changed, 1247 insertions(+), 102 deletions(-)
+
+commit 4dca1c1b0d02a40194ea46522b52b4e5fd2b9b4e
+Merge: 55c089d2a2 a59e4b4391
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Jul 17 15:35:44 2026 +0100
+
+    Merge pull request #21575 from g0tmi1k/ftp_mixin3
+    
+    FTP mixin: Report if host is up but service doesn't match
+
+ lib/msf/core/exploit/remote/ftp.rb | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit b84c5e214f512c5b5d516f85f5b2828485c6036a
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Jul 16 19:34:09 2026 +0200
+
+    Code review
+    
+    - add `stringify_unknown` to make sure it won't break when converting
+      Result to JSON
+    - handle case where data is not a String (return error(400,...)
+
+ lib/msf/core/rpc/v10/rpc_job_status_tracker.rb     |  15 ++-
+ lib/msf/core/rpc/v10/rpc_session.rb                |   3 +
+ .../core/rpc/v10/rpc_job_status_tracker_spec.rb    | 103 +++++++++++++++++++++
+ spec/lib/msf/core/rpc/v10/rpc_session_spec.rb      |  57 ++++++++++--
+ 4 files changed, 169 insertions(+), 9 deletions(-)
+
+commit d472c5a6b3b8e898a865a31778872551aa716b55
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Tue Jul 7 10:35:44 2026 +0200
+
+    Track run_uuid/job_id & fix issues
+    
+    Adds a job_listener: kwarg to run_simple / check_simple for exploit,
+    auxiliary, post and evasion modules, exposes Msf::Module#run_uuid, and
+    threads the resulting UUID through Msf::ExploitDriver and
+    Msf::EvasionDriver so RunAsJob paths return [uuid, job_id] uniformly.
+    
+    Fix RPC module.check NotImplementedError handling and JSON-RPC regression
+    
+    Fix RPC session.interactive_read/write for non-meterpreter sessions
+
+ lib/msf/base/sessions/scriptable.rb                |   8 +-
+ lib/msf/base/simple/auxiliary.rb                   |  11 +-
+ lib/msf/base/simple/evasion.rb                     |  10 +-
+ lib/msf/base/simple/exploit.rb                     |  14 +-
+ lib/msf/base/simple/post.rb                        |  28 +++-
+ lib/msf/core/evasion_driver.rb                     |  38 ++++-
+ lib/msf/core/exploit/local.rb                      |   4 +-
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    |   8 +-
+ lib/msf/core/exploit/remote/check_module.rb        |   4 +-
+ lib/msf/core/exploit_driver.rb                     |  38 ++++-
+ lib/msf/core/module.rb                             |   8 +
+ lib/msf/core/post/session_upgrade.rb               |   4 +-
+ lib/msf/core/rpc/v10/rpc_job_status_tracker.rb     |  19 ++-
+ lib/msf/core/rpc/v10/rpc_module.rb                 |  58 +++++--
+ lib/msf/core/rpc/v10/rpc_session.rb                |  28 +++-
+ lib/msf/core/rpc/v10/service.rb                    |   4 +-
+ lib/msf/ui/console/command_dispatcher/auxiliary.rb |   8 +-
+ lib/msf/ui/console/command_dispatcher/core.rb      |   4 +-
+ lib/msf/ui/console/command_dispatcher/post.rb      |   4 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |   4 +-
+ .../hwbridge/ui/console/command_dispatcher/core.rb |   4 +-
+ .../ui/console/command_dispatcher/core.rb          |   4 +-
+ .../msf/base/simple/auxiliary_job_tracking_spec.rb |  80 +++++++++
+ .../msf/base/simple/evasion_job_tracking_spec.rb   |  65 ++++++++
+ .../msf/base/simple/exploit_job_tracking_spec.rb   | 158 ++++++++++++++++++
+ spec/lib/msf/base/simple/post_job_tracking_spec.rb | 117 ++++++++++++++
+ .../core/rpc/v10/rpc_job_status_tracker_spec.rb    |  91 +++++++++++
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb |  78 +++++++++
+ .../msf/core/rpc/v10/rpc_module_execute_spec.rb    | 180 +++++++++++++++++++++
+ spec/lib/msf/core/rpc/v10/rpc_session_spec.rb      |  70 ++++++--
+ spec/lib/msf/exploit/local_spec.rb                 |  22 +++
+ 31 files changed, 1079 insertions(+), 94 deletions(-)
