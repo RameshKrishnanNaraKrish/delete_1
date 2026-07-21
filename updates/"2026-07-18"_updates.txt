@@ -1,0 +1,81 @@
+commit 7c9fd4e653786d40d51f383be1f91993efddadf8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 20 17:05:29 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 63c04cdeaa9a0bddb06e2760e52a65b85394924b
+Merge: 54dcd02c97 2eed1b6a76
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Jul 20 09:57:29 2026 -0700
+
+    Merge pull request #21638 from eve0805/feature/kerberos-offline-artifact-trace
+    
+    Add offline Kerberos ticket trace output
+
+ lib/msf/core/exploit/remote/kerberos/ticket.rb     | 32 ++++++++--
+ lib/msf/ui/console/command_dispatcher/db/klist.rb  | 26 +++++++-
+ .../credential_cache/krb5_ccache_presenter.rb      | 69 ++++++++++++++++++++--
+ .../proto/kerberos/kerberos_logger_subscriber.rb   | 44 +-------------
+ .../auxiliary/admin/kerberos/ticket_converter.rb   | 37 ++++++++++--
+ .../ui/console/command_dispatcher/db/klist_spec.rb | 28 +++++++++
+ .../credential_cache/krb5_ccache_presenter_spec.rb | 13 ++++
+ .../kerberos/kerberos_logger_subscriber_spec.rb    | 31 +++++++++-
+ 8 files changed, 215 insertions(+), 65 deletions(-)
+
+commit 54dcd02c970b31ef2b38b7dec6185c3f6710efc1
+Merge: ce30cd84b2 c5d7252a1e
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Mon Jul 20 15:45:52 2026 +0100
+
+    Merge pull request #21659 from dwelch-r7/fix-mcp-plugin-bind-failure
+    
+    Improve MCP plugin error handling and server binding logic
+
+ lib/msf/core/mcp/server.rb                  |   3 +
+ plugins/mcp.rb                              |  91 +++++++++-
+ spec/plugins/mcp/console_dispatcher_spec.rb |   4 +
+ spec/plugins/mcp/rpc_resolver_spec.rb       |   1 +
+ spec/plugins/mcp_spec.rb                    | 262 ++++++++++++++++++++++++++++
+ 5 files changed, 352 insertions(+), 9 deletions(-)
+
+commit ce30cd84b20b15a7be9428b2ea64a43f7788379b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 20 13:15:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 25 +++++++++++++++++++------
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+
+commit 97a53fd18a570280de9f4eb4f1d96e87c8107fb9
+Merge: fcd24bcde4 68b8afa5ec
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Mon Jul 20 15:07:09 2026 +0200
+
+    Merge pull request #21379 from g0tmi1k/ftp_login
+    
+    ftp_login: Various improvements
+
+ .../modules/auxiliary/scanner/ftp/ftp_login.md     | 158 +++++--
+ lib/metasploit/framework/login_scanner/ftp.rb      |  25 +-
+ modules/auxiliary/scanner/ftp/ftp_login.rb         | 219 ++++++---
+ .../metasploit/framework/login_scanner/ftp_spec.rb | 132 +++++-
+ .../auxiliary/scanner/ftp/ftp_login_spec.rb        | 490 +++++++++++++++++++++
+ 5 files changed, 915 insertions(+), 109 deletions(-)
+
+commit c5d7252a1e45cd1c0af6878299da43f15184c2f4
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Jul 8 11:46:53 2026 +0100
+
+    Improve MCP plugin error handling and server binding logic
+
+ lib/msf/core/mcp/server.rb                  |   3 +
+ plugins/mcp.rb                              |  91 +++++++++-
+ spec/plugins/mcp/console_dispatcher_spec.rb |   4 +
+ spec/plugins/mcp/rpc_resolver_spec.rb       |   1 +
+ spec/plugins/mcp_spec.rb                    | 262 ++++++++++++++++++++++++++++
+ 5 files changed, 352 insertions(+), 9 deletions(-)
