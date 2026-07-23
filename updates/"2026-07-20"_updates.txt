@@ -1,0 +1,20 @@
+commit b009dab59b57f77cede313614964625bf05fbde8
+Merge: 7c9fd4e653 5a743fc385
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Jul 22 16:34:53 2026 +0100
+
+    Merge pull request #21699 from sjanusz-r7/fix-dns-lookups-failing
+    
+    Fix dns question name stripping on frozen strings
+
+ lib/net/dns/question.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 5a743fc385adbf9389bf5f914b69cfdc9aa68201
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Jul 22 14:13:59 2026 +0100
+
+    Fix dns question name stripping on frozen strings
+
+ lib/net/dns/question.rb | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
