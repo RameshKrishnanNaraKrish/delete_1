@@ -1,0 +1,79 @@
+commit a23585d6e0a4a5091377e3865a13acb8fdeff3df
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Jul 23 13:51:50 2026 +0000
+
+    Bump version of framework to 6.4.146
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8a10b372977c9abdbacb24c1b5f59cd0bcb67375
+Merge: f6a4093e8c ac7892285a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jul 23 14:31:14 2026 +0100
+
+    Merge pull request #21703 from dwelch-r7/fix-flaky-windows-tests
+    
+    Fix file removal logic to ensure proper cleanup and return status
+
+ test/modules/post/test/file.rb            |  8 +++++---
+ test/modules/post/test/socket_channels.rb | 15 ++++++++++++---
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+
+commit ac7892285a52e8c4332dbfd5530e073dbcf3abf3
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 23 14:03:17 2026 +0100
+
+    Retry server accept with short intervals to handle delayed channel-open notifications
+
+ test/modules/post/test/socket_channels.rb | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit e22ba816e1e064a068d82e41df33ba8a7150f130
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 23 13:48:14 2026 +0100
+
+    Correctly pass through the server accept timeout
+
+ test/modules/post/test/socket_channels.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 53cc3f66295dab71c503d3b6fb3ac7d0ccf1a77f
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 23 12:45:56 2026 +0100
+
+    Fix file removal logic to ensure proper cleanup and return status
+
+ test/modules/post/test/file.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit f6a4093e8c8f306952479d720ab9f101ea65d019
+Merge: f3c2e70bc6 527c53b8bc
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Jul 23 12:32:01 2026 +0100
+
+    Merge pull request #21661 from kx7m2qd/fix-mcp-sigint-handling
+    
+    Use Puma::Server instead of Puma::Launcher to fix Ctrl+C handling
+
+ lib/msf/core/mcp/application.rb      |  1 +
+ lib/msf/core/mcp/server.rb           | 41 ++++++++++++++-------
+ spec/lib/msf/core/mcp/server_spec.rb | 70 ++++++++++++++++++------------------
+ 3 files changed, 65 insertions(+), 47 deletions(-)
+
+commit f3c2e70bc64e720b81656b7c150aeb0a32a7bfec
+Merge: b009dab59b bc90c6d9e4
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Jul 23 12:18:12 2026 +0100
+
+    Merge pull request #21701 from cdelafuente-r7/fix/job-tracking-rpc-print
+    
+    Fix `fail_with` console output by tracking error messages
+
+ lib/msf/core/exploit.rb                            |  40 +++++--
+ lib/msf/core/exploit_driver.rb                     |   9 +-
+ .../msf/base/simple/exploit_job_tracking_spec.rb   |  46 +++++++-
+ spec/lib/msf/core/exploit_handle_exception_spec.rb | 122 +++++++++++++++++++++
+ 4 files changed, 194 insertions(+), 23 deletions(-)
