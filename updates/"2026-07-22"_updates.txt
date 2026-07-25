@@ -1,0 +1,144 @@
+commit 472bd8320e2c6801740215e4aff621ae2ae69c83
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 24 21:07:37 2026 +0000
+
+    Bump version of framework to 6.4.147
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 2b4dfe15945da1172c18b110bde29e47726488b0
+Merge: e437ed4832 f2141a6b13
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jul 24 22:02:29 2026 +0100
+
+    Merge pull request #21711 from cdelafuente-r7/fix/add-job_listener-kwargs
+    
+    Remove the `job_listener:` kwarg in `run_simple`, `exploit_simple` & `check_simple`
+
+ lib/msf/base/simple/auxiliary.rb                   | 14 +++++-----
+ lib/msf/base/simple/evasion.rb                     |  7 ++---
+ lib/msf/base/simple/exploit.rb                     | 14 +++++-----
+ lib/msf/base/simple/post.rb                        |  7 ++---
+ lib/msf/core/exploit/local.rb                      |  4 +--
+ lib/msf/core/rpc/v10/rpc_module.rb                 | 30 +++++++++++++---------
+ plugins/capture.rb                                 |  2 +-
+ .../msf/base/simple/auxiliary_job_tracking_spec.rb | 20 +++------------
+ .../msf/base/simple/evasion_job_tracking_spec.rb   |  8 ------
+ .../msf/base/simple/exploit_job_tracking_spec.rb   | 30 +++++-----------------
+ spec/lib/msf/base/simple/post_job_tracking_spec.rb |  2 +-
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb | 10 +++-----
+ .../msf/core/rpc/v10/rpc_module_execute_spec.rb    | 15 +++++------
+ spec/lib/msf/exploit/local_spec.rb                 | 20 +++++----------
+ 14 files changed, 73 insertions(+), 110 deletions(-)
+
+commit e437ed4832a00e83136401cd93859c3592b217d4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 24 17:53:06 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit f447811b9e4db5d6afc8699f94839db538a35c74
+Merge: d57fdac6dd 97388a00cd
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Jul 24 10:45:04 2026 -0700
+
+    Merge pull request #21667 from jburgess-r7/gogs-rce-patch
+    
+    Update gogs_rebase_rce module with CVE-2026-52806 and fix version
+
+ .../modules/exploit/multi/http/gogs_rebase_rce.md      |  5 +++--
+ modules/exploits/multi/http/gogs_rebase_rce.rb         | 18 +++++++-----------
+ 2 files changed, 10 insertions(+), 13 deletions(-)
+
+commit f2141a6b13d66806f275ecea19bc28b5856bfde2
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Fri Jul 24 19:24:11 2026 +0200
+
+    Remove the `job_listener:` kwarg in `run_simple`, `exploit_simple` and `check_simple`
+
+ lib/msf/base/simple/auxiliary.rb                   | 14 +++++-----
+ lib/msf/base/simple/evasion.rb                     |  7 ++---
+ lib/msf/base/simple/exploit.rb                     | 14 +++++-----
+ lib/msf/base/simple/post.rb                        |  7 ++---
+ lib/msf/core/exploit/local.rb                      |  4 +--
+ lib/msf/core/rpc/v10/rpc_module.rb                 | 30 +++++++++++++---------
+ plugins/capture.rb                                 |  2 +-
+ .../msf/base/simple/auxiliary_job_tracking_spec.rb | 20 +++------------
+ .../msf/base/simple/evasion_job_tracking_spec.rb   |  8 ------
+ .../msf/base/simple/exploit_job_tracking_spec.rb   | 30 +++++-----------------
+ spec/lib/msf/base/simple/post_job_tracking_spec.rb |  2 +-
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb | 10 +++-----
+ .../msf/core/rpc/v10/rpc_module_execute_spec.rb    | 15 +++++------
+ spec/lib/msf/exploit/local_spec.rb                 | 20 +++++----------
+ 14 files changed, 73 insertions(+), 110 deletions(-)
+
+commit d57fdac6dd8727341f7cebb54d424309bc6c33ba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Jul 24 17:18:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+commit 342e353048d4a9289727d036a4a83350ca8b89b2
+Merge: 30eabcc85d ff60cf8464
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Jul 24 12:10:23 2026 -0500
+
+    Merge pull request #21589 from vinicius-batistella/feature/windows-aarch64-shell-reverse-tcp
+    
+    Add windows/aarch64/shell_reverse_tcp payload
+
+ .../singles/windows/aarch64/shell_reverse_tcp.rb   | 358 +++++++++++++++++++++
+ .../windows/aarch64/shell_reverse_tcp_spec.rb      |  82 +++++
+ spec/modules/payloads_spec.rb                      |   9 +
+ 3 files changed, 449 insertions(+)
+
+commit 30eabcc85dbdea1c4549b2528eff33f4fe992d46
+Merge: a23585d6e0 c209aa1144
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Jul 24 19:07:04 2026 +0200
+
+    Merge pull request #21609 from dwelch-r7/fix-option-validation
+    
+    Implement immediate payload option validation on set calls
+
+ lib/msf/ui/console/command_dispatcher/common.rb    |  17 +++
+ lib/msf/ui/console/command_dispatcher/core.rb      |   8 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   |   5 +
+ .../core_payload_options_spec.rb                   | 150 +++++++++++++++++++++
+ 4 files changed, 179 insertions(+), 1 deletion(-)
+
+commit ff60cf8464dba9fd625146cb10c7ccba8e1640e7
+Author: vinicius-batistella <suiciniv12299@gmail.com>
+Date:   Fri Jul 24 00:11:10 2026 -0300
+
+    Fix trailing comma and add IPv4 LHOST validation specs
+    
+    - Remove stray trailing comma after the 'Payload' hash key that was
+      left behind when the 'Notes' block was removed via GitHub's Apply
+      Suggestion flow. This was tripping rubocop's
+      Style/TrailingCommaInArguments cop and causing the Lint/msftidy CI
+      check to fail. Caught by @bwatters-r7.
+    
+    - Add three specs exercising the IPv4-only LHOST validation:
+      * IPv6 address ('2001:db8::1')
+      * IPv6 loopback ('::1')
+      * Hostname ('www.example.com')
+      Each verifies that #generate raises ArgumentError with the
+      'LHOST must be in IPv4 format' message. Requested by @bwatters-r7
+      to explicitly cover the failure conditions of the IPv4 check
+      added in an earlier commit.
+    
+    Co-authored-by: Cursor <cursoragent@cursor.com>
+
+ .../singles/windows/aarch64/shell_reverse_tcp.rb        |  2 +-
+ .../singles/windows/aarch64/shell_reverse_tcp_spec.rb   | 17 +++++++++++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
