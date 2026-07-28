@@ -1,0 +1,90 @@
+commit 73a0914c4ac1d4c01919fb3b7dc1260c72ad6122
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Jul 27 20:09:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 2da529adcafcc7c77dcad97d8ddf5a2b50e1e1aa
+Merge: 79a6d23d6f ba35216982
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Jul 27 15:02:14 2026 -0500
+
+    Merge pull request #21452 from jheysel-r7/feat/mod/pterodactyl_locales_rce
+    
+    Add Pterodactyl Panel locale.json RCE [CVE-2025-49132]
+
+ .../linux/http/pterodactyl_locales_locale_json.md  | 176 +++++++++++++++++++++
+ .../linux/http/pterodactyl_locales_locale_json.rb  | 168 ++++++++++++++++++++
+ 2 files changed, 344 insertions(+)
+
+commit ba3521698283ee1c726005c4a960a594999174e5
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Jul 27 09:07:47 2026 -0700
+
+    Rubocop fixes
+
+ modules/exploits/linux/http/pterodactyl_locales_locale_json.rb | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 79a6d23d6f547b931bf87d26394787011e878b8c
+Merge: 42b2e61108 9c67d6604c
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Jul 27 17:00:17 2026 +0200
+
+    Merge pull request #21697 from bwatters-r7/feature/fetch-endian
+    
+    Add Fetch Multi Endian Check for MIPS
+
+ .../How-to-use-fetch-payloads.md                   |  16 +-
+ lib/msf/core/payload/adapter/fetch.rb              |   4 +-
+ lib/msf/core/payload/adapter/fetch/fileless.rb     |   7 +-
+ lib/msf/core/payload/adapter/fetch/server/http.rb  |  81 ++++++---
+ .../core/payload/adapter/fetch/fileless_spec.rb    |  60 +++++++
+ .../core/payload/adapter/fetch/server/http_spec.rb | 184 +++++++++++++++++++++
+ spec/lib/msf/core/payload/adapter/fetch_spec.rb    |  72 ++++++++
+ 7 files changed, 389 insertions(+), 35 deletions(-)
+
+commit 784080e054bf68f0170b64caddb29f3e60cc9b84
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Tue May 26 12:31:19 2026 -0700
+
+    Use payload.encoded
+
+ modules/exploits/linux/http/pterodactyl_locales_locale_json.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 042f88dfc72f1980c20b1516082d7d95ad847037
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed May 13 17:51:05 2026 -0700
+
+    Responded to comments
+
+ .../linux/http/pterodactyl_locales_locale_json.md    | 10 +++++++++-
+ .../linux/http/pterodactyl_locales_locale_json.rb    | 20 +++++++++++++++++---
+ 2 files changed, 26 insertions(+), 4 deletions(-)
+
+commit e6e3a4820abc20be5af276b952ef38c6ea0281bc
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed May 13 16:14:19 2026 -0700
+
+    Add Pterodactyl Panel locale.json RCE [CVE-2025-49132]
+
+ .../linux/http/pterodactyl_locales_locale_json.md  | 168 +++++++++++++++++++++
+ .../linux/http/pterodactyl_locales_locale_json.rb  | 154 +++++++++++++++++++
+ 2 files changed, 322 insertions(+)
+
+commit 42b2e6110853d5a9a96c42301e51076e0fd8847c
+Merge: 472bd8320e 3ac4f4929d
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Jul 27 14:39:54 2026 +0100
+
+    Merge pull request #21663 from zeroSteiner/fix/icpr-missing-hresult
+    
+    Fix icpr_cert module error handling with missing HRESULT
+
+ Gemfile.lock                           |  2 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb | 12 ++++++++++--
+ 2 files changed, 11 insertions(+), 3 deletions(-)
