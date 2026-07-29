@@ -1,0 +1,48 @@
+commit 933d62c0c3fc0f0082a7cd8ac993603e07ec9b00
+Merge: 9180b4b935 0009e843da
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Jul 28 16:33:46 2026 +0100
+
+    Merge pull request #21718 from sjanusz-r7/fix-vnc-problems
+    
+    Fix vncinject missing session & arch to fix VNC script
+
+ lib/msf/base/sessions/vncinject.rb               | 10 +++++++++
+ lib/msf/base/sessions/vncinject_options.rb       | 21 +++++++++++++++++++
+ modules/payloads/stages/windows/vncinject.rb     |  3 ++-
+ modules/payloads/stages/windows/x64/vncinject.rb |  3 ++-
+ scripts/meterpreter/vnc.rb                       | 26 ++++++++++++------------
+ 5 files changed, 48 insertions(+), 15 deletions(-)
+
+commit 9180b4b93586190909fdc1650e487c2a1ce7e1e0
+Merge: 73a0914c4a 4fa9c87a60
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Jul 28 08:28:07 2026 -0700
+
+    Merge pull request #21608 from Pushpenderrathore/feature/ssl-peer-cert-trace-phase3
+    
+    Add Postgres TLS support and peer cert tracing via CertificateTrace (Phase 3)
+
+ lib/msf/core/exploit/remote/certificate_trace.rb   |  42 ++++++--
+ lib/msf/core/exploit/remote/http_client.rb         |   5 +-
+ lib/msf/core/exploit/remote/ldap.rb                |   3 +-
+ lib/msf/core/exploit/remote/postgres.rb            |  11 +-
+ lib/msf/core/exploit/remote/rdp.rb                 |   2 +-
+ .../core/exploit/remote/certificate_trace_spec.rb  |  63 +++++++++++
+ spec/lib/msf/core/exploit/remote/ldap_spec.rb      |   4 +
+ spec/lib/msf/core/exploit/remote/postgres_spec.rb  | 116 +++++++++++++++++++++
+ spec/lib/msf/core/exploit/remote/rdp_spec.rb       |   1 +
+ 9 files changed, 233 insertions(+), 14 deletions(-)
+
+commit 0009e843daa8cc0d7a6f38625e43fe36b59324d0
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Jul 27 10:54:32 2026 +0100
+
+    Get VNC script working again
+
+ lib/msf/base/sessions/vncinject.rb               | 10 +++++++++
+ lib/msf/base/sessions/vncinject_options.rb       | 21 +++++++++++++++++++
+ modules/payloads/stages/windows/vncinject.rb     |  3 ++-
+ modules/payloads/stages/windows/x64/vncinject.rb |  3 ++-
+ scripts/meterpreter/vnc.rb                       | 26 ++++++++++++------------
+ 5 files changed, 48 insertions(+), 15 deletions(-)
