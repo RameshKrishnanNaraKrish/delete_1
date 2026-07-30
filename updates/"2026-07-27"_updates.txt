@@ -1,0 +1,505 @@
+commit 0a054e75db7a7dc08db20de66776e5b3bcca9094
+Merge: 8360f49e2b 87e8d259fa
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 29 18:48:42 2026 -0400
+
+    Merge branch 'master' of github.com:rapid7/metasploit-framework into 6.5
+    
+    Resolve conflicts:
+    - lib/metasploit/framework/version.rb, Gemfile.lock: keep 6.5.0
+    - test/modules/post/test/socket_channels.rb: keep master's retry-with-timeout
+      accept loop, combined with the datastore['TIMEOUT'] option added on 6.5
+
+ Gemfile.lock                                       |    2 +-
+ LICENSE_GEMS                                       |    2 +-
+ config/mcp_config.yaml.example                     |    7 +
+ config/mcp_config_jsonrpc.yaml.example             |    7 +
+ data/exploits/CVE-2026-46300/cve-2026-46300.c      |  951 ++++++++++++++++
+ .../exploits/CVE-2026-46300/cve-2026-46300_aarch64 |  Bin 0 -> 682000 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_armle  |  Bin 0 -> 621812 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_x64    |  Bin 0 -> 954632 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_x86    |  Bin 0 -> 808656 bytes
+ db/modules_metadata_base.json                      |  321 +++++-
+ .../How-to-use-Metasploit-MCP-Server.md            |  157 ++-
+ .../How-to-use-fetch-payloads.md                   |   16 +-
+ .../auxiliary/gather/owncloud_phpinfo_reader.md    |    2 +-
+ .../modules/auxiliary/scanner/ftp/ftp_login.md     |  158 ++-
+ .../linux/http/pterodactyl_locales_locale_json.md  |  176 +++
+ .../linux/local/cve_2026_46300_fragnesia.md        |   61 +
+ .../modules/exploit/multi/http/gogs_rebase_rce.md  |    5 +-
+ .../http/joomla_com_jce_unauth_file_upload_rce.md  |   69 ++
+ .../http/wp_plugin_pix_unauth_rce_cve_2026_3891.md |  107 ++
+ .../post/linux/capture/grandstream_gxp1600_sip.md  |    4 +-
+ lib/metasploit/framework/login_scanner/ftp.rb      |   25 +-
+ lib/msf/base/sessions/scriptable.rb                |    8 +-
+ lib/msf/base/sessions/vncinject.rb                 |   10 +
+ lib/msf/base/sessions/vncinject_options.rb         |   21 +
+ lib/msf/base/simple/auxiliary.rb                   |    9 +-
+ lib/msf/base/simple/evasion.rb                     |    5 +-
+ lib/msf/base/simple/exploit.rb                     |    8 +-
+ lib/msf/base/simple/post.rb                        |   23 +-
+ lib/msf/core/db_manager/connection.rb              |   15 +-
+ lib/msf/core/evasion_driver.rb                     |   38 +-
+ lib/msf/core/exploit.rb                            |   40 +-
+ lib/msf/core/exploit/remote/browser_autopwn2.rb    |    8 +-
+ lib/msf/core/exploit/remote/certificate_trace.rb   |   48 +-
+ lib/msf/core/exploit/remote/check_module.rb        |    4 +-
+ lib/msf/core/exploit/remote/ftp.rb                 |   14 +
+ lib/msf/core/exploit/remote/http_client.rb         |    5 +-
+ lib/msf/core/exploit/remote/kerberos/ticket.rb     |   32 +-
+ lib/msf/core/exploit/remote/ldap.rb                |   38 +-
+ lib/msf/core/exploit/remote/ms_icpr.rb             |   12 +-
+ lib/msf/core/exploit/remote/postgres.rb            |   11 +-
+ lib/msf/core/exploit/remote/rdp.rb                 |    3 +
+ lib/msf/core/exploit_driver.rb                     |   31 +-
+ lib/msf/core/handler/reverse.rb                    |   37 +-
+ lib/msf/core/handler/reverse_http.rb               |    2 +-
+ lib/msf/core/handler/reverse_udp.rb                |   36 +-
+ lib/msf/core/mcp.rb                                |    8 +
+ lib/msf/core/mcp/application.rb                    |   46 +-
+ lib/msf/core/mcp/config/defaults.rb                |    6 +
+ lib/msf/core/mcp/config/loader.rb                  |    6 +
+ lib/msf/core/mcp/config/validator.rb               |   20 +
+ lib/msf/core/mcp/logging/sinks/sanitizing.rb       |    2 +-
+ lib/msf/core/mcp/metasploit/client.rb              |    5 +-
+ lib/msf/core/mcp/metasploit/jsonrpc_client.rb      |   59 +
+ lib/msf/core/mcp/metasploit/messagepack_client.rb  |   59 +
+ lib/msf/core/mcp/security/input_validator.rb       |  123 +++
+ lib/msf/core/mcp/server.rb                         |   68 +-
+ lib/msf/core/mcp/tools/credential_info.rb          |  106 +-
+ lib/msf/core/mcp/tools/host_info.rb                |  111 +-
+ lib/msf/core/mcp/tools/loot_info.rb                |  114 +-
+ lib/msf/core/mcp/tools/module_check.rb             |  129 +++
+ lib/msf/core/mcp/tools/module_execute.rb           |  118 ++
+ lib/msf/core/mcp/tools/module_info.rb              |   75 +-
+ lib/msf/core/mcp/tools/module_results.rb           |   87 ++
+ lib/msf/core/mcp/tools/note_info.rb                |  128 +--
+ lib/msf/core/mcp/tools/running_stats.rb            |   78 ++
+ lib/msf/core/mcp/tools/search_modules.rb           |   99 +-
+ lib/msf/core/mcp/tools/service_info.rb             |  134 +--
+ lib/msf/core/mcp/tools/session_list.rb             |   70 ++
+ lib/msf/core/mcp/tools/session_read.rb             |   83 ++
+ lib/msf/core/mcp/tools/session_stop.rb             |   82 ++
+ lib/msf/core/mcp/tools/session_write.rb            |   92 ++
+ lib/msf/core/mcp/tools/tool_helper.rb              |   60 +
+ lib/msf/core/mcp/tools/vulnerability_info.rb       |  128 +--
+ lib/msf/core/module.rb                             |    8 +
+ lib/msf/core/opt_address_or_hostname.rb            |   70 ++
+ lib/msf/core/option_container.rb                   |    1 +
+ lib/msf/core/payload/adapter/fetch.rb              |    4 +-
+ lib/msf/core/payload/adapter/fetch/fileless.rb     |    7 +-
+ lib/msf/core/payload/adapter/fetch/server/http.rb  |   81 +-
+ lib/msf/core/post/session_upgrade.rb               |    4 +-
+ lib/msf/core/rpc/v10/rpc_job_status_tracker.rb     |   32 +-
+ lib/msf/core/rpc/v10/rpc_module.rb                 |   83 +-
+ lib/msf/core/rpc/v10/rpc_session.rb                |   31 +-
+ lib/msf/core/rpc/v10/service.rb                    |    4 +-
+ lib/msf/ui/console/command_dispatcher/auxiliary.rb |    8 +-
+ lib/msf/ui/console/command_dispatcher/common.rb    |   17 +
+ lib/msf/ui/console/command_dispatcher/core.rb      |   12 +-
+ lib/msf/ui/console/command_dispatcher/db/klist.rb  |   26 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   |    5 +
+ lib/msf/ui/console/command_dispatcher/post.rb      |    4 +-
+ lib/msf/ui/console/module_command_dispatcher.rb    |    4 +-
+ lib/msf/ui/console/module_option_tab_completion.rb |    4 +-
+ lib/net/dns/question.rb                            |   14 +-
+ .../hwbridge/ui/console/command_dispatcher/core.rb |    4 +-
+ .../ui/console/command_dispatcher/core.rb          |    4 +-
+ .../credential_cache/krb5_ccache_presenter.rb      |   69 +-
+ .../proto/kerberos/kerberos_logger_subscriber.rb   |   44 +-
+ .../auxiliary/admin/kerberos/ticket_converter.rb   |   37 +-
+ modules/auxiliary/scanner/ftp/ftp_login.rb         |  219 +++-
+ .../linux/http/centreon_auth_rce_cve_2025_5946.rb  |    4 +-
+ .../http/pandora_fms_auth_rce_cve_2024_11320.rb    |    2 +-
+ .../http/pandora_fms_auth_rce_cve_2024_12971.rb    |    2 +-
+ .../linux/http/pterodactyl_locales_locale_json.rb  |  168 +++
+ .../linux/local/cve_2026_46300_fragnesia.rb        |  161 +++
+ .../exploits/multi/fileformat/office_word_macro.rb |    1 +
+ modules/exploits/multi/http/gogs_rebase_rce.rb     |   18 +-
+ .../http/joomla_com_jce_unauth_file_upload_rce.rb  |  168 +++
+ .../multi/http/microfocus_ucmdb_unauth_deser.rb    |    2 +-
+ .../multi/http/vbulletin_getindexablecontent.rb    |   20 +-
+ .../http/wp_plugin_pix_unauth_rce_cve_2026_3891.rb |  126 +++
+ modules/exploits/osx/local/rsh_libmalloc.rb        |    8 +-
+ modules/exploits/osx/local/sudo_password_bypass.rb |    2 +-
+ modules/exploits/windows/fileformat/vlc_mkv.rb     |    2 +-
+ .../http/prtg_authenticated_rce_cve_2023_32781.rb  |    4 +-
+ .../windows/misc/ahsay_backup_fileupload.rb        |   11 +-
+ .../singles/windows/aarch64/shell_reverse_tcp.rb   |  358 ++++++
+ modules/payloads/stages/windows/vncinject.rb       |    3 +-
+ modules/payloads/stages/windows/x64/vncinject.rb   |    3 +-
+ plugins/capture.rb                                 |    2 +-
+ plugins/mcp.rb                                     |  169 ++-
+ scripts/meterpreter/vnc.rb                         |   26 +-
+ spec/api/json_rpc_spec.rb                          |   17 +-
+ .../metasploit/framework/login_scanner/ftp_spec.rb |  132 ++-
+ .../msf/base/simple/auxiliary_job_tracking_spec.rb |   68 ++
+ .../msf/base/simple/evasion_job_tracking_spec.rb   |   57 +
+ .../msf/base/simple/exploit_job_tracking_spec.rb   |  178 +++
+ spec/lib/msf/base/simple/post_job_tracking_spec.rb |  117 ++
+ .../core/exploit/remote/certificate_trace_spec.rb  |   81 +-
+ spec/lib/msf/core/exploit/remote/ldap_spec.rb      |  150 ++-
+ spec/lib/msf/core/exploit/remote/postgres_spec.rb  |  116 ++
+ spec/lib/msf/core/exploit/remote/rdp_spec.rb       |   77 ++
+ spec/lib/msf/core/exploit_handle_exception_spec.rb |  122 ++
+ spec/lib/msf/core/mcp/application_spec.rb          |   65 +-
+ spec/lib/msf/core/mcp/config/loader_spec.rb        |   64 ++
+ spec/lib/msf/core/mcp/config/validator_spec.rb     |  103 +-
+ .../msf/core/mcp/logging/sinks/sanitizing_spec.rb  |   11 +
+ spec/lib/msf/core/mcp/metasploit/client_spec.rb    |   40 +
+ .../core/mcp/metasploit/messagepack_client_spec.rb |   78 ++
+ .../msf/core/mcp/security/input_validator_spec.rb  |  194 ++++
+ spec/lib/msf/core/mcp/server_spec.rb               |  121 +-
+ .../lib/msf/core/mcp/tools/credential_info_spec.rb |    4 +-
+ spec/lib/msf/core/mcp/tools/loot_info_spec.rb      |    4 +-
+ spec/lib/msf/core/mcp/tools/module_check_spec.rb   |  147 +++
+ spec/lib/msf/core/mcp/tools/module_execute_spec.rb |  179 +++
+ spec/lib/msf/core/mcp/tools/module_results_spec.rb |   87 ++
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb      |    4 +-
+ spec/lib/msf/core/mcp/tools/running_stats_spec.rb  |   81 ++
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb   |    4 +-
+ spec/lib/msf/core/mcp/tools/session_list_spec.rb   |   92 ++
+ spec/lib/msf/core/mcp/tools/session_read_spec.rb   |   83 ++
+ spec/lib/msf/core/mcp/tools/session_stop_spec.rb   |  103 ++
+ spec/lib/msf/core/mcp/tools/session_write_spec.rb  |  116 ++
+ spec/lib/msf/core/mcp/tools/tool_helper_spec.rb    |  135 +++
+ .../msf/core/mcp/tools/vulnerability_info_spec.rb  |    4 +-
+ spec/lib/msf/core/opt_address_or_hostname_spec.rb  |  116 ++
+ spec/lib/msf/core/opt_spec.rb                      |    4 +-
+ .../core/payload/adapter/fetch/fileless_spec.rb    |   60 +
+ .../core/payload/adapter/fetch/server/http_spec.rb |  184 ++++
+ spec/lib/msf/core/payload/adapter/fetch_spec.rb    |   72 ++
+ .../core/rpc/v10/rpc_job_status_tracker_spec.rb    |  194 ++++
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb |   96 ++
+ .../msf/core/rpc/v10/rpc_module_execute_spec.rb    |  177 +++
+ spec/lib/msf/core/rpc/v10/rpc_session_spec.rb      |  127 ++-
+ spec/lib/msf/exploit/local_spec.rb                 |   14 +
+ .../core_payload_options_spec.rb                   |  150 +++
+ .../ui/console/command_dispatcher/db/klist_spec.rb |   28 +
+ .../credential_cache/krb5_ccache_presenter_spec.rb |   13 +
+ .../kerberos/kerberos_logger_subscriber_spec.rb    |   31 +-
+ .../auxiliary/scanner/ftp/ftp_login_spec.rb        |  490 ++++++++
+ .../windows/aarch64/shell_reverse_tcp_spec.rb      |   82 ++
+ spec/modules/payloads_spec.rb                      |    9 +
+ spec/plugins/mcp/console_dispatcher_spec.rb        |   32 +-
+ spec/plugins/mcp/option_validator_spec.rb          |   30 +
+ spec/plugins/mcp/rpc_resolver_spec.rb              |   83 ++
+ spec/plugins/mcp_spec.rb                           |  387 ++++++-
+ test/modules/post/test/file.rb                     |    8 +-
+ test/modules/post/test/socket_channels.rb          |   11 +-
+ tools/dev/msfmcp_integration_test.rb               | 1164 ++++++++++++++++++++
+ 178 files changed, 11965 insertions(+), 1111 deletions(-)
+
+commit 8360f49e2bcecf742ab036258103a095f442097c
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 29 18:15:59 2026 -0400
+
+    Bump Metasploit version to 6.5.0
+
+ Gemfile.lock                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit efa49d7b8d98ca64150a957e10f9a04add56234e
+Merge: d8986d4090 d70d804cc5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Jul 29 22:01:44 2026 +0100
+
+    Merge pull request #21726 from zeroSteiner/fix/bump-payloads/6.5/2.0.247
+    
+    Update the metasploit-payloads and metasploit-payloads_mettle gems for 6.5
+
+ Gemfile.lock                 | 8 ++++----
+ LICENSE_GEMS                 | 4 ++--
+ metasploit-framework.gemspec | 4 ++--
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 87e8d259fa42dc0991875562615107a7e5c5ae2e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 29 20:08:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit d85169c9929790e44459fec8c5fae7116b293ad5
+Merge: 78fae6c29c 6e18806bd1
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 29 14:59:30 2026 -0500
+
+    Merge pull request #21715 from l1ve709/fix/module-output-typos
+    
+    Fix 'successfully' typos in module console outputs
+
+ .../linux/http/centreon_auth_rce_cve_2025_5946.rb    |  4 ++--
+ .../http/pandora_fms_auth_rce_cve_2024_11320.rb      |  2 +-
+ .../http/pandora_fms_auth_rce_cve_2024_12971.rb      |  2 +-
+ .../multi/http/microfocus_ucmdb_unauth_deser.rb      |  2 +-
+ .../multi/http/vbulletin_getindexablecontent.rb      | 20 ++++++++++----------
+ modules/exploits/osx/local/rsh_libmalloc.rb          |  8 ++++----
+ modules/exploits/osx/local/sudo_password_bypass.rb   |  2 +-
+ modules/exploits/windows/fileformat/vlc_mkv.rb       |  2 +-
+ .../http/prtg_authenticated_rce_cve_2023_32781.rb    |  4 ++--
+ .../exploits/windows/misc/ahsay_backup_fileupload.rb | 11 ++++++-----
+ 10 files changed, 29 insertions(+), 28 deletions(-)
+
+commit 78fae6c29c1b7933d6124a1b426155f4e43a081f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 29 19:43:24 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 4cb53cd1928fbab182d01c242560335d9da6cdfd
+Merge: 75d3b963cf a2946d4dba
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 29 14:35:06 2026 -0500
+
+    Merge pull request #21662 from d1mov/patch-1
+    
+    Fix office_word_macro payload compatibility
+
+ modules/exploits/multi/fileformat/office_word_macro.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6e18806bd1c3fcd9a998b167dd4103333ed1be5f
+Author: Yigit <yigit@example.com>
+Date:   Wed Jul 29 22:34:52 2026 +0300
+
+    Revert unrelated Rubocop fixes per maintainer feedback
+
+ modules/exploits/multi/http/vbulletin_getindexablecontent.rb           | 2 +-
+ modules/exploits/windows/http/prtg_authenticated_rce_cve_2023_32781.rb | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit d70d804cc50fea7e1be9b239234f895dc91b61df
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 29 15:17:00 2026 -0400
+
+    Update metasploit-payloads_mettle gem to 1.0.48
+
+ Gemfile.lock                 | 4 ++--
+ LICENSE_GEMS                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit e0b84573a1d4049157c5e94126c3831ea4728877
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Wed Jul 29 15:13:55 2026 -0400
+
+    Update metasploit-payloads gem to 2.0.247
+    
+    Includes changes from:
+    * rapid7/metasploit-payloads#806
+    * rapid7/metasploit-payloads#804
+
+ Gemfile.lock                 | 4 ++--
+ LICENSE_GEMS                 | 2 +-
+ metasploit-framework.gemspec | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 2f009292613d58b0dddc79479299e08edbe375e2
+Author: Yigit <yigit@example.com>
+Date:   Wed Jul 29 21:55:31 2026 +0300
+
+    Fix remaining Rubocop/msftidy offenses to pass CI
+
+ modules/exploits/multi/http/vbulletin_getindexablecontent.rb           | 2 +-
+ modules/exploits/windows/http/prtg_authenticated_rce_cve_2023_32781.rb | 1 -
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit 75d3b963cf8b192602966ad19c6292963fd10b9d
+Merge: 69d7b8c178 734e7e2626
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 29 13:23:10 2026 -0500
+
+    Merge pull request #21714 from l1ve709/fix/typo-in-module-documentation
+    
+    Fix typos in module documentation
+
+ documentation/modules/auxiliary/gather/owncloud_phpinfo_reader.md   | 2 +-
+ documentation/modules/post/linux/capture/grandstream_gxp1600_sip.md | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit dcf7105ef2e1a8466b7ebe50319b7c2a14c3a213
+Author: Yigit <yigit@example.com>
+Date:   Wed Jul 29 21:22:27 2026 +0300
+
+    Incorporate PR review suggestions from Copilot
+
+ modules/exploits/linux/http/centreon_auth_rce_cve_2025_5946.rb | 2 +-
+ modules/exploits/windows/misc/ahsay_backup_fileupload.rb       | 7 ++++---
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+commit 69d7b8c178d3aa8608aca201210dfbbd52f86fdb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 29 16:32:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 5f18eb6c26801e1dab85042706b1d937bb1a4f59
+Merge: fecea4cdb4 44e4b9ae5a
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Jul 29 11:24:17 2026 -0500
+
+    Merge pull request #21683 from vognik/CVE-2026-3891
+    
+    Add CVE-2026-3891 WordPress Unauthenticated RCE Exploit via Pix for WooCommerce plugin
+
+ .../http/wp_plugin_pix_unauth_rce_cve_2026_3891.md | 107 +++++++++++++++++
+ .../http/wp_plugin_pix_unauth_rce_cve_2026_3891.rb | 126 +++++++++++++++++++++
+ 2 files changed, 233 insertions(+)
+
+commit fecea4cdb4dd37ac42ab56c5576b5e16ea3acf30
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 29 16:14:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 50 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+
+commit 4f32bbdcc68b659a69c69c31d79831aa1c09a93c
+Merge: d529aef7b7 5cad123e01
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Jul 29 09:06:52 2026 -0700
+
+    Merge pull request #21456 from msutovsky-r7/exploit/cve-2026-46300
+    
+    Adds Fragnesia module (CVE-2026-46300)
+
+ data/exploits/CVE-2026-46300/cve-2026-46300.c      | 951 +++++++++++++++++++++
+ .../exploits/CVE-2026-46300/cve-2026-46300_aarch64 | Bin 0 -> 682000 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_armle  | Bin 0 -> 621812 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_x64    | Bin 0 -> 954632 bytes
+ data/exploits/CVE-2026-46300/cve-2026-46300_x86    | Bin 0 -> 808656 bytes
+ .../linux/local/cve_2026_46300_fragnesia.md        |  61 ++
+ .../linux/local/cve_2026_46300_fragnesia.rb        | 161 ++++
+ 7 files changed, 1173 insertions(+)
+
+commit d529aef7b75ba87b7d5e37c2a86bf90c3172d026
+Merge: d8ef804e15 7907f574ca
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Jul 29 15:16:46 2026 +0100
+
+    Merge pull request #21654 from cdelafuente-r7/feature/msf-mcp-tools
+    
+    MCP server: "dangerous" actions & new tools
+
+ config/mcp_config.yaml.example                     |    7 +
+ config/mcp_config_jsonrpc.yaml.example             |    7 +
+ .../How-to-use-Metasploit-MCP-Server.md            |  157 ++-
+ lib/msf/core/mcp.rb                                |    8 +
+ lib/msf/core/mcp/application.rb                    |   14 +-
+ lib/msf/core/mcp/config/defaults.rb                |    6 +
+ lib/msf/core/mcp/config/loader.rb                  |    6 +
+ lib/msf/core/mcp/config/validator.rb               |    4 +
+ lib/msf/core/mcp/logging/sinks/sanitizing.rb       |    2 +-
+ lib/msf/core/mcp/metasploit/client.rb              |    5 +-
+ lib/msf/core/mcp/metasploit/jsonrpc_client.rb      |   59 +
+ lib/msf/core/mcp/metasploit/messagepack_client.rb  |   59 +
+ lib/msf/core/mcp/security/input_validator.rb       |  123 +++
+ lib/msf/core/mcp/server.rb                         |   18 +-
+ lib/msf/core/mcp/tools/credential_info.rb          |  106 +-
+ lib/msf/core/mcp/tools/host_info.rb                |  111 +-
+ lib/msf/core/mcp/tools/loot_info.rb                |  114 +-
+ lib/msf/core/mcp/tools/module_check.rb             |  129 +++
+ lib/msf/core/mcp/tools/module_execute.rb           |  118 ++
+ lib/msf/core/mcp/tools/module_info.rb              |   75 +-
+ lib/msf/core/mcp/tools/module_results.rb           |   87 ++
+ lib/msf/core/mcp/tools/note_info.rb                |  128 +--
+ lib/msf/core/mcp/tools/running_stats.rb            |   78 ++
+ lib/msf/core/mcp/tools/search_modules.rb           |   99 +-
+ lib/msf/core/mcp/tools/service_info.rb             |  134 +--
+ lib/msf/core/mcp/tools/session_list.rb             |   70 ++
+ lib/msf/core/mcp/tools/session_read.rb             |   83 ++
+ lib/msf/core/mcp/tools/session_stop.rb             |   82 ++
+ lib/msf/core/mcp/tools/session_write.rb            |   92 ++
+ lib/msf/core/mcp/tools/tool_helper.rb              |   60 +
+ lib/msf/core/mcp/tools/vulnerability_info.rb       |  128 +--
+ lib/msf/core/rpc/v10/rpc_module.rb                 |    7 +-
+ plugins/mcp.rb                                     |   49 +-
+ spec/api/json_rpc_spec.rb                          |   17 +-
+ spec/lib/msf/core/mcp/application_spec.rb          |   59 +-
+ spec/lib/msf/core/mcp/config/loader_spec.rb        |   64 ++
+ spec/lib/msf/core/mcp/config/validator_spec.rb     |   57 +-
+ .../msf/core/mcp/logging/sinks/sanitizing_spec.rb  |   11 +
+ spec/lib/msf/core/mcp/metasploit/client_spec.rb    |   40 +
+ .../core/mcp/metasploit/messagepack_client_spec.rb |   78 ++
+ .../msf/core/mcp/security/input_validator_spec.rb  |  194 ++++
+ spec/lib/msf/core/mcp/server_spec.rb               |   51 +-
+ .../lib/msf/core/mcp/tools/credential_info_spec.rb |    4 +-
+ spec/lib/msf/core/mcp/tools/loot_info_spec.rb      |    4 +-
+ spec/lib/msf/core/mcp/tools/module_check_spec.rb   |  147 +++
+ spec/lib/msf/core/mcp/tools/module_execute_spec.rb |  179 +++
+ spec/lib/msf/core/mcp/tools/module_results_spec.rb |   87 ++
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb      |    4 +-
+ spec/lib/msf/core/mcp/tools/running_stats_spec.rb  |   81 ++
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb   |    4 +-
+ spec/lib/msf/core/mcp/tools/session_list_spec.rb   |   92 ++
+ spec/lib/msf/core/mcp/tools/session_read_spec.rb   |   83 ++
+ spec/lib/msf/core/mcp/tools/session_stop_spec.rb   |  103 ++
+ spec/lib/msf/core/mcp/tools/session_write_spec.rb  |  116 ++
+ spec/lib/msf/core/mcp/tools/tool_helper_spec.rb    |  135 +++
+ .../msf/core/mcp/tools/vulnerability_info_spec.rb  |    4 +-
+ spec/lib/msf/core/rpc/v10/rpc_module_check_spec.rb |  100 +-
+ spec/plugins/mcp/console_dispatcher_spec.rb        |   22 +
+ spec/plugins/mcp/option_validator_spec.rb          |   30 +
+ spec/plugins/mcp/rpc_resolver_spec.rb              |   82 ++
+ spec/plugins/mcp_spec.rb                           |   58 +
+ tools/dev/msfmcp_integration_test.rb               | 1164 ++++++++++++++++++++
+ 62 files changed, 4701 insertions(+), 594 deletions(-)
+
+commit d8ef804e15306f01d16b25589766db0bf866c140
+Merge: 92fb945e3b 95eecf563a
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Jul 29 14:24:35 2026 +0100
+
+    Merge pull request #21722 from dwelch-r7/fix-lhost-handlers
+    
+    Allow wildcard bind addresses for handlers that bind to all interfaces
+
+ lib/msf/core/opt_address_or_hostname.rb           | 2 ++
+ spec/lib/msf/core/opt_address_or_hostname_spec.rb | 5 ++---
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 7907f574cae4564c53c7d46408553597a6b73f6c
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Wed Jul 29 13:32:02 2026 +0200
+
+    Fix after 2nd code review
+    
+    - Use `UNSUPPORTED_CHECK_MESSAGE` constant instead of the CheckCode
+      message
+
+ lib/msf/core/mcp/tools/module_check.rb           |  5 ++++-
+ spec/lib/msf/core/mcp/tools/module_check_spec.rb | 14 ++++++++++++--
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+
+commit 92fb945e3bd723dd8c2a5a426e787e13b8a6b748
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Jul 29 08:25:40 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 27b9d0c8c34928739cdb8a453f1b0c2e75866d3e
+Merge: 933d62c0c3 ba49695c31
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Jul 29 10:17:57 2026 +0200
+
+    Land #21615, adds module for Joomla Content Editor extension ( CVE-2026-48907)
+    
+    Add JCE profiles.import unauthenticated RCE module
+
+ .../http/joomla_com_jce_unauth_file_upload_rce.md  |  69 +++++++++
+ .../http/joomla_com_jce_unauth_file_upload_rce.rb  | 168 +++++++++++++++++++++
+ 2 files changed, 237 insertions(+)
