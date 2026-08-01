@@ -1,0 +1,93 @@
+commit eac2926b138d2c21c1927fef7b940261b9b516f7
+Merge: 7fca144afc 04d40d3ff9
+Author: Spencer McIntyre <58950994+smcintyre-r7@users.noreply.github.com>
+Date:   Fri Jul 31 16:42:16 2026 -0400
+
+    Merge pull request #21681 from rmhowe425/dev/ray/local-file-inclusion
+    
+    ENH: Module for Ray AI File path Traversal
+
+ .../ray_dashboard_logs_api_path_traversal.md       | 173 +++++++++++++
+ .../ray_dashboard_logs_api_path_traversal.rb       | 268 +++++++++++++++++++++
+ 2 files changed, 441 insertions(+)
+
+commit 04d40d3ff9014bd2935a69ecd6e9fa7dbb001613
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Fri Jul 31 16:38:20 2026 -0400
+
+    Fix the formatting
+
+ .../auxiliary/gather/ray_dashboard_logs_api_path_traversal.md      | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit e6ab9ae49790376b125cfdfc8b5bfc56a4cdbb1b
+Merge: 3ebb0b7464 2f0cfa7a13
+Author: Richard Howe <45905457+rmhowe425@users.noreply.github.com>
+Date:   Fri Jul 31 16:04:14 2026 -0400
+
+    Merge pull request #1 from smcintyre-r7/pr/collab/21681
+    
+    Make the NODE_ID optional
+
+ .../ray_dashboard_logs_api_path_traversal.md       | 369 ++++++---------------
+ .../ray_dashboard_logs_api_path_traversal.rb       | 148 ++++++++-
+ 2 files changed, 232 insertions(+), 285 deletions(-)
+
+commit 2f0cfa7a13b44faea200fa21776ea5e390e2e571
+Author: smcintyre-r7 <smcintyre-r7@github>
+Date:   Fri Jul 31 15:54:37 2026 -0400
+
+    Make the NODE_ID optional
+
+ .../ray_dashboard_logs_api_path_traversal.md       | 369 ++++++---------------
+ .../ray_dashboard_logs_api_path_traversal.rb       | 148 ++++++++-
+ 2 files changed, 232 insertions(+), 285 deletions(-)
+
+commit 3ebb0b74640c9729e0cf4ecf8ebc89db8f0a20e7
+Author: Richard Howe <rhowe425@gmail.com>
+Date:   Fri Jul 31 11:35:41 2026 -0400
+
+    Adding clarifying documentation around node id
+
+ .../modules/auxiliary/gather/ray_dashboard_logs_api_path_traversal.md  | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 8d711175d3266fbe1ebf47791bb8bf4d4ce74238
+Author: Richard Howe <rhowe425@gmail.com>
+Date:   Fri Jul 31 11:13:20 2026 -0400
+
+    Fixed documentation issue
+
+ .../modules/auxiliary/gather/ray_dashboard_logs_api_path_traversal.md | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit dcbde4facff6675da0299f29c4ae6f86bb676f7d
+Author: Richard Howe <rhowe425@gmail.com>
+Date:   Fri Jul 31 11:10:28 2026 -0400
+
+    updated documentation and implementation based on reviewer feedback
+
+ .../ray_dashboard_logs_api_path_traversal.md       | 24 ++++++++++++++++------
+ .../ray_dashboard_logs_api_path_traversal.rb       |  4 ++--
+ 2 files changed, 20 insertions(+), 8 deletions(-)
+
+commit 7fca144afc75d935a49ea5de56d822aee2e53b8d
+Merge: 362e5e525e ad0526f423
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Jul 31 15:22:13 2026 +0100
+
+    Merge pull request #21740 from dwelch-r7/fix-json-rpc-payload-testf
+    
+    Update JSON RPC test to use Linux payload for meterpreter reverse HTTP
+
+ spec/api/json_rpc_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ad0526f4232acb2d6a245ee95e929dc51d74392a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Jul 31 13:55:54 2026 +0100
+
+    Update JSON RPC test to use Linux payload for meterpreter reverse HTTP
+
+ spec/api/json_rpc_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
