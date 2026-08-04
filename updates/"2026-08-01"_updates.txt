@@ -1,0 +1,39 @@
+commit d06c9a5ffeab22e2ac98d6708e86e63f7a01e18f
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Aug 3 17:23:33 2026 -0400
+
+    Add GHCR publish workflow for the pyenv acceptance test image
+
+ .github/workflows/pyenv_image_publish.yml | 54 +++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit 2c2165c8e7fae67a56997297711f5b359fa68d0d
+Author: zeroSteiner <zeroSteiner@github>
+Date:   Mon Aug 3 17:23:05 2026 -0400
+
+    Add pyenv Containerfile as the source for Python acceptance test images
+
+ test/pyenv/Containerfile | 122 +++++++++++++++++++++++++++++++++++++++++++++++
+ test/pyenv/README.md     |  26 ++++++++++
+ 2 files changed, 148 insertions(+)
+
+commit 181a6d15c2876775f1bab073477a9318885378a4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 3 16:06:58 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 54 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit 29fd52011fe958ce24db8020c58aeb111b9d8383
+Merge: eac2926b13 68c5710fb3
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Aug 3 16:46:20 2026 +0100
+
+    Merge pull request #21734 from zeroSteiner/fix/remove-workflow-with-pat
+    
+    Remove the PAT-based workflow
+
+ .github/workflows/add_to_project.yml | 19 -------------------
+ 1 file changed, 19 deletions(-)
