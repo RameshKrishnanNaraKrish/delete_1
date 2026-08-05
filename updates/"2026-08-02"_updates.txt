@@ -1,0 +1,35 @@
+commit 0a01383394e6a0db8f6e0f7dd27e17a24f112377
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 4 20:11:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit 343cddf7637721ed2bf9c4297572fa4ef5ae1c31
+Merge: 48ac78ce15 840de4db39
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 4 15:02:47 2026 -0500
+
+    Merge pull request #21630 from stlthr4k3r/add-opencats-installer-rce
+    
+    Add OpenCATS installer PHP code injection module (CVE-2026-27760)
+
+ .../exploit/multi/http/opencats_installer_rce.md   | 151 ++++++++++++++++
+ .../exploits/multi/http/opencats_installer_rce.rb  | 192 +++++++++++++++++++++
+ 2 files changed, 343 insertions(+)
+
+commit 48ac78ce15d11b6d1810d21bc503af0afba516e2
+Merge: 181a6d15c2 d06c9a5ffe
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Aug 4 11:40:53 2026 +0100
+
+    Merge pull request #21746 from zeroSteiner/feat/ci/pyenv-ghcr-image
+    
+    Add A pyenv Container Using GHCR For Acceptance Testing
+
+ .github/workflows/pyenv_image_publish.yml |  54 +++++++++++++
+ test/pyenv/Containerfile                  | 122 ++++++++++++++++++++++++++++++
+ test/pyenv/README.md                      |  26 +++++++
+ 3 files changed, 202 insertions(+)
