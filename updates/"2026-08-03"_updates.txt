@@ -1,0 +1,61 @@
+commit 929b6ea1a1a05b6cd00f9afcd22053f36ec0c5dc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 5 16:19:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 99334fb9fa5be1e5bfc4212933ba391d5cce03aa
+Merge: 7d83c0601c 3463db8201
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Aug 5 17:12:08 2026 +0100
+
+    Merge pull request #21747 from zeroSteiner/feat/ci/pyenv-python-tests
+    
+    Feat/ci/pyenv python tests
+
+ .github/workflows/command_shell_acceptance.yml     |  5 +-
+ .github/workflows/pyenv_image_publish.yml          | 54 ---------------------
+ spec/acceptance/README.md                          | 33 +++++++++++++
+ spec/acceptance/command_shell_spec.rb              |  3 +-
+ .../command_shell/{python_ssl.rb => python.rb}     | 55 ++++++++++++++++++++--
+ test/pyenv/README.md                               |  8 ++--
+ 6 files changed, 94 insertions(+), 64 deletions(-)
+
+commit 7d83c0601cd3cc961afd3147e481be1c4ea0bd05
+Merge: 0a01383394 ff7a4b52bc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Aug 5 17:10:26 2026 +0100
+
+    Merge pull request #21754 from EverLand1/master
+    
+    Literally unplayable
+
+ modules/exploits/linux/http/grandstream_gxp1600_unauth_rce.rb | 2 +-
+ modules/exploits/multi/http/struts2_namespace_ognl.rb         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit ff7a4b52bcec5f60783cfa498f69fda2a7a8ee97
+Author: Malachi R <126717167+EverLand1@users.noreply.github.com>
+Date:   Wed Aug 5 09:07:36 2026 -0600
+
+    Literally unplayable
+
+ modules/exploits/linux/http/grandstream_gxp1600_unauth_rce.rb | 2 +-
+ modules/exploits/multi/http/struts2_namespace_ognl.rb         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 3463db8201a7c1efb3de2beb60036dffc2487479
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Aug 5 15:25:58 2026 +0100
+
+    Update pyenv versions
+
+ .github/workflows/command_shell_acceptance.yml  |  2 +-
+ .github/workflows/pyenv_image_publish.yml       | 54 -------------------------
+ spec/acceptance/README.md                       |  7 ++--
+ spec/support/acceptance/command_shell/python.rb |  2 +-
+ test/pyenv/README.md                            |  8 ++--
+ 5 files changed, 9 insertions(+), 64 deletions(-)
