@@ -1,0 +1,106 @@
+commit beaa1017a8431796dd22d701a79a48638294f35b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Aug 7 14:34:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit e32ff0642444fe59bed3002dead72422224c9259
+Merge: 6ad273fb13 8034ef094d
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Aug 7 16:26:18 2026 +0200
+
+    Land #21234, adds GhostCMS authenticated RCE module (CVE-2026-29053)
+    
+    Add Ghost CMS Authenticated RCE Exploit (CVE-2026-29053)
+
+ LICENSE                                            |  30 +
+ .../CVE-2026-29053/lab/config.production.json      |  98 +++
+ .../exploits/CVE-2026-29053/lab/docker-compose.yml |  29 +
+ data/exploits/CVE-2026-29053/theme/README.md       | 125 ++++
+ .../CVE-2026-29053/theme/assets/built/index.css    |   2 +
+ .../CVE-2026-29053/theme/assets/built/index.js     |   2 +
+ data/exploits/CVE-2026-29053/theme/author.hbs      |  46 ++
+ data/exploits/CVE-2026-29053/theme/default.hbs     |  79 +++
+ data/exploits/CVE-2026-29053/theme/error.hbs       | 108 ++++
+ data/exploits/CVE-2026-29053/theme/index.hbs       |  20 +
+ .../CVE-2026-29053/theme/members/account.hbs       |  35 +
+ .../CVE-2026-29053/theme/members/signin.hbs        |  32 +
+ .../CVE-2026-29053/theme/members/signup.hbs        |  76 +++
+ data/exploits/CVE-2026-29053/theme/page.hbs        |  29 +
+ .../CVE-2026-29053/theme/partials/card.hbs         |  57 ++
+ .../theme/partials/icons/arrow-left.hbs            |   1 +
+ .../theme/partials/icons/arrow-right.hbs           |   1 +
+ .../CVE-2026-29053/theme/partials/icons/avatar.hbs |   1 +
+ .../theme/partials/icons/facebook.hbs              |   1 +
+ .../CVE-2026-29053/theme/partials/icons/loader.hbs |  11 +
+ .../CVE-2026-29053/theme/partials/icons/rss.hbs    |   1 +
+ .../theme/partials/icons/twitter.hbs               |   1 +
+ data/exploits/CVE-2026-29053/theme/post.hbs        |  93 +++
+ data/exploits/CVE-2026-29053/theme/tag.hbs         |  35 +
+ .../multi/http/ghostcms_auth_rce_cve_2026_29053.md | 483 ++++++++++++++
+ lib/msf/core/exploit/remote/http/jwt.rb            |   6 +-
+ .../multi/http/ghostcms_auth_rce_cve_2026_29053.rb | 712 +++++++++++++++++++++
+ 27 files changed, 2113 insertions(+), 1 deletion(-)
+
+commit 6ad273fb137db641549807d2aa54786da7930319
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Aug 7 13:30:55 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 68 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit b80aaab896968df287344c3ab53bfce4831c55ae
+Merge: c08f5f6906 c77c410386
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Aug 7 15:22:23 2026 +0200
+
+    Merge pull request #21686 from Crypto-Cat/wp_batch_desync_rce
+    
+    Add WordPress WP2Shell unauthenticated RCE module (CVE-2026-63030, CVE-2026-60137)
+
+ .../exploit/multi/http/wp_batch_desync_rce.md      | 252 +++++++
+ modules/exploits/multi/http/wp_batch_desync_rce.rb | 812 +++++++++++++++++++++
+ 2 files changed, 1064 insertions(+)
+
+commit 8034ef094dd475f324d5c18f0a6bb104dc0dac84
+Author: vognik <vognik@tuta.io>
+Date:   Fri Aug 7 05:21:48 2026 -0700
+
+    migrate to native jwt generation
+
+ Gemfile.lock                                                    | 3 ---
+ metasploit-framework.gemspec                                    | 1 -
+ modules/exploits/multi/http/ghostcms_auth_rce_cve_2026_29053.rb | 7 +++----
+ 3 files changed, 3 insertions(+), 8 deletions(-)
+
+commit 0dd3ab18048a053d2b68ab4ea6c5df39e5776676
+Author: vognik <vognik@tuta.io>
+Date:   Fri Aug 7 05:13:11 2026 -0700
+
+    add support for header fields in JWT encode
+
+ lib/msf/core/exploit/remote/http/jwt.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 3333506c1a4e3d6e9f5586093447f3714dcb0e84
+Author: vognik <vognik@tuta.io>
+Date:   Fri Aug 7 01:07:02 2026 -0700
+
+    fix non-ASCII characters in metadata
+
+ modules/exploits/multi/http/ghostcms_auth_rce_cve_2026_29053.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a2a954d13cfd614e46b560ccff742251e04a60d5
+Author: vognik <vognik@tuta.io>
+Date:   Fri Aug 7 00:32:24 2026 -0700
+
+    add dependency jwt to Gemfile.lock
+
+ Gemfile.lock | 3 +++
+ 1 file changed, 3 insertions(+)
