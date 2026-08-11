@@ -1,0 +1,43 @@
+commit 35a405ba0382bcb0074de5b5ecc2bbb6a3f8e6df
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 10 18:56:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit cbc54614d307ab2f4cf56d2896b45a3879894912
+Merge: 185c53a970 524ee317ee
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Aug 10 11:47:38 2026 -0700
+
+    Merge pull request #21678 from dheiland-r7/feature/sonicwall-sma1000-cve-2026-15409
+    
+    linux/http: Add SonicWall SMA1000 WorkPlace wsproxy SSRF exploit module (CVE-2026-15409)
+
+ .../linux/http/sonicwall_sma1000_wsproxy_rce.md    | 191 +++++++
+ .../linux/http/sonicwall_sma1000_wsproxy_rce.rb    | 561 +++++++++++++++++++++
+ 2 files changed, 752 insertions(+)
+
+commit 185c53a970adba310b45101b97699dea53d5e316
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 10 14:32:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a28ae6c644c4b1da74a05a75651439cd9ba16828
+Merge: beaa1017a8 25e95e9c25
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Aug 10 07:24:43 2026 -0700
+
+    Merge pull request #21691 from eve0805/feature/kerberos-forged-ticket-trace-v2
+    
+    Add Kerberos trace support for forged tickets
+
+ modules/auxiliary/admin/kerberos/forge_ticket.rb   |  30 +--
+ .../admin/kerberos/forge_ticket_trace_spec.rb      | 204 +++++++++++++++++++++
+ 2 files changed, 219 insertions(+), 15 deletions(-)
