@@ -1,0 +1,132 @@
+commit 2e53455d0b513c33ccef86190b63edf2006fb2c3
+Merge: ad2cc6a133 353c12d434
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 11 17:41:45 2026 -0500
+
+    Merge pull request #21574 from g0tmi1k/ftp_mixin2
+    
+    FTP mixin: Check for complete response
+
+ lib/msf/core/exploit/remote/ftp.rb                |  38 +++++-
+ spec/lib/msf/core/exploit/remote/ftp_recv_spec.rb | 145 ++++++++++++++++++++++
+ 2 files changed, 179 insertions(+), 4 deletions(-)
+
+commit ad2cc6a1339b760ae7834b31ffa6f84469afa577
+Merge: e5d3b9126f 844110f2a0
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 23:21:24 2026 +0100
+
+    Merge pull request #21776 from dwelch-r7/update-frozen-string-guidance
+    
+    Update contributing documentation for agents
+
+ .github/instructions/library.instructions.md |  2 +-
+ .github/instructions/modules.instructions.md | 19 +++++++++----------
+ AGENTS.md                                    |  8 +-------
+ CONTRIBUTING.md                              |  1 -
+ 4 files changed, 11 insertions(+), 19 deletions(-)
+
+commit 844110f2a0ba347e83fb66a2421b39753a1bc5c9
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 22:40:25 2026 +0100
+
+    Update contributing documentation for agents: clarify frozen string literal guidance for new library files
+
+ .github/instructions/library.instructions.md |  2 +-
+ .github/instructions/modules.instructions.md | 19 +++++++++----------
+ AGENTS.md                                    |  8 +-------
+ CONTRIBUTING.md                              |  1 -
+ 4 files changed, 11 insertions(+), 19 deletions(-)
+
+commit 353c12d434bf356bef828d45560d37d51e328c1b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 22:55:32 2026 +0100
+
+    Update spec/lib/msf/core/exploit/remote/ftp_recv_spec.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ spec/lib/msf/core/exploit/remote/ftp_recv_spec.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d1fb8888511b703f8c22db612018dbbbb04e8e5a
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 11 12:28:32 2026 -0500
+
+    Potential fix for pull request finding
+    
+    Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@users.noreply.github.com>
+
+ spec/lib/msf/core/exploit/remote/ftp_recv_spec.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit e5d3b9126f1eff3bbc98eace5081543a3a141ac0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 11 16:51:59 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit db857e30a21f666b50c1ef027942c1a7004adcf3
+Merge: 260e2e7167 7ebc2c90a5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Aug 11 17:44:22 2026 +0100
+
+    Merge pull request #21700 from rmhowe425/dev/CVE-2026-33017
+    
+    ENH: CISA KEV - Exploit module for CVE-2026-33017
+
+ .../http/langflow_unauth_rce_cve_2026_33017.md     |  69 +++++++
+ .../http/langflow_unauth_rce_cve_2026_33017.rb     | 202 +++++++++++++++++++++
+ 2 files changed, 271 insertions(+)
+
+commit 7ebc2c90a5521ad60243c44208aa408a4183cc07
+Author: Richard Howe <rhowe425@gmail.com>
+Date:   Tue Aug 11 12:13:20 2026 -0400
+
+    Add Langflow unauthenticated RCE exploit
+
+ .../http/langflow_unauth_rce_cve_2026_33017.md     |  69 +++++++
+ .../http/langflow_unauth_rce_cve_2026_33017.rb     | 202 +++++++++++++++++++++
+ 2 files changed, 271 insertions(+)
+
+commit 260e2e7167c158f555d3ca13a43ffdf292abe1dd
+Merge: 01c506e7dd 651bcde3ae
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 17:10:36 2026 +0100
+
+    Merge pull request #21755 from dwelch-r7/updates-agents-contributing-docs
+    
+    Enhance contributing documentation with module structure templates and guidelines
+
+ .github/copilot-instructions.md                    |   2 +
+ .github/instructions/documentation.instructions.md |  24 ++
+ .github/instructions/library.instructions.md       |  44 +++
+ .github/instructions/modules.instructions.md       |  68 ++++
+ .github/instructions/tests.instructions.md         |  37 ++
+ AGENTS.md                                          | 403 +++++++++++++++++++--
+ CONTRIBUTING.md                                    |  21 +-
+ 7 files changed, 558 insertions(+), 41 deletions(-)
+
+commit 651bcde3ae6647fdeda0d77f4c10592f7d63f617
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 17:09:22 2026 +0100
+
+    Update contributing documentation for agents: expand requirements for new modules to include Docker setup commands
+
+ AGENTS.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 01c506e7dd937080b3d644815d75cfba5939eb8a
+Merge: 35a405ba03 17504ba7ec
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 14:09:55 2026 +0100
+
+    Merge pull request #21748 from zeroSteiner/feat/nyan-banner
+    
+    YOU HAVE DONE THE NYAN FOR 31337 SECONDS!
+
+ data/logos/nyan-cat.txt | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
