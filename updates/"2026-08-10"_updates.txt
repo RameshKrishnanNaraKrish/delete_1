@@ -1,0 +1,202 @@
+commit 67092e050c06ff881acd789dcdbdc03082d416bf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 12 13:53:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 35 ++++++++++++++++++++++++++++++++++-
+ 1 file changed, 34 insertions(+), 1 deletion(-)
+
+commit 441f4764bd74da99bbb65092417f56690a56437a
+Merge: 3e4f2ad8ef 69ff4be521
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Aug 12 08:45:08 2026 -0500
+
+    Merge pull request #21744 from vinicius-batistella/feature/windows-aarch64-shell-staged-reverse-tcp
+    
+    Add `windows/aarch64/shell/reverse_tcp` staged payload
+
+ .../payload/windows/aarch64/shell/reverse_tcp.md   |  75 ++++++++
+ lib/msf/core/payload/windows/aarch64.rb            | 123 ++++++++++++
+ lib/msf/core/payload/windows/exitfunk_aarch64.rb   |  83 ++++++++
+ .../core/payload/windows/reverse_tcp_aarch64.rb    | 211 +++++++++++++++++++++
+ lib/msf_autoload.rb                                |   1 +
+ .../singles/windows/aarch64/shell_reverse_tcp.rb   | 152 ++-------------
+ .../stagers/windows/aarch64/reverse_tcp.rb         |  35 ++++
+ modules/payloads/stages/windows/aarch64/shell.rb   | 108 +++++++++++
+ .../windows/aarch64/shell_reverse_tcp_spec.rb      |  11 +-
+ .../stagers/windows/aarch64/reverse_tcp_spec.rb    |  97 ++++++++++
+ .../payloads/stages/windows/aarch64/shell_spec.rb  |  84 ++++++++
+ spec/modules/payloads_spec.rb                      |  10 +
+ 12 files changed, 850 insertions(+), 140 deletions(-)
+
+commit 3e4f2ad8ef4e21d557e6510397f86941cbf7ae9c
+Merge: 2e53455d0b a331e0952b
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 12 14:06:04 2026 +0100
+
+    Merge pull request #21738 from adfoster-r7/update-yard-docs
+    
+    Update yard docs
+
+ .../remote/http/response_data_helper.rb            |  6 +--
+ lib/metasploit/framework/login_scanner/mysql.rb    |  2 +-
+ lib/metasploit/framework/login_scanner/postgres.rb |  2 +-
+ lib/metasploit/framework/login_scanner/smb.rb      |  6 +--
+ .../framework/obfuscation/crandomizer/modifier.rb  |  2 +-
+ .../framework/password_crackers/jtr/formatter.rb   |  2 +-
+ lib/msf/base/sessions/postgresql.rb                |  6 +--
+ lib/msf/base/sessions/windows_escaping.rb          |  2 +-
+ lib/msf/core/auxiliary/rocketmq.rb                 |  2 +-
+ lib/msf/core/db_connector.rb                       |  2 +-
+ lib/msf/core/db_manager/migration.rb               |  6 +--
+ lib/msf/core/db_manager/user.rb                    | 13 +++--
+ lib/msf/core/exploit/git.rb                        | 28 +++++------
+ lib/msf/core/exploit/git/lfs/response.rb           |  4 +-
+ lib/msf/core/exploit/git/packfile.rb               |  4 +-
+ lib/msf/core/exploit/git/pkt_line.rb               |  4 +-
+ lib/msf/core/exploit/git/smart_http.rb             | 34 +++++++------
+ lib/msf/core/exploit/laravel_crypto_killer.rb      | 55 +++++++++++-----------
+ lib/msf/core/exploit/local/ansible.rb              |  1 -
+ lib/msf/core/exploit/remote/http/acronis_cyber.rb  | 20 ++++----
+ .../core/exploit/remote/http/gitea/repository.rb   |  2 +-
+ lib/msf/core/exploit/remote/http/gitlab/version.rb |  6 +--
+ .../core/exploit/remote/http/nagios_xi/login.rb    |  2 +-
+ lib/msf/core/exploit/remote/http/pihole.rb         |  2 +-
+ .../core/exploit/remote/kerberos/client/pkinit.rb  |  2 +-
+ .../exploit/remote/kerberos/model/tgt_response.rb  |  8 ++--
+ .../remote/kerberos/service_authenticator/base.rb  |  8 ++--
+ .../core/exploit/remote/ldap/active_directory.rb   | 20 ++++----
+ .../security_descriptor_matcher.rb                 | 14 +++---
+ lib/msf/core/exploit/remote/ms_lsad.rb             |  2 +
+ lib/msf/core/exploit/remote/ms_wkst.rb             |  2 +
+ .../remote/relay/ntlm/target/http/client.rb        |  4 +-
+ .../remote/relay/ntlm/target/ldap/client.rb        |  4 +-
+ .../remote/relay/ntlm/target/mssql/client.rb       |  4 +-
+ .../exploit/remote/relay/ntlm/target/smb/client.rb |  4 +-
+ .../remote/smb/client/kerberos_authentication.rb   |  6 +--
+ lib/msf/core/exploit/remote/smb/client/web_exec.rb |  1 -
+ lib/msf/core/exploit/remote/winrm.rb               |  2 +-
+ lib/msf/core/exploit/retry.rb                      |  2 +-
+ lib/msf/core/exploit/smb/shadow_mitm_dispatcher.rb |  2 -
+ lib/msf/core/module/alert.rb                       |  2 +-
+ lib/msf/core/opt_condition.rb                      |  4 +-
+ lib/msf/core/post/common.rb                        |  2 +-
+ lib/msf/core/post/hardware/automotive/uds.rb       |  3 --
+ lib/msf/core/post/linux/kernel.rb                  |  2 +-
+ lib/msf/core/post/vcenter/vcenter.rb               |  2 +-
+ lib/msf/core/post/windows/priv.rb                  |  4 +-
+ lib/msf/core/post/windows/services.rb              |  6 +--
+ lib/msf/core/session_compatibility.rb              |  4 +-
+ lib/msf/ui/console/command_dispatcher/creds.rb     |  7 +--
+ lib/msf/ui/console/command_dispatcher/db/certs.rb  |  6 +--
+ lib/msf/ui/console/command_dispatcher/db/klist.rb  |  6 +--
+ lib/msf/ui/console/command_dispatcher/jobs.rb      |  6 +--
+ .../command_dispatcher/local_file_system.rb        |  2 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   | 17 +++----
+ lib/msf/util/windows_crypto_helpers.rb             |  4 +-
+ lib/rex/crypto.rb                                  |  2 +-
+ lib/rex/crypto/rc4.rb                              |  2 +-
+ lib/rex/parser/net_sarang.rb                       |  2 +-
+ lib/rex/post/meterpreter/command_mapper.rb         |  2 +-
+ .../post/sql/ui/console/command_dispatcher/core.rb |  2 +-
+ lib/rex/proto/dns/custom_nameserver_provider.rb    |  2 +-
+ lib/rex/proto/dns/packet.rb                        |  8 ++--
+ lib/rex/proto/dns/resolver.rb                      |  8 ++--
+ lib/rex/proto/dns/server.rb                        |  8 ++--
+ lib/rex/proto/dns/static_hostnames.rb              |  6 +--
+ lib/rex/proto/dns/upstream_rule.rb                 | 10 ++--
+ lib/rex/proto/http/web_socket.rb                   |  4 +-
+ lib/rex/proto/http/web_socket/amazon_ssm.rb        |  4 +-
+ .../credential_cache/krb5_ccache_credential.rb     |  2 +-
+ lib/rex/proto/ldap/auth.rb                         | 16 +++----
+ lib/rex/proto/ldap/server.rb                       |  4 +-
+ lib/rex/proto/ms_adts/key_credential.rb            |  4 +-
+ lib/rex/proto/ms_dtyp.rb                           |  3 +-
+ lib/rex/proto/thrift/client.rb                     |  6 +--
+ plugins/request.rb                                 |  4 +-
+ 76 files changed, 229 insertions(+), 245 deletions(-)
+
+commit a331e0952b1f2d6700cdca8adf009fc1c9fafd63
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Jul 31 10:20:49 2026 +0100
+
+    Update yard docs
+
+ .../remote/http/response_data_helper.rb            |  6 +--
+ lib/metasploit/framework/login_scanner/mysql.rb    |  2 +-
+ lib/metasploit/framework/login_scanner/postgres.rb |  2 +-
+ lib/metasploit/framework/login_scanner/smb.rb      |  6 +--
+ .../framework/obfuscation/crandomizer/modifier.rb  |  2 +-
+ .../framework/password_crackers/jtr/formatter.rb   |  2 +-
+ lib/msf/base/sessions/postgresql.rb                |  6 +--
+ lib/msf/base/sessions/windows_escaping.rb          |  2 +-
+ lib/msf/core/auxiliary/rocketmq.rb                 |  2 +-
+ lib/msf/core/db_connector.rb                       |  2 +-
+ lib/msf/core/db_manager/migration.rb               |  6 +--
+ lib/msf/core/db_manager/user.rb                    | 13 +++--
+ lib/msf/core/exploit/git.rb                        | 28 +++++------
+ lib/msf/core/exploit/git/lfs/response.rb           |  4 +-
+ lib/msf/core/exploit/git/packfile.rb               |  4 +-
+ lib/msf/core/exploit/git/pkt_line.rb               |  4 +-
+ lib/msf/core/exploit/git/smart_http.rb             | 34 +++++++------
+ lib/msf/core/exploit/laravel_crypto_killer.rb      | 55 +++++++++++-----------
+ lib/msf/core/exploit/local/ansible.rb              |  1 -
+ lib/msf/core/exploit/remote/http/acronis_cyber.rb  | 20 ++++----
+ .../core/exploit/remote/http/gitea/repository.rb   |  2 +-
+ lib/msf/core/exploit/remote/http/gitlab/version.rb |  6 +--
+ .../core/exploit/remote/http/nagios_xi/login.rb    |  2 +-
+ lib/msf/core/exploit/remote/http/pihole.rb         |  2 +-
+ .../core/exploit/remote/kerberos/client/pkinit.rb  |  2 +-
+ .../exploit/remote/kerberos/model/tgt_response.rb  |  8 ++--
+ .../remote/kerberos/service_authenticator/base.rb  |  8 ++--
+ .../core/exploit/remote/ldap/active_directory.rb   | 20 ++++----
+ .../security_descriptor_matcher.rb                 | 14 +++---
+ lib/msf/core/exploit/remote/ms_lsad.rb             |  2 +
+ lib/msf/core/exploit/remote/ms_wkst.rb             |  2 +
+ .../remote/relay/ntlm/target/http/client.rb        |  4 +-
+ .../remote/relay/ntlm/target/ldap/client.rb        |  4 +-
+ .../remote/relay/ntlm/target/mssql/client.rb       |  4 +-
+ .../exploit/remote/relay/ntlm/target/smb/client.rb |  4 +-
+ .../remote/smb/client/kerberos_authentication.rb   |  6 +--
+ lib/msf/core/exploit/remote/smb/client/web_exec.rb |  1 -
+ lib/msf/core/exploit/remote/winrm.rb               |  2 +-
+ lib/msf/core/exploit/retry.rb                      |  2 +-
+ lib/msf/core/exploit/smb/shadow_mitm_dispatcher.rb |  2 -
+ lib/msf/core/module/alert.rb                       |  2 +-
+ lib/msf/core/opt_condition.rb                      |  4 +-
+ lib/msf/core/post/common.rb                        |  2 +-
+ lib/msf/core/post/hardware/automotive/uds.rb       |  3 --
+ lib/msf/core/post/linux/kernel.rb                  |  2 +-
+ lib/msf/core/post/vcenter/vcenter.rb               |  2 +-
+ lib/msf/core/post/windows/priv.rb                  |  4 +-
+ lib/msf/core/post/windows/services.rb              |  6 +--
+ lib/msf/core/session_compatibility.rb              |  4 +-
+ lib/msf/ui/console/command_dispatcher/creds.rb     |  7 +--
+ lib/msf/ui/console/command_dispatcher/db/certs.rb  |  6 +--
+ lib/msf/ui/console/command_dispatcher/db/klist.rb  |  6 +--
+ lib/msf/ui/console/command_dispatcher/jobs.rb      |  6 +--
+ .../command_dispatcher/local_file_system.rb        |  2 +-
+ lib/msf/ui/console/command_dispatcher/modules.rb   | 17 +++----
+ lib/msf/util/windows_crypto_helpers.rb             |  4 +-
+ lib/rex/crypto.rb                                  |  2 +-
+ lib/rex/crypto/rc4.rb                              |  2 +-
+ lib/rex/parser/net_sarang.rb                       |  2 +-
+ lib/rex/post/meterpreter/command_mapper.rb         |  2 +-
+ .../post/sql/ui/console/command_dispatcher/core.rb |  2 +-
+ lib/rex/proto/dns/custom_nameserver_provider.rb    |  2 +-
+ lib/rex/proto/dns/packet.rb                        |  8 ++--
+ lib/rex/proto/dns/resolver.rb                      |  8 ++--
+ lib/rex/proto/dns/server.rb                        |  8 ++--
+ lib/rex/proto/dns/static_hostnames.rb              |  6 +--
+ lib/rex/proto/dns/upstream_rule.rb                 | 10 ++--
+ lib/rex/proto/http/web_socket.rb                   |  4 +-
+ lib/rex/proto/http/web_socket/amazon_ssm.rb        |  4 +-
+ .../credential_cache/krb5_ccache_credential.rb     |  2 +-
+ lib/rex/proto/ldap/auth.rb                         | 16 +++----
+ lib/rex/proto/ldap/server.rb                       |  4 +-
+ lib/rex/proto/ms_adts/key_credential.rb            |  4 +-
+ lib/rex/proto/ms_dtyp.rb                           |  3 +-
+ lib/rex/proto/thrift/client.rb                     |  6 +--
+ plugins/request.rb                                 |  4 +-
+ 76 files changed, 229 insertions(+), 245 deletions(-)
