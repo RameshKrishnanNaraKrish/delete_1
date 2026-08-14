@@ -1,0 +1,95 @@
+commit 9f74eb0a48ca7f8039c2618e359c2e80f998ac89
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 13 17:29:49 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8e6a584a2eb2fd3792b908b163707d16528e2a5e
+Merge: dd0ec2e33c ef134c9a1e
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Aug 13 18:20:34 2026 +0100
+
+    Merge pull request #21735 from l1ve709/fix-lint-errors-after-revert
+    
+    Fix msftidy lint failures introduced after revert
+
+ modules/exploits/windows/http/prtg_authenticated_rce_cve_2023_32781.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit ef134c9a1eb8352722ff8bc8096ebc46e0628a56
+Author: Ediz <172771104+l1ve709@users.noreply.github.com>
+Date:   Fri Jul 31 01:28:56 2026 +0300
+
+    Fix msftidy lint errors in prtg module
+
+ modules/exploits/windows/http/prtg_authenticated_rce_cve_2023_32781.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit dd0ec2e33c817134d8969997d35c742a6b596c07
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 13 15:22:46 2026 +0000
+
+    Bump version of framework to 6.5.3
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 2 +-
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit cafda9888b1beeaf7e2aef77303800969a6191df
+Merge: 39db34b391 ce1cc850a8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Aug 13 15:07:46 2026 +0100
+
+    Merge pull request #21768 from adfoster-r7/update-json-rpc-auth-logic
+    
+    Update json rpc auth logic
+
+ .../How-to-use-Metasploit-JSON-RPC.md              | 122 +++++++++--
+ .../remote/managed_remote_data_service.rb          |   7 +-
+ .../authentication/strategies/api_token.rb         |  69 ++++--
+ lib/msf/core/web_services/framework_extension.rb   |  25 ++-
+ lib/msf/core/web_services/json_rpc_app.rb          | 134 ++++++++++--
+ lib/msf/core/web_services/metasploit_api_app.rb    |  17 +-
+ msf-json-rpc.ru                                    |   3 +
+ spec/api/json_rpc_spec.rb                          | 146 +++++++++++++
+ spec/api/metasploit_api_app_spec.rb                |  37 ++++
+ .../core/web_services/framework_extension_spec.rb  |  95 ++++++++
+ .../lib/msf/core/web_services/json_rpc_app_spec.rb | 241 +++++++++++++++++++++
+ spec/spec_helper.rb                                |  16 ++
+ 12 files changed, 854 insertions(+), 58 deletions(-)
+
+commit 39db34b3913e39ffd13b4ab1513c1a7bb879d464
+Merge: 67092e050c 5bd2763acb
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Aug 13 14:52:27 2026 +0100
+
+    Merge pull request #21759 from adfoster-r7/fix-smb-report-service-crash
+    
+    Fix smb report service crash
+
+ lib/msf/core/exploit/remote/smb/client.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ce1cc850a85a516b3eae729431d818e411b8e226
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Aug 7 12:35:21 2026 +0100
+
+    Update json rpc auth logic
+
+ .../How-to-use-Metasploit-JSON-RPC.md              | 122 +++++++++--
+ .../remote/managed_remote_data_service.rb          |   7 +-
+ .../authentication/strategies/api_token.rb         |  69 ++++--
+ lib/msf/core/web_services/framework_extension.rb   |  25 ++-
+ lib/msf/core/web_services/json_rpc_app.rb          | 134 ++++++++++--
+ lib/msf/core/web_services/metasploit_api_app.rb    |  17 +-
+ msf-json-rpc.ru                                    |   3 +
+ spec/api/json_rpc_spec.rb                          | 146 +++++++++++++
+ spec/api/metasploit_api_app_spec.rb                |  37 ++++
+ .../core/web_services/framework_extension_spec.rb  |  95 ++++++++
+ .../lib/msf/core/web_services/json_rpc_app_spec.rb | 241 +++++++++++++++++++++
+ spec/spec_helper.rb                                |  16 ++
+ 12 files changed, 854 insertions(+), 58 deletions(-)
