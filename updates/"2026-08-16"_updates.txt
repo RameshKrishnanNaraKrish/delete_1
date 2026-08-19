@@ -1,0 +1,29 @@
+commit 73737ce70ac6ed44411c09ba95b3a7d3f5f3ee8a
+Merge: 9f74eb0a48 ccea14eba3
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Aug 18 07:54:50 2026 -0700
+
+    Merge pull request #21717 from eve0805/feature/kerberos-gss-token
+    
+    Add shared Kerberos GSS and SPNEGO token handling
+
+ lib/msf/core/exploit/remote/kerberos/client.rb     |   7 +-
+ .../exploit/remote/kerberos/client/ap_request.rb   |  41 ++-
+ lib/rex/proto/gss.rb                               |   4 +
+ lib/rex/proto/gss/asn1.rb                          |  20 +-
+ lib/rex/proto/gss/kerberos_token.rb                | 336 +++++++++++++++++++++
+ spec/lib/rex/proto/gss/asn1_spec.rb                |  41 +++
+ spec/lib/rex/proto/gss/kerberos_token_spec.rb      | 308 +++++++++++++++++++
+ 7 files changed, 725 insertions(+), 32 deletions(-)
+
+commit ccea14eba3d0eaa6bedd3c7155eb633bc9528559
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Aug 17 18:08:39 2026 -0700
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ lib/rex/proto/gss/kerberos_token.rb           |  4 ++--
+ spec/lib/rex/proto/gss/kerberos_token_spec.rb | 16 ++++++++++++++++
+ 2 files changed, 18 insertions(+), 2 deletions(-)
