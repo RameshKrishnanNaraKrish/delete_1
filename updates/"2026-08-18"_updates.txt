@@ -1,0 +1,188 @@
+commit 2ca230a18e9c62bb6889256d9432bff25f8107e8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 20 22:17:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a20af6136ec913d5df9bfab00e0fa13b482b7d56
+Merge: 4b55b06c31 f4224a366b
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Aug 20 17:09:19 2026 -0500
+
+    Merge pull request #21795 from vognik/fix_origin_ghostcms
+    
+    Fix origin mismatch error for default ports (ghostcms_auth_rce_cve_2026_29053 module)
+
+ modules/exploits/multi/http/ghostcms_auth_rce_cve_2026_29053.rb | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 233136336aacdc62bd3c0e44d11d2c195d9ae7d6
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Thu Aug 20 17:56:39 2026 -0400
+
+    fix spec
+
+ spec/lib/metasploit/framework/parsed_options/console_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fb4e6977ffa532889cf086336e433393cf148874
+Author: h00die <michaeltcyr@gmail.com>
+Date:   Thu Aug 20 17:40:20 2026 -0400
+
+    move count to module-count
+
+ lib/metasploit/framework/command/console.rb                  | 2 +-
+ lib/metasploit/framework/parsed_options/console.rb           | 4 ++--
+ spec/lib/metasploit/framework/parsed_options/console_spec.rb | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 4b55b06c3174b4c4601dce8c431f41aa1b00f124
+Merge: a0e88e4c84 9685922746
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Aug 20 14:35:49 2026 -0700
+
+    Merge pull request #21784 from Pushpenderrathore/fix/dns-server-default-dispatch-request
+    
+    Fix two crashes in the default DNS forward/cache path
+
+ lib/rex/proto/dns/server.rb           |  4 ++--
+ spec/lib/rex/proto/dns/server_spec.rb | 40 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 2 deletions(-)
+
+commit f4224a366bc77ec63ba5187a08975133365c1861
+Author: vognik <vognik@tuta.io>
+Date:   Thu Aug 20 14:26:49 2026 -0700
+
+    add suggestions from @bwatters-r7
+
+ .../exploits/multi/http/ghostcms_auth_rce_cve_2026_29053.rb   | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+commit a0e88e4c84c467fb356428ad0275aa9e6a5d53cb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 20 19:33:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 75531dd24ce293492624af75ad86f7040b20fafc
+Merge: ab3230eea6 6bd24bbb59
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Aug 20 14:24:59 2026 -0500
+
+    Merge pull request #21797 from d1mov/patch-1
+    
+    Fix UAC check condition in bypassuac_fodhelper module
+
+ modules/exploits/windows/local/bypassuac_fodhelper.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ab3230eea692939ad8abff0398bb16de9a61d336
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 20 17:22:11 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                      | 117 ++++++++++++++++++++-
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |   2 +-
+ 2 files changed, 117 insertions(+), 2 deletions(-)
+
+commit afe32304db5fd3e4f2694cf20de6f8c257070425
+Merge: 56cb3a3028 4b82d5e7ca
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Aug 20 12:13:58 2026 -0500
+
+    Merge pull request #21616 from jafarov007/exploit/flowise_mcp_rce
+    
+    exploit/multi/http/flowise_mcp_rce: Add Flowise MCP Server RCE (CVE-2026-56274)
+
+ .../modules/exploit/multi/http/flowise_mcp_rce.md  |  95 ++++++++
+ modules/exploits/multi/http/flowise_mcp_rce.rb     | 242 +++++++++++++++++++++
+ 2 files changed, 337 insertions(+)
+
+commit 56cb3a302813ea7a83965cc81aaa3c7d28d5d919
+Merge: 743667693a 466d16bf67
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Aug 20 12:09:38 2026 -0500
+
+    Merge pull request #21695 from zoomdbz/module/concrete-cms-file-usage-disclosure
+    
+    Add Concrete CMS unauthenticated file usage disclosure module
+
+ .../http/concrete_cms_file_usage_disclosure.md     |  90 +++++++++++++
+ .../http/concrete_cms_file_usage_disclosure.rb     | 148 +++++++++++++++++++++
+ 2 files changed, 238 insertions(+)
+
+commit 743667693a96632dedcf457d5ecc0b6a1f3cc21e
+Merge: 73737ce70a ba191e8a39
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Aug 20 11:38:32 2026 -0500
+
+    Merge pull request #21141 from jbx81-1337/feat/custom-meterpreter-loader
+    
+    Meterpreter Loader Improvements
+
+ data/shellcode/block_api.x64.graphml               |  101 +-
+ data/shellcode/block_api.x86.graphml               |   97 +-
+ data/shellcode/reflective_loader.x64.graphml       | 3758 ++++++++++++++++++++
+ data/shellcode/reflective_loader.x86.graphml       | 3610 +++++++++++++++++++
+ .../windows/x64/src/reflective_loader.asm          |  734 ++++
+ .../windows/x86/src/reflective_loader.asm          |  706 ++++
+ lib/msf/base/sessions/meterpreter.rb               |    5 +-
+ lib/msf/core/payload/windows/meterpreter_loader.rb |   50 +-
+ lib/msf/core/payload/windows/reflective_loader.rb  |   21 +
+ .../payload/windows/reflective_loader_common.rb    |  117 +
+ .../payload/windows/x64/meterpreter_loader_x64.rb  |   55 +-
+ .../payload/windows/x64/reflective_loader_x64.rb   |   21 +
+ lib/msf/core/reflective_dll_loader.rb              |   25 +-
+ lib/rex/payloads/shuffle.rb                        |   70 +-
+ .../windows/x64/meterpreter_bind_named_pipe.rb     |    2 +-
+ 15 files changed, 9255 insertions(+), 117 deletions(-)
+
+commit 4b82d5e7cae6e4ae338778c2cd267ad491a34361
+Author: jafarov007 <c.ebdul@gmail.com>
+Date:   Thu Aug 20 18:02:33 2026 +0300
+
+    Update check method with lower version bound for customMCP support
+
+ modules/exploits/multi/http/flowise_mcp_rce.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 26c4fdfacf3ed29a9db4bbb5a377dff2f1eb8adb
+Author: jafarov007 <c.ebdul@gmail.com>
+Date:   Thu Aug 20 17:43:29 2026 +0300
+
+    Refactor Flowise MCP RCE module to use HTTP::Flowise mixin and fix lowercase URIPATH handling
+
+ .../modules/exploit/multi/http/flowise_mcp_rce.md  |  3 +-
+ modules/exploits/multi/http/flowise_mcp_rce.rb     | 95 +++++++---------------
+ 2 files changed, 31 insertions(+), 67 deletions(-)
+
+commit 6bd24bbb59ff68f6e8119272cd7ae7df12cf1079
+Author: d1mov <126387449+d1mov@users.noreply.github.com>
+Date:   Thu Aug 20 14:54:23 2026 +0300
+
+    Fix UAC check condition in bypassuac_fodhelper
+
+ modules/exploits/windows/local/bypassuac_fodhelper.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ba191e8a39e800a2ba976fd329edb9e5e39b0a18
+Merge: 1c2dfef73e 71af6137c6
+Author: jbx81 <47637476+jbx81-1337@users.noreply.github.com>
+Date:   Thu Aug 20 13:07:08 2026 +0200
+
+    Merge pull request #3 from bwatters-r7/collab/custom-meterpreter-loader
+    
+    Fix silent failure modes in custom Meterpreter loader (PR #21141)
+
+ lib/msf/core/payload/windows/meterpreter_loader.rb |  6 ++++--
+ .../payload/windows/x64/meterpreter_loader_x64.rb  |  6 ++++--
+ lib/msf/core/reflective_dll_loader.rb              | 25 +++++++++++++++++++++-
+ lib/rex/payloads/shuffle.rb                        | 17 +++++++++++++--
+ 4 files changed, 47 insertions(+), 7 deletions(-)
