@@ -1,0 +1,242 @@
+commit 1bfb8adaee8e16c7cb776c878358b4a934b5b0e3
+Merge: 394345fe61 0a72005769
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 15:42:02 2026 -0500
+
+    Merge pull request #21573 from jheysel-r7/feat/lib/post_windows_writable
+    
+    Add Support for Windows .writable? in Post Mixin
+
+ lib/msf/core/post/file.rb           |  97 ++++++++++++++---
+ spec/lib/msf/core/post/file_spec.rb | 209 +++++++++++++++++++++++++++++++++---
+ test/modules/post/test/file.rb      |  19 ++++
+ 3 files changed, 295 insertions(+), 30 deletions(-)
+
+commit 394345fe61dd75a7263ec99ef8f09567a3fdc4db
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 24 17:36:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9f0226f480c62214334034e2052ff75470cae554
+Merge: 574771c63b 66020dabc4
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 12:28:24 2026 -0500
+
+    Merge pull request #21402 from karanabe/winrm-login-session-type-option
+    
+    Add WinRM PowerShell session support
+
+ lib/msf/base/sessions/winrm_command_shell.rb       |  57 +----
+ lib/msf/base/sessions/winrm_power_shell.rb         | 242 ++++++++++++++++++
+ .../base/sessions/winrm_stream_adapter_common.rb   |  79 ++++++
+ lib/net/winrm/connection.rb                        |   4 +-
+ lib/net/winrm/power_shell.rb                       |  20 ++
+ modules/auxiliary/scanner/winrm/winrm_login.rb     | 165 ++++++++++--
+ .../msf/base/sessions/winrm_power_shell_spec.rb    | 280 +++++++++++++++++++++
+ spec/lib/net/winrm/connection_spec.rb              |  42 ++++
+ .../auxiliary/scanner/winrm/winrm_login_spec.rb    | 250 ++++++++++++++++++
+ 9 files changed, 1065 insertions(+), 74 deletions(-)
+
+commit 574771c63be7b896c89ffbf560d84e2c749a5a0b
+Merge: 14e01b18de cfd3b7f648
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 12:22:22 2026 -0500
+
+    Merge pull request #21809 from jamesgol/update_security
+    
+    Update SECURITY.md to include correct URL for disclosure
+
+ .github/SECURITY.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 14e01b18dead4b268dfb596c5faf73f3fb9b03d8
+Merge: bcfac9ff6d f6e3f21286
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 12:17:36 2026 -0500
+
+    Merge pull request #21742 from dwelch-r7/fix-windows-meterpreter-tests
+    
+    Refactor TcpServerChannel accept methods to improve timeout handling and non-blocking behaviour
+
+ .github/workflows/meterpreter_acceptance.yml       |   1 +
+ .../net/socket_subsystem/tcp_server_channel.rb     |  30 +++---
+ .../socket_subsystem/tcp_server_channel_spec.rb    | 115 +++++++++++++++++++++
+ 3 files changed, 130 insertions(+), 16 deletions(-)
+
+commit bcfac9ff6df095df481637530cbd44bb79cd989f
+Merge: 50ff049f11 739ec3cbbd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 12:15:23 2026 -0500
+
+    Merge pull request #21817 from dwelch-r7/bump-min-ruby-version
+    
+    Update Ruby version requirements to 3.2+
+
+ .rubocop.yml                 | 2 +-
+ AGENTS.md                    | 2 +-
+ metasploit-framework.gemspec | 6 ++----
+ 3 files changed, 4 insertions(+), 6 deletions(-)
+
+commit 50ff049f11e4a1a835298d25e9a2316f606d3e8a
+Merge: 2bbf36161d 5ccf32a604
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 11:47:55 2026 -0500
+
+    Merge pull request #21804 from dledda-r7/fix/fetch-payloads-prepends
+    
+    Fix Apply Prepends in Fetch Payloads
+
+ lib/msf/core/payload/adapter/fetch.rb           | 22 +++++-
+ spec/lib/msf/core/payload/adapter/fetch_spec.rb | 92 +++++++++++++++++++++++++
+ 2 files changed, 112 insertions(+), 2 deletions(-)
+
+commit 739ec3cbbd18f842b8239fd8365bf52287a6a6e7
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Aug 24 17:36:52 2026 +0100
+
+    Update Ruby version requirements to 3.2 in .rubocop.yml and metasploit-framework.gemspec
+
+ .rubocop.yml                 | 2 +-
+ AGENTS.md                    | 2 +-
+ metasploit-framework.gemspec | 6 ++----
+ 3 files changed, 4 insertions(+), 6 deletions(-)
+
+commit 2bbf36161dc768980fadc3ab98efe7b0b3ec5c93
+Merge: 7250c67385 126fb36946
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 10:50:43 2026 -0500
+
+    Merge pull request #21772 from dwelch-r7/updates-rubocop-linters
+    
+    Add RuboCop lint rules for module best practices
+
+ .rubocop.yml                                       | 31 ++++++++
+ lib/rubocop/cop/lint/module_default_payload.rb     | 70 ++++++++++++++++++
+ lib/rubocop/cop/lint/module_http_fingerprint.rb    | 38 ++++++++++
+ lib/rubocop/cop/lint/module_missing_autocheck.rb   | 83 ++++++++++++++++++++++
+ .../cop/lint/module_default_payload_spec.rb        | 82 +++++++++++++++++++++
+ .../cop/lint/module_http_fingerprint_spec.rb       | 46 ++++++++++++
+ .../cop/lint/module_missing_autocheck_spec.rb      | 81 +++++++++++++++++++++
+ 7 files changed, 431 insertions(+)
+
+commit 126fb369460c06cc3b05c17f4126ef9b2eea8b87
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 12 13:21:05 2026 +0100
+
+    Add check for MetasploitModule class in autocheck linting: ensure only primary module class is flagged
+
+ lib/rubocop/cop/lint/module_missing_autocheck.rb | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 75be15c47b7e4d41a2fad0369a90b81d71536351
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 11 17:13:57 2026 +0100
+
+    Add RuboCop lint rules for module best practices: enforce AutoCheck usage, prevent hardcoded payloads, and deprecate HttpFingerprint
+
+ .rubocop.yml                                       | 31 ++++++++
+ lib/rubocop/cop/lint/module_default_payload.rb     | 70 ++++++++++++++++++
+ lib/rubocop/cop/lint/module_http_fingerprint.rb    | 38 ++++++++++
+ lib/rubocop/cop/lint/module_missing_autocheck.rb   | 75 ++++++++++++++++++++
+ .../cop/lint/module_default_payload_spec.rb        | 82 ++++++++++++++++++++++
+ .../cop/lint/module_http_fingerprint_spec.rb       | 46 ++++++++++++
+ .../cop/lint/module_missing_autocheck_spec.rb      | 81 +++++++++++++++++++++
+ 7 files changed, 423 insertions(+)
+
+commit 7250c6738588376402dda91a8fbc8b0d5a9e2bac
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 24 14:59:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit b3dabd3f2377ca9282c8ed8bf4d3daa8e6ecac19
+Merge: 9809c1ef2d 61636f694e
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Mon Aug 24 15:50:34 2026 +0100
+
+    Merge pull request #21799 from dledda-r7/fix/issue/21798
+    
+    Add automatic payload selection for incompatible targets
+
+ lib/msf/ui/console/command_dispatcher/core.rb | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+commit 9809c1ef2d73bd0e5a3d1fb58c5bed9c27339766
+Merge: 3f922e56eb 9c9078b5dc
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Aug 24 07:48:16 2026 -0700
+
+    Merge pull request #21790 from jvoisin/spip_rce
+    
+    Add SPIP X-Spip-Filtre unauthenticated RCE module
+
+ .../exploit/multi/http/spip_x_spip_filtre_rce.md   |  64 +++++++++++++
+ .../exploits/multi/http/spip_x_spip_filtre_rce.rb  | 102 +++++++++++++++++++++
+ 2 files changed, 166 insertions(+)
+
+commit 3f922e56eb79c5ca71a3b4a3e7d03455082036d3
+Merge: c7bf6a6089 9424c8504b
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Aug 24 09:39:59 2026 -0500
+
+    Merge pull request #21781 from dwelch-r7/print-ip-prefix-rubocop
+    
+    Add Lint/RedundantPeerInPrint cop to detect redundant host/port prefixes
+
+ .github/instructions/modules.instructions.md       |   1 +
+ .rubocop.yml                                       |   8 +
+ AGENTS.md                                          |   2 +
+ CONTRIBUTING.md                                    |   1 +
+ lib/rubocop/cop/lint/redundant_peer_in_print.rb    | 195 +++++++++++
+ .../cop/lint/redundant_peer_in_print_spec.rb       | 357 +++++++++++++++++++++
+ 6 files changed, 564 insertions(+)
+
+commit c7bf6a608955276505116d0c989cbc5a019ae890
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Aug 24 12:45:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 94c6c7e0239158da05d4b8f871a66ddbd9537515
+Merge: 1b0c00dba1 465d6da024
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Aug 24 13:37:12 2026 +0100
+
+    Merge pull request #21814 from dwelch-r7/updtae-pro-version-links
+    
+    Update Downloads-by-Version.md: add new installer versions for Metasploit pro
+
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 465d6da024473a12d8eb494dd452f7eb874b4929
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Aug 24 13:18:35 2026 +0100
+
+    Update Downloads-by-Version.md: add new installer versions for Metasploit 5.1.0 and 5.0.0
+
+ docs/metasploit-framework.wiki/Downloads-by-Version.md | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 5ccf32a6040c7ccfceaed7eb539c4623a075f72c
+Merge: 3a861cb67b 8acc5ce809
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Aug 24 10:46:13 2026 +0200
+
+    Merge pull request #3 from bwatters-r7/collab/fix/fetch-payloads-prepends
+    
+    Add regression specs and comments for fetch payload prepends fix
+
+ lib/msf/core/payload/adapter/fetch.rb           | 14 ++++
+ spec/lib/msf/core/payload/adapter/fetch_spec.rb | 92 +++++++++++++++++++++++++
+ 2 files changed, 106 insertions(+)
