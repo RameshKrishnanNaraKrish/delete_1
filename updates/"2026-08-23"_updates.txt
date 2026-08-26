@@ -1,0 +1,512 @@
+commit c660622f01fed74e78a3a6637b17e8abe0ec7e20
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 23:21:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 92 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 92 insertions(+)
+
+commit b25653b898a78732f4215c038817aacd32a8c2f1
+Merge: f51cfe4fa6 9edd04d5ca
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 18:13:36 2026 -0500
+
+    Merge pull request #21612 from ethan-thomason/opcua-clean
+    
+    Add OPC-UA server detection auxiliary scanner module
+
+ .../modules/auxiliary/scanner/scada/opcua_enum.md  | 166 +++++++++++++++++++++
+ modules/auxiliary/scanner/scada/opcua_enum.rb      | 165 ++++++++++++++++++++
+ 2 files changed, 331 insertions(+)
+
+commit f51cfe4fa65104b84f24a7b0e64904c3f469175e
+Merge: 9e0508986c 2a5f806a5d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 17:42:15 2026 -0500
+
+    Merge pull request #21603 from ethan-thomason/ignition-scada-modules
+    
+    Add Ignition gateway fingerprint scanner (auxiliary/scanner/scada/ignition_statusping)
+
+ .../auxiliary/scanner/scada/ignition_statusping.md |  81 ++++++++++++
+ .../auxiliary/scanner/scada/ignition_statusping.rb | 140 +++++++++++++++++++++
+ 2 files changed, 221 insertions(+)
+
+commit 9e0508986c0808a7214d3fd7c911981bf8045f1b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 21:51:29 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 9edd04d5ca31aa8b9672ffddb8008c4a660e349a
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 14:47:41 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/opcua_enum.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/auxiliary/scanner/scada/opcua_enum.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2bdea78c77be76789cd1404c34fe0e889e4c7fa0
+Merge: 70f5d41f82 e9e7cb0d9c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 16:43:16 2026 -0500
+
+    Merge pull request #21610 from percx/feature/panos-cve-2026-0265-scanner
+    
+    Feature/panos CVE 2026 0265 scanner
+
+ .../auxiliary/scanner/http/panos_cve_2026_0265.md  | 129 ++++++++
+ .../auxiliary/scanner/http/panos_cve_2026_0265.rb  | 359 +++++++++++++++++++++
+ 2 files changed, 488 insertions(+)
+
+commit 70f5d41f820bc0b0d85306b306c7856f66b65ce0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 21:23:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit e838ad98a9dfac4c42d417cb2392f240dcfc8ff6
+Merge: e8cd41c679 caf5a7d1b2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Aug 25 14:15:11 2026 -0700
+
+    Merge pull request #21765 from JohannesLks/CVE-2026-9082
+    
+    Add Drupal PostgreSQL EntityQuery SQLi scanner
+
+ .../scanner/http/drupal_pgsql_entityquery_sqli.md  | 121 +++++++++++++++++++
+ .../scanner/http/drupal_pgsql_entityquery_sqli.rb  | 130 +++++++++++++++++++++
+ 2 files changed, 251 insertions(+)
+
+commit 2a5f806a5d2c4f330beb8cd31f6813938ad64b36
+Author: ethan-thomason <ethan@cedartech.com>
+Date:   Tue Aug 25 14:05:35 2026 -0700
+
+    Set RPORT default via DefaultOptions instead of register_options
+
+ modules/auxiliary/scanner/scada/ignition_statusping.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 2d9fcdf1acd99e867494fd334ec733a43c097b6d
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 14:02:41 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/opcua_enum.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/auxiliary/scanner/scada/opcua_enum.rb | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit 6af3056215df6bf35af171269d00616aa7010c92
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 14:02:33 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/opcua_enum.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/auxiliary/scanner/scada/opcua_enum.rb | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 0622511203dcd982f049263b81c6415f41440a7b
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 14:02:22 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/opcua_enum.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/auxiliary/scanner/scada/opcua_enum.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e9e7cb0d9cc395ec025340d426f8dc23dbb7580e
+Author: dheiland-r7 <dheiland-r7@github>
+Date:   Tue Aug 25 16:21:22 2026 -0400
+
+    Update modules/auxiliary/scanner/http/panos_cve_2026_0265.rb
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/auxiliary/scanner/http/panos_cve_2026_0265.rb | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit d71d1f4bf13ddc605cdeeb1ce540e4671f631bb8
+Author: dheiland-r7 <dheiland-r7@github>
+Date:   Tue Aug 25 16:20:32 2026 -0400
+
+    Potential fix for pull request finding
+    
+    Co-authored-by: Copilot Autofix powered by AI <175728472+Copilot@users.noreply.github.com>
+
+ modules/auxiliary/scanner/http/panos_cve_2026_0265.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8e4001df0f1257692b1145445c448f418f7a3974
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 11:30:32 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/ignition_statusping.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/auxiliary/scanner/scada/ignition_statusping.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2d499f09ab3ae574795da10f6056a8e08967bc2a
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 11:30:23 2026 -0700
+
+    Update modules/auxiliary/scanner/scada/ignition_statusping.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/auxiliary/scanner/scada/ignition_statusping.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5278c74061be5d395e55437ebc9a48b58ec30516
+Author: ethan-thomason <ethan@cedartech.com>
+Date:   Tue Aug 25 11:24:07 2026 -0700
+
+    docs: fix code block indentation and remove universal options
+
+ .../modules/auxiliary/scanner/scada/opcua_enum.md  | 22 ++++++++--------------
+ 1 file changed, 8 insertions(+), 14 deletions(-)
+
+commit d3cc1ff1174576a61bafc4775e9c70df34f91cb4
+Author: ethan-thomason <ethan@cedartech.com>
+Date:   Tue Aug 25 10:17:40 2026 -0700
+
+    Correct OPC-UA StatusCodes to match OPC Foundation definitions
+
+ modules/auxiliary/scanner/scada/opcua_enum.rb | 32 ++++++++++++++++++---------
+ 1 file changed, 21 insertions(+), 11 deletions(-)
+
+commit e8cd41c679e37bd767fa1a10c892cf190403fa14
+Merge: 9956ece2e2 ff3110ce8e
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 12:09:20 2026 -0500
+
+    Merge pull request #21569 from dwelch-r7/fix-fd-leak
+    
+    Prevent file descriptor leaks in user input handling
+
+ lib/msf/base/sessions/hwbridge.rb    |   8 +-
+ lib/msf/base/sessions/ldap.rb        |   8 +-
+ lib/msf/base/sessions/meterpreter.rb |   8 +-
+ lib/msf/base/sessions/smb.rb         |   8 +-
+ lib/msf/base/sessions/sql.rb         |   2 +
+ lib/rex/ui/subscriber.rb             |  18 ++
+ spec/lib/rex/ui/subscriber_spec.rb   | 337 +++++++++++++++++++++++++++++++++++
+ 7 files changed, 373 insertions(+), 16 deletions(-)
+
+commit 6a930b9cbaae342808bf6feadf5e5dc13ee6a606
+Author: Ethan <153236741+ethan-thomason@users.noreply.github.com>
+Date:   Tue Aug 25 09:47:23 2026 -0700
+
+    Update documentation/modules/auxiliary/scanner/scada/ignition_statusping.md
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../modules/auxiliary/scanner/scada/ignition_statusping.md       | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+commit 9956ece2e263039953edf1e1302505f8f2d506ca
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 16:19:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 70 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 68 insertions(+), 2 deletions(-)
+
+commit 70ca4b28fd2c62be38f786a72fe5befcf542715e
+Merge: b083ed4b2b 2b2f3fb39a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Aug 25 17:10:45 2026 +0100
+
+    Merge pull request #21822 from dledda-r7/fix/msftidy-checkpoint-pr
+    
+    fix rubocop issue in master
+
+ .../exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b083ed4b2b881286caf907f2210cec6fdf7549df
+Merge: 32eaba8c1b 1d6cbe372f
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 11:02:46 2026 -0500
+
+    Merge pull request #21793 from h00die/rsync
+    
+    update rsync module to work with protocol 32 (released early 2025)
+
+ .../auxiliary/scanner/rsync/modules_list.md        | 297 ++++++++++++++++-----
+ modules/auxiliary/scanner/rsync/modules_list.rb    |  42 +--
+ 2 files changed, 249 insertions(+), 90 deletions(-)
+
+commit 32eaba8c1b907ad20ecffed1f406bc64feb7460a
+Merge: 43944c740e 3a435a2d84
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Aug 25 10:59:40 2026 -0500
+
+    Merge pull request #21694 from zoomdbz/module/wp2shell-wordpress-batch-sqli
+    
+    Add WordPress wp2shell unauthenticated SQL injection module CVE-2026-63030
+
+ .../scanner/http/wordpress_wp2shell_sqli.md        | 132 ++++++++++++++++
+ .../exploit/multi/http/wp_batch_desync_rce.md      |   2 +
+ .../scanner/http/wordpress_wp2shell_sqli.rb        | 171 +++++++++++++++++++++
+ 3 files changed, 305 insertions(+)
+
+commit 2b2f3fb39a1e34d1af42158ee7482ba73e223a49
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Aug 25 17:38:56 2026 +0200
+
+    fix: suppress msftidy issue in checkpoint_smartconsole_cve_2026_16232_rce module
+
+ .../exploits/linux/misc/checkpoint_smartconsole_cve_2026_16232_rce.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 43944c740ee3d18a5b9cb40b06dace4fdc1c63c2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 15:27:52 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit d2b940fc725e7cacbfe8d063f217615a71c0f41b
+Merge: bfc42982b0 545a97ecc3
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Aug 25 17:18:33 2026 +0200
+
+    Merge pull request #21731 from sfewer-r7/CVE-2026-16232
+    
+    Add unauth RCE exploit for Check Point Management Servers (CVE-2026-16232)
+
+ .../checkpoint_smartconsole_cve_2026_16232_rce.md  | 169 +++++
+ .../checkpoint_smartconsole_cve_2026_16232_rce.rb  | 733 +++++++++++++++++++++
+ 2 files changed, 902 insertions(+)
+
+commit bfc42982b0255c89ae36ff00c1d409c5832cf9b9
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Aug 25 12:19:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 71 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+
+commit a94d871069a446fd22efd8b1ccf960210e1ab1b9
+Merge: 1bfb8adaee 9324d0c645
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Tue Aug 25 14:10:30 2026 +0200
+
+    Merge pull request #21733 from jburgess-r7/rails-activestorage-vips-rce
+    
+    Add Ruby on Rails Active Storage Vips RCE module for CVE-2026-66066
+
+ data/exploits/CVE-2026-66066/ascii_100.mat         | Bin 0 -> 8720 bytes
+ data/exploits/CVE-2026-66066/ascii_16.mat          | Bin 0 -> 3008 bytes
+ data/exploits/CVE-2026-66066/ascii_20.mat          | Bin 0 -> 3280 bytes
+ data/exploits/CVE-2026-66066/ascii_256.mat         | Bin 0 -> 19328 bytes
+ data/exploits/CVE-2026-66066/ascii_32.mat          | Bin 0 -> 4096 bytes
+ data/exploits/CVE-2026-66066/ascii_64.mat          | Bin 0 -> 6272 bytes
+ .../multi/http/rails_activestorage_vips_rce.md     | 716 +++++++++++++++++++++
+ external/source/exploits/CVE-2026-66066/README.md  |  54 ++
+ .../CVE-2026-66066/generate_msf_templates.py       | 116 ++++
+ .../remote/http/rails_active_storage_vips.rb       |  46 ++
+ .../rails_active_storage_vips/active_storage.rb    | 320 +++++++++
+ .../http/rails_active_storage_vips/file_reader.rb  | 315 +++++++++
+ .../rails_active_storage_vips/message_verifier.rb  | 238 +++++++
+ .../http/rails_active_storage_vips/png_decoder.rb  | 123 ++++
+ .../rails_active_storage_vips/rails_secrets.rb     | 336 ++++++++++
+ .../http/rails_active_storage_vips/request.rb      | 257 ++++++++
+ .../multi/http/rails_activestorage_vips_rce.rb     | 207 ++++++
+ .../active_storage_spec.rb                         | 356 ++++++++++
+ .../rails_active_storage_vips/file_reader_spec.rb  | 232 +++++++
+ .../message_verifier_spec.rb                       | 141 ++++
+ .../rails_active_storage_vips/png_decoder_spec.rb  | 139 ++++
+ .../rails_secrets_spec.rb                          | 207 ++++++
+ .../http/rails_active_storage_vips/request_spec.rb | 337 ++++++++++
+ .../http/rails_active_storage_vips/support.rb      |  76 +++
+ .../remote/http/rails_active_storage_vips_spec.rb  |  45 ++
+ 25 files changed, 4261 insertions(+)
+
+commit 9324d0c645c3167362b2678df46b2d573bb869bd
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Aug 25 11:44:52 2026 +0100
+
+    fixed target selection (when i merged unix/linux, the payload defaulted to FTP as i was using old MSF main.. then incorrectly set the default to bash cmd, which was old target 0)
+
+ .../multi/http/rails_activestorage_vips_rce.md     | 30 +++++++++++-----------
+ .../multi/http/rails_activestorage_vips_rce.rb     |  6 ++---
+ 2 files changed, 18 insertions(+), 18 deletions(-)
+
+commit d4fe0c18a8fb51f4d81ca710c9ea02b4ccde9837
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Mon Aug 24 17:45:08 2026 +0100
+
+    address target consolidation and payload lint
+
+ .../multi/http/rails_activestorage_vips_rce.md     | 39 ++++++++++------------
+ .../multi/http/rails_activestorage_vips_rce.rb     | 11 ++++--
+ 2 files changed, 26 insertions(+), 24 deletions(-)
+
+commit 200f9e3fb91f05a27ec56405ba42c632808014f0
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Mon Aug 24 16:57:34 2026 +0100
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../exploits/multi/http/rails_activestorage_vips_rce.rb   | 15 +--------------
+ 1 file changed, 1 insertion(+), 14 deletions(-)
+
+commit 3ab098b84c34b4f9bb2edc7a8f4e369522b1f9df
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Thu Aug 20 16:37:58 2026 +0100
+
+    fixed syntax + added generic comment on error catching
+
+ lib/msf/core/exploit/remote/http/rails_active_storage_vips.rb | 4 ++++
+ modules/exploits/multi/http/rails_activestorage_vips_rce.rb   | 2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 05d0579c8baa74d57141f91e8be16a6c4e8baa99
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Thu Aug 20 16:22:09 2026 +0100
+
+    Set platform to unix *and* linux
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/exploits/multi/http/rails_activestorage_vips_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 06fdb394a4686d387d6d3c9336a8e45438b21be7
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Mon Aug 17 13:46:01 2026 +0100
+
+    Address Rails Active Storage Vips review feedback
+
+ .../multi/http/rails_activestorage_vips_rce.md     | 24 +++---
+ .../remote/http/rails_active_storage_vips.rb       | 17 ++++-
+ .../rails_active_storage_vips/active_storage.rb    | 45 +++++-------
+ .../multi/http/rails_activestorage_vips_rce.rb     | 16 ++--
+ .../active_storage_spec.rb                         | 85 ++++++++++++++++++----
+ .../remote/http/rails_active_storage_vips_spec.rb  | 45 ++++++++++++
+ 6 files changed, 168 insertions(+), 64 deletions(-)
+
+commit a227a87b43b998d247afb642c21a2938f5168810
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Mon Aug 17 12:59:42 2026 +0100
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ lib/msf/core/exploit/remote/http/rails_active_storage_vips/request.rb | 2 +-
+ modules/exploits/multi/http/rails_activestorage_vips_rce.rb           | 3 +--
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+commit b194ca5ffdb2ff4dc7c4ee67762cecc4cbf57335
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Aug 12 14:31:01 2026 +0100
+
+    changed URL format.. it was causing issues with 140 char line limit in doc checker, but this is better i think
+
+ .../modules/exploit/multi/http/rails_activestorage_vips_rce.md | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 5b1c109730d88563cc4ae86cacd53464955c22c6
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Aug 12 13:46:46 2026 +0100
+
+    Use the chunky_png lib
+
+ .../multi/http/rails_activestorage_vips_rce.md     | 85 +++++++++++++---------
+ .../rails_active_storage_vips/active_storage.rb    | 16 ++--
+ .../http/rails_active_storage_vips/png_decoder.rb  | 84 +++++----------------
+ .../active_storage_spec.rb                         | 15 ++++
+ .../rails_active_storage_vips/png_decoder_spec.rb  | 13 +++-
+ 5 files changed, 104 insertions(+), 109 deletions(-)
+
+commit 6a1526faaa4503e65ef94f9a9b744b861e1d1310
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Aug 12 13:07:03 2026 +0100
+
+    Reworked into separate library/spec, reducing module code
+
+ .../remote/http/rails_active_storage_vips.rb       |   31 +
+ .../rails_active_storage_vips/active_storage.rb    |  331 ++++
+ .../http/rails_active_storage_vips/file_reader.rb  |  315 ++++
+ .../rails_active_storage_vips/message_verifier.rb  |  238 +++
+ .../http/rails_active_storage_vips/png_decoder.rb  |  167 +++
+ .../rails_active_storage_vips/rails_secrets.rb     |  336 +++++
+ .../http/rails_active_storage_vips/request.rb      |  257 ++++
+ .../multi/http/rails_activestorage_vips_rce.rb     | 1578 +-------------------
+ .../active_storage_spec.rb                         |  286 ++++
+ .../rails_active_storage_vips/file_reader_spec.rb  |  232 +++
+ .../message_verifier_spec.rb                       |  141 ++
+ .../rails_active_storage_vips/png_decoder_spec.rb  |  130 ++
+ .../rails_secrets_spec.rb                          |  207 +++
+ .../http/rails_active_storage_vips/request_spec.rb |  337 +++++
+ .../http/rails_active_storage_vips/support.rb      |   76 +
+ .../http/rails_activestorage_vips_rce_spec.rb      | 1404 -----------------
+ 16 files changed, 3085 insertions(+), 2981 deletions(-)
+
+commit d617047ba66e942c46d46026951f8027595d1401
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Aug 12 11:26:43 2026 +0100
+
+    Made changes according to feedback. Still TODO: shorten module (move helper methods to libraries, this will also enable having specs) + possibly go back to chunky_png library
+
+ .../exploit/multi/http/rails_activestorage_vips_rce.md  | 12 +++++++-----
+ .../exploits/multi/http/rails_activestorage_vips_rce.rb | 17 +++--------------
+ .../multi/http/rails_activestorage_vips_rce_spec.rb     | 10 ++++------
+ 3 files changed, 14 insertions(+), 25 deletions(-)
+
+commit 3e2bff966680c2d84a9997e3927e0b09505b92ab
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Wed Aug 12 10:51:09 2026 +0100
+
+    Apply suggestions from code review
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ .../modules/exploit/multi/http/rails_activestorage_vips_rce.md          | 1 -
+ modules/exploits/multi/http/rails_activestorage_vips_rce.rb             | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+commit 2ad260041f6931f4b7e95327623509dbaa24da96
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Thu Jul 30 21:17:43 2026 +0100
+
+    Add Rails Active Storage Vips RCE exploit (CVE-2026-66066)
+
+ data/exploits/CVE-2026-66066/ascii_100.mat         |  Bin 0 -> 8720 bytes
+ data/exploits/CVE-2026-66066/ascii_16.mat          |  Bin 0 -> 3008 bytes
+ data/exploits/CVE-2026-66066/ascii_20.mat          |  Bin 0 -> 3280 bytes
+ data/exploits/CVE-2026-66066/ascii_256.mat         |  Bin 0 -> 19328 bytes
+ data/exploits/CVE-2026-66066/ascii_32.mat          |  Bin 0 -> 4096 bytes
+ data/exploits/CVE-2026-66066/ascii_64.mat          |  Bin 0 -> 6272 bytes
+ .../multi/http/rails_activestorage_vips_rce.md     |  701 ++++++++
+ external/source/exploits/CVE-2026-66066/README.md  |   54 +
+ .../CVE-2026-66066/generate_msf_templates.py       |  116 ++
+ .../multi/http/rails_activestorage_vips_rce.rb     | 1803 ++++++++++++++++++++
+ .../http/rails_activestorage_vips_rce_spec.rb      | 1406 +++++++++++++++
+ 11 files changed, 4080 insertions(+)
