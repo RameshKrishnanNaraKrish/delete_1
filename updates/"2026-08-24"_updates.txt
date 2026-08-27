@@ -1,0 +1,127 @@
+commit b48490d4bc3b162a1ed5391813d865c52632c6f2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 26 23:22:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a3d157cf8ec93630024dbf373005f26a6b97415
+Merge: 382a46d52e 66d191d214
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Aug 26 16:14:21 2026 -0700
+
+    Merge pull request #21832 from jheysel-r7/fix/ldap_cert_finder_timeout
+    
+    Fix HTTPClient::ConnectTimeoutError in ldap_esc_vulnerable_cert_finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 66d191d2147ef6140edb50e007b638f8c7ebac15
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Wed Aug 26 13:23:01 2026 -0700
+
+    Fix HTTPClient::ConnectTimeoutError in ldap_esc_vulnerable_cert_finder
+
+ modules/auxiliary/gather/ldap_esc_vulnerable_cert_finder.rb | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+commit 382a46d52e90198f37a5c7571538205b5670d5c9
+Merge: 9a0b7dc6e0 21cc6cbeda
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Aug 26 10:46:02 2026 -0500
+
+    Merge pull request #21827 from dwelch-r7/spec-thread-cleanup
+    
+    Prevent ThreadFactory from delegating to a framework ThreadManager in server specs
+
+ spec/support/shared/contexts/msf/simple/framework.rb | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 9a0b7dc6e07f61816bc739e5f0f640574aa19182
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 26 15:12:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit f51f74ece74e5c858e663854cb86a3a91df0b66d
+Merge: b5e509953d 1170d520dd
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Aug 26 08:04:41 2026 -0700
+
+    Merge pull request #21769 from anirbala98/cve-2026-3576-lfi
+    
+    Add WordPress Planyo plugin unauthenticated LFI module (CVE-2026-3576)
+
+ .../gather/wp_planyo_lfi_cve_2026_3576.md          | 129 +++++++++++++++++
+ .../gather/wp_planyo_lfi_cve_2026_3576.rb          | 161 +++++++++++++++++++++
+ 2 files changed, 290 insertions(+)
+
+commit b5e509953ddafc12d6d986c52b83513182227107
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Aug 26 14:47:21 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 118 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 118 insertions(+)
+
+commit 83dc86facfab0ae5732a160c68fb80a635ddea8a
+Merge: 825658ee1b da0e332bd4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Aug 26 16:38:58 2026 +0200
+
+    Merge pull request #21802 from h00die/security_center_2026_19681
+    
+    Tenable Security Center auth rce (CVE-2026-19681)
+
+ ...enable_sc_auditfile_cmdinject_cve_2026_19681.md | 147 +++++++++++
+ ...enable_sc_auditfile_cmdinject_cve_2026_19681.rb | 288 +++++++++++++++++++++
+ 2 files changed, 435 insertions(+)
+
+commit 21cc6cbedaf868e98884e92fe4ff4a20b25faff2
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 26 13:42:42 2026 +0100
+
+    Remove redundant ThreadFactory delegation prevention from specs
+
+ spec/lib/rex/proto/ftp/server_spec.rb                | 11 -----------
+ spec/support/shared/contexts/msf/simple/framework.rb |  5 +++++
+ 2 files changed, 5 insertions(+), 11 deletions(-)
+
+commit 825658ee1b0d4161ceb4f927c272fcf6b88c11f5
+Merge: c660622f01 bb4699d1b4
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Aug 26 15:22:06 2026 +0200
+
+    Merge pull request #21820 from h00die/security_center_2026_19626
+    
+    Tenable Security Center auth rce (CVE-2026-19626)
+
+ ...enable_sc_report_charting_rce_cve_2026_19626.md | 153 +++++++++
+ ...enable_sc_report_charting_rce_cve_2026_19626.rb | 373 +++++++++++++++++++++
+ 2 files changed, 526 insertions(+)
+
+commit 95c39eeeded7b2da396a70f4c917303058531081
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 26 13:16:41 2026 +0100
+
+    Add checks for UNKNOWN_* sentinel values in module notes
+
+ lib/rubocop/cop/lint/module_enforce_notes.rb       |  36 +++++-
+ spec/rubocop/cop/lint/module_enforce_notes_spec.rb | 139 +++++++++++++++++++++
+ 2 files changed, 174 insertions(+), 1 deletion(-)
+
+commit a35f69de1e533cff4991866c05191f16f479a8fe
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Aug 26 11:47:53 2026 +0100
+
+    Prevent ThreadFactory from delegating to a framework ThreadManager in server specs
+
+ spec/lib/rex/proto/ftp/server_spec.rb | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
