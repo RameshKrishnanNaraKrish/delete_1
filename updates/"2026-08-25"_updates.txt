@@ -1,0 +1,187 @@
+commit cb7f24072a20ff4bcf9924df4686cf752657f786
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 27 20:34:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit d541a1c01db8550a5e9c34e775575f0a922bb804
+Merge: d620c69a9e ff0c41a287
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Aug 27 13:22:36 2026 -0700
+
+    Merge pull request #21775 from sfewer-r7/CVE-2026-63077
+    
+    Add unauth RCE exploit module for JetBrains TeamCity (CVE-2026-63077)
+
+ .../http/jetbrains_teamcity_rce_cve_2026_63077.md  | 302 +++++++++++++
+ .../http/jetbrains_teamcity_rce_cve_2026_63077.rb  | 483 +++++++++++++++++++++
+ 2 files changed, 785 insertions(+)
+
+commit 42205c46a3b0c6934db048acfdf6511428f90535
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 18:18:54 2026 +0200
+
+    Update scenario documentation
+
+ documentation/modules/exploit/windows/persistence/time_provider.md | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit c2559d9ff7f8bdd935db803db5e04e3bbb819c32
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 18:17:48 2026 +0200
+
+    Remove debug print
+
+ modules/exploits/windows/persistence/time_provider.rb | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit ff0c41a287328ee70792925417c16310725e940a
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Aug 27 17:12:17 2026 +0100
+
+    remove the default target payloads and document what i tested
+
+ .../multi/http/jetbrains_teamcity_rce_cve_2026_63077.md       | 11 +++++++++--
+ .../multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb       | 11 +----------
+ 2 files changed, 10 insertions(+), 12 deletions(-)
+
+commit 0b6800233c73a09a9242b7776871fd10fdaa62ae
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 17:59:45 2026 +0200
+
+    Add service state and context restore logic
+
+ .../exploits/windows/persistence/time_provider.rb  | 35 ++++++++++++++++++----
+ 1 file changed, 29 insertions(+), 6 deletions(-)
+
+commit 3121da75afa48cb7e0f870c5232f2c1e3f7e9550
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 16:25:36 2026 +0200
+
+    Replace exists? with directory?
+
+ modules/exploits/windows/persistence/time_provider.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit def3e892bf7b8fa45af112a65f3c6cd1a1ca6bed
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Aug 27 15:25:07 2026 +0100
+
+    typo
+
+ .../exploit/multi/http/jetbrains_teamcity_rce_cve_2026_63077.md       | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 981d763865ea48fa78ca612b211021e4ebd0fbb5
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Aug 27 15:24:14 2026 +0100
+
+    mention the patched versions
+
+ modules/exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 785ef90b75c1eadf5c209b54af05299e1472139f
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 16:15:40 2026 +0200
+
+    Fix typo
+
+ modules/exploits/windows/persistence/boot_verification_program.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 79c5a6f7669177b8bd9ac65ab2165eafecadf837
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Aug 27 15:13:58 2026 +0100
+
+    include protocol/utility mixins first, then prepend AutoCheck
+
+ modules/exploits/multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c6c35dfe1c7701c0f2af5678bdb9dcd864c22fa9
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Aug 27 15:08:40 2026 +0100
+
+    return a hash instead of an array
+
+ .../multi/http/jetbrains_teamcity_rce_cve_2026_63077.rb      | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 6b07f1e88d30e91930b5bf61070fde07cc5e3641
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 16:06:19 2026 +0200
+
+    Add ImagePath value restore logic
+
+ .../persistence/boot_verification_program.rb        | 21 ++++++++++-----------
+ 1 file changed, 10 insertions(+), 11 deletions(-)
+
+commit d620c69a9ea78b1f4b04879dac4ea213cfa618ce
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 27 11:27:34 2026 +0000
+
+    Bump version of framework to 6.5.4
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 71ebb0dc37a10b7ba2cb1f18a2fa20d7d2fb5b45
+Merge: 43c384f93e 259c389fe0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Aug 27 12:02:38 2026 +0100
+
+    Merge pull request #21644 from dwelch-r7/bootsnap-enabled-non-coverage
+    
+    Enable ISeq caching to improve performance
+
+ config/boot.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 43c384f93e23dbf50985b8214870fa6472a9adb9
+Merge: a013800f66 95c39eeede
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Aug 27 12:01:29 2026 +0100
+
+    Merge pull request #21828 from dwelch-r7/rubocop-unknown-notes
+    
+    Add checks for UNKNOWN_* sentinel values in module notes
+
+ lib/rubocop/cop/lint/module_enforce_notes.rb       |  36 +++++-
+ spec/rubocop/cop/lint/module_enforce_notes_spec.rb | 139 +++++++++++++++++++++
+ 2 files changed, 174 insertions(+), 1 deletion(-)
+
+commit a013800f66a52893853f68b12d41f3a9af2b410d
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Aug 27 09:55:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0feaa17400ccfdae22d95a48d730add5fa545bf9
+Merge: b48490d4bc 59fa6604eb
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Aug 27 11:15:20 2026 +0200
+
+    Merge pull request #21816 from h00die/ssh_version_fix
+    
+    Fix ssh_version for anchient ssh
+
+ modules/auxiliary/scanner/ssh/ssh_version.rb | 37 ++++++++++++++++++++++++++--
+ 1 file changed, 35 insertions(+), 2 deletions(-)
+
+commit b739121999a1fe0a1a778f45b7b9413816de2df5
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Thu Aug 27 11:08:26 2026 +0200
+
+    Replace exists? with directory?
+
+ modules/exploits/windows/persistence/boot_verification_program.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
