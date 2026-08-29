@@ -1,0 +1,34 @@
+commit e698ea413163b31759d78603e5018552bf14ae8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Aug 28 17:36:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 101 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 101 insertions(+)
+
+commit e0b74914b17f329ddc5c37e376b64538a2b55ef8
+Merge: b88893abb8 42205c46a3
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Aug 28 12:27:35 2026 -0500
+
+    Merge pull request #21522 from M4nu02/windows-timeprovider-persistence
+    
+    Add Windows Time Provider persistence module
+
+ .../exploit/windows/persistence/time_provider.md   | 144 ++++++++++++++++
+ .../exploits/windows/persistence/time_provider.rb  | 189 +++++++++++++++++++++
+ 2 files changed, 333 insertions(+)
+
+commit b88893abb8b9fe6a76e1257dc1956c30f240bddf
+Merge: cb7f24072a 785ef90b75
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Aug 28 12:26:45 2026 -0500
+
+    Merge pull request #21550 from M4nu02/windows-bootverificationprogram-persistence
+    
+    Add Windows Boot Verification Program persistence
+
+ .../persistence/boot_verification_program.md       | 110 +++++++++++++++++++
+ .../persistence/boot_verification_program.rb       | 121 +++++++++++++++++++++
+ 2 files changed, 231 insertions(+)
