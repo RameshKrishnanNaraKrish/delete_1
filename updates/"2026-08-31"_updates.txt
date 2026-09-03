@@ -1,0 +1,43 @@
+commit d2728838a5a788fdb86cc2eaa7b96c1e70b9ed7a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 2 23:00:20 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 7c6ab0f97f964584b742f57af3db6b06ab74885b
+Merge: 66dda2eba9 298d11247a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Sep 2 15:51:53 2026 -0700
+
+    Merge pull request #21655 from earthenvessel/feature/mcpjam-inspector-rce
+    
+    Add MCPJam Inspector command execution exploit
+
+ .../exploit/multi/http/mcpjam_inspector_rce.md     | 237 ++++++++++++++
+ .../exploits/multi/http/mcpjam_inspector_rce.rb    | 342 +++++++++++++++++++++
+ 2 files changed, 579 insertions(+)
+
+commit 66dda2eba9133217e4ad7255c6672cec686a63cf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 2 14:40:54 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 38 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+
+commit 7bf30cc31b168b41f4512c800eeb9799c8562eee
+Merge: 555dedc051 1371d42031
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 2 09:32:27 2026 -0500
+
+    Merge pull request #21551 from h00die/handler_finder
+    
+    Metasploit Reverse Handler Detector
+
+ .../auxiliary/scanner/msf/handler_detect.md        | 689 +++++++++++++++++++
+ modules/auxiliary/scanner/msf/handler_detect.rb    | 755 +++++++++++++++++++++
+ 2 files changed, 1444 insertions(+)
