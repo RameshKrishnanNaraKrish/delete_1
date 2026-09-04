@@ -1,0 +1,68 @@
+commit 166881deff7072c859d4c04466cafb4c59e6c66f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 3 17:06:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9d7007ddd2d0c0b597302842cbc10dd463d874fc
+Merge: ed778e1d82 a6a98085b0
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Sep 3 11:57:58 2026 -0500
+
+    Merge pull request #21857 from vinicius-batistella/feature/psexec-aarch64-powershell
+    
+    Enable psexec PowerShell delivery for Windows AArch64 payloads
+
+ Gemfile.lock                           |  4 ++--
+ metasploit-framework.gemspec           |  2 +-
+ modules/exploits/windows/smb/psexec.rb | 12 ++----------
+ 3 files changed, 5 insertions(+), 13 deletions(-)
+
+commit ed778e1d8229f8859094575b4b14d389664f1c05
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 3 16:19:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 37886c768c9b2efb547c02c41cb1a3d6c2e804a1
+Merge: 06fb9a1bcb f74e11d1cf
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Sep 3 11:10:45 2026 -0500
+
+    Merge pull request #21842 from sfewer-r7/papercut-rce-0day
+    
+    Add exploit module for the recent PaperCut MF/NG 0day (CVE-2026-81578 + CVE-2026-82078)
+
+ data/exploits/CVE-2026-82078/Metasploit.class      | Bin 0 -> 945 bytes
+ data/exploits/CVE-2026-82078/Metasploit.java       |  21 +
+ .../http/papercut_ng_external_user_lookup_rce.md   | 246 +++++++++
+ .../http/papercut_ng_external_user_lookup_rce.rb   | 602 +++++++++++++++++++++
+ 4 files changed, 869 insertions(+)
+
+commit 06fb9a1bcbb19bfd896d5367d211fc16fa157dff
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Sep 3 13:45:19 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+commit 2ea03f84bb98284ade71556e0cbddf5e9bcd6e1f
+Merge: d2728838a5 11f1cd18a8
+Author: dledda-r7 <dledda-r7@github>
+Date:   Thu Sep 3 15:37:14 2026 +0200
+
+    Merge pull request #21642 from litemars/add_linux_evasion_sandbox
+    
+    Adding Linux sandbox detection capabilities - x64
+
+ lib/msf/core/payload/linux/x64/sandbox_evasion.rb | 168 ++++++++++++++++++++++
+ modules/evasion/linux/x64/sandbox_gate.rb         |  58 ++++++++
+ 2 files changed, 226 insertions(+)
