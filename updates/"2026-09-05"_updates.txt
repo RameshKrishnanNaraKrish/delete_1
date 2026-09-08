@@ -1,0 +1,12 @@
+commit 49fa7d9770a33f2a44df920c490dbc198b1f208b
+Merge: 166881deff 16747a4b96
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Mon Sep 7 11:49:31 2026 +0100
+
+    Merge pull request #21838 from jheysel-r7/fix/target-switch-payload-selector
+    
+    Always select best payload and add Java to list of preferred
+
+ lib/msf/core/payload.rb                       | 33 ++++++++++++++-------------
+ lib/msf/ui/console/command_dispatcher/core.rb | 10 ++++----
+ 2 files changed, 22 insertions(+), 21 deletions(-)
