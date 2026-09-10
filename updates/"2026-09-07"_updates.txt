@@ -1,0 +1,299 @@
+commit 79c4de8e8319944ac5e4cc7132f559f486de3bf6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 21:03:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit e0324b3a79a78ce7d6c73893f76eb5d2c369c8aa
+Merge: e3d30c45cb e093797744
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Sep 9 13:54:36 2026 -0700
+
+    Merge pull request #21709 from Pushpenderrathore/feature/kerberos-relay-esc8
+    
+    Add native Kerberos relay stack and ESC8 (AD CS Web Enrollment) target (CVE-2026-20929)
+
+ .../auxiliary/server/relay/esc8_kerberos.md        | 374 +++++++++++++++++++++
+ lib/msf/core/exploit/remote/http_client.rb         |   2 +-
+ .../exploit/remote/relay/kerberos/relay_handler.rb |  65 ++++
+ .../core/exploit/remote/relay/kerberos/target.rb   |  39 +++
+ .../remote/relay/kerberos/target/http/client.rb    | 141 ++++++++
+ .../remote/smb/relay/kerberos/relay_server.rb      | 167 +++++++++
+ .../exploit/remote/smb/relay/kerberos/server.rb    |  91 +++++
+ .../remote/smb/relay/kerberos/server_client.rb     | 124 +++++++
+ modules/auxiliary/server/relay/esc8_kerberos.rb    | 211 ++++++++++++
+ .../remote/relay/kerberos/relay_handler_spec.rb    |  70 ++++
+ .../relay/kerberos/target/http/client_spec.rb      |  86 +++++
+ .../exploit/remote/relay/kerberos/target_spec.rb   |  28 ++
+ .../remote/smb/relay/kerberos/relay_server_spec.rb |  67 ++++
+ .../smb/relay/kerberos/server_client_spec.rb       | 146 ++++++++
+ .../remote/smb/relay/kerberos/server_spec.rb       |  39 +++
+ .../auxiliary/server/relay/esc8_kerberos_spec.rb   |  63 ++++
+ 16 files changed, 1712 insertions(+), 1 deletion(-)
+
+commit e3d30c45cb4d92c009c5db75eac048d57fdfc42c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 19:53:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 278d6721c8a0df93438e317c4dadf490e0851a37
+Merge: 1e68673fc4 eb9a4dfd45
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 14:44:58 2026 -0500
+
+    Merge pull request #21796 from CyberAuth/cve-2026-20079-fmc
+    
+    Add Cisco Secure FMC CVE-2026-20079 auth bypass RCE module
+
+ .../linux/http/cisco_fmc_auth_bypass_rce.md        | 282 ++++++++++++++
+ .../linux/http/cisco_fmc_auth_bypass_rce.rb        | 411 +++++++++++++++++++++
+ 2 files changed, 693 insertions(+)
+
+commit 1e68673fc4f72eb316a0ac28915904622bef154f
+Merge: bf8f4c0c81 6ad348fd9e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Sep 9 12:11:52 2026 -0700
+
+    Merge pull request #21853 from Pushpenderrathore/fix/dns-forward-cache-relay-poisoning
+    
+    Fix DNS forward/cache path for relay-driven poisoning
+
+ lib/rex/proto/dns/cache.rb            |   2 +-
+ lib/rex/proto/dns/server.rb           |  48 +++++++------
+ spec/lib/rex/proto/dns/cache_spec.rb  |  26 +++++++
+ spec/lib/rex/proto/dns/server_spec.rb | 128 ++++++++++++++++++++++++++++++++++
+ 4 files changed, 183 insertions(+), 21 deletions(-)
+
+commit bf8f4c0c81c23ace661b3216d4ded7205a54524b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 18:38:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 65 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 65 insertions(+)
+
+commit 6e695f14758fb742278ac1402936ff741e0dc8f2
+Merge: 8c0ddfd4ff 5b8a1aa5cd
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Sep 9 11:29:58 2026 -0700
+
+    Merge pull request #21883 from sfewer-r7/sonicwall_sma1000_unauth_rce
+    
+    SonicWall SMA1000 unauthenticated RCE (CVE-2026-83548 + SMA1000-9427 + CVE-2026-83549)
+
+ .../linux/http/sonicwall_sma1000_couchdb_rce.md    | 162 ++++
+ .../linux/http/sonicwall_sma1000_couchdb_rce.rb    | 841 +++++++++++++++++++++
+ 2 files changed, 1003 insertions(+)
+
+commit e0937977448b85a780062759e02887ddae3c8f4f
+Author: enp7s0d <75983347+Pushpenderrathore@users.noreply.github.com>
+Date:   Wed Sep 9 23:46:41 2026 +0530
+
+    Use SecureRandom for the relay SMB2 session id
+    
+    The session id assigned when a client sends session_id 0 is a
+    server-side handle used only to correlate follow-up requests to a live
+    session, so it does not need to be unpredictable, but there is no cost
+    to sourcing it from a CSPRNG. Switch rand(1..0xfffffffe) to
+    SecureRandom.random_number(0xfffffffe) + 1, which keeps the same
+    1..0xfffffffe range and never returns 0.
+
+ lib/msf/core/exploit/remote/smb/relay/kerberos/server_client.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8c0ddfd4ff335ced77e36599b44dc7cf78815dcb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 18:02:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 5cbc4d92139bde875fb9f8b657759fc46fbc7939
+Merge: 4a73bddcb7 98d7048a82
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 12:54:35 2026 -0500
+
+    Merge pull request #21834 from vognik/CVE-2026-75604
+    
+    Add Next.JS Unauthenticated RCE on Windows Servers (CVE-2026-75604)
+
+ .../CVE-2026-75604/app/app-cache/[...rest]/page.js |  28 ++
+ data/exploits/CVE-2026-75604/app/layout.js         |  11 +
+ data/exploits/CVE-2026-75604/app/page.js           |  50 +++
+ data/exploits/CVE-2026-75604/next.config.js        |   2 +
+ data/exploits/CVE-2026-75604/package.json          |  15 +
+ .../CVE-2026-75604/pages/pages-cache/[...rest].js  |  19 ++
+ .../http/nextjs_unauth_rce_cve_2026_75604.md       | 126 +++++++
+ .../http/nextjs_unauth_rce_cve_2026_75604.rb       | 380 +++++++++++++++++++++
+ 8 files changed, 631 insertions(+)
+
+commit 4a73bddcb719a2b95e8809137cbdf654aa52bf21
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 17:53:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 0b0aaf8d8ada737b690ade424bfcde942f9b6400
+Merge: 1599587237 fe157be02d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 12:44:43 2026 -0500
+
+    Merge pull request #21739 from kmkz/add-elasticsearch-tika-xfa-xxe
+    
+    Add Elasticsearch Tika XFA XXE local file read module
+
+ .../scanner/http/elasticsearch_tika_xfa_xxe.md     | 107 ++++++++
+ .../scanner/http/elasticsearch_tika_xfa_xxe.rb     | 271 +++++++++++++++++++++
+ 2 files changed, 378 insertions(+)
+
+commit 15995872376524434f3c76451106fce4bbdb4420
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 17:38:00 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 0057de0f4e3df3fe0d5a94d2c6a49f0bd1fbb7a2
+Merge: 8b9abe6d13 26cc315341
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 12:29:53 2026 -0500
+
+    Merge pull request #21791 from jvoisin/spip_sqli
+    
+    Add SPIP < 4.4.18 unauthenticated blind SQLi hash dump module
+
+ .../auxiliary/scanner/http/spip_annee_sqli.md      |  90 +++++++++++++
+ modules/auxiliary/scanner/http/spip_annee_sqli.rb  | 148 +++++++++++++++++++++
+ 2 files changed, 238 insertions(+)
+
+commit 98d7048a82e55503fb0636e48fb4fe454493fa78
+Author: vognik <vognik@tuta.io>
+Date:   Wed Sep 9 09:33:06 2026 -0700
+
+    add suggestions from @cdelafuente-r7
+
+ .../http/nextjs_unauth_rce_cve_2026_75604.md       | 33 ++++++++++++++---
+ .../http/nextjs_unauth_rce_cve_2026_75604.rb       | 42 +++++++++++++++++++++-
+ 2 files changed, 70 insertions(+), 5 deletions(-)
+
+commit 8b9abe6d13464176a2a4dab83218104bc5f3fd5b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 16:24:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 9d43d953745ccbadc97c28c531f5d084928607cd
+Merge: 79824b8336 e5e0036c9c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 11:15:58 2026 -0500
+
+    Merge pull request #21859 from jvoisin/spip_session
+    
+    Add SPIP autosave session unauthenticated RCE
+
+ .../exploit/multi/http/spip_autosave_rce.md        |  70 ++++++++++
+ modules/exploits/multi/http/spip_autosave_rce.rb   | 152 +++++++++++++++++++++
+ 2 files changed, 222 insertions(+)
+
+commit 79824b83365b936630daf1099c70846f1ea817d2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 9 16:03:29 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 61 insertions(+), 2 deletions(-)
+
+commit 1bdd47e924a14e3c79b66592c172100c1eeb05f3
+Merge: 84fced7db2 279822720c
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 10:55:16 2026 -0500
+
+    Merge pull request #21837 from rmhowe425/dev/cve-2026-19295
+    
+    ENH: Exploit module for Langflow Authenticated RCE vulnerability CVE-2026-19295
+
+ .../multi/http/langflow_auth_rce_cve_2026_19295.md |  68 +++++
+ .../multi/http/langflow_auth_rce_cve_2026_19295.rb | 291 +++++++++++++++++++++
+ 2 files changed, 359 insertions(+)
+
+commit 84fced7db257cec06de5bfba29ee282edfd73153
+Merge: 6f37c962b0 4e8069f144
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Sep 9 10:49:22 2026 -0500
+
+    Merge pull request #21861 from prithvee07/vsftpd-dual-target
+    
+    Vsftpd dual target
+
+ modules/exploits/unix/ftp/vsftpd_234_backdoor.rb | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+commit 5b8a1aa5cd456e4218f491cbba01e3ed78eb43ec
+Author: Stephen Fewer <122022313+sfewer-r7@users.noreply.github.com>
+Date:   Wed Sep 9 15:07:31 2026 +0100
+
+    update authors array to add original discoverers
+    
+    Co-authored-by: jheysel-r7 <Jack_Heysel@rapid7.com>
+
+ modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit f45284cb10e4c5ed1aa74f1c8327befedca39cbc
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Sep 9 14:43:04 2026 +0100
+
+    detect the (unlikely) edge case where the logger is already logging to the ini file (perhaps parrallel exploitation occuring)
+
+ modules/exploits/linux/http/sonicwall_sma1000_couchdb_rce.rb | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 6f37c962b0a7c76e7afe0c633edf3987fdcd3fd2
+Merge: 49fa7d9770 30df3bd6da
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Sep 9 12:52:48 2026 +0100
+
+    Merge pull request #21719 from Pushpenderrathore/fix/module-metadata-cache-load-race
+    
+    Fix a metadata cache race that raises can't add a new key into hash during iteration
+
+ lib/msf/core/modules/metadata/cache.rb | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 6b4754fd47cc30acd4284fc296d8dfe3be52412c
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Sep 9 12:36:19 2026 +0100
+
+    update docs to be consistent with FETCH options
+
+ .../modules/exploit/linux/http/sonicwall_sma1000_couchdb_rce.md       | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 80acc222d958f1bf6b122011ca309629f9a0c1d0
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Wed Sep 9 12:10:50 2026 +0100
+
+    get the module working against several of the 12.4.3 versions
+
+ .../linux/http/sonicwall_sma1000_couchdb_rce.md    |  9 ++++++--
+ .../linux/http/sonicwall_sma1000_couchdb_rce.rb    | 26 +++++++++++++++++-----
+ 2 files changed, 28 insertions(+), 7 deletions(-)
