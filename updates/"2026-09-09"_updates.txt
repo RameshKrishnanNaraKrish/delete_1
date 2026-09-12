@@ -1,0 +1,21 @@
+commit 28215e80b88f77d1478deaf4a93b02da80371551
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Sep 11 19:05:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 49592b8c8dc5f1edbf72f5e49799d6c49077e371
+Merge: 6d9c68f061 030fd6f5e4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Sep 11 11:52:41 2026 -0700
+
+    Merge pull request #21848 from rmhowe425/dev/cve-2026-18729
+    
+    ENH: Exploit module for Langflow Authenticated Remote Code Execution vulnerability CVE-2026-18729
+
+ .../multi/http/langflow_auth_rce_cve_2026_18729.md |  66 +++++++
+ .../multi/http/langflow_auth_rce_cve_2026_18729.rb | 196 +++++++++++++++++++++
+ 2 files changed, 262 insertions(+)
