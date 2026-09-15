@@ -1,0 +1,51 @@
+commit 838d0457863111f7fb9ff1ee3a407031b326774c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 14 14:21:30 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 637ea87294bfb2a7af91f91a79d1ff10387fc0e5
+Merge: 9951fbd466 c8088f134d
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 14 15:12:24 2026 +0100
+
+    Merge pull request #21880 from adfoster-r7/update-ios-image-gather-to-use-store-loot
+    
+    Update ios image gather to use store loot
+
+ modules/post/apple_ios/gather/ios_image_gather.rb | 32 +++++++++++++++++------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
+
+commit 9951fbd4663c52fd9c73618a35b2c71739327bcf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 14 13:44:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 50 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+
+commit c9c867e2b85c48b9f75500df6d248b3765dd8354
+Merge: 28215e80b8 ae55d6e3b2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 14 06:35:38 2026 -0700
+
+    Merge pull request #21501 from M4nu02/windows-printprocessor_persistence
+    
+    Add Windows Print Processor persistence module
+
+ .../exploit/windows/persistence/print_processor.md | 153 +++++++++++++++++++++
+ .../windows/persistence/print_processor.rb         | 138 +++++++++++++++++++
+ 2 files changed, 291 insertions(+)
+
+commit 73a793181826818f7e73f95d9ccbffbe9967a219
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 14 14:33:29 2026 +0100
+
+    Exclude macOS Intel configurations for PHP 7.4 and 8.3 due to build limitations
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 7 +++++++
+ 1 file changed, 7 insertions(+)
