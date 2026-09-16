@@ -1,0 +1,11 @@
+commit 1bec2c74c4bfdd2232d573b2edbe2332ab8c6291
+Merge: 838d045786 73a7931818
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Sep 15 11:21:23 2026 +0100
+
+    Merge pull request #21904 from dwelch-r7/remove-failing-CI-jobs-macos-intel
+    
+    Exclude macOS Intel configurations for PHP 7.4 and 8.3
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 7 +++++++
+ 1 file changed, 7 insertions(+)
