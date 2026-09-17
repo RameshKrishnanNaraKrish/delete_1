@@ -1,0 +1,29 @@
+commit 4d238ca0abdd55b10832749dbc3f871eed0079be
+Merge: 1938695dad 97c51b8ee6
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Sep 16 10:58:24 2026 +0100
+
+    Merge pull request #21905 from sjanusz-r7/fix-x86-encoder-issues
+    
+    Fix x86 xor_poly and underscore encoders
+
+ modules/encoders/x86/avoid_underscore_tolower.rb | 1 +
+ modules/encoders/x86/xor_poly.rb                 | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 1938695dadaeaf7ed7480374de7c22bf85c1e0d5
+Merge: 1bec2c74c4 56434db665
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Sep 16 10:48:53 2026 +0100
+
+    Merge pull request #21823 from DanielSwift1992/fix-gemspec-filename-in-path-filters
+    
+    Fix misspelled gemspec filename in acceptance workflow path filters
+
+ .github/workflows/ldap_acceptance.yml        | 2 +-
+ .github/workflows/meterpreter_acceptance.yml | 2 +-
+ .github/workflows/mssql_acceptance.yml       | 2 +-
+ .github/workflows/mysql_acceptance.yml       | 2 +-
+ .github/workflows/postgres_acceptance.yml    | 2 +-
+ .github/workflows/smb_acceptance.yml         | 2 +-
+ 6 files changed, 6 insertions(+), 6 deletions(-)
