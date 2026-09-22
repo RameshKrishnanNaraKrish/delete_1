@@ -1,0 +1,281 @@
+commit 7bdd390eaaf34a2b562b74added3492d0a37c6bc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 21 19:19:39 2026 +0000
+
+    Bump version of framework to 6.5.6
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 39 +++++++++++++++++++------------------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 22 insertions(+), 21 deletions(-)
+
+commit c5429ba817d12d9d89069387142332435598e548
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 21 17:28:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 3ddad0dbac6533a033f008d7f2f055103744eb9a
+Merge: 67658cd479 db28e63f26
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 21 10:20:05 2026 -0700
+
+    Merge pull request #21770 from e2002e/zoomeye_max_results_per_page
+    
+    Zoomeye bulletproof multipage results
+
+ modules/auxiliary/gather/shodan_search.rb  | 106 +++++++-------
+ modules/auxiliary/gather/zoomeye_search.rb | 223 ++++++++++++++++-------------
+ 2 files changed, 177 insertions(+), 152 deletions(-)
+
+commit 67658cd479f34c6757631a3b33f747bdc16e7fcc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 21 16:49:03 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 103 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 103 insertions(+)
+
+commit ad52deaf6c46f085df583624aab9e801d44c57c9
+Merge: 9cb465b2cf 8be400fbfd
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 21 09:40:45 2026 -0700
+
+    Merge pull request #21725 from Pushpenderrathore/feature/ipv6-ra-dns-takeover
+    
+    Add rogue IPv6 RA + RDNSS DNS-takeover coercion (CVE-2026-20929)
+
+ .../auxiliary/spoof/dhcp/dhcpv6_dns_takeover.md    |  97 +++++++++++
+ .../auxiliary/spoof/ipv6/ipv6_ra_dns_takeover.md   | 117 +++++++++++++
+ lib/msf/core/exploit/remote/dns/name_poisoner.rb   | 130 ++++++++++++++
+ lib/msf/core/exploit/remote/ipv6.rb                | 129 ++++++++++++++
+ lib/msf_autoload.rb                                |   1 +
+ lib/rex/proto/dhcpv6/constants.rb                  |  69 ++++++++
+ lib/rex/proto/dhcpv6/packet.rb                     | 192 +++++++++++++++++++++
+ lib/rex/proto/dhcpv6/server.rb                     | 168 ++++++++++++++++++
+ .../auxiliary/spoof/dhcp/dhcpv6_dns_takeover.rb    | 107 ++++++++++++
+ .../auxiliary/spoof/ipv6/ipv6_ra_dns_takeover.rb   | 192 +++++++++++++++++++++
+ spec/lib/msf/core/exploit/remote/ipv6_spec.rb      | 140 +++++++++++++++
+ spec/lib/rex/proto/dhcpv6/packet_spec.rb           | 139 +++++++++++++++
+ spec/lib/rex/proto/dhcpv6/server_spec.rb           |  63 +++++++
+ .../spoof/dhcp/dhcpv6_dns_takeover_spec.rb         |  94 ++++++++++
+ .../spoof/ipv6/ipv6_ra_dns_takeover_spec.rb        | 135 +++++++++++++++
+ 15 files changed, 1773 insertions(+)
+
+commit 9cb465b2cf5811a2e26403fa3ea2253f596966c5
+Merge: c7a225aa3d 0d1962c0d7
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Sep 21 17:37:16 2026 +0100
+
+    Merge pull request #21917 from sjanusz-r7/specify-allowed-cred-options
+    
+    Specify an allow list for credential options during cred update
+
+ lib/msf/core/db_manager/cred.rb                    | 58 ++++++++------
+ .../support/shared/examples/msf/db_manager/cred.rb | 91 ++++++++++++++++++++++
+ 2 files changed, 127 insertions(+), 22 deletions(-)
+
+commit 0d1962c0d74ea8087e636181d7be371a4596e50a
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Mon Sep 21 16:50:43 2026 +0100
+
+    Exclude explicit ID when updating credential parts
+
+ lib/msf/core/db_manager/cred.rb                    | 29 +++++++++----------
+ .../support/shared/examples/msf/db_manager/cred.rb | 33 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+), 15 deletions(-)
+
+commit c7a225aa3d9180883cc205fad0514fbe7bbf0caa
+Merge: 9d8e378cb6 5cedb44850
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Sep 21 16:47:06 2026 +0100
+
+    Merge pull request #21918 from adfoster-r7/improve-rdp-proto-validation
+    
+    Improve RDP proto validation
+
+ lib/msf/core/exploit/remote/rdp.rb           | 23 +++++++++++--
+ spec/lib/msf/core/exploit/remote/rdp_spec.rb | 50 ++++++++++++++++++++++++++++
+ 2 files changed, 71 insertions(+), 2 deletions(-)
+
+commit 9d8e378cb6b3f7ebd6a6e39e5b9c7ac12984af80
+Merge: 3764d20090 191bdce44f
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Sep 21 16:42:40 2026 +0100
+
+    Merge pull request #21870 from sjanusz-r7/fix-generic-payload-encoding
+    
+    Fix endless loop when encoding generic payload with large bad char set
+
+ lib/msf/core/encoder.rb                       | 14 ++++++++++++++
+ lib/msf/core/encoder/xor_additive_feedback.rb |  8 +++++++-
+ lib/msf/core/exploit.rb                       | 12 ++++++++++++
+ lib/msf/core/payload/generic.rb               | 25 +++++++++++++++++++++++++
+ 4 files changed, 58 insertions(+), 1 deletion(-)
+
+commit 3764d20090bbc193d388d75a4fb61bb36c83d311
+Merge: 5cb8e89415 d4d82e496b
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Sep 21 16:41:35 2026 +0100
+
+    Merge pull request #21916 from adfoster-r7/update-db-import-logic
+    
+    Update db import logic
+
+ .../db_manager/import/metasploit_framework/zip.rb  | 61 +++++++++++----
+ .../db_manager/import/metasploit_framework/zip.rb  | 89 +++++++++++++++++++++-
+ 2 files changed, 133 insertions(+), 17 deletions(-)
+
+commit 5cb8e894159bb02c7be329e65a8e06fd1b7374ef
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 21 15:15:22 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 49 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+commit 9fe2092a982a848c169e8d200b85a20867ef6cae
+Merge: a0d749aafa 9fa4261352
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 21 16:06:28 2026 +0100
+
+    Merge pull request #21930 from adfoster-r7/replace-recursive-call-to-dn-expand
+    
+    Replace recursive call to dn expand
+
+ lib/net/dns/names/names.rb           | 14 ++++++------
+ spec/lib/net/dns/names/names_spec.rb | 42 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 50 insertions(+), 6 deletions(-)
+
+commit a0d749aafa38023b1149223b5d95ef347e0feabc
+Merge: 2caf5f8dac b8b7b9b198
+Author: dledda-r7 <dledda-r7@github>
+Date:   Mon Sep 21 17:05:31 2026 +0200
+
+    Merge pull request #21461 from h00die/kate_plugin
+    
+    Kate plugin persistence
+
+ data/exploits/kate_plugin/README.md                | 143 ++++
+ data/exploits/kate_plugin/build.sh                 | 121 +++
+ .../kate_plugin/moc_template_linux_x64.cpp         | 157 ++++
+ data/exploits/kate_plugin/template_linux_x64.cpp   | 190 +++++
+ data/exploits/kate_plugin/template_linux_x64.so    | Bin 0 -> 63040 bytes
+ data/exploits/kate_plugin/template_win_x64.c       | 209 +++++
+ data/exploits/kate_plugin/template_win_x64.dll     | Bin 0 -> 122237 bytes
+ .../exploit/multi/persistence/kate_plugin.md       | 243 ++++++
+ modules/exploits/multi/persistence/kate_plugin.rb  | 918 +++++++++++++++++++++
+ 9 files changed, 1981 insertions(+)
+
+commit 5cedb44850b26233b8879cf9abc7075c9c81fcd1
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Sep 18 22:15:35 2026 +0100
+
+    Improve RDP proto validation
+
+ lib/msf/core/exploit/remote/rdp.rb           | 23 +++++++++++--
+ spec/lib/msf/core/exploit/remote/rdp_spec.rb | 50 ++++++++++++++++++++++++++++
+ 2 files changed, 71 insertions(+), 2 deletions(-)
+
+commit 2caf5f8daca95a51f6adeb588b53ceeec48fe5c6
+Merge: 881477bc31 39f7538e20
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 21 16:00:15 2026 +0100
+
+    Merge pull request #21933 from adfoster-r7/routine-ruby-dependencies-updates
+    
+    Routine ruby dependencies updates
+
+ Gemfile.lock | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 881477bc31e181643f372a1bf3f90e4cc0cefcd8
+Merge: 7f3fd2f1fa 01c64357d4
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Sep 21 15:53:48 2026 +0100
+
+    Merge pull request #21924 from cgranleese-r7/fixes-postgresql-scram-edgecases
+    
+    Fixes PostgresQL scram edgecases
+
+ lib/postgres/postgres-pr/scram_sha_256.rb          | 17 ++++-
+ spec/lib/postgres/postgres-pr/connection_spec.rb   |  2 +-
+ .../lib/postgres/postgres-pr/scram_sha_256_spec.rb | 89 ++++++++++++++++++++++
+ 3 files changed, 106 insertions(+), 2 deletions(-)
+
+commit 191bdce44f11de7a0fda01ee859b84ca5c9f2fd0
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Sep 8 17:11:53 2026 +0100
+
+    Encoder loop is bound to max attempts to not loop forever in some cases
+
+ lib/msf/core/encoder.rb                       | 14 ++++++++++++++
+ lib/msf/core/encoder/xor_additive_feedback.rb |  8 +++++++-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+
+commit 0f1301e199aba45d5c6bd53f92e957fa57d3ccec
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Thu Sep 3 14:43:16 2026 +0100
+
+    Resolve generic payload arch to prevent hanging encoder
+
+ lib/msf/core/exploit.rb         | 12 ++++++++++++
+ lib/msf/core/payload/generic.rb | 25 +++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
+
+commit 39f7538e20d271b3275f6f5710a686fde322b9c8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Sep 21 14:45:47 2026 +0100
+
+    Routine ruby dependencies udpates
+
+ Gemfile.lock | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 7f3fd2f1fa0373de6045ac049cf299d5e5b31b28
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 21 13:21:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 48b2c2856c2fcd20ae1a609096b0b72aeecf0e16
+Merge: 1dea54359f 6596efcd58
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Sep 21 14:12:35 2026 +0100
+
+    Merge pull request #21910 from jheysel-r7/feat/mod/gitlab_workhorse_file_read
+    
+    Add GitLab File Read Auxiliary Module (CVE-2026-85706)
+
+ .../gather/gitlab_file_read_cve_2026_85706.md      |  73 ++++++++
+ .../gather/gitlab_file_read_cve_2026_85706.rb      | 196 +++++++++++++++++++++
+ 2 files changed, 269 insertions(+)
+
+commit 01c64357d4b2beb1748327fd9809cef30df6eaeb
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Sun Sep 20 12:41:56 2026 +0100
+
+    Fixes PostgresQL scram edgecases
+
+ lib/postgres/postgres-pr/scram_sha_256.rb          | 17 ++++-
+ spec/lib/postgres/postgres-pr/connection_spec.rb   |  2 +-
+ .../lib/postgres/postgres-pr/scram_sha_256_spec.rb | 89 ++++++++++++++++++++++
+ 3 files changed, 106 insertions(+), 2 deletions(-)
+
+commit 9fa42613521f44efc1750b507b0dc23bd7ec8905
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Sep 21 10:34:07 2026 +0100
+
+    Replace recursive call to dn expand
+
+ lib/net/dns/names/names.rb           | 14 ++++++------
+ spec/lib/net/dns/names/names_spec.rb | 42 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 50 insertions(+), 6 deletions(-)
