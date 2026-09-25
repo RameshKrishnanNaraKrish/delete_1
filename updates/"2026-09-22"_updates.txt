@@ -1,0 +1,12 @@
+commit ffb4c7a1558f242bb1900406e980ed3aaae1daab
+Merge: 7bdd390eaa 032e32f2b0
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Sep 24 20:18:38 2026 +0100
+
+    Merge pull request #21935 from jheysel-r7/feat/update_gitlab_version_hashes
+    
+    Update gitlab_versions.json
+
+ data/gitlab_versions.json                                    | 12 ++++++++++--
+ .../auxiliary/gather/gitlab_file_read_cve_2026_85706.md      |  4 +++-
+ 2 files changed, 13 insertions(+), 3 deletions(-)
