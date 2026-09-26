@@ -1,0 +1,11 @@
+commit a8b9f8cf4a1fbd522b5491048afbaaf6e292f074
+Merge: ffb4c7a155 f0cf80f565
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Sep 25 10:44:15 2026 +0100
+
+    Merge pull request #21913 from jheysel-r7/fix/instructions_file
+    
+    Do not require an Introduction section in module docs
+
+ .github/instructions/documentation.instructions.md | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
