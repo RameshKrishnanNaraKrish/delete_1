@@ -1,0 +1,21 @@
+commit 4fbb40d779a5f9e78af69802ceccb2f5e6b0dc37
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Sat Sep 26 22:27:43 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit 9f01bc2cc69faa1b2fd94e3bd8cbbcbaee5705d9
+Merge: a8b9f8cf4a dc04a12830
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Sat Sep 26 15:19:07 2026 -0700
+
+    Merge pull request #21592 from kenlacroix/vllm-cve-2026-22778
+    
+    Add vLLM multimodal info-leak scanner for CVE-2026-22778
+
+ .../scanner/http/vllm_multimodal_info_leak.md      |  89 ++++++++++
+ .../scanner/http/vllm_multimodal_info_leak.rb      | 189 +++++++++++++++++++++
+ 2 files changed, 278 insertions(+)
