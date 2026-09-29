@@ -1,0 +1,65 @@
+commit 7cc461503af869abaafabeb9bc352f02d4bf8caf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 28 18:13:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 31b1c60bb8855a967d0d6428243c364234cefdd3
+Merge: 54085eb7c8 f8b99de53d
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Sep 28 13:04:20 2026 -0500
+
+    Merge pull request #21548 from msutovsky-r7/feat/payloads/fetch_payload_failsafe
+    
+    Adds fail-safe for search fileless fetch payloads and updates the docs accordingly
+
+ .../How-to-use-fetch-payloads.md                   |  8 +-
+ lib/msf/core/payload/adapter/fetch.rb              | 38 +++++++--
+ lib/msf/core/payload/adapter/fetch/fileless.rb     | 76 +++++++++++------
+ .../core/payload/adapter/fetch/fileless_spec.rb    | 94 +++++++++++++++++++++-
+ spec/lib/msf/core/payload/adapter/fetch_spec.rb    | 66 +++++++++++++++
+ 5 files changed, 248 insertions(+), 34 deletions(-)
+
+commit 54085eb7c85061605c461d377d2f797fbf3ed7a0
+Merge: f9c72e701a beedb3261a
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Sep 28 10:54:55 2026 -0700
+
+    Merge pull request #21585 from kenlacroix/litellm-mcp-rce-cve-2026-42271
+    
+    Add LiteLLM MCP test endpoint command execution exploit (CVE-2026-42271)
+
+ .../multi/http/litellm_mcp_test_cmd_injection.md   | 150 +++++++++++++++
+ .../multi/http/litellm_mcp_test_cmd_injection.rb   | 204 +++++++++++++++++++++
+ 2 files changed, 354 insertions(+)
+
+commit f9c72e701a43634a39547f27ca2bf33e7697cd6b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Sep 28 16:14:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 2d2366a2455e2f030baaec39edf26fcb874226de
+Merge: 4fbb40d779 c23b88bd98
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Sep 28 17:05:18 2026 +0100
+
+    Merge pull request #21882 from revanth3205/fix/writable-dir-check-linux
+    
+    Fix exists? -> directory? check in Linux persistence modules
+
+ modules/exploits/example_linux_persistence.rb             | 2 +-
+ modules/exploits/linux/persistence/apt_package_manager.rb | 2 +-
+ modules/exploits/linux/persistence/docker_image.rb        | 2 +-
+ modules/exploits/linux/persistence/init_openrc.rb         | 2 +-
+ modules/exploits/linux/persistence/init_systemd.rb        | 2 +-
+ modules/exploits/linux/persistence/udev.rb                | 2 +-
+ modules/exploits/linux/persistence/yum_package_manager.rb | 2 +-
+ modules/exploits/multi/persistence/at.rb                  | 2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
