@@ -1,0 +1,135 @@
+commit b3c74a8681cc014ac6718f851a5d813c2fa57f7c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 29 15:53:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit d51bb54681b72f3d57273f7e260326d06b6a56b5
+Merge: d5114a6df7 e74352863d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 29 17:45:34 2026 +0200
+
+    Merge pull request #21516 from h00die/pam_backdoor
+    
+    pam auth backdoor
+
+ data/exploits/pam_backdoor/README.md               | 105 +++++
+ data/exploits/pam_backdoor/pam_backdoor.c          |  44 ++
+ data/exploits/pam_backdoor/pam_backdoor_x86_64.so  | Bin 0 -> 13584 bytes
+ .../modules/post/linux/manage/pam_backdoor.md      | 199 +++++++++
+ modules/post/linux/manage/pam_backdoor.rb          | 444 +++++++++++++++++++++
+ 5 files changed, 792 insertions(+)
+
+commit d5114a6df784c6f93095f9453b3c148667d85b5a
+Merge: 506f15159c fc02ce87fc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Sep 29 16:28:17 2026 +0100
+
+    Merge pull request #21951 from adfoster-r7/update-msgpack-and-mcp-gems
+    
+    Update msgpack and mcp gems
+
+ Gemfile.lock                                          | 19 +++++++++++--------
+ lib/msf/core/mcp.rb                                   |  4 ----
+ metasploit-framework.gemspec                          |  6 +++---
+ spec/lib/msf/core/mcp/tools/credential_info_spec.rb   |  6 +++---
+ spec/lib/msf/core/mcp/tools/host_info_spec.rb         | 12 ++++++------
+ spec/lib/msf/core/mcp/tools/loot_info_spec.rb         |  6 +++---
+ spec/lib/msf/core/mcp/tools/module_check_spec.rb      |  4 ++--
+ spec/lib/msf/core/mcp/tools/module_execute_spec.rb    |  8 ++++----
+ spec/lib/msf/core/mcp/tools/module_info_spec.rb       | 14 +++++++-------
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb         |  4 ++--
+ spec/lib/msf/core/mcp/tools/search_modules_spec.rb    | 18 +++++++++---------
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb      |  6 +++---
+ .../lib/msf/core/mcp/tools/vulnerability_info_spec.rb |  4 ++--
+ 13 files changed, 55 insertions(+), 56 deletions(-)
+
+commit fc02ce87fcee67f9b9d75622eb8f63c0e1cfb51b
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Sep 28 18:34:38 2026 +0100
+
+    Update msgpack and mcp gems
+
+ Gemfile.lock                                          | 19 +++++++++++--------
+ lib/msf/core/mcp.rb                                   |  4 ----
+ metasploit-framework.gemspec                          |  6 +++---
+ spec/lib/msf/core/mcp/tools/credential_info_spec.rb   |  6 +++---
+ spec/lib/msf/core/mcp/tools/host_info_spec.rb         | 12 ++++++------
+ spec/lib/msf/core/mcp/tools/loot_info_spec.rb         |  6 +++---
+ spec/lib/msf/core/mcp/tools/module_check_spec.rb      |  4 ++--
+ spec/lib/msf/core/mcp/tools/module_execute_spec.rb    |  8 ++++----
+ spec/lib/msf/core/mcp/tools/module_info_spec.rb       | 14 +++++++-------
+ spec/lib/msf/core/mcp/tools/note_info_spec.rb         |  4 ++--
+ spec/lib/msf/core/mcp/tools/search_modules_spec.rb    | 18 +++++++++---------
+ spec/lib/msf/core/mcp/tools/service_info_spec.rb      |  6 +++---
+ .../lib/msf/core/mcp/tools/vulnerability_info_spec.rb |  4 ++--
+ 13 files changed, 55 insertions(+), 56 deletions(-)
+
+commit 506f15159cb9c73ab40adaeea3c82ffeadf28a03
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 29 13:22:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit 6c478cb45016ff02ec2cead23944ad9cd9b3b155
+Merge: e1eeb47466 53761bdf38
+Author: dledda-r7 <dledda-r7@github>
+Date:   Tue Sep 29 15:14:21 2026 +0200
+
+    Merge pull request #21423 from h00die/ollama_persist
+    
+    ollama auto update persistence
+
+ .../windows/persistence/ollama_auto_update.md      | 143 ++++++++++++++
+ .../windows/persistence/ollama_auto_update.rb      | 216 +++++++++++++++++++++
+ 2 files changed, 359 insertions(+)
+
+commit e1eeb47466a27554e75cb51c4da7c055cfa20b95
+Merge: b36d958b1e 9323c01d2a
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Sep 29 13:29:10 2026 +0100
+
+    Merge pull request #21947 from revanth3205/add-question-frozen-string-spec
+    
+    Add regression spec for frozen-string DNS question names
+
+ spec/lib/net/dns/question_spec.rb | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit b36d958b1ed4d7edf5691f87b4fb169468966fea
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Sep 29 08:41:34 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 0631769c3ac7076ffce1048a46e5ff67a71a4b9f
+Merge: 7cc461503a c872d0749d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Sep 29 09:32:06 2026 +0100
+
+    Merge pull request #21923 from kx7m2qd/fix-windows-persistence-exists-check
+    
+    Fix exists? -> directory? check in Windows persistence modules
+
+ .../exploits/windows/persistence/accessibility_features_debugger.rb   | 3 ++-
+ modules/exploits/windows/persistence/assistive_technology.rb          | 3 ++-
+ modules/exploits/windows/persistence/bits.rb                          | 3 ++-
+ modules/exploits/windows/persistence/image_exec_options.rb            | 3 ++-
+ modules/exploits/windows/persistence/registry_userinit.rb             | 3 ++-
+ modules/exploits/windows/persistence/service.rb                       | 3 ++-
+ modules/exploits/windows/persistence/service_for_user/event.rb        | 4 +++-
+ modules/exploits/windows/persistence/service_for_user/lock_unlock.rb  | 4 +++-
+ modules/exploits/windows/persistence/service_for_user/logon.rb        | 4 +++-
+ modules/exploits/windows/persistence/service_for_user/schedule.rb     | 4 +++-
+ modules/exploits/windows/persistence/task_scheduler.rb                | 3 ++-
+ modules/exploits/windows/persistence/userinit_mpr_logon_script.rb     | 3 ++-
+ 12 files changed, 28 insertions(+), 12 deletions(-)
