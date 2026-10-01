@@ -1,0 +1,23 @@
+commit c9b3e525d1aba339ab4d995fa0b6af6d2db64f02
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Sep 30 12:10:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 5c594099b04e7954d293b543e7a4aab4f7abd6ae
+Merge: b3c74a8681 6ad1e4a44f
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Sep 30 14:01:54 2026 +0200
+
+    Merge pull request #21613 from eipoverflow/exploit/linux/cve-2026-43503
+    
+    Adds module for DirtyClone variant (CVE-2026-43503)
+
+ data/exploits/CVE-2026-43503/cve-2026-43503-x64    | Bin 0 -> 925328 bytes
+ data/exploits/CVE-2026-43503/cve-2026-43503.c      | 457 +++++++++++++++++++++
+ .../linux/local/dirtyclone_cve_2026_43503.md       | 102 +++++
+ .../linux/local/dirtyclone_cve_2026_43503.rb       | 124 ++++++
+ 4 files changed, 683 insertions(+)
