@@ -1,0 +1,96 @@
+commit 1b458c3704e0ab9c0a2d0e559ed83e6063acaa0a
+Author: zh4ck <zoltan1.balazs@gmail.com>
+Date:   Thu Oct 1 21:59:14 2026 +0200
+
+    Update modules/auxiliary/scanner/smb/cve_2000_0979.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/smb/cve_2000_0979.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ee697411bc70c45dccf437a90a85a4b5e3859bdf
+Author: zh4ck <zoltan1.balazs@gmail.com>
+Date:   Thu Oct 1 21:59:03 2026 +0200
+
+    Update modules/auxiliary/scanner/smb/cve_2000_0979.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/smb/cve_2000_0979.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit b5c94ba223f0134a66c89b144047d17d16197848
+Author: zh4ck <zoltan1.balazs@gmail.com>
+Date:   Thu Oct 1 21:58:44 2026 +0200
+
+    Update modules/auxiliary/scanner/smb/cve_2000_0979.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/smb/cve_2000_0979.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 7261c69a34211c0d71bd7690ae399c42b515770b
+Author: zh4ck <zoltan1.balazs@gmail.com>
+Date:   Thu Oct 1 21:58:24 2026 +0200
+
+    Update modules/auxiliary/scanner/smb/cve_2000_0979.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/smb/cve_2000_0979.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f471e91804ce686e3975bc82298d0a6b04513f3f
+Author: Z6543 <zoltan1.balazs@gmail.com>
+Date:   Thu Oct 1 19:52:06 2026 +0000
+
+    Bump ruby_smb to 3.3.25 for NBNS node status
+
+ Gemfile.lock | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 07f5708aa072d95862c6f80e51a7c919920ebf22
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 1 14:20:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 8d4ee2fd780ddc2bef19bb6e7c520c1f7c620f4e
+Merge: 5babe8aba4 2151dd45cc
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 1 09:11:16 2026 -0500
+
+    Merge pull request #21787 from 0x5chltz/dizquetv-rce
+    
+    Add exploit module for dizqueTV RCE (EDB-52079)
+
+ .../modules/exploit/multi/http/dizquetv_rce.md     | 143 ++++++++++++
+ modules/exploits/multi/http/dizquetv_rce.rb        | 247 +++++++++++++++++++++
+ 2 files changed, 390 insertions(+)
+
+commit 5babe8aba49d5113e4f80c14b33c74b9141c5d13
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 1 12:50:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 1e26d3bc5982452f008e61aac5bb1fc348705b3e
+Merge: c9b3e525d1 b191e6f4ef
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 1 07:41:50 2026 -0500
+
+    Merge pull request #21750 from bhaskarbhar/cve_2026_0770
+    
+    Langflow CVE-2026-0770 exploit module
+
+ .../multi/http/langflow_rce_cve_2026_0770.md       | 117 ++++++++++++++++++
+ .../multi/http/langflow_rce_cve_2026_0770.rb       | 131 +++++++++++++++++++++
+ 2 files changed, 248 insertions(+)
