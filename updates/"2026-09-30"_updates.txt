@@ -1,0 +1,34 @@
+commit 5e598d5233bebecef2a44904a286769d83d31d12
+Merge: 778b60b881 b272816088
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Oct 2 14:03:40 2026 +0100
+
+    Merge pull request #21959 from revanth3205/debug-21957
+    
+    Fix: Restore ip:port prefix in print_brute for scanner modules
+
+ lib/msf/core/auxiliary/auth_brute.rb | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+commit 778b60b88151ab481f6123c2346a731f6296cf87
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 2 08:11:01 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 06d58967fc049479241903e8ab95c003f27c9c42
+Merge: 07f5708aa0 1b458c3704
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Oct 2 09:45:17 2026 +0200
+
+    Merge pull request #21072 from Z6543/add-cve-2000-0979-module
+    
+    Add module for CVE-2000-0979 Windows 9x/Me SMB share password enumeration
+
+ Gemfile.lock                                       |   3 +-
+ .../modules/auxiliary/scanner/smb/cve_2000_0979.md |  82 ++++++
+ modules/auxiliary/scanner/smb/cve_2000_0979.rb     | 296 +++++++++++++++++++++
+ 3 files changed, 380 insertions(+), 1 deletion(-)
