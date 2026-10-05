@@ -1,0 +1,12 @@
+commit a757105f81203453df6dddd2be5fc16f96b2bed8
+Author: pauljccode <216248898+pauljccode@users.noreply.github.com>
+Date:   Sat Oct 3 20:28:53 2026 -0400
+
+    Freeze time in rate limiter concurrency specs
+    
+    Keep token refills out of examples that test concurrent access.
+    Real scheduling delays can otherwise refill a token while the test
+    starts its worker threads. Preserve both concurrency assertions.
+
+ spec/lib/msf/core/mcp/security/rate_limiter_spec.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
