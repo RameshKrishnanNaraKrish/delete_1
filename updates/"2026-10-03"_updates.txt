@@ -1,0 +1,36 @@
+commit 97c5a4664f339831b2086e8b0e2f6ffbabf7ae3a
+Merge: e0f3b97034 a757105f81
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Oct 5 15:08:44 2026 +0100
+
+    Merge pull request #21969 from pauljccode/fix/rate-limiter-spec-clock
+    
+    Freeze time in rate limiter concurrency specs
+
+ spec/lib/msf/core/mcp/security/rate_limiter_spec.rb | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit e0f3b97034a2e545055560af8c78d0991563d52b
+Merge: 1fc2cc6530 ad551719b2
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Oct 5 14:35:56 2026 +0100
+
+    Merge pull request #21936 from satanonsteroids2024-zzz/patch-1
+    
+    msfvenom: show concise, actionable error on invalid/missing CLI option
+
+ msfvenom | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1fc2cc6530b7a540bff9aa23ec681704f06e0c32
+Merge: 5e598d5233 30d2d5ed02
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Mon Oct 5 13:19:24 2026 +0100
+
+    Merge pull request #21878 from Benziza/fix/negated-aux-search
+    
+    Fix negated auxiliary shorthand in module search
+
+ lib/msf/core/modules/metadata/search.rb           | 19 +++++++++++--------
+ spec/lib/msf/core/modules/metadata/search_spec.rb | 22 ++++++++++++++++++++++
+ 2 files changed, 33 insertions(+), 8 deletions(-)
