@@ -1,0 +1,97 @@
+commit 81fa4c34d705795c06a3b7dd2a1816f6a0c67b9f
+Merge: ede66386f2 72fb8d241e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 7 16:56:14 2026 -0700
+
+    Merge pull request #21884 from EgeBalci/opencti_jsonmapper_safeejs_rce
+    
+    Added OpenCTI JsonMapper SafeJS RCE exploit
+
+ .../multi/http/opencti_jsonmapper_safeejs_rce.md   | 179 ++++++++
+ .../multi/http/opencti_jsonmapper_safeejs_rce.rb   | 448 +++++++++++++++++++++
+ 2 files changed, 627 insertions(+)
+
+commit 320846b720a6162e3c6b07520d6fe427d822dc5b
+Author: pauljccode <216248898+pauljccode@users.noreply.github.com>
+Date:   Wed Oct 7 13:13:41 2026 -0400
+
+    Use a shared Meterpreter acceptance budget
+    
+    Raise the default job budget to 60 minutes as suggested in review.
+    Keep 75 minutes for source-built Mettle and leave per-test deadlines
+    and assertions unchanged.
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ede66386f266869a7829d71eabc15c4ff5784eb5
+Merge: f12f40c42e 322820264d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Oct 7 15:59:44 2026 +0100
+
+    Merge pull request #21982 from kx7m2qd/fix-postgres-login-duplicate-prefix
+    
+    Fix postgres login duplicate prefix
+
+ .../auxiliary/scanner/postgres/postgres_login.rb   |  4 +-
+ .../scanner/postgres/postgres_login_spec.rb        | 88 ++++++++++++++++++++++
+ 2 files changed, 90 insertions(+), 2 deletions(-)
+
+commit 322820264d8fc9fd71299ca80d1c25b838497723
+Author: Karan <mkarandeep.1111@gmail.com>
+Date:   Wed Oct 7 19:04:03 2026 +0530
+
+    Update modules/auxiliary/scanner/postgres/postgres_login.rb
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/postgres/postgres_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f12f40c42e98a93c30455b7dcdf52b2a0a996d80
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 7 12:04:26 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8b65db154aff975b4fd6f83b8ee7e962c5cca9b5
+Merge: 588824e7b5 602b268eb3
+Author: dledda-r7 <dledda-r7@github>
+Date:   Wed Oct 7 13:55:48 2026 +0200
+
+    Merge pull request #21680 from messede-degod/master
+    
+    update: AV/EDR Detections
+
+ modules/post/linux/gather/enum_protections.rb | 73 +++++++++++++++++++++++++++
+ 1 file changed, 73 insertions(+)
+
+commit 588824e7b552ef6f1dddc8930d0b3fcb451c4327
+Merge: 75193f4c81 fb38c60c2d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Oct 7 10:10:02 2026 +0100
+
+    Merge pull request #21887 from dwelch-r7/add-module-generators
+    
+    Add generators for module scaffolding and enablement for Users/Agents
+
+ .github/instructions/modules.instructions.md      |  11 +
+ .rubocop.yml                                      |  11 +
+ AGENTS.md                                         |   2 +
+ CONTRIBUTING.md                                   |  30 +
+ lib/rubocop/cop/lint/module_missing_rank.rb       |  70 +++
+ lib/tasks/module_generator.rake                   | 346 ++++++++++++
+ lib/tasks/templates/auxiliary.rb.erb              |  77 +++
+ lib/tasks/templates/encoder.rb.erb                |  31 +
+ lib/tasks/templates/evasion.rb.erb                |  53 ++
+ lib/tasks/templates/exploit.rb.erb                | 125 +++++
+ lib/tasks/templates/module_doc.md.erb             |  71 +++
+ lib/tasks/templates/nop.rb.erb                    |  31 +
+ lib/tasks/templates/payload_single.rb.erb         |  48 ++
+ lib/tasks/templates/post.rb.erb                   |  56 ++
+ spec/lib/tasks/module_generator_spec.rb           | 652 ++++++++++++++++++++++
+ spec/rubocop/cop/lint/module_missing_rank_spec.rb | 102 ++++
+ 16 files changed, 1716 insertions(+)
