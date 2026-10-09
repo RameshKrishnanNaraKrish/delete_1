@@ -1,0 +1,253 @@
+commit 2d664636002d3bfee1451c6832469f2756c54d4a
+Merge: 46ee7b5b3a f5fd1f6427
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Oct 8 21:22:54 2026 +0100
+
+    Merge pull request #21490 from h00die/fix_http_version_scanner
+    
+    Fix http version scanner
+
+ lib/msf/core/db_manager/service.rb | 1 +
+ lib/msf/core/db_manager/web.rb     | 6 +++---
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 46ee7b5b3a680d4fa7188ec910198e7e048f0eba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 20:16:00 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 110 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 110 insertions(+)
+
+commit 828efc2d6843cc43c3dec92babc423aad2a6cc4e
+Merge: af97afb7dc 36150f09df
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 13:07:53 2026 -0700
+
+    Merge pull request #21942 from rmhowe425/dev/cve-2026-93680
+    
+    ENH: Auxiliary module for Langflow Authentication Bypass auxiliary module CVE-2026-93680
+
+ .../gather/langflow_auth_bypass_cve_2026_93680.md  |  81 ++++
+ .../gather/langflow_auth_bypass_cve_2026_93680.rb  | 408 +++++++++++++++++++++
+ 2 files changed, 489 insertions(+)
+
+commit af97afb7dc6a7a1b547303fd51f9ca068febc08e
+Merge: ac43b817d1 312330d27f
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 13:00:54 2026 -0700
+
+    Merge pull request #21867 from rmhowe425/dev/cve-2026-0769
+    
+    ENH: Exploit module for Langflow Unauthenticated Remote Code Execution vulnerability CVE-2026-0769
+
+ .../http/langflow_unauth_rce_cve_2026_0769.md      |  65 +++++++++
+ .../http/langflow_unauth_rce_cve_2026_0769.rb      | 147 +++++++++++++++++++++
+ 2 files changed, 212 insertions(+)
+
+commit ac43b817d18a0075340e58ed5063be25770f39bb
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 18:58:21 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 312330d27fa219d1861888e879ba2f2eb619dd7b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 11:52:00 2026 -0700
+
+    Update modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0769.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/exploits/multi/http/langflow_unauth_rce_cve_2026_0769.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 92583f294845d69aad697580e2c2f68cd2c4ee9e
+Merge: 4549ab0429 690627d7d6
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 11:50:18 2026 -0700
+
+    Merge pull request #21864 from rmhowe425/dev/cve-2026-0768
+    
+    ENH: Exploit module for Langflow Unauthenticated Remote Code Execution vulnerability CVE-2026-0768
+
+ .../http/langflow_unauth_rce_cve_2026_0768.md      |  65 ++++++++++++
+ .../http/langflow_unauth_rce_cve_2026_0768.rb      | 109 +++++++++++++++++++++
+ 2 files changed, 174 insertions(+)
+
+commit 4549ab042976f22eb2914fb0abbe87dcde068eba
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 18:48:51 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 58 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit f0dcd334d178cf097f8dc2e013aea41ee246bbbd
+Merge: 07ffb2b604 604635f1d3
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 11:40:31 2026 -0700
+
+    Merge pull request #21877 from rmhowe425/dev/cve-2026-7873
+    
+    ENH: Exploit module for Langflow authenticated Remote Code Execution vulnerability CVE-2026-7873
+
+ .../multi/http/langflow_auth_rce_cve_2026_7873.md  |  63 +++++++++
+ .../multi/http/langflow_auth_rce_cve_2026_7873.rb  | 153 +++++++++++++++++++++
+ 2 files changed, 216 insertions(+)
+
+commit 07ffb2b604601c052eea6ef7d9808a07b62aac2c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 17:37:33 2026 +0000
+
+    Bump version of framework to 6.5.7
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 11 ++++++-----
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 8 insertions(+), 7 deletions(-)
+
+commit a45e66c90d4f8231fac5bdd3f77bb1cf067ed6a0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 17:21:47 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 50 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+
+commit 81d8e8e7bfae17695b8889a61904de1cb56113f6
+Merge: de74141a44 6fdecc3ed8
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 10:13:02 2026 -0700
+
+    Merge pull request #21532 from msutovsky-r7/exploit/linux/cve-2026-3888
+    
+    Adds module for Ubuntu Snap privilege escalation (CVE-2026-3888)
+
+ data/exploits/CVE-2026-3888/cve-2026-3888-x64      | Bin 0 -> 929336 bytes
+ data/exploits/CVE-2026-3888/cve-2026-3888.c        | 460 +++++++++++++++++++++
+ data/exploits/CVE-2026-3888/librootshell.c         |  65 +++
+ data/exploits/CVE-2026-3888/librootshell.so        | Bin 0 -> 9184 bytes
+ .../modules/exploit/linux/local/cve_2026_3888.md   |  79 ++++
+ modules/exploits/linux/local/cve_2026_3888.rb      | 192 +++++++++
+ 6 files changed, 796 insertions(+)
+
+commit 604635f1d326aff61bbf2fde94ab5b57292890e4
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 8 08:39:45 2026 -0700
+
+    Update modules/exploits/multi/http/langflow_auth_rce_cve_2026_7873.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/exploits/multi/http/langflow_auth_rce_cve_2026_7873.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit de74141a44de46c101b5cebbc3fb1fc59f5e0dcc
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 15:09:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 452 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 452 insertions(+)
+
+commit 5953076e9aaea6288e8ebe589b0d533a157bade4
+Merge: 23176be0d7 bcd2b470c5
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 8 09:58:27 2026 -0500
+
+    Merge pull request #21890 from vinicius-batistella/feature/windows-aarch64-fetch-adapters
+    
+    Add Windows AArch64 support to fetch payloads
+
+ .../payloads/adapters/cmd/windows/ftp/aarch64.rb   |  31 ++++
+ .../payloads/adapters/cmd/windows/http/aarch64.rb  |  31 ++++
+ .../payloads/adapters/cmd/windows/https/aarch64.rb |  32 ++++
+ .../payloads/adapters/cmd/windows/tftp/aarch64.rb  |  31 ++++
+ .../adapters/cmd/windows/http/aarch64_spec.rb      | 181 +++++++++++++++++++++
+ .../adapters/cmd/windows/https/aarch64_spec.rb     | 152 +++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  32 ++++
+ 7 files changed, 490 insertions(+)
+
+commit 23176be0d733e6f8e4e457c055fd5c7f0e97c0a8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 14:23:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit a714ddd04fd17d3a3cff5b8adbe559795a4e949f
+Merge: 4ae92b632e 28f5cb7269
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Oct 8 15:09:58 2026 +0100
+
+    Merge pull request #21896 from sfewer-r7/n-central-rce
+    
+    Add exploit module for N-able N-central unauthenticated  RCE (CVE-2026-86218)
+
+ .../nable_ncentral_unauth_rce_cve_2026_86218.md    | 145 +++++
+ .../nable_ncentral_unauth_rce_cve_2026_86218.rb    | 717 +++++++++++++++++++++
+ 2 files changed, 862 insertions(+)
+
+commit 4ae92b632eedca0e1c783b1d716100ce5966c9e1
+Merge: c6e99d0826 e268d615db
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 8 08:47:13 2026 -0500
+
+    Merge pull request #21906 from Pushpenderrathore/fix/web-enrollment-cert-download-nil-check
+    
+    Fix a crash downloading the issued certificate in WebEnrollment
+
+ lib/msf/core/exploit/remote/http/web_enrollment.rb  |  6 ++++++
+ .../core/exploit/remote/http/web_enrollment_spec.rb | 21 +++++++++++++++++++++
+ 2 files changed, 27 insertions(+)
+
+commit 28f5cb7269cd5638ee3fa24c173e420c601b83c6
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Oct 8 14:28:30 2026 +0100
+
+    typo in documentation and fix the required steps bullet numbers
+
+ .../linux/http/nable_ncentral_unauth_rce_cve_2026_86218.md     | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit c6e99d08265b081d2f180086790b12811642c278
+Merge: f8b4ceb3a0 320846b720
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Oct 8 09:06:49 2026 +0100
+
+    Merge pull request #21989 from pauljccode/fix/php-macos-acceptance-budget
+    
+    Allow more time for Meterpreter acceptance
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f8b4ceb3a0cc1c57ecc4e4fc8a8be5ea589a980b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 8 00:10:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 58 insertions(+), 1 deletion(-)
+
+commit 36150f09df432326ee89cbe1c736ab690c86aa6c
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 7 17:01:12 2026 -0700
+
+    Apply suggestion from @bwatters-r7
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ .../modules/auxiliary/gather/langflow_auth_bypass_cve_2026_93680.md     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
