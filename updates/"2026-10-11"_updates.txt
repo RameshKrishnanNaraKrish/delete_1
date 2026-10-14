@@ -1,0 +1,21 @@
+commit 6144ecdd0f6324d49a370f5e020b0f68cdb3e4b5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 13 17:04:41 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 4e8d2c95994c01944994ac7affb5323f0ec9335b
+Merge: 2d66463600 a9d5a828ee
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 13 09:55:59 2026 -0700
+
+    Merge pull request #21831 from anirbala98/cve-2026-53959-users-info-disclosure
+    
+    Add 4gaBoards user information disclosure module (CVE-2026-53959)
+
+ ...aboards_users_info_disclosure_cve_2026_53959.md | 119 ++++++++++++
+ ...aboards_users_info_disclosure_cve_2026_53959.rb | 215 +++++++++++++++++++++
+ 2 files changed, 334 insertions(+)
