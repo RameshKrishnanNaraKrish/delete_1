@@ -1,0 +1,115 @@
+commit be32cd78a532b88e21750c5799f122851b0c486c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 14 22:38:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit ee3404e962ba74f19f58a6c318d1e8f9e2f48f1a
+Merge: 28f4223c60 edd6c1043e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 14 15:29:38 2026 -0700
+
+    Merge pull request #21901 from ozcanpng/add-grafana-cve-2024-9264
+    
+    Add Grafana SQL Expressions command injection exploit (CVE-2024-9264)
+
+ .../grafana_sql_expressions_rce_cve_2024_9264.md   |  88 +++++++++
+ .../grafana_sql_expressions_rce_cve_2024_9264.rb   | 200 +++++++++++++++++++++
+ 2 files changed, 288 insertions(+)
+
+commit 28f4223c60cad9dac0ea92932afb24d8524484a5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 14 18:36:44 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 6bdcf0080aa31274a6ea2b963ff0fbdfcaed0daa
+Merge: c64907532d 70aff052ed
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 14 13:27:59 2026 -0500
+
+    Merge pull request #21826 from kmkz/add-opencti-preauth-rce
+    
+    Add OpenCTI pre-auth notifier RCE exploit
+
+ .../exploit/linux/http/opencti_notifier_rce.md     | 135 ++++++
+ .../exploits/linux/http/opencti_notifier_rce.rb    | 482 +++++++++++++++++++++
+ 2 files changed, 617 insertions(+)
+
+commit 04e0dcaccf6df995116fef3cf760c44aab59e1c9
+Author: Jatin Mannepalli <mjatin2007@users.noreply.github.com>
+Date:   Wed Oct 14 13:12:20 2026 -0500
+
+    Bump rex-core to 0.1.37
+    
+    Signed-off-by: Jatin Mannepalli <mjatin2007@users.noreply.github.com>
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c64907532d224b9cb8a67900c925e9e057e0d58e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 14 17:05:38 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 140 +++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 133 insertions(+), 7 deletions(-)
+
+commit e4e21bf1a23a91763101b708b191bc56d5edf6f1
+Merge: c3e1fbccdf 2b7b2964e0
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Wed Oct 14 11:57:06 2026 -0500
+
+    Merge pull request #21785 from h00die/mongodb_schemadump
+    
+    Mongodb Aux Modules
+
+ .../auxiliary/scanner/mongodb/mongodb_hashdump.md  |  460 ++++++++
+ .../auxiliary/scanner/mongodb/mongodb_login.md     |  332 ++++++
+ .../scanner/mongodb/mongodb_schemadump.md          | 1107 ++++++++++++++++++++
+ .../auxiliary/scanner/mongodb/mongodb_version.md   |  296 ++++++
+ lib/msf/core/exploit/remote/mongodb.rb             |  874 ++++++++++++++++
+ .../auxiliary/scanner/mongodb/mongodb_hashdump.rb  |  284 +++++
+ modules/auxiliary/scanner/mongodb/mongodb_login.rb |  189 ++--
+ .../scanner/mongodb/mongodb_schemadump.rb          |  207 ++++
+ .../auxiliary/scanner/mongodb/mongodb_version.rb   |   59 ++
+ spec/lib/msf/core/exploit/remote/mongodb_spec.rb   |  829 +++++++++++++++
+ 10 files changed, 4510 insertions(+), 127 deletions(-)
+
+commit c3e1fbccdfb40ee3fe11f87b1e5a17a98052f74b
+Merge: 6144ecdd0f 033effe125
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 14 13:29:17 2026 +0100
+
+    Merge pull request #22016 from adfoster-r7/update-coderabbit-docstring-check
+    
+    Update coderabbit docstring check
+
+ .coderabbit.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 033effe125fc9514ffcef335bf2571d484168bb8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Oct 14 13:19:11 2026 +0100
+
+    Update coderabbit docstring check
+
+ .coderabbit.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit edd6c1043e47e5edef14f7bdcfa3d46710de5f99
+Author: Özcan <127627278+ozcanpng@users.noreply.github.com>
+Date:   Wed Oct 14 12:06:46 2026 +0300
+
+    Clarify Grafana CVE-2024-9264 version handling
+
+ .../multi/http/grafana_sql_expressions_rce_cve_2024_9264.md  |  8 ++++++--
+ .../multi/http/grafana_sql_expressions_rce_cve_2024_9264.rb  | 12 +++++++-----
+ 2 files changed, 13 insertions(+), 7 deletions(-)
