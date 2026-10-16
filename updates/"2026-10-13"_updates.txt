@@ -1,0 +1,15 @@
+commit fa174ade81b5f12f3c9deeec271963fb4200398b
+Merge: be32cd78a5 04e0dcaccf
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Oct 15 12:27:30 2026 +0100
+
+    Merge pull request #22002 from mjatin2007/jatin/mssql-client-cleanup
+    
+    Fix MSSQL login scanner client cleanup
+
+ Gemfile.lock                                       |   2 +-
+ lib/metasploit/framework/login_scanner/mssql.rb    |  19 ++-
+ lib/rex/proto/ms_tds/channel.rb                    |  10 +-
+ .../framework/login_scanner/mssql_spec.rb          | 165 ++++++++++++++++++---
+ spec/lib/rex/proto/ms_tds/channel_spec.rb          |  94 ++++++++++++
+ 5 files changed, 264 insertions(+), 26 deletions(-)
