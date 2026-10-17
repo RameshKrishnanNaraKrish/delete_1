@@ -1,0 +1,76 @@
+commit b22ce1fbae63e8caeb3a773366a6d3336bd66fb8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 16 13:36:30 2026 +0000
+
+    Bump version of framework to 6.5.8
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 1f21aaf644a2efb8909545d74914b695ac150800
+Merge: efb3b89edf fefc8f7692
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 16 14:02:12 2026 +0100
+
+    Merge pull request #21979 from adfoster-r7/add-http-ip-check
+    
+    Add http redirect checks
+
+ lib/msf/core/exploit/remote/http_client.rb    | 411 ++++++++++++--
+ spec/lib/msf/core/exploit/http/client_spec.rb | 784 ++++++++++++++++++++++++++
+ 2 files changed, 1147 insertions(+), 48 deletions(-)
+
+commit efb3b89edf30d82083bc26a945fb0bdb5ef208c1
+Merge: 1757aa9a08 db4dd9deeb
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 16 14:00:38 2026 +0100
+
+    Merge pull request #21994 from adfoster-r7/add-ftp-pasv-ip-check
+    
+    Add ftp pasv ip check
+
+ lib/metasploit/framework/ftp/client.rb             |  32 ++++--
+ lib/msf/core/exploit/remote/ftp.rb                 |  79 ++++++++++----
+ lib/rex/proto/ftp/client.rb                        |  32 ++++--
+ lib/rex/proto/ftp/server.rb                        |  11 +-
+ .../metasploit/framework/login_scanner/ftp_spec.rb |  42 ++++++++
+ spec/lib/msf/core/exploit/remote/ftp_spec.rb       | 114 +++++++++++++++++++++
+ spec/lib/rex/proto/ftp/client_spec.rb              |  47 +++++++++
+ spec/lib/rex/proto/ftp/server_spec.rb              |  48 +++++++++
+ 8 files changed, 360 insertions(+), 45 deletions(-)
+
+commit 1757aa9a085b8e273aa8b0b73c4d3f73a310086f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 16 10:58:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 7f9301025412d641a5ec13f9151e688c0408e798
+Merge: fa174ade81 5f611bc543
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Oct 16 11:49:52 2026 +0100
+
+    Merge pull request #22014 from cgranleese-r7/address-false-positives
+    
+    Addresses some false positives in several modules
+
+ .../hikvision_info_disclosure_cve_2017_7921.rb     | 23 ++++--
+ .../auxiliary/gather/magento_xxe_cve_2024_34102.rb | 94 +++++++++++++++++-----
+ .../scanner/http/elasticsearch_traversal.rb        | 68 ++++++++++++----
+ 3 files changed, 143 insertions(+), 42 deletions(-)
+
+commit 5f611bc5438a54cef31aa61d16a52757ec4cca8d
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Oct 13 16:10:45 2026 +0100
+
+    Addresses some false positives in several modules
+
+ .../hikvision_info_disclosure_cve_2017_7921.rb     | 23 ++++--
+ .../auxiliary/gather/magento_xxe_cve_2024_34102.rb | 94 +++++++++++++++++-----
+ .../scanner/http/elasticsearch_traversal.rb        | 68 ++++++++++++----
+ 3 files changed, 143 insertions(+), 42 deletions(-)
