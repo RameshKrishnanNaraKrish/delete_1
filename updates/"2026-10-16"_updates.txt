@@ -1,0 +1,8 @@
+commit 81e7cd9ab070e8eb4286b58c7d587bb0092a3046
+Author: Richard Howe <rhowe425@gmail.com>
+Date:   Sat Oct 17 23:11:51 2026 -0400
+
+    Updating documentation after researching vulnerable version discrepancy
+
+ .../multi/http/langflow_auth_command_injection_cve_2026_93674.md  | 8 ++++++++
+ 1 file changed, 8 insertions(+)
