@@ -1,0 +1,44 @@
+commit 1e321cedaf4c2a3f92de6a21b2f7d4b8eff31ca4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 19 14:26:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit abc70b1c84d1a103224b99d0562ae6ec59684ec6
+Merge: 0aba40c406 81e7cd9ab0
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Oct 19 07:17:38 2026 -0700
+
+    Merge pull request #21939 from rmhowe425/dev/cve-2026-93674
+    
+    ENH: Exploit module for Langflow authenticated Remote Code Execution vulnerability CVE-2026-93674
+
+ ...ngflow_auth_command_injection_cve_2026_93674.md |  75 ++++++++
+ ...ngflow_auth_command_injection_cve_2026_93674.rb | 190 +++++++++++++++++++++
+ 2 files changed, 265 insertions(+)
+
+commit f6de4e1939aeed09a0f32696e41b83d11f81048d
+Author: h00die <h00die@github>
+Date:   Mon Oct 19 06:28:38 2026 -0400
+
+    Update documentation/modules/auxiliary/scanner/http/apache_solr_version.md
+    
+    Co-authored-by: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+
+ documentation/modules/auxiliary/scanner/http/apache_solr_version.md | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 0aba40c4066a4e59bbb7aae84c4079a2aca6f777
+Merge: b22ce1fbae 9e5a9b5b6b
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Mon Oct 19 12:23:35 2026 +0200
+
+    Land #20944, adds specs for mkdir post API
+    
+    Add Specs for mkdir post API to behave consistently across session types
+
+ test/modules/post/test/file.rb | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
