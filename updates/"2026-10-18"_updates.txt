@@ -1,0 +1,82 @@
+commit 401e4e4521dbffc3a223d6dbb59349af968a8f95
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 20 20:14:34 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 57 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 5f81cdaecf21add8571d4ff8de7e20a27d588d62
+Merge: b1c965ff6f 33aaff5e86
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 20 13:05:14 2026 -0700
+
+    Merge pull request #21875 from rmhowe425/dev/cve-2026-10134
+    
+    ENH: Exploit module for Langflow Unauthenticated Remote Code Execution vulnerability CVE-2026-10134
+
+ .../http/langflow_unauth_rce_cve_2026_10134.md     |  97 +++++
+ .../http/langflow_unauth_rce_cve_2026_10134.rb     | 458 +++++++++++++++++++++
+ 2 files changed, 555 insertions(+)
+
+commit b1c965ff6f1e86d05161fbe7ec0e4a058c14fa6d
+Merge: d61e2aad8e c6c3524fe8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Oct 20 17:17:45 2026 +0100
+
+    Merge pull request #22029 from dwelch-r7/coderabbit-config-update
+    
+    Remove outdated instruction files and update contribution guidelines
+
+ .coderabbit.yaml                                   |  45 ++-
+ .github/PULL_REQUEST_TEMPLATE.md                   |  87 +----
+ .github/copilot-instructions.md                    |   5 -
+ .github/instructions/documentation.instructions.md |  23 --
+ .github/instructions/library.instructions.md       |  44 ---
+ .github/instructions/modules.instructions.md       |  79 -----
+ .github/instructions/tests.instructions.md         |  37 --
+ .github/workflows/labels.yml                       |  10 +-
+ AGENTS.md                                          | 373 +++++++--------------
+ CONTRIBUTING.md                                    |  27 +-
+ 10 files changed, 204 insertions(+), 526 deletions(-)
+
+commit d61e2aad8ef50ec79327bfaa7edbd0b0f56b648f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 20 13:44:35 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 9d6a758d79a21ee99d025b22ed965e47bb599b05
+Merge: 1e321cedaf 8aac0a92e7
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 20 14:35:47 2026 +0100
+
+    Merge pull request #22006 from h00die/apache_solr
+    
+    apache solr version scanner
+
+ .../auxiliary/scanner/http/apache_solr_version.md  | 107 ++++++++++++
+ .../auxiliary/scanner/http/apache_solr_version.rb  | 193 +++++++++++++++++++++
+ 2 files changed, 300 insertions(+)
+
+commit 8aac0a92e7bb43ec6c67ab416a0d320404a1f936
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 20 14:15:27 2026 +0100
+
+    Update documentation/modules/auxiliary/scanner/http/apache_solr_version.md
+
+ documentation/modules/auxiliary/scanner/http/apache_solr_version.md | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2f425b094a5c2a75c56a54949d6038ea3ff0c07e
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 20 14:15:18 2026 +0100
+
+    Update documentation/modules/auxiliary/scanner/http/apache_solr_version.md
+
+ documentation/modules/auxiliary/scanner/http/apache_solr_version.md | 1 -
+ 1 file changed, 1 deletion(-)
