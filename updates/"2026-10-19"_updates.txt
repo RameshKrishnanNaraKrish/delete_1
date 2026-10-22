@@ -1,0 +1,35 @@
+commit a34f5efb3271b7d6f8240a4c3fb095861b8c042e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 21 13:42:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1522b8e607544f1cd9f3a2857777ce2f61241f07
+Merge: cca99d3a6a 3d54eed16e
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Oct 21 15:32:22 2026 +0200
+
+    Merge pull request #22001 from Suryanshuv14/fix-dirtyclone-metadata-typo
+    
+    Fix DirtyClone module metadata and typo
+
+ modules/exploits/linux/local/dirtyclone_cve_2026_43503.rb | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+commit cca99d3a6a55c099385ac5e99d9a31de938564f1
+Merge: 401e4e4521 fe746b34fe
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Oct 21 14:21:07 2026 +0100
+
+    Merge pull request #21915 from vjonline/21601-bind-address
+    
+    Consolidate reverse handler bind addresses
+
+ lib/msf/core/handler/reverse.rb                | 49 +-------------
+ lib/msf/core/handler/reverse/bind.rb           | 47 +++++++++++++
+ lib/msf/core/handler/reverse_udp.rb            | 31 +--------
+ spec/lib/msf/core/handler/reverse/bind_spec.rb | 94 ++++++++++++++++++++++++++
+ 4 files changed, 146 insertions(+), 75 deletions(-)
