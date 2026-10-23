@@ -1,0 +1,110 @@
+commit da8f9b3bbc6471932a25d2cafc23998aa9348e8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 22 21:59:25 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 85 ++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 76 insertions(+), 9 deletions(-)
+
+commit 1f34276679e39669b64a767c824d3f8bf6227135
+Merge: 1f19aaca2e 9a3b5da349
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Oct 22 14:51:07 2026 -0700
+
+    Merge pull request #21962 from sfewer-r7/cve-2026-88771-netscaler-rce
+    
+    Add exploit module for Citrix NetScaler unauth RCE via command injection (CVE-2026-88771)
+
+ .../http/citrix_netscaler_cve_2026_88771.md        | 154 +++++
+ .../http/citrix_netscaler_cve_2026_88771.rb        | 765 +++++++++++++++++++++
+ 2 files changed, 919 insertions(+)
+
+commit 1f19aaca2ebd907ce3ed485e25f4ce04561e2558
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 22 17:15:30 2026 +0000
+
+    Bump version of framework to 6.5.9
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 5b16992789360d21e6cfc8d0f9b01aedf1ba113f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Oct 22 17:09:29 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ modules/payloads/singles/php/meterpreter_reverse_tcp.rb              | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_named_pipe.rb      | 2 +-
+ modules/payloads/singles/windows/meterpreter_bind_tcp.rb             | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_ipv6_tcp.rb     | 2 +-
+ modules/payloads/singles/windows/meterpreter_reverse_tcp.rb          | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_named_pipe.rb  | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_bind_tcp.rb         | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_ipv6_tcp.rb | 2 +-
+ modules/payloads/singles/windows/x64/meterpreter_reverse_tcp.rb      | 2 +-
+ 9 files changed, 9 insertions(+), 9 deletions(-)
+
+commit f808ca75653cfafc7ce58554fefb5f5e3d20cd9b
+Merge: a34f5efb32 7fab1efbbf
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Oct 22 18:00:04 2026 +0100
+
+    Merge pull request #22041 from adfoster-r7/update-metasploit-payloads-2.0.257
+    
+    Update metasploit payloads 2.0.257
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 7fab1efbbf0a10fd68274eb54c985bb6531e4ad0
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Thu Oct 22 17:10:19 2026 +0100
+
+    Update metasploit payloads 2.0.257
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 9a3b5da3492a7148172fe008f6599ad4d00c17e7
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Oct 22 15:46:18 2026 +0100
+
+    typo in docs for USER_DTLS, should be USE_DTLS
+
+ .../modules/exploit/freebsd/http/citrix_netscaler_cve_2026_88771.md     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0e1a34a97805cb2bf6162e45cdba2eb84d7b5cb8
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Oct 22 15:44:56 2026 +0100
+
+    update this in teh doc to be RESUBMIT_DURATION
+
+ .../modules/exploit/freebsd/http/citrix_netscaler_cve_2026_88771.md     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 8cb07b4ffcf75ae33fcab47d2723b4865ce9e13e
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Oct 22 15:37:05 2026 +0100
+
+    improve the USE_DTL description
+
+ .../modules/exploit/freebsd/http/citrix_netscaler_cve_2026_88771.md    | 3 ++-
+ modules/exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb       | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit eb484a2a7765d382e2357c4fe34cdffd03533d72
+Author: sfewer-r7 <stephen_fewer@rapid7.com>
+Date:   Thu Oct 22 14:58:01 2026 +0100
+
+    rename WAIT_FOR_SESSION to RESUBMIT_DURATION as this is more consistent with the existing RESUBMIT_INTERVAL options
+
+ .../exploit/freebsd/http/citrix_netscaler_cve_2026_88771.md  |  4 ++--
+ .../exploits/freebsd/http/citrix_netscaler_cve_2026_88771.rb | 12 ++++++------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
