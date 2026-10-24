@@ -1,0 +1,42 @@
+commit e25d6ee62a0c7f7df27f367c8028859fdf8136a7
+Merge: da8f9b3bbc 90e3afcf0c
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Oct 23 18:32:31 2026 +0200
+
+    Merge pull request #21839 from dledda-r7/feat/persistence/elf
+    
+    Persistence via ELF backdooring through codecave or new section
+
+ .../modules/exploit/linux/persistence/elf.md       | 104 ++++++
+ lib/msf/core/assembly/a_arch64.rb                  |  70 ++++
+ lib/msf/core/exe/elf_injector.rb                   | 412 +++++++++++++++++++++
+ lib/msf/core/exe/elf_injector/a_arch64.rb          |  80 ++++
+ lib/msf/core/exe/elf_injector/x64.rb               |  82 ++++
+ lib/msf/core/exe/elf_injector/x86.rb               |  39 ++
+ lib/msf/core/payload/linux/aarch64/prepends.rb     |  75 ++--
+ lib/msf/core/payload/linux/prepends.rb             |  10 +
+ lib/msf/core/payload/linux/x64/prepends.rb         | 251 +++++++------
+ lib/msf/core/payload/linux/x86/prepends.rb         | 229 +++++++-----
+ modules/exploits/linux/persistence/elf.rb          | 191 ++++++++++
+ spec/lib/msf/core/assembly/a_arch64_spec.rb        |  31 ++
+ spec/lib/msf/core/exe/elf_injector_spec.rb         | 345 +++++++++++++++++
+ spec/lib/msf/core/payload/linux/prepends_spec.rb   | 142 +++++++
+ 14 files changed, 1829 insertions(+), 232 deletions(-)
+
+commit 90e3afcf0c81f95d9363b4d8722ea3aca816273d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Oct 23 17:24:13 2026 +0200
+
+    fix: review update
+
+ modules/exploits/linux/persistence/elf.rb | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit c15fbda432875ed213ecb47f1fcf9ca866cadb6d
+Author: dledda-r7 <dledda-r7@github>
+Date:   Fri Oct 23 17:01:51 2026 +0200
+
+    fix: review update
+
+ modules/exploits/linux/persistence/elf.rb | 18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
