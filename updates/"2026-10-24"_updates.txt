@@ -1,0 +1,91 @@
+commit e3ca0d249b69d927cde12973782f9079e021ad4b
+Merge: 44fe01530c 238fbc1ac0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Oct 26 16:13:54 2026 +0000
+
+    Merge pull request #22067 from rapid7/revert-21644-bootsnap-enabled-non-coverage
+    
+    Revert "Enable ISeq caching to improve performance"
+
+ config/boot.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 238fbc1ac0a68618377a4e7989e938886dcfbe18
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Oct 26 16:09:54 2026 +0000
+
+    Revert "Enable ISeq caching to improve performance"
+
+ config/boot.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 44fe01530c1a16ccc4b4b1ff37ec282907e1b2a0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Oct 26 12:35:14 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit b836eaad91016bfcb878f80582780f1b05cef4fb
+Merge: e25d6ee62a a84327d41c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Mon Oct 26 12:26:11 2026 +0000
+
+    Merge pull request #22064 from dwelch-r7/reverse-bind-consolidation-follow-up
+    
+    Add reverse handler tests for IPv4 and IPv6 address binding
+
+ spec/lib/msf/core/handler/reverse/bind_spec.rb     | 128 +++++++++++++++++++--
+ spec/lib/msf/core/handler/reverse_tcp_spec.rb      |   7 ++
+ spec/lib/msf/core/handler/reverse_udp_spec.rb      |   7 ++
+ .../support/shared/examples/msf/handler/reverse.rb | 119 +++++++++++++++++++
+ 4 files changed, 254 insertions(+), 7 deletions(-)
+
+commit 7bd44940ef18fa355551dc13977134ff2eaf6b07
+Author: Hitarth Jain <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Mon Oct 26 15:01:36 2026 +0530
+
+    Update varnish_cli_login docs output to match the module
+
+ .../modules/auxiliary/scanner/varnish/varnish_cli_login.md     | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 903f5c9a7d57c8eae4c8b52597e7164600d461fb
+Author: Hitarth Jain <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Mon Oct 26 14:48:21 2026 +0530
+
+    Fix varnish_cli_login crashing with NoMethodError
+    
+    configure_login_scanner comes from Msf::Auxiliary::LoginScanner, which
+    the module never included (it doesn't use AuthBrute), so every run
+    raised NoMethodError before testing a password. Also stop after
+    'Unable to connect' instead of carrying on into the scan, and drop the
+    duplicate target prefix the Tcp mixin already adds.
+
+ modules/auxiliary/scanner/varnish/varnish_cli_login.rb | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+commit e52306123f02e8f0c455dfe6a0e19d9cda1cd6a0
+Author: Hitarth Jain <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Mon Oct 26 13:52:49 2026 +0530
+
+    Remove duplicate target prefix from telnet_login output
+    
+    The Telnet mixin (via Tcp) already prefixes each line with the target.
+
+ modules/auxiliary/scanner/telnet/telnet_login.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a9cce6d6cddfd40883dae835a8835696c3955159
+Author: Hitarth Jain <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Mon Oct 26 13:49:03 2026 +0530
+
+    Remove duplicate target prefix from redis_login output
+    
+    The Tcp mixin already prefixes each line with the target, so the
+    module's own "#{peer} - " printed it twice.
+
+ modules/auxiliary/scanner/redis/redis_login.rb | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
