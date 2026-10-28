@@ -1,0 +1,131 @@
+commit 5c9a3d81aa5117e6ded895dde3ba8f6ae8204abd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 27 16:19:16 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c88632c77c3d2001cff6be3748a93d4d29845c4c
+Merge: 82cbf35afb dd047295cd
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Oct 27 16:09:00 2026 +0000
+
+    Merge pull request #22068 from cgranleese-r7/docker-routine-dependency-update
+    
+    Updates Docker dependencies
+
+ .dockerignore                               |  1 +
+ .ruby-version                               |  2 +-
+ Dockerfile                                  | 19 ++++++++---
+ docker/remove_distrusted_cas.rb             | 50 +++++++++++++++++++++++++++++
+ docs/.ruby-version                          |  2 +-
+ modules/auxiliary/scanner/msmail/host_id.go |  2 +-
+ 6 files changed, 68 insertions(+), 8 deletions(-)
+
+commit 82cbf35afb1a8b169f32c9e41e9f94c6e107d50f
+Merge: e217fb2d76 6d5e441663
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Oct 27 16:06:46 2026 +0000
+
+    Merge pull request #22065 from adfoster-r7/update-react2shell-lab
+    
+    Update react2shell lab
+
+ .../Dockerfile                                     | 14 --------
+ .../README.md                                      |  6 ++++
+ .../index.html                                     | 12 -------
+ .../next.config.js                                 |  6 ----
+ .../package.json                                   | 22 -------------
+ .../src/app/actions.tsx                            |  5 ---
+ .../src/app/layout.tsx                             | 11 -------
+ .../src/app/page.tsx                               | 11 -------
+ .../tsconfig.json                                  | 26 ---------------
+ .../vite.config.js                                 |  6 ----
+ .../http/react2shell_unauth_rce_cve_2025_55182.md  | 38 ++++++----------------
+ 11 files changed, 16 insertions(+), 141 deletions(-)
+
+commit dd047295cd46f07d71cdd5b163bbae1bbcf75b86
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Oct 27 12:37:36 2026 +0000
+
+    Updates Docker dependencies
+
+ .dockerignore                               |  1 +
+ .ruby-version                               |  2 +-
+ Dockerfile                                  | 19 ++++++++---
+ docker/remove_distrusted_cas.rb             | 50 +++++++++++++++++++++++++++++
+ docs/.ruby-version                          |  2 +-
+ modules/auxiliary/scanner/msmail/host_id.go |  2 +-
+ 6 files changed, 68 insertions(+), 8 deletions(-)
+
+commit dbd1ffb9ad324b2d67af09452cdc80c90e3b80e9
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Tue Oct 27 14:26:33 2026 +0100
+
+    Updates module & docs
+
+ .../http/flowise_auth_bypass_cve_2025_58434.md     | 89 ++++++++++++++++++++++
+ .../gather/flowise_auth_bypass_cve_2025_58434.md   | 81 --------------------
+ .../http}/flowise_auth_bypass_cve_2025_58434.rb    | 52 +++++++++----
+ 3 files changed, 126 insertions(+), 96 deletions(-)
+
+commit e217fb2d76e34d71ce710f207f9ca419439e2ea4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Oct 27 09:38:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit ce6910b380bad0b95916a21987a2cfb15e9c4bbf
+Merge: 1ae58f6251 7bd44940ef
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 27 09:29:23 2026 +0000
+
+    Merge pull request #22061 from Yeagerist0/varnish-login-duplicate-prefix
+    
+    Fix varnish_cli_login crashing with NoMethodError on every run
+
+ .../modules/auxiliary/scanner/varnish/varnish_cli_login.md   | 10 +++++-----
+ modules/auxiliary/scanner/varnish/varnish_cli_login.rb       | 12 +++++++-----
+ 2 files changed, 12 insertions(+), 10 deletions(-)
+
+commit 1ae58f6251ebb23b524ca7eae809c834e5f5eba2
+Merge: 138f2c1530 e52306123f
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 27 09:26:18 2026 +0000
+
+    Merge pull request #22060 from Yeagerist0/telnet-login-duplicate-prefix
+    
+    Remove duplicate target prefix from telnet_login output
+
+ modules/auxiliary/scanner/telnet/telnet_login.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 138f2c1530dceecf5970804cc5920b5091194e58
+Merge: 3b06edf5d9 a9cce6d6cd
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 27 09:23:24 2026 +0000
+
+    Merge pull request #22058 from Yeagerist0/redis-login-duplicate-prefix
+    
+    Remove duplicate target prefix from redis_login output
+
+ modules/auxiliary/scanner/redis/redis_login.rb | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 3b06edf5d9655955cdd24729d00473629500dd30
+Merge: e3ca0d249b 33ba388976
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Oct 27 09:17:55 2026 +0000
+
+    Merge pull request #22052 from Yeagerist0/fix-auth-brute-duplicate-prefix
+    
+    Don't repeat the target in print_brute for Tcp-based login scanners
+
+ lib/msf/core/auxiliary/auth_brute.rb           |  9 +++--
+ spec/lib/msf/core/auxiliary/auth_brute_spec.rb | 48 ++++++++++++++++++++++++++
+ 2 files changed, 55 insertions(+), 2 deletions(-)
