@@ -1,0 +1,219 @@
+commit 54152b2f90a1ae66ff6b2cd90704ee8cdba97126
+Merge: c42f6a7ea5 bd016b7768
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 28 22:35:18 2026 +0000
+
+    Merge pull request #22073 from adfoster-r7/run-additional-github-workflows-on-file-changes
+    
+    Run additional github workflows on file changes
+
+ .github/workflows/command_shell_acceptance.yml | 5 ++++-
+ .github/workflows/ldap_acceptance.yml          | 5 ++++-
+ .github/workflows/meterpreter_acceptance.yml   | 5 ++++-
+ .github/workflows/mssql_acceptance.yml         | 5 ++++-
+ .github/workflows/mysql_acceptance.yml         | 5 ++++-
+ .github/workflows/postgres_acceptance.yml      | 5 ++++-
+ .github/workflows/smb_acceptance.yml           | 5 ++++-
+ .github/workflows/ssh_acceptance.yml           | 5 ++++-
+ 8 files changed, 32 insertions(+), 8 deletions(-)
+
+commit c42f6a7ea55e79a680f6bfaebf93da0ea15b7fa6
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 28 21:38:56 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit f4c423ab52b118f626d07f779e79c803c29dbde3
+Merge: 6696c95c5a 91b6df07e2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 28 14:27:07 2026 -0700
+
+    Merge pull request #21865 from jvoisin/spip_idor
+    
+    Add SPIP password change IDOR privilege escalation module
+
+ .../admin/http/spip_idor_password_reset.md         |  93 +++++++++
+ lib/msf/core/exploit/remote/http/spip.rb           |  58 ++++++
+ .../admin/http/spip_idor_password_reset.rb         | 210 +++++++++++++++++++++
+ spec/lib/msf/core/exploit/remote/http/spip_spec.rb | 174 +++++++++++++++++
+ 4 files changed, 535 insertions(+)
+
+commit 6696c95c5a12ef6fa898519402e90b04bbe41abb
+Merge: f2200c0423 c74904557e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Wed Oct 28 14:11:25 2026 -0700
+
+    Merge pull request #21824 from bwatters-r7/linting/add-opt-redefines
+    
+    Add rubocop rule for redeclaring pre-existing options
+
+ .rubocop.yml                                       |  10 +
+ lib/rubocop/cop/lint/module_duplicate_option.rb    | 294 +++++++++++++
+ .../cop/lint/module_duplicate_option_spec.rb       | 460 +++++++++++++++++++++
+ 3 files changed, 764 insertions(+)
+
+commit bd016b7768c625cdeb7622b66f2d5bd2889e37e8
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Oct 28 16:53:45 2026 +0000
+
+    Run additional github workflows on file changes
+
+ .github/workflows/command_shell_acceptance.yml | 5 ++++-
+ .github/workflows/ldap_acceptance.yml          | 5 ++++-
+ .github/workflows/meterpreter_acceptance.yml   | 5 ++++-
+ .github/workflows/mssql_acceptance.yml         | 5 ++++-
+ .github/workflows/mysql_acceptance.yml         | 5 ++++-
+ .github/workflows/postgres_acceptance.yml      | 5 ++++-
+ .github/workflows/smb_acceptance.yml           | 5 ++++-
+ .github/workflows/ssh_acceptance.yml           | 5 ++++-
+ 8 files changed, 32 insertions(+), 8 deletions(-)
+
+commit f2200c0423bd846d23bc6c2ba53c8e2a4a76c6d6
+Merge: 8d42a68839 6ad0b08655
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 28 16:35:16 2026 +0000
+
+    Merge pull request #22069 from dwelch-r7/ruby-regexp-fixes-2026-10-23
+    
+    Upgrade Framework Ruby runtime to 3.3.13
+
+ .github/workflows/command_shell_acceptance.yml                        | 4 ++--
+ .github/workflows/ldap_acceptance.yml                                 | 2 +-
+ .github/workflows/mssql_acceptance.yml                                | 2 +-
+ .github/workflows/mysql_acceptance.yml                                | 2 +-
+ .github/workflows/postgres_acceptance.yml                             | 2 +-
+ .github/workflows/shared_gem_verify.yml                               | 2 +-
+ .github/workflows/shared_gem_verify_rails.yml                         | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml                   | 4 ++--
+ .github/workflows/shared_smb_acceptance.yml                           | 2 +-
+ .github/workflows/verify.yml                                          | 2 +-
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md            | 4 ++--
+ 11 files changed, 14 insertions(+), 14 deletions(-)
+
+commit 8d42a68839564e9611e831367ddfd32d886e1211
+Merge: 2af418793d 312a0f299c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 28 16:10:36 2026 +0000
+
+    Merge pull request #22039 from cgranleese-r7/fix-msf-ws-unauth-bootstrap
+    
+    Fixes unauth boostrap
+
+ .../Metasploit-Database-Support.md                 |   4 +-
+ .../Metasploit-Web-Service.md                      |   4 +
+ .../authentication/strategies/api_token.rb         |  23 +----
+ .../documentation/api/v1/user_api_doc.rb           |   3 +-
+ lib/msf/core/web_services/json_rpc_app.rb          |   4 -
+ lib/msf/core/web_services/metasploit_api_app.rb    |  17 ----
+ msfdb                                              | 102 +++++++++++----------
+ spec/api/metasploit_api_app_spec.rb                |  47 +++++-----
+ 8 files changed, 89 insertions(+), 115 deletions(-)
+
+commit 312a0f299ca228a4b35e435d19e6918c6adb7459
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Thu Oct 22 15:40:30 2026 +0100
+
+    Fixes unauth boostrap
+
+ .../Metasploit-Database-Support.md                 |   4 +-
+ .../Metasploit-Web-Service.md                      |   4 +
+ .../authentication/strategies/api_token.rb         |  23 +----
+ .../documentation/api/v1/user_api_doc.rb           |   3 +-
+ lib/msf/core/web_services/json_rpc_app.rb          |   4 -
+ lib/msf/core/web_services/metasploit_api_app.rb    |  17 ----
+ msfdb                                              | 102 +++++++++++----------
+ spec/api/metasploit_api_app_spec.rb                |  47 +++++-----
+ 8 files changed, 89 insertions(+), 115 deletions(-)
+
+commit 6ad0b086553aead95a884fe4cb86b1e25ba32a6c
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Oct 28 13:41:57 2026 +0000
+
+    Upgrade Framework Ruby to 3.3.13
+    
+    Update the development runtime, Docker image and Windows setup
+    instructions to the patched Ruby release. Refresh setup-ruby version
+    manifests while retaining floating CI patch selectors.
+
+ .github/workflows/command_shell_acceptance.yml                        | 4 ++--
+ .github/workflows/ldap_acceptance.yml                                 | 2 +-
+ .github/workflows/mssql_acceptance.yml                                | 2 +-
+ .github/workflows/mysql_acceptance.yml                                | 2 +-
+ .github/workflows/postgres_acceptance.yml                             | 2 +-
+ .github/workflows/shared_gem_verify.yml                               | 2 +-
+ .github/workflows/shared_gem_verify_rails.yml                         | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml                   | 4 ++--
+ .github/workflows/shared_smb_acceptance.yml                           | 2 +-
+ .github/workflows/verify.yml                                          | 2 +-
+ .ruby-version                                                         | 2 +-
+ Dockerfile                                                            | 4 ++--
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md            | 4 ++--
+ 13 files changed, 17 insertions(+), 17 deletions(-)
+
+commit 2af418793d46ad112e8cea379300c6059a3c6793
+Merge: ae8fe52bca 1c134e9728
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Oct 28 13:37:23 2026 +0000
+
+    Merge pull request #22071 from adfoster-r7/update-test-lab-documentation
+    
+    Update test lab documentation
+
+ data/exploits/CVE-2026-75604/{package.json => README.md} | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit ae8fe52bca01c87f7f67ebf0aa6b30705d425c83
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 28 13:22:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 57b0c9bde0be31453524f410588e8c1343a022e8
+Merge: 7639f89ba6 dbd1ffb9ad
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Wed Oct 28 14:13:27 2026 +0100
+
+    Land #21757, adds module for Flowise auth bypass (CVE-2025-58434)
+    
+    ENH: auxiliary module for Flowise Authentication Bypass CVE-2025-58434
+
+ .../http/flowise_auth_bypass_cve_2025_58434.md     |  89 +++++++++++
+ .../http/flowise_auth_bypass_cve_2025_58434.rb     | 174 +++++++++++++++++++++
+ 2 files changed, 263 insertions(+)
+
+commit 1c134e972800ac6f8c4d6e8f41474dda0beaac37
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Oct 28 12:52:25 2026 +0000
+
+    Update test lab documentation
+
+ data/exploits/CVE-2026-75604/{package.json => README.md} | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 7639f89ba6a5c5271ed103945c167d2b59e31e8e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Oct 28 01:56:23 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 55 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit 307953cdb29dcd8234cec97931d4c6d60ec9c62a
+Merge: 5c9a3d81aa c2a0ffe70b
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Oct 27 18:47:42 2026 -0700
+
+    Merge pull request #22018 from sfewer-r7/cisco-secure-email-gateway-cve-2026-76443
+    
+    Add exploit module for Cisco Secure Email Gateway S/MIME SQLi (CVE-2026-76443)
+
+ .../cisco_secure_email_gateway_smime_sqli_rce.md   | 193 ++++++++++++
+ .../cisco_secure_email_gateway_smime_sqli_rce.rb   | 350 +++++++++++++++++++++
+ 2 files changed, 543 insertions(+)
