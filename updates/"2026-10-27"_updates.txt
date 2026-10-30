@@ -1,0 +1,16 @@
+commit 27d30f7c61a351fabc84e11fad2ebb1035510509
+Merge: 54152b2f90 acc24689bd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Oct 29 16:02:06 2026 -0500
+
+    Merge pull request #21312 from msutovsky-r7/fix/lib/modules/double_calling_cleanup
+    
+    Removes redundant callings of cleanup
+
+ lib/msf/base/simple/auxiliary.rb                   |  12 +-
+ lib/msf/base/simple/post.rb                        |  14 +--
+ lib/msf/core/exploit_driver.rb                     |   5 +-
+ .../base/simple/auxiliary_cleanup_tracking_spec.rb | 107 ++++++++++++++++
+ .../base/simple/exploit_cleanup_tracking_spec.rb   | 134 +++++++++++++++++++++
+ .../msf/base/simple/post_cleanup_tracking_spec.rb  |  89 ++++++++++++++
+ 6 files changed, 342 insertions(+), 19 deletions(-)
