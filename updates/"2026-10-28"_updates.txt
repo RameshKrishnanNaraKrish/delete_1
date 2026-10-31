@@ -1,0 +1,151 @@
+commit c844355b9b706a81caeac2f6ddf886f136445695
+Merge: 7f838dd41a 21fd46c6a8
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Fri Oct 30 15:31:34 2026 -0700
+
+    Merge pull request #21967 from ZainnQureshii/fix-module-doc-option-defaults
+    
+    Fix option defaults and names in five module docs
+
+ .../modules/auxiliary/gather/ibm_bigfix_sites_packages_enum.md          | 2 +-
+ .../modules/auxiliary/scanner/http/synology_forget_passwd_user_enum.md  | 2 +-
+ .../modules/auxiliary/scanner/http/wp_registrationmagic_sqli.md         | 2 +-
+ documentation/modules/auxiliary/scanner/misc/cisco_smart_install.md     | 2 +-
+ documentation/modules/post/windows/manage/archmigrate.md                | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 7f838dd41ae0759a2f6bc00f0e08d3a8c520482a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 30 17:53:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 69 ++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 65 insertions(+), 4 deletions(-)
+
+commit 3fc941d6a6463c98a137118514c67fa61579117d
+Merge: 49de18a651 5a055b99af
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Oct 30 12:44:07 2026 -0500
+
+    Merge pull request #22017 from jheysel-r7/feat/mod/gitlab_ci_lint_rce
+    
+    Add Exploit Module for GitLab RCE via CI Lint [CVE-2026-97229]
+
+ data/gitlab_versions.json                          |   4 +-
+ .../http/gitlab_cicd_regexp_rce_cve_2026_97229.md  | 277 +++++++++++
+ lib/msf/core/exploit/remote/http/gitlab/error.rb   |  13 +-
+ .../remote/http/gitlab/form/access_tokens.rb       | 113 ++++-
+ lib/msf/core/exploit/remote/http/gitlab/helpers.rb |   8 +-
+ .../http/gitlab_cicd_regexp_rce_cve_2026_97229.rb  | 527 +++++++++++++++++++++
+ .../remote/http/gitlab/form/access_tokens_spec.rb  | 183 +++++++
+ .../exploit/remote/http/gitlab/helpers_spec.rb     |  54 +++
+ 8 files changed, 1147 insertions(+), 32 deletions(-)
+
+commit 49de18a651c66562c664816bf68c7a07ab651fd4
+Merge: b338da5c74 b6cb52d463
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Oct 30 12:15:52 2026 -0500
+
+    Merge pull request #21841 from dledda-r7/feat/bof-manager
+    
+    Make BofLoader Decent
+
+ .../Meterpreter-ExecuteBof-Command.md              |  189 +++-
+ .../meterpreter/extensions/bofloader/bofloader.rb  |   73 +-
+ .../extensions/bofloader/cna_argument_parser.rb    |  100 ++
+ .../meterpreter/extensions/bofloader/cna_parser.rb | 1104 ++++++++++++++++++++
+ .../ui/console/command_dispatcher/bofloader.rb     |  232 +++-
+ .../extensions/bofloader/bofloader_spec.rb         |   41 +
+ .../bofloader/cna_argument_parser_spec.rb          |   54 +
+ .../extensions/bofloader/cna_parser_spec.rb        |  920 ++++++++++++++++
+ .../console/command_dispatcher/bofloader_spec.rb   |   48 +
+ 9 files changed, 2726 insertions(+), 35 deletions(-)
+
+commit b338da5c74c0ee00ac17720c7f94156b547209f4
+Merge: 47b0c72899 28cd600fc2
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Oct 30 12:14:52 2026 -0500
+
+    Merge pull request #22027 from kx7m2qd/fix-sendto-tftp
+    
+    Replace deprecated Rex UDP sendto with send in TFTP library and modules
+
+ Gemfile.lock                                       |   2 +-
+ lib/rex/proto/tftp/client.rb                       |   8 +-
+ lib/rex/proto/tftp/server.rb                       |   2 +-
+ metasploit-framework.gemspec                       |   2 +-
+ modules/auxiliary/dos/scada/d20_tftp_overflow.rb   |   4 +-
+ .../scanner/tftp/ipswitch_whatsupgold_tftp.rb      |   4 +-
+ modules/auxiliary/scanner/tftp/netdecision_tftp.rb |   4 +-
+ modules/auxiliary/scanner/tftp/tftpbrute.rb        |   2 +-
+ spec/lib/rex/proto/tftp/client_spec.rb             | 105 +++++++++++++++++++++
+ spec/lib/rex/proto/tftp/server_spec.rb             |  25 +++++
+ 10 files changed, 144 insertions(+), 14 deletions(-)
+
+commit 47b0c72899975f2f6c68587fe33b4e0fbf57041f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 30 17:08:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 114 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 114 insertions(+)
+
+commit 9d7674b1a5d4d6f24746245878ef8d44e41d3dd7
+Merge: eff2aea27f 2545fb1ce2
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Oct 30 11:59:51 2026 -0500
+
+    Merge pull request #21914 from vinicius-batistella/feature/windows-aarch64-dll-generator
+    
+    Add a Windows AArch64 PE DLL generator
+
+ data/templates/src/pe/README.md                    |   7 ++
+ data/templates/src/pe/build_all.ps1                |  37 +++++++--
+ data/templates/src/pe/dll/template.c               |   5 +-
+ data/templates/template_aarch64_windows.256kib.dll | Bin 0 -> 267264 bytes
+ data/templates/template_aarch64_windows.dll        | Bin 0 -> 9216 bytes
+ lib/msf/core/exploit/exe.rb                        |  11 ++-
+ lib/msf/util/exe.rb                                |   2 +
+ lib/msf/util/exe/windows.rb                        |  20 ++++-
+ lib/msf/util/exe/windows/aarch64.rb                |  57 ++++++++++----
+ lib/msf/util/exe/windows/common.rb                 |   2 +-
+ .../payloads/adapters/cmd/windows/smb/aarch64.rb   |  39 ++++++++++
+ spec/data/templates/pe_headers_spec.rb             |   2 +-
+ spec/lib/msf/core/exploit/exe_spec.rb              |  41 ++++++++++
+ spec/lib/msf/util/exe/windows/aarch64_spec.rb      |  86 ++++++++++++++++++---
+ .../adapters/cmd/windows/smb/aarch64_spec.rb       |  45 +++++++++++
+ spec/modules/payloads_spec.rb                      |   8 ++
+ 16 files changed, 320 insertions(+), 42 deletions(-)
+
+commit eff2aea27f1f84fb3f7428ff2ff8bd23da494434
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Oct 30 08:23:06 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 624523b76e8966f7a181a6f7d113c6421fc2d6b3
+Merge: 27d30f7c61 731b42efda
+Author: msutovsky-r7 <msutovsky-r7@github>
+Date:   Fri Oct 30 09:14:38 2026 +0100
+
+    Land #21745, adds authenticated Docker API root RCE
+    
+    Add Portainer authenticated Docker API root RCE
+
+ .../http/portainer_authenticated_docker_rce.md     | 248 +++++++++++
+ .../http/portainer_authenticated_docker_rce.rb     | 477 +++++++++++++++++++++
+ 2 files changed, 725 insertions(+)
+
+commit 5a055b99af899386561d12762c93a2d85bbcd929
+Author: jheysel-r7 <jack_heysel@rapid7.com>
+Date:   Thu Oct 29 19:47:50 2026 -0700
+
+    Add RetryUntilTruthy include
+
+ modules/exploits/multi/http/gitlab_cicd_regexp_rce_cve_2026_97229.rb | 1 +
+ 1 file changed, 1 insertion(+)
