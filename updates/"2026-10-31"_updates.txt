@@ -1,0 +1,197 @@
+commit 7bd88110d081dfedc28e5ba15c278d07da14c483
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 2 22:34:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 97 ++++++++++++++++++++++---------------------
+ 1 file changed, 49 insertions(+), 48 deletions(-)
+
+commit 8f18285b34d06359965a41fd9000c6b38a80dc2d
+Merge: f8b5a0a504 e42086b4bd
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Nov 2 16:25:50 2026 -0600
+
+    Merge pull request #21477 from M4nu02/windows-docker-persistence
+    
+    Add Windows support to docker_image persistence
+
+ .../exploit/linux/persistence/docker_image.md      | 168 -----------
+ .../exploit/multi/persistence/docker_image.md      | 318 +++++++++++++++++++++
+ .../{linux => multi}/persistence/docker_image.rb   |  47 ++-
+ 3 files changed, 350 insertions(+), 183 deletions(-)
+
+commit f8b5a0a5041493618480a347524e2b17b2ba71f0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 2 21:26:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 114 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 114 insertions(+)
+
+commit 6511a55f56a920c9626cf9e290b874c040f6d087
+Merge: b9fe183fdb 1207e3d222
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Nov 2 14:17:38 2026 -0700
+
+    Merge pull request #21541 from vognik/OpenBullet2_CVE-2026-25856_CVE-2026-39908
+    
+    Add OpenBullet2 modules (CVE-2026-25856 and CVE-2026-39908)
+
+ ...ullet2_unauth_hash_disclosure_cve_2026_39908.md |  64 +++++
+ .../http/openbullet2_unauth_rce_cve_2026_25856.md  | 109 +++++++++
+ ...ullet2_unauth_hash_disclosure_cve_2026_39908.rb | 253 +++++++++++++++++++
+ .../http/openbullet2_unauth_rce_cve_2026_25856.rb  | 271 +++++++++++++++++++++
+ 4 files changed, 697 insertions(+)
+
+commit b9fe183fdbf1922caeee6b28ce7dc92542f0d36e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 2 20:53:08 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit 310ca244508c75731f873cbd6ab2f532bf0ea150
+Merge: c844355b9b a4d7bcb3a9
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Nov 2 14:42:14 2026 -0600
+
+    Merge pull request #21716 from TrinityBerserker/add-wp-bug-library-exploit
+    
+    Add WordPress Bug Library < 2.1.1 unauthenticated file upload RCE module (CVE-2024-5450)
+
+ .../unix/webapp/wp_bug_library_file_upload.md      | 137 ++++++++++
+ .../unix/webapp/wp_bug_library_file_upload.rb      | 299 +++++++++++++++++++++
+ 2 files changed, 436 insertions(+)
+
+commit e42086b4bd9db1eb8a4bbcf901c5b31b1d88563c
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Mon Nov 2 21:40:02 2026 +0100
+
+    Clarify Windows mount path in verification steps
+
+ documentation/modules/exploit/multi/persistence/docker_image.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit cc310970672238e3c78dde8ddf955277234d0f99
+Author: M4nu02 <emanuelecervelli02@gmail.com>
+Date:   Mon Nov 2 21:36:19 2026 +0100
+
+    Fix Windows cleanup RC commands
+
+ modules/exploits/multi/persistence/docker_image.rb | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+commit 89ed04f80a241421520bd591b8552c71336ae9da
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Mon Nov 2 15:07:26 2026 -0500
+
+    Restore target-aware MySQL success output
+
+ modules/auxiliary/scanner/mysql/mysql_login.rb           | 2 +-
+ spec/modules/auxiliary/scanner/mysql/mysql_login_spec.rb | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 97746ff9cb24b937480aceb8d93f6523bcb26192
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Mon Nov 2 14:57:52 2026 -0500
+
+    Preserve scanner warning prefixes in MySQL login
+
+ lib/metasploit/framework/login_scanner/base.rb           | 9 ++-------
+ modules/auxiliary/scanner/mysql/mysql_login.rb           | 6 +-----
+ spec/modules/auxiliary/scanner/mysql/mysql_login_spec.rb | 2 ++
+ 3 files changed, 5 insertions(+), 12 deletions(-)
+
+commit 314ced548b08d96ed8a7fb08123e704dd79315d5
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Wed Oct 21 00:18:14 2026 -0400
+
+    Test login scanner warning target prefixes
+
+ lib/metasploit/framework/login_scanner/base.rb     |  7 ++++-
+ modules/auxiliary/scanner/mysql/mysql_login.rb     |  2 --
+ .../framework/login_scanner/base_spec.rb           | 32 ++++++++++++++++++++++
+ .../auxiliary/scanner/mysql/mysql_login_spec.rb    | 31 +++++++++++++++++++++
+ 4 files changed, 69 insertions(+), 3 deletions(-)
+
+commit 042dd78fa76710c9cbc9a38de3a3048be5cce7bb
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Tue Oct 20 10:15:34 2026 -0400
+
+    Fix MySQL login documentation output padding
+
+ documentation/modules/auxiliary/scanner/mysql/mysql_login.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 23ab5ffd93e77d81eefe2a1dd64fb590d26f6f93
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Tue Oct 20 08:18:24 2026 -0400
+
+    Fix duplicate MySQL login target prefixes
+
+ .../modules/auxiliary/scanner/mysql/mysql_login.md |  4 ++--
+ modules/auxiliary/scanner/mysql/mysql_login.rb     |  6 ++++++
+ .../auxiliary/scanner/mysql/mysql_login_spec.rb    | 22 ++++++++++++++++++++++
+ 3 files changed, 30 insertions(+), 2 deletions(-)
+
+commit 2bf79a7434b9b5986904b119efdb5e03f7135349
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Fri Oct 16 13:08:54 2026 -0400
+
+    Fix MySQL login scanner string style
+
+ modules/auxiliary/scanner/mysql/mysql_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 070d80efa4f6c15435db6f5960ed96e505092d66
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Fri Oct 16 13:02:31 2026 -0400
+
+    Test MySQL login scanner target prefixes
+
+ spec/acceptance/mysql_spec.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 075c69cd5e10235c48d4c23a1b4a858862a61748
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Fri Oct 16 12:54:41 2026 -0400
+
+    Fix duplicate target prefixes in MySQL login scanner
+
+ modules/auxiliary/scanner/mysql/mysql_login.rb           | 10 +++++-----
+ spec/acceptance/mysql_spec.rb                            | 13 +++++++++++++
+ spec/modules/auxiliary/scanner/mysql/mysql_login_spec.rb | 14 +++++++-------
+ 3 files changed, 25 insertions(+), 12 deletions(-)
+
+commit 364632d8a71747ad76660000978c9db5ebb0e6c7
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Tue Oct 13 16:38:22 2026 -0400
+
+    Fix duplicate target prefixes in MySQL login scanner
+
+ modules/auxiliary/scanner/mysql/mysql_login.rb     | 12 +++----
+ .../auxiliary/scanner/mysql/mysql_login_spec.rb    | 41 +++++++++++++++++++++-
+ 2 files changed, 46 insertions(+), 7 deletions(-)
+
+commit cadd535819d75d2c8ffb449ab6c6ab560f3c9b43
+Author: 4n33sh <aneesh.sp222@gmail.com>
+Date:   Mon Oct 12 07:19:01 2026 -0400
+
+    Fix duplicate target prefixes in MySQL login scanner
+
+ modules/auxiliary/scanner/mysql/mysql_login.rb     |  4 +-
+ .../auxiliary/scanner/mysql/mysql_login_spec.rb    | 85 ++++++++++++++++++++++
+ 2 files changed, 87 insertions(+), 2 deletions(-)
+
+commit 1207e3d222aa6300b40cde3119c5098165b9ba01
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Nov 2 11:34:16 2026 -0700
+
+    Fixed payload quoting, tested and working now
+
+ modules/exploits/multi/http/openbullet2_unauth_rce_cve_2026_25856.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
