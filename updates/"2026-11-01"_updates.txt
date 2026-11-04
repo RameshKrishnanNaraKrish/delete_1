@@ -1,0 +1,143 @@
+commit edf3870c7200ac41000dc9918793da5f87811f75
+Merge: 4c110b9489 1d339d3c7c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 3 16:05:08 2026 +0000
+
+    Merge pull request #22092 from adfoster-r7/pin-bigdecimal-dependency
+    
+    Pin bigdecimal dependency
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 6 +++++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 1d339d3c7c6e28a3bfdb5d738ea66a934292f3dc
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Nov 3 15:35:40 2026 +0000
+
+    Pin bigdecimal dependency
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 6 +++++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 4c110b94894060a0789cfe1a8ce822bd5296e49d
+Merge: 27e04e8b50 788d47dadf
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 3 14:20:08 2026 +0000
+
+    Merge pull request #22019 from keyanskv/docs/fix-slack-references
+    
+    docs: replace expired Slack invite link with canonical metasploit.com/slack redirect (Fix #21987)
+
+ README.md                                                               | 2 +-
+ docs/metasploit-framework.wiki/Contact.md                               | 2 +-
+ .../Navigating-and-Understanding-Metasploits-Codebase.md                | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 27e04e8b502765f0f3241c53f0e0c79ef891df2d
+Merge: ab87d99310 0eabd599e0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 3 12:07:01 2026 +0000
+
+    Merge pull request #22090 from adfoster-r7/routine-dependency-update
+    
+    Routine dependency update
+
+ Gemfile.lock                 | 351 ++++++++++++++++++++++---------------------
+ docs/Gemfile.lock            |   4 +-
+ metasploit-framework.gemspec |   3 +-
+ 3 files changed, 184 insertions(+), 174 deletions(-)
+
+commit 0eabd599e00374449df450946a1239b68917f19d
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Mon Nov 2 16:05:21 2026 +0000
+
+    Routine dependency update
+
+ Gemfile.lock                 | 351 ++++++++++++++++++++++---------------------
+ docs/Gemfile.lock            |   4 +-
+ metasploit-framework.gemspec |   3 +-
+ 3 files changed, 184 insertions(+), 174 deletions(-)
+
+commit ab87d99310b1044a361bd763158aabae43b6f1d0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 3 10:58:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 62408e1a150cac077667d1618df4c8bcb3d14554
+Merge: c162113b8d 89ed04f80a
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Tue Nov 3 10:48:04 2026 +0000
+
+    Merge pull request #22009 from 4n33sh/fix-mysql-login-duplicate-prefix-22008
+    
+    Fix duplicate target prefixes in MySQL login scanner
+
+ .../modules/auxiliary/scanner/mysql/mysql_login.md |   4 +-
+ lib/metasploit/framework/login_scanner/base.rb     |   4 +-
+ modules/auxiliary/scanner/mysql/mysql_login.rb     |  10 +-
+ spec/acceptance/mysql_spec.rb                      |  14 ++
+ .../framework/login_scanner/base_spec.rb           |  32 ++++
+ .../auxiliary/scanner/mysql/mysql_login_spec.rb    | 179 +++++++++++++++++++++
+ 6 files changed, 234 insertions(+), 9 deletions(-)
+
+commit c162113b8d8aafe0b12361ae9eb5ba56d273d8d2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 3 02:59:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 1214 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 1214 insertions(+)
+
+commit 23ee59165ab9bc1b7d2990c0835a3175caaca595
+Merge: f306253318 1d1bfbe9b2
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Nov 2 19:50:36 2026 -0700
+
+    Merge pull request #21954 from bwatters-r7/feature/loongarch64-shell
+    
+    First swing at adding loongarch64 shell payloads
+
+ .../payload/adapters/cmd/linux/ftp/loongarch64.md  |  48 ++++++++
+ .../payload/adapters/cmd/linux/http/loongarch64.md |  58 +++++++++
+ .../adapters/cmd/linux/https/loongarch64.md        |  53 ++++++++
+ .../payload/adapters/cmd/linux/tftp/loongarch64.md |  63 ++++++++++
+ .../singles/linux/loongarch64/shell_bind_tcp.md    |  51 ++++++++
+ .../singles/linux/loongarch64/shell_reverse_tcp.md |  51 ++++++++
+ lib/msf/core/payload/adapter/fetch.rb              |  13 --
+ lib/msf/core/payload/adapter/fetch/fileless.rb     |  37 +++++-
+ lib/msf/core/payload/adapter/fetch/server/tftp.rb  |  22 +++-
+ .../payloads/adapters/cmd/linux/ftp/loongarch64.rb |  28 +++++
+ .../adapters/cmd/linux/http/loongarch64.rb         |  28 +++++
+ .../adapters/cmd/linux/https/loongarch64.rb        |  28 +++++
+ .../adapters/cmd/linux/tftp/loongarch64.rb         |  28 +++++
+ .../singles/linux/loongarch64/shell_bind_tcp.rb    | 107 ++++++++++++++++
+ .../singles/linux/loongarch64/shell_reverse_tcp.rb | 105 ++++++++++++++++
+ .../payloads/stagers/linux/loongarch64/bind_tcp.rb | 133 ++++++++++++++++++++
+ .../stagers/linux/loongarch64/reverse_tcp.rb       | 118 ++++++++++++++++++
+ modules/payloads/stages/linux/loongarch64/shell.rb |  73 +++++++++++
+ .../core/payload/adapter/fetch/fileless_spec.rb    |  34 ++++++
+ .../adapters/cmd/linux/http/loongarch64_spec.rb    |  96 +++++++++++++++
+ .../adapters/cmd/linux/tftp/loongarch64_spec.rb    |  43 +++++++
+ .../linux/loongarch64/shell_bind_tcp_spec.rb       |  36 ++++++
+ .../linux/loongarch64/shell_reverse_tcp_spec.rb    | 135 +++++++++++++++++++++
+ spec/modules/payloads_spec.rb                      |  70 +++++++++++
+ 24 files changed, 1441 insertions(+), 17 deletions(-)
+
+commit f3062533182c089c443666f68b3e2c559bc2c202
+Merge: 7bd88110d0 4d5e116e07
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Mon Nov 2 19:40:36 2026 -0700
+
+    Merge pull request #21997 from pauljccode/fix/export-spec-record-selection
+    
+    Select the expected record in DB export specs
+
+ spec/lib/msf/db_manager/export_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
