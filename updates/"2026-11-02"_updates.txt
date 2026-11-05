@@ -1,0 +1,45 @@
+commit d43a3737e0744f14bbcd2b64ec7b2b8c81c63aa7
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Nov 4 17:56:15 2026 +0000
+
+    Update multiple ruby dependencies
+
+ Gemfile.lock                                     | 45 ++++++++++++------------
+ lib/msf/core/exploit/remote/cert_request.rb      |  2 +-
+ lib/rex/proto/x509/request.rb                    |  1 +
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb | 10 ++++++
+ spec/lib/rex/proto/x509/request_spec.rb          |  4 +++
+ 5 files changed, 39 insertions(+), 23 deletions(-)
+
+commit 08c9e7ac481402838511aa719c596a2f81c5dcbf
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 4 09:55:45 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 51 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+commit 7e334e7d1881d7988c9e2224e4778ffad40cd9fe
+Merge: edf3870c72 f90de39364
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Nov 4 09:31:42 2026 +0000
+
+    Merge pull request #22010 from h00die/hashicorp_consul
+    
+    hashicorp consul version scanner
+
+ .../scanner/http/hashicorp_consul_version.md       |  82 +++++++++
+ .../scanner/http/hashicorp_consul_version.rb       | 198 +++++++++++++++++++++
+ 2 files changed, 280 insertions(+)
+
+commit f48e6dd33f166ac737061c5b51a910fb0fe1d5ce
+Author: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Wed Nov 4 09:32:26 2026 +0530
+
+    Pin Linux Python 3.8 acceptance to Ubuntu 24.04
+    
+    Signed-off-by: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++++
+ 1 file changed, 4 insertions(+)
