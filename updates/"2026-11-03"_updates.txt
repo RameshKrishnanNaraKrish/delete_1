@@ -1,0 +1,127 @@
+commit 50aeeb0d0dc15473e4f85b30ea1364b3a5f450cd
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 5 19:55:13 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 55 insertions(+), 1 deletion(-)
+
+commit a90a790288f20654a9fc4b5b30a54f81b52f8be2
+Merge: a3ce6dbde3 13c4d16185
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Nov 5 13:44:58 2026 -0600
+
+    Merge pull request #22110 from jheysel-r7/fix/cisco_smtp_module_minor_additions
+    
+    Fix singular typo in Cisco SMTP exploit module
+
+ .../exploits/unix/smtp/cisco_secure_email_gateway_amp_file_write_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a3ce6dbde303316920626c54d535b509d79112fb
+Merge: 4e8695244b 6bbb5c1c6e
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Nov 5 12:41:01 2026 -0700
+
+    Merge pull request #22024 from sfewer-r7/cisco-secure-email-gateway-cve-2026-76461
+    
+    Add exploit module for Cisco Secure Email Gateway ECS SQLi (CVE-2026-76461)
+
+ .../cisco_secure_email_gateway_ecs_sqli_rce.md     | 115 +++++++++
+ .../cisco_secure_email_gateway_ecs_sqli_rce.rb     | 266 +++++++++++++++++++++
+ 2 files changed, 381 insertions(+)
+
+commit 13c4d16185ef6b490e399d0f567d476938383fbd
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Thu Nov 5 12:24:43 2026 -0700
+
+    Fix singular typo in Cisco SMTP exploit module
+
+ .../exploits/unix/smtp/cisco_secure_email_gateway_amp_file_write_rce.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4e8695244b9c8e63f2b41b7ad50e11bd28bca89e
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 5 19:09:27 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 054569c5743abc0b8e4df31b4b43554acc1c3786
+Merge: 4d3355b920 dc83cac496
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Thu Nov 5 12:00:36 2026 -0700
+
+    Merge pull request #22028 from sfewer-r7/cisco-secure-email-gateway-cve-2026-76519
+    
+    Add exploit module for Cisco Secure Email Gateway AMP file write (CVE-2026-76519)
+
+ ...isco_secure_email_gateway_amp_file_write_rce.md | 159 ++++++++
+ ...isco_secure_email_gateway_amp_file_write_rce.rb | 404 +++++++++++++++++++++
+ 2 files changed, 563 insertions(+)
+
+commit 4d3355b920bb9d6c73cd7785b6627f7c8602fae4
+Merge: 8c2dd3db84 f48e6dd33f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 5 16:12:55 2026 +0000
+
+    Merge pull request #22097 from Yeagerist0/fix/python38-supported-linux-runner
+    
+    Run Linux Python 3.8 acceptance on Ubuntu 24.04
+
+ .github/workflows/shared_meterpreter_acceptance.yml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit ac7c2a07d06951e02b22a158b376890cdf904408
+Author: Sevban Dönmez <82449360+byjanke@users.noreply.github.com>
+Date:   Thu Nov 5 18:39:03 2026 +0300
+
+    Remove duplicate target prefixes from vnc, varnish, modbus, and sercomm scanners
+
+ modules/auxiliary/scanner/misc/sercomm_backdoor_scanner.rb | 8 ++++----
+ modules/auxiliary/scanner/scada/modbusdetect.rb            | 6 +++---
+ modules/auxiliary/scanner/varnish/varnish_cli_file_read.rb | 6 +++---
+ modules/auxiliary/scanner/vnc/vnc_login.rb                 | 6 +++---
+ 4 files changed, 13 insertions(+), 13 deletions(-)
+
+commit 8c2dd3db84af65963555b1c4217c59b9b9f73059
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 5 08:53:25 2026 +0000
+
+    Bump version of framework to 6.5.10
+
+ Gemfile.lock                        |   2 +-
+ LICENSE_GEMS                        | 245 ++++++++++++++++++------------------
+ lib/metasploit/framework/version.rb |   2 +-
+ 3 files changed, 123 insertions(+), 126 deletions(-)
+
+commit 220a57b4f25d94214e67a93e56ea10aa08378532
+Author: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Thu Nov 5 12:47:44 2026 +0530
+
+    Handle worktree-local PR fetch configuration
+    
+    Signed-off-by: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+
+ spec/tools/dev/add_pr_fetch_spec.rb | 23 +++++++++++++--
+ tools/dev/add_pr_fetch.rb           | 56 ++++++++++++++++++++-----------------
+ 2 files changed, 51 insertions(+), 28 deletions(-)
+
+commit f8175651db7f6bd641398fb64fc7db19471f02ea
+Merge: 08c9e7ac48 d43a3737e0
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 5 00:11:37 2026 +0000
+
+    Merge pull request #22100 from adfoster-r7/update-multiple-ruby-dependencies
+    
+    Update multiple ruby dependencies
+
+ Gemfile.lock                                     | 45 ++++++++++++------------
+ lib/msf/core/exploit/remote/cert_request.rb      |  2 +-
+ lib/rex/proto/x509/request.rb                    |  1 +
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb | 10 ++++++
+ spec/lib/rex/proto/x509/request_spec.rb          |  4 +++
+ 5 files changed, 39 insertions(+), 23 deletions(-)
