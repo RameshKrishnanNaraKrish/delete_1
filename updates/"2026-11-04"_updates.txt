@@ -1,0 +1,324 @@
+commit 5b743895d3190a9f25c302a23e64623261e7837a
+Merge: 873dc71c1e df5f08dcca
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 22:19:34 2026 +0000
+
+    Merge pull request #21931 from Pushpenderrathore/feature/malleable-c2-lexer-redos
+    
+    Make the malleable C2 profile string lexer linear-time by construction
+
+ lib/msf/core/payload/malleable_c2.rb           |  7 +++++-
+ spec/lib/msf/core/payload/malleable_c2_spec.rb | 34 ++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 1 deletion(-)
+
+commit 873dc71c1e5e1a89a4a0a5390543ed56463be72c
+Merge: 15fd116f30 38e5ae73ae
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 22:15:32 2026 +0000
+
+    Merge pull request #21948 from s-r-e-e-r-a-j/apktool3-compat
+    
+    Android: support Apktool 3.x decode option removal
+
+ lib/msf/core/payload/apk.rb | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit 15fd116f30d5f652e9153f18d0965aa2d5ec3841
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 6 17:06:34 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit f71ce602b9ea9f5aca37cdfcf7c5d5a7dce500ac
+Merge: a8500f6112 ac095f3dc9
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:56:52 2026 +0000
+
+    Merge pull request #22107 from jankesec/fix-scanner-duplicate-prefix
+    
+    Remove duplicate target prefixes from afp, acpp, db2, and brocade login scanners
+
+ modules/auxiliary/scanner/acpp/login.rb                  | 6 +++---
+ modules/auxiliary/scanner/afp/afp_login.rb               | 4 ++--
+ modules/auxiliary/scanner/db2/db2_auth.rb                | 4 ++--
+ modules/auxiliary/scanner/telnet/brocade_enable_login.rb | 4 ++--
+ 4 files changed, 9 insertions(+), 9 deletions(-)
+
+commit a8500f611212914d143bb5d3c066506c57f65d84
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 6 16:50:37 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 826af8cb0a54c02cbf47c9eb25fc338987736ee0
+Merge: 4f8468d774 94686f2a14
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:40:45 2026 +0000
+
+    Merge pull request #21937 from satanonsteroids2024-zzz/patch-2
+    
+    docs: fix stale/incorrect msfvenom options table (wiki mirror)
+
+ .../How-to-use-msfvenom.md                         | 52 +++++++++++++---------
+ 1 file changed, 30 insertions(+), 22 deletions(-)
+
+commit 4f8468d7741bfb1bb3e30b1ab084c6b2735ec695
+Merge: 5198764ea8 c8c8f89ee5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:36:59 2026 +0000
+
+    Merge pull request #21879 from JothamB/JothamB-patch-1
+    
+    Fix unquoted service path restart
+
+ modules/exploits/windows/local/unquoted_service_path.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5198764ea859536051554ae858d1d5b6c6451622
+Merge: 1b0e805ace 220a57b4f2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:21:25 2026 +0000
+
+    Merge pull request #22096 from Yeagerist0/fix/pr-fetch-worktree-config
+    
+    Support linked worktrees in the PR fetch setup tool
+
+ spec/tools/dev/add_pr_fetch_spec.rb | 90 +++++++++++++++++++++++++++++++++++++
+ tools/dev/add_pr_fetch.rb           | 57 ++++++++++++-----------
+ 2 files changed, 120 insertions(+), 27 deletions(-)
+
+commit 1b0e805acef5f2ba675c9fe516ba85adf5a14683
+Merge: 94bd1755d4 67ca751354
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:10:27 2026 +0000
+
+    Merge pull request #21996 from pauljccode/fix/spec-thread-provider-isolation
+    
+    Reset the thread provider after each spec example
+
+ spec/spec_helper.rb                                  | 5 +++++
+ spec/support/shared/contexts/msf/simple/framework.rb | 5 -----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 94bd1755d4a099fe52a5d4e0ac2305ec0a9f6643
+Merge: 2c958e59fd 1a05600fac
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:03:51 2026 +0000
+
+    Merge pull request #21995 from pauljccode/fix/ldap-apt-https
+    
+    Use HTTPS for LDAP image package downloads
+
+ test/ldap/Dockerfile | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 2c958e59fd5d375e2f4f0efc7ebd6527ba208e31
+Merge: 02387a0db3 784c81e524
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 16:03:06 2026 +0000
+
+    Merge pull request #21991 from pauljccode/fix/modem-udp-receive-current
+    
+    Keep modem UDP data and peer reads together
+
+ lib/msf/base/sessions/modem.rb                     | 23 ++++---
+ .../msf/base/sessions/modem/udp_channel_spec.rb    | 72 ++++++++++++++++++++++
+ 2 files changed, 83 insertions(+), 12 deletions(-)
+
+commit 02387a0db3c536b3ce2ecb3b52b90ecdd74d2e78
+Merge: de6e0150de 3fbddec132
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 15:49:02 2026 +0000
+
+    Merge pull request #21990 from pauljccode/fix/jsonrpc-workspace-fixture-current
+    
+    Initialize DB spec workspaces through the proxy
+
+ spec/support/shared/contexts/msf/db_manager.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit de6e0150de5ae662164b1f82478400c7315434f3
+Merge: 6962ae62c9 f704348afc
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 15:40:52 2026 +0000
+
+    Merge pull request #21968 from pauljccode/fix/android-config-bytes
+    
+    Preserve Android configuration bytes in DEX
+
+ lib/msf/core/payload/android.rb           |  3 +-
+ spec/lib/msf/core/payload/android_spec.rb | 62 +++++++++++++++++++++++++++++++
+ 2 files changed, 64 insertions(+), 1 deletion(-)
+
+commit 6962ae62c99a202f2775d977ab8ab7b44121e858
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 6 14:53:33 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 2d02204cc8ea2f53d2a5cd2eda4773dae35ff3b9
+Merge: 33ea5e25b3 ac7c2a07d0
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Nov 6 14:45:09 2026 +0000
+
+    Merge pull request #22108 from jankesec/fix-scanner-duplicate-prefix-batch-2
+    
+    Remove duplicate target prefixes from vnc, varnish, modbus, and sercomm scanners
+
+ modules/auxiliary/scanner/misc/sercomm_backdoor_scanner.rb | 8 ++++----
+ modules/auxiliary/scanner/scada/modbusdetect.rb            | 6 +++---
+ modules/auxiliary/scanner/varnish/varnish_cli_file_read.rb | 6 +++---
+ 3 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 1228ffd5ef18a04178958ddcd35a7d5a3e2073f3
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Nov 6 14:08:42 2026 +0000
+
+    Prefer frozen string literals in new modules
+
+ AGENTS.md                                 | 4 +++-
+ CONTRIBUTING.md                           | 1 +
+ lib/tasks/templates/auxiliary.rb.erb      | 2 ++
+ lib/tasks/templates/encoder.rb.erb        | 2 ++
+ lib/tasks/templates/evasion.rb.erb        | 2 ++
+ lib/tasks/templates/exploit.rb.erb        | 2 ++
+ lib/tasks/templates/nop.rb.erb            | 2 ++
+ lib/tasks/templates/payload_single.rb.erb | 2 ++
+ lib/tasks/templates/post.rb.erb           | 2 ++
+ 9 files changed, 18 insertions(+), 1 deletion(-)
+
+commit 33ea5e25b38f19c4dc4847ea7837b7c96efc398d
+Merge: 21c38299e5 872293267c
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Nov 6 14:02:04 2026 +0000
+
+    Merge pull request #22112 from adfoster-r7/avoid-string-mutation
+    
+    Avoid string mutation without mutable strings
+
+ lib/metasploit/framework/parsed_options/console.rb |  4 ++--
+ lib/msf/base/serializer/readable_text.rb           | 22 +++++++++++-----------
+ lib/msf/core/modules/metadata/search.rb            |  4 ++--
+ lib/msf/ui/console/command_dispatcher/common.rb    |  2 +-
+ lib/rex/proto/http/web_socket/amazon_ssm.rb        |  2 +-
+ lib/rex/ui/text/dispatcher_shell.rb                |  2 +-
+ lib/rex/ui/text/shell.rb                           |  4 ++--
+ 7 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 872293267c4664ed083ed409c76da532aa4c0094
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Fri Nov 6 13:07:44 2026 +0000
+
+    Avoid string mutation
+
+ lib/metasploit/framework/parsed_options/console.rb |  4 ++--
+ lib/msf/base/serializer/readable_text.rb           | 22 +++++++++++-----------
+ lib/msf/core/modules/metadata/search.rb            |  4 ++--
+ lib/msf/ui/console/command_dispatcher/common.rb    |  2 +-
+ lib/rex/proto/http/web_socket/amazon_ssm.rb        |  2 +-
+ lib/rex/ui/text/dispatcher_shell.rb                |  2 +-
+ lib/rex/ui/text/shell.rb                           |  4 ++--
+ 7 files changed, 20 insertions(+), 20 deletions(-)
+
+commit 21c38299e539491568f802f919348d68c2f6c814
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 6 12:32:06 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 3a66da343f45c9761cfa590b73cd297d412f0caf
+Merge: 1354773e25 9822d630be
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 12:23:07 2026 +0000
+
+    Merge pull request #22075 from Yeagerist0/vnc-login-duplicate-prefix
+    
+    Remove duplicate target prefix from vnc_login output
+
+ modules/auxiliary/scanner/vnc/vnc_login.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 1354773e258f15e8972e89d5079f62a500e73a63
+Merge: acb24a7e49 c370b129d5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 12:22:07 2026 +0000
+
+    Merge pull request #22076 from Yeagerist0/rservices-duplicate-prefix
+    
+    Remove duplicate target prefix from rsh_login and rlogin_login output
+
+ lib/msf/core/auxiliary/rservices.rb                |  2 +-
+ .../auxiliary/scanner/rservices/rlogin_login.rb    | 24 +++++++++++-----------
+ modules/auxiliary/scanner/rservices/rsh_login.rb   |  8 ++++----
+ 3 files changed, 17 insertions(+), 17 deletions(-)
+
+commit acb24a7e49f3a7ba5fe7f048d72540170993b330
+Merge: 10008b6089 12fe185f22
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 12:10:41 2026 +0000
+
+    Merge pull request #22026 from kx7m2qd/fix-sendto-deprecation
+    
+    Replace deprecated sendto with send in SNMP UDP paths
+
+ lib/metasploit/framework/login_scanner/snmp.rb | 2 +-
+ lib/snmp/manager.rb                            | 4 +---
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+commit 10008b6089c8dd73a9ca68cbe22a60ba2021463b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 6 12:03:31 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 69785de87f0360b96ad15b2f4c473a96cc1caab4
+Merge: 9d2c37fa98 7548550c90
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 11:54:44 2026 +0000
+
+    Merge pull request #22059 from Yeagerist0/msftidy-git-failure
+    
+    msftidy: raise the intended error when git diff fails
+
+ tools/dev/msftidy.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9d2c37fa982885bb1ea84a0aeca42ffb9353e4d7
+Merge: 0e2dd07cf4 1466b00667
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 11:47:21 2026 +0000
+
+    Merge pull request #22079 from Yeagerist0/completepbx-login-args
+    
+    Fix xorcom_completepbx_diagnostics_file_read crashing with ArgumentError
+
+ .../auxiliary/scanner/http/xorcom_completepbx_diagnostics_file_read.rb  | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 0e2dd07cf41e441934ff9786ab3d9020de88e93d
+Merge: 50aeeb0d0d c89b4ab4c1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 6 11:37:23 2026 +0000
+
+    Merge pull request #22095 from Yeagerist0/fix/support-matrix-json-output
+    
+    Fix JSON output in the support matrix report generator
+
+ .../support_matrix/generate_json_spec.rb           | 45 ++++++++++++++++++++++
+ .../report_generation/support_matrix/generate.rb   |  2 +-
+ 2 files changed, 46 insertions(+), 1 deletion(-)
