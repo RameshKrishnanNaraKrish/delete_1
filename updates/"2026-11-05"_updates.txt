@@ -1,0 +1,19 @@
+commit 7673832c30657be675656b53ece208759314bed7
+Merge: 5b743895d3 1228ffd5ef
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Sat Nov 7 15:22:02 2026 +0000
+
+    Merge pull request #22113 from rapid7/codex/frozen-string-module-defaults
+    
+    Prefer frozen string literals in new modules
+
+ AGENTS.md                                 | 4 +++-
+ CONTRIBUTING.md                           | 1 +
+ lib/tasks/templates/auxiliary.rb.erb      | 2 ++
+ lib/tasks/templates/encoder.rb.erb        | 2 ++
+ lib/tasks/templates/evasion.rb.erb        | 2 ++
+ lib/tasks/templates/exploit.rb.erb        | 2 ++
+ lib/tasks/templates/nop.rb.erb            | 2 ++
+ lib/tasks/templates/payload_single.rb.erb | 2 ++
+ lib/tasks/templates/post.rb.erb           | 2 ++
+ 9 files changed, 18 insertions(+), 1 deletion(-)
