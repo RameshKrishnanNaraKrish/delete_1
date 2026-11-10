@@ -1,0 +1,220 @@
+commit 35264814727d0e304feecbbfbabfe40563c6f4d0
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 9 18:35:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 64 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit 206c4df359606d36abe3ecb266470569019fbee5
+Merge: 174f8ea2a4 05326f346f
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Nov 9 12:25:48 2026 -0600
+
+    Merge pull request #22043 from mjatin2007/jatin/openfire-cve-2024-25420
+    
+    Add Openfire deleted administrator account RCE module (CVE-2024-25420)
+
+ .../openfire_deleted_admin_rce_cve_2024_25420.md   | 180 +++++++++++
+ lib/msf/core/exploit/xmpp.rb                       | 195 ++++++++++++
+ .../openfire_deleted_admin_rce_cve_2024_25420.rb   | 335 +++++++++++++++++++++
+ spec/lib/msf/core/exploit/xmpp_spec.rb             | 234 ++++++++++++++
+ 4 files changed, 944 insertions(+)
+
+commit 174f8ea2a43adb57bd4dfc7d63c0c9ddb954e3da
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 9 17:07:44 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+commit 26f654b4ff8525e8c2ec909640ce634d72200202
+Merge: a1d890e772 66e6896f36
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Mon Nov 9 10:58:05 2026 -0600
+
+    Merge pull request #22120 from dwelch-r7/defanged-mode-description
+    
+    Require risk descriptions for DefangedMode options
+
+ .rubocop.yml                                       |  10 ++
+ AGENTS.md                                          |   1 +
+ CONTRIBUTING.md                                    |   1 +
+ .../modules/auxiliary/admin/wemo/crockpot.md       |   6 +-
+ .../modules/auxiliary/gather/microweber_lfi.md     |   9 +
+ .../auxiliary/gather/qconvergeconsole_traversal.md |   7 +
+ .../xorcom_completepbx_diagnostics_file_read.md    |   4 +-
+ .../multi/http/cpanel_whm_auth_bypass_rce.md       |   7 +-
+ .../exploit/multi/http/open_web_analytics_rce.md   |   8 +
+ .../http/papercut_ng_external_user_lookup_rce.md   |  10 ++
+ ...isco_secure_email_gateway_amp_file_write_rce.md |  10 +-
+ .../exploit/windows/rdp/rdp_doublepulsar_rce.md    |   6 +-
+ .../exploit/windows/smb/cve_2020_0796_smbghost.md  |   9 +
+ .../exploit/windows/smb/smb_doublepulsar_rce.md    |   6 +-
+ .../modules/exploit/windows/smb/smb_shadow.md      |   6 +-
+ documentation/modules/module_doc_template.md       |   5 +
+ .../cop/lint/module_defanged_mode_description.rb   |  80 +++++++++
+ modules/auxiliary/admin/wemo/crockpot.rb           |   2 +-
+ modules/auxiliary/gather/microweber_lfi.rb         |   2 +-
+ .../auxiliary/gather/qconvergeconsole_traversal.rb |   2 +-
+ .../xorcom_completepbx_diagnostics_file_read.rb    |   2 +-
+ .../multi/http/cpanel_whm_auth_bypass_rce.rb       |   2 +-
+ .../exploits/multi/http/open_web_analytics_rce.rb  |   2 +-
+ .../http/papercut_ng_external_user_lookup_rce.rb   |   2 +-
+ ...isco_secure_email_gateway_amp_file_write_rce.rb |   2 +-
+ .../exploits/windows/rdp/rdp_doublepulsar_rce.rb   |   2 +-
+ .../exploits/windows/smb/cve_2020_0796_smbghost.rb |   2 +-
+ .../exploits/windows/smb/smb_doublepulsar_rce.rb   |   2 +-
+ modules/exploits/windows/smb/smb_shadow.rb         |   2 +-
+ .../lint/module_defanged_mode_description_spec.rb  | 187 +++++++++++++++++++++
+ 30 files changed, 370 insertions(+), 26 deletions(-)
+
+commit 66e6896f36e329f20e81338fc709bdda1f234c77
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 16:25:15 2026 +0000
+
+    Keep the DefangedMode description prefix
+
+ modules/auxiliary/admin/wemo/crockpot.rb                                | 2 +-
+ modules/auxiliary/gather/microweber_lfi.rb                              | 2 +-
+ modules/auxiliary/gather/qconvergeconsole_traversal.rb                  | 2 +-
+ .../auxiliary/scanner/http/xorcom_completepbx_diagnostics_file_read.rb  | 2 +-
+ modules/exploits/multi/http/cpanel_whm_auth_bypass_rce.rb               | 2 +-
+ modules/exploits/multi/http/open_web_analytics_rce.rb                   | 2 +-
+ modules/exploits/multi/http/papercut_ng_external_user_lookup_rce.rb     | 2 +-
+ .../exploits/unix/smtp/cisco_secure_email_gateway_amp_file_write_rce.rb | 2 +-
+ modules/exploits/windows/rdp/rdp_doublepulsar_rce.rb                    | 2 +-
+ modules/exploits/windows/smb/cve_2020_0796_smbghost.rb                  | 2 +-
+ modules/exploits/windows/smb/smb_doublepulsar_rce.rb                    | 2 +-
+ modules/exploits/windows/smb/smb_shadow.rb                              | 2 +-
+ 12 files changed, 12 insertions(+), 12 deletions(-)
+
+commit dbf813ebfbdeb0890335403a43b7ece3fd324f15
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 15:40:52 2026 +0000
+
+    Require specific DefangedMode descriptions
+
+ .rubocop.yml                                       |  10 ++
+ AGENTS.md                                          |   1 +
+ CONTRIBUTING.md                                    |   1 +
+ .../modules/auxiliary/admin/wemo/crockpot.md       |   6 +-
+ .../modules/auxiliary/gather/microweber_lfi.md     |   9 +
+ .../auxiliary/gather/qconvergeconsole_traversal.md |   7 +
+ .../xorcom_completepbx_diagnostics_file_read.md    |   4 +-
+ .../multi/http/cpanel_whm_auth_bypass_rce.md       |   7 +-
+ .../exploit/multi/http/open_web_analytics_rce.md   |   8 +
+ .../http/papercut_ng_external_user_lookup_rce.md   |  10 ++
+ ...isco_secure_email_gateway_amp_file_write_rce.md |  10 +-
+ .../exploit/windows/rdp/rdp_doublepulsar_rce.md    |   6 +-
+ .../exploit/windows/smb/cve_2020_0796_smbghost.md  |   9 +
+ .../exploit/windows/smb/smb_doublepulsar_rce.md    |   6 +-
+ .../modules/exploit/windows/smb/smb_shadow.md      |   6 +-
+ documentation/modules/module_doc_template.md       |   5 +
+ .../cop/lint/module_defanged_mode_description.rb   |  80 +++++++++
+ modules/auxiliary/admin/wemo/crockpot.rb           |   2 +-
+ modules/auxiliary/gather/microweber_lfi.rb         |   2 +-
+ .../auxiliary/gather/qconvergeconsole_traversal.rb |   2 +-
+ .../xorcom_completepbx_diagnostics_file_read.rb    |   2 +-
+ .../multi/http/cpanel_whm_auth_bypass_rce.rb       |   2 +-
+ .../exploits/multi/http/open_web_analytics_rce.rb  |   2 +-
+ .../http/papercut_ng_external_user_lookup_rce.rb   |   2 +-
+ ...isco_secure_email_gateway_amp_file_write_rce.rb |   2 +-
+ .../exploits/windows/rdp/rdp_doublepulsar_rce.rb   |   2 +-
+ .../exploits/windows/smb/cve_2020_0796_smbghost.rb |   2 +-
+ .../exploits/windows/smb/smb_doublepulsar_rce.rb   |   2 +-
+ modules/exploits/windows/smb/smb_shadow.rb         |   2 +-
+ .../lint/module_defanged_mode_description_spec.rb  | 187 +++++++++++++++++++++
+ 30 files changed, 370 insertions(+), 26 deletions(-)
+
+commit a1d890e7724736da1220f70ac98953180c2b8b95
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 9 13:45:07 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 5ac062ffe5bfead66c3ba9ae20ade0e8098459fb
+Merge: 20a0a8b956 6a645e52a5
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 13:35:22 2026 +0000
+
+    Merge pull request #22062 from Yeagerist0/dlink-dir645-report-cred
+    
+    Fix dlink_dir_645_password_extractor crashing after it extracts credentials
+
+ .../auxiliary/admin/http/dlink_dir_645_password_extractor.rb   | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit 20a0a8b956d8e281cfa10c724810c7bd698b71f4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Mon Nov 9 12:51:46 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 584bd9322ad0e913fb3b39610f4caeabdd3ae71e
+Merge: 94eda0ea08 c07da8ebec
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 12:42:29 2026 +0000
+
+    Merge pull request #22055 from kx7m2qd/test-manageengine-cve-47966
+    
+    Improve ADSelfService Plus check result clarity
+
+ ...e_adselfservice_plus_saml_rce_cve_2022_47966.rb |  2 +-
+ ...elfservice_plus_saml_rce_cve_2022_47966_spec.rb | 54 ++++++++++++++++++++++
+ 2 files changed, 55 insertions(+), 1 deletion(-)
+
+commit 94eda0ea08a6dfd39da94b62f16de803bb29c92e
+Merge: 980f3c2957 9974a8daf0
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 12:35:49 2026 +0000
+
+    Merge pull request #22087 from Yeagerist0/fix/encoding-check-invalid-utf8
+    
+    Reject invalid bytes in the binary encoding checker
+
+ spec/tools/dev/verify_encoding_spec.rb | 67 ++++++++++++++++++++++++++++++++++
+ tools/dev/verify_encoding.rb           |  8 +++-
+ 2 files changed, 73 insertions(+), 2 deletions(-)
+
+commit 980f3c2957cfa7c26a1976ee929de24ef064532e
+Merge: 30e78a80d8 f1e7cbc9c4
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 12:27:16 2026 +0000
+
+    Merge pull request #22074 from bc-idpotat/tolerate-invalid-spn
+    
+    kerberoast: skip invalid SPNs during LDAP enumeration
+
+ modules/auxiliary/gather/kerberoast.rb | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 30e78a80d88efa5d1d35ca097bcbea3c6c775b77
+Merge: 7673832c30 e866990459
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 9 11:47:09 2026 +0000
+
+    Merge pull request #22049 from protonnegativo/docs/fix-module-doc-paths
+    
+    Move module docs to paths matching their modules
+
+ documentation/modules/auxiliary/dos/{ => scada}/siemens_siprotec4.md      | 0
+ documentation/modules/auxiliary/dos/tcp/{claymore.md => claymore_dos.md}  | 0
+ .../auxiliary/{admin => scanner}/http/epmp1000_get_chart_cmd_exec.md      | 0
+ .../modules/auxiliary/{admin => scanner}/http/epmp1000_reset_pass.md      | 0
+ .../auxiliary/scanner/http/{thinvnc_travesal.md => thinvnc_traversal.md}  | 0
+ ...dial_3_rce_code_injection.md => goautodial_3_rce_command_injection.md} | 0
+ ...viledged_container_escape.md => docker_privileged_container_escape.md} | 0
+ .../{exploits => exploit}/multi/http/litellm_mcp_test_cmd_injection.md    | 0
+ .../modules/exploit/{linux => unix}/http/epmp1000_get_chart_cmd_shell.md  | 0
+ .../modules/exploit/{linux => unix}/http/epmp1000_ping_cmd_shell.md       | 0
+ 10 files changed, 0 insertions(+), 0 deletions(-)
