@@ -1,0 +1,24 @@
+commit acd54629b5998cdacc2249dab6dd3e615a2361f9
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Wed Nov 11 15:30:45 2026 +0000
+
+    Reduce false positives on SolarWinds Backdoor check
+
+ .../auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb    | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit 9b53a7977611594f46fde1c8c13fe98fad019768
+Merge: 7e91b9f086 13b10d6cb8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 11 12:26:42 2026 +0000
+
+    Merge pull request #22042 from dwelch-r7/rails-8.1
+    
+    Update Rails version to 8.1.x and adjust related dependencies
+
+ .github/workflows/shared_gem_verify_rails.yml      | 15 ++++++---
+ Gemfile.lock                                       | 38 +++++++++++-----------
+ config/application.rb                              |  9 ++---
+ db/schema.rb                                       |  2 +-
+ .../framework/rails_version_constraint.rb          |  2 +-
+ 5 files changed, 36 insertions(+), 30 deletions(-)
