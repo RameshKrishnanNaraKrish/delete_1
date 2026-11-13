@@ -1,0 +1,219 @@
+commit 5fb0daecf149a7d031947063a0ab6b3587dd83b7
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Wed Nov 11 12:24:10 2026 +0000
+
+    Validate mailbox hosts and reuse AutoCheck preparation
+
+ .../admin/http/zimbra_email_impersonation.md       | 122 ++++++++++++++++-----
+ .../admin/http/zimbra_email_impersonation.rb       |  73 ++++++++----
+ 2 files changed, 149 insertions(+), 46 deletions(-)
+
+commit fabce059d41340e5ac9705b5707b5d45264b16e8
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Nov 3 15:08:02 2026 +0000
+
+    Refresh final 10.1.16 scenario
+
+ .../modules/auxiliary/admin/http/zimbra_email_impersonation.md        | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 18ec767df30482d6ffef34d61c08ff0980fe757e
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Nov 3 11:49:40 2026 +0000
+
+    Use shared Zimbra SOAP support
+
+ .../admin/http/zimbra_email_impersonation.rb       | 202 ++++++---------------
+ 1 file changed, 52 insertions(+), 150 deletions(-)
+
+commit 587cde73163fffb06386082a5fc457674db9dd06
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Fri Oct 30 14:44:28 2026 +0000
+
+    Preserve SOAP endpoint failures
+
+ modules/auxiliary/admin/http/zimbra_email_impersonation.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c798dc1445074787b94dfbc1bd5cc7a78fb503ac
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Fri Oct 30 14:06:51 2026 +0000
+
+    Return Unknown for missing SOAP endpoint
+
+ modules/auxiliary/admin/http/zimbra_email_impersonation.rb | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+commit 5c644a88e638f9965487035829805e76c2949683
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Fri Oct 30 12:10:32 2026 +0000
+
+    Use Framework helper for delivery polling
+
+ .../admin/http/zimbra_email_impersonation.rb       | 25 +++++++++-------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
+
+commit 607c637fbcf9f2178e5cafacefb8e60f9f20f5d0
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Thu Oct 29 13:07:58 2026 +0000
+
+    add coderabbit fix: Preserve automatic verification when USERNAME is an alias
+
+ modules/auxiliary/admin/http/zimbra_email_impersonation.rb | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 15cd49fb4c3797cef6cbec36d0b6b5f720450904
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Thu Oct 29 11:31:08 2026 +0000
+
+    Add Zimbra email impersonation module
+
+ .../admin/http/zimbra_email_impersonation.md       | 145 ++++++
+ .../admin/http/zimbra_email_impersonation.rb       | 517 +++++++++++++++++++++
+ 2 files changed, 662 insertions(+)
+
+commit 6210572159c86f2f1c87370e72635b76951b955d
+Merge: b104d37fb8 d4fdf5c727
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Thu Nov 12 18:53:21 2026 +0100
+
+    Merge pull request #22091 from jburgess-r7/pr/zimbra-soap
+    
+    Add shared Zimbra SOAP support
+
+ lib/msf/core/exploit/remote/http/zimbra.rb         | 449 +++++++++++
+ .../msf/core/exploit/remote/http/zimbra_spec.rb    | 888 +++++++++++++++++++++
+ 2 files changed, 1337 insertions(+)
+
+commit b104d37fb83a2f0a3a220260087d4c7a5ad795b2
+Merge: 9ecd4139ba 270bc8049e
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Thu Nov 12 11:10:55 2026 -0600
+
+    Merge pull request #21986 from Aaditya1273/fix/optarray-case-insensitive-dedup
+    
+    Fix OptArray dedup of case-variant accepted values
+
+ lib/msf/core/opt_array.rb           | 19 +++++++++++--------
+ spec/lib/msf/core/opt_array_spec.rb |  5 +++++
+ 2 files changed, 16 insertions(+), 8 deletions(-)
+
+commit 9ecd4139ba7ae3c8fc273195abf7933ce52d6835
+Merge: e714a271ce a9c9a4c87c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 12 15:56:28 2026 +0000
+
+    Merge pull request #22133 from dwelch-r7/reviewer-verification-checklist
+    
+    Leave PR verification checkboxes for reviewers
+
+ .coderabbit.yaml                 | 8 +++++---
+ .github/PULL_REQUEST_TEMPLATE.md | 2 +-
+ AGENTS.md                        | 3 ++-
+ CONTRIBUTING.md                  | 4 ++--
+ 4 files changed, 10 insertions(+), 7 deletions(-)
+
+commit e714a271cec0715050b556f28af4463e71293d2e
+Merge: ebc0bc0fcf 64e994162a
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 12 15:55:21 2026 +0000
+
+    Merge pull request #22111 from cgranleese-r7/fixes-hwbridge-custome-methods
+    
+    Fixes HWBridge custom method names
+
+ .../modules/auxiliary/client/hwbridge/connect.md   |   5 +
+ .../extensions/custom_methods/custom_methods.rb    |  79 +++-
+ .../hwbridge/ui/console/command_dispatcher/core.rb |   5 +
+ .../console/command_dispatcher/custom_methods.rb   | 100 ++++-
+ .../custom_methods/custom_methods_spec.rb          | 147 +++++++
+ .../command_dispatcher/custom_methods_spec.rb      | 440 +++++++++++++++++++++
+ 6 files changed, 746 insertions(+), 30 deletions(-)
+
+commit a9c9a4c87ca2c4c214f7e54a6ecf637945a68fe9
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 12 15:11:29 2026 +0000
+
+    Leave PR verification checkboxes for reviewers
+
+ .coderabbit.yaml                 | 8 +++++---
+ .github/PULL_REQUEST_TEMPLATE.md | 2 +-
+ AGENTS.md                        | 3 ++-
+ CONTRIBUTING.md                  | 4 ++--
+ 4 files changed, 10 insertions(+), 7 deletions(-)
+
+commit 64e994162a0999d0a95d173699fb633a689c9974
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Fri Nov 6 11:04:33 2026 +0000
+
+    Fixes HWBridge custom method names
+
+ .../modules/auxiliary/client/hwbridge/connect.md   |   5 +
+ .../extensions/custom_methods/custom_methods.rb    |  79 +++-
+ .../hwbridge/ui/console/command_dispatcher/core.rb |   5 +
+ .../console/command_dispatcher/custom_methods.rb   | 100 ++++-
+ .../custom_methods/custom_methods_spec.rb          | 147 +++++++
+ .../command_dispatcher/custom_methods_spec.rb      | 440 +++++++++++++++++++++
+ 6 files changed, 746 insertions(+), 30 deletions(-)
+
+commit ebc0bc0fcf5f8bbd6406d615b63980ff4f3e1b0a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 12 12:57:23 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c7a979277dec6ff8a845ebb2faf18384cd031369
+Merge: 86c6358faf 8d738de1cc
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Nov 12 12:48:13 2026 +0000
+
+    Merge pull request #22063 from Yeagerist0/oki-scanner-disconnect
+    
+    Fix oki_scanner stopping after the first interface with NoMethodError
+
+ modules/auxiliary/scanner/misc/oki_scanner.rb | 62 ++++++++++++++-------------
+ 1 file changed, 32 insertions(+), 30 deletions(-)
+
+commit 6a23a15283d5f71dd7e43533ff6b841893b149a5
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Wed Nov 11 15:19:46 2026 +0000
+
+    Add github stats link to docs site
+
+ docs/Gemfile.lock  |  2 +-
+ docs/build.rb      | 34 +++++++++++++++++++++++++---------
+ docs/navigation.rb | 13 +++++++++----
+ 3 files changed, 35 insertions(+), 14 deletions(-)
+
+commit 86c6358faf7a52abe60f18e7a8cde3783d010ef5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 12 11:06:15 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f7d4a4dc0cc4639ccb95aea6533cd5572a62b582
+Merge: 9b53a79776 4bd7274b06
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Thu Nov 12 10:58:02 2026 +0000
+
+    Merge pull request #22128 from sjanusz-r7/remove-solarwinds-backdoor-false-positives
+    
+    Reduce false positives on SolarWinds Backdoor check
+
+ .../auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb    | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit 4bd7274b06cb3a8d80d2da80230cc659c8693694
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Thu Nov 12 10:32:07 2026 +0000
+
+    Fixes no method issue
+
+ modules/auxiliary/gather/solarwinds_webhelpdesk_backdoor.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
