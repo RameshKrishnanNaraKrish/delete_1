@@ -1,0 +1,170 @@
+commit bea1fb069e79cb610fe3981f16b8697790369c63
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 13 16:53:40 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit b2126dbf65b8989992c576460df614d1e3a2ac60
+Merge: 73ef192f08 08ee5b7a0e
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Nov 13 17:43:36 2026 +0100
+
+    Merge pull request #22070 from jburgess-r7/pr/zimbra-graphql-brute
+    
+    Add Zimbra GraphQL brute force module (CVE-2026-93637)
+
+ .../auxiliary/scanner/http/zimbra_graphql_brute.md | 128 +++++++
+ .../auxiliary/scanner/http/zimbra_graphql_brute.rb | 384 +++++++++++++++++++++
+ 2 files changed, 512 insertions(+)
+
+commit 73ef192f08f1c45d62587cfccc66f46a894012e5
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 13 16:05:29 2026 +0000
+
+    Bump version of framework to 6.5.11
+
+ Gemfile.lock                        |  2 +-
+ LICENSE_GEMS                        | 14 +++++++-------
+ lib/metasploit/framework/version.rb |  2 +-
+ 3 files changed, 9 insertions(+), 9 deletions(-)
+
+commit c7fd336c7d83b91915dad5a9d51d445627f33273
+Merge: 271ee67123 e799cacc24
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 13 14:41:58 2026 +0000
+
+    Merge pull request #22105 from dwelch-r7/fix/msfdb-local-authentication
+    
+    Secure msfdb PostgreSQL authentication
+
+ .github/workflows/msfdb_startup.yml                | 285 +++++++++++
+ .../Metasploit-Database-Support.md                 |   5 +-
+ lib/msfdb_helpers/db_interface.rb                  | 158 ++++++-
+ lib/msfdb_helpers/managed_cluster.rb               | 523 +++++++++++++++++++++
+ lib/msfdb_helpers/pg_ctl.rb                        | 201 ++------
+ lib/msfdb_helpers/pg_ctlcluster.rb                 | 165 ++++---
+ msfdb                                              | 129 +++--
+ spec/lib/msfdb_helpers/managed_cluster_spec.rb     | 403 ++++++++++++++++
+ spec/lib/msfdb_helpers/security_spec.rb            | 192 ++++++++
+ 9 files changed, 1753 insertions(+), 308 deletions(-)
+
+commit 271ee67123d6541985a1b7474b993ad4c6542ff5
+Merge: 08926f34d0 edcd450eb2
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 13 14:10:59 2026 +0000
+
+    Merge pull request #22127 from cgranleese-r7/fixes-rex-http-uri-normalization
+    
+    Fixes Rex HTTP URI normalization
+
+ lib/rex/proto/http/request.rb           |  57 ++++++++++-
+ spec/lib/rex/proto/http/request_spec.rb | 169 ++++++++++++++++++++++++++++++++
+ 2 files changed, 222 insertions(+), 4 deletions(-)
+
+commit 08926f34d04a5093d2282e63e673184ec1a7b86b
+Merge: 9ba838ddb7 6a23a15283
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 13 14:10:05 2026 +0000
+
+    Merge pull request #22126 from adfoster-r7/add-github-stats-link-to-docs-site
+    
+    Add github stats link to docs site
+
+ docs/Gemfile.lock  |  2 +-
+ docs/build.rb      | 34 +++++++++++++++++++++++++---------
+ docs/navigation.rb | 13 +++++++++----
+ 3 files changed, 35 insertions(+), 14 deletions(-)
+
+commit edcd450eb209b8bf1f678ddf4dbaba7b3d165dae
+Author: cgranleese-r7 <cgranleese-r7@github>
+Date:   Tue Nov 10 10:05:49 2026 +0000
+
+    Fixes Rex HTTP URI normalization
+
+ lib/rex/proto/http/request.rb           |  57 ++++++++++-
+ spec/lib/rex/proto/http/request_spec.rb | 169 ++++++++++++++++++++++++++++++++
+ 2 files changed, 222 insertions(+), 4 deletions(-)
+
+commit e799cacc24c36fc6250c6c7ac19ee9bd06d16967
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 4 15:08:10 2026 +0000
+
+    Secure msfdb PostgreSQL authentication
+
+ .github/workflows/msfdb_startup.yml                | 285 +++++++++++
+ .../Metasploit-Database-Support.md                 |   5 +-
+ lib/msfdb_helpers/db_interface.rb                  | 158 ++++++-
+ lib/msfdb_helpers/managed_cluster.rb               | 523 +++++++++++++++++++++
+ lib/msfdb_helpers/pg_ctl.rb                        | 201 ++------
+ lib/msfdb_helpers/pg_ctlcluster.rb                 | 165 ++++---
+ msfdb                                              | 129 +++--
+ spec/lib/msfdb_helpers/managed_cluster_spec.rb     | 403 ++++++++++++++++
+ spec/lib/msfdb_helpers/security_spec.rb            | 192 ++++++++
+ 9 files changed, 1753 insertions(+), 308 deletions(-)
+
+commit 9ba838ddb72294fcd50b6e6c559c4bfb8707ab90
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 13 12:11:06 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e39355b42c385dfc870858e7fb0accb758b75293
+Merge: 244483b737 91432e9197
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 13 12:02:43 2026 +0000
+
+    Merge pull request #22078 from Yeagerist0/coldfusion-fingerprint-typo
+    
+    Fix coldfusion_locale_traversal ignoring FINGERPRINT when FILE is set
+
+ modules/auxiliary/scanner/http/coldfusion_locale_traversal.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 08ee5b7a0e800a96da1d8074cd5d1a16c0abadc6
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Fri Nov 13 11:27:13 2026 +0000
+
+    Update modules/auxiliary/scanner/http/zimbra_graphql_brute.rb
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ modules/auxiliary/scanner/http/zimbra_graphql_brute.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 244483b73738fb656930b6d360c3b33121139171
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 13 09:42:05 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 59 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit d2a875838af93438f6f11d7d90778c9ebacdd83f
+Merge: 6210572159 5fb0daecf1
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Fri Nov 13 10:33:25 2026 +0100
+
+    Merge pull request #22080 from jburgess-r7/pr/zimbra-email-impersonation
+    
+    Add Zimbra email impersonation module (CVE-2026-73571)
+
+ .../admin/http/zimbra_email_impersonation.md       | 213 ++++++++++
+ .../admin/http/zimbra_email_impersonation.rb       | 444 +++++++++++++++++++++
+ 2 files changed, 657 insertions(+)
+
+commit 82359e4e10063fbd28da4ff6ab36e6690ca34708
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Fri Nov 13 09:31:05 2026 +0000
+
+    Fix Zimbra GraphQL brute-force controls
+
+ .../auxiliary/scanner/http/zimbra_graphql_brute.md | 64 ++++++++++++++--------
+ .../auxiliary/scanner/http/zimbra_graphql_brute.rb | 15 +++--
+ 2 files changed, 52 insertions(+), 27 deletions(-)
