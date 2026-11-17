@@ -1,0 +1,65 @@
+commit 6751b20b4289b47e586abb2a44e43ddc956dd23d
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Nov 16 12:58:34 2026 -0700
+
+    Remove debugging line
+
+ modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 758fcd9de1d57bc84dbda4e3f75793aa844b7430
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Nov 16 12:31:11 2026 -0700
+
+    Allow forced exploitation without version discovery
+
+ modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit bbf3c4ee2571ab6254dc85fd0ce02fd6b1214cbe
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Mon Nov 16 12:27:27 2026 -0700
+
+    Track the payload path before the transfer can fail
+
+ modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 93a996a53ae5722b04e7202ffd6e85d35497279f
+Author: Jack Heysel <jack_heysel@rapid7.com>
+Date:   Fri Oct 30 10:34:27 2026 -0700
+
+    BeyondTrust Remote Support MRS Origin Validation File Upload (CVE-2026-102764)
+    
+    Remove osx module
+
+ .../linux/http/beyondtrust_rs_mrs_file_upload.md   | 202 ++++++
+ lib/msf/core/exploit/remote/http/beyondtrust.rb    |  24 +-
+ .../remote/http/beyondtrust/remote_support.rb      | 699 +++++++++++++++++++++
+ .../linux/http/beyondtrust_rs_mrs_file_upload.rb   | 179 ++++++
+ .../remote/http/beyondtrust/remote_support_spec.rb | 346 ++++++++++
+ .../remote/http/beyondtrust/transport_spec.rb      |  86 +++
+ 6 files changed, 1528 insertions(+), 8 deletions(-)
+
+commit 7bb751ef79f508e83186b04196f9009c5a2bdb53
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 16 16:31:16 2026 +0000
+
+    Match PostgreSQL clients to gem CI servers
+
+ .github/workflows/shared_gem_verify_rails.yml | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit aa9ce416588a2d6fb97423d23591089aff2c8c3e
+Merge: bea1fb069e 00dc5f4092
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Mon Nov 16 13:30:46 2026 +0000
+
+    Merge pull request #22037 from dwelch-r7/use-updated-payload-version
+    
+    Fix candidate payload selection in Meterpreter acceptance CI
+
+ .github/workflows/meterpreter_acceptance.yml       |   7 +-
+ .../workflows/shared_meterpreter_acceptance.yml    | 243 +++++++++++++--------
+ scripts/resource/meterpreter_compatibility.rc      |   8 +-
+ 3 files changed, 160 insertions(+), 98 deletions(-)
