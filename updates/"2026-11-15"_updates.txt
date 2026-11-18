@@ -1,0 +1,108 @@
+commit 4f30a91e239b3cd3de5a7810b5dc28cd5586c1e4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Tue Nov 17 17:38:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 60 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit e9544b6f28fdd3fbab6a6d57774674f4747da3df
+Merge: 268d60309c 42916badc7
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Tue Nov 17 11:30:15 2026 -0600
+
+    Merge pull request #22083 from jheysel-r7/feat/mod/beyondtrust_rs_mrs_file_upload
+    
+    BeyondTrust Remote Support File Upload (CVE-2026-102764)
+
+ .../linux/http/beyondtrust_rs_mrs_file_upload.md   | 202 ++++++
+ lib/msf/core/exploit/remote/http/beyondtrust.rb    |  24 +-
+ .../remote/http/beyondtrust/remote_support.rb      | 699 +++++++++++++++++++++
+ .../linux/http/beyondtrust_rs_mrs_file_upload.rb   | 182 ++++++
+ .../remote/http/beyondtrust/remote_support_spec.rb | 346 ++++++++++
+ .../remote/http/beyondtrust/transport_spec.rb      |  86 +++
+ 6 files changed, 1531 insertions(+), 8 deletions(-)
+
+commit 268d60309c55b8abbfbf54002f533a9513615450
+Merge: e238eceec3 9a5579bfc7
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 17 16:44:33 2026 +0000
+
+    Merge pull request #22152 from dwelch-r7/bump-shared-metasploit-gems
+    
+    Update shared Metasploit gems
+
+ Gemfile.lock | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 42916badc7f92efd18299b5c32bfb4ee9c3eabe7
+Author: jheysel-r7 <Jack_Heysel@rapid7.com>
+Date:   Tue Nov 17 09:40:11 2026 -0700
+
+    Update modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb
+    
+    Co-authored-by: Brendan <bwatters@rapid7.com>
+
+ modules/exploits/linux/http/beyondtrust_rs_mrs_file_upload.rb | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+commit 9a5579bfc7f48df9a2e82302a6989e5109784996
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Tue Nov 17 16:08:07 2026 +0000
+
+    Update shared Metasploit gems
+
+ Gemfile.lock | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit e238eceec3fa4b9aa7b6996334a0acb64f5a261a
+Merge: aa9ce41658 7bb751ef79
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Tue Nov 17 11:32:42 2026 +0000
+
+    Merge pull request #22149 from dwelch-r7/match-postgresql-client-in-gem-ci
+    
+    Match PostgreSQL clients to shared gem CI servers
+
+ .github/workflows/shared_gem_verify_rails.yml | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit 4567d14074fbbe8050dd0f35340a98143a09fd93
+Author: sjanusz-r7 <sjanusz-r7@github>
+Date:   Tue Nov 17 11:13:52 2026 +0000
+
+    Fix false positive result in the LiteLLM Proxy SQLi check
+
+ modules/auxiliary/scanner/http/litellm_proxy_sqli.rb | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit 8129543ab4cea717a59536707c3efdc3b8fdfecd
+Author: Jonah Burgess <jonah_burgess@rapid7.com>
+Date:   Tue Nov 17 10:53:17 2026 +0000
+
+    Update documentation/modules/auxiliary/gather/zimbra_ews_mailbox_access.md
+    
+    Co-authored-by: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+
+ .../modules/auxiliary/gather/zimbra_ews_mailbox_access.md     | 11 -----------
+ 1 file changed, 11 deletions(-)
+
+commit 7cecbe30a8b71d815e90534b1a216d2c7a24052d
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Nov 17 10:28:08 2026 +0000
+
+    corrected doc format + style
+
+ .../linux/http/zimbra_admin_deployzimlet_rce.md    | 26 +++++++++++++---------
+ 1 file changed, 15 insertions(+), 11 deletions(-)
+
+commit 696480206a57ccd89953b3395039a540c457a23d
+Author: Jonah Burgess <12751872+Crypto-Cat@users.noreply.github.com>
+Date:   Tue Nov 17 10:12:31 2026 +0000
+
+    Address Zimbra DeployZimlet review feedback
+
+ .../linux/http/zimbra_admin_deployzimlet_rce.md    | 36 ++++++-----------
+ .../linux/http/zimbra_admin_deployzimlet_rce.rb    | 46 +++++++++++-----------
+ 2 files changed, 34 insertions(+), 48 deletions(-)
