@@ -1,0 +1,262 @@
+commit b8c0caeb1e3095c7e6fca6ee1a808d666ef23d26
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 17:53:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json                      | 117 +++++++++++++++++++++
+ .../linux/aarch64/meterpreter_reverse_http.rb      |   2 +-
+ .../linux/aarch64/meterpreter_reverse_https.rb     |   2 +-
+ .../linux/aarch64/meterpreter_reverse_tcp.rb       |   2 +-
+ .../linux/armbe/meterpreter_reverse_http.rb        |   2 +-
+ .../linux/armbe/meterpreter_reverse_https.rb       |   2 +-
+ .../singles/linux/armbe/meterpreter_reverse_tcp.rb |   2 +-
+ .../linux/armle/meterpreter_reverse_http.rb        |   2 +-
+ .../linux/armle/meterpreter_reverse_https.rb       |   2 +-
+ .../singles/linux/armle/meterpreter_reverse_tcp.rb |   2 +-
+ .../linux/mips64/meterpreter_reverse_http.rb       |   2 +-
+ .../linux/mips64/meterpreter_reverse_https.rb      |   2 +-
+ .../linux/mips64/meterpreter_reverse_tcp.rb        |   2 +-
+ .../linux/mipsbe/meterpreter_reverse_http.rb       |   2 +-
+ .../linux/mipsbe/meterpreter_reverse_https.rb      |   2 +-
+ .../linux/mipsbe/meterpreter_reverse_tcp.rb        |   2 +-
+ .../linux/mipsle/meterpreter_reverse_http.rb       |   2 +-
+ .../linux/mipsle/meterpreter_reverse_https.rb      |   2 +-
+ .../linux/mipsle/meterpreter_reverse_tcp.rb        |   2 +-
+ 19 files changed, 135 insertions(+), 18 deletions(-)
+
+commit f4cb5e6651d24db0109f535867c743cdd2e42044
+Merge: 594b5de4c2 7b17c2b7aa
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 18 17:44:47 2026 +0000
+
+    Merge pull request #22159 from dwelch-r7/bump-mettle-1.0.49
+    
+    Bump mettle payloads to 1.0.49
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 594b5de4c2f5eb22ea59829ea733ea8dfd608172
+Merge: 6f81cdcbf4 844e3a678d
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Nov 18 17:40:30 2026 +0000
+
+    Merge pull request #21886 from anirbala98/cve-2022-4140-fileread
+    
+    Add WordPress Welcart e-Commerce plugin unauthenticated arbitrary file read module (CVE-2022-4140)
+
+ .../gather/wp_welcart_fileread_cve_2022_4140.md    | 131 +++++++++++++++++++++
+ .../gather/wp_welcart_fileread_cve_2022_4140.rb    | 103 ++++++++++++++++
+ 2 files changed, 234 insertions(+)
+
+commit 6f81cdcbf4a202c0ca95e3b27d08533393fc9c62
+Merge: 00b31899d7 7cecbe30a8
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Nov 18 18:32:40 2026 +0100
+
+    Merge pull request #22040 from jburgess-r7/pr/zimbra-admin-deployzimlet-rce
+    
+    Add Zimbra DeployZimlet JSP RCE module
+
+ .../linux/http/zimbra_admin_deployzimlet_rce.md    | 175 +++++++
+ .../linux/http/zimbra_admin_deployzimlet_rce.rb    | 533 +++++++++++++++++++++
+ 2 files changed, 708 insertions(+)
+
+commit 00b31899d7be3201e4552a96156d01be00e76854
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 17:26:06 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 63 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit 820d2ee28fd5b611e42447b103d54ef8df8b33d3
+Merge: aa1b1ae04b 8129543ab4
+Author: Christophe De La Fuente <56716719+cdelafuente-r7@users.noreply.github.com>
+Date:   Wed Nov 18 18:17:56 2026 +0100
+
+    Merge pull request #22099 from jburgess-r7/pr/zimbra-ews-mailbox-access
+    
+    Add Zimbra EWS cross-mailbox access module (CVE-2026-10631)
+
+ .../auxiliary/gather/zimbra_ews_mailbox_access.md  | 159 +++++
+ .../auxiliary/gather/zimbra_ews_mailbox_access.rb  | 774 +++++++++++++++++++++
+ 2 files changed, 933 insertions(+)
+
+commit aa1b1ae04bcbd3c50682318fcfba34cbd19fe51f
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 17:11:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 53 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit ab8faa17b1fd8a60bb8c482ccdbbb552fd0af8ba
+Merge: 31e0ef350b 314e5f11bb
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Nov 18 17:02:49 2026 +0000
+
+    Merge pull request #21873 from h00die/plex_file_read
+    
+    plex arbitrary file read
+
+ .../scanner/http/plex_media_server_file_read.md    | 187 +++++++++++++++++++++
+ .../scanner/http/plex_media_server_file_read.rb    | 163 ++++++++++++++++++
+ 2 files changed, 350 insertions(+)
+
+commit 7b17c2b7aa505c5ac3aba81f6264c60ef8d9fc4a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 18 16:50:13 2026 +0000
+
+    Bump mettle payloads to 1.0.49
+
+ Gemfile.lock                 | 4 ++--
+ metasploit-framework.gemspec | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 31e0ef350b98220653eab07154bd6cbabedbda86
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 14:21:58 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 61 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit 3f3b38e5f06e8a63daa628d57fbbb2990ce5aaf1
+Merge: c4f173f77e fd6f4bc11b
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Nov 18 14:12:39 2026 +0000
+
+    Merge pull request #21813 from taylor-cox/changedetectionio-cve-2024-32651
+    
+    Add changedetection.io unauthenticated RCE exploit (CVE-2024-32651)
+
+ .../http/changedetection_rce_cve_2024_32651.md     |  69 +++++++++++++
+ .../http/changedetection_rce_cve_2024_32651.rb     | 110 +++++++++++++++++++++
+ 2 files changed, 179 insertions(+)
+
+commit c4f173f77ebc3760d0829b58438be9f1aad22bc5
+Merge: 4cb085762e 6256a09690
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 18 14:03:52 2026 +0000
+
+    Merge pull request #22158 from dwelch-r7/module-library-rspec-guidance
+    
+    Clarify module design and RSpec guidance
+
+ .coderabbit.yaml          | 17 +++++++++++++++++
+ .rubocop.yml              |  8 ++++++--
+ AGENTS.md                 |  4 +++-
+ CONTRIBUTING.md           |  8 ++++++--
+ spec/README.md            | 20 +++++++++++++++++++-
+ spec/acceptance/README.md |  5 +++++
+ 6 files changed, 56 insertions(+), 6 deletions(-)
+
+commit 6256a096908fe6cdb63ac963530947b06a4ada45
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 18 13:59:16 2026 +0000
+
+    Clarify generated RSpec example descriptions
+
+ .coderabbit.yaml          | 6 ++++--
+ AGENTS.md                 | 2 +-
+ CONTRIBUTING.md           | 2 +-
+ spec/README.md            | 4 +++-
+ spec/acceptance/README.md | 4 +++-
+ 5 files changed, 12 insertions(+), 6 deletions(-)
+
+commit 00401f5d7f9b35676d7ef3e05ddc433798c6c999
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 18 13:29:23 2026 +0000
+
+    Clarify module design and RSpec guidance
+
+ .coderabbit.yaml          | 15 +++++++++++++++
+ .rubocop.yml              |  8 ++++++--
+ AGENTS.md                 |  4 +++-
+ CONTRIBUTING.md           |  8 ++++++--
+ spec/README.md            | 18 +++++++++++++++++-
+ spec/acceptance/README.md |  3 +++
+ 6 files changed, 50 insertions(+), 6 deletions(-)
+
+commit 4cb085762e70ba195a9b5f9880710bd338d0b085
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 13:02:37 2026 +0000
+
+    Bump version of framework to 6.5.12
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 8 ++++----
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 287aaca8351ed14445fe071c7302c06b9d7f7e1b
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 18 12:55:18 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3648a9b56bac96759c7a7a836022a439be600e29
+Merge: de8243674f 57b8d756d8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 18 12:46:53 2026 +0000
+
+    Merge pull request #22143 from urvalkheni/fix-pihole-token-response-handling
+    
+    Fix Pi-hole token response validation
+
+ lib/msf/core/exploit/remote/http/pihole.rb    |  2 +-
+ spec/lib/msf/core/exploit/http/pihole_spec.rb | 17 +++++++++++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+
+commit de8243674ff9f947d14486acba4885832bfcf8a4
+Merge: 1ae55ac663 4567d14074
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 18 12:38:41 2026 +0000
+
+    Merge pull request #22151 from sjanusz-r7/fix-false-positives-in-more-modules
+    
+    Fix false positive result in the LiteLLM Proxy SQLi check
+
+ modules/auxiliary/scanner/http/litellm_proxy_sqli.rb | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+
+commit 1ae55ac6631f7fd7a69a3bb5eb01a74cb24a7b8e
+Merge: 4f30a91e23 cf619fe17d
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Wed Nov 18 09:59:45 2026 +0000
+
+    Merge pull request #22142 from Yeagerist0/fix/json-rpc-string-key-version
+    
+    Fix RPC response validation with string keys
+
+ lib/msf/core/rpc/json/request.rb           |  3 ++-
+ spec/lib/msf/core/rpc/json/request_spec.rb | 39 ++++++++++++++++++++++++++++++
+ 2 files changed, 41 insertions(+), 1 deletion(-)
+
+commit a29f6cca896245cd409954b8718b7be111ade42e
+Author: farisbasha <farisbashatm@gmail.com>
+Date:   Wed Nov 18 12:30:34 2026 +0530
+
+    Fix single-quoted strings that never interpolate
+    
+    Three library strings use single quotes around #{...}, so Ruby prints
+    the placeholder text literally instead of the value:
+    
+    - TincdExploitClient: the protocol error never shows the received byte
+    - Post::Vcenter: the CVE-2022-22948 status line never shows the path
+    - Auxiliary::CNPILOT: the reported credential service name is stored
+      as 'Cambium cnPilot #{cnpilot_version}' instead of the real version
+
+ lib/msf/core/auxiliary/cnpilot.rb                   | 2 +-
+ lib/msf/core/exploit/remote/tincd_exploit_client.rb | 2 +-
+ lib/msf/core/post/vcenter/vcenter.rb                | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
