@@ -1,0 +1,146 @@
+commit 9fe9e0652a91d04c2e9226bca6dbade75eaf14da
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 19 17:04:50 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 73 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 73 insertions(+)
+
+commit d1e6cb4a2b602b81654ec276597e0848e4c02ac3
+Merge: d2733673ec 11ff2786d8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 19 16:56:10 2026 +0000
+
+    Merge pull request #22106 from cdelafuente-r7/atlassian_data_center_cve_2026_21589
+    
+    Add module and docs for Atlassian CVE-2026-21589
+
+ .../http/atlassian_data_center_cve_2026_21589.md   | 664 +++++++++++++++
+ .../remote/http/atlassian/product_fingerprint.rb   | 172 ++++
+ .../http/atlassian_data_center_cve_2026_21589.rb   | 903 +++++++++++++++++++++
+ .../http/atlassian/product_fingerprint_spec.rb     | 212 +++++
+ 4 files changed, 1951 insertions(+)
+
+commit d2733673ec3ba426a125cc7f251c4f54bea6b3f7
+Merge: a5d2961323 4d290efafe
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 19 15:27:12 2026 +0000
+
+    Merge pull request #22163 from dwelch-r7/fix-packetfu-structured-callers
+    
+    Fix PacketFu loading and field lookup on Ruby 3.4
+
+ lib/msf/core/exploit/capture.rb               |   1 -
+ lib/msf/core/exploit/remote/ipv6.rb           |  16 ---
+ lib/msf/core/packet_fu_compat.rb              |  25 +++++
+ lib/msf_autoload.rb                           |   6 +-
+ spec/lib/msf/core/exploit/capture_spec.rb     |  28 +++++
+ spec/lib/msf/core/exploit/remote/ipv6_spec.rb |  18 ++++
+ spec/lib/msf/core/packet_fu_compat_spec.rb    | 144 ++++++++++++++++++++++++++
+ 7 files changed, 220 insertions(+), 18 deletions(-)
+
+commit 4d290efafe181837cb569041d3a31082ac803287
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 19 14:39:32 2026 +0000
+
+    Rely on PacketFu autoload in packet mixins
+    
+    Remove redundant compatibility requires from Capture and IPv6. The
+    Framework autoload applies the shared patch when PacketFu is first used.
+    
+    Update the Capture spec comment to describe the centralized loading path.
+
+ lib/msf/core/exploit/capture.rb           | 1 -
+ lib/msf/core/exploit/remote/ipv6.rb       | 2 --
+ spec/lib/msf/core/exploit/capture_spec.rb | 4 ++--
+ 3 files changed, 2 insertions(+), 5 deletions(-)
+
+commit 11ff2786d89c5c084604509ca8fa05eda2fdb31c
+Author: cdelafuente-r7 <cdelafuente-r7@github>
+Date:   Thu Nov 19 15:14:47 2026 +0100
+
+    Update from code review
+
+ .../http/atlassian_data_center_cve_2026_21589.md   | 50 ++++++++++++++++------
+ .../http/atlassian_data_center_cve_2026_21589.rb   |  4 +-
+ 2 files changed, 39 insertions(+), 15 deletions(-)
+
+commit 4f40cad4262161c96e6b70ef57b4a663a0d10009
+Author: Urval Kheni <kheniurval777@gmail.com>
+Date:   Thu Nov 19 18:10:35 2026 +0530
+
+    Fix NoMethodError on truncated NUUO responses
+    
+    In Rex::Proto::Nuuo::Client#read_response, an EOFError, Errno::EPIPE,
+    or IOError during body reading triggers the rescue block which attempts
+    to set res.error = :truncated. Because Rex::Proto::Nuuo::Response lacked
+    an :error accessor, this raised an unhandled NoMethodError instead of
+    marking the response.
+    
+    Adds attr_accessor :error to Rex::Proto::Nuuo::Response and adds an
+    RSpec unit test covering truncated response handling.
+    
+    Signed-off-by: Urval Kheni <kheniurval777@gmail.com>
+
+ lib/rex/proto/nuuo/response.rb         |  2 ++
+ spec/lib/rex/proto/nuuo/client_spec.rb | 18 ++++++++++++++++++
+ 2 files changed, 20 insertions(+)
+
+commit 5cb4c545fb0d0965ed0e9643d558afd99eeb9a98
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 19 12:33:29 2026 +0000
+
+    Cover every Framework PacketFu loading path
+
+ lib/msf/core/packet_fu_compat.rb           |  6 +++-
+ lib/msf_autoload.rb                        |  6 +++-
+ spec/lib/msf/core/packet_fu_compat_spec.rb | 49 ++++++++++++++++++++++++++++++
+ 3 files changed, 59 insertions(+), 2 deletions(-)
+
+commit e2e5e74351094070946b5d0bc3f53e9d170b027c
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 19 12:22:12 2026 +0000
+
+    Fix PacketFu field lookup with structured frames
+
+ lib/msf/core/exploit/capture.rb               |  2 +-
+ lib/msf/core/exploit/remote/ipv6.rb           | 16 +----
+ lib/msf/core/packet_fu_compat.rb              | 21 ++++++
+ spec/lib/msf/core/exploit/capture_spec.rb     | 28 ++++++++
+ spec/lib/msf/core/exploit/remote/ipv6_spec.rb | 18 +++++
+ spec/lib/msf/core/packet_fu_compat_spec.rb    | 95 +++++++++++++++++++++++++++
+ 6 files changed, 164 insertions(+), 16 deletions(-)
+
+commit 0db32677b1a0692aafac05371deab677ecd3cc6e
+Author: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Thu Nov 19 10:43:04 2026 +0530
+
+    Deduplicate installed application rows
+
+ modules/post/windows/gather/enum_applications.rb   |  5 +-
+ .../post/windows/gather/enum_applications_spec.rb  | 60 ++++++++++++++++++++++
+ 2 files changed, 64 insertions(+), 1 deletion(-)
+
+commit a5d296132362ca43ec8e80f7893373b3f2d18693
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 19 00:38:57 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 36 ++++++++++++++++++------------------
+ 1 file changed, 18 insertions(+), 18 deletions(-)
+
+commit 506e421416be2e9483bc036ef13c0724a2f83cd9
+Merge: b8c0caeb1e a29f6cca89
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 19 00:30:24 2026 +0000
+
+    Merge pull request #22155 from farisbasha/fix-single-quoted-interpolation
+    
+    Fix single-quoted strings that never interpolate
+
+ lib/msf/core/auxiliary/cnpilot.rb                   | 2 +-
+ lib/msf/core/exploit/remote/tincd_exploit_client.rb | 2 +-
+ lib/msf/core/post/vcenter/vcenter.rb                | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
