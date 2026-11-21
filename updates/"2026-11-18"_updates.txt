@@ -1,0 +1,178 @@
+commit fa68d9cca90702cb1ae86dbae72d53d0738f7a12
+Merge: 4ca6d4a0ec 89d429e773
+Author: bwatters-r7 <bwatters-r7@github>
+Date:   Fri Nov 20 14:20:58 2026 -0600
+
+    Merge pull request #22050 from revanth3205/fix/ftp-fetch-command-default
+    
+    Fix default FETCH_COMMAND for FTP fetch payloads
+
+ lib/msf/core/payload/adapter/fetch/linux_options.rb     |  5 ++++-
+ .../modules/payloads/adapters/cmd/linux/ftp/x64_spec.rb | 17 ++++++++++++-----
+ 2 files changed, 16 insertions(+), 6 deletions(-)
+
+commit 4ca6d4a0ecc64d651b715890ec50d4948ac4dd10
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 20 15:23:17 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 7a13e3b6cf2ba6ba69835168bd3a9c6022c9f278
+Merge: 0ea1fe99a9 9869af6609
+Author: cgranleese-r7 <69522014+cgranleese-r7@users.noreply.github.com>
+Date:   Fri Nov 20 15:13:27 2026 +0000
+
+    Merge pull request #22140 from Ghxstsec/modernize/dns-srv-lookup-create-process
+    
+    Use create_process in dns_srv_lookup to prevent command injection
+
+ modules/post/multi/gather/dns_srv_lookup.rb | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 0ea1fe99a949d6773eb505fd6e32fe56cf00d0a5
+Merge: 467e4d47e5 417b0873bf
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 14:49:21 2026 +0000
+
+    Merge pull request #22166 from dwelch-r7/ruby-3.3.14-security
+    
+    Upgrade Framework Ruby runtime to 3.3.14
+
+ .github/workflows/command_shell_acceptance.yml                    | 2 +-
+ .github/workflows/docs.yml                                        | 2 +-
+ .github/workflows/ldap_acceptance.yml                             | 2 +-
+ .github/workflows/msfdb_startup.yml                               | 2 +-
+ .github/workflows/mssql_acceptance.yml                            | 2 +-
+ .github/workflows/mysql_acceptance.yml                            | 2 +-
+ .github/workflows/postgres_acceptance.yml                         | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml               | 2 +-
+ .github/workflows/shared_smb_acceptance.yml                       | 2 +-
+ .github/workflows/verify.yml                                      | 2 +-
+ .ruby-version                                                     | 2 +-
+ Dockerfile                                                        | 8 ++++++--
+ docs/.ruby-version                                                | 2 +-
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md        | 4 ++--
+ 14 files changed, 20 insertions(+), 16 deletions(-)
+
+commit 467e4d47e5d52acaccbd21024aa3345b745833b4
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 20 14:32:02 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eaf7ace48ee278f6b82a625af0c4dd23f9260132
+Merge: 4b064c3f90 13e414e826
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 14:21:29 2026 +0000
+
+    Merge pull request #22172 from costajohnt/fix-joomla-res-code-comparison
+    
+    Fix joomla_bruteforce_login assigning res.code instead of comparing
+
+ modules/auxiliary/scanner/http/joomla_bruteforce_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 417b0873bf7f2fd3a6e006f071ffcbe6b028a1eb
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Fri Nov 20 13:51:32 2026 +0000
+
+    Upgrade Framework Ruby runtime to 3.3.14
+
+ .github/workflows/command_shell_acceptance.yml                    | 2 +-
+ .github/workflows/docs.yml                                        | 2 +-
+ .github/workflows/ldap_acceptance.yml                             | 2 +-
+ .github/workflows/msfdb_startup.yml                               | 2 +-
+ .github/workflows/mssql_acceptance.yml                            | 2 +-
+ .github/workflows/mysql_acceptance.yml                            | 2 +-
+ .github/workflows/postgres_acceptance.yml                         | 2 +-
+ .github/workflows/shared_meterpreter_acceptance.yml               | 2 +-
+ .github/workflows/shared_smb_acceptance.yml                       | 2 +-
+ .github/workflows/verify.yml                                      | 2 +-
+ .ruby-version                                                     | 2 +-
+ Dockerfile                                                        | 8 ++++++--
+ docs/.ruby-version                                                | 2 +-
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md        | 4 ++--
+ 14 files changed, 20 insertions(+), 16 deletions(-)
+
+commit 4b064c3f90bf0ecc3dd94bda62a2f452ff1eea29
+Merge: 72daa62ed6 4f40cad426
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 13:48:53 2026 +0000
+
+    Merge pull request #22164 from urvalkheni/fix/nuuo-truncated-response-error
+    
+    Fix NoMethodError on truncated NUUO responses
+
+ lib/rex/proto/nuuo/response.rb         |  2 ++
+ spec/lib/rex/proto/nuuo/client_spec.rb | 18 ++++++++++++++++++
+ 2 files changed, 20 insertions(+)
+
+commit 13e414e826f8c304a17d511a5973a58c2a67a940
+Author: John Costa <costajohnt@gmail.com>
+Date:   Fri Nov 20 05:31:23 2026 -0800
+
+    Fix res.code comparison in joomla_bruteforce_login
+
+ modules/auxiliary/scanner/http/joomla_bruteforce_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 72daa62ed64b7cbfdcbb25cc46836578ad6e5d5e
+Merge: bd0f288038 7db8c4e62b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 12:47:46 2026 +0000
+
+    Merge pull request #22137 from asimawdah/asim/rpc-health-spec-21518
+    
+    Add specs for the RPC health endpoint
+
+ spec/lib/msf/core/rpc/v10/rpc_health_spec.rb | 60 ++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
+commit bd0f288038caa8c2b8c1ca84e59543dcd985cbb8
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Fri Nov 20 10:33:12 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b5dc2258442caf5296901e2553e4365101d63536
+Merge: f055f2969e 0db32677b1
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 10:25:03 2026 +0000
+
+    Merge pull request #22160 from Yeagerist0/fix/enum-applications-duplicates
+    
+    Deduplicate installed applications in Windows gather module
+
+ modules/post/windows/gather/enum_applications.rb   |  5 +-
+ .../post/windows/gather/enum_applications_spec.rb  | 60 ++++++++++++++++++++++
+ 2 files changed, 64 insertions(+), 1 deletion(-)
+
+commit f055f2969e1b6786d609a5e28609aed53c765756
+Merge: 9fe9e0652a 1a554c908b
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Fri Nov 20 10:20:39 2026 +0000
+
+    Merge pull request #22167 from Yeagerist0/fix/recog-nested-repeat-release
+    
+    Bump recog to 3.1.38 for nested-repeat fix
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 1a554c908be6ea9022d84f7ab7d6a9a116249232
+Author: Yeagerist0 <180412661+Yeagerist0@users.noreply.github.com>
+Date:   Fri Nov 20 13:57:05 2026 +0530
+
+    Bump recog to include nested-repeat fix
+
+ Gemfile.lock | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
