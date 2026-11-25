@@ -1,0 +1,87 @@
+commit b6587aeaf8755e743fb4133b8f367513703f1ecd
+Author: Harish Kolla <hkolla03@gmail.com>
+Date:   Tue Nov 24 14:26:55 2026 -0600
+
+    Credit vulnerability discoverer in Langflow CVE-2026-9198 module
+
+ modules/exploits/multi/http/langflow_unauth_rce_cve_2026_9198.rb | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 697939fc3bf4653e6c1e1fc0263f08a5773a8610
+Author: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+Date:   Tue Nov 24 18:15:17 2026 +0000
+
+    Apache mod_http2 scanner: ignore Server header comments when matching
+    
+    Strip RFC 7230 parenthesised Server comments before the Apache product
+    match, so a token inside a comment such as "nginx/1.26.0 (via
+    Apache/2.4.70)" is not taken as the server's own Apache version.
+    
+    Signed-off-by: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+
+ modules/auxiliary/scanner/http/apache_mod_http2_cve_2026_119618.rb | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 3f10acdab2aabef66a77784b14a40d5da71151cd
+Author: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+Date:   Tue Nov 24 18:03:34 2026 +0000
+
+    Apache mod_http2 scanner: tighten banner match and attach vuln to service
+    
+    - require a product-token boundary on the Apache banner match so an
+      unrelated product such as NotApache/2.4.70 is not matched
+    - pass the reported Apache service to report_vuln so the finding attaches
+      to that service rather than the first service at the host and port
+    
+    Signed-off-by: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+
+ modules/auxiliary/scanner/http/apache_mod_http2_cve_2026_119618.rb | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit e3c1c3261f3880714a4477086e3074f29c242e29
+Author: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+Date:   Tue Nov 24 17:51:20 2026 +0000
+
+    Apache mod_http2 CVE-2026-119618 scanner: address review feedback
+    
+    - report_service: report the full service hierarchy and only after the
+      Server banner has confirmed Apache, so a non-Apache or banner-suppressed
+      host is never recorded as a service
+    - identify the host from the Apache banner match; on a non-match, skip and
+      show the HTTP status and raw Server header
+    - drop "(confirm via TLS ALPN)" from the finding text and trim the backport
+      note; sync the documentation sample output
+    - rename m to matched_apache_version
+    - set the module file mode to 100644 (clear the executable bit)
+    
+    Signed-off-by: Mayur Agnihotri <mayur.agnihotri0021@gmail.com>
+
+ .../http/apache_mod_http2_cve_2026_119618.md       |  2 +-
+ .../http/apache_mod_http2_cve_2026_119618.rb       | 42 +++++++++++++++-------
+ 2 files changed, 30 insertions(+), 14 deletions(-)
+
+commit 0d5e8f62fa5f948d207d3022b2f12f2af0c476ba
+Merge: 5b4da0e318 64d803da9f
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Nov 24 12:08:06 2026 +0000
+
+    Merge pull request #22135 from Aaditya1273/fix/dns-upstream-rule-invalid-wildcard-raise
+    
+    Raise on invalid wildcard in DNS UpstreamRule constructor
+
+ lib/rex/proto/dns/upstream_rule.rb           |  3 ++-
+ spec/lib/rex/proto/dns/upstream_rule_spec.rb | 11 +++++++++++
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+commit 5b4da0e3186dbc12a199e482993c55857692ec6e
+Merge: e3caaffb2b 341330ea1f
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Tue Nov 24 11:55:27 2026 +0000
+
+    Merge pull request #22170 from costajohnt/fix-stager-close-precedence
+    
+    Fix stager closing the connection when stage generation fails
+
+ lib/msf/core/payload/stager.rb           |  2 +-
+ spec/lib/msf/core/payload/stager_spec.rb | 40 ++++++++++++++++++++++++++++++++
+ 2 files changed, 41 insertions(+), 1 deletion(-)
