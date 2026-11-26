@@ -1,0 +1,113 @@
+commit e33695bd9d5ef4192ca81431bd9233df8c87d39c
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Wed Nov 25 12:58:47 2026 +0000
+
+    Upgrade Framework runtime to Ruby 3.4.13
+
+ .github/workflows/docs.yml                                          | 1 +
+ .ruby-version                                                       | 2 +-
+ Dockerfile                                                          | 4 ++--
+ docs/.ruby-version                                                  | 2 +-
+ docs/Gemfile                                                        | 4 ++++
+ docs/Gemfile.lock                                                   | 6 ++++++
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md          | 4 ++--
+ 7 files changed, 17 insertions(+), 6 deletions(-)
+
+commit 90dfbaa741421d0179f9f371109c215d49400444
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 25 14:44:53 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 806471abbfd2eaa539f06b06ca3b2999c3977083
+Merge: 2cc5c2aa62 b8676b24f5
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 25 14:36:26 2026 +0000
+
+    Merge pull request #22168 from Yeagerist0/fix/rsh-login-prefix
+    
+    Remove duplicate host prefix from rsh login errors
+
+ modules/auxiliary/scanner/rservices/rsh_login.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2cc5c2aa62291f4fba2bc1f9e28e0cbdfdf22f40
+Merge: 3fc4d44926 9f0a4ee0a7
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 25 14:35:02 2026 +0000
+
+    Merge pull request #22179 from urvalkheni/fix-suitecrm-version-parsing
+    
+    Fix NoMethodError on unmatched version in suite_crm_export_sqli
+
+ modules/auxiliary/gather/suite_crm_export_sqli.rb | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+commit 3fc4d449263b910f10fc4b648caea719c90f5c8e
+Merge: 5d3a4c8f51 9eda473a31
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 25 14:33:05 2026 +0000
+
+    Merge pull request #22181 from adfoster-r7/update-addressable-gem
+    
+    Update addressable gem
+
+ Gemfile.lock      | 2 +-
+ docs/Gemfile.lock | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 5d3a4c8f51fefb065bda6b302b2f200f29da1936
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 25 12:26:42 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 56 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+commit 92043c75a897fe85fcc5269c6c30b981081585d0
+Merge: 84d6762c91 697939fc3b
+Author: Simon Janusz <85949464+sjanusz-r7@users.noreply.github.com>
+Date:   Wed Nov 25 12:17:21 2026 +0000
+
+    Merge pull request #22148 from Mayur021/apache-mod_http2-cve-2026-119618
+    
+    Add Apache mod_http2 CVE-2026-119618 version scanner
+
+ .../http/apache_mod_http2_cve_2026_119618.md       |  87 +++++++++++++++
+ .../http/apache_mod_http2_cve_2026_119618.rb       | 122 +++++++++++++++++++++
+ 2 files changed, 209 insertions(+)
+
+commit 9eda473a31188aa314198ff81369259b066d0920
+Author: adfoster-r7 <adfoster-r7@github>
+Date:   Tue Nov 24 18:12:34 2026 +0000
+
+    Update addressable gem
+
+ Gemfile.lock      | 2 +-
+ docs/Gemfile.lock | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 84d6762c91734902437e245aaf06ee94ec35dd68
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Wed Nov 25 10:42:39 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 940438eec446fb9916b5e2820f6eb1cde38bb24d
+Merge: 0d5e8f62fa b6587aeaf8
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Wed Nov 25 10:34:09 2026 +0000
+
+    Merge pull request #22182 from Har1sh-k/langflow-cve-2026-9198-credit
+    
+    Credit vulnerability discoverer in Langflow CVE-2026-9198 module
+
+ modules/exploits/multi/http/langflow_unauth_rce_cve_2026_9198.rb | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
