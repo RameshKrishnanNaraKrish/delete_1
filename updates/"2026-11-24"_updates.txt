@@ -1,0 +1,191 @@
+commit ab00b9e7e08b1fdc68bdba12de6db2aa4436815e
+Merge: 240b7d4abf b632573851
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 17:28:57 2026 +0000
+
+    Merge pull request #22174 from l1ve709/fix/ini-write-cleanup
+    
+    Close INI file handles when writes fail
+
+ lib/rex/parser/ini.rb           |  8 +++++---
+ spec/lib/rex/parser/ini_spec.rb | 38 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+), 3 deletions(-)
+
+commit 240b7d4abf662c4bdbeced2caf59ebbe29f25f59
+Merge: 9e02ac35d8 b1ac45d781
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 17:27:38 2026 +0000
+
+    Merge pull request #22130 from Aaditya1273/fix/meterpreter-autoload-extensions-dedup
+    
+    Dedupe auto-loaded Meterpreter extensions case-insensitively
+
+ lib/msf/base/sessions/meterpreter.rb           | 49 +++++++++++++---------
+ spec/lib/msf/base/sessions/meterpreter_spec.rb | 58 ++++++++++++++++++++++++++
+ 2 files changed, 87 insertions(+), 20 deletions(-)
+
+commit b1ac45d78172f13118efbc1fd81719badae7af46
+Author: Aaditya1273 <aadityaiitian1515@gmail.com>
+Date:   Thu Nov 26 22:24:10 2026 +0530
+
+    Keep AutoSystemInfo working for case-variant stdapi
+    
+    The case-insensitive extension dedup keeps the operator's spelling, so
+    an "AutoLoadExtensions Stdapi" survives rather than the auto-added
+    lowercase "stdapi". The bootstrap load loop then compared
+    `extension == 'stdapi'` case-sensitively, so load_session_info was
+    skipped and AutoSystemInfo collected nothing for that input, even
+    though the extension itself loaded fine (load lowercases internally).
+    
+    Compare the extension name case-insensitively at the load site so
+    system info is collected for any casing of stdapi. Adds a bootstrap
+    regression spec asserting load_session_info fires for a "Stdapi" entry
+    with AutoSystemInfo enabled.
+
+ lib/msf/base/sessions/meterpreter.rb           |  5 +++-
+ spec/lib/msf/base/sessions/meterpreter_spec.rb | 37 ++++++++++++++++++++++++++
+ 2 files changed, 41 insertions(+), 1 deletion(-)
+
+commit 9e02ac35d81e745446e23f3b552dce2eea215a8a
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 26 15:05:53 2026 +0000
+
+    Bump version of framework to 6.5.14
+
+ Gemfile.lock                        | 2 +-
+ LICENSE_GEMS                        | 4 ++--
+ lib/metasploit/framework/version.rb | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 3853784f56b5a17122820c3e2ce08cf352a785f7
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 26 14:50:32 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a931ce0e41037b49d0de31317b5a31c49af44e35
+Merge: 0bb5137be6 1ccbd4f37c
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 14:41:45 2026 +0000
+
+    Merge pull request #22186 from urvalkheni/fix-dell-memory-protect-optbool-default
+    
+    Fix ENABLE_MEM_PROTECT OptBool default in dell_memory_protect
+
+ modules/post/windows/manage/dell_memory_protect.rb |  2 +-
+ .../windows/manage/dell_memory_protect_spec.rb     | 36 ++++++++++++++++++++++
+ 2 files changed, 37 insertions(+), 1 deletion(-)
+
+commit 0bb5137be685eb5c18d9d0920a08905ffbf6ec1d
+Merge: 65af3f63a6 065c63f78f
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 13:36:24 2026 +0000
+
+    Merge pull request #22185 from dwelch-r7/ruby-ci-spec-isolation
+    
+    Isolate certificate and MySQL spec fixtures
+
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb         | 4 ++++
+ spec/modules/auxiliary/scanner/mysql/mysql_login_spec.rb | 2 ++
+ 2 files changed, 6 insertions(+)
+
+commit 1ccbd4f37cb0e2ecc998481001e7b39bfdbad160
+Author: Urval Kheni <kheniurval777@gmail.com>
+Date:   Thu Nov 26 18:10:57 2026 +0530
+
+    Fix ENABLE_MEM_PROTECT OptBool default in dell_memory_protect
+    
+    Change the ENABLE_MEM_PROTECT OptBool default in modules/post/windows/manage/dell_memory_protect.rb from the string 'false' to the boolean false.
+    
+    Because non-empty strings are truthy in Ruby, reading datastore['ENABLE_MEM_PROTECT'] before option validation normalizes it caused datastore['ENABLE_MEM_PROTECT'] ? '1' : '0' to evaluate to '1', enabling memory protection even though the declared default is false.
+    
+    Add a focused RSpec test in spec/modules/post/windows/manage/dell_memory_protect_spec.rb to verify that the default is boolean false and that running the module without prior option validation passes '0' to execute_dll.
+
+ modules/post/windows/manage/dell_memory_protect.rb |  2 +-
+ .../windows/manage/dell_memory_protect_spec.rb     | 36 ++++++++++++++++++++++
+ 2 files changed, 37 insertions(+), 1 deletion(-)
+
+commit 65af3f63a6257d8795fba1191369675cdddf0e5c
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 26 12:32:30 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 46 +++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+
+commit 065c63f78f7c1a6e0faf7fc6f0a10c435e0ad0d0
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 26 12:24:17 2026 +0000
+
+    Isolate certificate and MySQL spec fixtures
+
+ spec/lib/msf/core/exploit/remote/ms_icpr_spec.rb         | 4 ++++
+ spec/modules/auxiliary/scanner/mysql/mysql_login_spec.rb | 2 ++
+ 2 files changed, 6 insertions(+)
+
+commit ba8daf0bcffc7ef77facd58a0a41966826851866
+Merge: cf66ccca12 b007b01658
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 12:24:00 2026 +0000
+
+    Merge pull request #22114 from M4nu02/ssh-musl-auth-bypass
+    
+    Add sshhole module (CVE-2026-123158)
+
+ data/exploits/CVE-2026-123158/Dockerfile           |  73 +++++++
+ data/exploits/CVE-2026-123158/docker-compose.yml   |  28 +++
+ .../exploit/linux/ssh/openssh_musl_crypt_bypass.md | 105 ++++++++++
+ .../linux/ssh/openssh_musl_crypt_bypass.rb         | 230 +++++++++++++++++++++
+ 4 files changed, 436 insertions(+)
+
+commit cf66ccca1221cb7aa0fef78b25e469a435be16c2
+Author: jenkins-metasploit <jenkins-metasploit@build-production.r7ops.com>
+Date:   Thu Nov 26 11:50:10 2026 +0000
+
+    automatic module_metadata_base.json update
+
+ db/modules_metadata_base.json | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit e7a531b88585285643c2aca5a4e9a5743f8e18e9
+Merge: a8a3463f37 2f1b360b2e
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 11:41:23 2026 +0000
+
+    Merge pull request #22082 from Yeagerist0/fix/rpcapd-start-command
+    
+    Fix rpcapd_start service configuration
+
+ modules/post/windows/manage/rpcapd_start.rb | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+
+commit a8a3463f37e52273766a4fd40adec33d26cd93e8
+Merge: 90dfbaa741 1694526aee
+Author: adfoster-r7 <60357436+adfoster-r7@users.noreply.github.com>
+Date:   Thu Nov 26 11:33:03 2026 +0000
+
+    Merge pull request #22162 from dwelch-r7/ruby-3.4.13-security
+    
+    Upgrade Framework runtime and Docker to Ruby 3.4.13
+
+ .github/workflows/docs.yml                                          | 2 +-
+ .ruby-version                                                       | 2 +-
+ Dockerfile                                                          | 4 ++--
+ docs/.ruby-version                                                  | 2 +-
+ docs/Gemfile                                                        | 4 ++++
+ docs/Gemfile.lock                                                   | 6 ++++++
+ .../dev/Setting-Up-a-Metasploit-Development-Environment.md          | 4 ++--
+ 7 files changed, 17 insertions(+), 7 deletions(-)
+
+commit 1694526aeec31cf103b3bafaa3fbe247529ef24a
+Author: dwelch-r7 <dwelch-r7@github>
+Date:   Thu Nov 26 11:29:53 2026 +0000
+
+    Track latest Ruby 3.4 in docs CI
+
+ .github/workflows/docs.yml | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
